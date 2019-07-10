@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><h1 style="font-size:28pt">
+Skaitļu teorija: Igaunijas olimpiādes, 10.kl.
+</h1>
+<ul>
+<li><blue><strong>EE.PK</strong> - <strong>Eesti Piirkonnavoor</strong> (Igaunijas reģionu kārta)</blue></li>
+<li><strong>EE.LO</strong> - Eesti Lõppvoor (Igaunijas gala/valsts kārta)</li>
+<li><strong>EE.LVS</strong> - Eesti Sügisene lahtine võistlus (Igaunijas rudens atvērtais konkurss)</li>
+<li><strong>EE.LVT</strong> - Eesti Talvine lahtine võistlus (Igaunijas ziemas atvērtais konkurss)</li>
+</ul>
+<p><a href="http://www.math.olympiaadid.ut.ee/html/index.php">Matemaatikaolümpiaadid</a></p></section>
+<section><section id="ee.pk.1994.7b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1994.7B.2</h1><p>Atrast mazāko naturālo skaitli, kura pierakstā ir tikai cipari <span class="math inline">\(5\)</span> un <span class="math inline">\(9\)</span>, kurš satur tos vienādā skaitā un dalās ar <span class="math inline">\(5\)</span> un <span class="math inline">\(9\)</span>.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">notation.divrules.3or9.divides</a></li>
+<li><a href="#/">notation.divrules.pow2or5.divides</a></li>
+</ul>
+<p></small></p>
+<!--
+questionType=Find.Min
+--></section><section id="skaitļa-īpašības" class="slide level2">
+<h2>Skaitļa īpašības</h2>
+<ul>
+<li>Skaitlis ir nepāru, jo tajā nav pāru ciparu</li>
+<li>Skaitlim jābeidzas ar <span class="math inline">\(5\)</span>, jo tas dalās ar <span class="math inline">\(5\)</span></li>
+<li>Skaitļa ciparu summai jādalās ar <span class="math inline">\(9\)</span>, jo tas dalās ar <span class="math inline">\(9\)</span>. Tātad tajā jābūt vismaz deviņiem cipariem “5”.</li>
+<li>Cipari “5”, kur iespējams, jāliek skaitļa sākumā, lai būtu iespējami mazāks.</li>
+</ul>
+<p>Atbilde: <code>555555559999999995</code>.</p>
+</section></section>
+<section id="ee.pk.1994.8b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1994.8B.2</h1><p>Atrast visus veselos skaitļus <span class="math inline">\(n\)</span>, kuriem skaitlis <span class="math inline">\({\displaystyle \frac{n^2 - 4}{n^2 - 1}}\)</span> ir vesels.</p>
+<!--
+concepts=integer-polynomials
+questionType=Find.All
+--></section>
+<section id="ee.pk.1995.7b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1995.7B.2</h1><p>Atrast mazāko pirmskaitli, kas dod atlikumu <span class="math inline">\(1\)</span>, dalot ar katru no skaitļiem <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(5\)</span> un <span class="math inline">\(8\)</span>.</p>
+<!--
+concepts=primes,remainder
+questionType=Find.Min
+--></section>
+<section id="ee.pk.1995.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1995.8B.3</h1><p>Vai var aizpildīt tabulu, kas satur</p>
+<ol type="1">
+<li><span class="math inline">\(4 \times 4\)</span> rūtiņas</li>
+<li><span class="math inline">\(5 \times 5\)</span> rūtiņas</li>
+</ol>
+<p>ar veseliem skaitļiem tā, lai skaitļu reizinājums katrā kolonnā būtu pozitīvs, bet katrā rindiņā – negatīvs?</p>
+<!--
+genre=fill-in-table
+questionType=ProveDisprove.Exists
+--></section>
+<section id="ee.pk.1996.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1996.7B.3</h1><p>Kādus ciparus jāieraksta piecciparu skaitlim <span class="math inline">\(517\ast\ast\)</span> zvaigznīšu vietā, lai iegūtais skaitlis dalītos vienlaikus ar skaitļiem <span class="math inline">\(6\)</span>, <span class="math inline">\(7\)</span> un <span class="math inline">\(9\)</span>?</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.1996.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1996.8B.3</h1><p>Trīs skolnieku vecumi ir veseli skaitļi, kuru reizinājums ir <span class="math inline">\(1872\)</span>. Pie tam pēc vecuma vidējais skolēns ir vecāks par jaunāko par tikpat daudz gadiem, par cik viņš jaunāks par pašu vecāko. Atrast skolēnu vecumus.</p>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.1996.9b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1996.9B.2</h1><p>Atrast skaitli <span class="math inline">\(c\)</span>, ja <span class="math inline">\((a+b):(b+c):(c+a)=6:7:8\)</span> un <span class="math inline">\(a+b+c=14\)</span>.</p>
+<!--
+questionType=Find.All
+--></section>
+<section id="ee.pk.1997.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1997.7B.1</h1><p>Atrast naturālus skaitļus <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> un <span class="math inline">\(z\)</span>, lai izpildītos vienādība <span class="math display">\[x + \frac{1}{y + \frac{1}{z}} = 1\frac{3}{7}.\]</span></p>
+<!--
+genre=integer-equation
+questionType=Find.All
+--></section>
+<section id="ee.pk.1997.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1997.8B.1</h1><p>Veselam pozitīvam skaitlim <span class="math inline">\(a\)</span> visi cipari ir dažādi. No šī skaitļa cipariem var izveidot sešus dažādus divciparu skaitļus, kuriem desmitu cipars atšķiras no vienu cipara. Visu šo sešu skaitļu summa ir divreiz lielāka nekā skaitlis <span class="math inline">\(a\)</span>. Atrast skaitli <span class="math inline">\(a\)</span>.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.1997.8b.1-1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1997.8B.1</h1><p>Dalot veselu skaitli <span class="math inline">\(N \geq 5\)</span> ar <span class="math inline">\(3\)</span>, rodas atlikums <span class="math inline">\(2\)</span>. Pierādīt, ka skaitļa <span class="math inline">\(N\)</span> kvadrātu nevar izteikt kā pirmskaitļa un kāda vesela skaitļa kvadrāta summu.</p>
+<!--
+concepts=primes,remainder
+questionType=Prove.Other
+--></section>
+<section id="ee.pk.1998.7b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1998.7B.2</h1><p>Trīsciparu skaitļa pēdējo ciparu pārliek pirmajā vietā, nemainot pārējo ciparu secību. Šādi iegūtais skaitlis ir lielāks par <span class="math inline">\(400\)</span> par tikpat daudz, par cik sākotnējais skaitlis ir mazāks par <span class="math inline">\(400\)</span>. Atrast sākotnējo skaitli, ja zināms, ka tas beidzas ar ciparu <span class="math inline">\(4\)</span>.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.1998.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1998.7B.3</h1><p>Nošu krājuma lapas ir nesastiprinātas; visas tā lappuses, sākot ar pirmo, sanumurētas ar skaitļiem <span class="math inline">\(1,2,3,4,\ldots\)</span>. Juku saskaitīja nejauši izraudzītām <span class="math inline">\(15\)</span> lapām visus <span class="math inline">\(30\)</span> lappušu numurus un ieguva skaitli <span class="math inline">\(1998\)</span>. Pēc tam Juku saskaitīja numurus pirmo <span class="math inline">\(10\)</span> krājuma lapu lappusēm un ieguva <span class="math inline">\(210\)</span>.</p>
+<ol type="1">
+<li>Vai Juku saskaitīja pareizi pirmajā reizē?</li>
+<li>Vai Juku saskaitīja pareizi otrajā reizē?</li>
+</ol>
+<!--
+concepts=arithmetic-progression
+questionType=ProveDisprove.Exists
+--></section>
+<section id="ee.pk.1998.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1998.8B.1</h1><p>Trīsciparu skaitlī nodzēsa simtu ciparu un ieguva divciparu skaitli, kurš septiņas reizes mazāks par sākotnējo skaitli. Atrast visus šādus trīsciparu skaitļus.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.1998.9b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1998.9B.1</h1><p>Atrast visus pirmskaitļus, ar kuriem dalās starpība <span class="math display">\[6 \cdot 66 \cdot 666 \cdot 6666 - 
+4 \cdot 44 \cdot 444 \cdot 4444.\]</span></p>
+<!--
+concepts=primes
+questionType=Find.All
+--></section>
+<section id="ee.pk.1999.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1999.7B.1</h1><p>No viena mēneša tabulkalendāra (datumi attēloti pa vienai nedēļai katrā rindiņā) izgrieza kvadrātu ar izmēriem <span class="math inline">\(2 \times 2\)</span> dienas. Šo četru skaitļu summa dalījās ar <span class="math inline">\(16\)</span>. Kāds skaitlis var būt labajā apakšējā kvadrāta stūrī?</p>
+<!--
+genre=fill-in-table
+questionType=Find.All
+--></section>
+<section id="ee.pk.1999.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1999.7B.3</h1><div style="font-size:80%">
+<p>Kivisillu (<em>Kivisilla</em>) ģimene satiekas pirmajā jūlijā - reizi trijos gados. Nesenākajā tikšanās reizē ģimenes locekļi teica par savu vecumu sekojošo:<br />
+Marija (<em>Mari</em>): Man šobrīd ir tik gadu, cik bija Jurim iepriekšējā tikšanās reizē.<br />
+Juris (<em>Jüri</em>): Nākamajā tikšanās reizē man būs tik gadu, cik tagad Pēterim.<br />
+Pēteris (<em>Peeter</em>): Iepriekšējā tikšanās reizē Kārlis bija par mani tieši trīs reizes vecāks.<br />
+Kārlis (<em>Karl</em>) Tagad esmu tieši divreiz jaunāks par mūsu pašu vecāko radinieci, tanti Lēnu (<em>Leena</em>).<br />
+Cik gadu bija Marijai, Jurim, Pēterim, Kārlim un tantei Lēnai nesenākajā tikšanās reizē, ja viņu vecumu summa ir <span class="math inline">\(165\)</span>? (Vecumu nosaka pilnos gados.)</p>
+</div>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.1999.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1999.8B.3</h1><p>Pazīstamais matemātiķis-izgudrotājs <span class="math inline">\(N\)</span> uzrakstīja uz vienas kartītes vienu trīsciparu skaitli, bet uz otras kartītes citu trīsciparu skaitli. Novietojot šīs kartītes blakus, viņš ieguva sešciparu skaitli. Samainot kartītes vietām, <span class="math inline">\(N\)</span> pārsteigts ievēroja, ka šādi iegūtais sešciparu skaitlis ir lielāks par pirmo tieši sešas reizes. Kādus divus trīsciparu skaitļus uzrakstīja <span class="math inline">\(N\)</span>?</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.1999.9b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.1999.9B.3</h1><p>Vai eksistē skaitlis, kura pierakstā ir <span class="math inline">\(138\)</span> cipari “1”, <span class="math inline">\(24\)</span> cipari “6” un <span class="math inline">\(11\)</span> cipari “9”, un kas ir kāda vesela skaitļa kvadrāts?</p>
+<!--
+questionType=ProveDisprove.Exists
+--></section>
+<section id="ee.pk.2000.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2000.7B.3</h1><div style="font-size:80%">
+<p>Pirms Annika (<em>Annika</em>), Tomijs (<em>Tommy</em>) un Pepija (<em>Pipi</em>) aizbrauca no Kurunuruvutisāres (<em>Kurrunurruvutisaare</em>), kapteinis Garzeķe (<em>Pikksukk</em>) lika iznest no bagātību alas <span class="math inline">\(35\)</span> kastes ar kārtas numuriem <span class="math inline">\(1,2,3,\ldots,35\)</span>, kur katras kastes kārtas numurs atbilda pērļu skaitam kastē. Tomijs ieguva visas kastes, kuru numurs dalījās ar trīs, bet nedalījās ne ar četri, ne ar pieci. Annika ieguva visas kastes, kuru numurs dalījās ar četri, bet nedalījās ne ar trīs, ne ar pieci. Pepija ieguva visas kastes, kuru numurs dalījās ar pieci, bet nedalījās ne ar trīs, ne ar četri. Pēc tam kapteinis Garzeķe iztukšoja atlikušās kastes, kuru numurs dalījās ar kādu no skaitļiem: trīs, četri vai pieci, un to saturu izdalīja bērniem tā, lai beigās katram būtu vienāds pērļu skaits. Cik pērļu kapteinis pielika klāt katram no bērniem?</p>
+</div>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.2000.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2000.8B.1</h1><p>Atrast visus tos naturālos skaitļus, kuriem ciparu reizinājums ir <span class="math inline">\(2000\)</span>, starp cipariem nav cipara <span class="math inline">\(1\)</span> un jebkuriem diviem blakus cipariem, cipars pa kreisi nepārsniedz ciparu pa labi.</p>
+<!--
+genre=string-counting
+questionType=Find.All
+--></section>
+<section id="ee.pk.2000.9b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2000.9B.1</h1><p>Atrast visus pirmskaitļu četriniekus <span class="math inline">\((p,q,s,t)\)</span>, kas apmierina vienādojumu sistēmu: <span class="math display">\[\left\{
+\begin{array}{l}
+p + q = s\\
+2p + q = t.
+\end{array} \right.\]</span></p>
+<!--
+concepts=primes
+questionType=Find.All
+--></section>
+<section id="ee.pk.2001.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2001.7B.3</h1><p>Zināms, ka <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(10a+b\)</span> ir pirmskaitļi un <span class="math inline">\(a \leq b &lt; 10\)</span>. Atrast visas iespējamās reizinājuma <span class="math inline">\(ab \cdot (10+b)\)</span> vērtības.</p>
+<!--
+concepts=primes
+questionType=Find.All
+--></section>
+<section id="ee.pk.2001.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2001.8B.1</h1><p>Ja Tāvi (<em>Taavi</em>) datorā ievada naturālu skaitli <span class="math inline">\(n\)</span>, tad dators sareizinās visus naturālos skaitļus no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(n\)</span> un parādīs rezultātu uz ekrāna. Piemēram, ievadot skaitli <span class="math inline">\(6\)</span> dators aprēķinās reizinājumu <span class="math inline">\(1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6\)</span> un parādīs uz ekrāna skaitli <span class="math inline">\(720\)</span>. Ja atrastais reizinājums dalās ar <span class="math inline">\(2001\)</span>, tad dators turklāt atskaņos mūziku. Kādu mazāko naturālo skaitli jāievada Tāvi datorā, lai dators atskaņotu mūziku?</p>
+<!--
+genre=procedure
+questionType=Find.Min
+--></section>
+<section id="ee.pk.2001.9b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2001.9B.1</h1><p>Rēķinvedis Juris ievērojis, ka 2001.gadā viņa vecums kļūs vienāds ar viņa dzimšanas gada divkāršotu ciparu summu. Pārdomājot tālāk, viņš izbrīnīts ievēroja, ka tas pats notiks ar viņa māsu Jūliju, kura ir par viņu vairākus gadus jaunāka. Cik gadu šogad (2001.gadā) paliks Jurim un Jūlijai?</p>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.2001.9b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2001.9B.3</h1><p>Dots vesels skaitlis <span class="math inline">\(k\)</span>. Pierādīt, ka, ja <span class="math inline">\(k^2 -k\)</span> nedalās ar <span class="math inline">\(6\)</span>, tad <span class="math inline">\(k^2 - k - 2\)</span> dalās ar <span class="math inline">\(18\)</span>.</p>
+<!--
+questionType=Prove.ForAll
+--></section>
+<section id="ee.pk.2002.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2002.7B.1</h1><p>Trīs draugi Reins, Madis un Ahto apmeklē bibliotēkas kafejnīcu vienmēr 14:00, bet Reins to dara katru ceturto, Madis – katru piekto, bet Ahto – katru sesto dienu. Pēdējo reizi viņi visi satikās šajā kafejnīcā pirmdien, 2002. gada 7. janvārī. Pēc cik dienām, kurā datumā un kurā nedēļas dienā viņi visi satiksies kafejnīcā nākamajā reizē?</p>
+<!--
+genre=word-problem
+questionType=Find.Only
+--></section>
+<section id="ee.pk.2002.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2002.8B.1</h1><p>Skaitli <span class="math inline">\(15\)</span> var izteikt gan kā trīs, gan kā piecu pēc kārtas sekojošu naturālu skaitļu summu: <span class="math inline">\(15 = 4+5+6\)</span> un <span class="math inline">\(15 = 1+2+3+4+5\)</span>. Atrast visus tādus naturālos skaitļus, kas mazāki par <span class="math inline">\(100\)</span>, kurus var izteikt gan kā trīs, gan kā piecu pēc kārtas sekojošu naturālu skaitļu summu. Pamatot, kāpēc šo skaitļu nav vairāk.</p>
+<!--
+concepts=arithmetic-progression
+questionType=Find.All,NoteOnProof
+--></section>
+<section id="ee.pk.2003.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2003.7B.3</h1><p>Uzvarošie numuri loterijā ir četri divciparu pirmskaitļi <span class="math inline">\(\overline{AB}\)</span>, <span class="math inline">\(\overline{BC}\)</span>, <span class="math inline">\(\overline{CD}\)</span> un <span class="math inline">\(\overline{DA}\)</span>. Atrast šos uzvarošos numurus, ja dažādiem burtiem <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span> atbilst dažādi cipari.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.2003.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2003.8B.1</h1><p>Doti trīs skaitļi, kuru summa ir <span class="math inline">\(49\)</span>. Ja vienam no tiem pieskaita <span class="math inline">\(3\)</span>, no otra atņem <span class="math inline">\(3\)</span>, bet trešo reizina ar <span class="math inline">\(3\)</span>, tad rezultāts katru reizi ir tas pats skaitlis <span class="math inline">\(n\)</span>. Atrast trīs dotos skaitļus.</p>
+<!--
+questionType=Find.All
+--></section>
+<section id="ee.pk.2003.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2003.8B.3</h1><p>Dārgumu krātuvē bija <span class="math inline">\(N\)</span> lādītes, kurās kopā bija pavisam <span class="math inline">\(462\)</span> dārgakmeņi, pie tam katrā lādītē dārgakmeņu skaits bija vienāds. Dārgumu krātuves kasierim vajadzēja četras tukšas lādītes un viņš varēja izvietot četru lādīšu dārgakmeņus pa atlikušajām lādītēm tā, lai katrā lādītē atkal būtu vienāds skaits dārgakeņu. Atrast visas iespējamās lādīšu skaita <span class="math inline">\(N\)</span> vērtības.</p>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.2004.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2004.7B.1</h1><p>Atrast visus tādus trīsciparu nepāru naturālus skaitļus <span class="math inline">\(a\)</span>, kuru reizinājums ar skaitli <span class="math inline">\(748\)</span> beidzas ar cipariem <span class="math inline">\(2004\)</span>.</p>
+<!--
+questionType=Find.All
+--></section>
+<section id="ee.pk.2004.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2004.8B.1</h1><p>Atrast visus tos trīsciparu naturālos skaitļus, kuri paši ir kāda naturāla skaitļa kvadrāti, un kuriem, nodzēšot simtu ciparu, paliek divciparu skaitlis, kurš arī ir naturāla skaitļa kvadrāts.</p>
+<!--
+concepts=full-square
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.2004.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2004.8B.3</h1><p>Juris (<em>Jüri</em>) un Marija (<em>Mari</em>) dzīvo tajā pašā daudzdzīvokļu ēkā. Katrā ēkas stāvā atrodas <span class="math inline">\(10\)</span> dzīvokļi <span class="math inline">\(1, 2, \ldots, 10\)</span>, otrajā stāvā dzīvokļi <span class="math inline">\(11, 12, \ldots, 20\)</span>, utt. Zināms, ka Jura dzīvokļa stāva numurs sakrīt ar Marijas dzīvokļa numuru, turklāt Jura un Marijas dzīvokļu numuru summa ir <span class="math inline">\(239\)</span>. Atrast Jura dzīvokļa numuru.</p>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.2005.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2005.7B.1</h1><hgroup>
+<p>Ierakstīt katrā rūtiņā pa vienam ciparam tā, lai iegūtie divciparu skaitļi nesāktos ar nulli un izpildītu zemāk izklāstītos nosacījumus. Paskaidrot, kādē secībā tika aizpildītas rūtiņas un pamatot, kādēļ citu iespēju aizpildīt rūtiņas, izņemot jūsu atrastās, nav.</p>
+</hgroup>
+<hgroup>
+<figure>
+<img data-src="EE.PK.2005.7B.1.png" alt="tabula" /><figcaption>tabula</figcaption>
+</figure>
+<p>Pa labi:<br />
+(A) Skaitļa <span class="math inline">\(3\)</span> daudzkārtnis.<br />
+(B) Trīskāršots pirmskaitlis.</p>
+<p>Uz leju:<br />
+(C) Skaitļa <span class="math inline">\(25\)</span> daudzkārtnis.<br />
+(D) Naturāla skaitļa kvadrāts.</p>
+</hgroup>
+<!--
+genre=fill-in-table
+questionType=Find.All
+--></section>
+<section id="ee.pk.2005.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2005.8B.1</h1><hgroup style="font-size:80%">
+<p>Ierakstīt katrā rūtiņā pa vienam ciparam tā, lai iegūtie trīsciparu skaitļi nesāktos ar nulli un izpildītu zemāk izklāstītos nosacījumus. Paskaidrot, kādē secībā tika aizpildītas rūtiņas un pamatot, kādēļ citu iespēju aizpildīt rūtiņas, izņemot jūsu atrastās, nav.</p>
+<figure>
+<img data-src="EE.PK.2005.8B.1.png" alt="tabula" /><figcaption>tabula</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:80%">
+<p>Pa labi:<br />
+(A) Naturāla skaitļa kvadrāts, kas dalās ar <span class="math inline">\(5\)</span>.<br />
+(B) Skaitlis, kas dalās ar <span class="math inline">\(5\)</span> un ar <span class="math inline">\(6\)</span>.<br />
+(C) Skaitlis, kura visi cipari ir nepāru, un ciparu summa vienāda ar <span class="math inline">\(11\)</span>.</p>
+<p>Uz leju:<br />
+(D) Skaitlis, kurš par <span class="math inline">\(222\)</span> lielāks par vienīgo trīsciparu dalītāju skaitlim <span class="math inline">\(2005\)</span>.<br />
+(E) Skaitlis, kura divi cipari ir pāru, un kurš, dalot ar <span class="math inline">\(4\)</span>, dod atlikumu <span class="math inline">\(1\)</span>.<br />
+(F) Skaitlis, kas dalās ar <span class="math inline">\(3\)</span>.</p>
+</hgroup>
+<!--
+genre=fill-in-table
+concepts=full-square,sum-of-digits,remainder
+questionType=Find.All
+--></section>
+<section id="ee.pk.2006.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2006.7B.3</h1><p>Paroles izveidošanai Keita (<em>Keit</em>) paņēma divus pēdējos ciparus savam dzimšanas gadam <span class="math inline">\(1992\)</span> un pievienoja tiem sākumā kā pirmo ciparu savas dzimšanas datumu, bet beigās kā pēdējo ciparu - savas dzimšanas mēneša numuru. Iegūtais četrciparu skaitlis dalījās ar viņas abu brāļu vecumiem, bet nedalījās ar māsas vecumu. Vienam Keitas brālim ir <span class="math inline">\(2\)</span> gadi, otram <span class="math inline">\(9\)</span> gadi, bet māsai <span class="math inline">\(7\)</span> gadi. Atrast visas iespējas, kāds var būt Keitas dzimšanas mēnesis un datums.</p>
+<!--
+genre=string-counting
+questionType=Find.All
+--></section>
+<section id="ee.pk.2006.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2006.8B.3</h1><p>Līa (<em>Liia</em>) izvēlējusies paroli, kas sastāv no četriem dažādiem cipariem; un, saskaitot katrus trīs no tiem, iegūst pirmskaitli. No kādiem cipariem sastāv Līas parole?</p>
+<!--
+genre=string-counting
+concepts=primes
+questionType=Find.All
+--></section>
+<section id="ee.pk.2007.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2007.7B.1</h1><p>Ozoliņu (<em>Tammel</em>) ģimenē šis gads ir īpašs sekojošā nozīmē: gada beigu brīdī katra ģimenes locekļa vecums ir divciparu vesels skaitlis, kurš tieši <span class="math inline">\(7\)</span> reizes lielāks par savu ciparu summu. Atrast visu ģimenes locekļu dzimšanas gadus [pieņemot, ka pašreizējais gads ir 2007.g.], ja ģimenes locekļu vecumi ir visi skaitļi ar minēto īpašību.</p>
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.pk.2007.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2007.8B.1</h1><p>Voldemārs (<em>Volli</em>) uzrakstīja uz tāfeles naturālu skaitli. Viņš to pareizināja ar <span class="math inline">\(9\)</span> un nodzēsa reizinājuma pēdējo ciparu. Iegūto skaitli viņš pareizināja ar <span class="math inline">\(5\)</span> un atkal nodzēsa reizinājuma pēdējo ciparu. Atrast visus naturālos skaitļus, ko Voldemārs varēja uzrakstīt pašā sākumā.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.2008.7b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2008.7B.2</h1><p>Atrast visus tos skaitļus, kuriem gan pats skaitlis, gan arī skaitlis, kas iegūts samainot ciparu secību uz pretējo, ir trīsciparu un dalās gan ar <span class="math inline">\(4\)</span>, gan ar <span class="math inline">\(9\)</span>.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.2008.8b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2008.8B.2</h1><p>Perts (<em>Pärt</em>) uzrakstīja uz papīra <span class="math inline">\(5\)</span> pozitīvus veselus skaitļus, kas visi mazāki par <span class="math inline">\(150\)</span>. Izrādījās, ka katrs skaitlis ir pusotru reizi lielāks par iepriekšējo. Kādus skaitļus Perts uzrakstīja uz papīra?</p>
+<!--
+concepts=geometric-progression
+questionType=Find.All
+--></section>
+<section id="ee.pk.2009.7b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2009.7B.2</h1><p>Skaitļi <span class="math inline">\(\overline{ab4}\)</span>, <span class="math inline">\(\overline{b03}\)</span>, <span class="math inline">\(\overline{b3c}\)</span> un <span class="math inline">\(\overline{ba1}\)</span> – ir četri trīsciparu skaitļi augošā secībā, turklāt jebkuru divu blakusesošu skaitļu starpība ir viena un tā pati. Atrast ciparus <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span>.<br />
+<em>Piezīme.</em> Pieraksts <span class="math inline">\(\overline{xyz}\)</span> apzīmē skaitli, kura cipari, lasot no kreisās uz labo pusi, ir <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, un <span class="math inline">\(z\)</span>.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.2009.8b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2009.8B.2</h1><p>Doti <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(d\)</span>, <span class="math inline">\(e\)</span> un <span class="math inline">\(f\)</span> – dažādi skaitļi no saraksta <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(5\)</span>, <span class="math inline">\(6\)</span>, <span class="math inline">\(7\)</span>, <span class="math inline">\(8\)</span>, <span class="math inline">\(9\)</span>. Zināms, ka <span class="math inline">\(a \cdot b = c \cdot d \cdot e \cdot f\)</span>. Atrast iespējamās vērtības summai <span class="math inline">\(a + b + c + d + e + f\)</span>.</p>
+<!--
+questionType=Find.All
+--></section>
+<section id="ee.pk.2010.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2010.7B.1</h1><p>Divciparu skaitlim pieskaitīja trīsciparu skaitli un rezultātā ieguva četrciparu skaitli. Visi šie trīs skaitļi ir ar šādu īpašību: tos nolasot no kreisās uz labo pusi, kā arī no labās uz kreiso pusi, iegūstam vienu un to pašu skaitli. Atrast visus šādus skaitļu trijniekus.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section id="ee.pk.2010.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2010.8B.1</h1><p>Nodzēšot vienu ciparu trīsciparu skaitlī, iegūst divciparu skaitli, kuru saskaitot ar sākotnējo trīsciparu skaitli, summa ir <span class="math inline">\(221\)</span>. Atrast visus trīsciparu skaitļus ar šo īpašību.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section><section id="ee.pk.2010.10.5" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2010.10.5</h1><p>Pierādīt, ka jebkuram veselam <span class="math inline">\(n \geq 3\)</span> atradīsies tāds <span class="math inline">\(n\)</span>-ciparu skaitlis, kurš ir vesela skaitļa kvadrāts, un, pierakstot tam sākumā ciparu 1, arī rodas kāda vesela skaitļa kvadrāts.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">misc.beginatend</a></li>
+<li><a href="#/">misc.experiment</a></li>
+<li><a href="#/">notation.algor.square5</a></li>
+<li><a href="#/">notation.dec.numdigits.square</a></li>
+<li><a href="#/">alg.factorize.sqdiff</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Доказать, что для каждого целого числа $n \geq 3$ найдётся такое $n$-значное
+число, которое является квадратом целого числа и при добавлении в его
+начало цифры 1 также получится квадрат некоторого целого числа.
+-->
+<!--
+concepts=full-square
+questionType=Prove.ForAll
+--></section><section id="vienādojumu-sistēmas" class="slide level2">
+<h2>Vienādojumu sistēmas</h2>
+<ul>
+<li>Ja <span class="math inline">\(n=3\)</span>, var aplūkot pilnus kvadrātus, kas satur četrus ciparus un sākas ar “1”: <span class="math inline">\(32^2=1024\)</span>, <span class="math inline">\(33^2 = 1089\)</span>, <span class="math inline">\(34^2 = 1156\)</span> un <span class="math inline">\(35^2 = 1225\)</span>. Tas arī ir pirmais skaitlis, kuram nometot pirmo ciparu iegūst kvadrātu: <span class="math inline">\(225 = 15^2\)</span>.</li>
+<li>Redzam arī, ka <span class="math inline">\(35^2 - 15^2 = (35-15)(35+15)=20\cdot 50 = 1000\)</span>.</li>
+<li>Nākamā sistēmiņa: <span class="math inline">\(a+b=200\)</span>, <span class="math inline">\(a-b=50\)</span>. Tātad <span class="math display">\[a = 125,\;\; b = 75,\;\;125^2 - 75^2=10000.\]</span></li>
+</ul>
+</section><section id="algebriskās-identitātes" class="slide level2">
+<h2>Algebriskās identitātes</h2>
+<ul>
+<li>Skaitļus <span class="math inline">\(15\)</span>, <span class="math inline">\(35\)</span>, <span class="math inline">\(75\)</span>, <span class="math inline">\(125\)</span> u.c. var ātri kāpināt kvadrātā:</li>
+</ul>
+<p><span class="math inline">\(75^2 = 5625\)</span>, jo <span class="math inline">\(7 \cdot 8 = 56\)</span>.<br />
+<span class="math inline">\(125^2 = 15625\)</span>, jo <span class="math inline">\(12 \cdot 13 = 156\)</span>.</p>
+</section></section>
+<section id="ee.pk.2011.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2011.7B.1</h1><p>Aplūkosim naturālus skaitļus, kuriem izpildās sekojoši nosacījumi:</p>
+<ol type="1">
+<li>visi skaitļa cipari ir atšķirīgi un novietoti augošā secībā no kreisās uz labo pusi;</li>
+<li>skaitlis nesatur ciparu <span class="math inline">\(5\)</span>;</li>
+<li>skaitļa ciparu summa dalās ar <span class="math inline">\(5\)</span>.</li>
+</ol>
+<p>Vai eksistē šos noteikumus apmierinoši</p>
+<div class="enum-a">
+<ol type="1">
+<li>sešciparu skaitļi;</li>
+<li>septiņciparu skaitļi?</li>
+</ol>
+</div>
+<p>Ja tādi eksistē, tad atrast mazāko un lielāko tādu skaitli; ja neeksistē, tad pamatot, kāpēc.</p>
+<!--
+questionType=Find.Min,Find.Max,Prove.NotExists
+--></section>
+<section id="ee.pk.2011.8b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2011.8B.3</h1><p>Vienu cipars naturālu skaitļu <span class="math inline">\(n\)</span> un <span class="math inline">\(n+2\)</span> reizinājumā vienāds ar <span class="math inline">\(4\)</span>.</p>
+<ol type="1">
+<li>Atrast šī reizinājuma visas iespējamās desmitu cipara vērtības.</li>
+<li>Atrast mazāko un lielāko skaitli <span class="math inline">\(n\)</span>, kuram izpildās uzdevuma nosacījums, un kuram skaitļu <span class="math inline">\(n\)</span> un <span class="math inline">\(n+2\)</span> reizinājums ir četrciparu skaitlis.</li>
+</ol>
+<!--
+questionType=Find.All,Find.Min,Find.Max
+--></section>
+<section><section id="ee.pk.2011.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2011.10.3</h1><p>Matemātikas stundā Jüri dalīja naturālu skaitli <span class="math inline">\(n\)</span> ar naturālu skaitli <span class="math inline">\(m\)</span>, iegūstot dalījumu un atlikumu.<br />
+a) Pierādīt, ka, ja dalījums un atlikums ir savā starpā vienādi, tad <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(m+1\)</span>.<br />
+b) Vai izpildās arī apgrieztais apgalvojums: Vienmēr, kad skaitlis <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(m+1\)</span>, tad dalījums un atlikums, ja <span class="math inline">\(n\)</span> dala ar <span class="math inline">\(m\)</span>, ir savā starpā vienādi?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">mod.rem.expr</a></li>
+<li><a href="#/">mod.rem.values</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+На уроке математики Юра должен был поделить положительное целое
+число $n$ на положительное целое число $m$, чтобы найти частное и остаток.
+а) Доказать, что если найденные частное и остаток равны между собой,
+то число n делится на число m + 1.
+б) Выполняется ли обратное утверждение: всегда, когда число n делится 
+на число m + 1, частное и остаток при делении числа n на число
+m равны между собой?
+-->
+<!--
+questionType=Prove.ForAll,ProveDisprove.ForAll
+concepts=remainder
+--></section><section id="algebriski-pateikts-apgalvojums-par-atlikumu" class="slide level2">
+<h2>Algebriski pateikts apgalvojums par atlikumu</h2>
+<p>Ja <span class="math inline">\(n\)</span> dalot ar <span class="math inline">\(m\)</span> rezultāts ir <span class="math inline">\(a\)</span> un atlikums ir <span class="math inline">\(a\)</span>, tad <span class="math display">\[n = am + a\]</span> jeb <span class="math inline">\(n = a(m+1)\)</span>. Redzam, ka <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\((m+1)\)</span>.</p>
+<p>Otrā virzienā secināt nevar, jo var gadīties, ka <span class="math inline">\(a\geq m\)</span>, bet atlikumi, dalot ar <span class="math inline">\(m\)</span> var būt tikai no kopas <span class="math inline">\(\{ 0,\ldots,m-1 \}\)</span>.</p>
+<p>Teiksim, <span class="math inline">\(n = 100\)</span>, <span class="math inline">\(m=4\)</span>. Tad <span class="math inline">\(100\)</span> dalās ar <span class="math inline">\(m+1= 5\)</span>. Bet dalījums (<span class="math inline">\(100\)</span> dalot ar <span class="math inline">\(4\)</span>) ir <span class="math inline">\(25\)</span>, bet atlikums ir <span class="math inline">\(0\)</span> un <span class="math inline">\(0 \neq 25\)</span>.</p>
+</section></section>
+<section id="ee.pk.2012.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2012.7B.3</h1><p>Saskaitīšanas piemērā <span class="math display">\[KAKS + KOLM = VIIS\]</span> dažādiem burtiem atbilst dažādi cipari, bet vienādiem burtiem – vienādi cipari. Atrast lielāko četrciparu skaitli, kurš var atbilst vārdam <span class="math inline">\(VIIS\)</span>.</p>
+<!--
+genre=cryptarithm
+questionType=Find.Max
+--></section>
+<section id="ee.pk.2012.8b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2012.8B.2</h1><p>Atrast visus trīsciparu naturālos skaitļus, kuri dalās ar <span class="math inline">\(4\)</span>, <span class="math inline">\(5\)</span> un <span class="math inline">\(6\)</span>, bet nedalās ar skaitļiem <span class="math inline">\(7\)</span>, <span class="math inline">\(8\)</span> un <span class="math inline">\(9\)</span>.</p>
+<!--
+questionType=Find.All
+--></section>
+<section><section id="ee.pk.2012.10.4" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2012.10.4</h1><p>Cik ir veselu skaitļu komplektu <span class="math inline">\((a, b, c)\)</span>, kuri apmierina vienādojumu <span class="math inline">\((a + b)(b + c)(c + a) = 123456789\)</span>?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">notation.divrules.2or5or10.divides</a></li>
+<li><a href="#/">mod.parity.cases</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Сколько существует комплектов целых чисел $(a, b, c)$, 
+которые удовлетворяют уравнению $(a + b)(b + c)(c + a) = 123456789$?
+-->
+<!--
+genre=integer-equation
+questionType=Find.Count
+--></section><section id="dalāmības-pazīmes" class="slide level2">
+<h2>Dalāmības pazīmes</h2>
+<ul>
+<li><span class="math inline">\(123456789\)</span> ir nepāru skaitlis (pēdējais cipars)</li>
+<li><span class="math inline">\(123456789\)</span> arī dalās ar <span class="math inline">\(9\)</span> (ciparu summa)</li>
+</ul>
+<p>Ko var secināt par reizinājumu <span class="math inline">\((a+b)(b+c)(c+a)\)</span>?</p>
+<ul>
+<li>Izdevīgāk lietot pazīmes, ka reizinājums ar kaut ko <em>nedalās</em> (jo tad neviens reizinātājs nedalās).</li>
+</ul>
+</section><section id="paritāte" class="slide level2">
+<h2>Paritāte</h2>
+<p>Ja <span class="math inline">\((a + b)(b + c)(c + a)\)</span> ir nepāru skaitlis, tad</p>
+<ul>
+<li><span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir atšķirīga paritāte</li>
+<li><span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span> ir atšķirīga paritāte</li>
+<li><span class="math inline">\(c\)</span> un <span class="math inline">\(a\)</span> ir atšķirīga paritāte</li>
+</ul>
+<p>Iegūta pretruna: Ja <span class="math inline">\(a\)</span> ir pāru, tad <span class="math inline">\(b\)</span> ir nepāru, tad <span class="math inline">\(c\)</span> ir pāru, tad <span class="math inline">\(a\)</span> ir nepāru utml.</p>
+</section></section>
+<section id="ee.pk.2013.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2013.8B.1</h1><p>Doti seši pirmskaitļi <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(d\)</span>, <span class="math inline">\(e\)</span> un <span class="math inline">\(f\)</span>, kuru reizinājums ir pāru skaitlis. Zināms, ka skaitlis <span class="math inline">\(c\)</span> lielāks par skaitli <span class="math inline">\(d\)</span>, bet mazāks par skaitli <span class="math inline">\(b\)</span>. Skaitlis <span class="math inline">\(e\)</span> ir lielāks par skaitli <span class="math inline">\(d\)</span>, bet skaitlis <span class="math inline">\(f\)</span> ir mazāks par skaitli <span class="math inline">\(a\)</span>. Skaitlis <span class="math inline">\(c\)</span> ir lielāks par skaitli <span class="math inline">\(e\)</span>, bet skaitlis <span class="math inline">\(b\)</span> ir mazāks par skaitli <span class="math inline">\(f\)</span>. Atrast visus šos skaitļus, ja lielākais no tiem vienāds ar <span class="math inline">\(23\)</span>, bet skaitļi <span class="math inline">\(a+d\)</span> un <span class="math inline">\(a-d\)</span> nedalās ne ar vienu no dotajiem pirmskaitļiem.</p>
+<!--
+questionType=Find.All
+--></section>
+<section><section id="ee.pk.2013.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2013.10.3</h1><p>Atrast mazāko naturālo skaitli <span class="math inline">\(n\)</span>, kuram starp jebkuriem <span class="math inline">\(n\)</span> veselu skaitļu kvadrātiem atradīsies divi tādi, kuru starpība dalās ar <span class="math inline">\(10\)</span>.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">mod.expr.square</a></li>
+<li><a href="#/">misc.exhaustive</a></li>
+<li><a href="#/">misc.extreme.pigeonhole</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Найти наименьшее натуральное число $n$, при котором среди любых n
+квадратов целых чисел найдутся два таких, разность которых делится
+на $10$.
+-->
+<!--
+concepts=full-square
+questionType=Find.Min
+--></section><section id="dirihlē-princips" class="slide level2">
+<h2>Dirihlē princips</h2>
+<ul>
+<li>Ievērojam, ka skaitļa kvadrāta atlikums, dalot ar <span class="math inline">\(10\)</span>, atkarīgs tikai no paša skaitļa atlikuma.</li>
+<li>Pārbaudām pilno kvadrātu atlikumus:</li>
+</ul>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+<td>
+7
+</td>
+<td>
+8
+</td>
+<td>
+9
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(x^2\)</span>
+</th>
+<td>
+1
+</td>
+<td>
+4
+</td>
+<td>
+9
+</td>
+<td>
+16
+</td>
+<td>
+25
+</td>
+<td>
+36
+</td>
+<td>
+49
+</td>
+<td>
+64
+</td>
+<td>
+81
+</td>
+<td>
+100
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(x^2\;\mbox{mod}\;10\)</span>
+</th>
+<td>
+1
+</td>
+<td>
+4
+</td>
+<td>
+9
+</td>
+<td>
+6
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+<td>
+9
+</td>
+<td>
+4
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</table>
+<ul>
+<li>Starp šiem atlikumiem ir seši atšķirīgi: <span class="math inline">\(1,4,9,6,5,0\)</span>.</li>
+<li>Ja izvēlas septiņus, tad divi sakritīs (Dirihlē princips).</li>
+</ul>
+</section></section>
+<section id="ee.pk.2014.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2014.7B.1</h1><p>Dotajā reizināšanas piemērā atrast burtiem atbilstošos ciparus, ja dažādiem burtiem atbilst dažādi cipari.</p>
+<figure>
+<img data-src="EE.PK.2014.7B.1.png" alt="rebuss" /><figcaption>rebuss</figcaption>
+</figure>
+<!--
+genre=cryptarithm
+questionType=Find.All
+--></section>
+<section id="ee.pk.2014.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2014.8B.1</h1><p>Uz tāfeles uzrakstīta izteiksme <span class="math inline">\(m(m + n)(m + 3n)\)</span>.</p>
+<ol type="1">
+<li>Vai dotās izteiksmes vērtība vienmēr būs pāru skaitlis, ja <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> ir veseli pozitīvi skaitļi?</li>
+<li><span class="math inline">\(17\)</span>-gadīgā Pille šorīt ievēroja, ka ievietojot skaitļu <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> vietā kaut kādā secībā viņas vecumu un viņas jaunākā brāļa vecumu pilnos gados, tad izteiksmes vērtība būs vienāda ar to gadu, kurā jaunākais brālis iemācījās peldēt. Cik šobrīd gadu jaunākajam Pilles brālim?</li>
+</ol>
+<!--
+genre=word-problem
+questionType=ProveDisprove.ForAll,Find.All
+--></section>
+<section><section id="ee.pk.2014.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2014.10.3</h1><p>Vienādmalu trijstūra virsotnēs ierakstīti naturāli skaitļi <span class="math inline">\(14\)</span>, <span class="math inline">\(20\)</span> un <span class="math inline">\(n\)</span>. Jebkuru divu virsotņu skaitļu reizinājums dalās ar skaitli trešajā virsotnē. Atrast visas iespējamās <span class="math inline">\(n\)</span> vērtības.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">div.common.lcm</a></li>
+<li><a href="#/">div.common.lcm.mult</a></li>
+<li><a href="#/">misc.exhaustive</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+В вершины равностороннего треугольника записаны положительные целые числа 14, 20 и $n$. 
+Произведение чисел любых двух вершин делится на
+число в третьей вершине. Найти все возможные значения числа $n$.
+-->
+<!--
+questionType=Find.All
+--></section><section id="par-mazāko-kopīgo-dalāmo" class="slide level2">
+<h2>Par mazāko kopīgo dalāmo</h2>
+<ul>
+<li>Prasības: <span class="math inline">\(14 \cdot 20\)</span> dalās ar <span class="math inline">\(n\)</span>, <span class="math inline">\(14n\)</span> dalās ar <span class="math inline">\(20\)</span>, <span class="math inline">\(20n\)</span> dalās ar <span class="math inline">\(14\)</span></li>
+<li><span class="math inline">\(n\)</span> ir <span class="math inline">\(280\)</span> dalītājs, vienlaikus <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(2\)</span>, <span class="math inline">\(5\)</span>, <span class="math inline">\(7\)</span>.</li>
+<li>Tātad <span class="math inline">\(n = 2 \cdot 5 \cdot 7 k = 70k\)</span>, kas ir <span class="math inline">\(280\)</span> dalītājs.</li>
+<li>Trīs <span class="math inline">\(n\)</span> vērtības: <span class="math inline">\((70, 140, 280)\)</span>.</li>
+</ul>
+</section></section>
+<section id="ee.pk.2015.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2015.8B.1</h1><p>Skaitli <span class="math inline">\(2015\)</span> var izteikt kā divu tādu naturālu skaitļu summu, no kuriem pirmo skaitli iegūst, ja otrajā skaitlī nodzēš pēdējo ciparu. Atrast visus šādus naturālu skaitļu pārus.</p>
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section>
+<section><section id="ee.pk.2015.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2015.10.3</h1><p>(а) Zināms, ka <span class="math inline">\(x^2 − y^2 = 100\)</span>, kur <span class="math inline">\(x\)</span> и <span class="math inline">\(y\)</span> ir naturāli skaitļi. Atrast izteiksmes <span class="math inline">\(x − y\)</span> mazāko iespējamo vērtību.<br />
+(b) Tas pats jautājums, ja <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> ir veseli skaitļi.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">alg.factorize.sqdiff</a></li>
+<li><a href="#/">mod.parity.cases</a></li>
+<li><a href="#/">misc.exhaustive</a></li>
+<li><a href="#/">alg.linear</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+а) Известно, что $x^2 − y^2 = 100$, где $x$ и $y$ − натуральные числа. Найти
+наименьшее возможное значение выражения $x − y$.  
+б) Тот же вопрос, при условии, что $x$ и $y$ − целые числа
+-->
+<!--
+genre=optimization
+questionType=Find.Min
+--></section><section id="dalīšana-reizinātājos" class="slide level2">
+<h2>Dalīšana reizinātājos</h2>
+<ol type="1">
+<li><span class="math inline">\(x^2 - y^2\)</span> dalās reizinātājos: <span class="math inline">\((x-y)(x+y)\)</span>. Lai iegūtu <span class="math inline">\(100\)</span>, gan <span class="math inline">\(x-y\)</span>, gan <span class="math inline">\(x+y\)</span> ir <span class="math inline">\(100\)</span> dalītāji.</li>
+<li><span class="math inline">\(x-y\)</span> un <span class="math inline">\(x+y\)</span> ir vienāda paritāte; lai reizinājums būtu <span class="math inline">\(100\)</span>, tie abi ir pāru skaitļi.</li>
+<li>Aplūkojam visus gadījumus, kā <span class="math inline">\(100\)</span> var izteikt kā divu pāru skaitļu reizinājumu: <span class="math display">\[2 \cdot 50 = 10 \cdot 10 = (-2) \cdot (-50) = (-10) \cdot (-10)\]</span></li>
+<li>Citi veidi: <span class="math inline">\(1 \cdot 100\)</span>, <span class="math inline">\(4 \cdot 25\)</span> vai <span class="math inline">\(5 \cdot 20\)</span> neder, jo reizinātāju paritātes ir dažādas - neeksistēs veselos skaitļos atrisinājumi lineāru vienādojumu sistēmai <span class="math inline">\(x-y=1\)</span> un <span class="math inline">\(x+y=100\)</span> utml.</li>
+</ol>
+</section></section>
+<section><section id="ee.pk.2015.10.6" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2015.10.6</h1><p>Vai eksistē tāds naturāls skaitlis <span class="math inline">\(n\)</span>, ka vairāk nekā pusei veselo skaitļu no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(n\)</span> ciparu summa ir pāru skaitlis?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">seq.define</a></li>
+<li><a href="#/">misc.experiment</a></li>
+<li><a href="#/">misc.induction</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Существует ли такое положительное целое число $n$, что у более половины
+из целых чисел от $1$ до $n$ сумма цифр чётна?
+-->
+<!--
+concepts=sum-of-digits
+questionType=ProveDisprove.Exists
+--></section><section id="eksperimentēšana" class="slide level2">
+<h2>Eksperimentēšana</h2>
+<p>Definējam funkcijas:</p>
+<ul>
+<li><span class="math inline">\(N(n)\)</span> - cik daudziem skaitļiem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(n\)</span> ciparu summa ir nepāru skaitlis</li>
+<li><span class="math inline">\(P(n)\)</span> - cik daudziem skaitļiem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(n\)</span> ciparu summa ir pāru skaitlis</li>
+<li><span class="math inline">\(f(n) = N(n) - P(n)\)</span> - par cik nepāru ciparu summu bija vairāk nekā pāru ciparu summu skaitļiem intervālā <span class="math inline">\([1;n]\)</span>.</li>
+</ul>
+<p><strong>Apgalvojums:</strong> Visiem <span class="math inline">\(n\)</span> ir spēkā <span class="math inline">\(f(n) \geq 0\)</span>. T.i. vienmēr <span class="math inline">\(N(n) \geq P(n)\)</span>.</p>
+</section><section id="induktīvā-pāreja" class="slide level2">
+<h2>Induktīvā pāreja</h2>
+<p>Aplūkojam <span class="math inline">\(f(n)\)</span> vērtības dažiem pirmajiem <span class="math inline">\(n\)</span>:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(n\)</span>
+</th>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+</tr>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(f(n)\)</span>
+</th>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</tr>
+</table>
+<p>Tālāk - tiem <span class="math inline">\(n\)</span>, kas dalās ar <span class="math inline">\(10\)</span>.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(n\)</span>
+</th>
+<td>
+10
+</td>
+<td>
+20
+</td>
+<td>
+30
+</td>
+<td>
+40
+</td>
+</tr>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(f(n)\)</span>
+</th>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+</tr>
+</tr>
+</table>
+</section></section>
+<section id="ee.pk.2016.7b.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2016.7B.3</h1><p>Par četriem veseliem skaitļiem <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> un <span class="math inline">\(d\)</span> zināms, ka</p>
+<ol type="1">
+<li>Reizinājums <span class="math inline">\(abc\)</span> dalās ar <span class="math inline">\(9\)</span>, bet ne ar <span class="math inline">\(27\)</span>.</li>
+<li>Reizinājums <span class="math inline">\(bcd\)</span> dalās ar <span class="math inline">\(3\)</span>, bet ne ar <span class="math inline">\(9\)</span>.</li>
+<li>Reizinājums <span class="math inline">\(acd\)</span> dalās ar <span class="math inline">\(9\)</span>, bet ne ar <span class="math inline">\(27\)</span>.</li>
+</ol>
+<p>Kuri no dotajiem četriem skaitļiem <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> un <span class="math inline">\(d\)</span> dalās ar <span class="math inline">\(3\)</span>?</p>
+<!--
+questionType=Find.All
+--></section>
+<section id="ee.pk.2016.8b.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2016.8B.2</h1><p>Uzņēmējam bankas kontā bija <span class="math inline">\(x\)</span> eiro un <span class="math inline">\(y\)</span> eirocenti, turklāt <span class="math inline">\(x\)</span> dalījās ar <span class="math inline">\(7\)</span>, bet <span class="math inline">\(y\)</span> dalījās ar <span class="math inline">\(3\)</span>. Pēc tam, kad viņš samaksāja par pirkumu <span class="math inline">\(77\)</span> eiro un <span class="math inline">\(22\)</span> eirocentus, kontā viņam palika <span class="math inline">\(y\)</span> eiro un <span class="math inline">\(x\)</span> centi. Cik pavisam naudas viņam tagad palicis bankas kontā?</p>
+<!--
+questionType=Find.All
+--></section>
+<section><section id="ee.pk.2016.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2016.10.3</h1><p>Vai var atrast tādus <span class="math inline">\(n\)</span> naturālus skaitļus, lai to summa būtu vienāda ar to mazāko kopīgo dalāmo, ja a) <span class="math inline">\(n = 2\)</span>?<br />
+b) <span class="math inline">\(n = 3\)</span>?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">div.alg</a></li>
+<li><a href="#/">div.common.lcm.frac</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Можно ли подобрать такие $n$ положительных целых чисел, 
+чтобы их сумма равнялась их же наименьшему общему кратному, если
+а) $n = 2$?  
+б) $n = 3$?
+-->
+<!--
+concepts=gcd
+questionType=ProveDisprove.Exists
+--></section><section id="pārtulkojam-apgalvojumu-algebriski" class="slide level2">
+<h2>Pārtulkojam apgalvojumu algebriski</h2>
+<p><strong>Gadījums n=2:</strong></p>
+<ul>
+<li>Apzīmējam abu skaitļu <span class="math inline">\(a,b\)</span> mazāko kopīgo dalāmo ar <span class="math inline">\(m\)</span>.</li>
+<li>Tad <span class="math inline">\(m = xa\)</span> un <span class="math inline">\(m = yb\)</span>. Ja nu <span class="math inline">\(m=a+b\)</span>, tad <span class="math inline">\(m = m/x+m/y\)</span> jeb <span class="math display">\[1 = \frac{1}{x} + \frac{1}{y}.\]</span></li>
+</ul>
+<p>Šim vienādojumam nav atrisinājumu veselos skaitļos <span class="math inline">\(x,y\)</span>, jo nevar izvēlēties <span class="math inline">\(x=y=2\)</span> (šādā gadījumā <span class="math inline">\(a=b\)</span> un to MKD nebūs divreiz lielāks).</p>
+</section><section id="gadījums-n3" class="slide level2">
+<h2>Gadījums n=3</h2>
+<ul>
+<li>Līdzīgi kā iepriekš apzīmējam <span class="math inline">\(m=\mbox{MKD}(a,b,c)\)</span>.</li>
+<li>Apzīmējam <span class="math inline">\(m=xa\)</span>, <span class="math inline">\(m=yb\)</span>, <span class="math inline">\(m=zc\)</span>.</li>
+<li>Tad <span class="math inline">\(m=a+b+c\)</span> ir ekvivalents vienādojumam:</li>
+</ul>
+<p><span class="math display">\[1 = \frac{1}{x} + \frac{1}{y} + \frac{1}{z}.\]</span></p>
+<ul>
+<li>Var izvēlēties <span class="math inline">\(x=2\)</span>, <span class="math inline">\(y=3\)</span> un <span class="math inline">\(z=6\)</span>. Ja <span class="math inline">\(m=30\)</span>, tad <span class="math inline">\((a,b,c)=(15,10,5)\)</span>.<br />
+</li>
+<li>Šis piemērs der, jo <span class="math inline">\(\mbox{MKD}(15,10,5)=30\)</span> un <span class="math inline">\(15+10+5=30\)</span>.</li>
+</ul>
+</section></section>
+<section><section id="ee.pk.2016.10.4" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2016.10.4</h1><p>Vai eksistē tāds vienādojuma <span class="math inline">\(x^2 + y^2 + z^2 + w^2 = 3 + xy + yz + zw\)</span>, atrisinājums, kuram <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> un <span class="math inline">\(w\)</span> ir dažādi veseli skaitļi?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">alg.ineq.fullsquare</a></li>
+<li><a href="#/">alg.ineq.equations</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Существует ли такое решение уравнения
+$x^2 + y^2 + z^2 + w^2 = 3 + xy + y z + zw$,
+при котором $x$, $y$, $z$ и $w$ различные целые числа?
+-->
+<!--
+genre=integer-equation
+questionType=ProveDisprove.Exists
+--></section><section id="algebriski-pārveidojumi-nevienādībai" class="slide level2">
+<h2>Algebriski pārveidojumi nevienādībai</h2>
+<p><span class="math display">\[2x^2 + 2y^2 + 2z^2 + 2w^2 = 6 + 2xy + 2yz + 2zw\]</span> <span class="math display">\[x^2+(x^2 - 2xy + y^2) + \ldots + (z^2 - 2zw + w^2) + w^2 = 6.\]</span> <span class="math display">\[x^2 + (x - y)^2 + (y-z)^2 + (z-w)^2 + w^2 = 6.\]</span></p>
+<p>Četru vai piecu nenulles pilnu kvadrātu summa nevar būt <span class="math inline">\(6\)</span>, jo neviens no šiem kvadrātiem nevar būt <span class="math inline">\(2^2\)</span> vai lielāks.</p>
+</section></section>
+<section id="ee.pk.2017.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2017.7B.1</h1><p>Vienā virknē uzrakstīti <span class="math inline">\(7\)</span> naturāli skaitļi, no kuriem pirmais ir <span class="math inline">\(a\)</span> un otrais <span class="math inline">\(b\)</span>. Katru nākamo skaitli šajā virknē iegūst, saskaitot divus skaitļus, kuri ir tieši pirms viņa.</p>
+<ol type="1">
+<li>Atrast pēdējo skaitli virknē, izsakot to ar <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>.</li>
+<li>Atrast lielāko iespējamo <span class="math inline">\(a\)</span> vērtību, ja zināms, ka virknē pēdējais skaitlis ir <span class="math inline">\(2017\)</span>.</li>
+</ol>
+<!--
+concept=recurrent-sequence
+questionType=Find.All,Find.Max
+--></section>
+<section id="ee.pk.2017.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2017.8B.1</h1><p>Daļas <span class="math inline">\(\frac{1}{2}\)</span> skaitītājam atļauts pieskaitīt jebkuru skaitu divnieku, bet saucējam atļauts pieskaitīt jebkuru skaitu trijnieku. Vai iespējams rezultātā iegūt daļu, kas vienāda ar</p>
+<ol type="1">
+<li>skaitli <span class="math inline">\(\frac{3}{4}\)</span>?</li>
+<li>skaitli <span class="math inline">\(\frac{5}{6}\)</span>?</li>
+</ol>
+<!--
+questionType=ProveDisprove.Exists
+--></section>
+<section><section id="ee.pk.2017.10.2" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2017.10.2</h1><p>Atrast visus veselu skaitļu pārus <span class="math inline">\((x,y)\)</span>, kuriem <span class="math inline">\(324^{x+y} = 2^{x−y} \cdot 3^{x−3} \cdot 4^{y−4}\)</span>.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">div.pfactor.algorithm</a></li>
+<li><a href="#/">alg.powers.prod</a></li>
+<li><a href="#/">div.pfactor.expsystem</a></li>
+<li><a href="#/">alg.linear</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Найти все пары целых чисел $(x,y)$, при которых
+$324^{x+y} = 2^{x−y} \cdot 3^{x−3} \cdot 4^{y−4}$.
+-->
+<!--
+genre=integer-equation
+questionType=Find.All
+--></section><section id="dalām-pirmreizinātājos" class="slide level2">
+<h2>Dalām pirmreizinātājos</h2>
+<p>Abās vienādojuma pusēs ir daži salikti skaitļi - <span class="math inline">\(324\)</span> un <span class="math inline">\(4\)</span>.</p>
+<ol type="1">
+<li>Sadalām skaitli <span class="math inline">\(324\)</span> pirmreizinātājos:<br />
+<span class="math inline">\(324=18 \cdot 18=(2 \cdot 3^2)^2 = 2^2 \cdot 3^4.\)</span></li>
+<li>Sadalām arī <span class="math inline">\(4\)</span> pirmereizinātājos:<br />
+<span class="math inline">\(4 = 2^2\)</span>.</li>
+</ol>
+</section><section id="pielīdzinām-pirmskaitļu-kāpinātājus" class="slide level2">
+<h2>Pielīdzinām pirmskaitļu kāpinātājus</h2>
+<p>Pārrakstām uzdevuma vienādojumu: <span class="math display">\[(2^2 \cdot 3^4)^{x+y} = 2^{x−y} \cdot 3^{x−3} \cdot (2^2)^{y−4}\]</span> <span class="math display">\[2^{2(x+y)} \cdot 3^{4(x+y)} = 2^{x−y} \cdot 3^{x−3} \cdot 2^{2(y−4)}\]</span></p>
+<p>Pielīdzinām pirmskaitļu pakāpes:</p>
+<p><span class="math display">\[\left\{ \begin{array}{l}
+2(x+y) = (x-y) + 2(y-4) \\
+4(x+y) = x-3
+\end{array}
+\right.\]</span></p>
+</section><section id="risinām-lineāru-sistēmu" class="slide level2">
+<h2>Risinām lineāru sistēmu</h2>
+<p><span class="math display">\[\left\{ \begin{array}{l}
+x+y = -8 \\
+3x+4y = -3
+\end{array}
+\right.\]</span></p>
+<p>No pirmā vienādojuma izsaka <span class="math inline">\(y=-8-x\)</span> un ievieto otrajā:</p>
+<p><span class="math inline">\(3x + 4(-8-x) = -32-x = -3\)</span>. Tad <span class="math inline">\((x,y)=(-29,21)\)</span>.</p>
+</section></section>
+<section><section id="ee.pk.2017.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2017.10.3</h1><p>Pierādīt, ka atradīsies bezgalīgi daudz četrinieku, ko veido dažādi naturāli skaitļi, kuriem <span class="math display">\[\frac{1}{a} - \frac{1}{b} =\frac{1}{b} - \frac{1}{c} =\frac{1}{c} - \frac{1}{d}.\]</span></p>
+<p><small></p>
+<ul>
+<li><a href="#/">misc.symmetry</a></li>
+<li><a href="#/">misc.experiment</a></li>
+<li><a href="#/">seq.arithm.expr</a></li>
+<li><a href="#/">alg.sums.linear</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Доказать, что найдётся бесконечно много четвёрок различных 
+целых положительных чисел $(a, b, c, d)$, при которых
+$$\frac{1}{a} - \frac{1}{b} =\frac{1}{b} - \frac{1}{c} =\frac{1}{c} - \frac{1}{d}.$$
+-->
+<!--
+questionType=Prove.Other
+--></section><section id="papildu-pieņēmumi-simetrija" class="slide level2">
+<h2>Papildu pieņēmumi (simetrija)</h2>
+<p>Tā kā visi skaitļi ir dažādi, tad varam ieviest apzīmējumus tā, ka <span class="math inline">\(\frac{1}{a} &gt; \frac{1}{b} &gt; \frac{1}{c} &gt; \frac{1}{d}\)</span> un visas starpības ir pozitīvas.</p>
+<p>Ja starpības patiesībā ir negatīvas, tad aizstājam <span class="math inline">\((a,b,c,d)\)</span> ar pretējā secībā pārrakstītu skaitļu četrinieku <span class="math inline">\((d,c,b,a)\)</span>.</p>
+<p>Varam tātad pieņemt, ka <span class="math inline">\(a &lt; b &lt; c &lt; d\)</span> un tad tiem apgrieztie skaitļi veido dilstošu aritmētisku progresiju.</p>
+</section><section id="sākam-ievietot-vērtības-skaitlim-a" class="slide level2">
+<h2>Sākam ievietot vērtības skaitlim a</h2>
+<ul>
+<li>Ja <span class="math inline">\(a=2\)</span>, tad nesanāk, jo pat tuvākā starpība: <span class="math inline">\(\frac{1}{2}-\frac{1}{3}\)</span> jeb aritmētiskās progresijas diference ir <span class="math inline">\(1/6\)</span> un no <span class="math inline">\(\frac{1}{2}\)</span> to nevar atņemt trīsreiz, lai rezultāts joprojām būtu pozitīvs.</li>
+<li>Ja <span class="math inline">\(a=3\)</span>, tad sanāk progresija: <span class="math display">\[\frac{1}{3},\frac{1}{4},\frac{1}{6},\frac{1}{12}\]</span></li>
+</ul>
+</section><section id="izmantojam-linearitāti" class="slide level2">
+<h2>Izmantojam linearitāti</h2>
+<p>Eksistējošu atrisinājumu var piereizināt ar vienu un to pašu skaitli <span class="math inline">\(m\)</span>:</p>
+<p>No <span class="math display">\[\frac{1}{a} - \frac{1}{b} =\frac{1}{b} - \frac{1}{c} =\frac{1}{c} - \frac{1}{d}.\]</span> izriet, ka arī <span class="math display">\[\frac{1}{ma} - \frac{1}{mb} =\frac{1}{mb} - \frac{1}{mc} =\frac{1}{mc} - \frac{1}{md}.\]</span></p>
+</section><section id="atbildes" class="slide level2">
+<h2>Atbildes</h2>
+<p>Tātad bez <span class="math inline">\((a,b,c,d)=(3,4,6,12)\)</span> var ņemt arī <span class="math inline">\((a,b,c,d)=(6,8,12,24)\)</span>, utt.</p>
+<p>Eksistē arī citādas atbildes, kuras uz <span class="math inline">\((3,4,6,12)\)</span> vai tā daudzkārtņiem reducēt nevar.</p>
+</section></section>
+<section><section id="ee.pk.2018.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2018.10.3</h1><p>Mari iedomājās naturālu skaitli. Pareizinot šo skaitli ar <span class="math inline">\(4\)</span>, viņa ieguva kādu trīsciparu skaitli. Bet, pareizinot sākotnējo skaitli ar <span class="math inline">\(3\)</span> un pārceļot rezultāta pēdējo ciparu uz sākumu, negaidīti ieguva tādu pašu trīsciparu skaitli. Atrast visas iespējamās vērtības Mari iedomātajam skaitlim.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">alg.equation</a></li>
+<li><a href="#/">notation.dec.combine.poly</a></li>
+<li><a href="#/">misc.exhaustive</a></li>
+</ul>
+<p></small></p>
+<!--
+Маша задумала одно натуральное число. Умножив это число на 4, 
+она получила какое-то трёхзначное число. А когда она умножила первоначальное 
+число на 3 и переставила последнюю цифру результата в его начало,
+то неожиданно получила то же самое трёхзначное число. 
+Найти все возможные значения задуманного Машей числа.
+-->
+<!--
+genre=digit-manipulation
+questionType=Find.All
+--></section><section id="vienādojuma-sastādīšana" class="slide level2">
+<h2>Vienādojuma sastādīšana</h2>
+<ul>
+<li><span class="math inline">\(x\)</span> … tāds bija Mari iedomātais skaitlis.</li>
+<li>Tad <span class="math inline">\(3x=\overline{abc}\)</span> un <span class="math inline">\(4x=\overline{cab}\)</span>.</li>
+<li>No desmitkāršota <span class="math inline">\(4x=\overline{cab}\)</span> atņemsim <span class="math inline">\(3x=\overline{abc}\)</span> (lai <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> noīsinātos).</li>
+</ul>
+<p><span class="math display">\[40x - 3x = \overline{cab0}-\overline{abc}=\overline{c000} - c = 999\cdot{}c.\]</span></p>
+<p>Iegūstam, ka <span class="math inline">\(37x = 999c\)</span> jeb <span class="math inline">\(x = 27c\)</span>, kur <span class="math inline">\(c\)</span> ir cipars.</p>
+</section><section id="gadījumu-pārlase" class="slide level2">
+<h2>Gadījumu pārlase</h2>
+<ul>
+<li>Cipars <span class="math inline">\(c \neq 0\)</span>, jo citādi <span class="math inline">\(\overline{cab}\)</span> nebūtu trīsciparu.</li>
+<li>Cipars <span class="math inline">\(c \neq 1\)</span>, jo <span class="math inline">\(3 \cdot 27 = 81\)</span> nav trīsciparu.</li>
+<li>Astoņas citas vērtības <span class="math inline">\(c=2,3,4,5,6,7,8,9\)</span> der.</li>
+</ul>
+<p>Apkopojam tabulā <span class="math inline">\(x=27c\)</span>, <span class="math inline">\(3x\)</span> un <span class="math inline">\(4x\)</span>:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<td>
+54
+</td>
+<td>
+81
+</td>
+<td>
+108
+</td>
+<td>
+135
+</td>
+<td>
+162
+</td>
+<td>
+189
+</td>
+<td>
+216
+</td>
+<td>
+243
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(3x\)</span>
+</th>
+<td>
+162
+</td>
+<td>
+243
+</td>
+<td>
+324
+</td>
+<td>
+405
+</td>
+<td>
+486
+</td>
+<td>
+567
+</td>
+<td>
+648
+</td>
+<td>
+729
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(4x\)</span>
+</th>
+<td>
+216
+</td>
+<td>
+324
+</td>
+<td>
+432
+</td>
+<td>
+540
+</td>
+<td>
+648
+</td>
+<td>
+756
+</td>
+<td>
+864
+</td>
+<td>
+972
+</td>
+</tr>
+</table>
+<p>Pēdējā rindiņā skaitļi iegūstami, pārceļot priekšpēdējās rindiņas skaitlim pēdējo ciparu uz sākumu.</p>
+</section></section>
+<section id="ee.pk.2019.7b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2019.7B.1</h1><p>Sven’s uzrakstījis burtnīcā skaitļus <span class="math inline">\(2, 3, 5, 7, 8, 10, 11\)</span> tādā secībā, ka pirmo četru skaitļu summa vienāda ar pēdējo četru skaitļu summu. Kurš skaitlis var būt uzrakstīts vidū? Atrast visas iespējas.</p>
+<!--
+ru=
+Саша записывает числа $2, 3, 5, 7, 8, 10, 11$ в тетрадку в 
+таком порядке, что сумма первых четырёх чисел равна сумме 
+последних четырёх чисел. Найти все возможности, 
+какое число может быть записано посередине.
+-->
+<!--
+questionType=Find.All
+--></section>
+<section id="ee.pk.2019.8b.1" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2019.8B.1</h1><p>Esta izvēlējās divus naturālus skaitļus. Vienu no tiem viņa pareizināja ar <span class="math inline">\(20\)</span>, bet otru – ar <span class="math inline">\(19\)</span>. Iegūto reizinājumu summa vienāda ar <span class="math inline">\(292\)</span>. Atrast visas iespējas, kādi var būt Estas izvēlētie skaitļi.</p>
+<!--
+Элла выбрала два натуральных числа. Одно из них она умножила на $20$,
+а другое – на $19$. Сумма полученных произведений равна $292$. Найти все
+возможности, чему могут быть равны два задуманных числа Эллы.
+-->
+<!--
+genre=integer-equation
+questionType=Find.All
+--></section>
+<section><section id="ee.pk.2019.10.3" class="title-slide slide level1"><h1><lo-sample/> EE.PK.2019.10.3</h1><p>Cik ir tādu veselu negatīvu skaitļu pāru <span class="math inline">\((a,b)\)</span>, kas apmierina vienādību <span class="math inline">\(22a + 15b = 2019\)</span>?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">misc.extreme.param</a></li>
+<li><a href="#/">mod.expr.sum</a></li>
+<li><a href="#/">misc.experiment</a></li>
+<li><a href="#/">seq.arithm.mod.gaps</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Сколько найдётся пар неотрицательных целых чисел $(a, b)$, 
+удовлетворяющих равенству $22a + 15b = 2019$?
+-->
+<!--
+genre=integer-equation
+concepts=linear-expression
+questionType=Find.Count
+--></section><section id="lielākā-iespējamā-a-vērtība" class="slide level2">
+<h2>Lielākā iespējamā a vērtība</h2>
+<p>Iedomāsimies, ka vispirms vēlamies atrast lielāko iespējamo <span class="math inline">\(a\)</span> un mazāko <span class="math inline">\(b\)</span>. T.i. cik reizes saskaitāmo <span class="math inline">\(22\)</span> var iekļaut garajā summā, kas ir <span class="math inline">\(2019\)</span>.</p>
+<p><span class="math display">\[2019:22\;=\;91,\,\mbox{Atl.}17\]</span></p>
+<ul>
+<li>Acīmredzot, <span class="math inline">\(17\)</span> nedalās ar <span class="math inline">\(15\)</span>, t.i. pie <span class="math inline">\(a=91\)</span> vienādojumu atrisināt nevar.</li>
+<li>Pakāpeniski samazinām <span class="math inline">\(a\)</span> par <span class="math inline">\(k=1,2,\ldots\)</span>.</li>
+<li>Gaidām brīdi, kad <span class="math inline">\(17+22k\)</span> jeb <span class="math inline">\(17+7k\)</span> dalās ar <span class="math inline">\(15\)</span>.</li>
+<li>Pie <span class="math inline">\(k=4\)</span> izteiksme <span class="math inline">\(17 + 7\cdot{}4=17+28=45\)</span> dalās ar <span class="math inline">\(15\)</span>.</li>
+<li>Tātad, <span class="math inline">\(a=91\)</span> jāsamazina par <span class="math inline">\(4\)</span>, t.i. der <span class="math inline">\(a=87\)</span>.</li>
+</ul>
+</section><section id="pretējas-aritmētiskas-progresijas" class="slide level2">
+<h2>2 pretējas aritmētiskas progresijas</h2>
+<p>Pirmais atrisinājums ir <span class="math inline">\((a,b)=(87,7)\)</span>, jo <span class="math display">\[87\cdot{}22+7\cdot{}15=2019\]</span>.</p>
+<ul>
+<li>Aritmētiskajā progresijā <span class="math inline">\(c_k=2019-15k\)</span> katrs <span class="math inline">\(22\)</span>-tais loceklis dalās ar <span class="math inline">\(22\)</span>, jo diference <span class="math inline">\(-15\)</span> ir savstarpējs pirmskaitlis ar <span class="math inline">\(22\)</span>.</li>
+<li>Tātad, der <span class="math inline">\(b=7,29,51,\ldots\)</span> savukārt <span class="math inline">\(a\)</span> vērtībai (ja <span class="math inline">\(b\)</span> pieaug par <span class="math inline">\(22\)</span>) ir jāsamazinās par <span class="math inline">\(15\)</span>, lai summa nemainītos.</li>
+<li>Iegūstam atrisinājumus <span class="math inline">\((a;b)\)</span>: <span class="math display">\[(87;7),\;(72;29),\;(57;51),\;(42;73),\;(27;95),\;(12;117).\]</span></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

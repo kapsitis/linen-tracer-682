@@ -1,0 +1,77 @@
+[
+    {
+        "dir": "numtheory-ee-pk",
+        "id": "EE.PK",
+        "title": "Igaunijas reģionu kārta"
+    },
+    {
+        "dir": "numtheory-ee-lo",
+        "id": "EE.LO",
+        "title": "Igaunijas gala kārta"
+    },
+    {
+        "dir": "numtheory-ee-lvs-lvt",
+        "id": "EE.LVS/LVT",
+        "title": "Igaunijas rudens/ziemas konkursi"
+    },
+    {
+        "dir": "numtheory-lv-no",
+        "id": "LV.NO",
+        "title": "Latvijas novadu posms"
+    },
+    {
+        "dir": "numtheory-lv-vo",
+        "id": "LV.VO",
+        "title": "Latvijas valsts posms"
+    },
+    {
+        "dir": "numtheory-lv-ao",
+        "id": "LV.AO",
+        "title": "Latvijas atklātā olimpiāde"
+    },
+    {
+        "dir": "numtheory-lt-lkmmo",
+        "id": "LT.LKMMO",
+        "title": "Lietuvas komandu olimpiāde"
+    },
+    {
+        "dir": "numtheory-lt-ldk",
+        "id": "LT.LDK",
+        "title": "Sacensības Lietuvas Lielkņazistes godam"
+    },
+    {
+        "dir": "numtheory-lt-raj",
+        "id": "LT.RAJ",
+        "title": "Lietuvas rajona/pilsētas posms"
+    },
+    {
+        "dir": "numtheory-lt-lmmo",
+        "id": "LT.LMMO",
+        "title": "Lietuvas valsts posms"
+    },
+    {
+        "dir": "numtheory-lt-vumif",
+        "id": "LT.VUMIF",
+        "title": "Viļņas universitātes olimpiāde"
+    },
+    {
+        "dir":"numtheory-bbk-p1",
+        "id":"BBK2012.P1",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 1.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p2",
+        "id":"BBK2012.P2",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 2.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p3",
+        "id":"BBK2012.P3",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 3.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p4",
+        "id":"BBK2012.P4",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 4.nodaļa"
+    }
+]

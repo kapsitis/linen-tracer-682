@@ -1,0 +1,7577 @@
+[
+    {
+        "concepts": [
+            "divisibility",
+            "decimal-notation"
+        ],
+        "genre": [],
+        "id": "EE.PK.1994.7B.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.divides",
+            "notation.divrules.pow2or5.divides"
+        ]
+    },
+    {
+        "concepts": [
+            "integer-polynomials",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.1994.8B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "remainder"
+        ],
+        "genre": [],
+        "id": "EE.PK.1995.7B.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "EE.PK.1995.8B.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.1996.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.1996.8B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "proportion"
+        ],
+        "genre": [],
+        "id": "EE.PK.1996.9B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.PK.1997.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "combinations",
+            "primes",
+            "remainder",
+            "square"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.1997.8B.1",
+        "qtypes": [
+            "Find.All",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "combinations",
+            "primes",
+            "remainder",
+            "square"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.1997.8B.1",
+        "qtypes": [
+            "Find.All",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.1998.7B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [],
+        "id": "EE.PK.1998.7B.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.1998.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.PK.1998.9B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "EE.PK.1999.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.1999.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.1999.8B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square",
+            "decimal-notation"
+        ],
+        "genre": [],
+        "id": "EE.PK.1999.9B.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2000.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "monotonic-sequence"
+        ],
+        "genre": [
+            "string-counting"
+        ],
+        "id": "EE.PK.2000.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "system-of-equations"
+        ],
+        "genre": [],
+        "id": "EE.PK.2000.9B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.PK.2001.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "factorial"
+        ],
+        "genre": [
+            "procedure"
+        ],
+        "id": "EE.PK.2001.8B.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2001.9B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility",
+            "power",
+            "quadratic-equation"
+        ],
+        "genre": [],
+        "id": "EE.PK.2001.9B.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2002.7B.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [],
+        "id": "EE.PK.2002.8B.1",
+        "qtypes": [
+            "Find.All",
+            "NoteOnProof"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2003.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.PK.2003.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2003.8B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.PK.2004.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2004.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2004.8B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square",
+            "primes",
+            "multiple"
+        ],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "EE.PK.2005.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square",
+            "sum-of-digits",
+            "remainder",
+            "divisibility"
+        ],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "EE.PK.2005.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "string-counting"
+        ],
+        "id": "EE.PK.2006.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "combinations"
+        ],
+        "genre": [
+            "string-counting"
+        ],
+        "id": "EE.PK.2006.8B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2007.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2007.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2008.7B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "geometric-progression"
+        ],
+        "genre": [],
+        "id": "EE.PK.2008.8B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2009.7B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "combinations"
+        ],
+        "genre": [],
+        "id": "EE.PK.2009.8B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2010.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2010.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2010.10.5",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.beginatend",
+            "misc.experiment",
+            "notation.algor.square5",
+            "notation.dec.numdigits.square",
+            "alg.factorize.sqdiff"
+        ]
+    },
+    {
+        "concepts": [
+            "monotonic-sequence",
+            "divisibility",
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "EE.PK.2011.7B.1",
+        "qtypes": [
+            "Find.Min",
+            "Find.Max",
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "decimal-notation"
+        ],
+        "genre": [],
+        "id": "EE.PK.2011.8B.3",
+        "qtypes": [
+            "Find.All",
+            "Find.Min",
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "remainder"
+        ],
+        "genre": [],
+        "id": "EE.PK.2011.10.3",
+        "qtypes": [
+            "Prove.ForAll",
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.rem.expr",
+            "mod.rem.values"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "cryptarithm"
+        ],
+        "id": "EE.PK.2012.7B.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.2012.8B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.PK.2012.10.4",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.2or5or10.divides",
+            "mod.parity.cases"
+        ]
+    },
+    {
+        "concepts": [
+            "primes",
+            "inequality",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.2013.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.2013.10.3",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.expr.square",
+            "misc.exhaustive",
+            "misc.extreme.pigeonhole"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "cryptarithm"
+        ],
+        "id": "EE.PK.2014.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.PK.2014.8B.1",
+        "qtypes": [
+            "ProveDisprove.ForAll",
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.2014.10.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.common.lcm",
+            "div.common.lcm.mult",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2015.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "optimization"
+        ],
+        "id": "EE.PK.2015.10.3",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.factorize.sqdiff",
+            "mod.parity.cases",
+            "misc.exhaustive",
+            "alg.linear"
+        ]
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "EE.PK.2015.10.6",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "seq.define",
+            "misc.experiment",
+            "misc.induction"
+        ]
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.2016.7B.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "EE.PK.2016.8B.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm"
+        ],
+        "genre": [],
+        "id": "EE.PK.2016.10.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.alg",
+            "div.common.lcm.frac"
+        ]
+    },
+    {
+        "concepts": [
+            "square"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.PK.2016.10.4",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.ineq.fullsquare",
+            "alg.ineq.equations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.PK.2017.7B.1",
+        "qtypes": [
+            "Find.All",
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.PK.2017.8B.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.PK.2017.10.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.pfactor.algorithm",
+            "alg.powers.prod",
+            "div.pfactor.expsystem",
+            "alg.linear"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.PK.2017.10.3",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.symmetry",
+            "misc.experiment",
+            "seq.arithm.expr",
+            "alg.sums.linear"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.PK.2018.10.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.equation",
+            "notation.dec.combine.poly",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.PK.2019.7B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.PK.2019.8B.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "linear-expression"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.PK.2019.10.3",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.extreme.param",
+            "mod.expr.sum",
+            "misc.experiment",
+            "seq.arithm.mod.gaps"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2010.10.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.ineq.equations",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2011.10.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square-root",
+            "arithmetic-mean",
+            "geometric-mean"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LO.2012.10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "factorial"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2012.10.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power-sums"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2013.10.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.cases.cubes",
+            "mod.exponent.small",
+            "notation.divrules.3or9.remainder",
+            "mod.expr.diff",
+            "mod.equation.contradict"
+        ]
+    },
+    {
+        "concepts": [
+            "floor"
+        ],
+        "genre": [],
+        "id": "EE.LO.2014.10.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "game"
+        ],
+        "id": "EE.LO.2014.10.5",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "decimal-fractions"
+        ],
+        "genre": [],
+        "id": "EE.LO.2015.10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "sequence-properties"
+        ],
+        "id": "EE.LO.2015.10.4",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LO.2016.10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2016.10.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "coprimes"
+        ],
+        "genre": [],
+        "id": "EE.LO.2017.10.1",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "game"
+        ],
+        "id": "EE.LO.2017.10.5",
+        "qtypes": [
+            "Algorithm",
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2018.10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LO.2019.10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.factorize",
+            "div.common.gcd.subsequent"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVS.2009.noorem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.powers.nested",
+            "seq.gaps.squares",
+            "alg.ineq.equations",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2009.vanem.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.exponent.small",
+            "mod.equation.contradict"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2009.noorem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2009.noorem.5",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "sequence-properties"
+        ],
+        "id": "EE.LVT.2009.vanem.3",
+        "qtypes": [
+            "ProveDisprove.ForAll",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2010.noorem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "factorial"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2010.noorem.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power-sums"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2010.vanem.1",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "integer-polynomial"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2010.vanem.2",
+        "qtypes": [
+            "ProveDisprove.Exists",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2010.noorem.1",
+        "qtypes": [
+            "Find.All",
+            "Find.Min",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2010.noorem.1",
+        "qtypes": [
+            "Find.All",
+            "Find.Min",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2010.vanem.5",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVS.2011.noorem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "valuations"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2011.vanem.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2011.noorem.1",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-geometry"
+        ],
+        "id": "EE.LVT.2011.noorem.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2011.vanem.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2011.vanem.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2012.noorem.1",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "coprimes"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2012.noorem.2",
+        "qtypes": [
+            "Prove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "quadratic-equation"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2012.noorem.3",
+        "qtypes": [
+            "ProveDisprove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2012.vanem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "remainder"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2012.vanem.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "factorial"
+        ],
+        "genre": [
+            "proving-inequality"
+        ],
+        "id": "EE.LVS.2012.vanem.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "game"
+        ],
+        "id": "EE.LVT.2012.noorem.1",
+        "qtypes": [
+            "ProveDisprove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2012.noorem.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2012.vanem.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2012.vanem.2",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "functional-equation"
+        ],
+        "id": "EE.LVT.2012.vanem.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2013.noorem.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "cryptarithm"
+        ],
+        "id": "EE.LVS.2013.noorem.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2013.noorem.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square-root"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2013.vanem.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2013.vanem.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "string-counting"
+        ],
+        "id": "EE.LVT.2013.noorem.1",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2013.noorem.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2013.vanem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "integer-polynomials"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2013.vanem.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVS.2014.noorem.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVS.2014.noorem.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "proving-inequality"
+        ],
+        "id": "EE.LVS.2014.noorem.4",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVS.2014.vanem.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2014.noorem.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "decimal-manipulation"
+        ],
+        "id": "EE.LVT.2014.noorem.2",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2014.noorem.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2014.vanem.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "optimization"
+        ],
+        "id": "EE.LVT.2014.vanem.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2015.noorem.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2015.noorem.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVS.2015.noorem.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2015.noorem.6",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2015.vanem.1",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "remainder"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2015.vanem.3",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2015.noorem.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2015.noorem.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2015.vanem.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "prove-inequality"
+        ],
+        "id": "EE.LVT.2015.vanem.4",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2016.noorem.2",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "coprimes"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2016.noorem.3",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "magic-configuration"
+        ],
+        "id": "EE.LVS.2016.noorem.6",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "floor"
+        ],
+        "genre": [
+            "prove-inequality"
+        ],
+        "id": "EE.LVS.2016.vanem.2",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "game"
+        ],
+        "id": "EE.LVS.2016.vanem.3",
+        "qtypes": [
+            "Algorithm",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [
+            "magic-configuration"
+        ],
+        "id": "EE.LVS.2016.vanem.6",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2016.noorem.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2016.noorem.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "parity"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2016.noorem.4",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "magic-configuration"
+        ],
+        "id": "EE.LVT.2016.vanem.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "cryptarithm"
+        ],
+        "id": "EE.LVT.2016.vanem.2",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2016.vanem.3",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "valuations"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2017.noorem.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "cryptarithm"
+        ],
+        "id": "EE.LVS.2017.noorem.4",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors",
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2017.vanem.2",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "mediant-of-fractions"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2017.vanem.3",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "build-expression"
+        ],
+        "id": "EE.LVT.2017.noorem.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2017.noorem.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-geometry"
+        ],
+        "id": "EE.LVT.2017.vanem.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2017.vanem.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVS.2018.noorem.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVS.2018.noorem.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "word-problem"
+        ],
+        "id": "EE.LVS.2018.noorem.4",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "EE.LVS.2018.noorem.6",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "procedure"
+        ],
+        "id": "EE.LVS.2018.vanem.3",
+        "qtypes": [
+            "Algorithm",
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2018.noorem.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2018.noorem.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "procedure"
+        ],
+        "id": "EE.LVT.2018.noorem.4",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2018.vanem.1",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "composite-numbers"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2018.vanem.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "special-numbers"
+        ],
+        "id": "LV.NO.2000.7.4",
+        "qtypes": [
+            "Find.Any",
+            "Find.Count",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.remainder",
+            "seq.others.sumdigits",
+            "seq.arithm.mod"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "making-moves"
+        ],
+        "id": "LV.NO.2000.7.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [
+            "LV.NO.2019.8.4"
+        ],
+        "tasks": [
+            "misc.invariant.expr.prod"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "magic-configuration"
+        ],
+        "id": "LV.NO.2000.8.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.invariant.expr.sum",
+            "alg.sums",
+            "misc.experiment"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "LV.NO.2000.9.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.extreme"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2000.9.4",
+        "qtypes": [
+            "Find.Any",
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.equation"
+        ]
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LV.NO.2000.10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "LV.NO.2000.10.2",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2000.10.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2000.11.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [
+            "LV.NO.2001.11.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2000.11.4",
+        "qtypes": [
+            "Prove.ForAll",
+            "Find.Any",
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2000.12.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [
+            "NO.2001.12.1",
+            "NO.2003.12.1",
+            "NO.2004.12.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2001.7.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.plain",
+            "al.inequality.intervals"
+        ]
+    },
+    {
+        "concepts": [
+            "coprimes"
+        ],
+        "genre": [],
+        "id": "LV.NO.2001.7.4",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.gcd.fixeddiff",
+            "co.pigeonhole.statement",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [
+            "primes",
+            "composite-numbers"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "LV.NO.2001.8.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divrules2and5.lastdigit",
+            "nt.divisibility.constructions"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2001.9.1",
+        "qtypes": [
+            "Prove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2001.9.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LV.NO.2001.10.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square-root",
+            "decimal-fractions"
+        ],
+        "genre": [],
+        "id": "LV.NO.2001.10.4",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "LV.NO.2001.11.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [
+            "LV.NO.2002.11.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "fibonacci-sequence"
+        ],
+        "genre": [],
+        "id": "LV.NO.2001.12.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "optimization"
+        ],
+        "id": "LV.NO.2002.7.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.primes.small",
+            "nt.parity.invariant"
+        ]
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [],
+        "id": "LV.NO.2002.8.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.parity.invariant",
+            "al.inequality.extremalelement",
+            "nt.remainder.invariant"
+        ]
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "LV.NO.2002.9.1",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2002.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2002.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2002.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2002.11.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [
+            "LV.NO.2003.11.1",
+            "LV.NO.2004.11.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "irrational-numbers",
+            "rational-numbers"
+        ],
+        "genre": [],
+        "id": "LV.NO.2002.12.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "composite-numbers"
+        ],
+        "genre": [],
+        "id": "LV.NO.2003.7.4/LV.NO.2005.7.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.graphs.bipartite",
+            "nt.parity.operations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2003.8.3",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.factorization.plain"
+        ]
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "LV.NO.2003.9.1",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2003.9.5",
+        "qtypes": [
+            "Algorithm",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2003.10.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2003.11.4",
+        "qtypes": [
+            "ProveDisprove.Other",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2003.12.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [
+            "LV.NO.2000.12.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "geometric-progression",
+            "real-numbers"
+        ],
+        "genre": [],
+        "id": "LV.NO.2003.12.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "composite-numbers"
+        ],
+        "genre": [],
+        "id": "LV.NO.2004.7.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.graphs.bipartite",
+            "nt.primes.small",
+            "nt.parity.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.8.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [
+            "LV.NO.2003.8.3"
+        ],
+        "tasks": [
+            "nt.factorization.plain"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.8.2",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [
+            "https://en.wikipedia.org/wiki/Benford%27s_law",
+            "https://meduza.io/feature/2017/01/13/itogi-vyborov-v-gosdumu-okazalis-slishkom-idealnymi",
+            "LV.NO.2005.8.1"
+        ],
+        "tasks": [
+            "nt.decnotation.transform",
+            "al.inequality.estimates"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2004.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.7.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.fractions",
+            "nt.parity.operations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.transform",
+            "al.inequality.estimates"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divisibility.constructions",
+            "nt.gcd.construct",
+            "co.games.strategy"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2005.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.7.4/LV.NO.2007.7.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.fractions",
+            "al.manipulate.fractionsum"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.manipulate.fullsquare"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.periodic.invariant",
+            "nt.remainder.map"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2006.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2007.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.gcd.bezout",
+            "nt.factorization.plain",
+            "al.power.identity.add"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2007.8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divisibility.multiples",
+            "nt.lcm.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2007.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2007.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2007.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2007.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.gcd.bezout",
+            "nt.factorization.plain",
+            "al.power.identity.add"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.7.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.equation.mean",
+            "al.inequality.finitesearch",
+            "nt.divisibility.multiples"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.sumofdigits",
+            "nt.parity.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2008.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.gcd.bezout",
+            "nt.factorization.plain",
+            "al.power.identity.add"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.7.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divisibility.numdivisors",
+            "nt.factorization.powers"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.sym.linear",
+            "nt.remainder.map"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.periodic.powers",
+            "nt.remainder.map"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2009.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.7.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divisibility.multiples",
+            "nt.factorization.powers"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.identity.sqdiff",
+            "nt.primes.small",
+            "al.manipulate.dottedexpr"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.remainder",
+            "notation.dec.combine"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.expand.binom.cubes",
+            "div.properties.add",
+            "div.properties.product"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "misc.experiment",
+            "mod.parity.cases",
+            "alg.powers.prod",
+            "div.idx.properties.product",
+            "div.idx.properties.sumdiff",
+            "mod.equation.contradict"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2010.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.sym.grouping",
+            "nt.remainder.map"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.7.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divisibility.multiples",
+            "nt.factorization.powers"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.dec.combine",
+            "notation.divrules.3or9.remainder"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2011.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "misc.graphs.bfs",
+            "nt.decnotation.transform"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.7.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.101"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.factorize.sqdiff"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.11",
+            "div.pfactor.prop.euclid"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.mod.gaps",
+            "misc.contradiction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "misc.experiment",
+            "notation.dec.numdigits.prod"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2012.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.finitesearch",
+            "misc.graphs.bipartite"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.7.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.factorization.divisibilityrules",
+            "nt.divisibility.multiples"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.7.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.identity.sqdiff"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "co.multrule.permutation",
+            "co.fullsearch.opposite"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "co.tables.magicsquare",
+            "al.power.identity.add"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2013.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.7.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.factorization.divisibilityrules",
+            "nt.divisibility.multiples"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "co.multrule.permutation",
+            "co.fullsearch.opposite"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.expr",
+            "seq.arithm.numestimate",
+            "seq.arithm.pairsum",
+            "misc.extreme.pigeonhole"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2014.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.7.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.invariant",
+            "al.equation.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.7.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "co.tables.chess",
+            "nt.parity.operations",
+            "nt.primes.small",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.map"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.invariant",
+            "al.equation.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.divides",
+            "misc.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.summation",
+            "div.pfactor.algorithm",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "misc.experiment",
+            "div.primes.powers.higher",
+            "mod.parity.cases",
+            "misc.contradiction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2015.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.7.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.divides",
+            "notation.divrules.11",
+            "nt.factorization.divisibilityrules"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.7.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "al.equation.substitute"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divrules2and5.lastdigit"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "seq.summation.difference",
+            "misc.induction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "mod.expr.square",
+            "mod.cases.squares",
+            "misc.extreme.pigeonhole"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2016.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.7.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.2or5or10.divides",
+            "notation.divrules.pow2or5.divides",
+            "notation.divrules.3or9.divides",
+            "notation.divrules.composite",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2017.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.7.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.7.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.divides",
+            "notation.dec.numdigits.sum",
+            "misc.contradiction",
+            "misc.construct.alpha"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.NO.2018.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LV.NO.2019.7.4",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "game"
+        ],
+        "id": "LV.NO.2019.7.5",
+        "qtypes": [
+            "Algorithm",
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "making-moves"
+        ],
+        "id": "LV.NO.2019.8.4",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [
+            "LV.NO.2000.7.5"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LV.NO.2019.8.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "LV.NO.2019.9.5",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LV.NO.2019.10.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.2or5or10.divides",
+            "div.primes.factorize.small"
+        ]
+    },
+    {
+        "concepts": [
+            "linear-expression",
+            "primes"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LV.NO.2019.11.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LV.NO.2019.12.5",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "integer-polynomial"
+        ],
+        "genre": [],
+        "id": "LV.VO.2011.10.4",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.poly.int.valdiff",
+            "alg.factorize.powdiff"
+        ]
+    },
+    {
+        "concepts": [
+            "full-square"
+        ],
+        "genre": [],
+        "id": "LV.VO.2012.10.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.experiment",
+            "seq.geom.summation",
+            "seq.geom.decnotation"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LV.VO.2013.10.1",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.symmetry",
+            "alg.ineq.monotonicity"
+        ]
+    },
+    {
+        "concepts": [
+            "fibonacci-sequence",
+            "full-square"
+        ],
+        "genre": [],
+        "id": "LV.VO.2013.10.4",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "seq.others.fibonacci",
+            "seq.prop.periodic.finstate",
+            "mod.expr.square"
+        ]
+    },
+    {
+        "concepts": [
+            "integer-polynomials"
+        ],
+        "genre": [],
+        "id": "LV.VO.2014.10.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.poly.division",
+            "div.pfactor.prop.numdivisors"
+        ]
+    },
+    {
+        "concepts": [
+            "linear-expression"
+        ],
+        "genre": [
+            "optimization"
+        ],
+        "id": "LV.VO.2014.10.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.mod.all",
+            "alg.ineq.monotonicity"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2015.10.2",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.pfactor.prop.divisibility",
+            "mod.parity",
+            "mod.expr.poly"
+        ]
+    },
+    {
+        "concepts": [
+            "full-powers"
+        ],
+        "genre": [],
+        "id": "LV.VO.2016.10.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.primes.powers",
+            "div.pfactor",
+            "alg.linear"
+        ]
+    },
+    {
+        "concepts": [
+            "long-sums"
+        ],
+        "genre": [],
+        "id": "LV.VO.2016.10.3",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.ratfractions.diff",
+            "alg.sums"
+        ]
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "LV.VO.2017.10.2",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.2or5or10.divides",
+            "notation.dec.combine.split",
+            "mod.expr.sum",
+            "misc.strengthening",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LV.VO.2018.10.3",
+        "qtypes": [
+            "Prove.Exists",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.2or5or10.divides",
+            "notation.divrules.3or9.divides",
+            "notation.dec.combine.padding"
+        ]
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "LV.VO.2019.10.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.experiment",
+            "mod.parity.cases"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LV.VO.2019.10.3",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.exponent.one",
+            "notation.divrules.composite"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.7.1",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.expand.binom.squares"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.7.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.periodic.remainders",
+            "nt.gcd.twodivisors",
+            "nt.divisibility.constructions"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.7.4",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.primes.small",
+            "nt.primes.distances",
+            "co.pigeonhole.meanvalue",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.8.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.induction.plus1",
+            "co.pigeonhole.meanvalue"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2001.7.2",
+        "qtypes": [
+            "Prove.ForAll",
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.factorization.divisibilityrules",
+            "al.decnotation.expressions",
+            "al.equation.substitute"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2001.8.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.expressions",
+            "al.manipulate.smallexpr",
+            "al.inequality.estimates"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.7.4",
+        "qtypes": [
+            "Algorithm"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.games.nonconstructive",
+            "co.games.strategy",
+            "misc.graphs.bipartite"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.7.5",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.sym.grouping",
+            "co.pigeonhole.statement"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.8.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.expressions",
+            "al.manipulate.smallexpr",
+            "al.inequality.estimates"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.8.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.extremalelement"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.7.3",
+        "qtypes": [
+            "Algorithm"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.games.nonconstructive",
+            "co.games.strategy"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.7.5",
+        "qtypes": [
+            "Algorithm"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.parity.invariant",
+            "al.sym.progressions",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.8.3",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.extremalelement",
+            "nt.primes.small"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.8.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.sym.grouping",
+            "al.manipulate.smallexpr",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.7.3",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.gcd.construct",
+            "nt.irreducible.plain"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.8.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.expressions",
+            "nt.divisibility.multiples"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.8.5",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.sym.recurrent",
+            "al.inequality.intervals"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.7.4",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.composite.zeroes",
+            "mod.expr.diff"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.8.3",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.fullsearch.summation"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.7.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.intervals",
+            "nt.divisibility.multiples",
+            "nt.remainder.plain"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.8.3",
+        "qtypes": [
+            "Find.Any",
+            "ProveDisprove.Other",
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.2or5or10.divides",
+            "nt.decnotation.sumofdigits"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2007.7.1",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.graph.path",
+            "nt.primes.small"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2007.7.3",
+        "qtypes": [
+            "Algorithm",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.sumofdigits",
+            "co.induction.infinitedescent",
+            "co.games.strategy"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2007.8.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.factorization.plain",
+            "al.inequality.finitesearch"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.7.2",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.composite.zeroes",
+            "alg.powers.prod"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.8.3",
+        "qtypes": [
+            "Prove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.divisibility.numdivisors",
+            "al.sym.grouping"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.7.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.parity.operations",
+            "nt.primes.small",
+            "al.sym.progressions",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.7.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.8.4",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.factorization.plain",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.7.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.primes.small",
+            "nt.primes.distances",
+            "nt.factorization.plain"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.7.3",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.sym.linear",
+            "co.tables.magicsquare"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.7.4",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.remainder.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.8.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.graph.syntaxtree"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.8.2",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.manipulate.smallexpr",
+            "al.equation.expressvariable"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.10.4",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.summation",
+            "div.pfactor.algorithm",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.7.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.primes.small",
+            "nt.primes.distances"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.7.3",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.gcd.congruences",
+            "nt.divisibility.constructions"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.8.1",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.graph.syntaxtree"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.8.4",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.expressions",
+            "nt.factorization.plain"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.8.5",
+        "qtypes": [
+            "Algorithm",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.games.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.7.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.parity.operations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.8.1",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.graph.syntaxtree"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.8.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.equation.mean",
+            "al.inequality.finitesearch"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.8.4",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.periodic.invariant"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.10.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.expr.square",
+            "mod.expr.sum"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.7.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.inequality.monotonicity",
+            "nt.decnotation.expressions"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.7.3",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.pow2or5.divides",
+            "notation.divrules.3or9.divides",
+            "nt.factorization.powers",
+            "al.sym.progressions"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.8.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.expressions",
+            "al.equation.expressvariable"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.10.4",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "seq.geom",
+            "misc.extreme.pigeonhole"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.7.2",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.parity.operations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.7.4",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "co.tables.magicsquare",
+            "al.equation.expressvariable"
+        ]
+    },
+    {
+        "concepts": [
+            "decimal-fractions"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "LV.AO.2014.8.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.periodic.longdivision",
+            "nt.decnotation.expressions"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.8.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.decnotation.expressions",
+            "al.equation.expressvariable"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.8.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.equation.expressvariable",
+            "co.tables.magicsquare"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.10.4",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "mod.parity.cases",
+            "misc.graphs.bipartite",
+            "misc.bounds",
+            "mod.expr.sum",
+            "misc.construct.iterative"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.7.3",
+        "qtypes": [
+            "Find.Any",
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.11",
+            "notation.divrules.3or9.divides"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.8.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.expand.binom.squares",
+            "misc.induction.infdescent.sqrt"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.8.3",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.identity.sqdiff",
+            "nt.primes.small"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.10.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.experiment",
+            "alg.ineq.transitive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.7.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.equation.expressvariable",
+            "nt.divisibility.equation",
+            "al.inequality.finitesearch"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.8.1",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "al.manipulate.smallexpr",
+            "al.identity.sqdiff"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.8.2",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "nt.parity.operations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.8.3",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.pow2or5.divides",
+            "notation.divrules.3or9.divides",
+            "nt.factorization.divisibilityrules",
+            "co.fullsearch.construction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.10.2",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.pfactor.algorithm",
+            "notation.divrules.3or9.remainder",
+            "mod.expr.poly",
+            "mod.equation.contradict"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.10.3",
+        "qtypes": [
+            "Prove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.expr",
+            "alg.expand.binom.squares",
+            "alg.completesquare"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2017.7.5",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2017.8.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2017.10.5",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "div.pfactor.prop.divisibility",
+            "seq.arithm.mod.all",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2018.7.4",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2018.8.2",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2018.10.4",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.divides",
+            "div.pfactor.prop.divisibility",
+            "mod.expr.poly"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.7.5",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.8.5",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.10.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "misc.induction"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.10.4",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": [
+            "alg.expand.binom.squares"
+        ]
+    },
+    {
+        "concepts": [
+            "full-square"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2009.7",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "linear-expression"
+        ],
+        "genre": [
+            "optimization"
+        ],
+        "id": "LT.LKMMO.2009.8",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2009.9",
+        "qtypes": [
+            "Prove.ForAll",
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-progression"
+        ],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "LT.LKMMO.2009.10",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "gcd"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2009.13",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "linear-expression"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2009.14",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "LT.LKMMO.2009.15",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2010.6",
+        "qtypes": [
+            "Find.Any",
+            "ProveDisprove.Exists",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2010.7",
+        "qtypes": [
+            "Find.Any",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "quadratic-equation",
+            "primes"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2010.8",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2010.9",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "special-numbers"
+        ],
+        "id": "LT.LKMMO.2010.10",
+        "qtypes": [
+            "ProveDisprove.Exists",
+            "ProveDisprove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "remainder",
+            "square"
+        ],
+        "genre": [
+            "fill-in-table"
+        ],
+        "id": "LT.LKMMO.2010.15",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "integer-polynomial",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2011.6",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2011.7",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2011.8",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2011.9",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "absolute-value"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2011.10",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2012.6",
+        "qtypes": [
+            "Find.Any",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2012.7",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2012.8",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power",
+            "inequality"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2012.9",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "subset",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2012.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility",
+            "full-square"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2013.6",
+        "qtypes": [
+            "Find.All",
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "power"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2013.7",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2013.8",
+        "qtypes": [
+            "Find.Any",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2013.9",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-power"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2013.10",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2014.6",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "system-of-equations"
+        ],
+        "id": "LT.LKMMO.2014.7",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "power"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2014.8",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "special-numbers"
+        ],
+        "id": "LT.LKMMO.2014.9",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "factorial"
+        ],
+        "genre": [
+            "comparison"
+        ],
+        "id": "LT.LKMMO.2014.10",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-mean"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2014.11",
+        "qtypes": [
+            "Prove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "valuations",
+            "power",
+            "factorial"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2015.6",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "LT.LKMMO.2015.7",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "special-numbers"
+        ],
+        "id": "LT.LKMMO.2015.8",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2015.9",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2015.10",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "making-moves"
+        ],
+        "id": "LT.LKMMO.2015.11",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "game"
+        ],
+        "id": "LT.LKMMO.2015.15",
+        "qtypes": [
+            "Algorithm",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility",
+            "primes"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2016.6",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2016.7",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square-root"
+        ],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "LT.LKMMO.2016.8",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2016.9",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [
+            "LV.NO.2018.8.4",
+            "LV.NO.2018.10.4",
+            "LV.NO.2018.11.4"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power",
+            "inequality",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2016.10",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "game"
+        ],
+        "id": "LT.LKMMO.2016.15",
+        "qtypes": [
+            "Algorithm",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [
+            "LV.NO.2019.7.5"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square",
+            "primes",
+            "arithmetic-progression",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2017.6",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "real-numbers",
+            "parity"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2017.7",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "sum-of-digits"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2017.8",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square",
+            "square",
+            "inequality"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2017.9",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2017.10",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2017.11",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "special-numbers"
+        ],
+        "id": "LT.LKMMO.2018.6",
+        "qtypes": [
+            "Find.Any",
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "full-square",
+            "power"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2018.7",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2018.8",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "valuations"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2018.9",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.LKMMO.2018.10",
+        "qtypes": [
+            "Algorithm",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2009.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2009.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2010.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2010.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2011.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2011.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2011.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2012.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2013.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2013.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2014.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2015.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2016.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2017.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LDK.2018.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2010.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2010.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2010.11_12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2010.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2011.9_10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2011.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2011.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2011.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "composite-numbers",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.VILNIUS.2011.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2011.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2012.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2012.9_10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2012.11_12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2012.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2012.11_12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2013.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2013.9_10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2013.9_10.4A",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2013.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "real-numbers"
+        ],
+        "genre": [],
+        "id": "LT.RAJ.2013.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2014.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2015.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2015.9_10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "real-numbers",
+            "irrational-numbers"
+        ],
+        "genre": [],
+        "id": "LT.RAJ.2015.9_10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2015.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2015.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2015.11_12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2016.9_10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2016.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2016.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2016.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2016.11_12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2017.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2017.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2017.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2017.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2017.11_12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2018.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2018.9_10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2018.9_10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2018.11_12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2018.11_12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2019.9_10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2019.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2019.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2019.11_12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.RAJ.2019.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2010.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "remainder"
+        ],
+        "genre": [],
+        "id": "LT.LMMO.2010.11_12.4",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2011.9_10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2011.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2011.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2012.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2012.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2012.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2013.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2013.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2014.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2014.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2015.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2015.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2016.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2016.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2016.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2017.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2017.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2018.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2018.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2019.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2019.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2019.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2016.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.poly.division",
+            "alg.ineq.equations",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2016.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "div.pfactor",
+            "div.pfactor.powers.higher",
+            "div.pfactor.prop.common",
+            "seq.arithm.mod.gaps",
+            "mod.systems.chinese"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2016.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2016.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2017.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.dec.numdigits.prod",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2017.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2017.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.completesquare",
+            "seq.gaps.squares",
+            "alg.ineq.monotonicity",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2017.11_12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2017.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "misc.beginatend",
+            "misc.invariant.game"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2018.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2018.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "div.pfactor.prop.numdivisors",
+            "div.pfactor.structure"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2018.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2019.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2019.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "misc.beginatend",
+            "misc.invariant.game",
+            "mod.parity.cases",
+            "misc.induction.least"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2019.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.mod.last",
+            "mod.systems.linear",
+            "misc.symmetry",
+            "misc.exhaustive",
+            "notation.divrules.pow2or5.divides"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2019.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.remainder",
+            "misc.invariant",
+            "mod.expr.prod"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VUMIF.2019.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "notation.divrules.3or9.remainder",
+            "mod.expr.prod",
+            "mod.systems.chinese",
+            "alg.ineq.monotonicity",
+            "misc.exhaustive"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.36",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "square-root"
+        ],
+        "genre": [],
+        "id": "BBK2012.P1.52",
+        "qtypes": [
+            "ProveDisprove.Exists",
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.94",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.99",
+        "qtypes": [
+            "Find.Max"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.104",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.115",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.119",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.121",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.122",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.123",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.124",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.125",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.126",
+        "qtypes": [
+            "Find.Any"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.127",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.128",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.129",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.130",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.131",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.132",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.16",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.21",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.22",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.23",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.24",
+        "qtypes": [],
+        "seeAlso": [
+            "BBK2012.P1.52"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.75",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.76",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.77",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.78",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.79",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.80",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.81",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.82",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.83",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.84",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.85",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.86",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.87",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.88",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.89",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.90",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.91",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.92",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.108",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.109",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.110",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.111",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.112",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.113",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.114",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.115",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.116",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.117",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P3.118",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "recurrent-sequence",
+            "primes",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.89",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "recurrent-sequence"
+        ],
+        "genre": [
+            "making-moves"
+        ],
+        "id": "BBK2012.P4.115",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "recurrent-sequence"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.116",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "recurrent-sequence"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.117",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "recurrent-sequence"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.118",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "fibonacci-sequence",
+            "arithmetic-progression"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.119",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "recurrent-sequence"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.120",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "full-square",
+            "power"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.121",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "full-power"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.122",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "BBK2012.P4.123",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.124",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.125",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.126",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.127",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "composite-numbers"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "BBK2012.P4.128",
+        "qtypes": [
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "arithmetic-mean"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.133",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "power",
+            "absolute-value"
+        ],
+        "genre": [],
+        "id": "BBK2012.P4.134",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    }
+]

@@ -1,0 +1,63 @@
+application: linen-tracer-682
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  script: root.app
+
+- url: /static
+  static_dir: static
+  
+- url: /main
+  static_dir: main
+  
+- url: /prob/index\.html
+  script: prob_index.app
+
+- url: /prob/tasks\.html
+  script: prob_tasks.app
+  
+- url: /concept/(.*)
+  script: prob_get_concept.app
+  
+- url: /files-exam
+  static_dir: files-exam
+  
+- url: /files-misc
+  static_dir: files-misc
+ 
+- url: /files-prob
+  static_dir: files-prob
+  
+- url: /files-tale
+  static_dir: files-tale
+  
+- url: /reveal.js
+  static_dir: reveal.js
+  
+- url: /analysis/.*
+  script: analysis.app
+  
+- url: /exam/.*
+  script: exam.app
+  
+- url: /tale/.*
+  script: tale.app
+  
+- url: /downloads
+  static_dir: downloads
+
+- url: /charts
+  static_dir: charts
+
+- url: /data-js
+  static_dir: data-js
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+Simetrija spēlēs:<br/> (1) Kombinatoriskas spēles
+</h1>
+</hgroup>
+<hgroup>
+<ul>
+<li><span style="color:darkgreen"><strong>(1) Kombinatoriskas spēles</strong></span></li>
+<li><ol start="2" type="1">
+<li>“Karstas” un “aukstas” pozīcijas</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Simetrijas veidi ģeometrijā un aritmētikā</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Vai simetriskais gājiens vienmēr ir iespējams?</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>Simetrija dažās skaitļu “noņemšanas” spēlēs</li>
+</ol></li>
+</ul>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="kāpēc-kombinatoriskas-spēles" class="title-slide slide level1"><h1>Kāpēc kombinatoriskas spēles?</h1><hgroup>
+<figure>
+<img data-src="tic-tac-toe.png" alt="tic-tac-toe" /><figcaption>tic-tac-toe</figcaption>
+</figure>
+<figure>
+<img data-src="robocup.png" alt="robocup" /><figcaption>robocup</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<ul>
+<li>Galīgs skaits pozīciju</li>
+<li>Katrā pozīcijā galīgs skaits iespējamo gājienu</li>
+<li>Dotajā sākumpozīcijā gājienu skaits ir ierobežots</li>
+</ul>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="kombinatorisko-spēļu-daudzveidība" class="title-slide slide level1"><h1>Kombinatorisko spēļu daudzveidība</h1><hgroup>
+<figure>
+<img data-src="chess.png" alt="chess" /><figcaption>chess</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<ul>
+<li>Vai šahā ir galīgs skaits pozīciju? (Mazāks par <span class="math inline">\((1+64)^{32}\)</span>)</li>
+<li>Vai šaha spēlētāja gājienu skaits konkrētajā pozīcijā ir ierobežots? (Ne lielāks par <span class="math inline">\(8 + 27 + 2\cdot{}13 + 2\cdot{}8+\)</span> <span class="math inline">\(+ 2\cdot{}14 + 8\cdot{}4=137\)</span>)</li>
+<li>Vai katra šaha partija reiz beidzas? (<a href="https://en.wikipedia.org/wiki/Fifty-move_rule">Fifty-move rule</a> - Ja 50 šaha gājienos nenosit nevienu figūru un nepabīda nevienu bandinieku, ieskaita neizšķirtu.)</li>
+</ul>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="citi-ierobežojumi" class="title-slide slide level1"><h1>Citi ierobežojumi</h1><hgroup>
+<img data-src="two-player-game.svg" alt="chess" />
+</hgroup>
+<hgroup>
+<ul>
+<li>Divi spēlētāji</li>
+<li>Gājienus izdara pārmaiņus, tos nedrīkst izlaist</li>
+<li>Zaudē tas, kurš nevar izdarīt kārtējo gājienu</li>
+<li>Pilna informācija</li>
+<li>Spēlei ir “nulles summa” - lai viens uzvarētu, otram jāzaudē</li>
+<li>Nav neizšķirtu</li>
+</ul>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="kā-spēles-analizēt" class="title-slide slide level1"><h1>Kā spēles analizēt?</h1><ul>
+<li>Uzdevuma mērķis:
+<ul>
+<li><strong>Noskaidrot, kurš uzvar, pareizi spēlējot:</strong> Pirmais vai otrais spēlētājs. (<em>Kombinatoriskā spēlē, ja zināma sākumpozīcija, tajā viens no 2 spēlētājiem var nodrošināt sev uzvaru.</em>)</li>
+<li><strong>Atrast uzvarošo stratēģiju:</strong> Algoritmiski pierakstītu veidu, kā spēlēt, lai noteikti uzvarētu.</li>
+</ul></li>
+</ul>
+<p>Uzvarētājam jāvar atbildēt <strong>visiem</strong> pretinieka gājieniem.<br />
+Risinājumā nedrīkst pieņemt, ka zaudētājs rīkosies noteiktā veidā.</p></section><section class="slide level2">
+
+</section></section>
+<section><section id="milzīgs-variantu-skaits" class="title-slide slide level1"><h1>Milzīgs variantu skaits</h1><figure>
+<img data-src="exponential-by-four.svg" alt="Eksponenciālais sprādziens" /><figcaption>Eksponenciālais sprādziens</figcaption>
+</figure>
+<p><strong>Būtiska grūtība:</strong> Kombinatoriskās spēlēs mēdz būt ārkārtīgi daudz spēles scenāriju. Parasti nevar atsevišķi pierakstīt, ko darīt katrā pozīcijā, atbildot uz katru pretinieka gājienu.</p>
+<p><strong>Kā meklēt atrisinājumu?</strong><br />
+Var aplūkot <em>invariantus</em> - spēles pozīciju īpašības, kas gājienu veikšanas laikā nemainās.</p></section><section class="slide level2">
+
+</section></section>
+<section><section id="piemērs-noņemšanas-spēle" class="title-slide slide level1"><h1><lo-sample/> Piemērs: Noņemšanas spēle</h1><hgroup>
+<figure>
+<img data-src="the-takeaway-game.png" alt="Noņemšanas spēle" /><figcaption>Noņemšanas spēle</figcaption>
+</figure>
+<p>(<em>Attēls no Paul Zeitz, “The Art and Craft of Mathematical Problem Solving”. 2010.</em>)</p>
+</hgroup>
+<hgroup>
+<p>Sākumā uz galda ir <span class="math inline">\(n=17\)</span> monētas. Divi spēlētāji pārmaiņus izdara gājienus. Ar vienu gājienu atļauts paņemt <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vai <span class="math inline">\(4\)</span> monētas. Uzvar tas spēlētājs, kurš paņem pēdējo monētu. Kurš uzvar, pareizi spēlējot?</p>
+<p>Kas notiek citām <span class="math inline">\(n\)</span> vērtībām?</p>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="spēles-analīze-no-beigām" class="title-slide slide level1"><h1>Spēles analīze no beigām</h1><figure>
+<img data-src="take-away-game-states.svg" alt="Noņemšanas spēles stāvokļi" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
+</figure>
+<ol type="1">
+<li>Beigu pozīciju (<span class="math inline">\(0\)</span>) krāso <blue>zilu</blue>.</li>
+<li>Pozīcijas, kas ved uz <span class="math inline">\(0\)</span>, krāso <red>sarkanas</red>.</li>
+<li>Pozīcijas, kas ved <strong>tikai</strong> uz sarkanajām, krāso <blue>zilas</blue>.</li>
+<li>Pozīcijas, kas ved arī uz kādu zilo, krāso <red>sarkanas</red>.</li>
+<li>Utt.</li>
+</ol></section><section class="slide level2">
+
+</section></section>
+<section><section id="invariants-monētu-skaita-dalāmība-ar-5" class="title-slide slide level1"><h1>Invariants: Monētu skaita dalāmība ar 5</h1><hgroup>
+<figure>
+<img data-src="take-away-macrostates.svg" alt="Noņemšanas spēles stāvokļi" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p><strong>Apgalvojums:</strong> Pareizi spēlējot, pie <span class="math inline">\(n=17\)</span> uzvar 1.spēlētājs.</p>
+<p><strong>Stratēģija:</strong> Sākumā 1.spēlētājs no <span class="math inline">\(17\)</span> monētām noņem 2 monētas.<br />
+Turpmāk 2.spēlētājs ikreiz dalāmību ar <span class="math inline">\(5\)</span> izjauc, bet 1.spēlētājs to atjauno.</p>
+<ul>
+<li><blue>Dalāmība ar <span class="math inline">\(5\)</span></blue> <strong>pēc 1.spēlētāja gājiena</strong> ir <blue><em>invariants</em></blue> - saglabājas visā spēles gaitā.</li>
+<li>Monētu skaits uz galda visu laiku samazinās. Tas reiz kļūs <span class="math inline">\(0\)</span> (turklāt tas notiks <strong>pēc 1.spēlētāja gājiena</strong>).</li>
+</ul>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="vai-1.spēlētājs-var-kontrolēt-šo-invariantu" class="title-slide slide level1"><h1>Vai 1.spēlētājs var kontrolēt šo invariantu?</h1><p><em>Uzvarētāja stratēģijai jāspēj atbildēt uz jebkuru pretinieka gājienu.</em></p>
+<ol type="1">
+<li>Sākumā monētu skaits <span class="math inline">\(n=17\)</span> nedalās ar <span class="math inline">\(5\)</span>. Ar pirmo gājienu var panākt, lai <span class="math inline">\(n_1 = 17-2=15\)</span> dalītos ar <span class="math inline">\(5\)</span>.</li>
+<li>Pēc <span class="math inline">\(i\)</span> gājieniem pretinieks no jebkuras <span class="math inline">\(n_i\)</span> vērtības var atņemt <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vai <span class="math inline">\(4\)</span>. Uzvarētājs tad atņem “pretējo skaitli”.</li>
+</ol>
+<figure>
+<img data-src="take-away-game-responses.svg" alt="Noņemšanas spēles atbildes" /><figcaption>Noņemšanas spēles atbildes</figcaption>
+</figure></section><section class="slide level2">
+
+</section></section>
+<section><section id="kas-jāraksta-atrisinājumā---1" class="title-slide slide level1"><h1><lo-summary/> Kas jāraksta atrisinājumā - 1</h1><hgroup>
+<figure>
+<img data-src="solution-structure-01.svg" alt="Atrisinājuma struktūra - 1" /><figcaption>Atrisinājuma struktūra - 1</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p><strong>Ja uzvar 1.spēlētājs:</strong><br />
+Jāuzraksta, kā ar pirmo gājienu nonākt stāvoklī, kas atbilst invariantam.<br />
+<blue><strong>Piemērs:</strong> Uzvarētājs sākumā panāk, ka monētu skaits uz galda dalās ar <span class="math inline">\(5\)</span>.</blue></p>
+<p>(<em>Invariants jāizdomā patstāvīgi. Dažreiz palīdz spēles analīze “no beigām”.</em>)</p>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="kas-jāraksta-atrisinājumā---2" class="title-slide slide level1"><h1><lo-summary/> Kas jāraksta atrisinājumā - 2</h1><hgroup>
+<figure>
+<img data-src="solution-structure-02.svg" alt="Atrisinājuma struktūra - 2" /><figcaption>Atrisinājuma struktūra - 2</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p>Turpmāk pretinieks katrā gājienā būs spiests invariantu izjaukt.<br />
+<blue><strong>Piemērs:</strong> Monētu skaits uz galda pēc zaudētāja gājiena nedalīsies ar <span class="math inline">\(5\)</span>. Savukārt uzvarētājs <em>pēc katra sava gājiena</em> atjauno dalāmību ar <span class="math inline">\(5\)</span>.</blue></p>
+<p>Jāuzraksta, kādēļ to var panākt atbildot uz katru pretinieka gājienu.<br />
+<blue><strong>Piemērs:</strong> Ja pretinieks atņēma <span class="math inline">\(k\)</span> monētas (<span class="math inline">\(k=1,2,3,4\)</span>), tad uzvarētājs atņem <span class="math inline">\(5-k\)</span> monētas.</blue></p>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section><section id="kas-jāraksta-atrisinājumā---3" class="title-slide slide level1"><h1><lo-summary/> Kas jāraksta atrisinājumā - 3</h1><hgroup>
+<figure>
+<img data-src="solution-structure-03.svg" alt="Atrisinājuma struktūra - 3" /><figcaption>Atrisinājuma struktūra - 3</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p><strong>Jāpamato</strong>, ka spēle reiz beidzas. Citiem vārdiem, spēles pozīcijas nevar turpināties neierobežoti ilgi vai “iecikloties”. Jāpamato arī, ka spēles beigu stāvoklis arī pieder invariantam, ka to sasniegs uzvarētājs (tas, kurš kontrolē invariantu).<br />
+<blue><strong>Piemērs:</strong> Monētu skaits visu laiku samazinās, kādreiz tas kļūs <span class="math inline">\(0\)</span>. Tas notiks pēc 1.spēlētāja gājiena, jo arī <span class="math inline">\(0\)</span> dalās ar <span class="math inline">\(5\)</span>.</blue></p>
+</hgroup></section><section class="slide level2">
+
+</section></section>
+<section id="ja-uzvar-otrais" class="title-slide slide level1"><h1><lo-summary/> Ja uzvar otrais…</h1><hgroup>
+<figure>
+<img data-src="solution-structure-04.svg" alt="Atrisinājuma struktūra - 4" /><figcaption>Atrisinājuma struktūra - 4</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p><strong>Ja uzvar 2.spēlētājs,</strong><br />
+tad līdzīga atrisinājuma struktūra kā iepriekš. Nav pirmā soļa, nav jāraksta, kā nonākt invarianta stāvoklī. Spēles sākumstāvoklis <strong>jau</strong> apmierina invarianta īpašību, 2.spēlētājs to var saglabāt arī turpmāk, atbildot uz katru 1.spēlētāja gājienu.<br />
+<blue><strong>Piemērs:</strong> Ja sākumā ir <span class="math inline">\(n=15\)</span> monētas, tad, pareizi spēlējot, uzvar 2.spēlētājs - atbildot uz katru 1.spēlētāja gājienu, viņš allaž var atjaunot dalāmību ar <span class="math inline">\(5\)</span>.</blue></p>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

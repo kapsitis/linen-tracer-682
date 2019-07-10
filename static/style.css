@@ -1,0 +1,46 @@
+body {
+  margin: 5%;
+  font-family: "Calibri (Body)", Calibri, sans-serif;
+}
+h1 {
+  font-weight: normal;
+}
+red {
+  color: red;
+}
+
+table.tasks {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.tasks tr td {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+table.tasks tr th {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    font-size: 120%;
+}
+
+table.tasks tr.odd {
+    background-color: #eeeeee;
+}
+
+table.tasks col.aaa {
+    width: 25%;
+}
+
+table.tasks col.bbb {
+    width: 40%;
+}
+
+table.tasks col.ccc {
+    width: 35%;
+}
+
+

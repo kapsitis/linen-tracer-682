@@ -1,52 +1,5 @@
 [
     {
-        "id": "al.decnotation.expressions",
-        "links": [
-            "LV.AO.2001.7.2"
-        ]
-    },
-    {
-        "id": "al.equation.expressvariable",
-        "links": [
-            "LV.AO.2010.8.2",
-            "LV.AO.2013.8.1",
-            "LV.AO.2014.7.4",
-            "LV.AO.2014.8.2",
-            "LV.AO.2014.8.5",
-            "LV.AO.2016.7.2"
-        ]
-    },
-    {
-        "id": "al.equation.invariant",
-        "links": [
-            "LV.NO.2015.7.2",
-            "LV.NO.2015.8.2"
-        ]
-    },
-    {
-        "id": "al.equation.mean",
-        "links": [
-            "LV.NO.2008.7.3",
-            "LV.AO.2012.8.3"
-        ]
-    },
-    {
-        "id": "al.equation.substitute",
-        "links": [
-            "LV.NO.2016.7.5",
-            "LV.AO.2001.7.2"
-        ]
-    },
-    {
-        "id": "al.identity.sqdiff",
-        "links": [
-            "LV.NO.2010.8.1",
-            "LV.NO.2013.8.1",
-            "LV.AO.2015.8.3",
-            "LV.AO.2016.8.1"
-        ]
-    },
-    {
         "id": "al.inequality.estimates",
         "links": [
             "LV.NO.2004.8.2",
@@ -64,23 +17,6 @@
         ]
     },
     {
-        "id": "al.inequality.finitesearch",
-        "links": [
-            "LV.NO.2008.7.3",
-            "LV.NO.2013.7.1",
-            "LV.AO.2007.8.3",
-            "LV.AO.2012.8.3",
-            "LV.AO.2016.7.2"
-        ]
-    },
-    {
-        "id": "al.inequality.fractions",
-        "links": [
-            "LV.NO.2005.7.4",
-            "LV.NO.2006.7.4/LV.NO.2007.7.4"
-        ]
-    },
-    {
         "id": "al.inequality.intervals",
         "links": [
             "LV.NO.2001.7.1",
@@ -89,46 +25,12 @@
         ]
     },
     {
-        "id": "al.inequality.monotonicity",
-        "links": [
-            "LV.AO.2013.7.1"
-        ]
-    },
-    {
-        "id": "al.manipulate.dottedexpr",
-        "links": [
-            "LV.NO.2010.8.1"
-        ]
-    },
-    {
-        "id": "al.manipulate.fractionsum",
-        "links": [
-            "LV.NO.2006.7.4/LV.NO.2007.7.4"
-        ]
-    },
-    {
-        "id": "al.manipulate.fullsquare",
-        "links": [
-            "LV.NO.2006.8.1"
-        ]
-    },
-    {
         "id": "al.manipulate.smallexpr",
         "links": [
             "LV.AO.2001.8.3",
             "LV.AO.2002.8.2",
             "LV.AO.2003.8.5",
-            "LV.AO.2010.8.2",
             "LV.AO.2016.8.1"
-        ]
-    },
-    {
-        "id": "al.power.identity.add",
-        "links": [
-            "LV.NO.2007.7.1",
-            "LV.NO.2008.7.1",
-            "LV.NO.2009.7.1",
-            "LV.NO.2013.8.4"
         ]
     },
     {
@@ -136,157 +38,14 @@
         "links": [
             "LV.NO.2011.7.1",
             "LV.AO.2002.7.5",
-            "LV.AO.2003.8.5",
-            "LV.AO.2008.8.3"
-        ]
-    },
-    {
-        "id": "al.sym.linear",
-        "links": [
-            "LV.NO.2009.8.1",
-            "LV.AO.2010.7.3"
+            "LV.AO.2003.8.5"
         ]
     },
     {
         "id": "al.sym.progressions",
         "links": [
             "LV.AO.2003.7.5",
-            "LV.AO.2009.7.3",
-            "LV.AO.2013.7.3"
-        ]
-    },
-    {
-        "id": "al.sym.recurrent",
-        "links": [
-            "LV.AO.2004.8.5"
-        ]
-    },
-    {
-        "id": "co.fullsearch.construction",
-        "links": [
-            "LV.NO.2001.7.4",
-            "LV.NO.2015.7.3",
-            "LV.AO.2000.7.4",
-            "LV.AO.2003.7.5",
-            "LV.AO.2003.8.5",
-            "LV.AO.2009.7.3",
-            "LV.AO.2009.8.4",
-            "LV.AO.2016.8.3"
-        ]
-    },
-    {
-        "id": "co.fullsearch.opposite",
-        "links": [
-            "LV.NO.2013.8.3",
-            "LV.NO.2014.8.3"
-        ]
-    },
-    {
-        "id": "co.fullsearch.summation",
-        "links": [
-            "LV.AO.2005.8.3"
-        ]
-    },
-    {
-        "id": "co.games.invariant",
-        "links": [
-            "LV.AO.2011.8.5"
-        ]
-    },
-    {
-        "id": "co.games.nonconstructive",
-        "links": [
-            "LV.AO.2002.7.4",
-            "LV.AO.2003.7.3"
-        ]
-    },
-    {
-        "id": "co.games.strategy",
-        "links": [
-            "LV.NO.2005.8.3",
-            "LV.AO.2002.7.4",
-            "LV.AO.2003.7.3",
-            "LV.AO.2007.7.3"
-        ]
-    },
-    {
-        "id": "co.graph.path",
-        "links": [
-            "LV.AO.2007.7.1"
-        ]
-    },
-    {
-        "id": "co.graph.syntaxtree",
-        "links": [
-            "LV.AO.2010.8.1",
-            "LV.AO.2011.8.1",
-            "LV.AO.2012.8.1"
-        ]
-    },
-    {
-        "id": "co.induction.infinitedescent",
-        "links": [
-            "LV.AO.2007.7.3"
-        ]
-    },
-    {
-        "id": "co.induction.plus1",
-        "links": [
-            "LV.AO.2000.8.3"
-        ]
-    },
-    {
-        "id": "co.multrule.permutation",
-        "links": [
-            "LV.NO.2013.8.3",
-            "LV.NO.2014.8.3"
-        ]
-    },
-    {
-        "id": "co.pigeonhole.meanvalue",
-        "links": [
-            "LV.AO.2000.7.4",
-            "LV.AO.2000.8.3"
-        ]
-    },
-    {
-        "id": "co.pigeonhole.statement",
-        "links": [
-            "LV.NO.2001.7.4",
-            "LV.AO.2002.7.5"
-        ]
-    },
-    {
-        "id": "co.tables.chess",
-        "links": [
-            "LV.NO.2015.7.3"
-        ]
-    },
-    {
-        "id": "co.tables.magicsquare",
-        "links": [
-            "LV.NO.2013.8.4",
-            "LV.AO.2010.7.3",
-            "LV.AO.2014.7.4",
-            "LV.AO.2014.8.5"
-        ]
-    },
-    {
-        "id": "div.primes.factorize.small",
-        "links": [
-            "LV.NO.2019.10.5"
-        ]
-    },
-    {
-        "id": "div.primes.powers",
-        "links": [
-            "LV.VO.2016.10.1"
-        ]
-    },
-    {
-        "id": "div.primes.powers.higher",
-        "links": [
-            "LV.NO.2015.10.4"
+            "LV.AO.2009.7.3"
         ]
     },
     {
@@ -295,42 +54,22 @@
             "LV.AO.2001.8.3",
             "LV.AO.2002.8.2",
             "LV.AO.2004.8.3",
-            "LV.AO.2011.8.4",
-            "LV.AO.2013.7.1",
-            "LV.AO.2013.8.1",
-            "LV.AO.2014.8.1",
-            "LV.AO.2014.8.2"
+            "LV.AO.2011.8.4"
         ]
     },
     {
         "id": "nt.decnotation.sumofdigits",
         "links": [
             "LV.NO.2008.8.1",
-            "LV.AO.2006.8.3",
-            "LV.AO.2007.7.3"
-        ]
-    },
-    {
-        "id": "nt.decnotation.transform",
-        "links": [
-            "LV.NO.2004.8.2",
-            "LV.NO.2005.8.1",
-            "LV.NO.2012.7.1"
+            "LV.AO.2006.8.3"
         ]
     },
     {
         "id": "nt.divisibility.constructions",
         "links": [
             "LV.NO.2001.8.3",
-            "LV.NO.2005.8.3",
             "LV.AO.2000.7.2",
             "LV.AO.2011.7.3"
-        ]
-    },
-    {
-        "id": "nt.divisibility.equation",
-        "links": [
-            "LV.AO.2016.7.2"
         ]
     },
     {
@@ -343,197 +82,6 @@
             "LV.NO.2013.7.2",
             "LV.NO.2014.7.3",
             "LV.AO.2004.8.3",
-            "LV.AO.2006.7.1"
-        ]
-    },
-    {
-        "id": "nt.divisibility.numdivisors",
-        "links": [
-            "LV.NO.2009.7.3",
-            "LV.AO.2008.8.3"
-        ]
-    },
-    {
-        "id": "nt.divrules2and5.lastdigit",
-        "links": [
-            "LV.NO.2001.8.3",
-            "LV.NO.2016.8.2"
-        ]
-    },
-    {
-        "id": "nt.factorization.divisibilityrules",
-        "links": [
-            "LV.NO.2013.7.2",
-            "LV.NO.2014.7.3",
-            "LV.NO.2016.7.2",
-            "LV.AO.2001.7.2",
-            "LV.AO.2016.8.3"
-        ]
-    },
-    {
-        "id": "nt.factorization.plain",
-        "links": [
-            "LV.NO.2003.8.3",
-            "LV.NO.2004.8.1",
-            "LV.NO.2007.7.1",
-            "LV.NO.2008.7.1",
-            "LV.NO.2009.7.1",
-            "LV.AO.2007.8.3",
-            "LV.AO.2009.8.4",
-            "LV.AO.2010.7.1",
-            "LV.AO.2011.8.4"
-        ]
-    },
-    {
-        "id": "nt.factorization.powers",
-        "links": [
-            "LV.NO.2009.7.3",
-            "LV.NO.2010.7.3",
-            "LV.NO.2011.7.2",
-            "LV.AO.2013.7.3"
-        ]
-    },
-    {
-        "id": "nt.gcd.bezout",
-        "links": [
-            "LV.NO.2007.7.1",
-            "LV.NO.2008.7.1",
-            "LV.NO.2009.7.1"
-        ]
-    },
-    {
-        "id": "nt.gcd.congruences",
-        "links": [
-            "LV.AO.2011.7.3"
-        ]
-    },
-    {
-        "id": "nt.gcd.construct",
-        "links": [
-            "LV.NO.2005.8.3",
-            "LV.AO.2004.7.3"
-        ]
-    },
-    {
-        "id": "nt.gcd.fixeddiff",
-        "links": [
-            "LV.NO.2001.7.4"
-        ]
-    },
-    {
-        "id": "nt.gcd.twodivisors",
-        "links": [
-            "LV.AO.2000.7.2"
-        ]
-    },
-    {
-        "id": "nt.irreducible.plain",
-        "links": [
-            "LV.AO.2004.7.3"
-        ]
-    },
-    {
-        "id": "nt.lcm.construction",
-        "links": [
-            "LV.NO.2007.8.4"
-        ]
-    },
-    {
-        "id": "nt.parity.invariant",
-        "links": [
-            "LV.NO.2002.7.3",
-            "LV.NO.2002.8.3",
-            "LV.NO.2004.7.1",
-            "LV.NO.2008.8.1",
-            "LV.AO.2003.7.5"
-        ]
-    },
-    {
-        "id": "nt.parity.operations",
-        "links": [
-            "LV.NO.2003.7.4/LV.NO.2005.7.1",
-            "LV.NO.2005.7.4",
-            "LV.NO.2015.7.3",
-            "LV.AO.2009.7.3",
-            "LV.AO.2012.7.1",
-            "LV.AO.2014.7.2",
-            "LV.AO.2016.8.2"
-        ]
-    },
-    {
-        "id": "nt.periodic.invariant",
-        "links": [
-            "LV.NO.2006.8.3",
-            "LV.AO.2012.8.4"
-        ]
-    },
-    {
-        "id": "nt.periodic.longdivision",
-        "links": [
-            "LV.AO.2014.8.1"
-        ]
-    },
-    {
-        "id": "nt.periodic.powers",
-        "links": [
-            "LV.NO.2009.8.3"
-        ]
-    },
-    {
-        "id": "nt.periodic.remainders",
-        "links": [
-            "LV.AO.2000.7.2"
-        ]
-    },
-    {
-        "id": "nt.primes.distances",
-        "links": [
-            "LV.AO.2000.7.4",
-            "LV.AO.2010.7.1",
-            "LV.AO.2011.7.1"
-        ]
-    },
-    {
-        "id": "nt.primes.small",
-        "links": [
-            "LV.NO.2002.7.3",
-            "LV.NO.2004.7.1",
-            "LV.NO.2010.8.1",
-            "LV.NO.2015.7.3",
-            "LV.AO.2000.7.4",
-            "LV.AO.2003.8.3",
-            "LV.AO.2007.7.1",
-            "LV.AO.2009.7.3",
-            "LV.AO.2010.7.1",
-            "LV.AO.2011.7.1",
-            "LV.AO.2015.8.3"
-        ]
-    },
-    {
-        "id": "nt.remainder.invariant",
-        "links": [
-            "LV.NO.2002.8.3",
-            "LV.NO.2013.7.4",
-            "LV.NO.2015.7.2",
-            "LV.NO.2015.8.2",
-            "LV.AO.2009.7.5",
-            "LV.AO.2010.7.4"
-        ]
-    },
-    {
-        "id": "nt.remainder.map",
-        "links": [
-            "LV.NO.2006.8.3",
-            "LV.NO.2009.8.1",
-            "LV.NO.2009.8.3",
-            "LV.NO.2011.7.1",
-            "LV.NO.2015.8.1"
-        ]
-    },
-    {
-        "id": "nt.remainder.plain",
-        "links": [
-            "LV.NO.2001.7.1",
             "LV.AO.2006.7.1"
         ]
     }

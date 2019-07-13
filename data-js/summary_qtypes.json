@@ -22,14 +22,14 @@ data = [
         "EEsen": 8,
         "LVjun": 16,
         "LVsen": 5,
-        "OOsen": 12,
+        "OOsen": 13,
         "count": 2,
         "qtype_id": "Find.Any.Only"
     },
     {
         "EEjun": 0,
         "EEsen": 9,
-        "LVjun": 5,
+        "LVjun": 4,
         "LVsen": 1,
         "OOsen": 8,
         "count": 3,
@@ -38,7 +38,7 @@ data = [
     {
         "EEjun": 9,
         "EEsen": 17,
-        "LVjun": 19,
+        "LVjun": 21,
         "LVsen": 4,
         "OOsen": 16,
         "count": 4,
@@ -58,7 +58,7 @@ data = [
         "EEsen": 19,
         "LVjun": 10,
         "LVsen": 13,
-        "OOsen": 26,
+        "OOsen": 28,
         "count": 6,
         "qtype_id": "Prove.ForAll.NotExists"
     },
@@ -67,7 +67,7 @@ data = [
         "EEsen": 19,
         "LVjun": 20,
         "LVsen": 7,
-        "OOsen": 11,
+        "OOsen": 13,
         "count": 7,
         "qtype_id": "ProveDisprove.Exists"
     },

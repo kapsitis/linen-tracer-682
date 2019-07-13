@@ -26,6 +26,7 @@ kurš satur tos vienādā skaitā un dalās ar $5$ un $9$.
 </small>
 
 <!--
+concepts=divisibility,decimal-notation
 questionType=Find.Min
 -->
 
@@ -48,7 +49,7 @@ Atrast visus veselos skaitļus $n$, kuriem skaitlis
 ${\displaystyle \frac{n^2 - 4}{n^2 - 1}}$ ir vesels.
 
 <!--
-concepts=integer-polynomials
+concepts=integer-polynomials,divisibility
 questionType=Find.All
 -->
 
@@ -94,6 +95,7 @@ zvaigznīšu vietā, lai iegūtais skaitlis dalītos vienlaikus
 ar skaitļiem $6$, $7$ un $9$?
 
 <!--
+concepts=divisibility
 genre=digit-manipulation
 questionType=Find.All
 -->
@@ -107,6 +109,7 @@ par tikpat daudz gadiem, par cik viņš jaunāks par pašu vecāko.
 Atrast skolēnu vecumus. 
 
 <!--
+concepts=arithmetic-progression
 genre=word-problem
 questionType=Find.All
 -->
@@ -118,6 +121,7 @@ Atrast skaitli $c$, ja
 $(a+b):(b+c):(c+a)=6:7:8$ un $a+b+c=14$. 
 
 <!--
+concepts=proportion
 questionType=Find.All
 -->
 
@@ -146,6 +150,7 @@ Visu šo sešu skaitļu summa ir divreiz lielāka nekā skaitlis $a$.
 Atrast skaitli $a$. 
 
 <!--
+concepts=combinations
 genre=digit-manipulation
 questionType=Find.All
 -->
@@ -159,7 +164,7 @@ kvadrātu nevar izteikt kā pirmskaitļa un
 kāda vesela skaitļa kvadrāta summu.
 
 <!--
-concepts=primes,remainder
+concepts=primes,remainder,square
 questionType=Prove.Other
 -->
 
@@ -172,6 +177,7 @@ par tikpat daudz, par cik sākotnējais skaitlis ir mazāks par $400$.
 Atrast sākotnējo skaitli, ja zināms, ka tas beidzas ar ciparu $4$. 
 
 <!--
+concepts=arithmetic-progression
 genre=digit-manipulation
 questionType=Find.All
 -->
@@ -282,6 +288,7 @@ un $11$ cipari "9", un kas ir kāda vesela
 skaitļa kvadrāts?
 
 <!--
+concepts=full-square,decimal-notation
 questionType=ProveDisprove.Exists
 -->
 
@@ -311,6 +318,7 @@ pielika klāt katram no bērniem?
 </div>
 
 <!--
+concepts=divisibility
 genre=word-problem
 questionType=Find.All
 -->
@@ -323,6 +331,7 @@ ir $2000$, starp cipariem nav cipara $1$ un jebkuriem
 diviem blakus cipariem, cipars pa kreisi nepārsniedz ciparu pa labi. 
 
 <!--
+concepts=monotonic-sequence
 genre=string-counting
 questionType=Find.All
 -->
@@ -340,7 +349,7 @@ p + q = s\\
 
 
 <!--
-concepts=primes
+concepts=primes,system-of-equations
 questionType=Find.All
 -->
 
@@ -366,6 +375,7 @@ dalās ar $2001$, tad dators turklāt atskaņos mūziku.
 Kādu mazāko naturālo skaitli jāievada Tāvi datorā, lai dators atskaņotu mūziku? 
 
 <!--
+concepts=factorial
 genre=procedure
 questionType=Find.Min
 -->
@@ -393,6 +403,7 @@ $k^2 -k$ nedalās ar $6$, tad $k^2 - k - 2$
 dalās ar $18$. 
 
 <!--
+concepts=divisibility,power,quadratic-equation
 questionType=Prove.ForAll
 -->
 
@@ -407,6 +418,7 @@ Pēdējo reizi viņi visi satikās šajā kafejnīcā pirmdien,
 nedēļas dienā viņi visi satiksies kafejnīcā nākamajā reizē? 
 
 <!--
+concepts=arithmetic-progression
 genre=word-problem
 questionType=Find.Only
 -->
@@ -533,6 +545,7 @@ Uz leju:
 
 
 <!--
+concepts=square,primes,multiple
 genre=fill-in-table
 questionType=Find.All
 -->
@@ -568,7 +581,7 @@ Uz leju:
 
 <!--
 genre=fill-in-table
-concepts=full-square,sum-of-digits,remainder
+concepts=full-square,sum-of-digits,remainder,divisibility
 questionType=Find.All
 -->
 
@@ -586,6 +599,7 @@ Vienam Keitas brālim ir $2$ gadi, otram $9$ gadi, bet māsai $7$ gadi.
 Atrast visas iespējas, kāds var būt Keitas dzimšanas mēnesis un datums. 
 
 <!--
+concepts=divisibility
 genre=string-counting
 questionType=Find.All
 -->
@@ -599,7 +613,7 @@ iegūst pirmskaitli. No kādiem cipariem sastāv Līas parole?
 
 <!--
 genre=string-counting
-concepts=primes
+concepts=primes,combinations
 questionType=Find.All
 -->
 
@@ -614,6 +628,7 @@ gads ir 2007.g.], ja ģimenes locekļu vecumi ir visi skaitļi
 ar minēto īpašību. 
 
 <!--
+concepts=sum-of-digits
 genre=word-problem
 questionType=Find.All
 -->
@@ -640,6 +655,7 @@ kas iegūts samainot ciparu secību uz pretējo, ir trīsciparu un
 dalās gan ar $4$, gan ar $9$. 
 
 <!--
+concepts=divisibility
 genre=digit-manipulation
 questionType=Find.All
 -->
@@ -668,6 +684,7 @@ Atrast ciparus $a$, $b$ un $c$.
 kreisās uz labo pusi, ir $x$, $y$, un $z$.
 
 <!--
+concepts=arithmetic-progression
 genre=digit-manipulation
 questionType=Find.All
 -->
@@ -682,6 +699,7 @@ Zināms, ka $a \cdot b = c \cdot d \cdot e \cdot f$. Atrast iespējamās
 vērtības summai $a + b + c + d + e + f$.
 
 <!--
+concepts=combinations
 questionType=Find.All
 -->
 
@@ -709,6 +727,7 @@ tos nolasot no kreisās uz labo pusi, kā arī no labās uz kreiso pusi,
 iegūstam vienu un to pašu skaitli. Atrast visus šādus skaitļu trijniekus. 
 
 <!--
+concept=palindrome
 genre=digit-manipulation
 questionType=Find.All
 -->
@@ -739,11 +758,10 @@ ciparu 1, arī rodas kāda vesela skaitļa kvadrāts.
 
 <small>
 
-* [misc.beginatend](#)
-* [misc.experiment](#)
+* [misc.try](#)
 * [notation.algor.square5](#)
 * [notation.dec.numdigits.square](#)
-* [alg.factorize.sqdiff](#)
+* [alg.tra.factor.sqdiff](#)
 
 </small>
 
@@ -755,8 +773,10 @@ ru=
 -->
 
 <!--
+genre=digit-manipulation
 concepts=full-square
 questionType=Prove.ForAll
+strategy=begin-at-the-end
 -->
 
 
@@ -806,6 +826,7 @@ Ja tādi eksistē, tad atrast mazāko un lielāko tādu skaitli;
 ja neeksistē, tad pamatot, kāpēc. 
 
 <!--
+concepts=monotonic-sequence,divisibility,sum-of-digits
 questionType=Find.Min,Find.Max,Prove.NotExists
 -->
 
@@ -820,6 +841,7 @@ Vienu cipars naturālu skaitļu $n$ un $n+2$ reizinājumā vienāds ar $4$.
 un kuram skaitļu $n$ un $n+2$ reizinājums ir četrciparu skaitlis. 
 
 <!--
+concepts=decimal-notation
 questionType=Find.All,Find.Min,Find.Max
 -->
 
@@ -837,8 +859,8 @@ savā starpā vienādi?
 
 <small>
 
-* [mod.rem.expr](#)
-* [mod.rem.values](#)
+* [mod.congr](#)
+* [mod.congr.classes](#)
 
 </small>
 
@@ -896,6 +918,7 @@ Atrast visus trīsciparu naturālos skaitļus, kuri dalās ar $4$, $5$ un $6$,
 bet nedalās ar skaitļiem $7$, $8$ un $9$. 
 
 <!--
+concepts=divisibility
 questionType=Find.All
 -->
 
@@ -910,7 +933,7 @@ kuri apmierina vienādojumu $(a + b)(b + c)(c + a) = 123456789$?
 <small>
 
 * [notation.divrules.2or5or10.divides](#)
-* [mod.parity.cases](#)
+* [mod.fix.parity](#)
 
 </small>
 
@@ -960,6 +983,7 @@ lielākais no tiem vienāds ar $23$, bet skaitļi $a+d$ un $a-d$ nedalās ne ar
 vienu no dotajiem pirmskaitļiem. 
 
 <!--
+concepts=primes,inequality,divisibility
 questionType=Find.All
 -->
 
@@ -975,9 +999,9 @@ dalās ar $10$.
 
 <small>
 
-* [mod.expr.square](#)
-* [misc.exhaustive](#)
-* [misc.extreme.pigeonhole](#)
+* [mod.congr.pow](#)
+* [comb.full](#)
+* [misc.extr.pigeon](#)
 
 </small>
 
@@ -989,7 +1013,7 @@ ru=
 -->
 
 <!--
-concepts=full-square
+concepts=full-square,divisibility
 questionType=Find.Min
 -->
 
@@ -1063,7 +1087,7 @@ Atrast visas iespējamās $n$ vērtības.
 
 * [div.common.lcm](#)
 * [div.common.lcm.mult](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -1075,6 +1099,7 @@ ru=
 -->
 
 <!--
+concepts=divisibility
 questionType=Find.All
 -->
 
@@ -1110,16 +1135,16 @@ questionType=Find.All
 
 # <lo-sample/> EE.PK.2015.10.3
 
-(а) Zināms, ka $x^2 − y^2 = 100$, kur $x$ и $y$ ir naturāli skaitļi. Atrast izteiksmes 
+(а) Zināms, ka $x^2 − y^2 = 100$, kur $x$ un $y$ ir naturāli skaitļi. Atrast izteiksmes 
 $x − y$ mazāko iespējamo vērtību.  
 (b) Tas pats jautājums, ja $x$ un $y$ ir veseli skaitļi.
 
 <small>
 
-* [alg.factorize.sqdiff](#)
-* [mod.parity.cases](#)
-* [misc.exhaustive](#)
-* [alg.linear](#)
+* [alg.tra.factor.sqdiff](#)
+* [mod.fix.parity](#)
+* [comb.full](#)
+* [alg.linear.equations](#)
 
 </small>
 
@@ -1158,8 +1183,8 @@ veselo skaitļu no $1$ līdz $n$ ciparu summa ir pāru skaitlis?
 <small>
 
 * [seq.define](#)
-* [misc.experiment](#)
-* [misc.induction](#)
+* [misc.try](#)
+* [misc.ind](#)
 
 </small>
 
@@ -1228,6 +1253,7 @@ Par četriem veseliem skaitļiem $a$, $b$, $c$ un $d$ zināms, ka
 Kuri no dotajiem četriem skaitļiem $a$, $b$, $c$ un $d$ dalās ar $3$?
 
 <!--
+concepts=divisibility
 questionType=Find.All
 -->
 
@@ -1241,6 +1267,7 @@ palika $y$ eiro un $x$ centi. Cik pavisam naudas viņam tagad
 palicis bankas kontā? 
 
 <!--
+concepts=divisibility
 questionType=Find.All
 -->
 
@@ -1255,7 +1282,7 @@ b) $n = 3$?
 
 <small>
 
-* [div.alg](#)
+* [alg.expr.prop](#)
 * [div.common.lcm.frac](#)
 
 </small>
@@ -1269,7 +1296,7 @@ ru=
 -->
 
 <!--
-concepts=gcd
+concepts=lcm
 questionType=ProveDisprove.Exists
 -->
 
@@ -1308,7 +1335,8 @@ atrisinājums, kuram $x$, $y$, $z$ un $w$ ir dažādi veseli skaitļi?
 
 <small>
 
-* [alg.ineq.fullsquare](#)
+* [alg.tra.binom.complsquare](#)
+* [alg.ineq.square](#)
 * [alg.ineq.equations](#)
 
 </small>
@@ -1321,6 +1349,7 @@ $x^2 + y^2 + z^2 + w^2 = 3 + xy + y z + zw$,
 -->
 
 <!--
+concepts=square
 genre=integer-equation
 questionType=ProveDisprove.Exists
 -->
@@ -1386,10 +1415,10 @@ $324^{x+y} = 2^{x−y} \cdot 3^{x−3} \cdot 4^{y−4}$.
 
 <small>
 
-* [div.pfactor.algorithm](#)
-* [alg.powers.prod](#)
-* [div.pfactor.expsystem](#)
-* [alg.linear](#)
+* [div.fta.proc](#)
+* [alg.tra.pow.prod](#)
+* [div.fta.pow.expsystem](#)
+* [alg.linear.equations](#)
 
 </small>
 
@@ -1400,6 +1429,7 @@ $324^{x+y} = 2^{x−y} \cdot 3^{x−3} \cdot 4^{y−4}$.
 -->
 
 <!--
+concepts=power
 genre=integer-equation
 questionType=Find.All
 -->
@@ -1453,10 +1483,10 @@ $$\frac{1}{a} - \frac{1}{b} =\frac{1}{b} - \frac{1}{c} =\frac{1}{c} - \frac{1}{d
 
 <small>
 
-* [misc.symmetry](#)
-* [misc.experiment](#)
+* [misc.symm](#)
+* [misc.try](#)
 * [seq.arithm.expr](#)
-* [alg.sums.linear](#)
+* [alg.poly.homo](#)
 
 </small>
 
@@ -1521,9 +1551,9 @@ Atrast visas iespējamās vērtības Mari iedomātajam skaitlim.
 
 <small>
 
-* [alg.equation](#)
+* [alg.expr](#)
 * [notation.dec.combine.poly](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -1632,9 +1662,9 @@ kas apmierina vienādību $22a + 15b = 2019$?
 
 <small>
 
-* [misc.extreme.param](#)
-* [mod.expr.sum](#)
-* [misc.experiment](#)
+* [misc.extr.param](#)
+* [mod.congr.sumdiff](#)
+* [misc.try](#)
 * [seq.arithm.mod.gaps](#)
 
 </small>

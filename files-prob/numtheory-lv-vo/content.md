@@ -17,8 +17,8 @@ $f(2011) = 100$, bet $f(11) = 1000$?
 
 <small>
 
-* [alg.poly.int.valdiff](#)
-* [alg.factorize.powdiff](#)
+* [alg.poly.prop.valdiff](#)
+* [alg.tra.factor.powdiff](#)
 
 </small>
 
@@ -35,7 +35,7 @@ Pierādīt, ka skaitļa $N^2$ decimālajā pierakstā nav cipara $0$.
 
 <small>
 
-* [misc.experiment](#) 
+* [misc.try](#) 
 * [seq.geom.summation](#)
 * [seq.geom.decnotation](#)
 
@@ -78,7 +78,7 @@ nav atrisinājuma naturālos skaitļos.
 
 <small>
 
-* [misc.symmetry](#)
+* [misc.symm](#)
 * [alg.ineq.monotonicity](#)
 
 </small>
@@ -117,9 +117,9 @@ skaitļa kvadrāti.
 
 <small>
 
-* [seq.others.fibonacci](#)
+* [seq.recur.fibonacci](#)
 * [seq.prop.periodic.finstate](#)
-* [mod.expr.square](#)
+* [mod.congr.pow](#)
 
 </small>
 
@@ -171,7 +171,7 @@ $\frac{n^3+3}{n+3}$, gan $\frac{n^4+4}{n+4}$ ir veseli skaitļi.
 <small>
 
 * [alg.poly.division](#)
-* [div.pfactor.prop.numdivisors](#)
+* [div.fta.divisors.num](#)
 
 </small>
 
@@ -299,9 +299,9 @@ dalās ar $10$.
 
 <small>
 
-* [div.pfactor.prop.divisibility](#)
-* [mod.parity](#)
-* [mod.expr.poly](#)
+* [div.prop.prod](#)
+* [mod.fix.parity](#)
+* [mod.congr.poly](#)
 
 </small>
 
@@ -329,9 +329,8 @@ Pierādīt, ka arī $x^{433}y$ ir naturāla skaitļa 2016. pakāpe.
 
 <small>
 
-* [div.primes.powers](#)
-* [div.pfactor](#)
-* [alg.linear](#)
+* [div.fta.pow](#)
+* [alg.linear.equations](#)
 
 </small>
 
@@ -380,8 +379,8 @@ $$\frac{1}{n}=\frac{1}{x(x+1)}+\frac{1}{(x+1)(x+2)}+\cdots{}+\frac{1}{y(y+1)}.$$
 
 <small>
 
-* [alg.ratfractions.diff](#)
-* [alg.sums](#)
+* [alg.tra.frac](#)
+* [alg.series.sum](#)
 
 </small>
 
@@ -425,13 +424,13 @@ Pierādīt, ka tā ciparus var pārkārtot citā secībā tā, lai jauniegūtais
 
 * [notation.divrules.2or5or10.divides](#)
 * [notation.dec.combine.split](#)
-* [mod.expr.sum](#)
-* [misc.strengthening](#)
-* [misc.exhaustive](#)
+* [mod.congr.sumdiff](#)
+* [comb.full](#)
 
 </small>
 
 <!--
+strategy=strengthen-the-hypothesis
 concepts=primes
 genre=digit-manipulation
 questionType=Prove.ForAll
@@ -514,8 +513,8 @@ var izteikt kā pirmskaitļa un salikta skaitļa summu!
 
 <small>
 
-* [misc.experiment](#) 
-* [mod.parity.cases](#)
+* [misc.try](#) 
+* [mod.fix.parity](#)
 
 </small>
 
@@ -551,7 +550,7 @@ vērtība nav naturāla skaitļa kvadrāts!
 
 <small>
 
-* [mod.exponent.one](#)
+* [mod.exp](#)
 * [notation.divrules.composite](#)
 
 </small>

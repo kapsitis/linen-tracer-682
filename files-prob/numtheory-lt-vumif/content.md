@@ -33,7 +33,7 @@ yra natūralusis.
 
 * [alg.poly.division](#)
 * [alg.ineq.equations](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -79,11 +79,11 @@ yra natūralieji.
 
 <small>
 
-* [div.pfactor](#)
-* [div.pfactor.powers.higher](#)
-* [div.pfactor.prop.common](#)
+* [div.fta](#)
+* [div.fta.pow.other](#)
+* [div.common.lcm.maxexp](#)
 * [seq.arithm.mod.gaps](#)
-* [mod.systems.chinese](#)
+* [mod.eq.chinese](#)
 
 </small>
 
@@ -163,7 +163,7 @@ kad vienas skaičius būtų kito kvadratas?
 <small>
 
 * [notation.dec.numdigits.prod](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -237,10 +237,10 @@ $$m^2 + 2m - 9 = n^2 + n.$$
 
 <small>
 
-* [alg.completesquare](#)
+* [alg.tra.binom.complsquare](#)
 * [seq.gaps.squares](#)
 * [alg.ineq.monotonicity](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -326,10 +326,14 @@ skaičių $0$, pralaimi. Nustatykite, kuris
 
 <small>
 
-* [misc.beginatend](#)
-* [misc.invariant.game](#)
+* [misc.invar.game](#)
 
 </small>
+
+<!--
+strategy=begin-at-the-end
+-->
+
 
 ## Sākšana no beigām - 1
 
@@ -400,8 +404,8 @@ skaidinys pirminiais daugikliais.
 
 <small>
 
-* [div.pfactor.prop.numdivisors](#)
-* [div.pfactor.structure](#)
+* [div.fta.divisors.num](#)
+* [div.fta.divisors.struct](#)
 
 </small>
 
@@ -513,12 +517,15 @@ kad ir kaip žaistų Algis.
 
 <small>
 
-* [misc.beginatend](#)
-* [misc.invariant.game](#)
-* [mod.parity.cases](#)
-* [misc.induction.least](#)
+* [misc.invar.game](#)
+* [mod.fix.parity](#)
+* [misc.ind.least](#)
 
 </small>
+
+<!--
+strategy=begin-at-the-end
+-->
 
 
 ## Spriedumi no beigām
@@ -604,10 +611,10 @@ galėjo gauti? Raskite visas galimybes.
 
 <small>
 
-* [notation.mod.last](#)
-* [mod.systems.linear](#)
-* [misc.symmetry](#)
-* [misc.exhaustive](#)
+* [mod.fix.lastdigits](#)
+* [mod.eq](#)
+* [misc.symm](#)
+* [comb.full](#)
 * [notation.divrules.pow2or5.divides](#)
 
 </small>
@@ -692,8 +699,8 @@ skaičius dalijasi iš kito, tai jie lygūs.
 <small>
 
 * [notation.divrules.3or9.remainder](#)
-* [misc.invariant](#)
-* [mod.expr.prod](#)
+* [misc.invar](#)
+* [mod.congr.prod](#)
 
 </small>
 
@@ -750,10 +757,10 @@ b) $N$ nesidalija iš jokio penktinio skaičiaus.
 <small>
 
 * [notation.divrules.3or9.remainder](#)
-* [mod.expr.prod](#)
-* [mod.systems.chinese](#)
+* [mod.congr.prod](#)
+* [mod.eq.chinese](#)
 * [alg.ineq.monotonicity](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 

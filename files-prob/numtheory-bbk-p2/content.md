@@ -23,6 +23,10 @@ Zināms, ka neviens no skaitļiem $a_i$ nav pārējo virknes
 skaitļu reizinājuma dalītājs. Pierādiet, ka $x \leq \pi(n)$. 
 (Ar $\pi(n)$ apzīmēts pirmskaitļu skaits, kuri nepārsniedz $n$.)
 
+<!--
+questionType=Prove.ForAll
+-->
+
 
 # <lo-sample/> BBK2012.P2.21
 
@@ -31,6 +35,10 @@ ja $p \mid q$ un $p \neq q$, tad $a_p \mid a_q$ un
 $a_p \neq a_q$. Vai iespējams, ka  
 (a) $a_{1000} < 64$  
 (b) $a_{1000} = 64$?
+
+<!--
+questionType=ProveDisprove.Exists
+-->
 
 
 # <lo-sample/> BBK2012.P2.22
@@ -42,6 +50,9 @@ $$\frac{p_1}{p_1 - 1}\cdot \frac{p_2}{p_2 - 1} \cdot \ldots
 $$> 1 + \frac{1}{2} + \frac{1}{3} + 
 \frac{1}{4} + \ldots + \frac{1}{10000}.$$
 
+<!--
+questionType=Prove.ForAll
+-->
 
 
 # <lo-sample/> BBK2012.P2.23
@@ -51,6 +62,11 @@ $a_1 = 99$, $a_{n+1} = a_n + p(a_n)$, kur
 ar $p(x)$ apzīmēts lielākais pirmskaitlis, ar kuru dalās $x$. 
 Aprēķināt $a_{1999}$. 
 
+<!--
+questionType=Find.Only
+-->
+
+
 # <lo-sample/> BBK2012.P2.24
 
 Vai var atrast galīgu skaitu ģeometrisku progresiju, 
@@ -58,6 +74,7 @@ kas katra ir bezgalīga un sastāv no naturāliem skaitļiem,
 lai katrs naturāls skaitlis piederētu vismaz vienai no tām?
 
 <!--
+questionType=ProveDisprove.Exists
 seeAlso=BBK2012.P1.52
 -->
 

@@ -3,9 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 .project
+.settings
 .pydevproject
 */.Rhistory
 problems-bak/*
+*.bak
 
 # Distribution / packaging
 .Python

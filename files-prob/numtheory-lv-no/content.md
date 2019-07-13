@@ -23,7 +23,7 @@ vismaz viens interesants.
 <small>
 
 * [notation.divrules.3or9.remainder](#)
-* [seq.others.sumdigits](#)
+* [seq.gaps](#)
 * [seq.arithm.mod](#)
 
 </small>
@@ -64,7 +64,7 @@ atrastos skaitļi $\frac{4}{3}$; $\frac{4}{5}$; $\frac{5}{2}$?
 
 <small>
 
-* [misc.invariant.expr.prod](#)
+* [misc.invar.expr](#)
 
 </small>
 
@@ -94,9 +94,9 @@ katru vienu reizi. Vai to var izdarīt, ja
 
 <small>
 
-* [misc.invariant.expr.sum](#)
-* [alg.sums](#)
-* [misc.experiment](#)
+* [misc.invar.expr](#)
+* [alg.series.sum](#)
+* [misc.try](#)
 
 </small>
 
@@ -134,7 +134,7 @@ skaitļu summu (pavisam būs $12$ summas). Kādu mazāko skaitu dažādu vērtī
 
 <small>
 
-* [misc.extreme](#)
+* [misc.extr](#)
 
 </small>
 
@@ -166,7 +166,7 @@ pārējām kartītēm.
 
 <small>
 
-* [alg.equation](#)
+* [alg.expr](#)
 
 </small>
 
@@ -200,7 +200,7 @@ Kvadrāts sastāv no $3 \times 3$ rūtiņām.
 Katrā rūtiņā jāieraksta pa naturālam skaitlim, kas
 nepārsniedz n (visiem skaitļiem jābūt dažādiem) tā, lai 
 no katriem diviem skaitļiem, kas
-ierakstīti rūtiņās ar kopīgu malu, viens dalītos ar otru.\\
+ierakstīti rūtiņās ar kopīgu malu, viens dalītos ar otru.  
 Vai to var izdarīt, ja (a) $n=15$, (b) $n=13$?
 
 <!--
@@ -277,9 +277,9 @@ iepriekšējo summu. Vai ar $5$ dalās šīs virknes
 (a) $21$-ais, (b) $2000$-ais loceklis?
 
 <!--
-seeAlso=NO.2001.12.1
-seeAlso=NO.2003.12.1
-seeAlso=NO.2004.12.1
+seeAlso=LV.NO.2001.12.1
+seeAlso=LV.NO.2003.12.1
+seeAlso=LV.NO.2004.12.1
 questionType=Find.Only
 -->
 
@@ -301,7 +301,7 @@ Kuru nedēļas dienu otrajā gadā ir visvairāk?
 
 <small>
 
-* [nt.remainder.plain](#)
+* [mod.congr](#)
 * [al.inequality.intervals](#)
 
 </small>
@@ -329,9 +329,8 @@ no kuriem katriem diviem lielākais kopīgais dalītājs ir $1$?
 
 <small>
 
-* [nt.gcd.fixeddiff](#)
-* [co.pigeonhole.statement](#)
-* [co.fullsearch.construction](#)
+* [misc.extr.pigeon](#)
+* [comb.full](#)
 
 </small>
 
@@ -355,7 +354,7 @@ Pamatojiet savu risinājumu.
 
 <small>
 
-* [nt.divrules2and5.lastdigit](#)
+* [notation.divrules.2or5or10.divides](#)
 * [nt.divisibility.constructions](#)
 
 </small>
@@ -399,7 +398,7 @@ rūtiņas malas garums ir $1$.
 Uzzīmēta slēgta lauzta līnija, kuras visi posmi iet pa 
 rūtiņu malām, un katra
 posma garums ir nepāra skaitlis. 
-Vai šai līnijai var būt tieši\\
+Vai šai līnijai var būt tieši  
 (a) $2000$, (b) $2001$, (c) $2002$ posmi?
 
 
@@ -497,8 +496,8 @@ Kāds lielākais dažādu pirmskaitļu daudzums var vienlaikus atrasties uz tāf
 
 <small>
 
-* [nt.primes.small](#)
-* [nt.parity.invariant](#)
+* [div.prop.primes.small](#)
+* [misc.invar.parity](#)
 
 </small>
 
@@ -516,16 +515,16 @@ questionType=Find.Max
 # <lo-sample/> LV.NO.2002.8.3 
 
 Burtnīcā ir $100$ lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem 
-no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek izrautas\\
-**(a)** $31$ lapa; **(b)** $30$ lapas?   
+no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek izrautas  
+**(a)** $31$ lapa;   
+**(b)** $30$ lapas?   
 *Piezīme.* Lapas var neraut pēc kārtas.
-
 
 <small>
 
-* [nt.parity.invariant](#)
+* [misc.invar.parity](#)
 * [al.inequality.extremalelement](#)
-* [nt.remainder.invariant](#)
+* [misc.invar.congr](#)
 
 </small>
 
@@ -598,7 +597,7 @@ Nevienā kastē nav vairāk par $2002$ konfektēm.
 Ar vienu gājienu atļauts no dažām
 kastēm apēst vienādu skaitu konfekšu 
 (drīkst arī ēst konfektes tikai no
-vienas kastes).\\
+vienas kastes).  
 Kāds ir mazākais gājienu skaits, ar kuru var apēst visas konfektes?
 
 
@@ -626,7 +625,7 @@ questionType=Find.Min
 
 # <lo-sample/> LV.NO.2002.12.1 
 
-Dots, ka $\sin x$ - racionāls skaitlis. Vai $\sin 2x$ var būt\\
+Dots, ka $\sin x$ - racionāls skaitlis. Vai $\sin 2x$ var būt  
 (a) racionāls, (b) iracionāls, (c) nedefinēts?
 
 <!--
@@ -646,13 +645,14 @@ questionType=ProveDisprove.Exists
 # <lo-sample/> LV.NO.2003.7.4/LV.NO.2005.7.1 
 
 
-Kādu mazāko daudzumu no skaitļiem\\ $1;2;3;\ldots;12;13$ var izsvītrot, lai 
+Kādu mazāko daudzumu no skaitļiem   
+$1;2;3;\ldots;12;13$ var izsvītrot, lai 
 katru divu atlikušo summa būtu salikts skaitlis? 
 
 <small>
 
-* [misc.graphs.bipartite](#)
-* [nt.parity.operations](#)
+* [comb.graph.bipartite](#)
+* [mod.fix.parity](#)
 
 </small>
 
@@ -675,7 +675,7 @@ vienas grupas visu skaitļu reizinājums vienāds ar otras grupas visu skaitļu 
 
 <small>
 
-* [nt.factorization.plain](#)
+* [div.fta](#)
 
 </small>
 
@@ -806,9 +806,9 @@ lai katru divu atlikušo summa būtu salikts skaitlis?
 
 <small>
 
-* [misc.graphs.bipartite](#)
-* [nt.primes.small](#)
-* [nt.parity.invariant](#)
+* [comb.graph.bipartite](#)
+* [div.prop.primes.small](#)
+* [misc.invar.parity](#)
 
 </small>
 
@@ -831,7 +831,7 @@ vienas grupas visu skaitļu reizinājums vienāds ar otras grupas visu skaitļu 
 
 <small>
 
-* [nt.factorization.plain](#)
+* [div.fta](#)
 
 </small>
 
@@ -856,15 +856,15 @@ decimālais pieraksts sākas ar ciparu $1$?
 
 <small>
 
-* [nt.decnotation.transform](#)
+* [notation.dec.numdigits](#)
 * [al.inequality.estimates](#)
 
 </small>
 
 <!--
 questionType=Find.Count
-seeAlso=https://en.wikipedia.org/wiki/Benford%27s_law
-seeAlso=https://meduza.io/feature/2017/01/13/itogi-vyborov-v-gosdumu-okazalis-slishkom-idealnymi
+seeAlso=[Benford's Law](https://en.wikipedia.org/wiki/Benford%27s_law)
+seeAlso=[Ideal Voting](https://meduza.io/feature/2017/01/13/itogi-vyborov-v-gosdumu-okazalis-slishkom-idealnymi)
 seeAlso=LV.NO.2005.8.1
 -->
 
@@ -910,7 +910,9 @@ virknē augošā secībā. Kāda var būt
 blakus uzrakstītu palindromu starpība, ja zināms, 
 ka tā ir pirmskaitlis?
 
-
+<!--
+concepts=palindrome
+-->
 
 
 # <lo-sample/> LV.NO.2004.11.2 
@@ -923,14 +925,15 @@ dalās ar $10$.
 
 # <lo-sample/> LV.NO.2004.12.1 
 
-[seeAlso:NO.2000.12.1](#NO.2000.12.1)  
 Skaitļu virknē $1; 1; 2; 3; 5; \ldots$ katrs loceklis, sākot ar trešo, vienāds ar abu
 iepriekšējo locekļu summu. Noskaidrot, vai ar $6$ dalās
 
 1. virknes $24$-ais loceklis,
 2. virknes $2004$-ais loceklis.
 
-
+<!--
+seeAlso=LV.NO.2000.12.1
+-->
 
 
 
@@ -941,34 +944,41 @@ iepriekšējo locekļu summu. Noskaidrot, vai ar $6$ dalās
 
 # <lo-sample/> LV.NO.2005.7.4 
 
-[seeAlso:Semiperfect number](https://en.wikipedia.org/wiki/Semiperfect_number)  
 Naturālu skaitli $n$ sauc par īpašu, ja tas ir vienāds ar četru savu dažādu 
-dalītāju summu.
-
-1. atrodiet kaut vienu īpašu skaitli, 
-2. pierādiet, ka īpašu skaitļu ir bezgalīgi daudz, 
-3. pierādiet, ka visi īpaši skaitļi ir pāru skaitļi. 
-
-
+dalītāju summu.  
+(a) atrodiet kaut vienu īpašu skaitli,  
+(b) pierādiet, ka īpašu skaitļu ir bezgalīgi daudz,  
+(c) pierādiet, ka visi īpaši skaitļi ir pāru skaitļi. 
 
 <small>
 
-* [al.inequality.fractions](#)
-* [nt.parity.operations](#)
+* [div.fta.divisors.frac](#)
+* [misc.extr.param](#)
+* [mod.fix.parity](#)
 
 </small>
 
-## ABC
+<!--
+seeAlso=[Semiperfect number](https://en.wikipedia.org/wiki/Semiperfect_number)
+-->
+
+
+## Dalītāju izteikšana
  
-**#AlgebrisksPārveidojums** **#Nevienādība** $n=n/2+n/3+n/7+n/42$ un $42k$ ir īpaši. Nepāru nav, jo $1/3+1/5+1/7+1/9<1$.
-**#Paritāte** **(c)** Nepāru skaitļiem visi dalītāji ir nepāru; 4 nep. summa būtu pāru.
+**(a,b)** $n=n/2+n/3+n/7+n/42$; tātad $42k$ ir īpaši. 
+
+**Nav nepāru īpašu skaitļu:**
+
+* Pat "ekstrēmākie" dalītāji ir par mazu:
+$$\frac{n}{3}+\frac{n}{5}+\frac{n}{7}+\frac{n}{9} < n.$$
+* Nepāru skaitļiem visi dalītāji ir nepāru; 
+četru nepāru summa nevar būt pāru.
 
 
 
 
 # <lo-sample/> LV.NO.2005.8.1 
 
-[seeAlso:NO.2004.8.2](#NO.2004.8.2)  
 Ir zināms, ka skaitļa $2^{100}$ decimālajā pierakstā ir $31$ cipars. 
 Cik daudziem no skaitļiem $2^1; 2^2; 2^3; \ldots; 2^{99}; 2^{100}$ 
 decimālais pieraksts sākas ar ciparu $1$?
@@ -976,10 +986,14 @@ decimālais pieraksts sākas ar ciparu $1$?
 
 <small>
 
-* [nt.decnotation.transform](#)
+* [notation.dec.numdigits](#)
 * [al.inequality.estimates](#)
 
 </small>
+
+<!--
+seeAlso=LV.NO.2004.8.2
+-->
 
 ## ABC
  
@@ -998,16 +1012,30 @@ Ar kādu mazāko jautājumu skaitu Juris var noteikti noskaidrot $n$?
 
 <small>
 
-* [nt.divisibility.constructions](#)
-* [nt.gcd.construct](#)
-* [co.games.strategy](#)
+* [div.common.lcm](#)
+* [div.prop.primes.inf](#)
+* [div.fta](#)
 
 </small>
 
-## ABC
- 
-**#Dalāmība** **#Spēles** 1.gāj. Andris var atbildēt ar $x$, kas dalās ar vairākiem $x_i$. Bet 2.gāj. Juris nosauc 5 pirmskaitļus $p_i > x$. 
+<!--
+genre=games
+questionType=Find.Min
+-->
 
+
+## Ar 1 gājienu nepietiek
+ 
+Pirmajā gājienā Andris var atbildēt ar tādu $x$, 
+kas dalās ar vairākiem $x_i$. 
+
+
+## Ar 2 gājieniem pietiek
+
+Otrajā gājienā Juris nosauc 5 pirmskaitļus $p_i > x_1$ (kur $x_1$ - 
+Andra pirmais nosauktais skaitlis). 
+Atkarībā no tā, ar kuru pirmskaitli dalās Andra atbilde $x_2$, 
+var noteikt $n$.
 
 
 # <lo-sample/> LV.NO.2005.9.2 
@@ -1114,20 +1142,22 @@ Kuri naturālie skaitļi ir vienādi ar trīs savu dažādu pozitīvu dalītāju
 
 <small>
 
-* [al.inequality.fractions](#)
-* [al.manipulate.fractionsum](#)
+* [div.fta.divisors.frac](#)
+* [alg.ineq.monotonicity](#)
 
 </small>
 
-## ABC
+## Pāreja uz daļām
  
-**#AlgebrisksPārveidojums** **#Nevienādība** $n = (n/2) + (n/3) + (n/6)$; citādi sadalīt dažādu daļu summā nevar.
+* $n = (n/2) + (n/3) + (n/6)$ jeb $1 = 1/2+1/3+1/6$. (Tātad der visi, kas
+dalās ar $6$.)
+* Citādi skaitli $1$ sadalīt dažādu daļu summā nevar - var pamatot ar nevienādībām.
 
 
 # <lo-sample/> LV.NO.2006.8.1 
 
 
-Ir zināms, ka visiem $x$ pastāv vienādība\\
+Ir zināms, ka visiem $x$ pastāv vienādība  
 $$x^4 + 64 = (x^2 - 4x + 8)\cdot A,$$
 kur $A$ ir izteiksme, kas izveidota no $x$ un naturāliem skaitļiem ar 
 saskaitīšanas, atņemšanas un reizināšanas operāciju palīdzību. 
@@ -1136,7 +1166,7 @@ Atrast $A$.
 
 <small>
 
-* [al.manipulate.fullsquare](#)
+* [alg.tra.binom.complsquare](#)
 
 </small>
 
@@ -1156,8 +1186,8 @@ katru vienu reizi tā, lai katru $3$ pēc kārtas uzrakstīto skaitļu summa dal
 
 <small>
 
-* [nt.periodic.invariant](#)
-* [nt.remainder.map](#)
+* [mod.period](#)
+* [mod.congr.classes](#)
 
 </small>
 
@@ -1239,14 +1269,15 @@ naturālu dalītāju?
 
 # <lo-sample/> LV.NO.2006.12.5 
 
-[seeAlso](#NO.2007.12.2)  
 Pa apli izvietotas $n$ spuldzes; sākotnēji tās visas ir izslēgtas. Viena spuldze
 apzīmēta ar $S$. Atrodam visus skaitļa $n$ pozitīvos dalītājus, ieskaitot $1$ un $n$.
 Katram šādam dalītājam $d$ veicam sekojošu operāciju: mainām katras $d$-tās
 spuldzes stāvokli (sākot ar spuldzi $S$), pavisam izdarot $n$ maiņas.
 Kurām $n$ vērtībām, beidzot šīs darbības, visas spuldzes būs ieslēgtas?
 
-
+<!--
+seeAlso=LV.NO.2007.12.2
+-->
 
 
 
@@ -1266,9 +1297,9 @@ kur $x = a^5$, $y = b^3$, $a$ un $b$ \textendash{} naturāli skaitļi?
 
 <small>
 
-* [nt.gcd.bezout](#)
-* [nt.factorization.plain](#)
-* [al.power.identity.add](#)
+* [div.common.gcd.bezout](#)
+* [div.fta](#)
+* [alg.tra.pow.nest](#)
 
 </small>
 
@@ -1289,7 +1320,7 @@ Atrast mazāko naturālo skaitli, kas dalās ar katru no kaut kādiem $12$ pēc 
 <small>
 
 * [nt.divisibility.multiples](#)
-* [nt.lcm.construction](#)
+* [div.common.lcm](#)
 
 </small>
 
@@ -1362,9 +1393,9 @@ $y = b^4$, $a$ un $b$ \textendash{} naturāli skaitļi?
 
 <small>
 
-* [nt.gcd.bezout](#)
-* [nt.factorization.plain](#)
-* [al.power.identity.add](#)
+* [div.common.gcd.bezout](#)
+* [div.fta](#)
+* [alg.tra.pow.nest](#)
 
 </small>
 
@@ -1386,8 +1417,8 @@ Pierādīt, ka cīkstoņu skaits dalās ar $17$.
 
 <small>
 
-* [al.equation.mean](#)
-* [al.inequality.finitesearch](#)
+* [alg.series.mean](#)
+* [alg.ineq.equations](#)
 * [nt.divisibility.multiples](#)
 
 </small>
@@ -1410,7 +1441,7 @@ Pierādīt, ka viens no tiem dalās ar $10$.
 <small>
 
 * [nt.decnotation.sumofdigits](#)
-* [nt.parity.invariant](#)
+* [misc.invar.parity](#)
 
 </small>
 
@@ -1469,9 +1500,9 @@ kur $x = a^3$, $y = b^5$, $a$ un $b$ \textendash{} naturāli skaitļi?
 
 <small>
 
-* [nt.gcd.bezout](#)
-* [nt.factorization.plain](#)
-* [al.power.identity.add](#)
+* [div.common.gcd.bezout](#)
+* [div.fta](#)
+* [alg.tra.pow.nest](#)
 
 </small>
 
@@ -1487,22 +1518,34 @@ Jebkuru pirmskaitļa pakāpi $p^v$ var izteikt kā $(p^k)^3/(p^m)^5$.
 
 Naturālam skaitlim $a$ ir tieši $4$ dalītāji, bet naturālam skaitlim $b$ \textendash{}
 tieši $6$ dalītāji. Pierādiet, ka reizinājumam $ab$ ir **vismaz** $9$ dalītāji. 
-Vai var gadīties, ka šim reizinājumam ir **tieši** $9$ dalītāji?\\
-**Piezīme:** Apskatām tikai tādus dalītājus, kas paši ir naturāli skaitļi. 
+Vai var gadīties, ka šim reizinājumam ir **tieši** $9$ dalītāji?  
+*Piezīme.* Apskatām tikai tādus dalītājus, kas paši ir naturāli skaitļi. 
 Pie skaitļa dalītājiem pieskaita gan viņu pašu, gan vieninieku.)
 
 
 <small>
 
-* [nt.divisibility.numdivisors](#)
-* [nt.factorization.powers](#)
+* [div.fta.divisors.num](#)
+* [comb.full](#)
 
 </small>
 
-## ABC
- 
-**#DalītājuSkaits** $a$ ir $p^3$ vai $pq$. Savukārt $b$ ir $r^5$ vai $r^2s$. Ja $p=r$, var dabūt $ab = p^3p^5 = p^8$.
+## Dalītāju skaita noteikšana
 
+* Tieši četri dalītāji var būt tādam $a$, kas ir vai nu 
+$p^3$ vai $pq$. ($p,q$ - pirmskaitļi)
+* Līdzīgi $b$ ir $r^5$ vai $r^2s$. ($r,s$ - pirmskaitļi)
+* Ja $p=r$, var dabūt $ab = p^3p^5 = p^8$.
+
+## Gadījumu pārlase
+
+Mazāk kā $9$ dalītāji var rasties $3$ veidos:
+
+* $p^a$, kur $a+1 < 9$,
+* $p^aq^b$, kur $(a+1)(b+1) < 9$,
+* $p^aq^br^c$, kur $(a+q)(b+1)(c+1) < 9$. 
+
+Neviens no šiem gadījumiem neatbilst mūsu nosacījumam.
 
 # <lo-sample/> LV.NO.2009.8.1 
 
@@ -1510,15 +1553,13 @@ Pie skaitļa dalītājiem pieskaita gan viņu pašu, gan vieninieku.)
 Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka katrā rindā un 
 katrā kolonnā tika izvēlēta tieši viena rūtiņa. Pierādiet: neatkarīgi no tā, kuras 
 $4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$. 
-\begin{center}
-\includegraphics[width=0.8in]{table4by4.png}
-\end{center}
 
+![tabula](LV.NO.2009.8.1.png)
 
 <small>
 
-* [al.sym.linear](#)
-* [nt.remainder.map](#)
+* [alg.linear.comb](#)
+* [mod.congr.classes](#)
 
 </small>
 
@@ -1534,8 +1575,8 @@ Atrodiet skaitļa $113^{113} - 19^{19}$ pēdējo ciparu.
 
 <small>
 
-* [nt.periodic.powers](#)
-* [nt.remainder.map](#)
+* [mod.exp](#)
+* [mod.congr.classes](#)
 
 </small>
 
@@ -1610,7 +1651,7 @@ $(x+1)(x+2)(x+3)$ dalās ar $343$?
 <small>
 
 * [nt.divisibility.multiples](#)
-* [nt.factorization.powers](#)
+* [div.fta.divisors.test](#)
 
 </small>
 
@@ -1630,9 +1671,9 @@ sadalot pirmskaitļu reizinājumā, iegūst vairāk **dažādu** pirmskaitļu? P
 
 <small>
 
-* [al.identity.sqdiff](#)
-* [nt.primes.small](#)
-* [al.manipulate.dottedexpr](#)
+* [alg.tra.factor.sqdiff](#)
+* [div.prop.primes.small](#)
+* [alg.series.prod](#)
 
 </small>
 
@@ -1696,9 +1737,9 @@ $(a-b)^2$ dalās ar $a\cdot{}b$?
 
 <small>
 
-* [alg.expand.binom.cubes](#)
-* [div.properties.add](#)
-* [div.properties.product](#)
+* [alg.tra.binom.newton](#)
+* [div.prop.add](#)
+* [div.prop.prod](#)
 
 </small>
 
@@ -1727,12 +1768,12 @@ Atrisināt naturālos skaitļos vienādojumu $x^3 = y! + 2$.
 
 <small>
 
-* [misc.experiment](#)
-* [mod.parity.cases](#) 
-* [alg.powers.prod](#)
-* [div.idx.properties.product](#)
-* [div.idx.properties.sumdiff](#)
-* [mod.equation.contradict](#)
+* [misc.try](#)
+* [mod.fix.parity](#) 
+* [alg.tra.pow.prod](#)
+* [div.valu.prop.prod](#)
+* [div.valu.prop.min](#)
+* [mod.eq.contradict](#)
 
 </small>
 
@@ -1786,7 +1827,7 @@ Atrodiet skaitļa $1^2 + 2^2 + \ldots + 99^2$ pēdējo ciparu.
 <small>
 
 * [al.sym.grouping](#)
-* [nt.remainder.map](#)
+* [mod.congr.classes](#)
 
 </small>
 
@@ -1805,7 +1846,7 @@ ka skaitlis $(n+1)(n+2)(n+3)$ dalās ar $125$.
 <small>
 
 * [nt.divisibility.multiples](#)
-* [nt.factorization.powers](#)
+* [div.fta.divisors.test](#)
 
 </small>
 
@@ -1877,13 +1918,12 @@ Ar naturālu skaitli var veikt divu veidu operācijas:
 1. reizināt ar $7$
 2. nodzēst skaitļa lielāko (vienu no lielākajiem, ja tādi ir vairāki) ciparu. 
 
-Vai ar šādām operācijām no skaitļa $9$ var iegūt skaitli $27$, atkārtojot tās vairākas reizes
-jebkādā secībā?
+Vai ar šādām operācijām no skaitļa $9$ var iegūt skaitli $27$, 
+atkārtojot tās vairākas reizes jebkādā secībā?
 
 <small>
 
-* [misc.graphs.bfs](#)
-* [nt.decnotation.transform](#)
+* [comb.graph.bfs](#)
 
 </small>
 
@@ -1916,7 +1956,7 @@ lai katrs no reizinātājiem ir lielāks nekā $1$.
 
 <small>
 
-* [alg.factorize.sqdiff](#)
+* [alg.tra.factor.sqdiff](#)
 
 </small>
 
@@ -1934,7 +1974,7 @@ $n$ vieni.)
 <small>
 
 * [notation.divrules.11](#)
-* [div.pfactor.prop.euclid](#)
+* [div.prop.euclidlemma](#)
 
 </small>
 
@@ -1977,9 +2017,12 @@ pirmskaitli $p$, ka **tieši viens** no dotajiem skaitļiem dalās ar $p$.
 <small>
 
 * [seq.arithm.mod.gaps](#)
-* [misc.contradiction](#)
 
 </small>
+
+<!--
+strategy=contradiction
+-->
 
 
 # <lo-sample/> LV.NO.2012.10.4
@@ -1996,7 +2039,7 @@ vienu aiz otra. Cik cipari uzrakstīti?
 
 <small>
 
-* [misc.experiment](#)
+* [misc.try](#)
 * [notation.dec.numdigits.prod](#)
 
 </small>
@@ -2013,9 +2056,12 @@ vienu aiz otra. Cik cipari uzrakstīti?
 # <lo-sample/> LV.NO.2012.11.1 
 
 Vai eksistē tāds naturāls skaitlis $m$, kura ciparu reizinājums ir vienāds
-ar simetrisku 8-ciparu skaitli?\\
+ar simetrisku 8-ciparu skaitli?  
 (Par *simetrisku* sauc skaitli, kas vienādi lasāms no abiem galiem.)
 
+<!--
+concepts=palindrome
+-->
 
 
 # <lo-sample/> LV.NO.2012.11.4 
@@ -2043,14 +2089,14 @@ Kādiem pirmskaitļiem $p$ skaitlim $p^2 + 23$ ir tieši četri naturāli dalīt
 
 Naturālie skaitļi no $1$ līdz $18$ sadalīti pa pāriem tā, ka katrā pārī 
 esošo skaitļu summa ir naturāla skaitļa kvadrāts. 
-Ar ko pārī apvienots skaitlis $1$?\\
-*Par skaitļa kvadrātu sauc skaitļa reizinājumu pašam ar sevi.*
+Ar ko pārī apvienots skaitlis $1$?  
+*Piezīme.* Par skaitļa kvadrātu sauc skaitļa reizinājumu pašam ar sevi.
 
 
 <small>
 
-* [al.inequality.finitesearch](#)
-* [misc.graphs.bipartite](#)
+* [alg.ineq.equations](#)
+* [comb.graph.bipartite](#)
 
 </small>
 
@@ -2068,7 +2114,7 @@ $x(x+1)(x+2)$ dalās ar $111$?
 
 <small>
 
-* [nt.factorization.divisibilityrules](#)
+* [notation.divrules.composite](#)
 * [nt.divisibility.multiples](#)
 
 </small>
@@ -2085,7 +2131,7 @@ esošu skaitļu starpība būtu $6$, $10$, $14$ vai $18$?
 
 <small>
 
-* [nt.remainder.invariant](#)
+* [misc.invar.congr](#)
 
 </small>
 
@@ -2102,7 +2148,7 @@ no reizinātājiem ir lielāks nekā $1$.
 
 <small>
 
-* [al.identity.sqdiff](#)
+* [alg.tra.factor.sqdiff](#)
 
 </small>
 
@@ -2118,8 +2164,8 @@ Cik ir tādu četrciparu skaitļu, kuru pierakstā ir vismaz viens pāra cipars?
 
 <small>
 
-* [co.multrule.permutation](#)
-* [co.fullsearch.opposite](#)
+* [comb.count.mult](#)
+* [comb.count.complement](#)
 
 </small>
 
@@ -2139,8 +2185,8 @@ katrā kolonnā ierakstīto skaitļu reizinājums būtu viens un tas pats.
 
 <small>
 
-* [co.tables.magicsquare](#)
-* [al.power.identity.add](#)
+* [comb.full.backtrack](#)
+* [alg.tra.pow.nest](#)
 
 </small>
 
@@ -2206,7 +2252,7 @@ skaitlis $x(x+1)(x+2)$ dalās ar $87$?
 
 <small>
 
-* [nt.factorization.divisibilityrules](#)
+* [notation.divrules.composite](#)
 * [nt.divisibility.multiples](#)
 
 </small>
@@ -2222,8 +2268,8 @@ Cik ir tādu piecciparu skaitļu, kuru pierakstā ir vismaz viens nepāra cipars
 
 <small>
 
-* [co.multrule.permutation](#)
-* [co.fullsearch.opposite](#)
+* [comb.count.mult](#)
+* [comb.count.complement](#)
 
 </small>
 
@@ -2251,7 +2297,7 @@ $300$, vienmēr starp šiem skaitļiem var atrast divus skaitļus, kuru summa ir
 * [seq.arithm.expr](#)
 * [seq.arithm.numestimate](#)
 * [seq.arithm.pairsum](#)
-* [misc.extreme.pigeonhole](#)
+* [misc.extr.pigeon](#)
 
 </small>
 
@@ -2324,14 +2370,14 @@ tieši $2015$ mājlopus?
 
 <small>
 
-* [nt.remainder.invariant](#)
-* [al.equation.invariant](#)
+* [misc.invar.congr](#)
+* [misc.invar.parity](#)
 
 </small>
 
-## ABC
+## Salīdzina paritāti
  
-**#Invariants** Katras maiņas iznākumā dzīvnieku kopskaits mainās par pāru skaitli. $99+21$ ir pāru, bet $2015$ \textendash{} nepāru.
+Katras maiņas iznākumā dzīvnieku kopskaits mainās par pāru skaitli. $99+21$ ir pāru, bet $2015$ \textendash{} nepāru.
 
 
 # <lo-sample/> LV.NO.2015.7.3 
@@ -2343,10 +2389,10 @@ Vai iespējams, ka visas iegūtās summas ir pirmskaitļi?
 
 <small>
 
-* [co.tables.chess](#)
-* [nt.parity.operations](#)
-* [nt.primes.small](#)
-* [co.fullsearch.construction](#)
+* [comb.constr.color](#)
+* [mod.fix.parity](#)
+* [div.prop.primes.small](#)
+* [comb.full](#)
 
 </small>
 
@@ -2366,7 +2412,7 @@ Pierādi, ka
 
 <small>
 
-* [nt.remainder.map](#)
+* [mod.congr.classes](#)
 
 </small>
 
@@ -2387,14 +2433,13 @@ Vai iespējams, ka "Šrotiņā" kāda mēneša 21. datumā būs tieši $2015$ ma
 
 <small>
 
-* [nt.remainder.invariant](#)
-* [al.equation.invariant](#)
+* [misc.invar.congr](#)
 
 </small>
 
-## ABC
+## Salīdzina atlikumus (mod 3)
  
-**#Invariants** Mašīnu skaits mainās par $-7+16=9$ vai par $-19+4 = -15$, t.i. par $3k$. Bet $39+3k \neq 2015$.
+Mašīnu skaits mainās par $-7+16=9$ vai par $-19+4 = -15$, t.i. par $3k$. Bet $39+3k \neq 2015$.
 
 
 
@@ -2402,11 +2447,11 @@ Vai iespējams, ka "Šrotiņā" kāda mēneša 21. datumā būs tieši $2015$ ma
 
 Regulāra astoņstūra virsotnēs pēc kārtas uzrakstīti skaitļi 
 $7, 15, 3, 17, 1, 9, 5, 11$. Ar skaitļiem atļauts veikt šādas darbības:
-\begin{itemize}
+
 1. pieskaitīt kādam skaitlim divus skaitļus, kas atrodas blakus virsotnēs; 
 2. atņemt no skaitļa divkāršotu pretējā virsotnē uzrakstīto skaitli, ja 
 starpība ir pozitīva.
-\end{itemize}
+
 Vai, atkārtoti izpildot šīs darbības, var panākt, ka vienā no virsotnēm 
 būs ierakstīts skaitlis $2014$? 
 
@@ -2442,7 +2487,7 @@ Vai, atkārtoti izpildot šīs darbības, no skaitļa $30$ var iegūt skaitli $2
 <small>
 
 * [notation.divrules.3or9.divides](#)
-* [misc.invariant](#)
+* [misc.invar](#)
 
 </small>
 
@@ -2472,8 +2517,8 @@ mazākais no šiem saskaitāmajiem?
 <small>
 
 * [seq.arithm.summation](#)
-* [div.pfactor.algorithm](#)
-* [misc.exhaustive](#)
+* [div.fta.proc](#)
+* [comb.full](#)
 
 </small>
 
@@ -2521,12 +2566,15 @@ kas lielāks nekā 1 (kāpinātāji var būt dažādi)?
 
 <small>
 
-* [misc.experiment](#)
-* [div.primes.powers.higher](#)
-* [mod.parity.cases](#)
-* [misc.contradiction](#)
+* [misc.try](#)
+* [div.fta.pow.other](#)
+* [mod.fix.parity](#)
 
 </small>
+
+<!--
+strategy=contradiction
+-->
 
 
 ## Ievieto nelielas vērtības
@@ -2595,7 +2643,7 @@ dalās ar $99$.
 
 * [notation.divrules.3or9.divides](#)
 * [notation.divrules.11](#)
-* [nt.factorization.divisibilityrules](#)
+* [notation.divrules.composite](#)
 
 </small>
 
@@ -2608,21 +2656,32 @@ ar $11$ \textendash{} pāru/nepāru pozīcijās ciparu summas atšķiras par $11
 # <lo-sample/> LV.NO.2016.7.5 
 
 
-1. Vai var atrast dažādus veselus skaitļus $a$, $b$, $c$ un $d$ tādus, ka izpildās vienādības
-$a+b = cd$ un $ab = c+d$?
-2. Vai šādus skaitļus var atrast, ja papildus zināms, ka $a > 2016$? 
+(a) Vai var atrast dažādus veselus skaitļus 
+$a$, $b$, $c$ un $d$ tādus, ka izpildās vienādības
+$a+b = cd$ un $ab = c+d$?  
+(b) Vai šādus skaitļus var atrast, ja papildus zināms, ka $a > 2016$?
 
 
 <small>
 
-* [al.equation.substitute](#)
+* [misc.symm.rename](#)
+* [misc.extr.param](#)
 
 </small>
 
-## ABC
+## Ekstrēmais elements - 1
+
+* $a,b,c,d$ uzdevuma formulā ir simetriski.
+* Izvēlamies vienu nelielu vērtību - piemēram $c=1$. Tad $a+b=d$, $ab=d+1$ 
+(divu skaitļu summa par $1$ mazāka nekā reizinājums).
+* Var izvēlēties $a=2$, $b=3$, $c=1$ un $d=5$.
  
-**#EkstrēmaisElements** Var izvēlēties $c=0$, $a = 2017$, $b = -2017$, $d = -2017^2$.
-**#GadījumuPārlase** Var izvēlēties $a=2$, $b=3$, $c=1$ un $d=5$ (tikai **(a)**)
+## Ekstrēmais elements - 2
+
+* $a,b,c,d$ uzdevuma formulā ir simetriski.
+* Izvēlamies $c=0$. Tad $a+b=0$, $ab=d$.
+* Var izvēlēties $c=0$, $a = 2017$, $b = -2017$, $d = -2017^2$.
+
 
 
 # <lo-sample/> LV.NO.2016.8.2 
@@ -2635,7 +2694,7 @@ skaitļiem *DUBĻUNNN* dalās ar $104$. Pierādi, ka otrais skaitlis *BURBUĻVAN
 
 <small>
 
-* [nt.divrules2and5.lastdigit](#)
+* [notation.divrules.2or5or10.divides](#)
 
 </small>
 
@@ -2676,8 +2735,8 @@ $$1\cdot{}4 + 2\cdot{}7 + 3\cdot{}10 + \cdots + n\cdot{}(3n + 1) = n(n+1)^2.$$
 
 <small>
 
-* [seq.summation.difference](#)
-* [misc.induction](#)
+* [seq.gaps](#)
+* [misc.ind](#)
 
 </small>
 
@@ -2710,9 +2769,9 @@ ka to summa vai starpība dalās ar $5$.
 
 <small>
 
-* [mod.expr.square](#)
-* [mod.cases.squares](#)
-* [misc.extreme.pigeonhole](#)
+* [mod.congr.pow](#)
+* [mod.congr.pow](#)
+* [misc.extr.pigeon](#)
 
 </small>
 
@@ -2803,7 +2862,7 @@ desmitciparu skaitlis!
 * [notation.divrules.pow2or5.divides](#)
 * [notation.divrules.3or9.divides](#)
 * [notation.divrules.composite](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -2905,10 +2964,14 @@ nuļļu skaitu var beigties trīs izveidoto skaitļu summa?
 
 * [notation.divrules.3or9.divides](#)
 * [notation.dec.numdigits.sum](#)
-* [misc.contradiction](#)
-* [misc.construct.alpha](#)
+* [comb.constr.alpha](#)
 
 </small>
+
+<!--
+strategy=contradiction
+-->
+
 
 ## No pretējā
 
@@ -3038,7 +3101,7 @@ $20m + 18n = 2018$.
 <small>
 
 * [notation.divrules.2or5or10.divides](#)
-* [div.primes.factorize.small](#)
+* [div.fta.proc](#)
 
 </small>
 

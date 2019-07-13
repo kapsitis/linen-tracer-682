@@ -607,11 +607,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.beginatend",
-            "misc.experiment",
+            "misc.try",
             "notation.algor.square5",
             "notation.dec.numdigits.square",
-            "alg.factorize.sqdiff"
+            "alg.tra.factor.sqdiff"
         ]
     },
     {
@@ -656,8 +655,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.rem.expr",
-            "mod.rem.values"
+            "mod.congr",
+            "mod.congr.classes"
         ]
     },
     {
@@ -696,7 +695,7 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.2or5or10.divides",
-            "mod.parity.cases"
+            "mod.fix.parity"
         ]
     },
     {
@@ -725,9 +724,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.expr.square",
-            "misc.exhaustive",
-            "misc.extreme.pigeonhole"
+            "mod.congr.pow",
+            "comb.full",
+            "misc.extr.pigeon"
         ]
     },
     {
@@ -768,7 +767,7 @@
         "tasks": [
             "div.common.lcm",
             "div.common.lcm.mult",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -794,10 +793,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.factorize.sqdiff",
-            "mod.parity.cases",
-            "misc.exhaustive",
-            "alg.linear"
+            "alg.tra.factor.sqdiff",
+            "mod.fix.parity",
+            "comb.full",
+            "alg.linear.equations"
         ]
     },
     {
@@ -812,8 +811,8 @@
         "seeAlso": [],
         "tasks": [
             "seq.define",
-            "misc.experiment",
-            "misc.induction"
+            "misc.try",
+            "misc.ind"
         ]
     },
     {
@@ -851,7 +850,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "div.alg",
+            "alg.expr.prop",
             "div.common.lcm.frac"
         ]
     },
@@ -868,7 +867,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.ineq.fullsquare",
+            "alg.tra.binom.complsquare",
+            "alg.ineq.square",
             "alg.ineq.equations"
         ]
     },
@@ -906,10 +906,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "div.pfactor.algorithm",
-            "alg.powers.prod",
-            "div.pfactor.expsystem",
-            "alg.linear"
+            "div.fta.proc",
+            "alg.tra.pow.prod",
+            "div.fta.pow.expsystem",
+            "alg.linear.equations"
         ]
     },
     {
@@ -921,10 +921,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.symmetry",
-            "misc.experiment",
+            "misc.symm",
+            "misc.try",
             "seq.arithm.expr",
-            "alg.sums.linear"
+            "alg.poly.homo"
         ]
     },
     {
@@ -938,9 +938,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.equation",
+            "alg.expr",
             "notation.dec.combine.poly",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -978,9 +978,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.extreme.param",
-            "mod.expr.sum",
-            "misc.experiment",
+            "misc.extr.param",
+            "mod.congr.sumdiff",
+            "misc.try",
             "seq.arithm.mod.gaps"
         ]
     },
@@ -996,7 +996,7 @@
         "seeAlso": [],
         "tasks": [
             "alg.ineq.equations",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -1054,11 +1054,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.cases.cubes",
-            "mod.exponent.small",
+            "mod.congr.pow",
             "notation.divrules.3or9.remainder",
-            "mod.expr.diff",
-            "mod.equation.contradict"
+            "mod.congr.sumdiff",
+            "mod.eq.contradict"
         ]
     },
     {
@@ -1181,7 +1180,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.factorize",
+            "alg.tra.factor",
             "div.common.gcd.subsequent"
         ]
     },
@@ -1196,10 +1195,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.powers.nested",
+            "alg.tra.pow.nest",
             "seq.gaps.squares",
             "alg.ineq.equations",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -1213,8 +1212,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.exponent.small",
-            "mod.equation.contradict"
+            "mod.eq.contradict"
         ]
     },
     {
@@ -1371,7 +1369,9 @@
             "Prove.ForAll"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "div.valu.change"
+        ]
     },
     {
         "concepts": [],
@@ -2245,7 +2245,7 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.3or9.remainder",
-            "seq.others.sumdigits",
+            "seq.gaps",
             "seq.arithm.mod"
         ]
     },
@@ -2262,7 +2262,7 @@
             "LV.NO.2019.8.4"
         ],
         "tasks": [
-            "misc.invariant.expr.prod"
+            "misc.invar.expr"
         ]
     },
     {
@@ -2276,9 +2276,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.invariant.expr.sum",
-            "alg.sums",
-            "misc.experiment"
+            "misc.invar.expr",
+            "alg.series.sum",
+            "misc.try"
         ]
     },
     {
@@ -2292,7 +2292,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.extreme"
+            "misc.extr"
         ]
     },
     {
@@ -2305,7 +2305,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.equation"
+            "alg.expr"
         ]
     },
     {
@@ -2374,9 +2374,9 @@
             "Find.Only"
         ],
         "seeAlso": [
-            "NO.2001.12.1",
-            "NO.2003.12.1",
-            "NO.2004.12.1"
+            "LV.NO.2001.12.1",
+            "LV.NO.2003.12.1",
+            "LV.NO.2004.12.1"
         ],
         "tasks": []
     },
@@ -2389,7 +2389,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.plain",
+            "mod.congr",
             "al.inequality.intervals"
         ]
     },
@@ -2404,9 +2404,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.gcd.fixeddiff",
-            "co.pigeonhole.statement",
-            "co.fullsearch.construction"
+            "misc.extr.pigeon",
+            "comb.full"
         ]
     },
     {
@@ -2423,7 +2422,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.divrules2and5.lastdigit",
+            "notation.divrules.2or5or10.divides",
             "nt.divisibility.constructions"
         ]
     },
@@ -2509,8 +2508,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.primes.small",
-            "nt.parity.invariant"
+            "div.prop.primes.small",
+            "misc.invar.parity"
         ]
     },
     {
@@ -2524,9 +2523,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.parity.invariant",
+            "misc.invar.parity",
             "al.inequality.extremalelement",
-            "nt.remainder.invariant"
+            "misc.invar.congr"
         ]
     },
     {
@@ -2603,8 +2602,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.graphs.bipartite",
-            "nt.parity.operations"
+            "comb.graph.bipartite",
+            "mod.fix.parity"
         ]
     },
     {
@@ -2616,7 +2615,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.factorization.plain"
+            "div.fta"
         ]
     },
     {
@@ -2699,9 +2698,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.graphs.bipartite",
-            "nt.primes.small",
-            "nt.parity.invariant"
+            "comb.graph.bipartite",
+            "div.prop.primes.small",
+            "misc.invar.parity"
         ]
     },
     {
@@ -2715,7 +2714,7 @@
             "LV.NO.2003.8.3"
         ],
         "tasks": [
-            "nt.factorization.plain"
+            "div.fta"
         ]
     },
     {
@@ -2726,12 +2725,12 @@
             "Find.Count"
         ],
         "seeAlso": [
-            "https://en.wikipedia.org/wiki/Benford%27s_law",
-            "https://meduza.io/feature/2017/01/13/itogi-vyborov-v-gosdumu-okazalis-slishkom-idealnymi",
+            "[Benford's Law](https://en.wikipedia.org/wiki/Benford%27s_law)",
+            "[Ideal Voting](https://meduza.io/feature/2017/01/13/itogi-vyborov-v-gosdumu-okazalis-slishkom-idealnymi)",
             "LV.NO.2005.8.1"
         ],
         "tasks": [
-            "nt.decnotation.transform",
+            "notation.dec.numdigits",
             "al.inequality.estimates"
         ]
     },
@@ -2752,7 +2751,9 @@
         "tasks": []
     },
     {
-        "concepts": [],
+        "concepts": [
+            "palindrome"
+        ],
         "genre": [],
         "id": "LV.NO.2004.10.2",
         "qtypes": [],
@@ -2772,7 +2773,9 @@
         "genre": [],
         "id": "LV.NO.2004.12.1",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2000.12.1"
+        ],
         "tasks": []
     },
     {
@@ -2780,10 +2783,13 @@
         "genre": [],
         "id": "LV.NO.2005.7.4",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "[Semiperfect number](https://en.wikipedia.org/wiki/Semiperfect_number)"
+        ],
         "tasks": [
-            "al.inequality.fractions",
-            "nt.parity.operations"
+            "div.fta.divisors.frac",
+            "misc.extr.param",
+            "mod.fix.parity"
         ]
     },
     {
@@ -2791,22 +2797,28 @@
         "genre": [],
         "id": "LV.NO.2005.8.1",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2004.8.2"
+        ],
         "tasks": [
-            "nt.decnotation.transform",
+            "notation.dec.numdigits",
             "al.inequality.estimates"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "games"
+        ],
         "id": "LV.NO.2005.8.3",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Min"
+        ],
         "seeAlso": [],
         "tasks": [
-            "nt.divisibility.constructions",
-            "nt.gcd.construct",
-            "co.games.strategy"
+            "div.common.lcm",
+            "div.prop.primes.inf",
+            "div.fta"
         ]
     },
     {
@@ -2880,8 +2892,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.inequality.fractions",
-            "al.manipulate.fractionsum"
+            "div.fta.divisors.frac",
+            "alg.ineq.monotonicity"
         ]
     },
     {
@@ -2891,7 +2903,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.manipulate.fullsquare"
+            "alg.tra.binom.complsquare"
         ]
     },
     {
@@ -2901,8 +2913,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.periodic.invariant",
-            "nt.remainder.map"
+            "mod.period",
+            "mod.congr.classes"
         ]
     },
     {
@@ -2958,7 +2970,9 @@
         "genre": [],
         "id": "LV.NO.2006.12.5",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2007.12.2"
+        ],
         "tasks": []
     },
     {
@@ -2968,9 +2982,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.gcd.bezout",
-            "nt.factorization.plain",
-            "al.power.identity.add"
+            "div.common.gcd.bezout",
+            "div.fta",
+            "alg.tra.pow.nest"
         ]
     },
     {
@@ -2981,7 +2995,7 @@
         "seeAlso": [],
         "tasks": [
             "nt.divisibility.multiples",
-            "nt.lcm.construction"
+            "div.common.lcm"
         ]
     },
     {
@@ -3023,9 +3037,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.gcd.bezout",
-            "nt.factorization.plain",
-            "al.power.identity.add"
+            "div.common.gcd.bezout",
+            "div.fta",
+            "alg.tra.pow.nest"
         ]
     },
     {
@@ -3035,8 +3049,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.equation.mean",
-            "al.inequality.finitesearch",
+            "alg.series.mean",
+            "alg.ineq.equations",
             "nt.divisibility.multiples"
         ]
     },
@@ -3048,7 +3062,7 @@
         "seeAlso": [],
         "tasks": [
             "nt.decnotation.sumofdigits",
-            "nt.parity.invariant"
+            "misc.invar.parity"
         ]
     },
     {
@@ -3090,9 +3104,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.gcd.bezout",
-            "nt.factorization.plain",
-            "al.power.identity.add"
+            "div.common.gcd.bezout",
+            "div.fta",
+            "alg.tra.pow.nest"
         ]
     },
     {
@@ -3102,8 +3116,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.divisibility.numdivisors",
-            "nt.factorization.powers"
+            "div.fta.divisors.num",
+            "comb.full"
         ]
     },
     {
@@ -3113,8 +3127,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.sym.linear",
-            "nt.remainder.map"
+            "alg.linear.comb",
+            "mod.congr.classes"
         ]
     },
     {
@@ -3124,8 +3138,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.periodic.powers",
-            "nt.remainder.map"
+            "mod.exp",
+            "mod.congr.classes"
         ]
     },
     {
@@ -3184,7 +3198,7 @@
         "seeAlso": [],
         "tasks": [
             "nt.divisibility.multiples",
-            "nt.factorization.powers"
+            "div.fta.divisors.test"
         ]
     },
     {
@@ -3194,9 +3208,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.identity.sqdiff",
-            "nt.primes.small",
-            "al.manipulate.dottedexpr"
+            "alg.tra.factor.sqdiff",
+            "div.prop.primes.small",
+            "alg.series.prod"
         ]
     },
     {
@@ -3233,9 +3247,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "alg.expand.binom.cubes",
-            "div.properties.add",
-            "div.properties.product"
+            "alg.tra.binom.newton",
+            "div.prop.add",
+            "div.prop.prod"
         ]
     },
     {
@@ -3245,12 +3259,12 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "misc.experiment",
-            "mod.parity.cases",
-            "alg.powers.prod",
-            "div.idx.properties.product",
-            "div.idx.properties.sumdiff",
-            "mod.equation.contradict"
+            "misc.try",
+            "mod.fix.parity",
+            "alg.tra.pow.prod",
+            "div.valu.prop.prod",
+            "div.valu.prop.min",
+            "mod.eq.contradict"
         ]
     },
     {
@@ -3277,7 +3291,7 @@
         "seeAlso": [],
         "tasks": [
             "al.sym.grouping",
-            "nt.remainder.map"
+            "mod.congr.classes"
         ]
     },
     {
@@ -3288,7 +3302,7 @@
         "seeAlso": [],
         "tasks": [
             "nt.divisibility.multiples",
-            "nt.factorization.powers"
+            "div.fta.divisors.test"
         ]
     },
     {
@@ -3341,8 +3355,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "misc.graphs.bfs",
-            "nt.decnotation.transform"
+            "comb.graph.bfs"
         ]
     },
     {
@@ -3362,7 +3375,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "alg.factorize.sqdiff"
+            "alg.tra.factor.sqdiff"
         ]
     },
     {
@@ -3373,7 +3386,7 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.11",
-            "div.pfactor.prop.euclid"
+            "div.prop.euclidlemma"
         ]
     },
     {
@@ -3399,8 +3412,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "seq.arithm.mod.gaps",
-            "misc.contradiction"
+            "seq.arithm.mod.gaps"
         ]
     },
     {
@@ -3410,12 +3422,14 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "misc.experiment",
+            "misc.try",
             "notation.dec.numdigits.prod"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "palindrome"
+        ],
         "genre": [],
         "id": "LV.NO.2012.11.1",
         "qtypes": [],
@@ -3445,8 +3459,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.inequality.finitesearch",
-            "misc.graphs.bipartite"
+            "alg.ineq.equations",
+            "comb.graph.bipartite"
         ]
     },
     {
@@ -3456,7 +3470,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.factorization.divisibilityrules",
+            "notation.divrules.composite",
             "nt.divisibility.multiples"
         ]
     },
@@ -3467,7 +3481,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.invariant"
+            "misc.invar.congr"
         ]
     },
     {
@@ -3477,7 +3491,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.identity.sqdiff"
+            "alg.tra.factor.sqdiff"
         ]
     },
     {
@@ -3487,8 +3501,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "co.multrule.permutation",
-            "co.fullsearch.opposite"
+            "comb.count.mult",
+            "comb.count.complement"
         ]
     },
     {
@@ -3498,8 +3512,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "co.tables.magicsquare",
-            "al.power.identity.add"
+            "comb.full.backtrack",
+            "alg.tra.pow.nest"
         ]
     },
     {
@@ -3549,7 +3563,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.factorization.divisibilityrules",
+            "notation.divrules.composite",
             "nt.divisibility.multiples"
         ]
     },
@@ -3560,8 +3574,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "co.multrule.permutation",
-            "co.fullsearch.opposite"
+            "comb.count.mult",
+            "comb.count.complement"
         ]
     },
     {
@@ -3582,7 +3596,7 @@
             "seq.arithm.expr",
             "seq.arithm.numestimate",
             "seq.arithm.pairsum",
-            "misc.extreme.pigeonhole"
+            "misc.extr.pigeon"
         ]
     },
     {
@@ -3624,8 +3638,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.invariant",
-            "al.equation.invariant"
+            "misc.invar.congr",
+            "misc.invar.parity"
         ]
     },
     {
@@ -3635,10 +3649,10 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "co.tables.chess",
-            "nt.parity.operations",
-            "nt.primes.small",
-            "co.fullsearch.construction"
+            "comb.constr.color",
+            "mod.fix.parity",
+            "div.prop.primes.small",
+            "comb.full"
         ]
     },
     {
@@ -3648,7 +3662,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.map"
+            "mod.congr.classes"
         ]
     },
     {
@@ -3658,8 +3672,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.invariant",
-            "al.equation.invariant"
+            "misc.invar.congr"
         ]
     },
     {
@@ -3686,7 +3699,7 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.3or9.divides",
-            "misc.invariant"
+            "misc.invar"
         ]
     },
     {
@@ -3697,8 +3710,8 @@
         "seeAlso": [],
         "tasks": [
             "seq.arithm.summation",
-            "div.pfactor.algorithm",
-            "misc.exhaustive"
+            "div.fta.proc",
+            "comb.full"
         ]
     },
     {
@@ -3708,10 +3721,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "misc.experiment",
-            "div.primes.powers.higher",
-            "mod.parity.cases",
-            "misc.contradiction"
+            "misc.try",
+            "div.fta.pow.other",
+            "mod.fix.parity"
         ]
     },
     {
@@ -3747,7 +3759,7 @@
         "tasks": [
             "notation.divrules.3or9.divides",
             "notation.divrules.11",
-            "nt.factorization.divisibilityrules"
+            "notation.divrules.composite"
         ]
     },
     {
@@ -3757,7 +3769,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.equation.substitute"
+            "misc.symm.rename",
+            "misc.extr.param"
         ]
     },
     {
@@ -3767,7 +3780,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.divrules2and5.lastdigit"
+            "notation.divrules.2or5or10.divides"
         ]
     },
     {
@@ -3793,8 +3806,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "seq.summation.difference",
-            "misc.induction"
+            "seq.gaps",
+            "misc.ind"
         ]
     },
     {
@@ -3804,9 +3817,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "mod.expr.square",
-            "mod.cases.squares",
-            "misc.extreme.pigeonhole"
+            "mod.congr.pow",
+            "mod.congr.pow",
+            "misc.extr.pigeon"
         ]
     },
     {
@@ -3868,7 +3881,7 @@
             "notation.divrules.pow2or5.divides",
             "notation.divrules.3or9.divides",
             "notation.divrules.composite",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -3928,8 +3941,7 @@
         "tasks": [
             "notation.divrules.3or9.divides",
             "notation.dec.numdigits.sum",
-            "misc.contradiction",
-            "misc.construct.alpha"
+            "comb.constr.alpha"
         ]
     },
     {
@@ -4037,7 +4049,7 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.2or5or10.divides",
-            "div.primes.factorize.small"
+            "div.fta.proc"
         ]
     },
     {
@@ -4078,8 +4090,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.poly.int.valdiff",
-            "alg.factorize.powdiff"
+            "alg.poly.prop.valdiff",
+            "alg.tra.factor.powdiff"
         ]
     },
     {
@@ -4093,7 +4105,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.experiment",
+            "misc.try",
             "seq.geom.summation",
             "seq.geom.decnotation"
         ]
@@ -4109,7 +4121,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.symmetry",
+            "misc.symm",
             "alg.ineq.monotonicity"
         ]
     },
@@ -4125,9 +4137,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "seq.others.fibonacci",
+            "seq.recur.fibonacci",
             "seq.prop.periodic.finstate",
-            "mod.expr.square"
+            "mod.congr.pow"
         ]
     },
     {
@@ -4142,7 +4154,7 @@
         "seeAlso": [],
         "tasks": [
             "alg.poly.division",
-            "div.pfactor.prop.numdivisors"
+            "div.fta.divisors.num"
         ]
     },
     {
@@ -4171,9 +4183,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "div.pfactor.prop.divisibility",
-            "mod.parity",
-            "mod.expr.poly"
+            "div.prop.prod",
+            "mod.fix.parity",
+            "mod.congr.poly"
         ]
     },
     {
@@ -4187,9 +4199,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "div.primes.powers",
-            "div.pfactor",
-            "alg.linear"
+            "div.fta.pow",
+            "alg.linear.equations"
         ]
     },
     {
@@ -4203,8 +4214,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.ratfractions.diff",
-            "alg.sums"
+            "alg.tra.frac",
+            "alg.series.sum"
         ]
     },
     {
@@ -4222,9 +4233,8 @@
         "tasks": [
             "notation.divrules.2or5or10.divides",
             "notation.dec.combine.split",
-            "mod.expr.sum",
-            "misc.strengthening",
-            "misc.exhaustive"
+            "mod.congr.sumdiff",
+            "comb.full"
         ]
     },
     {
@@ -4255,8 +4265,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.experiment",
-            "mod.parity.cases"
+            "misc.try",
+            "mod.fix.parity"
         ]
     },
     {
@@ -4270,12 +4280,14 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.exponent.one",
+            "mod.exp",
             "notation.divrules.composite"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "square"
+        ],
         "genre": [],
         "id": "LV.AO.2000.7.1",
         "qtypes": [
@@ -4283,53 +4295,62 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.expand.binom.squares"
+            "alg.tra.binom.square"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "optimization"
+        ],
         "id": "LV.AO.2000.7.2",
         "qtypes": [
             "Find.Min"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.periodic.remainders",
-            "nt.gcd.twodivisors",
+            "mod.exp.fermat",
+            "div.fta.divisors",
             "nt.divisibility.constructions"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "construction"
+        ],
         "id": "LV.AO.2000.7.4",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.primes.small",
-            "nt.primes.distances",
-            "co.pigeonhole.meanvalue",
-            "co.fullsearch.construction"
+            "div.prop.primes.small",
+            "div.prop.primes.small",
+            "misc.extr.pigeon",
+            "comb.full"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "construction"
+        ],
         "id": "LV.AO.2000.8.3",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
         "seeAlso": [],
         "tasks": [
-            "co.induction.plus1",
-            "co.pigeonhole.meanvalue"
+            "misc.ind",
+            "misc.extr.pigeon"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "palindrome",
+            "decimal-notation"
+        ],
         "genre": [],
         "id": "LV.AO.2001.7.2",
         "qtypes": [
@@ -4338,14 +4359,18 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.factorization.divisibilityrules",
-            "al.decnotation.expressions",
-            "al.equation.substitute"
+            "notation.divrules.1001",
+            "notation.dec.combine.poly",
+            "mod.congr"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "decimal-notation"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
         "id": "LV.AO.2001.8.3",
         "qtypes": [
             "Find.All"
@@ -4358,40 +4383,50 @@
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "game"
+        ],
         "id": "LV.AO.2002.7.4",
         "qtypes": [
             "Algorithm"
         ],
         "seeAlso": [],
         "tasks": [
-            "co.games.nonconstructive",
-            "co.games.strategy",
-            "misc.graphs.bipartite"
+            "comb.constr.partition"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "optimization"
+        ],
         "id": "LV.AO.2002.7.5",
         "qtypes": [
-            "Find.Count"
+            "Find.Max"
         ],
         "seeAlso": [],
         "tasks": [
             "al.sym.grouping",
-            "co.pigeonhole.statement"
+            "misc.extr.pigeon"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "decimal-notation"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
         "id": "LV.AO.2002.8.2",
         "qtypes": [
             "Find.All"
         ],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.AO.2001.8.3"
+        ],
         "tasks": [
             "nt.decnotation.expressions",
             "al.manipulate.smallexpr",
@@ -4399,7 +4434,9 @@
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "fibonacci-sequence"
+        ],
         "genre": [],
         "id": "LV.AO.2002.8.3",
         "qtypes": [
@@ -4411,35 +4448,47 @@
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "game"
+        ],
         "id": "LV.AO.2003.7.3",
         "qtypes": [
             "Algorithm"
         ],
         "seeAlso": [],
         "tasks": [
-            "co.games.nonconstructive",
-            "co.games.strategy"
+            "comb.constr.partition"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "absolute-value"
+        ],
+        "genre": [
+            "making-moves"
+        ],
         "id": "LV.AO.2003.7.5",
         "qtypes": [
             "Algorithm"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.parity.invariant",
+            "misc.invar.parity",
             "al.sym.progressions",
-            "co.fullsearch.construction"
+            "comb.full"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "gcd",
+            "coprimes"
+        ],
+        "genre": [
+            "optimization"
+        ],
         "id": "LV.AO.2003.8.3",
         "qtypes": [
             "Find.Count"
@@ -4447,11 +4496,13 @@
         "seeAlso": [],
         "tasks": [
             "al.inequality.extremalelement",
-            "nt.primes.small"
+            "div.prop.primes.small"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "square"
+        ],
         "genre": [],
         "id": "LV.AO.2003.8.5",
         "qtypes": [
@@ -4461,11 +4512,14 @@
         "tasks": [
             "al.sym.grouping",
             "al.manipulate.smallexpr",
-            "co.fullsearch.construction"
+            "comb.full"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "fractions",
+            "gcd"
+        ],
         "genre": [],
         "id": "LV.AO.2004.7.3",
         "qtypes": [
@@ -4473,13 +4527,18 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.gcd.construct",
-            "nt.irreducible.plain"
+            "div.common.gcd.euclid",
+            "div.prop.primes.small"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "decimal-notation",
+            "divisibility"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
         "id": "LV.AO.2004.8.3",
         "qtypes": [
             "Prove.ForAll"
@@ -4491,21 +4550,29 @@
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "sequence"
+        ],
+        "genre": [
+            "making-moves"
+        ],
         "id": "LV.AO.2004.8.5",
         "qtypes": [
             "Find.Only"
         ],
         "seeAlso": [],
         "tasks": [
-            "al.sym.recurrent",
+            "seq.recur",
             "al.inequality.intervals"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "decimal-notation"
+        ],
+        "genre": [
+            "optimization"
+        ],
         "id": "LV.AO.2005.7.4",
         "qtypes": [
             "Find.Max"
@@ -4513,23 +4580,29 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.composite.zeroes",
-            "mod.expr.diff"
+            "mod.congr.sumdiff"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "partition"
+        ],
+        "genre": [
+            "construction"
+        ],
         "id": "LV.AO.2005.8.3",
         "qtypes": [
             "Find.Any"
         ],
         "seeAlso": [],
         "tasks": [
-            "co.fullsearch.summation"
+            "comb.full.backtrack"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "sequence"
+        ],
         "genre": [],
         "id": "LV.AO.2006.7.1",
         "qtypes": [
@@ -4539,12 +4612,14 @@
         "tasks": [
             "al.inequality.intervals",
             "nt.divisibility.multiples",
-            "nt.remainder.plain"
+            "mod.congr"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "special-numbers,sum-of-digits"
+        ],
         "id": "LV.AO.2006.8.3",
         "qtypes": [
             "Find.Any",
@@ -4558,21 +4633,31 @@
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "optimization"
+        ],
         "id": "LV.AO.2007.7.1",
         "qtypes": [
             "Find.Max"
         ],
         "seeAlso": [],
         "tasks": [
-            "co.graph.path",
-            "nt.primes.small"
+            "comb.graph.cycle",
+            "div.prop.primes.small"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "decimal-notation",
+            "divisibility",
+            "sum-of-digits"
+        ],
+        "genre": [
+            "game"
+        ],
         "id": "LV.AO.2007.7.3",
         "qtypes": [
             "Algorithm",
@@ -4580,26 +4665,31 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.sumofdigits",
-            "co.induction.infinitedescent",
-            "co.games.strategy"
+            "seq.gaps",
+            "misc.ind.descent"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "decimal-notation"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
         "id": "LV.AO.2007.8.3",
         "qtypes": [
             "Find.All"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.factorization.plain",
-            "al.inequality.finitesearch"
+            "div.fta",
+            "alg.ineq.equations"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "decimal-notation"
+        ],
         "genre": [],
         "id": "LV.AO.2008.7.2",
         "qtypes": [
@@ -4608,11 +4698,14 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.composite.zeroes",
-            "alg.powers.prod"
+            "alg.tra.pow.prod"
         ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "primes",
+            "series"
+        ],
         "genre": [],
         "id": "LV.AO.2008.8.3",
         "qtypes": [
@@ -4620,75 +4713,92 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.divisibility.numdivisors",
-            "al.sym.grouping"
+            "div.fta.divisors.num",
+            "div.fta.divisors.pair",
+            "alg.series.sum"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "fill-in-table"
+        ],
         "id": "LV.AO.2009.7.3",
         "qtypes": [
             "Find.Max"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.parity.operations",
-            "nt.primes.small",
+            "mod.fix.parity",
+            "div.prop.primes.small",
             "al.sym.progressions",
-            "co.fullsearch.construction"
+            "comb.full"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "divisibility"
+        ],
+        "genre": [
+            "making-moves"
+        ],
         "id": "LV.AO.2009.7.5",
         "qtypes": [
             "Find.All"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.invariant"
+            "misc.invar.congr"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "word-problem"
+        ],
         "id": "LV.AO.2009.8.4",
         "qtypes": [
             "Find.All"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.factorization.plain",
-            "co.fullsearch.construction"
+            "div.fta",
+            "comb.full"
         ]
     },
     {
-        "concepts": [],
-        "genre": [],
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "construction"
+        ],
         "id": "LV.AO.2010.7.1",
         "qtypes": [
             "Find.All"
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.primes.small",
-            "nt.primes.distances",
-            "nt.factorization.plain"
+            "div.prop.primes.small",
+            "div.prop.primes.small",
+            "div.fta"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "construction"
+        ],
         "id": "LV.AO.2010.7.3",
         "qtypes": [
             "Find.Any"
         ],
         "seeAlso": [],
         "tasks": [
-            "al.sym.linear",
-            "co.tables.magicsquare"
+            "alg.linear.comb",
+            "comb.full.backtrack"
         ]
     },
     {
@@ -4700,7 +4810,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.remainder.invariant"
+            "misc.invar.congr"
         ]
     },
     {
@@ -4712,7 +4822,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "co.graph.syntaxtree"
+            "comb.full.syntax"
         ]
     },
     {
@@ -4724,8 +4834,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.manipulate.smallexpr",
-            "al.equation.expressvariable"
+            "alg.expr.prop",
+            "comb.full"
         ]
     },
     {
@@ -4738,8 +4848,8 @@
         "seeAlso": [],
         "tasks": [
             "seq.arithm.summation",
-            "div.pfactor.algorithm",
-            "misc.exhaustive"
+            "div.fta.proc",
+            "comb.full"
         ]
     },
     {
@@ -4751,8 +4861,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.primes.small",
-            "nt.primes.distances"
+            "div.prop.primes.small",
+            "div.prop.primes.small"
         ]
     },
     {
@@ -4764,7 +4874,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.gcd.congruences",
+            "mod.eq.chinese",
             "nt.divisibility.constructions"
         ]
     },
@@ -4777,7 +4887,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "co.graph.syntaxtree"
+            "comb.full.syntax"
         ]
     },
     {
@@ -4790,7 +4900,7 @@
         "seeAlso": [],
         "tasks": [
             "nt.decnotation.expressions",
-            "nt.factorization.plain"
+            "div.fta"
         ]
     },
     {
@@ -4803,7 +4913,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "co.games.invariant"
+            "misc.invar.game"
         ]
     },
     {
@@ -4815,7 +4925,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.parity.operations"
+            "mod.fix.parity"
         ]
     },
     {
@@ -4827,7 +4937,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "co.graph.syntaxtree"
+            "comb.full.syntax"
         ]
     },
     {
@@ -4839,8 +4949,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.equation.mean",
-            "al.inequality.finitesearch"
+            "alg.series.mean",
+            "alg.ineq.equations"
         ]
     },
     {
@@ -4852,7 +4962,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.periodic.invariant"
+            "mod.period"
         ]
     },
     {
@@ -4864,8 +4974,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.expr.square",
-            "mod.expr.sum"
+            "mod.congr.pow",
+            "mod.congr.sumdiff"
         ]
     },
     {
@@ -4877,8 +4987,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.inequality.monotonicity",
-            "nt.decnotation.expressions"
+            "alg.ineq.monotonicity",
+            "notation.dec.combine.poly",
+            "misc.extr.param"
         ]
     },
     {
@@ -4891,9 +5002,9 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.pow2or5.divides",
-            "notation.divrules.3or9.divides",
-            "nt.factorization.powers",
-            "al.sym.progressions"
+            "notation.divrules.3or9.remainder",
+            "div.fta.pow.square",
+            "seq.arithm.summation"
         ]
     },
     {
@@ -4905,8 +5016,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.expressions",
-            "al.equation.expressvariable"
+            "alg.expr",
+            "notation.dec.combine.poly.pieces"
         ]
     },
     {
@@ -4919,7 +5030,7 @@
         "seeAlso": [],
         "tasks": [
             "seq.geom",
-            "misc.extreme.pigeonhole"
+            "misc.extr.pigeon"
         ]
     },
     {
@@ -4931,20 +5042,21 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.parity.operations"
+            "mod.fix.parity"
         ]
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "magic-configuration"
+        ],
         "id": "LV.AO.2014.7.4",
         "qtypes": [
             "Find.All"
         ],
         "seeAlso": [],
         "tasks": [
-            "co.tables.magicsquare",
-            "al.equation.expressvariable"
+            "alg.expr.selectvar"
         ]
     },
     {
@@ -4960,8 +5072,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.periodic.longdivision",
-            "nt.decnotation.expressions"
+            "mod.period",
+            "notation.algor"
         ]
     },
     {
@@ -4973,8 +5085,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.expressions",
-            "al.equation.expressvariable"
+            "alg.expr",
+            "notation.dec.combine.poly.pieces"
         ]
     },
     {
@@ -4986,8 +5098,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.equation.expressvariable",
-            "co.tables.magicsquare"
+            "alg.expr.selectvar",
+            "comb.full.backtrack"
         ]
     },
     {
@@ -4999,11 +5111,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.parity.cases",
-            "misc.graphs.bipartite",
-            "misc.bounds",
-            "mod.expr.sum",
-            "misc.construct.iterative"
+            "mod.fix.parity",
+            "comb.graph.bipartite",
+            "mod.congr.sumdiff",
+            "comb.constr.iterative"
         ]
     },
     {
@@ -5029,8 +5140,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.expand.binom.squares",
-            "misc.induction.infdescent.sqrt"
+            "alg.tra.binom.square",
+            "misc.ind.descent"
         ]
     },
     {
@@ -5042,8 +5153,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.identity.sqdiff",
-            "nt.primes.small"
+            "alg.tra.factor.sqdiff",
+            "div.prop.primes.small"
         ]
     },
     {
@@ -5055,7 +5166,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.experiment",
+            "misc.try",
             "alg.ineq.transitive"
         ]
     },
@@ -5068,9 +5179,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.equation.expressvariable",
-            "nt.divisibility.equation",
-            "al.inequality.finitesearch"
+            "alg.expr",
+            "alg.expr.prop",
+            "alg.ineq.equations"
         ]
     },
     {
@@ -5083,7 +5194,7 @@
         "seeAlso": [],
         "tasks": [
             "al.manipulate.smallexpr",
-            "al.identity.sqdiff"
+            "alg.tra.factor.sqdiff"
         ]
     },
     {
@@ -5095,7 +5206,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.parity.operations"
+            "mod.fix.parity"
         ]
     },
     {
@@ -5109,8 +5220,8 @@
         "tasks": [
             "notation.divrules.pow2or5.divides",
             "notation.divrules.3or9.divides",
-            "nt.factorization.divisibilityrules",
-            "co.fullsearch.construction"
+            "notation.divrules.composite",
+            "comb.full"
         ]
     },
     {
@@ -5122,10 +5233,10 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "div.pfactor.algorithm",
+            "div.fta.proc",
             "notation.divrules.3or9.remainder",
-            "mod.expr.poly",
-            "mod.equation.contradict"
+            "mod.congr.poly",
+            "mod.eq.contradict"
         ]
     },
     {
@@ -5138,8 +5249,8 @@
         "seeAlso": [],
         "tasks": [
             "seq.arithm.expr",
-            "alg.expand.binom.squares",
-            "alg.completesquare"
+            "alg.tra.binom.square",
+            "alg.tra.binom.complsquare"
         ]
     },
     {
@@ -5171,9 +5282,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "div.pfactor.prop.divisibility",
+            "div.prop.prod",
             "seq.arithm.mod.all",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -5206,8 +5317,8 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.3or9.divides",
-            "div.pfactor.prop.divisibility",
-            "mod.expr.poly"
+            "div.prop.prod",
+            "mod.congr.poly"
         ]
     },
     {
@@ -5239,7 +5350,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "misc.induction"
+            "misc.ind"
         ]
     },
     {
@@ -5251,7 +5362,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "alg.expand.binom.squares"
+            "alg.tra.binom.square"
         ]
     },
     {
@@ -6720,7 +6831,7 @@
         "tasks": [
             "alg.poly.division",
             "alg.ineq.equations",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -6730,11 +6841,11 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "div.pfactor",
-            "div.pfactor.powers.higher",
-            "div.pfactor.prop.common",
+            "div.fta",
+            "div.fta.pow.other",
+            "div.common.lcm.maxexp",
             "seq.arithm.mod.gaps",
-            "mod.systems.chinese"
+            "mod.eq.chinese"
         ]
     },
     {
@@ -6761,7 +6872,7 @@
         "seeAlso": [],
         "tasks": [
             "notation.dec.numdigits.prod",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -6779,10 +6890,10 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "alg.completesquare",
+            "alg.tra.binom.complsquare",
             "seq.gaps.squares",
             "alg.ineq.monotonicity",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -6800,8 +6911,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "misc.beginatend",
-            "misc.invariant.game"
+            "misc.invar.game"
         ]
     },
     {
@@ -6819,8 +6929,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "div.pfactor.prop.numdivisors",
-            "div.pfactor.structure"
+            "div.fta.divisors.num",
+            "div.fta.divisors.struct"
         ]
     },
     {
@@ -6846,10 +6956,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "misc.beginatend",
-            "misc.invariant.game",
-            "mod.parity.cases",
-            "misc.induction.least"
+            "misc.invar.game",
+            "mod.fix.parity",
+            "misc.ind.least"
         ]
     },
     {
@@ -6859,10 +6968,10 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.mod.last",
-            "mod.systems.linear",
-            "misc.symmetry",
-            "misc.exhaustive",
+            "mod.fix.lastdigits",
+            "mod.eq",
+            "misc.symm",
+            "comb.full",
             "notation.divrules.pow2or5.divides"
         ]
     },
@@ -6874,8 +6983,8 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.3or9.remainder",
-            "misc.invariant",
-            "mod.expr.prod"
+            "misc.invar",
+            "mod.congr.prod"
         ]
     },
     {
@@ -6886,10 +6995,10 @@
         "seeAlso": [],
         "tasks": [
             "notation.divrules.3or9.remainder",
-            "mod.expr.prod",
-            "mod.systems.chinese",
+            "mod.congr.prod",
+            "mod.eq.chinese",
             "alg.ineq.monotonicity",
-            "misc.exhaustive"
+            "comb.full"
         ]
     },
     {
@@ -6900,7 +7009,9 @@
             "Find.Max"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "div.common.gcd"
+        ]
     },
     {
         "concepts": [
@@ -6913,7 +7024,9 @@
             "Find.All"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "seq.gaps.geom"
+        ]
     },
     {
         "concepts": [],
@@ -6922,8 +7035,12 @@
         "qtypes": [
             "Find.Max"
         ],
-        "seeAlso": [],
-        "tasks": []
+        "seeAlso": [
+            "BBK2012.P1.36"
+        ],
+        "tasks": [
+            "div.common.gcd"
+        ]
     },
     {
         "concepts": [],
@@ -6932,7 +7049,9 @@
         "qtypes": [
             "Find.Max"
         ],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2001.7.4"
+        ],
         "tasks": []
     },
     {
@@ -6943,7 +7062,11 @@
             "Find.Only"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "seq.recur.linear",
+            "misc.invar.expr",
+            "misc.ind"
+        ]
     },
     {
         "concepts": [],
@@ -6963,7 +7086,9 @@
             "Prove.Other"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "seq.arithm.mod.all"
+        ]
     },
     {
         "concepts": [],
@@ -6973,7 +7098,11 @@
             "Find.Only"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "seq.recur.other",
+            "misc.invar.expr",
+            "misc.ind"
+        ]
     },
     {
         "concepts": [],
@@ -6983,7 +7112,11 @@
             "Find.Count"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "seq.arithm.mod",
+            "seq.arithm.numestimate",
+            "misc.symm.periodicity"
+        ]
     },
     {
         "concepts": [],
@@ -6993,7 +7126,13 @@
             "Find.Count"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "div.common.lcm",
+            "seq.arithm.mod",
+            "misc.symm.periodicity",
+            "seq.arithm.mod",
+            "seq.arithm.numestimate"
+        ]
     },
     {
         "concepts": [],
@@ -7003,7 +7142,10 @@
             "Find.Only"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "comb.count.inclexcl",
+            "misc.symm.periodicity"
+        ]
     },
     {
         "concepts": [],
@@ -7013,17 +7155,25 @@
             "Find.Count"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "mod.eq.chinese",
+            "misc.symm.periodicity"
+        ]
     },
     {
-        "concepts": [],
+        "concepts": [
+            "mutual-primes",
+            "gcd"
+        ],
         "genre": [],
         "id": "BBK2012.P1.126",
         "qtypes": [
             "Find.Any"
         ],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "misc.symm.periodicity"
+        ]
     },
     {
         "concepts": [],
@@ -7089,7 +7239,9 @@
         "concepts": [],
         "genre": [],
         "id": "BBK2012.P2.16",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.ForAll"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -7097,7 +7249,9 @@
         "concepts": [],
         "genre": [],
         "id": "BBK2012.P2.21",
-        "qtypes": [],
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -7105,7 +7259,9 @@
         "concepts": [],
         "genre": [],
         "id": "BBK2012.P2.22",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.ForAll"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -7113,7 +7269,9 @@
         "concepts": [],
         "genre": [],
         "id": "BBK2012.P2.23",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Only"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -7121,7 +7279,9 @@
         "concepts": [],
         "genre": [],
         "id": "BBK2012.P2.24",
-        "qtypes": [],
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [
             "BBK2012.P1.52"
         ],

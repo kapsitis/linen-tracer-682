@@ -19,6 +19,9 @@ handlers:
 
 - url: /prob/tasks\.html
   script: prob_tasks.app
+
+- url: /prob/task_groups\.html
+  script: prob_task_groups.app
   
 - url: /concept/(.*)
   script: prob_get_concept.app

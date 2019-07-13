@@ -23,11 +23,25 @@ Atrast lielāko iespējamo diferences vērtību, ja zināms, ka tā ir vesels sk
 questionType=Find.Max
 -->
 
+<small>
+
+* [div.common.gcd](#)
+
+</small>
+
+
 # <lo-sample/> BBK2012.P1.52
 
 Vai iespējams norādīt tādu galīgu skaitu ģeometrisko progresiju, 
 kuru locekļi ir naturāli skaitļi, ka jebkurš naturāls skaitlis 
 piederētu vismaz vienai progresijai?
+
+
+<small>
+
+* [seq.gaps.geom](#)
+
+</small>
 
 <!--
 questionType=ProveDisprove.Exists
@@ -54,7 +68,14 @@ Aritmētiskā progresija, kuras locekļi ir veseli skaitļi satur skaitļus
 $13$, $37$ un $79$. 
 Kāda var būt lielākā šīs progresijas diferences vērtība?
 
+<small>
+
+* [div.common.gcd](#)
+
+</small>
+
 <!--
+seeAlso=BBK2012.P1.36
 questionType=Find.Max
 -->
 
@@ -72,6 +93,7 @@ jo $123$ un $9$ abi dalās ar $3$.)
 
 <!--
 questionType=Find.Max
+seeAlso=LV.NO.2001.7.4
 -->
 
 
@@ -80,6 +102,15 @@ questionType=Find.Max
 Skaitļu virkne $(a_i)$ tiek definēta šādi: 
 $$a_1=19,\;a_2=90,\;a_{n+2}=a_n+a_{n+1},\;\mbox{ja}\;n=1,2,3,\ldots.$$
 Atrast skaitļu $a_{1989}$ un $a_{1990}$ lielāko kopīgo dalītāju.
+
+
+<small>
+
+* [seq.recur.linear](#)
+* [misc.invar.expr](#)
+* [misc.ind](#)
+
+</small>
 
 <!--
 questionType=Find.Only
@@ -99,9 +130,15 @@ questionType=Find.All
 
 # <lo-sample/> BBK2012.P1.119
 
-Doti naturāli skaitļi $a$, $b$ un $m$; $(a,b)=1$. 
+Doti naturāli skaitļi $a$, $b$ un $m$; $\mbox{LKD}(a,b)=1$. 
 Pierādiet, ka aritmētiskajā progresijā $ak+b$, ($k=0,1,2,\ldots$) 
 ir bezgalīgi daudz locekļu, kas ir savstarpēji pirmskaitļi ar skaitli $m$.
+
+<small>
+
+* [seq.arithm.mod.all](#)
+
+</small>
 
 <!--
 questionType=Prove.Other
@@ -114,6 +151,15 @@ Dota virkne $x_1=19,\;x_2=95,\;x_{n+2}=\mbox{LKD}(x_{n+1},x_n)+x_n$,
 ja $n \geq 1$. Atrast skaitļu $x_{1995}$ un $x_{1996}$ 
 lielāko kopīgo dalītāju.
 
+
+<small>
+
+* [seq.recur.other](#)
+* [misc.invar.expr](#)
+* [misc.ind](#)
+
+</small>
+
 <!--
 questionType=Find.Only
 -->
@@ -125,6 +171,14 @@ questionType=Find.Only
 Cik daudz ir tādu naturālu skaitļu $n \leq 1983$, kuriem $3n+5$ 
 dalās ar $7$?
 
+<small>
+
+* [seq.arithm.mod](#)
+* [seq.arithm.numestimate](#)
+* [misc.symm.periodicity](#)
+
+</small>
+
 <!--
 questionType=Find.Count
 -->
@@ -132,11 +186,29 @@ questionType=Find.Count
 
 # <lo-sample/> BBK2012.P1.123
 
-Cik daudz ir tādu naturālu skaitļu , kuri nedalās ne ar 5, ne ar 7?
+Cik daudz ir tādu naturālu skaitļu $n \leq 1000$, 
+kuri nedalās ne ar $5$, ne ar $7$?
+
+
+<small>
+
+* [div.common.lcm](#)
+* [seq.arithm.mod](#)
+* [misc.symm.periodicity](#)
+
+</small>
 
 <!--
 questionType=Find.Count
 -->
+
+<small>
+
+* [seq.arithm.mod](#)
+* [seq.arithm.numestimate](#)
+
+</small>
+
 
 
 # <lo-sample/> BBK2012.P1.124
@@ -150,11 +222,25 @@ vai nu ar $3$, vai ar $5$.
 questionType=Find.Only
 -->
 
+<small>
+
+* [comb.count.inclexcl](#)
+* [misc.symm.periodicity](#)
+
+</small>
+
 
 # <lo-sample/> BBK2012.P1.125
 
 Cik daudz tādu piecciparu skaitļu, kuru pēdējais cipars ir $6$, 
 un kuri dalās ar $3$?
+
+<small>
+
+* [mod.eq.chinese](#)
+* [misc.symm.periodicity](#)
+
+</small>
 
 <!--
 questionType=Find.Count
@@ -163,12 +249,19 @@ questionType=Find.Count
 
 # <lo-sample/> BBK2012.P1.126
 
-No naturāliem skaitļiem, kas nepārsniedz $1993$, izvelieties $1328$ 
+No naturāliem skaitļiem, kas nepārsniedz $1993$, izvēlieties $1328$ 
 skaitļus tā, lai starp jebkuriem trim izvēlētajiem būtu vismaz divi,
 kuru lielākais kopīgais dalītājs pārsniedz vieninieku.
 Pietiek uzrādīt vienu šādu $1328$ skaitļu komplektu.
 
+<small>
+
+* [misc.symm.periodicity](#)
+
+</small>
+
 <!--
+concepts=mutual-primes,gcd
 questionType=Find.Any
 -->
 

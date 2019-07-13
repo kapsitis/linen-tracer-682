@@ -793,7 +793,7 @@ dalijasi iš $12^k$?
 
 <!--
 questionType=Find.Max
-concepts=valuations,powers,factorial
+concepts=valuations,power,factorial
 -->
 
 # <lo-sample/> LT.LKMMO.2015.7

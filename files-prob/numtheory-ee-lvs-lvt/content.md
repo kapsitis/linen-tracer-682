@@ -20,10 +20,10 @@ ir vesela skaitļa kvadrāts.
 
 <small>
 
-* [alg.powers.nested](#)
+* [alg.tra.pow.nest](#)
 * [seq.gaps.squares](#)
 * [alg.ineq.equations](#)
-* [misc.exhaustive](#)
+* [comb.full](#)
 
 </small>
 
@@ -70,8 +70,7 @@ ir pirmskaitļi?
 
 <small>
 
-* [mod.exponent.small](#)
-* [mod.equation.contradict](#)
+* [mod.eq.contradict](#)
 
 </small>
 
@@ -385,6 +384,13 @@ $a_{2012} = 4$). Pierādīt, ka patvaļīgiem naturāliem skaitļiem
 $i$ un $j$, kur $i < j$, summa
 $$\frac{1}{a_i} + \frac{1}{a_{i+1}} + \ldots + \frac{1}{a_j}$$
 nav vesels skaitlis.
+
+<small>
+
+* [div.valu.change](#)
+
+</small>
+
 
 <!--
 ru=

@@ -79,6 +79,7 @@
         ],
         "problems": [
             "LV.AO.2000.7.1",
+            "LV.AO.2003.8.5",
             "LV.AO.2015.8.1",
             "LV.AO.2016.10.3",
             "LV.AO.2019.10.4"
@@ -122,7 +123,9 @@
             "2"
         ],
         "problems": [
-            "EE.LO.2019.10.1"
+            "EE.LO.2019.10.1",
+            "LV.AO.2001.8.3",
+            "LV.AO.2002.8.2"
         ]
     },
     {
@@ -282,6 +285,8 @@
             "EE.LVS.2009.noorem.1",
             "LV.NO.2008.7.3",
             "LV.NO.2013.7.1",
+            "LV.AO.2001.8.3",
+            "LV.AO.2002.8.2",
             "LV.AO.2007.8.3",
             "LV.AO.2012.8.3",
             "LV.AO.2016.7.2",
@@ -309,6 +314,7 @@
             "3"
         ],
         "problems": [
+            "LV.NO.2002.8.3",
             "LV.NO.2006.7.4/LV.NO.2007.7.4",
             "LV.VO.2013.10.1",
             "LV.VO.2014.10.3",
@@ -440,12 +446,22 @@
         "problems": []
     },
     {
+        "desc": "Noskaidrot, kuras daļas vienādas ar veseliem skaitļiem, kuras var saīsināt.",
+        "id": "div.prop.frac",
+        "levels": [
+            "2",
+            "1",
+            "1"
+        ],
+        "problems": []
+    },
+    {
         "desc": "Secināt, ka d dala a+b un a-b, ja d|a and d|b",
         "id": "div.prop.add",
         "levels": [
             "2",
             "1",
-            "1"
+            "2"
         ],
         "problems": [
             "LV.NO.2010.10.2"
@@ -457,7 +473,7 @@
         "levels": [
             "2",
             "1",
-            "2"
+            "3"
         ],
         "problems": [
             "LV.NO.2010.10.2",
@@ -472,7 +488,7 @@
         "levels": [
             "2",
             "1",
-            "3"
+            "4"
         ],
         "problems": []
     },
@@ -482,7 +498,7 @@
         "levels": [
             "2",
             "1",
-            "3",
+            "4",
             "1"
         ],
         "problems": [
@@ -509,7 +525,7 @@
         "levels": [
             "2",
             "1",
-            "3",
+            "4",
             "2"
         ],
         "problems": [
@@ -517,12 +533,22 @@
         ]
     },
     {
+        "desc": "Pazīt saliktus skaitļus, pārbaudīt dalāmību līdz kvadrātsaknei",
+        "id": "div.prop.composite",
+        "levels": [
+            "2",
+            "1",
+            "5"
+        ],
+        "problems": []
+    },
+    {
         "desc": "Lietot Eiklīda lemmu (ja p dala ab, tad a vai b dalās ar p)",
         "id": "div.prop.euclidlemma",
         "levels": [
             "2",
             "1",
-            "4"
+            "6"
         ],
         "problems": [
             "LV.NO.2012.8.3"
@@ -574,7 +600,9 @@
             "2"
         ],
         "problems": [
-            "LV.AO.2000.7.2"
+            "LV.NO.2008.7.3",
+            "LV.AO.2000.7.2",
+            "LV.AO.2004.8.3"
         ]
     },
     {
@@ -692,11 +720,21 @@
         "levels": [
             "2",
             "2",
-            "5"
+            "4"
         ],
         "problems": [
             "EE.PK.2017.10.2"
         ]
+    },
+    {
+        "desc": "Izmantot faktoriāla dalījumu pirmreizinātājos",
+        "id": "div.fta.factorial",
+        "levels": [
+            "2",
+            "2",
+            "5"
+        ],
+        "problems": []
     },
     {
         "desc": "Izmantot LKD un MKD jēdzienus (common multipliers, divisors)",
@@ -927,7 +965,7 @@
         ]
     },
     {
-        "desc": "Izmantot skaitļa pēdējos n ciparus kā atlikumu, dalot ar 10^n",
+        "desc": "Izmantot skaitļa pēdējos n ciparus kā atlikumu, dalot ar 10^n. Secināt par atlikumiem (dalot ar 10, 100, 2, 5 u.c.), zinot skaitļu decimālpieraksta pēdējo ciparu vai ciparus.",
         "id": "mod.fix.lastdigits",
         "levels": [
             "3",
@@ -939,6 +977,16 @@
         ]
     },
     {
+        "desc": "Secināt par saskaitīšanu un atņemšanu pēc 12 stundu ciparnīcas vai nedēļas cikla.",
+        "id": "mod.fix.clock",
+        "levels": [
+            "3",
+            "1",
+            "3"
+        ],
+        "problems": []
+    },
+    {
         "desc": "Izmantot apgalvojumus par skaitļa izteikšanu ar dalījumu un atlikumu (a=bq+r) un kongruenču klases.",
         "id": "mod.congr",
         "levels": [
@@ -948,8 +996,7 @@
         "problems": [
             "EE.PK.2011.10.3",
             "LV.NO.2001.7.1",
-            "LV.AO.2001.7.2",
-            "LV.AO.2006.7.1"
+            "LV.AO.2001.7.2"
         ]
     },
     {
@@ -974,7 +1021,7 @@
         "id": "mod.congr.sumdiff",
         "levels": [
             "3",
-            "3",
+            "2",
             "1"
         ],
         "problems": [
@@ -991,7 +1038,7 @@
         "id": "mod.congr.prod",
         "levels": [
             "3",
-            "3",
+            "2",
             "3"
         ],
         "problems": [
@@ -1004,7 +1051,7 @@
         "id": "mod.congr.pow",
         "levels": [
             "3",
-            "3",
+            "2",
             "4"
         ],
         "problems": [
@@ -1021,7 +1068,7 @@
         "id": "mod.congr.poly",
         "levels": [
             "3",
-            "3",
+            "2",
             "5"
         ],
         "problems": [
@@ -1035,10 +1082,11 @@
         "id": "mod.period",
         "levels": [
             "3",
-            "4"
+            "3"
         ],
         "problems": [
             "LV.NO.2006.8.3",
+            "LV.VO.2013.10.4",
             "LV.AO.2012.8.4",
             "LV.AO.2014.8.1"
         ]
@@ -1048,7 +1096,7 @@
         "id": "mod.exp",
         "levels": [
             "3",
-            "5"
+            "4"
         ],
         "problems": [
             "LV.NO.2009.8.3",
@@ -1060,7 +1108,7 @@
         "id": "mod.exp.inverse",
         "levels": [
             "3",
-            "5",
+            "4",
             "1"
         ],
         "problems": []
@@ -1070,7 +1118,7 @@
         "id": "mod.exp.fermat",
         "levels": [
             "3",
-            "5",
+            "4",
             "2"
         ],
         "problems": [
@@ -1082,19 +1130,29 @@
         "id": "mod.eq",
         "levels": [
             "3",
-            "6"
+            "5"
         ],
         "problems": [
             "LT.VUMIF.2019.9.4"
         ]
     },
     {
+        "desc": "Risināt lineāras kongruences, piemēram, izmantojot inversos elementus.",
+        "id": "mod.eq.linear",
+        "levels": [
+            "3",
+            "5",
+            "1"
+        ],
+        "problems": []
+    },
+    {
         "desc": "Secināt, ka veselu skaitļu vienādojumam nav atrisinājumu kongruenču pretrunas dēļ",
         "id": "mod.eq.contradict",
         "levels": [
             "3",
-            "6",
-            "1"
+            "5",
+            "2"
         ],
         "problems": [
             "EE.LO.2013.10.1",
@@ -1108,8 +1166,8 @@
         "id": "mod.eq.chinese",
         "levels": [
             "3",
-            "6",
-            "1"
+            "5",
+            "3"
         ],
         "problems": [
             "LV.AO.2011.7.3",
@@ -1120,7 +1178,7 @@
     },
     {
         "desc": "Izmantot spriedumos skaitļa pierakstu",
-        "id": "notation",
+        "id": "nota",
         "levels": [
             "4"
         ],
@@ -1128,7 +1186,7 @@
     },
     {
         "desc": "Izmantot skaitļa decimālpierakstu",
-        "id": "notation.dec",
+        "id": "nota.est",
         "levels": [
             "4",
             "1"
@@ -1137,7 +1195,7 @@
     },
     {
         "desc": "Novērtēt ciparu skaitu dažādu darbību rezultātos",
-        "id": "notation.dec.numdigits",
+        "id": "nota.est.numdigits",
         "levels": [
             "4",
             "1",
@@ -1150,7 +1208,7 @@
     },
     {
         "desc": "Novērtēt ciparu skaitu divu vai vairāku skaitļu summā",
-        "id": "notation.dec.numdigits.sum",
+        "id": "nota.est.numdigits.sum",
         "levels": [
             "4",
             "1",
@@ -1163,7 +1221,7 @@
     },
     {
         "desc": "Novērtēt ciparu skaitu divu skaitļu reizinājumā",
-        "id": "notation.dec.numdigits.prod",
+        "id": "nota.est.numdigits.prod",
         "levels": [
             "4",
             "1",
@@ -1171,26 +1229,14 @@
             "2"
         ],
         "problems": [
+            "EE.PK.2010.10.5",
             "LV.NO.2012.10.4",
             "LT.VUMIF.2017.9.2"
         ]
     },
     {
-        "desc": "Novērtēt ciparu skaitu skaitļa kvadrātā",
-        "id": "notation.dec.numdigits.square",
-        "levels": [
-            "4",
-            "1",
-            "1",
-            "3"
-        ],
-        "problems": [
-            "EE.PK.2010.10.5"
-        ]
-    },
-    {
-        "desc": "Secināt par atlikumiem (dalot ar 10, 100, 2, 5 u.c.), zinot skaitļu decimālpieraksta pēdējo ciparu vai ciparus.",
-        "id": "notation.mod.last",
+        "desc": "Izmantot dalāmības pazīmes",
+        "id": "nota.divrule",
         "levels": [
             "4",
             "2"
@@ -1198,30 +1244,21 @@
         "problems": []
     },
     {
-        "desc": "Izmantot dalāmības pazīmes",
-        "id": "notation.divrules",
-        "levels": [
-            "4",
-            "3"
-        ],
-        "problems": []
-    },
-    {
         "desc": "Izmantot dalāmības pazīmes ar 2 vai 5, vai 10",
-        "id": "notation.divrules.2or5or10",
+        "id": "nota.divrule.2_5_10",
         "levels": [
             "4",
-            "3",
+            "2",
             "1"
         ],
         "problems": []
     },
     {
         "desc": "Secināt, ka skaitlis dalās ar 2 (vai 5, vai 10), ja tā pēdējais cipars dalās ar to un otrādi",
-        "id": "notation.divrules.2or5or10.divides",
+        "id": "nota.divrule.2_5_10.divides",
         "levels": [
             "4",
-            "3",
+            "2",
             "1",
             "1"
         ],
@@ -1238,10 +1275,10 @@
     },
     {
         "desc": "Secināt, ka atlikums, dalot ar 2 (vai 5, vai 10), sakrīt ar pēdējā cipara atlikumu",
-        "id": "notation.divrules.2or5or10.remainder",
+        "id": "nota.divrule.2_5_10.rem",
         "levels": [
             "4",
-            "3",
+            "2",
             "1",
             "2"
         ],
@@ -1249,20 +1286,23 @@
     },
     {
         "desc": "Izmantot dalāmības pazīmes ar 2^a*5^b",
-        "id": "notation.divrules.pow2or5",
+        "id": "nota.divrule.2_5pow",
         "levels": [
             "4",
-            "3",
+            "2",
             "2"
         ],
-        "problems": []
+        "problems": [
+            "LV.AO.2005.7.4",
+            "LV.AO.2008.7.2"
+        ]
     },
     {
         "desc": "Secināt, ka skaitlis dalās ar 2^a*5^b, ja max(a,b) pēdējie cipari dalās ar to",
-        "id": "notation.divrules.pow2or5.divides",
+        "id": "nota.divrule.2_5pow.divides",
         "levels": [
             "4",
-            "3",
+            "2",
             "2",
             "1"
         ],
@@ -1276,10 +1316,10 @@
     },
     {
         "desc": "Secināt, ka atlikums, dalot ar 2^a*5^b, sakrīt ar pēdējo max(a,b) ciparu atlikumu",
-        "id": "notation.divrules.pow2or5.remainder",
+        "id": "nota.divrule.2_5pow.rem",
         "levels": [
             "4",
-            "3",
+            "2",
             "2",
             "2"
         ],
@@ -1287,20 +1327,20 @@
     },
     {
         "desc": "Izmantot dalāmības pazīmes ar 3 vai 9",
-        "id": "notation.divrules.3or9",
+        "id": "nota.divrule.3_9",
         "levels": [
             "4",
-            "3",
+            "2",
             "3"
         ],
         "problems": []
     },
     {
         "desc": "Secināt, ka skaitlis dalās ar 3 (vai 9), ja tā ciparu summa dalās ar 3 (vai 9) un otrādi",
-        "id": "notation.divrules.3or9.divides",
+        "id": "nota.divrule.3_9.divides",
         "levels": [
             "4",
-            "3",
+            "2",
             "3",
             "1"
         ],
@@ -1318,10 +1358,10 @@
     },
     {
         "desc": "Secināt, ka atlikums, dalot ar 3 (vai 9), sakrīt ar ciparu summas atlikumu",
-        "id": "notation.divrules.3or9.remainder",
+        "id": "nota.divrule.3_9.rem",
         "levels": [
             "4",
-            "3",
+            "2",
             "3",
             "2"
         ],
@@ -1338,10 +1378,10 @@
     },
     {
         "desc": "Izmantot dalāmības pazīmi ar 11",
-        "id": "notation.divrules.11",
+        "id": "nota.divrule.11",
         "levels": [
             "4",
-            "3",
+            "2",
             "4"
         ],
         "problems": [
@@ -1352,10 +1392,10 @@
     },
     {
         "desc": "Izmantot dalāmības pazīmi ar 101 (no beigām pārmaiņus pieskaita un atņem 2 ciparu grupiņas)",
-        "id": "notation.divrules.101",
+        "id": "nota.divrule.101",
         "levels": [
             "4",
-            "3",
+            "2",
             "5"
         ],
         "problems": [
@@ -1364,10 +1404,10 @@
     },
     {
         "desc": "Izmantot dalāmības pazīmes 1001 dalītājiem",
-        "id": "notation.divrules.1001",
+        "id": "nota.divrule.1001",
         "levels": [
             "4",
-            "3",
+            "2",
             "6"
         ],
         "problems": [
@@ -1376,10 +1416,10 @@
     },
     {
         "desc": "Izmantot kombinētās dalāmības pazīmes skaitļa decimālpierakstā (ar 2 un 3 utml.)",
-        "id": "notation.divrules.composite",
+        "id": "nota.divrule.composite",
         "levels": [
             "4",
-            "3",
+            "2",
             "5"
         ],
         "problems": [
@@ -1392,25 +1432,11 @@
         ]
     },
     {
-        "desc": "Atrast, ar kādām 2 un 5 pakāpēm dalās skaitlis, kas beidzas ar n nullēm.",
-        "id": "notation.divrules.composite.zeroes",
-        "levels": [
-            "4",
-            "3",
-            "5",
-            "1"
-        ],
-        "problems": [
-            "LV.AO.2005.7.4",
-            "LV.AO.2008.7.2"
-        ]
-    },
-    {
         "desc": "Saprast, kā mainās skaitlis, ja tajā pārvieto vai iesprauž ciparus",
-        "id": "notation.dec.combine",
+        "id": "nota.combine",
         "levels": [
             "4",
-            "4"
+            "3"
         ],
         "problems": [
             "LV.NO.2010.8.3",
@@ -1419,10 +1445,10 @@
     },
     {
         "desc": "Izteikt skaitli ar decimālpieraksta cipariem, reizinot ar 10^k",
-        "id": "notation.dec.combine.poly",
+        "id": "nota.combine.poly",
         "levels": [
             "4",
-            "4",
+            "3",
             "1"
         ],
         "problems": [
@@ -1433,10 +1459,10 @@
     },
     {
         "desc": "Izteikt skaitli gan ar cipariem, gan garākiem gabaliem",
-        "id": "notation.dec.combine.poly.pieces",
+        "id": "nota.combine.poly.pieces",
         "levels": [
             "4",
-            "4",
+            "3",
             "1",
             "1"
         ],
@@ -1447,50 +1473,85 @@
     },
     {
         "desc": "Izteikt garu skaitli divos gabalos, piereizinot vienu no tiem ar 10^k",
-        "id": "notation.dec.combine.split",
+        "id": "nota.combine.split",
         "levels": [
             "4",
-            "4",
+            "3",
             "2"
         ],
         "problems": [
-            "LV.VO.2017.10.2"
+            "LV.VO.2017.10.2",
+            "LV.AO.2001.8.3",
+            "LV.AO.2002.8.2",
+            "LV.AO.2004.8.3",
+            "LV.AO.2011.8.4"
         ]
     },
     {
-        "desc": "Izmanto faktu, ka iespraužot skaitļa decimālpierakstā jaunus ciparus, atlikumi mainās periodiski.",
-        "id": "notation.dec.combine.padding",
+        "desc": "Veidot jaunus piemērus, iespraužot skaitļa decimālpierakstā jaunus ciparus.",
+        "id": "nota.combine.padding",
         "levels": [
             "4",
-            "4",
+            "3",
             "3"
         ],
         "problems": [
-            "LV.VO.2018.10.3"
+            "LV.VO.2018.10.3",
+            "LV.AO.2006.8.3"
         ]
     },
     {
-        "desc": "Izmantot ar decimālpierakstu saistītos algoritmus",
-        "id": "notation.algor",
+        "desc": "Izmantot ar pozicionālo pierakstu saistītos algoritmus",
+        "id": "nota.algor",
         "levels": [
             "4",
-            "5"
+            "4"
         ],
         "problems": [
             "LV.AO.2014.8.1"
         ]
     },
     {
-        "desc": "Ātri kāpināt kvadrātā skaitļus, kuri beidzas ar 5",
-        "id": "notation.algor.square5",
+        "desc": "Veikt galīgas darbības stabiņā",
+        "id": "nota.algor.arithm",
         "levels": [
             "4",
-            "5",
+            "4",
             "1"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Ātri veikt darbības, piemēram, kāpināt kvadrātā skaitļus, kuri beidzas ar 5",
+        "id": "nota.algor.fast",
+        "levels": [
+            "4",
+            "4",
+            "2"
         ],
         "problems": [
             "EE.PK.2010.10.5"
         ]
+    },
+    {
+        "desc": "Veikt garo dalīšanu",
+        "id": "nota.algor.longdiv",
+        "levels": [
+            "4",
+            "4",
+            "3"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Izmantot nedecimālās sistēmas",
+        "id": "nota.algor.nondec",
+        "levels": [
+            "4",
+            "4",
+            "4"
+        ],
+        "problems": []
     },
     {
         "desc": "Lietot zināšanas par veselu skaitļu virknēm",
@@ -1501,8 +1562,8 @@
         "problems": []
     },
     {
-        "desc": "Lietot dažas virkņu īpašības",
-        "id": "seq.prop",
+        "desc": "Noteikt skaitļus ar speciālām īpašībām",
+        "id": "seq.spec",
         "levels": [
             "5",
             "1"
@@ -1510,8 +1571,8 @@
         "problems": []
     },
     {
-        "desc": "Lietot ierobežotas virknes jēdzienu. Secināt, ka monotoni dilstoša un no lejas ierobežota veselu skaitļu virkne pēc kāda laika kļūst konstanta.",
-        "id": "seq.prop.bounded",
+        "desc": "Noteikt daudzkārtņus un citus aritmētisku progresiju locekļus",
+        "id": "seq.spec.progr",
         "levels": [
             "5",
             "1",
@@ -1520,8 +1581,8 @@
         "problems": []
     },
     {
-        "desc": "Lietot monotonas virknes jēdzienu",
-        "id": "seq.prop.monotone",
+        "desc": "Noteikt pilnus kvadrātus",
+        "id": "seq.spec.square",
         "levels": [
             "5",
             "1",
@@ -1530,27 +1591,14 @@
         "problems": []
     },
     {
-        "desc": "Lietot periodiskas virknes jēdzienu",
-        "id": "seq.prop.periodic",
+        "desc": "Noteikt citas pilnas pakāpes",
+        "id": "seq.spec.pow",
         "levels": [
             "5",
             "1",
             "3"
         ],
         "problems": []
-    },
-    {
-        "desc": "Secināt, ka virkne ir periodiska, ja katrs nākamais loceklis tajā ir atkarīgs no viena vai dažiem iepriekšējiem locekļiem (un katrs no šiem locekļiem var atrasties galīgā skaitā stāvokļu)",
-        "id": "seq.prop.periodic.finstate",
-        "levels": [
-            "5",
-            "1",
-            "3",
-            "1"
-        ],
-        "problems": [
-            "LV.VO.2013.10.4"
-        ]
     },
     {
         "desc": "Lietot zināšanas par aritmētiskām progresijām",
@@ -1572,11 +1620,12 @@
         "problems": [
             "EE.PK.2017.10.3",
             "LV.NO.2014.10.2",
+            "LV.AO.2006.7.1",
             "LV.AO.2016.10.3"
         ]
     },
     {
-        "desc": "Novērtēt aritmētiskas progresijas locekļu skaitu intervālā ar formulu [n/d] utml.",
+        "desc": "Novērtēt skaitļu skaitu, kas dalās ar d starp pirmajiem n skaitļiem ar [n/d] (un vispārināt citām aritmētiskām progresijām)",
         "id": "seq.arithm.numestimate",
         "levels": [
             "5",
@@ -1584,7 +1633,14 @@
             "2"
         ],
         "problems": [
+            "LV.NO.2001.7.1",
+            "LV.NO.2007.8.4",
+            "LV.NO.2010.7.3",
+            "LV.NO.2011.7.2",
+            "LV.NO.2013.7.2",
+            "LV.NO.2014.7.3",
             "LV.NO.2014.10.2",
+            "LV.AO.2004.8.5",
             "BBK2012.P1.122",
             "BBK2012.P1.123"
         ]
@@ -1610,7 +1666,10 @@
             "4"
         ],
         "problems": [
+            "LV.NO.2002.8.3",
             "LV.NO.2015.10.3",
+            "LV.AO.2003.7.5",
+            "LV.AO.2009.7.3",
             "LV.AO.2010.10.4",
             "LV.AO.2013.7.3"
         ]
@@ -1625,6 +1684,7 @@
         ],
         "problems": [
             "LV.NO.2000.7.4",
+            "LV.AO.2011.7.3",
             "BBK2012.P1.122",
             "BBK2012.P1.123",
             "BBK2012.P1.123"
@@ -1696,15 +1756,37 @@
         ]
     },
     {
+        "desc": "Novērtēt, cik reizes skaitli vajag reizināt vai dalīt ar kaut ko, lai iegūtu vajadzīgo vērtību.",
+        "id": "seq.geom.estimate",
+        "levels": [
+            "5",
+            "3",
+            "3"
+        ],
+        "problems": [
+            "LV.NO.2004.8.2",
+            "LV.NO.2005.8.1",
+            "LV.AO.2004.8.5"
+        ]
+    },
+    {
+        "desc": "Izmantot bezgalīgas ģeometriskas progresijas, piemēram, nosakot bezgalīgas decimāldaļas",
+        "id": "seq.geom.infinite",
+        "levels": [
+            "5",
+            "3",
+            "4"
+        ],
+        "problems": []
+    },
+    {
         "desc": "Veikt spriedumus par pazīstamām virknēm, kas nav progresijas",
         "id": "seq.recur",
         "levels": [
             "5",
             "4"
         ],
-        "problems": [
-            "LV.AO.2004.8.5"
-        ]
+        "problems": []
     },
     {
         "desc": "Izmantot Fibonači skaitļu jēdzienu vienkāršu secinājumu izdarīšanai",
@@ -1739,6 +1821,7 @@
             "3"
         ],
         "problems": [
+            "LV.AO.2004.8.5",
             "BBK2012.P1.121"
         ]
     },
@@ -1747,11 +1830,13 @@
         "id": "seq.gaps",
         "levels": [
             "5",
-            "6"
+            "5"
         ],
         "problems": [
             "LV.NO.2000.7.4",
+            "LV.NO.2008.8.1",
             "LV.NO.2016.10.1",
+            "LV.AO.2006.7.1",
             "LV.AO.2007.7.3"
         ]
     },
@@ -1760,7 +1845,7 @@
         "id": "seq.gaps.squares",
         "levels": [
             "5",
-            "6",
+            "5",
             "1"
         ],
         "problems": [
@@ -1773,7 +1858,7 @@
         "id": "seq.gaps.cubes",
         "levels": [
             "5",
-            "6",
+            "5",
             "2"
         ],
         "problems": []
@@ -1783,22 +1868,11 @@
         "id": "seq.gaps.geom",
         "levels": [
             "5",
-            "6",
+            "5",
             "3"
         ],
         "problems": [
             "BBK2012.P1.52"
-        ]
-    },
-    {
-        "desc": "Definēt jaunas virknes, lai pamatotu to īpašības",
-        "id": "seq.define",
-        "levels": [
-            "5",
-            "7"
-        ],
-        "problems": [
-            "EE.PK.2015.10.6"
         ]
     },
     {
@@ -1824,6 +1898,7 @@
             "EE.LO.2010.10.2",
             "EE.LVS.2009.noorem.1",
             "LV.NO.2001.7.4",
+            "LV.NO.2001.8.3",
             "LV.NO.2009.7.3",
             "LV.NO.2015.7.3",
             "LV.NO.2015.10.3",
@@ -1832,6 +1907,7 @@
             "LV.AO.2000.7.4",
             "LV.AO.2003.7.5",
             "LV.AO.2003.8.5",
+            "LV.AO.2006.7.1",
             "LV.AO.2009.7.3",
             "LV.AO.2009.8.4",
             "LV.AO.2010.8.2",
@@ -2098,6 +2174,8 @@
             "EE.PK.2019.10.3",
             "LV.NO.2005.7.4",
             "LV.NO.2016.7.5",
+            "LV.AO.2002.8.3",
+            "LV.AO.2003.8.3",
             "LV.AO.2013.7.1"
         ]
     },
@@ -2251,6 +2329,9 @@
             "2"
         ],
         "problems": [
+            "LV.NO.2011.7.1",
+            "LV.AO.2002.7.5",
+            "LV.AO.2003.8.5",
             "BBK2012.P1.122",
             "BBK2012.P1.123",
             "BBK2012.P1.124",

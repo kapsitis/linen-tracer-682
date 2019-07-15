@@ -42,7 +42,6 @@ Atrast mazāko naturālo skaitli, kam visi cipari ir vienādi un kas dalās ar $
 
 * [mod.exp.fermat](#)
 * [div.fta.divisors](#)
-* [nt.divisibility.constructions](#)
 
 </small>
 
@@ -136,8 +135,8 @@ skaitlis nemainās. Piemēram, $1221$ ir simetrisks skaitlis, bet $1231$ - nav.
 
 <small>
 
-* [notation.divrules.1001](#)
-* [notation.dec.combine.poly](#)
+* [nota.divrule.1001](#)
+* [nota.combine.poly](#)
 * [mod.congr](#)
 
 </small>
@@ -175,9 +174,9 @@ kuru Andrim vajadzēja iegūt. Kādu sešciparu skaitli Andris uzrakstīja?
 
 <small>
 
-* [nt.decnotation.expressions](#)
-* [al.manipulate.smallexpr](#)
-* [al.inequality.estimates](#)
+* [nota.combine.split](#)
+* [alg.tra.factor](#)
+* [alg.ineq.equations](#)
 
 </small>
 
@@ -189,9 +188,11 @@ concepts=decimal-notation
 
 
 
-## ABC
+## Dala reizinātājos
 
-**#AlgebrisksPārveidojums** **#Nevienādība** Ja $1000a+b=3ab$, tad $b/a=3b-1000$. Veseli 3cip. $a,b$, tikai ja $b=334$.
+* Apzīmē $a$ un $b$ - abi trīsciparu skaitļi
+* Ja $1000a+b=3ab$, tad $b/a=3b-1000$. 
+* Veseli trīsciparu skaitļi $a,b$ rodas tikai tad, ja $b=334$.
 
 
 
@@ -242,7 +243,7 @@ lai nekādu divu izvēlēto skaitļu starpība nebūtu ne $3$, ne $4$, ne $7$?
 
 <small>
 
-* [al.sym.grouping](#)
+* [misc.symm.periodicity](#)
 * [misc.extr.pigeon](#)
 
 </small>
@@ -273,9 +274,9 @@ Kādu četrciparu skaitli Andris uzrakstīja?
 
 <small>
 
-* [nt.decnotation.expressions](#)
-* [al.manipulate.smallexpr](#)
-* [al.inequality.estimates](#)
+* [nota.combine.split](#)
+* [alg.tra.factor](#)
+* [alg.ineq.equations](#)
 
 </small>
 
@@ -307,7 +308,7 @@ ja $a$, $b$, $c$, $d$ ir dažādi Fibonači skaitļi?
 
 <small>
 
-* [al.inequality.extremalelement](#)
+* [misc.extr.param](#)
 
 </small>
 
@@ -373,7 +374,7 @@ Vai tas var būt $0$, ja **(a)** $n=8$, **(b)** $n=9$?
 <small>
 
 * [misc.invar.parity](#)
-* [al.sym.progressions](#)
+* [seq.arithm.summation](#)
 * [comb.full](#)
 
 </small>
@@ -403,7 +404,7 @@ saskaitāmo lielākais kopīgais dalītājs būtu $1$?
 
 <small>
 
-* [al.inequality.extremalelement](#)
+* [misc.extr.param](#)
 * [div.prop.primes.small](#)
 
 </small>
@@ -433,9 +434,9 @@ Vai tas iespējams, ja **(a)** $n=3$, **(b)** $n=4$, **(c)** $n=2003$?
 
 <small>
 
-* [al.sym.grouping](#)
-* [al.manipulate.smallexpr](#)
+* [misc.symm.periodicity](#)
 * [comb.full](#)
+* [alg.tra.binom.square](#)
 
 </small>
 
@@ -493,8 +494,8 @@ pierakstot skaitlim $B$ galā skaitli $A$. Dots, ka $X-Y$ dalās ar $91$. Pierā
 
 <small>
 
-* [nt.decnotation.expressions](#)
-* [nt.divisibility.multiples](#)
+* [nota.combine.split](#)
+* [div.fta.divisors](#)
 
 </small>
 
@@ -515,15 +516,18 @@ questionType=Prove.ForAll
 
 # <lo-sample/> LV.AO.2004.8.5
 
-Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, katrs vienu reizi.
-Izsvītrojam no tās skaitļus, kas atrodas $1., 4., 7., 10., \ldots$ vietās. No palikušās virknes atkal
-izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. Ar iegūto virkni rīkojamies tāpat, utt.,
+Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
+katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas 
+$1., 4., 7., 10., \ldots$ vietās. No palikušās virknes atkal
+izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
+Ar iegūto virkni rīkojamies tāpat, utt.,
 kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
 
 <small>
 
-* [seq.recur](#)
-* [al.inequality.intervals](#)
+* [seq.arithm.numestimate](#)
+* [seq.geom.estimate](#)
+* [seq.recur.other](#)
 
 </small>
 
@@ -552,7 +556,7 @@ skaitļu reizinājums?
 
 <small>
 
-* [notation.divrules.composite.zeroes](#)
+* [nota.divrule.2_5pow](#)
 * [mod.congr.sumdiff](#)
 
 </small>
@@ -616,9 +620,9 @@ kas pie tam nav blakus viens otram. Cik vietu ir katrā vagonā?
 
 <small>
 
-* [al.inequality.intervals](#)
-* [nt.divisibility.multiples](#)
-* [mod.congr](#)
+* [seq.arithm.expr](#)
+* [seq.gaps](#)
+* [comb.full](#)
 
 </small>
 
@@ -629,9 +633,12 @@ questionType=Find.All
 
 
 
-## ABC
+## Progresijas diference
 
-**#GadījumuPārlase** **#Nevienādība** Vietu skaits $k \geq 20$ (1.nosac.) un $\leq 21$ (2.nosac.). $1995$ vai $1994$ jādalās ar $k$.
+* Vietu skaits $k \leq 22$ (jo $1996$ un $2015$ ir vienā vagonā) 
+* Vietu skaits $k \geq 21$ (jo $630$ un $652$ – dažādos vagonos, 
+kas pie tam nav blakus viens otram). 
+* $1995$ vai $1994$ jādalās ar $k$, jo ar šo vietu beidzas kārtējais vagons.
 
 
 
@@ -641,17 +648,16 @@ questionType=Find.All
 
 Naturāla skaitļa $x$ ciparu summu apzīmēsim ar $S(x)$. 
 Pieņemsim, ka $n$ – tāds naturāls skaitlis, kam vienlaicīgi 
-izpildās īpašības $S(n)=10$ un $S(5n)=5$. 
-
-1. atrodiet kaut vienu tādu skaitli,
-2. vai tādu skaitļu ir bezgalīgi daudz?
-3. vai kāds no tādiem skaitļiem ir nepāra?
+izpildās īpašības $S(n)=10$ un $S(5n)=5$.  
+(a) atrodiet kaut vienu tādu skaitli,  
+(b) vai tādu skaitļu ir bezgalīgi daudz?  
+(c) vai kāds no tādiem skaitļiem ir nepāra?
 
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
-* [nt.decnotation.sumofdigits](#)
+* [nota.divrule.2_5_10.divides](#)
+* [nota.combine.padding](#)
 
 </small>
 
@@ -661,9 +667,13 @@ questionType=Find.Any,ProveDisprove.Other,ProveDisprove.Exists
 -->
 
 
-## ABC
+## 
 
-**#Decimālpieraksts** $22222$ der, var arī starpā salikt $0$ (arī $64\cdot 10^k$ der). Ja $n$ nepāra, $5n$ beigtos ar $5$. 
+Uzminēts piemērs (pāru cipari divreiz samazinās, ja reizina ar $5$).
+
+(a) $22222$ der  
+(b) Var $22222$ vidū iespraust $0$ (arī $64\cdot 10^k$ der).   
+(c) Ja $n$ nepāra, $5n$ beigtos ar $5$, nav iespējams, jo $n \neq 1$. 
 
 
 
@@ -769,7 +779,7 @@ Vai var būt, ka ne $x$, ne $y$ nesatur savā pierakstā nevienu ciparu $0$?
 
 <small>
 
-* [notation.divrules.composite.zeroes](#)
+* [nota.divrule.2_5pow](#)
 * [alg.tra.pow.prod](#)
 
 </small>
@@ -832,7 +842,7 @@ visas ir dažādas. Kāds lielākais daudzums šo summu var būt pirmskaitļi?
 
 * [mod.fix.parity](#)
 * [div.prop.primes.small](#)
-* [al.sym.progressions](#)
+* [seq.arithm.summation](#)
 * [comb.full](#)
 
 </small>
@@ -1142,8 +1152,8 @@ dalot ar $2011$, atlikumā iegūst $3$.
 
 <small>
 
+* [seq.arithm.mod](#)
 * [mod.eq.chinese](#)
-* [nt.divisibility.constructions](#)
 
 </small>
 
@@ -1152,12 +1162,10 @@ questionType=Find.Any
 -->
 
 
-## ABC
+## Aplūko progresiju ar d=2010
 
-**#LineārasKongruences** $2010k+13$ dod atlikumus $13-k$ dalot ar $2011$. 
-
-
-
+* Aritmētiska progresija $2010k+13$ dos atlikumus $13-k$, dalot ar $2011$.
+* Var ievietot $k=10$.
 
 
 # <lo-sample/> LV.AO.2011.8.1
@@ -1194,7 +1202,7 @@ noteikti dalās ar **(a)** $17$; **(b)** $23$?
 
 <small>
 
-* [nt.decnotation.expressions](#)
+* [nota.combine.split](#)
 * [div.fta](#)
 
 </small>
@@ -1395,7 +1403,7 @@ dalot šo skaitli ar tā ciparu reizinājumu, dalījums ir vismaz $\frac{11}{9}$
 <small>
 
 * [alg.ineq.monotonicity](#)
-* [notation.dec.combine.poly](#)
+* [nota.combine.poly](#)
 * [misc.extr.param](#)
 
 </small>
@@ -1423,8 +1431,8 @@ visi naturālie skaitļi no $1$ līdz $176$) nav naturāla skaitļa kvadrāts.
 
 <small>
 
-* [notation.divrules.pow2or5.divides](#)
-* [notation.divrules.3or9.remainder](#)
+* [nota.divrule.2_5pow.divides](#)
+* [nota.divrule.3_9.rem](#)
 * [div.fta.pow.square](#)
 * [seq.arithm.summation](#)
 
@@ -1464,7 +1472,7 @@ nosvītrojot to pirmo ciparu, samazinās $36$ reizes.
 <small>
 
 * [alg.expr](#)
-* [notation.dec.combine.poly.pieces](#)
+* [nota.combine.poly.pieces](#)
 
 </small>
 
@@ -1594,7 +1602,7 @@ Kurš skaitlis lielāks – sākotnējais vai iegūtais?
 <small>
 
 * [mod.period](#)
-* [notation.algor](#)
+* [nota.algor](#)
 
 </small>
 
@@ -1624,7 +1632,7 @@ ciparu, samazinās $15$ reizes!
 <small>
 
 * [alg.expr](#)
-* [notation.dec.combine.poly.pieces](#)
+* [nota.combine.poly.pieces](#)
 
 </small>
 
@@ -1767,8 +1775,8 @@ divi cipari ir $11$ un kurš dalās ar $11$?
 
 <small>
 
-* [notation.divrules.11](#)
-* [notation.divrules.3or9.divides](#)
+* [nota.divrule.11](#)
+* [nota.divrule.3_9.divides](#)
 
 </small>
 
@@ -1912,7 +1920,6 @@ $$\frac{2000016 \cdot 1999984}{5^{12} \cdot 2^{13} - 128}$$
 
 <small>
 
-* [al.manipulate.smallexpr](#)
 * [alg.tra.factor.sqdiff](#)
 
 </small>
@@ -1924,9 +1931,9 @@ questionType=Find.Only
 
 
 
-## ABC
+## Algebrisks pārveidojums
 
-**#AlgebriskaIdentitāte** **#AlgebrisksPārveidojums** $\frac{4(10^6 - 8)(10^6 + 8)}{2(10^{12} -64)} = \frac{4}{2}=2$. 
+$\frac{4(10^6 - 8)(10^6 + 8)}{2(10^{12} -64)} = \frac{4}{2}=2$. 
 
 
 
@@ -1968,9 +1975,9 @@ ciparu skaits, kas var būt šajā skaitlī?
 
 <small>
 
-* [notation.divrules.pow2or5.divides](#)
-* [notation.divrules.3or9.divides](#)
-* [notation.divrules.composite](#)
+* [nota.divrule.2_5pow.divides](#)
+* [nota.divrule.3_9.divides](#)
+* [nota.divrule.composite](#)
 * [comb.full](#)
 
 </small>
@@ -1995,7 +2002,7 @@ $x^3 − 2016xyz = 120$?
 <small>
 
 * [div.fta.proc](#)
-* [notation.divrules.3or9.remainder](#)
+* [nota.divrule.3_9.rem](#)
 * [mod.congr.poly](#)
 * [mod.eq.contradict](#) - pretrunas modulis: atlikumi pēc 9
 
@@ -2108,7 +2115,7 @@ $x^8 - x^2$ dalās ar $252$.
 
 <small>
 
-* [notation.divrules.3or9.divides](#)
+* [nota.divrule.3_9.divides](#)
 * [div.prop.prod](#)
 * [mod.congr.poly](#)
 

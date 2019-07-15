@@ -118,7 +118,7 @@ skaitļa kvadrāti.
 <small>
 
 * [seq.recur.fibonacci](#)
-* [seq.prop.periodic.finstate](#)
+* [mod.period](#)
 * [mod.congr.pow](#)
 
 </small>
@@ -422,8 +422,8 @@ Pierādīt, ka tā ciparus var pārkārtot citā secībā tā, lai jauniegūtais
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
-* [notation.dec.combine.split](#)
+* [nota.divrule.2_5_10.divides](#)
+* [nota.combine.split](#)
 * [mod.congr.sumdiff](#)
 * [comb.full](#)
 
@@ -476,9 +476,9 @@ Piemēram, skaists trijnieks ir $8$, $9$, $10$.
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
-* [notation.divrules.3or9.divides](#)
-* [notation.dec.combine.padding](#)
+* [nota.divrule.2_5_10.divides](#)
+* [nota.divrule.3_9.divides](#)
+* [nota.combine.padding](#)
 
 </small>
 
@@ -551,7 +551,7 @@ vērtība nav naturāla skaitļa kvadrāts!
 <small>
 
 * [mod.exp](#)
-* [notation.divrules.composite](#)
+* [nota.divrule.composite](#)
 
 </small>
 

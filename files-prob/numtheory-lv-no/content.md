@@ -22,7 +22,7 @@ vismaz viens interesants.
 
 <small>
 
-* [notation.divrules.3or9.remainder](#)
+* [nota.divrule.3_9.rem](#)
 * [seq.gaps](#)
 * [seq.arithm.mod](#)
 
@@ -302,7 +302,7 @@ Kuru nedēļas dienu otrajā gadā ir visvairāk?
 <small>
 
 * [mod.congr](#)
-* [al.inequality.intervals](#)
+* [seq.arithm.numestimate](#)
 
 </small>
 
@@ -354,8 +354,8 @@ Pamatojiet savu risinājumu.
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
-* [nt.divisibility.constructions](#)
+* [nota.divrule.2_5_10.divides](#)
+* [comb.full](#)
 
 </small>
 
@@ -366,9 +366,11 @@ genre=digit-manipulation
 questionType=Find.Max
 -->
 
-## ABC
- 
-**#DalāmībaAr2Un5** Ja skaitļa beigās pāru cipari un $5$, tad tie visi jāizsvītro. Un $1379$ dalās ar $7$. Tātad $1379502468$ der. 
+## Dalāmība ar 2 un 5
+
+* Ja skaitļa beigās pāru cipari un $5$, tad tie visi jāizsvītro. 
+* Pārkārtojot $(1,3,7,9)$ dažādā secībā, meklējam saliktu skaitli. 
+* $1379$ dalās ar $7$. Tātad $1379502468$ der. 
 
 
 # <lo-sample/> LV.NO.2001.9.1 
@@ -523,8 +525,10 @@ no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek i
 <small>
 
 * [misc.invar.parity](#)
-* [al.inequality.extremalelement](#)
 * [misc.invar.congr](#)
+* [alg.ineq.monotonicity](#)
+* [seq.arithm.summation](#)
+
 
 </small>
 
@@ -534,10 +538,13 @@ questionType=ProveDisprove.Exists
 -->
 
 
-## ABC
+## Paritāte
  
-**#Invariants**  **(a)** summa būtu nepāru. **(b)** trīsdesmit $4k_i-1$ summa nedalītos ar $4$.
-**#Nevienādība** **#ProgresijasSumma** **(b)**  $1+\ldots+60 > 1000$.
+**(a)** summa būtu nepāru. 
+**(b)** trīsdesmit $4k_i-1$ summa nedalītos ar $4$.
+
+Var pamatot arī ar nevienādību:  
+Jau $1+\ldots+60 > 1000$, tādēļ pat vismazāko lapu numuru summa ir par lielu.
 
 
 
@@ -856,8 +863,8 @@ decimālais pieraksts sākas ar ciparu $1$?
 
 <small>
 
-* [notation.dec.numdigits](#)
-* [al.inequality.estimates](#)
+* [nota.est.numdigits](#)
+* [seq.geom.estimate](#)
 
 </small>
 
@@ -986,8 +993,8 @@ decimālais pieraksts sākas ar ciparu $1$?
 
 <small>
 
-* [notation.dec.numdigits](#)
-* [al.inequality.estimates](#)
+* [nota.est.numdigits](#)
+* [seq.geom.estimate](#)
 
 </small>
 
@@ -1319,17 +1326,19 @@ Atrast mazāko naturālo skaitli, kas dalās ar katru no kaut kādiem $12$ pēc 
 
 <small>
 
-* [nt.divisibility.multiples](#)
+* [seq.arithm.numestimate](#)
 * [div.common.lcm](#)
 
 </small>
 
 
-## ABC
+## Abi novērtējumi
 
-**#Kombinācija** **#MKD** Kas dalās ar $k(k+1)\ldots(k+11)$, tas dalās arī ar $1,2,\ldots,12$. Mazākais tāds ir $8\cdot 9\cdot 5\cdot 7\cdot 11 = 27720$.
-**#Dalāmība** **#MKD** No $12$ pēc kārtas ņemtiem, $\geq 1$ dalās ar $5$, $7$, $8$, $9$ un $11$. Mazākais ir to reizinājums.
+Apzīmējam ar $M$ mazāko skaitli, kas dalās ar $12$ pēc kārtas sekojošiem $\mathbb{N}$ 
+elementiem.
 
+* Skaitlis, kas dalās ar $k$, $k+1$, $\ldots$, $k+11$, dalās arī ar $1,2,\ldots,12$. Šo skaitļu mazākais kopīgais dalāmais ir $8\cdot 9\cdot 5\cdot 7\cdot 11 = 27720$, tātad $M \geq 27720$. 
+* Tieši $M =  8\cdot 9\cdot 5\cdot 7\cdot 11 = 27720$ dalās ar $12$ pēc kārtas ņemtiem skaitļiem (no $1$ līdz $12$). Tātad $M \leq 27720$.
 
 
 # <lo-sample/> LV.NO.2007.9.5 
@@ -1419,7 +1428,7 @@ Pierādīt, ka cīkstoņu skaits dalās ar $17$.
 
 * [alg.series.mean](#)
 * [alg.ineq.equations](#)
-* [nt.divisibility.multiples](#)
+* [div.fta.divisors](#)
 
 </small>
 
@@ -1440,7 +1449,7 @@ Pierādīt, ka viens no tiem dalās ar $10$.
 
 <small>
 
-* [nt.decnotation.sumofdigits](#)
+* [seq.gaps](#)
 * [misc.invar.parity](#)
 
 </small>
@@ -1650,7 +1659,7 @@ $(x+1)(x+2)(x+3)$ dalās ar $343$?
 
 <small>
 
-* [nt.divisibility.multiples](#)
+* [seq.arithm.numestimate](#)
 * [div.fta.divisors.test](#)
 
 </small>
@@ -1691,8 +1700,8 @@ Pierādīt: sākotnējā un iegūtā skaitļa starpība dalās ar $9$.
 
 <small>
 
-* [notation.divrules.3or9.remainder](#)
-* [notation.dec.combine](#)
+* [nota.divrule.3_9.rem](#)
+* [nota.combine](#)
 
 </small>
 
@@ -1826,7 +1835,7 @@ Atrodiet skaitļa $1^2 + 2^2 + \ldots + 99^2$ pēdējo ciparu.
 
 <small>
 
-* [al.sym.grouping](#)
+* [misc.symm.periodicity](#)
 * [mod.congr.classes](#)
 
 </small>
@@ -1845,7 +1854,7 @@ ka skaitlis $(n+1)(n+2)(n+3)$ dalās ar $125$.
 
 <small>
 
-* [nt.divisibility.multiples](#)
+* [seq.arithm.numestimate](#)
 * [div.fta.divisors.test](#)
 
 </small>
@@ -1863,8 +1872,8 @@ samainot vietām tā ciparus. Pierādīt, ka $B-A$ dalās ar $9$.
 
 <small>
 
-* [notation.dec.combine](#)
-* [notation.divrules.3or9.remainder](#)
+* [nota.combine](#)
+* [nota.divrule.3_9.rem](#)
 
 </small>
 
@@ -1939,7 +1948,7 @@ Pierādīt, ka $1004041$ nav pirmskaitlis.
 
 <small>
 
-* [notation.divrules.101](#)
+* [nota.divrule.101](#)
 
 </small>
 
@@ -1973,7 +1982,7 @@ $n$ vieni.)
 
 <small>
 
-* [notation.divrules.11](#)
+* [nota.divrule.11](#)
 * [div.prop.euclidlemma](#)
 
 </small>
@@ -2040,7 +2049,7 @@ vienu aiz otra. Cik cipari uzrakstīti?
 <small>
 
 * [misc.try](#)
-* [notation.dec.numdigits.prod](#)
+* [nota.est.numdigits.prod](#)
 
 </small>
 
@@ -2114,8 +2123,8 @@ $x(x+1)(x+2)$ dalās ar $111$?
 
 <small>
 
-* [notation.divrules.composite](#)
-* [nt.divisibility.multiples](#)
+* [nota.divrule.composite](#)
+* [seq.arithm.numestimate](#)
 
 </small>
 
@@ -2252,8 +2261,8 @@ skaitlis $x(x+1)(x+2)$ dalās ar $87$?
 
 <small>
 
-* [notation.divrules.composite](#)
-* [nt.divisibility.multiples](#)
+* [nota.divrule.composite](#)
+* [seq.arithm.numestimate](#)
 
 </small>
 
@@ -2486,7 +2495,7 @@ Vai, atkārtoti izpildot šīs darbības, no skaitļa $30$ var iegūt skaitli $2
 
 <small>
 
-* [notation.divrules.3or9.divides](#)
+* [nota.divrule.3_9.divides](#)
 * [misc.invar](#)
 
 </small>
@@ -2641,9 +2650,9 @@ dalās ar $99$.
 
 <small>
 
-* [notation.divrules.3or9.divides](#)
-* [notation.divrules.11](#)
-* [notation.divrules.composite](#)
+* [nota.divrule.3_9.divides](#)
+* [nota.divrule.11](#)
+* [nota.divrule.composite](#)
 
 </small>
 
@@ -2694,7 +2703,7 @@ skaitļiem *DUBĻUNNN* dalās ar $104$. Pierādi, ka otrais skaitlis *BURBUĻVAN
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
+* [nota.divrule.2_5_10.divides](#)
 
 </small>
 
@@ -2858,10 +2867,10 @@ desmitciparu skaitlis!
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
-* [notation.divrules.pow2or5.divides](#)
-* [notation.divrules.3or9.divides](#)
-* [notation.divrules.composite](#)
+* [nota.divrule.2_5_10.divides](#)
+* [nota.divrule.2_5pow.divides](#)
+* [nota.divrule.3_9.divides](#)
+* [nota.divrule.composite](#)
 * [comb.full](#)
 
 </small>
@@ -2962,8 +2971,8 @@ nuļļu skaitu var beigties trīs izveidoto skaitļu summa?
 
 <small>
 
-* [notation.divrules.3or9.divides](#)
-* [notation.dec.numdigits.sum](#)
+* [nota.divrule.3_9.divides](#)
+* [nota.est.numdigits.sum](#)
 * [comb.constr.alpha](#)
 
 </small>
@@ -3100,7 +3109,7 @@ $20m + 18n = 2018$.
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
+* [nota.divrule.2_5_10.divides](#)
 * [div.fta.proc](#)
 
 </small>

@@ -180,7 +180,7 @@ Vai skaitli $2013$ var izteikt kā divu veselu skaitļu kubu starpību?
 <small>
 
 * [mod.congr.pow](#)
-* [notation.divrules.3or9.remainder](#)
+* [nota.divrule.3_9.rem](#)
 * [mod.congr.sumdiff](#)
 * [mod.eq.contradict](#)
 

@@ -49,7 +49,7 @@ Skaitļu teorija: 10.kl. LV
 <strong>(c)</strong> pierādīt: starp jebkuriem <span class="math inline">\(9\)</span> pēc kārtas ņemtiem naturāliem skaitļiem ir vismaz viens interesants.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.3or9.remainder</a></li>
+<li><a href="#/">nota.divrule.3_9.rem</a></li>
 <li><a href="#/">seq.gaps</a></li>
 <li><a href="#/">seq.arithm.mod</a></li>
 </ul>
@@ -343,7 +343,7 @@ questionType=Find.Only
 <p><small></p>
 <ul>
 <li><a href="#/">mod.congr</a></li>
-<li><a href="#/">al.inequality.intervals</a></li>
+<li><a href="#/">seq.arithm.numestimate</a></li>
 </ul>
 <p></small></p>
 <!--
@@ -369,22 +369,26 @@ questionType=Find.Max
 <section><section id="lv.no.2001.8.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2001.8.3</h1><p>Uzrakstiet kaut vienu desmitciparu skaitli, kam visi cipari ir dažādi un kam piemīt īpašība: izsvītrojot jebkurus <span class="math inline">\(n\)</span> ciparus (<span class="math inline">\(n\)</span> – jebkurš naturāls skaitlis, kas nepārsniedz <span class="math inline">\(6\)</span>), atlikušie cipari (tai pašā secībā) veido saliktu skaitli. Pamatojiet savu risinājumu.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.2or5or10.divides</a></li>
-<li><a href="#/">nt.divisibility.constructions</a></li>
+<li><a href="#/">nota.divrule.2_5_10.divides</a></li>
+<li><a href="#/">comb.full</a></li>
 </ul>
 <p></small></p>
 <!--
 concepts=primes,composite-numbers
 genre=digit-manipulation
 questionType=Find.Max
---></section><section id="abc-5" class="slide level2">
-<h2>ABC</h2>
-<p><strong>#DalāmībaAr2Un5</strong> Ja skaitļa beigās pāru cipari un <span class="math inline">\(5\)</span>, tad tie visi jāizsvītro. Un <span class="math inline">\(1379\)</span> dalās ar <span class="math inline">\(7\)</span>. Tātad <span class="math inline">\(1379502468\)</span> der.</p>
+--></section><section id="dalāmība-ar-2-un-5" class="slide level2">
+<h2>Dalāmība ar 2 un 5</h2>
+<ul>
+<li>Ja skaitļa beigās pāru cipari un <span class="math inline">\(5\)</span>, tad tie visi jāizsvītro.</li>
+<li>Pārkārtojot <span class="math inline">\((1,3,7,9)\)</span> dažādā secībā, meklējam saliktu skaitli.</li>
+<li><span class="math inline">\(1379\)</span> dalās ar <span class="math inline">\(7\)</span>. Tātad <span class="math inline">\(1379502468\)</span> der.</li>
+</ul>
 </section></section>
 <section><section id="lv.no.2001.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2001.9.1</h1><p>Dots, <span class="math inline">\(n\)</span> – naturāls skaitlis. Pierādiet, ka vismaz viens no skaitļiem <span class="math inline">\(n^3 - n\)</span> un <span class="math inline">\(n^3 + n\)</span> dalās ar <span class="math inline">\(10\)</span>.</p>
 <!--
 questionType=Prove.Exists
---></section><section id="abc-6" class="slide level2">
+--></section><section id="abc-5" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#GadījumuPārlase</strong> <strong>#Kongruences</strong> <span class="math inline">\(0^3+0\)</span>, <span class="math inline">\(1^3-1\)</span>, <span class="math inline">\(2^3+2\)</span>, <span class="math inline">\(3^3+3\)</span>, <span class="math inline">\(4^3-4\)</span>, <span class="math inline">\(5^5-5\)</span>, <span class="math inline">\(6^6 - 6\)</span>, <span class="math inline">\(7^3 + 7\)</span>, <span class="math inline">\(8^3 + 8\)</span>, <span class="math inline">\(9^9-9\)</span>.</p>
 </section></section>
@@ -392,7 +396,7 @@ questionType=Prove.Exists
 (a) <span class="math inline">\(2000\)</span>, (b) <span class="math inline">\(2001\)</span>, (c) <span class="math inline">\(2002\)</span> posmi?</p>
 <!--
 questionType=ProveDisprove.Exists
---></section><section id="abc-7" class="slide level2">
+--></section><section id="abc-6" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Invariants</strong> Ar <span class="math inline">\(2000\)</span> var (saliek kopā 2 “trepes”). <span class="math inline">\(2001\)</span> nevar, jo mijas horizontāli un vertikāli posmi. <span class="math inline">\(2002\)</span> nevar, jo <span class="math inline">\(1001\)</span> nepāra (horizontālo) pārvietojumu summa nevar būt <span class="math inline">\(0\)</span>.</p>
 </section></section>
@@ -413,7 +417,7 @@ questionType=Find.Only
 questionType=Find.All
 concepts=primes
 seeAlso=LV.NO.2002.11.1
---></section><section id="abc-8" class="slide level2">
+--></section><section id="abc-7" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Nevienādība</strong> <strong>#AlgebriskaIdentitāte</strong> Ja <span class="math inline">\(k &gt;1\)</span> ir nepāra dalītājs, tad dalās reizinātājos kā <span class="math inline">\(a^{2n+1}+b^{2n+1}\)</span>. Arī <span class="math inline">\(8^8+1 = (2^8)^3 + 1^3\)</span> dalās reizinātājos, bet <span class="math inline">\(16^{16}+1&gt;10^{19}\)</span>. Tāpēc <span class="math inline">\(k=1,2,4\)</span>.</p>
 </section></section>
@@ -436,7 +440,7 @@ concepts=fibonacci-sequence
 <!--
 genre=optimization
 questionType=Find.Max
---></section><section id="abc-9" class="slide level2">
+--></section><section id="abc-8" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Invariants</strong> <strong>#Konstrukcija</strong> <span class="math inline">\(8\)</span> nepāru pirmskaitļu summa var būt <span class="math inline">\(52+2k\)</span>; visi var būt pirmskaitļi.</p>
 </section></section>
@@ -447,35 +451,38 @@ questionType=Find.Max
 <p><small></p>
 <ul>
 <li><a href="#/">misc.invar.parity</a></li>
-<li><a href="#/">al.inequality.extremalelement</a></li>
 <li><a href="#/">misc.invar.congr</a></li>
+<li><a href="#/">alg.ineq.monotonicity</a></li>
+<li><a href="#/">seq.arithm.summation</a></li>
 </ul>
 <p></small></p>
 <!--
 concepts=arithmetic-progression
 questionType=ProveDisprove.Exists
---></section><section id="abc-10" class="slide level2">
-<h2>ABC</h2>
-<p><strong>#Invariants</strong> <strong>(a)</strong> summa būtu nepāru. <strong>(b)</strong> trīsdesmit <span class="math inline">\(4k_i-1\)</span> summa nedalītos ar <span class="math inline">\(4\)</span>. <strong>#Nevienādība</strong> <strong>#ProgresijasSumma</strong> <strong>(b)</strong> <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>.</p>
+--></section><section id="paritāte" class="slide level2">
+<h2>Paritāte</h2>
+<p><strong>(a)</strong> summa būtu nepāru. <strong>(b)</strong> trīsdesmit <span class="math inline">\(4k_i-1\)</span> summa nedalītos ar <span class="math inline">\(4\)</span>.</p>
+<p>Var pamatot arī ar nevienādību:<br />
+Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vismazāko lapu numuru summa ir par lielu.</p>
 </section></section>
 <section><section id="lv.no.2002.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2002.9.1</h1><p>Jānis uzrakstīja <span class="math inline">\(n\)</span> pēc kārtas sekojošus naturālus skaitļus. Neviens no tiem nedalās ar diviem vai vairāk dažādiem pirmskaitļiem. Kāda ir lielākā iespējamā <span class="math inline">\(n\)</span> vērtība?</p>
 <!--
 concepts=primes
 questionType=Find.Max
---></section><section id="abc-11" class="slide level2">
+--></section><section id="abc-9" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Dalāmība</strong> Tādi ir <span class="math inline">\(1,2,3,4,5\)</span>. Vairāk kā <span class="math inline">\(n=5\)</span> nevar būt, jo katram sestajam (<span class="math inline">\(6\)</span> dalītājiem) ir divi pirmskaitļu dalītāji.</p>
 </section></section>
-<section><section id="lv.no.2002.9.4" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2002.9.4</h1><p>Ar <span class="math inline">\(p(n)\)</span> apzīmēsim naturāla skaitļa n ciparu reizinājumu. Piemēram, <span class="math inline">\(p(26)=12\)</span>; <span class="math inline">\(p(8)=8\)</span>; <span class="math inline">\(p(102)=0\)</span>. Aprēķināt summu <span class="math inline">\(p(1)+p(2)+p(3)+\ldots +p(2001)+p(2002)\)</span>.</p></section><section id="abc-12" class="slide level2">
+<section><section id="lv.no.2002.9.4" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2002.9.4</h1><p>Ar <span class="math inline">\(p(n)\)</span> apzīmēsim naturāla skaitļa n ciparu reizinājumu. Piemēram, <span class="math inline">\(p(26)=12\)</span>; <span class="math inline">\(p(8)=8\)</span>; <span class="math inline">\(p(102)=0\)</span>. Aprēķināt summu <span class="math inline">\(p(1)+p(2)+p(3)+\ldots +p(2001)+p(2002)\)</span>.</p></section><section id="abc-10" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#AlgebrisksPārveidojums</strong> Trīsciparu skaitļiem <span class="math inline">\(p(n)\)</span> summa būs <span class="math inline">\((1+2+\ldots+9)^3\)</span> (pārbauda, atverot iekavas). Visiem prasītajiem: <span class="math inline">\(45+45^2+2\cdot 45^3 = 184320\)</span>.</p>
 </section></section>
-<section><section id="lv.no.2002.10.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2002.10.3</h1><p>Naturālu skaitļu <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> lielākais kopīgais dalītājs ir <span class="math inline">\(d\)</span>, bet mazākais kopīgais dalāmais ir <span class="math inline">\(D\)</span>. Pierādiet: <span class="math inline">\(2m+n=2D+d\)</span> tad un tikai tad, ja <span class="math inline">\(m\)</span> dalās ar <span class="math inline">\(n\)</span>.</p></section><section id="abc-13" class="slide level2">
+<section><section id="lv.no.2002.10.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2002.10.3</h1><p>Naturālu skaitļu <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> lielākais kopīgais dalītājs ir <span class="math inline">\(d\)</span>, bet mazākais kopīgais dalāmais ir <span class="math inline">\(D\)</span>. Pierādiet: <span class="math inline">\(2m+n=2D+d\)</span> tad un tikai tad, ja <span class="math inline">\(m\)</span> dalās ar <span class="math inline">\(n\)</span>.</p></section><section id="abc-11" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#MKD</strong> <strong>#LKD</strong> <strong>#AlgebriskaNevienādība</strong> Ja <span class="math inline">\(m\)</span> dalās ar <span class="math inline">\(n\)</span>, tad <span class="math inline">\(D=m\)</span>, <span class="math inline">\(d=n\)</span> un <span class="math inline">\(2m+n=2D+d\)</span>. Reizinājums <span class="math inline">\(Dd=mn\)</span> ir fiksēts; <span class="math inline">\(2D+d = 2D+mn/D\)</span> monotoni aug, ja <span class="math inline">\(D \geq \sqrt{mn/2}\)</span>.</p>
 </section></section>
 <section><section id="lv.no.2002.10.5" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2002.10.5</h1><p>Dotas <span class="math inline">\(2002\)</span> konfekšu kastes. Katrā kastē ir vismaz viena konfekte, un nekādās divās kastēs konfekšu daudzumi nav vienādi. Nevienā kastē nav vairāk par <span class="math inline">\(2002\)</span> konfektēm. Ar vienu gājienu atļauts no dažām kastēm apēst vienādu skaitu konfekšu (drīkst arī ēst konfektes tikai no vienas kastes).<br />
-Kāds ir mazākais gājienu skaits, ar kuru var apēst visas konfektes?</p></section><section id="abc-14" class="slide level2">
+Kāds ir mazākais gājienu skaits, ar kuru var apēst visas konfektes?</p></section><section id="abc-12" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Binārais pieraksts</strong> Katru no <span class="math inline">\(2002\)</span> skaitļiem var pierakstīt ar <span class="math inline">\(11\)</span> binārā pieraksta cipariem. <span class="math inline">\(2002_{10}=11111010010_{2}\)</span>. Katrā gājienā noēd bināro ciparu, kur tas ir. Ja ēd <span class="math inline">\(10\)</span> dienas, tad var noēst tikai <span class="math inline">\(2^{10}\)</span> dažādus skaitļus.</p>
 </section></section>
@@ -490,7 +497,7 @@ questionType=Find.Min
 <!--
 concepts=irrational-numbers,rational-numbers
 questionType=ProveDisprove.Exists
---></section><section id="abc-15" class="slide level2">
+--></section><section id="abc-13" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#PitagoraTrijnieki</strong> <strong>#IracionalitātesPierādījumi</strong> Racionāls: <span class="math inline">\(\sin x = 4/5\)</span>; <span class="math inline">\(\sin 2x = 2 \sin x \cos x = 2 \cdot \frac{4}{5} \cdot \frac{3}{4} = \frac{24}{25}\)</span>. Iracionāls: <span class="math inline">\(\sin (\pi / 3) = \frac{\sqrt{3}}{2}\)</span>. Sinuss definēts visiem <span class="math inline">\(x \in \mathbb{R}\)</span>.</p>
 </section></section>
@@ -505,7 +512,7 @@ questionType=ProveDisprove.Exists
 <!--
 questionType=Find.Min
 concepts=primes,composite-numbers
---></section><section id="abc-16" class="slide level2">
+--></section><section id="abc-14" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DirihlēPrincips</strong> <strong>#Paritāte</strong> <strong>#Pirmskaitļi</strong> Var svītrot <span class="math inline">\(6\)</span> pāru skaitļus. Mazāk nevar, jo jāizjauc <span class="math inline">\(6\)</span> pāri <span class="math inline">\((1;12)\)</span> utt.</p>
 </section></section>
@@ -517,7 +524,7 @@ concepts=primes,composite-numbers
 <p></small></p>
 <!--
 questionType=Find.Min
---></section><section id="abc-17" class="slide level2">
+--></section><section id="abc-15" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#EiklīdaLemma</strong> Jāsvītro <span class="math inline">\(7, 11\)</span> un viens <span class="math inline">\(3\)</span> daudzkārtnis. <span class="math inline">\(1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 = 8 \cdot 9 \cdot 10\)</span>.</p>
 </section></section>
@@ -525,7 +532,7 @@ questionType=Find.Min
 <!--
 concepts=primes
 questionType=Find.Max
---></section><section id="abc-18" class="slide level2">
+--></section><section id="abc-16" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Dalāmība</strong> Tādi ir <span class="math inline">\(1,2,\ldots,29\)</span>. Vairāk kā <span class="math inline">\(n=29\)</span> nevar būt, jo katram trīsdesmitajam (<span class="math inline">\(30\)</span> dalītājiem) ir trīs pirmskaitļu dalītāji.</p>
 </section></section>
@@ -550,7 +557,7 @@ questionType=ProveDisprove.Exists
 </ol>
 <!--
 questionType=ProveDisprove.Other,Find.Min
---></section><section id="abc-19" class="slide level2">
+--></section><section id="abc-17" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#AlgebriskaIdentitāte</strong> (a) Jā; visi <span class="math inline">\(1000n + 38\)</span> der. Atverot iekavas, <span class="math inline">\((500-38)^2\)</span> arī beidzas ar <span class="math inline">\(444\)</span>. Mazāku nav: ja <span class="math inline">\(x \in [39;49]\)</span>, <span class="math inline">\(x^2\)</span> nebeidzas ar <span class="math inline">\(44\)</span>. Tātad <span class="math inline">\((n*100 \pm 38)^2\)</span>, kur <span class="math inline">\(n \in \{ 1,2,3,4,5 \}\)</span> - pārlasa visiem simtu ciparus.</p>
 </section></section>
@@ -560,7 +567,7 @@ questionType=ProveDisprove.Other,Find.Min
 <!--
 seeAlso=LV.NO.2000.12.1
 questionType=Find.Only
---></section><section id="abc-20" class="slide level2">
+--></section><section id="abc-18" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Kongruences</strong> <strong>#PeriodiskaVirkne</strong> Pirmie <span class="math inline">\(20\)</span> atlikumi: <span class="math inline">\(1,1,2,3,0,3,3,1,4,0,4,4,3,2,0,2,2,4,1,0\)</span>, tālāk periods. <span class="math inline">\(F_{20}\)</span> dalīsies ar <span class="math inline">\(5\)</span>, bet <span class="math inline">\(F_{2003}\)</span> dos atlikumu <span class="math inline">\(2\)</span>, dalot ar <span class="math inline">\(5\)</span>.</p>
 </section></section>
@@ -580,7 +587,7 @@ questionType=ProveDisprove.Exists
 <!--
 concepts=composite-numbers
 questionType=Find.Min
---></section><section id="abc-21" class="slide level2">
+--></section><section id="abc-19" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DirihlēPrincips</strong> <strong>#Paritāte</strong> <strong>#Pirmskaitļi</strong> Var svītrot <span class="math inline">\(7\)</span> pāru skaitļus. Mazāk nevar, jo jāizjauc <span class="math inline">\(7\)</span> pāri <span class="math inline">\((1,12)\)</span> utt.</p>
 </section></section>
@@ -593,15 +600,15 @@ questionType=Find.Min
 <!--
 questionType=Find.Min
 seeAlso=LV.NO.2003.8.3
---></section><section id="abc-22" class="slide level2">
+--></section><section id="abc-20" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#EiklīdaLemma</strong> Jāsvītro <span class="math inline">\(11,13\)</span> un pa vienam <span class="math inline">\(2\)</span> un <span class="math inline">\(5\)</span> daudzkārtnim (<span class="math inline">\(10\)</span>). <span class="math inline">\(3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 12 = 1 \cdot 2 \cdot 8 \cdot 9 \cdot 14 \cdot 15\)</span></p>
 </section></section>
 <section><section id="lv.no.2004.8.2" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2004.8.2</h1><p>Ir zināms, ka skaitļa <span class="math inline">\(2^{200}\)</span> decimālajā pierakstā ir <span class="math inline">\(61\)</span> cipars. Cik daudziem no skaitļiem <span class="math inline">\(2^1; 2^2; 2^3; \ldots; 2^{199}; 2^{200}\)</span> decimālais pieraksts sākas ar ciparu <span class="math inline">\(1\)</span>?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.dec.numdigits</a></li>
-<li><a href="#/">al.inequality.estimates</a></li>
+<li><a href="#/">nota.est.numdigits</a></li>
+<li><a href="#/">seq.geom.estimate</a></li>
 </ul>
 <p></small></p>
 <!--
@@ -656,13 +663,13 @@ seeAlso=[Semiperfect number](https://en.wikipedia.org/wiki/Semiperfect_number)
 <section><section id="lv.no.2005.8.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2005.8.1</h1><p>Ir zināms, ka skaitļa <span class="math inline">\(2^{100}\)</span> decimālajā pierakstā ir <span class="math inline">\(31\)</span> cipars. Cik daudziem no skaitļiem <span class="math inline">\(2^1; 2^2; 2^3; \ldots; 2^{99}; 2^{100}\)</span> decimālais pieraksts sākas ar ciparu <span class="math inline">\(1\)</span>?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.dec.numdigits</a></li>
-<li><a href="#/">al.inequality.estimates</a></li>
+<li><a href="#/">nota.est.numdigits</a></li>
+<li><a href="#/">seq.geom.estimate</a></li>
 </ul>
 <p></small></p>
 <!--
 seeAlso=LV.NO.2004.8.2
---></section><section id="abc-23" class="slide level2">
+--></section><section id="abc-21" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Nevienādība</strong> Katram ciparu skaitam, izņemot 1-cipara sk., ir tieši viens <span class="math inline">\(2^n\)</span>, kas sākas ar ciparu <span class="math inline">\(1\)</span>.</p>
 </section></section>
@@ -724,7 +731,7 @@ questionType=Find.Min
 <ul>
 <li><a href="#/">alg.tra.binom.complsquare</a></li>
 </ul>
-<p></small></p></section><section id="abc-24" class="slide level2">
+<p></small></p></section><section id="abc-22" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#AlgebriskaIdentitāte</strong> Kreisajai pusei var pieskaitīt un atņemt <span class="math inline">\(16x^2\)</span>, tad atdalīt pilno kvadrātu.</p>
 </section></section>
@@ -734,7 +741,7 @@ questionType=Find.Min
 <li><a href="#/">mod.period</a></li>
 <li><a href="#/">mod.congr.classes</a></li>
 </ul>
-<p></small></p></section><section id="abc-25" class="slide level2">
+<p></small></p></section><section id="abc-23" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Invariants</strong> <strong>#PeriodiskaVirkne</strong> Atlikumi, dalot ar <span class="math inline">\(4\)</span> šādā virknē atkārtosies ar periodu <span class="math inline">\(3\)</span>, t.i. viens no atlikumiem neparādīsies vispār.</p>
 </section></section>
@@ -755,19 +762,23 @@ seeAlso=LV.NO.2007.12.2
 <li><a href="#/">div.fta</a></li>
 <li><a href="#/">alg.tra.pow.nest</a></li>
 </ul>
-<p></small></p></section><section id="abc-26" class="slide level2">
+<p></small></p></section><section id="abc-24" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalījumsPirmreizinātājos</strong> <strong>#LineārasKongruences</strong> Katru pirmskaitļa pakāpi <span class="math inline">\(p^k\)</span> skaitļa <span class="math inline">\(n\)</span> sadalījumā var izteikt <span class="math inline">\(p^{5c}/p^{3d}\)</span> kaut kādiem naturāliem <span class="math inline">\(c,d\)</span>. <strong>#AlgebriskaIdentitāte</strong> <span class="math inline">\(n = n^{10}/n^{9} = (n^2)^5/(n^3)^3\)</span>.</p>
 </section></section>
 <section><section id="lv.no.2007.8.4" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2007.8.4</h1><p>Atrast mazāko naturālo skaitli, kas dalās ar katru no kaut kādiem <span class="math inline">\(12\)</span> pēc kārtas ņemtiem naturāliem skaitļiem.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">nt.divisibility.multiples</a></li>
+<li><a href="#/">seq.arithm.numestimate</a></li>
 <li><a href="#/">div.common.lcm</a></li>
 </ul>
-<p></small></p></section><section id="abc-27" class="slide level2">
-<h2>ABC</h2>
-<p><strong>#Kombinācija</strong> <strong>#MKD</strong> Kas dalās ar <span class="math inline">\(k(k+1)\ldots(k+11)\)</span>, tas dalās arī ar <span class="math inline">\(1,2,\ldots,12\)</span>. Mazākais tāds ir <span class="math inline">\(8\cdot 9\cdot 5\cdot 7\cdot 11 = 27720\)</span>. <strong>#Dalāmība</strong> <strong>#MKD</strong> No <span class="math inline">\(12\)</span> pēc kārtas ņemtiem, <span class="math inline">\(\geq 1\)</span> dalās ar <span class="math inline">\(5\)</span>, <span class="math inline">\(7\)</span>, <span class="math inline">\(8\)</span>, <span class="math inline">\(9\)</span> un <span class="math inline">\(11\)</span>. Mazākais ir to reizinājums.</p>
+<p></small></p></section><section id="abi-novērtējumi" class="slide level2">
+<h2>Abi novērtējumi</h2>
+<p>Apzīmējam ar <span class="math inline">\(M\)</span> mazāko skaitli, kas dalās ar <span class="math inline">\(12\)</span> pēc kārtas sekojošiem <span class="math inline">\(\mathbb{N}\)</span> elementiem.</p>
+<ul>
+<li>Skaitlis, kas dalās ar <span class="math inline">\(k\)</span>, <span class="math inline">\(k+1\)</span>, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(k+11\)</span>, dalās arī ar <span class="math inline">\(1,2,\ldots,12\)</span>. Šo skaitļu mazākais kopīgais dalāmais ir <span class="math inline">\(8\cdot 9\cdot 5\cdot 7\cdot 11 = 27720\)</span>, tātad <span class="math inline">\(M \geq 27720\)</span>.</li>
+<li>Tieši <span class="math inline">\(M = 8\cdot 9\cdot 5\cdot 7\cdot 11 = 27720\)</span> dalās ar <span class="math inline">\(12\)</span> pēc kārtas ņemtiem skaitļiem (no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(12\)</span>). Tātad <span class="math inline">\(M \leq 27720\)</span>.</li>
+</ul>
 </section></section>
 <section id="lv.no.2007.9.5" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2007.9.5</h1><p>Kvadrāts sastāv no <span class="math inline">\(10 \times 10\)</span> rūtiņām. Katrā rūtiņā ierakstīts naturāls skaitlis, kas nepārsniedz <span class="math inline">\(10\)</span>. Ja divām rūtiņām ir kopēja mala vai kopējs stūris, tad tajās ierakstīto skaitļu lielākais kopīgais dalītājs ir <span class="math inline">\(1\)</span>.</p>
 <ol type="1">
@@ -792,7 +803,7 @@ seeAlso=LV.NO.2007.12.2
 <li><a href="#/">div.fta</a></li>
 <li><a href="#/">alg.tra.pow.nest</a></li>
 </ul>
-<p></small></p></section><section id="abc-28" class="slide level2">
+<p></small></p></section><section id="abc-25" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalījumsPirmreizinātājos</strong> <strong>#LineārasKongruences</strong> Katru pirmskaitļa pakāpi <span class="math inline">\(p^k\)</span> skaitļa <span class="math inline">\(n\)</span> sadalījumā var izteikt <span class="math inline">\(p^{3c}/p^{4d}\)</span> kaut kādiem naturāliem <span class="math inline">\(c,d\)</span>. <strong>#AlgebriskaIdentitāte</strong> <span class="math inline">\(n = n^{9}/n^{8} = (n^3)^3/(n^2)^4\)</span>.</p>
 </section></section>
@@ -801,24 +812,24 @@ seeAlso=LV.NO.2007.12.2
 <ul>
 <li><a href="#/">alg.series.mean</a></li>
 <li><a href="#/">alg.ineq.equations</a></li>
-<li><a href="#/">nt.divisibility.multiples</a></li>
+<li><a href="#/">div.fta.divisors</a></li>
 </ul>
-<p></small></p></section><section id="abc-29" class="slide level2">
+<p></small></p></section><section id="abc-26" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#MasuCentrs</strong> <strong>#LKD</strong> Lai <span class="math inline">\(71\)</span> būtu līdzsvara punkts starp <span class="math inline">\(84k\)</span> un <span class="math inline">\(54m\)</span>, attiecībai <span class="math inline">\(k/m\)</span> jābūt <span class="math inline">\(17/13\)</span> un <span class="math inline">\(\operatorname{LKD}(13,17)=1\)</span>.</p>
 </section></section>
 <section><section id="lv.no.2008.8.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2008.8.1</h1><p>Sešciparu naturālu skaitli sauc par laimīgu, ja kaut kādu <span class="math inline">\(3\)</span> ciparu summa vienāda ar pārējo <span class="math inline">\(3\)</span> ciparu summu. Divi viens otram sekojoši skaitļi ir laimīgi. Pierādīt, ka viens no tiem dalās ar <span class="math inline">\(10\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">nt.decnotation.sumofdigits</a></li>
+<li><a href="#/">seq.gaps</a></li>
 <li><a href="#/">misc.invar.parity</a></li>
 </ul>
-<p></small></p></section><section id="abc-30" class="slide level2">
+<p></small></p></section><section id="abc-27" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Decimālpieraksts</strong> <strong>#Paritāte</strong> Palielinot skaitli par <span class="math inline">\(1\)</span> bez pārnesuma, tā ciparu summas paritāte mainās par <span class="math inline">\(1\)</span>.</p>
 </section></section>
 <section id="lv.no.2008.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2008.9.1</h1><p>Atrodiet vismaz <span class="math inline">\(5\)</span> dažādus pirmskaitļus, ar kuriem dalās skaitlis <span class="math inline">\(3^{32} - 2^{32}\)</span>.</p></section>
-<section><section id="lv.no.2008.10.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2008.10.1</h1><p>Atrodiet mazāko naturālo skaitli, ko var izsacīt gan kā <span class="math inline">\(15\)</span>, gan kā <span class="math inline">\(16\)</span>, gan kā <span class="math inline">\(17\)</span> pēc kārtas ņemtu naturālu skaitļu summu.</p></section><section id="abc-31" class="slide level2">
+<section><section id="lv.no.2008.10.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2008.10.1</h1><p>Atrodiet mazāko naturālo skaitli, ko var izsacīt gan kā <span class="math inline">\(15\)</span>, gan kā <span class="math inline">\(16\)</span>, gan kā <span class="math inline">\(17\)</span> pēc kārtas ņemtu naturālu skaitļu summu.</p></section><section id="abc-28" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#AritmētiskaProgresija</strong> <strong>#MKD</strong> Mazākais skaitlis, kas dalās ar <span class="math inline">\(15\)</span>, <span class="math inline">\(8\)</span> un <span class="math inline">\(17\)</span> ir <span class="math inline">\(2040\)</span>.</p>
 </section></section>
@@ -835,7 +846,7 @@ seeAlso=LV.NO.2007.12.2
 <li><a href="#/">div.fta</a></li>
 <li><a href="#/">alg.tra.pow.nest</a></li>
 </ul>
-<p></small></p></section><section id="abc-32" class="slide level2">
+<p></small></p></section><section id="abc-29" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalījumsPirmreizinātājos</strong> <strong>#LineārasKongruences</strong> Jebkuru pirmskaitļa pakāpi <span class="math inline">\(p^v\)</span> var izteikt kā <span class="math inline">\((p^k)^3/(p^m)^5\)</span>. <strong>#AlgebriskaIdentitāte</strong> <span class="math inline">\(n = n^{21}/n^{20} = (n^7)^3/(n^4)^5\)</span>.</p>
 </section></section>
@@ -872,7 +883,7 @@ seeAlso=LV.NO.2007.12.2
 <li><a href="#/">alg.linear.comb</a></li>
 <li><a href="#/">mod.congr.classes</a></li>
 </ul>
-<p></small></p></section><section id="abc-33" class="slide level2">
+<p></small></p></section><section id="abc-30" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalīšanaArAtlikumu</strong> <strong>#SummasPārkārtošana</strong> Sadala divu tabuliņu summā: vienā <span class="math inline">\(1\ldots 7\)</span>, otrā <span class="math inline">\(8k\)</span>. Vienmēr <span class="math inline">\((1+3+5+7) + (0+8+16+24) = 64\)</span>.</p>
 </section></section>
@@ -882,7 +893,7 @@ seeAlso=LV.NO.2007.12.2
 <li><a href="#/">mod.exp</a></li>
 <li><a href="#/">mod.congr.classes</a></li>
 </ul>
-<p></small></p></section><section id="abc-34" class="slide level2">
+<p></small></p></section><section id="abc-31" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#PeriodiskaVirkne</strong> <strong>#PēdējieCipari</strong> <span class="math inline">\(113\)</span> pakāpes mainās ar periodu <span class="math inline">\((1,3,9,7)\)</span>, bet <span class="math inline">\(19\)</span> pakāpes ar periodu <span class="math inline">\((1,9)\)</span>.</p>
 </section></section>
@@ -901,10 +912,10 @@ seeAlso=LV.NO.2007.12.2
 <section><section id="lv.no.2010.7.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2010.7.3</h1><p>Cik ir tādu naturālu skaitļu <span class="math inline">\(x\)</span> robežās no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2010\)</span> ieskaitot, ka <span class="math inline">\((x+1)(x+2)(x+3)\)</span> dalās ar <span class="math inline">\(343\)</span>?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">nt.divisibility.multiples</a></li>
+<li><a href="#/">seq.arithm.numestimate</a></li>
 <li><a href="#/">div.fta.divisors.test</a></li>
 </ul>
-<p></small></p></section><section id="abc-35" class="slide level2">
+<p></small></p></section><section id="abc-32" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Dalāmība</strong> <strong>#DalījumsPirmreizinātājos</strong> Katrs septītais skaitlis dalās ar <span class="math inline">\(7\)</span>, tādēļ <span class="math inline">\(x+1\)</span>, <span class="math inline">\(x+2\)</span> vai <span class="math inline">\(x+3\)</span> dalās ar <span class="math inline">\(7^3 = 343\)</span>.</p>
 </section></section>
@@ -916,17 +927,17 @@ seeAlso=LV.NO.2007.12.2
 <li><a href="#/">div.prop.primes.small</a></li>
 <li><a href="#/">alg.series.prod</a></li>
 </ul>
-<p></small></p></section><section id="abc-36" class="slide level2">
+<p></small></p></section><section id="abc-33" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#AlgebriskaIdentitāte</strong> <strong>#Pirmskaitļi</strong> Dala reizinātājos <span class="math inline">\(102^2 - 1=(102-1)(102+1)\)</span> utt., īsina. Labajā pusē par pirmreizinātāju <span class="math inline">\(101\)</span> vairāk.</p>
 </section></section>
 <section><section id="lv.no.2010.8.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2010.8.3</h1><p>Četrciparu skaitlim pārlika ciparus citā kārtībā. Pierādīt: sākotnējā un iegūtā skaitļa starpība dalās ar <span class="math inline">\(9\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.3or9.remainder</a></li>
-<li><a href="#/">notation.dec.combine</a></li>
+<li><a href="#/">nota.divrule.3_9.rem</a></li>
+<li><a href="#/">nota.combine</a></li>
 </ul>
-<p></small></p></section><section id="abc-37" class="slide level2">
+<p></small></p></section><section id="abc-34" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalāmībaAr3Un9</strong> <strong>#DalīšanaArAtlikumu</strong> <span class="math inline">\(n\)</span> atlikums dalot ar <span class="math inline">\(9\)</span> (arī pārkārtotā <span class="math inline">\(n\)</span> atlikums) vienādi ar <span class="math inline">\(n\)</span> ciparu summas atl.</p>
 </section></section>
@@ -1166,30 +1177,30 @@ seeAlso=LV.NO.2007.12.2
 <section><section id="lv.no.2011.7.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2011.7.1</h1><p>Atrodiet skaitļa <span class="math inline">\(1^2 + 2^2 + \ldots + 99^2\)</span> pēdējo ciparu.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">al.sym.grouping</a></li>
+<li><a href="#/">misc.symm.periodicity</a></li>
 <li><a href="#/">mod.congr.classes</a></li>
 </ul>
-<p></small></p></section><section id="abc-38" class="slide level2">
+<p></small></p></section><section id="abc-35" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Simetrija</strong> <strong>#PēdējieCipari</strong> <span class="math inline">\(10\)</span> grupas: <span class="math inline">\(\left( 1^2 + 2^2 + \ldots + 8^2 + 9^2 \right)\)</span> katra ar pēdējo ciparu <span class="math inline">\((1+4+9+6)\cdot 2 + 5 = 5\)</span>.</p>
 </section></section>
 <section><section id="lv.no.2011.7.2" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2011.7.2</h1><p>Cik ir tādu naturālu skaitļu <span class="math inline">\(n\)</span> no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2011\)</span> ieskaitot, ka skaitlis <span class="math inline">\((n+1)(n+2)(n+3)\)</span> dalās ar <span class="math inline">\(125\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">nt.divisibility.multiples</a></li>
+<li><a href="#/">seq.arithm.numestimate</a></li>
 <li><a href="#/">div.fta.divisors.test</a></li>
 </ul>
-<p></small></p></section><section id="abc-39" class="slide level2">
+<p></small></p></section><section id="abc-36" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Dalāmība</strong> <strong>#DalījumsPirmreizinātājos</strong> Katrs piektais skaitlis dalās ar <span class="math inline">\(5\)</span>, t.i. <span class="math inline">\(n+1\)</span>, <span class="math inline">\(n+2\)</span> vai <span class="math inline">\(n+3\)</span> jādalās ar <span class="math inline">\(5^3 = 125\)</span>.</p>
 </section></section>
 <section><section id="lv.no.2011.8.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2011.8.1</h1><p>Piecciparu skaitlis <span class="math inline">\(B\)</span> ir iegūts no mazāka piecciparu skaitļa <span class="math inline">\(A\)</span>, samainot vietām tā ciparus. Pierādīt, ka <span class="math inline">\(B-A\)</span> dalās ar <span class="math inline">\(9\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.dec.combine</a></li>
-<li><a href="#/">notation.divrules.3or9.remainder</a></li>
+<li><a href="#/">nota.combine</a></li>
+<li><a href="#/">nota.divrule.3_9.rem</a></li>
 </ul>
-<p></small></p></section><section id="abc-40" class="slide level2">
+<p></small></p></section><section id="abc-37" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalāmībaAr3Un9</strong> <strong>#DalāmībaAr3Un9</strong> <strong>#DalīšanaArAtlikumu</strong> <span class="math inline">\(A\)</span> atlikums dalot ar <span class="math inline">\(9\)</span> (arī <span class="math inline">\(B\)</span> atlikums) vienādi ar <span class="math inline">\(A\)</span> ciparu summas atl.</p>
 </section></section>
@@ -1214,7 +1225,7 @@ seeAlso=LV.NO.2007.12.2
 <section><section id="lv.no.2012.7.4" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2012.7.4</h1><p>Pierādīt, ka <span class="math inline">\(1004041\)</span> nav pirmskaitlis.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.101</a></li>
+<li><a href="#/">nota.divrule.101</a></li>
 </ul>
 <p></small></p></section><section id="dalāmības-pazīme-ar-101" class="slide level2">
 <h2>Dalāmības pazīme ar 101</h2>
@@ -1232,7 +1243,7 @@ seeAlso=LV.NO.2007.12.2
 <section><section id="lv.no.2012.8.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2012.8.3</h1><p>Vai naturāla skaitļa ciparu reizinājums var būt skaitlis <span class="math inline">\(\overline{aabbcc}\)</span>? (Pieraksts <span class="math inline">\(\overline{kmn}\)</span> nozīmē, ka skaitlī ir <span class="math inline">\(k\)</span> simti, <span class="math inline">\(m\)</span> desmiti un <span class="math inline">\(n\)</span> vieni.)</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.11</a></li>
+<li><a href="#/">nota.divrule.11</a></li>
 <li><a href="#/">div.prop.euclidlemma</a></li>
 </ul>
 <p></small></p></section><section id="dalāmība-ar-11" class="slide level2">
@@ -1263,7 +1274,7 @@ strategy=contradiction
 <p><small></p>
 <ul>
 <li><a href="#/">misc.try</a></li>
-<li><a href="#/">notation.dec.numdigits.prod</a></li>
+<li><a href="#/">nota.est.numdigits.prod</a></li>
 </ul>
 <p></small></p>
 </section></section>
@@ -1281,17 +1292,17 @@ concepts=palindrome
 <li><a href="#/">alg.ineq.equations</a></li>
 <li><a href="#/">comb.graph.bipartite</a></li>
 </ul>
-<p></small></p></section><section id="abc-41" class="slide level2">
+<p></small></p></section><section id="abc-38" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#GadījumuPārlase</strong> <strong>#Grafi</strong> (18,7), (17,8), (16,9) <span class="math inline">\(\rightarrow\)</span> (2,14) <span class="math inline">\(\rightarrow\)</span> (11,5) <span class="math inline">\(\rightarrow\)</span> (4,12) <span class="math inline">\(\rightarrow\)</span> (13,3) <span class="math inline">\(\rightarrow\)</span> (1,15).</p>
 </section></section>
 <section><section id="lv.no.2013.7.2" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2013.7.2</h1><p>Cik starp pirmajiem <span class="math inline">\(2013\)</span> naturālajiem skaitļiem ir tādu skaitļu <span class="math inline">\(x\)</span>, ka skaitlis <span class="math inline">\(x(x+1)(x+2)\)</span> dalās ar <span class="math inline">\(111\)</span>?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.composite</a></li>
-<li><a href="#/">nt.divisibility.multiples</a></li>
+<li><a href="#/">nota.divrule.composite</a></li>
+<li><a href="#/">seq.arithm.numestimate</a></li>
 </ul>
-<p></small></p></section><section id="abc-42" class="slide level2">
+<p></small></p></section><section id="abc-39" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Dalāmība</strong> <strong>#DalīšanaPirmreizinātājos</strong> <span class="math inline">\(x(x+1)(x+2)\)</span> Vienmēr dalās ar <span class="math inline">\(3\)</span>, bet tam jādalās arī ar <span class="math inline">\(37\)</span>. Tādu <span class="math inline">\(x\)</span> ir trīsreiz vairāk kā <span class="math inline">\(\left\lfloor 2013/37 \right\rfloor\)</span>.</p>
 </section></section>
@@ -1300,7 +1311,7 @@ concepts=palindrome
 <ul>
 <li><a href="#/">misc.invar.congr</a></li>
 </ul>
-<p></small></p></section><section id="abc-43" class="slide level2">
+<p></small></p></section><section id="abc-40" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Invariants</strong> Skaitļu atlikums, dalot ar <span class="math inline">\(4\)</span>, palielinās par <span class="math inline">\(2\)</span> katrā solī. Pēc <span class="math inline">\(13\)</span> soļiem arī mainās par <span class="math inline">\(2\)</span>, bet jāpaliek tam pašam.</p>
 </section></section>
@@ -1309,7 +1320,7 @@ concepts=palindrome
 <ul>
 <li><a href="#/">alg.tra.factor.sqdiff</a></li>
 </ul>
-<p></small></p></section><section id="abc-44" class="slide level2">
+<p></small></p></section><section id="abc-41" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#AlgebriskaIdentitāte</strong> Pārveido <span class="math inline">\(3000^2 - 1^2\)</span> pēc kvadrātu starpības formulas.</p>
 </section></section>
@@ -1319,7 +1330,7 @@ concepts=palindrome
 <li><a href="#/">comb.count.mult</a></li>
 <li><a href="#/">comb.count.complement</a></li>
 </ul>
-<p></small></p></section><section id="abc-45" class="slide level2">
+<p></small></p></section><section id="abc-42" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#PretējaisNotikums</strong> <strong>#ReizināšanasLikums</strong> <span class="math inline">\(4\)</span>-ciparu skaitļu bez pāru cipariem ir <span class="math inline">\(5^4 = 625\)</span>; citu būs <span class="math inline">\(9000 - 625\)</span>.</p>
 </section></section>
@@ -1329,7 +1340,7 @@ concepts=palindrome
 <li><a href="#/">comb.full.backtrack</a></li>
 <li><a href="#/">alg.tra.pow.nest</a></li>
 </ul>
-<p></small></p></section><section id="abc-46" class="slide level2">
+<p></small></p></section><section id="abc-43" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#MaģiskaisKvadrāts</strong> <strong>#PakāpjuĪpašības</strong> Izveido <span class="math inline">\(3 \times 3\)</span> parasto maģisko kvadrātu. Pēc tam ceļ attiecīgajās pakāpēs.</p>
 </section></section>
@@ -1341,10 +1352,10 @@ concepts=palindrome
 <section><section id="lv.no.2014.7.3" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2014.7.3</h1><p>Cik starp pirmajiem <span class="math inline">\(2014\)</span> naturālajiem skaitļiem ir tādu skaitļu <span class="math inline">\(x\)</span>, ka skaitlis <span class="math inline">\(x(x+1)(x+2)\)</span> dalās ar <span class="math inline">\(87\)</span>?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.composite</a></li>
-<li><a href="#/">nt.divisibility.multiples</a></li>
+<li><a href="#/">nota.divrule.composite</a></li>
+<li><a href="#/">seq.arithm.numestimate</a></li>
 </ul>
-<p></small></p></section><section id="abc-47" class="slide level2">
+<p></small></p></section><section id="abc-44" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#Dalāmība</strong> <strong>#DalīšanaPirmreizinātājos</strong> <span class="math inline">\(x(x+1)(x+2)\)</span> Vienmēr dalās ar <span class="math inline">\(3\)</span>, jādalās ar <span class="math inline">\(29\)</span>. Tādu <span class="math inline">\(x\)</span> ir trīsreiz vairāk kā <span class="math inline">\(\left\lfloor 2014/29 \right\rfloor\)</span>.</p>
 </section></section>
@@ -1354,7 +1365,7 @@ concepts=palindrome
 <li><a href="#/">comb.count.mult</a></li>
 <li><a href="#/">comb.count.complement</a></li>
 </ul>
-<p></small></p></section><section id="abc-48" class="slide level2">
+<p></small></p></section><section id="abc-45" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#PretējaisNotikums</strong> <strong>#ReizināšanasLikums</strong> <span class="math inline">\(5\)</span>-ciparu skaitļu bez nepāru cipariem ir <span class="math inline">\(4 \cdot 5^4 = 2500\)</span>; citu būs <span class="math inline">\(90000 - 2500\)</span>.</p>
 </section></section>
@@ -1399,7 +1410,7 @@ concepts=palindrome
 <li><a href="#/">div.prop.primes.small</a></li>
 <li><a href="#/">comb.full</a></li>
 </ul>
-<p></small></p></section><section id="abc-49" class="slide level2">
+<p></small></p></section><section id="abc-46" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#GadījumuPārlase</strong> <strong>#Krāsošana</strong> Pāru/nepāru skaitļi kā šaha galdiņš. Vidū liek <span class="math inline">\(1\)</span>, pārlasa <span class="math inline">\(2,4,6,10\)</span> izvietojumu variantus (<span class="math inline">\(8\)</span> neizmanto).</p>
 </section></section>
@@ -1412,7 +1423,7 @@ concepts=palindrome
 <ul>
 <li><a href="#/">mod.congr.classes</a></li>
 </ul>
-<p></small></p></section><section id="abc-50" class="slide level2">
+<p></small></p></section><section id="abc-47" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalīšanaArAtlikumu</strong> Divu nepāru skaitļu summas/starpības ir pāru skaitļi. Pie tam <span class="math inline">\(49^n\)</span> un <span class="math inline">\(7^n\)</span> dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(3\)</span>.</p>
 </section></section>
@@ -1445,7 +1456,7 @@ concepts=palindrome
 <p>Vai, atkārtoti izpildot šīs darbības, no skaitļa <span class="math inline">\(30\)</span> var iegūt skaitli <span class="math inline">\(2015\)</span>?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.3or9.divides</a></li>
+<li><a href="#/">nota.divrule.3_9.divides</a></li>
 <li><a href="#/">misc.invar</a></li>
 </ul>
 <p></small></p></section><section id="invariants-ir-dalāmība-ar-3" class="slide level2">
@@ -1525,11 +1536,11 @@ strategy=contradiction
 <section><section id="lv.no.2016.7.2" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2016.7.2</h1><p>Dots naturāls skaitlis, kas dalās ar <span class="math inline">\(99\)</span> un kura pēdējais cipars nav <span class="math inline">\(0\)</span>. Pierādi, ka uzrakstot šī skaitļa ciparus pretējā secībā, arī iegūst skaitli, kas dalās ar <span class="math inline">\(99\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.3or9.divides</a></li>
-<li><a href="#/">notation.divrules.11</a></li>
-<li><a href="#/">notation.divrules.composite</a></li>
+<li><a href="#/">nota.divrule.3_9.divides</a></li>
+<li><a href="#/">nota.divrule.11</a></li>
+<li><a href="#/">nota.divrule.composite</a></li>
 </ul>
-<p></small></p></section><section id="abc-51" class="slide level2">
+<p></small></p></section><section id="abc-48" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalāmībaAr11</strong> <strong>#DalāmībaAr3Un9</strong> Ar <span class="math inline">\(9\)</span>  ciparu summa nemainās; ar <span class="math inline">\(11\)</span>  pāru/nepāru pozīcijās ciparu summas atšķiras par <span class="math inline">\(11k\)</span>.</p>
 </section></section>
@@ -1561,9 +1572,9 @@ strategy=contradiction
 <section><section id="lv.no.2016.8.2" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2016.8.2</h1><p>Karlīna uzrakstīja divus skaitļus, kuru pierakstā nav izmantots cipars <span class="math inline">\(0\)</span>. Katru ciparu viņa aizstāja ar burtu: dažādus ciparus  ar dažādiem burtiem, vienādus  ar vienādiem. Viens no uzrakstītajiem skaitļiem <em>DUBĻUNNN</em> dalās ar <span class="math inline">\(104\)</span>. Pierādi, ka otrais skaitlis <em>BURBUĻVANNA</em> nedalās ar <span class="math inline">\(56\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.2or5or10.divides</a></li>
+<li><a href="#/">nota.divrule.2_5_10.divides</a></li>
 </ul>
-<p></small></p></section><section id="abc-52" class="slide level2">
+<p></small></p></section><section id="abc-49" class="slide level2">
 <h2>ABC</h2>
 <p><strong>#DalāmībaAr4Un8</strong> <strong>#LKD</strong> <em>NNN</em> Dalās ar <span class="math inline">\(8\)</span> t.t.t. ja <span class="math inline">\(N=0\)</span> vai <span class="math inline">\(N=8\)</span>. <em>NNA</em> dalās ar <span class="math inline">\(8\)</span> tikai tad, ja <span class="math inline">\(A=0\)</span> vai <span class="math inline">\(A=8\)</span>. T.i. <span class="math inline">\(A=N\)</span>  pretruna.</p>
 </section></section>
@@ -1626,10 +1637,10 @@ strategy=contradiction
 <section><section id="lv.no.2017.10.5" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2017.10.5</h1><p>Desmitciparu skaitlī vienādus ciparus aizvietojot ar vienādiem burtiem, bet dažādus – ar dažādiem, ieguva vārdu <span class="math inline">\(MATEMĀTIKA\)</span> (īsais “A” un garais “Ā” aizstāj atšķirīgus ciparus). Papildus zināms, ka skaitlis <span class="math inline">\(\overline{MA}\)</span> dalās ar <span class="math inline">\(2\)</span>, <span class="math inline">\(\overline{MAT}\)</span> - ar 3, <span class="math inline">\(\overline{MATE}\)</span> - ar 4, <span class="math inline">\(\overline{MATEM}\)</span> - ar 5, <span class="math inline">\(\overline{MATEMĀ}\)</span> - ar 6, <span class="math inline">\(\overline{MATEMĀT}\)</span> - ar 7, <span class="math inline">\(\overline{MATEMĀTI}\)</span> - ar 8, <span class="math inline">\(\overline{MATEMĀTIK}\)</span> - ar 9, <span class="math inline">\(\overline{MATEMĀTIKA}\)</span> - ar 10. Noteikt, kāds bija sākotnējais desmitciparu skaitlis!</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.2or5or10.divides</a></li>
-<li><a href="#/">notation.divrules.pow2or5.divides</a></li>
-<li><a href="#/">notation.divrules.3or9.divides</a></li>
-<li><a href="#/">notation.divrules.composite</a></li>
+<li><a href="#/">nota.divrule.2_5_10.divides</a></li>
+<li><a href="#/">nota.divrule.2_5pow.divides</a></li>
+<li><a href="#/">nota.divrule.3_9.divides</a></li>
+<li><a href="#/">nota.divrule.composite</a></li>
 <li><a href="#/">comb.full</a></li>
 </ul>
 <p></small></p></section><section id="gadījumu-pārlase-3" class="slide level2">
@@ -1662,8 +1673,8 @@ x + z &amp; = &amp; 2007, \\
 <section><section id="lv.no.2018.10.4" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2018.10.4</h1><p>No cipariem <span class="math inline">\(1, 2, 3, 4, 5, 6, 7, 8, 9\)</span>, katru izmantojot divas reizes, izveidoti trīs sešciparu skaitļi. Ar kādu lielāko nuļļu skaitu var beigties trīs izveidoto skaitļu summa?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.3or9.divides</a></li>
-<li><a href="#/">notation.dec.numdigits.sum</a></li>
+<li><a href="#/">nota.divrule.3_9.divides</a></li>
+<li><a href="#/">nota.est.numdigits.sum</a></li>
 <li><a href="#/">comb.constr.alpha</a></li>
 </ul>
 <p></small></p>
@@ -1722,7 +1733,7 @@ genre=digit-manipulation
 <section><section id="lv.no.2019.10.5" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2019.10.5</h1><p>Atrast visus pirmskaitļu pārus <span class="math inline">\((m,n)\)</span>, kuriem <span class="math inline">\(20m + 18n = 2018\)</span>.</p>
 <p><small></p>
 <ul>
-<li><a href="#/">notation.divrules.2or5or10.divides</a></li>
+<li><a href="#/">nota.divrule.2_5_10.divides</a></li>
 <li><a href="#/">div.fta.proc</a></li>
 </ul>
 <p></small></p>

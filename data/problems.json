@@ -11,8 +11,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.divides",
-            "notation.divrules.pow2or5.divides"
+            "nota.divrule.3_9.divides",
+            "nota.divrule.2_5pow.divides"
         ]
     },
     {
@@ -608,8 +608,8 @@
         "seeAlso": [],
         "tasks": [
             "misc.try",
-            "notation.algor.square5",
-            "notation.dec.numdigits.square",
+            "nota.algor.fast",
+            "nota.est.numdigits.prod",
             "alg.tra.factor.sqdiff"
         ]
     },
@@ -694,7 +694,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
+            "nota.divrule.2_5_10.divides",
             "mod.fix.parity"
         ]
     },
@@ -810,7 +810,6 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "seq.define",
             "misc.try",
             "misc.ind"
         ]
@@ -939,7 +938,7 @@
         "seeAlso": [],
         "tasks": [
             "alg.expr",
-            "notation.dec.combine.poly",
+            "nota.combine.poly",
             "comb.full"
         ]
     },
@@ -1055,7 +1054,7 @@
         "seeAlso": [],
         "tasks": [
             "mod.congr.pow",
-            "notation.divrules.3or9.remainder",
+            "nota.divrule.3_9.rem",
             "mod.congr.sumdiff",
             "mod.eq.contradict"
         ]
@@ -2244,7 +2243,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.remainder",
+            "nota.divrule.3_9.rem",
             "seq.gaps",
             "seq.arithm.mod"
         ]
@@ -2390,7 +2389,7 @@
         "seeAlso": [],
         "tasks": [
             "mod.congr",
-            "al.inequality.intervals"
+            "seq.arithm.numestimate"
         ]
     },
     {
@@ -2422,8 +2421,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
-            "nt.divisibility.constructions"
+            "nota.divrule.2_5_10.divides",
+            "comb.full"
         ]
     },
     {
@@ -2524,8 +2523,9 @@
         "seeAlso": [],
         "tasks": [
             "misc.invar.parity",
-            "al.inequality.extremalelement",
-            "misc.invar.congr"
+            "misc.invar.congr",
+            "alg.ineq.monotonicity",
+            "seq.arithm.summation"
         ]
     },
     {
@@ -2730,8 +2730,8 @@
             "LV.NO.2005.8.1"
         ],
         "tasks": [
-            "notation.dec.numdigits",
-            "al.inequality.estimates"
+            "nota.est.numdigits",
+            "seq.geom.estimate"
         ]
     },
     {
@@ -2801,8 +2801,8 @@
             "LV.NO.2004.8.2"
         ],
         "tasks": [
-            "notation.dec.numdigits",
-            "al.inequality.estimates"
+            "nota.est.numdigits",
+            "seq.geom.estimate"
         ]
     },
     {
@@ -2994,7 +2994,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.divisibility.multiples",
+            "seq.arithm.numestimate",
             "div.common.lcm"
         ]
     },
@@ -3051,7 +3051,7 @@
         "tasks": [
             "alg.series.mean",
             "alg.ineq.equations",
-            "nt.divisibility.multiples"
+            "div.fta.divisors"
         ]
     },
     {
@@ -3061,7 +3061,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.sumofdigits",
+            "seq.gaps",
             "misc.invar.parity"
         ]
     },
@@ -3197,7 +3197,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.divisibility.multiples",
+            "seq.arithm.numestimate",
             "div.fta.divisors.test"
         ]
     },
@@ -3220,8 +3220,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.remainder",
-            "notation.dec.combine"
+            "nota.divrule.3_9.rem",
+            "nota.combine"
         ]
     },
     {
@@ -3290,7 +3290,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "al.sym.grouping",
+            "misc.symm.periodicity",
             "mod.congr.classes"
         ]
     },
@@ -3301,7 +3301,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "nt.divisibility.multiples",
+            "seq.arithm.numestimate",
             "div.fta.divisors.test"
         ]
     },
@@ -3312,8 +3312,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.dec.combine",
-            "notation.divrules.3or9.remainder"
+            "nota.combine",
+            "nota.divrule.3_9.rem"
         ]
     },
     {
@@ -3365,7 +3365,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.101"
+            "nota.divrule.101"
         ]
     },
     {
@@ -3385,7 +3385,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.11",
+            "nota.divrule.11",
             "div.prop.euclidlemma"
         ]
     },
@@ -3423,7 +3423,7 @@
         "seeAlso": [],
         "tasks": [
             "misc.try",
-            "notation.dec.numdigits.prod"
+            "nota.est.numdigits.prod"
         ]
     },
     {
@@ -3470,8 +3470,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.composite",
-            "nt.divisibility.multiples"
+            "nota.divrule.composite",
+            "seq.arithm.numestimate"
         ]
     },
     {
@@ -3563,8 +3563,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.composite",
-            "nt.divisibility.multiples"
+            "nota.divrule.composite",
+            "seq.arithm.numestimate"
         ]
     },
     {
@@ -3698,7 +3698,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.divides",
+            "nota.divrule.3_9.divides",
             "misc.invar"
         ]
     },
@@ -3757,9 +3757,9 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.divides",
-            "notation.divrules.11",
-            "notation.divrules.composite"
+            "nota.divrule.3_9.divides",
+            "nota.divrule.11",
+            "nota.divrule.composite"
         ]
     },
     {
@@ -3780,7 +3780,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides"
+            "nota.divrule.2_5_10.divides"
         ]
     },
     {
@@ -3877,10 +3877,10 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
-            "notation.divrules.pow2or5.divides",
-            "notation.divrules.3or9.divides",
-            "notation.divrules.composite",
+            "nota.divrule.2_5_10.divides",
+            "nota.divrule.2_5pow.divides",
+            "nota.divrule.3_9.divides",
+            "nota.divrule.composite",
             "comb.full"
         ]
     },
@@ -3939,8 +3939,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.divides",
-            "notation.dec.numdigits.sum",
+            "nota.divrule.3_9.divides",
+            "nota.est.numdigits.sum",
             "comb.constr.alpha"
         ]
     },
@@ -4048,7 +4048,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
+            "nota.divrule.2_5_10.divides",
             "div.fta.proc"
         ]
     },
@@ -4138,7 +4138,7 @@
         "seeAlso": [],
         "tasks": [
             "seq.recur.fibonacci",
-            "seq.prop.periodic.finstate",
+            "mod.period",
             "mod.congr.pow"
         ]
     },
@@ -4231,8 +4231,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
-            "notation.dec.combine.split",
+            "nota.divrule.2_5_10.divides",
+            "nota.combine.split",
             "mod.congr.sumdiff",
             "comb.full"
         ]
@@ -4249,9 +4249,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
-            "notation.divrules.3or9.divides",
-            "notation.dec.combine.padding"
+            "nota.divrule.2_5_10.divides",
+            "nota.divrule.3_9.divides",
+            "nota.combine.padding"
         ]
     },
     {
@@ -4281,7 +4281,7 @@
         "seeAlso": [],
         "tasks": [
             "mod.exp",
-            "notation.divrules.composite"
+            "nota.divrule.composite"
         ]
     },
     {
@@ -4310,8 +4310,7 @@
         "seeAlso": [],
         "tasks": [
             "mod.exp.fermat",
-            "div.fta.divisors",
-            "nt.divisibility.constructions"
+            "div.fta.divisors"
         ]
     },
     {
@@ -4359,8 +4358,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.1001",
-            "notation.dec.combine.poly",
+            "nota.divrule.1001",
+            "nota.combine.poly",
             "mod.congr"
         ]
     },
@@ -4377,9 +4376,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.expressions",
-            "al.manipulate.smallexpr",
-            "al.inequality.estimates"
+            "nota.combine.split",
+            "alg.tra.factor",
+            "alg.ineq.equations"
         ]
     },
     {
@@ -4409,7 +4408,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.sym.grouping",
+            "misc.symm.periodicity",
             "misc.extr.pigeon"
         ]
     },
@@ -4428,9 +4427,9 @@
             "LV.AO.2001.8.3"
         ],
         "tasks": [
-            "nt.decnotation.expressions",
-            "al.manipulate.smallexpr",
-            "al.inequality.estimates"
+            "nota.combine.split",
+            "alg.tra.factor",
+            "alg.ineq.equations"
         ]
     },
     {
@@ -4444,7 +4443,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.inequality.extremalelement"
+            "misc.extr.param"
         ]
     },
     {
@@ -4477,7 +4476,7 @@
         "seeAlso": [],
         "tasks": [
             "misc.invar.parity",
-            "al.sym.progressions",
+            "seq.arithm.summation",
             "comb.full"
         ]
     },
@@ -4495,7 +4494,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.inequality.extremalelement",
+            "misc.extr.param",
             "div.prop.primes.small"
         ]
     },
@@ -4510,9 +4509,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.sym.grouping",
-            "al.manipulate.smallexpr",
-            "comb.full"
+            "misc.symm.periodicity",
+            "comb.full",
+            "alg.tra.binom.square"
         ]
     },
     {
@@ -4545,8 +4544,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.expressions",
-            "nt.divisibility.multiples"
+            "nota.combine.split",
+            "div.fta.divisors"
         ]
     },
     {
@@ -4562,8 +4561,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "seq.recur",
-            "al.inequality.intervals"
+            "seq.arithm.numestimate",
+            "seq.geom.estimate",
+            "seq.recur.other"
         ]
     },
     {
@@ -4579,7 +4579,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.composite.zeroes",
+            "nota.divrule.2_5pow",
             "mod.congr.sumdiff"
         ]
     },
@@ -4610,9 +4610,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.inequality.intervals",
-            "nt.divisibility.multiples",
-            "mod.congr"
+            "seq.arithm.expr",
+            "seq.gaps",
+            "comb.full"
         ]
     },
     {
@@ -4628,8 +4628,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.2or5or10.divides",
-            "nt.decnotation.sumofdigits"
+            "nota.divrule.2_5_10.divides",
+            "nota.combine.padding"
         ]
     },
     {
@@ -4697,7 +4697,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.composite.zeroes",
+            "nota.divrule.2_5pow",
             "alg.tra.pow.prod"
         ]
     },
@@ -4733,7 +4733,7 @@
         "tasks": [
             "mod.fix.parity",
             "div.prop.primes.small",
-            "al.sym.progressions",
+            "seq.arithm.summation",
             "comb.full"
         ]
     },
@@ -4874,8 +4874,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "mod.eq.chinese",
-            "nt.divisibility.constructions"
+            "seq.arithm.mod",
+            "mod.eq.chinese"
         ]
     },
     {
@@ -4899,7 +4899,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "nt.decnotation.expressions",
+            "nota.combine.split",
             "div.fta"
         ]
     },
@@ -4988,7 +4988,7 @@
         "seeAlso": [],
         "tasks": [
             "alg.ineq.monotonicity",
-            "notation.dec.combine.poly",
+            "nota.combine.poly",
             "misc.extr.param"
         ]
     },
@@ -5001,8 +5001,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.pow2or5.divides",
-            "notation.divrules.3or9.remainder",
+            "nota.divrule.2_5pow.divides",
+            "nota.divrule.3_9.rem",
             "div.fta.pow.square",
             "seq.arithm.summation"
         ]
@@ -5017,7 +5017,7 @@
         "seeAlso": [],
         "tasks": [
             "alg.expr",
-            "notation.dec.combine.poly.pieces"
+            "nota.combine.poly.pieces"
         ]
     },
     {
@@ -5073,7 +5073,7 @@
         "seeAlso": [],
         "tasks": [
             "mod.period",
-            "notation.algor"
+            "nota.algor"
         ]
     },
     {
@@ -5086,7 +5086,7 @@
         "seeAlso": [],
         "tasks": [
             "alg.expr",
-            "notation.dec.combine.poly.pieces"
+            "nota.combine.poly.pieces"
         ]
     },
     {
@@ -5127,8 +5127,8 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.11",
-            "notation.divrules.3or9.divides"
+            "nota.divrule.11",
+            "nota.divrule.3_9.divides"
         ]
     },
     {
@@ -5193,7 +5193,6 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "al.manipulate.smallexpr",
             "alg.tra.factor.sqdiff"
         ]
     },
@@ -5218,9 +5217,9 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.pow2or5.divides",
-            "notation.divrules.3or9.divides",
-            "notation.divrules.composite",
+            "nota.divrule.2_5pow.divides",
+            "nota.divrule.3_9.divides",
+            "nota.divrule.composite",
             "comb.full"
         ]
     },
@@ -5234,7 +5233,7 @@
         "seeAlso": [],
         "tasks": [
             "div.fta.proc",
-            "notation.divrules.3or9.remainder",
+            "nota.divrule.3_9.rem",
             "mod.congr.poly",
             "mod.eq.contradict"
         ]
@@ -5316,7 +5315,7 @@
         ],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.divides",
+            "nota.divrule.3_9.divides",
             "div.prop.prod",
             "mod.congr.poly"
         ]
@@ -6871,7 +6870,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.dec.numdigits.prod",
+            "nota.est.numdigits.prod",
             "comb.full"
         ]
     },
@@ -6972,7 +6971,7 @@
             "mod.eq",
             "misc.symm",
             "comb.full",
-            "notation.divrules.pow2or5.divides"
+            "nota.divrule.2_5pow.divides"
         ]
     },
     {
@@ -6982,7 +6981,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.remainder",
+            "nota.divrule.3_9.rem",
             "misc.invar",
             "mod.congr.prod"
         ]
@@ -6994,7 +6993,7 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "notation.divrules.3or9.remainder",
+            "nota.divrule.3_9.rem",
             "mod.congr.prod",
             "mod.eq.chinese",
             "alg.ineq.monotonicity",

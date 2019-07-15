@@ -20,8 +20,8 @@ kurš satur tos vienādā skaitā un dalās ar $5$ un $9$.
 
 <small>
 
-* [notation.divrules.3or9.divides](#)
-* [notation.divrules.pow2or5.divides](#)
+* [nota.divrule.3_9.divides](#)
+* [nota.divrule.2_5pow.divides](#)
 
 </small>
 
@@ -759,8 +759,8 @@ ciparu 1, arī rodas kāda vesela skaitļa kvadrāts.
 <small>
 
 * [misc.try](#)
-* [notation.algor.square5](#)
-* [notation.dec.numdigits.square](#)
+* [nota.algor.fast](#)
+* [nota.est.numdigits.prod](#)
 * [alg.tra.factor.sqdiff](#)
 
 </small>
@@ -932,7 +932,7 @@ kuri apmierina vienādojumu $(a + b)(b + c)(c + a) = 123456789$?
 
 <small>
 
-* [notation.divrules.2or5or10.divides](#)
+* [nota.divrule.2_5_10.divides](#)
 * [mod.fix.parity](#)
 
 </small>
@@ -1182,7 +1182,6 @@ veselo skaitļu no $1$ līdz $n$ ciparu summa ir pāru skaitlis?
 
 <small>
 
-* [seq.define](#)
 * [misc.try](#)
 * [misc.ind](#)
 
@@ -1552,7 +1551,7 @@ Atrast visas iespējamās vērtības Mari iedomātajam skaitlim.
 <small>
 
 * [alg.expr](#)
-* [notation.dec.combine.poly](#)
+* [nota.combine.poly](#)
 * [comb.full](#)
 
 </small>

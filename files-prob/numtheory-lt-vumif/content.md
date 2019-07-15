@@ -162,7 +162,7 @@ kad vienas skaičius būtų kito kvadratas?
 
 <small>
 
-* [notation.dec.numdigits.prod](#)
+* [nota.est.numdigits.prod](#)
 * [comb.full](#)
 
 </small>
@@ -615,7 +615,7 @@ galėjo gauti? Raskite visas galimybes.
 * [mod.eq](#)
 * [misc.symm](#)
 * [comb.full](#)
-* [notation.divrules.pow2or5.divides](#)
+* [nota.divrule.2_5pow.divides](#)
 
 </small>
 
@@ -698,7 +698,7 @@ skaičius dalijasi iš kito, tai jie lygūs.
 
 <small>
 
-* [notation.divrules.3or9.remainder](#)
+* [nota.divrule.3_9.rem](#)
 * [misc.invar](#)
 * [mod.congr.prod](#)
 
@@ -756,7 +756,7 @@ b) $N$ nesidalija iš jokio penktinio skaičiaus.
 
 <small>
 
-* [notation.divrules.3or9.remainder](#)
+* [nota.divrule.3_9.rem](#)
 * [mod.congr.prod](#)
 * [mod.eq.chinese](#)
 * [alg.ineq.monotonicity](#)

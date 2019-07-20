@@ -157,7 +157,7 @@
             "2"
         ],
         "problems": [
-            "LV.VO.2011.10.4"
+            "LV.VO.2011.10.5"
         ]
     },
     {
@@ -211,7 +211,7 @@
             "4"
         ],
         "problems": [
-            "LV.VO.2016.10.3"
+            "LV.VO.2016.11.3"
         ]
     },
     {
@@ -233,7 +233,7 @@
         ],
         "problems": [
             "LV.NO.2000.8.5",
-            "LV.VO.2016.10.3",
+            "LV.VO.2016.11.3",
             "LV.AO.2008.8.3"
         ]
     },
@@ -302,7 +302,8 @@
             "2"
         ],
         "problems": [
-            "LV.AO.2015.10.3"
+            "LV.AO.2015.10.3",
+            "LV.AO.2019.11.4"
         ]
     },
     {
@@ -355,7 +356,7 @@
         "problems": [
             "EE.PK.2015.10.3",
             "EE.PK.2017.10.2",
-            "LV.VO.2016.10.1"
+            "LV.VO.2016.11.1"
         ]
     },
     {
@@ -425,7 +426,49 @@
             "1"
         ],
         "problems": [
-            "LV.VO.2011.10.4"
+            "LV.VO.2011.10.5"
+        ]
+    },
+    {
+        "desc": "Izmantot dažādu skaitļu kopu īpašības",
+        "id": "alg.sets",
+        "levels": [
+            "1",
+            "7"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Secināt par skaitļu racionalitāti vai iracionalitāti",
+        "id": "alg.sets.irrat",
+        "levels": [
+            "1",
+            "7",
+            "1"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Secināt par kvadrātsakņu izteiksmju racionalitāti vai iracionalitāti",
+        "id": "alg.sets.sqrt",
+        "levels": [
+            "1",
+            "7",
+            "2"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Secināt par Pitagora trijnieku, a^2+b^2=c^2, īpašībām",
+        "id": "alg.sets.sqrt.pythagoras",
+        "levels": [
+            "1",
+            "7",
+            "2",
+            "1"
+        ],
+        "problems": [
+            "LV.VO.2001.9.1"
         ]
     },
     {
@@ -446,22 +489,12 @@
         "problems": []
     },
     {
-        "desc": "Noskaidrot, kuras daļas vienādas ar veseliem skaitļiem, kuras var saīsināt.",
-        "id": "div.prop.frac",
-        "levels": [
-            "2",
-            "1",
-            "1"
-        ],
-        "problems": []
-    },
-    {
         "desc": "Secināt, ka d dala a+b un a-b, ja d|a and d|b",
         "id": "div.prop.add",
         "levels": [
             "2",
             "1",
-            "2"
+            "1"
         ],
         "problems": [
             "LV.NO.2010.10.2"
@@ -473,7 +506,7 @@
         "levels": [
             "2",
             "1",
-            "3"
+            "2"
         ],
         "problems": [
             "LV.NO.2010.10.2",
@@ -488,7 +521,7 @@
         "levels": [
             "2",
             "1",
-            "4"
+            "3"
         ],
         "problems": []
     },
@@ -498,7 +531,7 @@
         "levels": [
             "2",
             "1",
-            "4",
+            "3",
             "1"
         ],
         "problems": [
@@ -525,7 +558,7 @@
         "levels": [
             "2",
             "1",
-            "4",
+            "3",
             "2"
         ],
         "problems": [
@@ -538,7 +571,7 @@
         "levels": [
             "2",
             "1",
-            "5"
+            "4"
         ],
         "problems": []
     },
@@ -548,7 +581,7 @@
         "levels": [
             "2",
             "1",
-            "6"
+            "5"
         ],
         "problems": [
             "LV.NO.2012.8.3"
@@ -672,6 +705,8 @@
             "5"
         ],
         "problems": [
+            "LV.AO.2019.11.2",
+            "LV.AO.2019.12.2",
             "LT.VUMIF.2018.10.4"
         ]
     },
@@ -684,7 +719,8 @@
             "3"
         ],
         "problems": [
-            "LV.VO.2016.10.1"
+            "LV.VO.2002.9.1",
+            "LV.VO.2016.11.1"
         ]
     },
     {
@@ -850,7 +886,8 @@
         "problems": [
             "LV.NO.2007.7.1",
             "LV.NO.2008.7.1",
-            "LV.NO.2009.7.1"
+            "LV.NO.2009.7.1",
+            "LV.VO.2001.9.1"
         ]
     },
     {
@@ -883,6 +920,32 @@
         ],
         "problems": [
             "LV.NO.2010.10.4"
+        ]
+    },
+    {
+        "desc": "Lietot Ležandra formulu v_p(n!)=[n/p]+[n/p^2]+...",
+        "id": "div.valu.prop.legendre",
+        "levels": [
+            "2",
+            "5",
+            "1",
+            "1",
+            "1"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Izmantot valuāciju saskaitīšanu citiem gariem reizinājumiem",
+        "id": "div.valu.prop.other",
+        "levels": [
+            "2",
+            "5",
+            "1",
+            "1",
+            "2"
+        ],
+        "problems": [
+            "LV.AO.2019.11.4"
         ]
     },
     {
@@ -1562,50 +1625,11 @@
         "problems": []
     },
     {
-        "desc": "Noteikt skaitļus ar speciālām īpašībām",
-        "id": "seq.spec",
-        "levels": [
-            "5",
-            "1"
-        ],
-        "problems": []
-    },
-    {
-        "desc": "Noteikt daudzkārtņus un citus aritmētisku progresiju locekļus",
-        "id": "seq.spec.progr",
-        "levels": [
-            "5",
-            "1",
-            "1"
-        ],
-        "problems": []
-    },
-    {
-        "desc": "Noteikt pilnus kvadrātus",
-        "id": "seq.spec.square",
-        "levels": [
-            "5",
-            "1",
-            "2"
-        ],
-        "problems": []
-    },
-    {
-        "desc": "Noteikt citas pilnas pakāpes",
-        "id": "seq.spec.pow",
-        "levels": [
-            "5",
-            "1",
-            "3"
-        ],
-        "problems": []
-    },
-    {
         "desc": "Lietot zināšanas par aritmētiskām progresijām",
         "id": "seq.arithm",
         "levels": [
             "5",
-            "2"
+            "1"
         ],
         "problems": []
     },
@@ -1614,7 +1638,7 @@
         "id": "seq.arithm.expr",
         "levels": [
             "5",
-            "2",
+            "1",
             "1"
         ],
         "problems": [
@@ -1629,7 +1653,7 @@
         "id": "seq.arithm.numestimate",
         "levels": [
             "5",
-            "2",
+            "1",
             "2"
         ],
         "problems": [
@@ -1650,7 +1674,7 @@
         "id": "seq.arithm.pairsum",
         "levels": [
             "5",
-            "2",
+            "1",
             "3"
         ],
         "problems": [
@@ -1662,7 +1686,7 @@
         "id": "seq.arithm.summation",
         "levels": [
             "5",
-            "2",
+            "1",
             "4"
         ],
         "problems": [
@@ -1679,11 +1703,12 @@
         "id": "seq.arithm.mod",
         "levels": [
             "5",
-            "2",
+            "1",
             "5"
         ],
         "problems": [
             "LV.NO.2000.7.4",
+            "LV.VO.2002.11.5",
             "LV.AO.2011.7.3",
             "BBK2012.P1.122",
             "BBK2012.P1.123",
@@ -1695,7 +1720,7 @@
         "id": "seq.arithm.mod.gaps",
         "levels": [
             "5",
-            "2",
+            "1",
             "5",
             "1"
         ],
@@ -1710,7 +1735,7 @@
         "id": "seq.arithm.mod.all",
         "levels": [
             "5",
-            "2",
+            "1",
             "5",
             "2"
         ],
@@ -1725,7 +1750,7 @@
         "id": "seq.geom",
         "levels": [
             "5",
-            "3"
+            "2"
         ],
         "problems": [
             "LV.AO.2013.10.4"
@@ -1736,7 +1761,7 @@
         "id": "seq.geom.decnotation",
         "levels": [
             "5",
-            "3",
+            "2",
             "1"
         ],
         "problems": [
@@ -1748,7 +1773,7 @@
         "id": "seq.geom.summation",
         "levels": [
             "5",
-            "3",
+            "2",
             "2"
         ],
         "problems": [
@@ -1760,7 +1785,7 @@
         "id": "seq.geom.estimate",
         "levels": [
             "5",
-            "3",
+            "2",
             "3"
         ],
         "problems": [
@@ -1774,7 +1799,7 @@
         "id": "seq.geom.infinite",
         "levels": [
             "5",
-            "3",
+            "2",
             "4"
         ],
         "problems": []
@@ -1784,7 +1809,7 @@
         "id": "seq.recur",
         "levels": [
             "5",
-            "4"
+            "3"
         ],
         "problems": []
     },
@@ -1793,7 +1818,7 @@
         "id": "seq.recur.fibonacci",
         "levels": [
             "5",
-            "4",
+            "3",
             "1"
         ],
         "problems": [
@@ -1805,7 +1830,7 @@
         "id": "seq.recur.linear",
         "levels": [
             "5",
-            "4",
+            "3",
             "2"
         ],
         "problems": [
@@ -1817,7 +1842,7 @@
         "id": "seq.recur.other",
         "levels": [
             "5",
-            "4",
+            "3",
             "3"
         ],
         "problems": [
@@ -1830,7 +1855,7 @@
         "id": "seq.gaps",
         "levels": [
             "5",
-            "5"
+            "4"
         ],
         "problems": [
             "LV.NO.2000.7.4",
@@ -1845,7 +1870,7 @@
         "id": "seq.gaps.squares",
         "levels": [
             "5",
-            "5",
+            "4",
             "1"
         ],
         "problems": [
@@ -1858,7 +1883,7 @@
         "id": "seq.gaps.cubes",
         "levels": [
             "5",
-            "5",
+            "4",
             "2"
         ],
         "problems": []
@@ -1868,7 +1893,7 @@
         "id": "seq.gaps.geom",
         "levels": [
             "5",
-            "5",
+            "4",
             "3"
         ],
         "problems": [
@@ -1970,6 +1995,30 @@
         "problems": [
             "LV.NO.2013.8.3",
             "LV.NO.2014.8.3"
+        ]
+    },
+    {
+        "desc": "Izmantot reizināšanas likumu,  ja iespējami atkārtojumi",
+        "id": "comb.count.mult.rep",
+        "levels": [
+            "6",
+            "2",
+            "1",
+            "1"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Izmantot reizināšanas likumu bez atkārtojumiem",
+        "id": "comb.count.mult.norep",
+        "levels": [
+            "6",
+            "2",
+            "1",
+            "2"
+        ],
+        "problems": [
+            "LV.AO.2019.11.4"
         ]
     },
     {
@@ -2250,6 +2299,8 @@
         ],
         "problems": [
             "LV.AO.2011.8.5",
+            "LV.AO.2019.11.2",
+            "LV.AO.2019.12.2",
             "LT.VUMIF.2017.11_12.4",
             "LT.VUMIF.2019.9.2"
         ]

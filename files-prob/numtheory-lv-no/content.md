@@ -181,6 +181,10 @@ questionType=Find.Any,ProveDisprove.Exists
 * Ja četri skaitļi vienādi un viens atšķiras, var izvēlēties komplektu $(1,1,1,1,2)$. 
 
 
+
+
+
+
 # <lo-sample/> LV.NO.2000.10.1 
 
 Dots, ka $A$ un $B$ ir trīsciparu naturāli skaitļi, 

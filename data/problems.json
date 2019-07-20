@@ -4080,11 +4080,546 @@
         "tasks": []
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2000.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2000.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2000.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2000.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2000.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2000.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2001.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.sets.sqrt.pythagoras",
+            "div.common.gcd.bezout"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2001.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2001.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2001.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2001.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2001.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2002.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "div.fta.pow"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2002.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2002.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2002.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2002.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "seq.arithm.mod"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2002.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2003.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2003.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2003.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2003.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2003.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2004.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2004.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2004.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2004.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2005.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2005.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2005.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2005.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2005.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2005.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2006.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2007.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2008.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2008.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2008.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2008.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2008.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2008.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2009.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2009.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2009.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2009.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2009.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2010.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2010.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2010.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2010.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2010.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2011.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2011.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "integer-polynomial"
         ],
         "genre": [],
-        "id": "LV.VO.2011.10.4",
+        "id": "LV.VO.2011.10.5",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
@@ -4093,6 +4628,30 @@
             "alg.poly.prop.valdiff",
             "alg.tra.factor.powdiff"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2011.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2011.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2012.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4109,6 +4668,54 @@
             "seq.geom.summation",
             "seq.geom.decnotation"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2012.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2012.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2012.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2012.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2013.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2013.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -4141,6 +4748,38 @@
             "mod.period",
             "mod.congr.pow"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2013.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2013.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2013.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2014.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4177,6 +4816,54 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.VO.2014.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2014.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2014.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2014.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2015.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2015.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.VO.2015.10.2",
         "qtypes": [
             "Prove.ForAll"
@@ -4189,11 +4876,75 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2015.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2015.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2015.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "full-powers"
         ],
         "genre": [],
-        "id": "LV.VO.2016.10.1",
+        "id": "LV.VO.2016.11.1",
         "qtypes": [
             "Prove.ForAll"
         ],
@@ -4208,7 +4959,7 @@
             "long-sums"
         ],
         "genre": [],
-        "id": "LV.VO.2016.10.3",
+        "id": "LV.VO.2016.11.3",
         "qtypes": [
             "Prove.Other"
         ],
@@ -4217,6 +4968,54 @@
             "alg.tra.frac",
             "alg.series.sum"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2016.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2017.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2017.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4238,6 +5037,30 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2017.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2017.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2018.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "sum-of-digits"
         ],
@@ -4253,6 +5076,30 @@
             "nota.divrule.3_9.divides",
             "nota.combine.padding"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2018.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2018.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2019.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4283,6 +5130,30 @@
             "mod.exp",
             "nota.divrule.composite"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2019.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2019.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.VO.2019.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4346,6 +5217,62 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2000.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "palindrome",
             "decimal-notation"
@@ -4380,6 +5307,38 @@
             "alg.tra.factor",
             "alg.ineq.equations"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2001.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2001.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2001.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2001.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4445,6 +5404,40 @@
         "tasks": [
             "misc.extr.param"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.9.3",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2001.9.4"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2002.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4515,6 +5508,38 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2003.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "fractions",
             "gcd"
@@ -4567,6 +5592,62 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2004.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "decimal-notation"
         ],
@@ -4598,6 +5679,56 @@
         "tasks": [
             "comb.full.backtrack"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.12.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2003.12.2"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2005.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4633,6 +5764,46 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2006.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "primes"
         ],
@@ -4643,7 +5814,9 @@
         "qtypes": [
             "Find.Max"
         ],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.AO.2008.7.2"
+        ],
         "tasks": [
             "comb.graph.cycle",
             "div.prop.primes.small"
@@ -4687,6 +5860,42 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2007.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2007.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2007.10.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2008.10.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.8.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2007.7.1"
+        ],
+        "tasks": []
+    },
+    {
         "concepts": [
             "decimal-notation"
         ],
@@ -4717,6 +5926,72 @@
             "div.fta.divisors.pair",
             "alg.series.sum"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.10.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2007.10.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2008.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4767,6 +6042,54 @@
             "div.fta",
             "comb.full"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2009.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [
@@ -4841,6 +6164,30 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2010.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2010.10.4",
         "qtypes": [
             "Find.Count"
@@ -4851,6 +6198,38 @@
             "div.fta.proc",
             "comb.full"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2010.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -4919,6 +6298,66 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2011.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.10.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2010.10.4"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.11.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2010.11.1"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2011.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2012.7.1",
         "qtypes": [
             "ProveDisprove.Exists"
@@ -4968,6 +6407,30 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2012.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2012.10.1",
         "qtypes": [
             "Prove.ForAll"
@@ -4977,6 +6440,22 @@
             "mod.congr.pow",
             "mod.congr.sumdiff"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2012.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -5023,6 +6502,14 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2013.8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2013.10.4",
         "qtypes": [
             "Prove.Other"
@@ -5032,6 +6519,30 @@
             "seq.geom",
             "misc.extr.pigeon"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2013.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -5105,6 +6616,22 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2014.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2014.10.4",
         "qtypes": [
             "Find.Max"
@@ -5116,6 +6643,30 @@
             "mod.congr.sumdiff",
             "comb.constr.iterative"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2014.12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -5160,6 +6711,14 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2015.9.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2015.10.3",
         "qtypes": [
             "Find.All"
@@ -5169,6 +6728,30 @@
             "misc.try",
             "alg.ineq.transitive"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2015.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -5226,11 +6809,31 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2016.9.2",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2016.10.2"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2016.10.2",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.AO.2016.9.2"
+        ],
         "tasks": [
             "div.fta.proc",
             "nota.divrule.3_9.rem",
@@ -5255,6 +6858,22 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2016.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2016.12.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2017.7.5",
         "qtypes": [
             "Find.Count"
@@ -5275,6 +6894,14 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2017.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2017.10.5",
         "qtypes": [
             "Prove.ForAll"
@@ -5285,6 +6912,22 @@
             "seq.arithm.mod.all",
             "comb.full"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2017.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2017.12.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -5309,6 +6952,14 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LV.AO.2018.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "LV.AO.2018.10.4",
         "qtypes": [
             "Prove.ForAll"
@@ -5319,6 +6970,30 @@
             "div.prop.prod",
             "mod.congr.poly"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2018.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2018.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2018.12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -5337,6 +7012,22 @@
         "qtypes": [
             "Find.Min"
         ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.9.5",
+        "qtypes": [],
         "seeAlso": [],
         "tasks": []
     },
@@ -5362,6 +7053,64 @@
         "seeAlso": [],
         "tasks": [
             "alg.tra.binom.square"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.11.2",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2019.12.2"
+        ],
+        "tasks": [
+            "div.fta.divisors.struct",
+            "misc.invar.game"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.ineq.transitive",
+            "comb.count.mult.norep",
+            "div.valu.prop.other"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.11.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.12.2",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2019.11.2"
+        ],
+        "tasks": [
+            "div.fta.divisors.struct",
+            "misc.invar.game"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.AO.2019.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "alg.ineq.transitive",
+            "comb.count.mult.norep",
+            "div.valu.prop.other"
         ]
     },
     {

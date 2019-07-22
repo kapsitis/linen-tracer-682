@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<h1>Skaitļu teorija: Prezentācijas</h1>
+<h1>Skaitļu teorija: 10.-12.kl. moduļi</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
@@ -23,10 +23,19 @@
 </table>
 
 <ul>
-{% for tale in the_tales %}
+{% for tale in main_tales %}
+<li><a href="../files-tale/{{tale.dir}}/content.html"><b>Modulis {{tale.id}}:</b> {{tale.title}}</a></li></li>
+{% endfor %}
+</ul>
+
+<b>Dažas vecākas prezentācijas:</b>
+
+<ul>
+{% for tale in remaining_tales %}
 <li><a href="../files-tale/{{tale.dir}}/content.html">{{tale.id}}: {{tale.title}}</a></li></li>
 {% endfor %}
 </ul>
+
 
 </body>
 

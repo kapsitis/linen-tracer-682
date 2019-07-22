@@ -195,19 +195,13 @@ kuri nedalās ne ar $5$, ne ar $7$?
 * [div.common.lcm](#)
 * [seq.arithm.mod](#)
 * [misc.symm.periodicity](#)
+* [seq.arithm.numestimate](#)
 
 </small>
 
 <!--
 questionType=Find.Count
 -->
-
-<small>
-
-* [seq.arithm.mod](#)
-* [seq.arithm.numestimate](#)
-
-</small>
 
 
 

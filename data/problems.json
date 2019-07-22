@@ -4878,7 +4878,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "LV.VO.2015.11.2",
+        "id": "LV.VO.2015.11.1",
         "qtypes": [],
         "seeAlso": [],
         "tasks": []
@@ -8878,7 +8878,6 @@
             "div.common.lcm",
             "seq.arithm.mod",
             "misc.symm.periodicity",
-            "seq.arithm.mod",
             "seq.arithm.numestimate"
         ]
     },

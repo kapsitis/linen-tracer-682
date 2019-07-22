@@ -11,7 +11,14 @@ jinja_env = jinja2.Environment(
 class TaleHandler(webapp2.RequestHandler):
     def get(self,my_id):
         #the_comp = ['EE.PK', 'EE.LO', 'EE.LVS/LVT', 'LV.NO', 'LV.VO', 'LV.AO']
-        the_tales = [
+        main_tales = [
+            {
+                'id':'NumTh.Progressions', 
+                'dir':'numtheory-progressions',
+                'title': u'Aritmētiskas un ģeometriskas progresijas'
+            }
+        ]
+        remaining_tales = [
             {
                 'id':'NumTh.Grade10', 
                 'dir':'stories-nt-grade10',
@@ -25,8 +32,9 @@ class TaleHandler(webapp2.RequestHandler):
         ]
 
         
-        template_context = {                
-            'the_tales': the_tales
+        template_context = {
+            'main_tales': main_tales,    
+            'remaining_tales': remaining_tales
         }            
         template = jinja_env.get_template('tale/index.html')
         output = template.render(template_context)

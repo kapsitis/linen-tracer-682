@@ -136,7 +136,7 @@ Uz tāfeles sākotnēji pa reizei uzrakstīti veselie skaitļi no $0$ līdz
 $1024$ ieskaitot. Spēlētāji $A$ un $B$ spēlē sekojošu spēli.
 Vispirms $A$ nodzēš $2^9=512$ skaitļus. Pēc tam $B$ nodzēš $2^8=256$
 skaitļus. Pēc tam $A$ nodzēš $2^7=128$ skaitļus. Pēc tam $B$ nodzēš
-$2^6 =64$ skaitļus utt., kamēr ar pēdējo gājienu $B nodzēš $2^0=1$
+$2^6 =64$ skaitļus utt., kamēr ar pēdējo gājienu $B$ nodzēš $2^0=1$
 skaitli. Uz tāfeles paliek divi skaitļi; apzīmēsim tos ar $x$ un $y$.
 Spēlētājs $A$ vēlas, lai $\left| x-y \right|$ būtu iespējami liels; 
 $B$ vēlas, lai $\left| x-y \right|$ būtu iespējami mazs. 
@@ -209,9 +209,9 @@ kvadrāti?
 # <lo-sample/> LV.VO.2003.12.1
 
 Vai eksistē  
-(a) tādi naturāli skaitļi $x$, $y$ un $z$, 
+**(a)** tādi naturāli skaitļi $x$, $y$ un $z$, 
 kas lielāki par $1$, ka $x! \cdot y! = z!$?  
-(b) tādi naturāli skaitļi $a, b, c, d, e$, kas lielāki par $1$, ka
+**(b)** tādi naturāli skaitļi $a, b, c, d, e$, kas lielāki par $1$, ka
 $a! \cdot b! \cdot c! \cdot d! = e!$?
 
 
@@ -221,13 +221,13 @@ $a! \cdot b! \cdot c! \cdot d! = e!$?
 
 ![skaitļu tabula](LV.VO.2003.12.4.png)
 
-</hgroup><hgroup>
+</hgroup><hgroup style="font-size:70%">
 
 "Tabulā" augšējā rindiņā pēc kārtas izrakstīti naturāli skaitļi no $1$ līdz $5$;
 nākošajās rindiņās katrs skaitlis vienāds ar abu virs tā uzrakstīto
 skaitļu summu. Kāds skaitlis atrodas apakšējā "virsotnē" tabulā, kas
-veidota līdzīgi un kuras augšējā rindiņā izrakstīti naturāli skaitļi no $1$
-līdz $2003$ ieskaitot?
+veidota līdzīgi un kuras augšējā rindiņā izrakstīti 
+naturāli skaitļi no $1$ līdz $2003$ ieskaitot?
 
 </hgroup>
 
@@ -324,10 +324,10 @@ Par skaitļu virkni $x_1, x_2, x_3, \ldots$ zināms, ka
 
 * $x_1=1$
 * $x_{2n}=1+x_n$ visiem naturāliem $n$
-* x_{2n+1} = \frac{1}{x_{2n}} visiem naturāliem $n$.
+* $x_{2n+1} = \frac{1}{x_{2n}}$ visiem naturāliem $n$.
 
-(a) Pierādiet, ka visi virknes locekļi ir dažādi.  
-(b) Kuri skaitļi ir šīs virknes locekļi?
+**(a)** Pierādiet, ka visi virknes locekļi ir dažādi.  
+**(b)** Kuri skaitļi ir šīs virknes locekļi?
 
 
 
@@ -371,6 +371,8 @@ Atrisināt naturālos skaitļos vienādojumu $(x+y)(xy+1) = 2^z$.
 
 # <lo-sample/> LV.VO.2006.12.1
 
+<div style="font-size:70%">
+
 Pierādīt, ka 
 $$\left( 1 + tg 1^{\circ} \right) 
 \left( 1 + tg 2^{\circ} \right) 
@@ -379,7 +381,7 @@ $$\left( 1 + tg 1^{\circ} \right)
 \left( 1 + tg 44^{\circ} \right) 
 \left( 1 + tg 45^{\circ} \right) = 2^{23}.$$
 
-
+</div>
 
 
 # <lo-sample/> LV.VO.2006.12.4
@@ -408,7 +410,7 @@ skaitļi? (Saknes var būt arī vienādas.)
 ![squares](LV.VO.2007.9.5.png)
 
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 
 (a) Vai var 1.zīm. parādītās tabulas rūtiņās ierakstīt naturālus skaitļus no $1$
 līdz $9$ (katrā rūtiņā – citu skaitli) tā, lai izpildītos īpašība: ja rinda un kolonna
@@ -432,6 +434,8 @@ $x^2 - y^2 - x + y$ vērtība ir
 
 # <lo-sample/> LV.VO.2007.10.3
 
+<div style="font-size:70%">
+
 Ja $n$ - naturāls skaitlis, kas lielāks par $1$, tad ar $x(n)$ apzīmējam lielāko
 pirmskaitli, kas nepārsniedz $n$, bet ar $y(n)$ - mazāko pirmskaitli, kas
 pārsniedz $n$. Piemēram, $x(6) = 5$; $x(5) = 5$; $y(5) = 7$. Pierādīt, ka
@@ -439,6 +443,8 @@ $$\frac{1}{x(2)\cdot{}y(2)}+
 \frac{1}{x(3)\cdot{}y(3)}+
 \frac{1}{x(4)\cdot{}y(4)}+\ldots+
 \frac{1}{x(600)\cdot{}y(600)} = \frac{1}{2} - \frac{1}{601}.$$
+
+</div>
 
 
 
@@ -462,12 +468,13 @@ Dots, ka $n$ - naturāls skaitlis.
 
 # <lo-sample/> LV.VO.2007.11.5
 
+<div style="font-size:70%">
 
 Reālu skaitļu virknē $a_1, a_2, a_3, \ldots$ dots, ka $a_{11} = 4$, 
 $a_{22} = 2 un $a_{33} = 1$.
 Bez tam visiem naturāliem $n$ pastāv vienādība
-$$\frac{a_{n+3} - a_{n+3}{a_n - a_{n+1}} = 
-\frac{a_{n+3} + a_{n+3}{a_n + a_{n+1}}.$$
+$$\frac{a_{n+3} - a_{n+3}}{a_n - a_{n+1}} = 
+\frac{a_{n+3} + a_{n+3}}{a_n + a_{n+1}}.$$
 Pierādīt, ka  
 (a) neviens virknes loceklis nav $0$,  
 (b) virkne ir periodiska,  
@@ -475,6 +482,7 @@ Pierādīt, ka
 ir naturāla skaitļa kvadrāts, ja $k$ - patvaļīgs
 naturāls skaitlis.
 
+</div>
 
 
 # <lo-sample/> LV.VO.2007.12.5
@@ -560,7 +568,7 @@ Kādas ir iespējamās $n$ vērtības?
 # <lo-sample/> LV.VO.2009.11.1
 
 Apskatām skaitļu virkni 
-$F_1=1$; F_2=2$; $F_{n+2}=F_{n+1}+F_n$ pie $n \geq 1$. 
+$F_1=1$; $F_2=2$; $F_{n+2}=F_{n+1}+F_n$ pie $n \geq 1$. 
 Kāds lielākais šīs virknes elementu daudzums var veidot 
 vienu aritmētisku progresiju? 
 
@@ -790,7 +798,7 @@ Atrast vienu šādu virkņu piemēru.
 # <lo-sample/> LV.VO.2012.12.3
 
 Atrisināt naturālos skaitļos vienādojumu
-$n = \left\lfloor \frac{n}{2} \right\rfloor + 
+$$n = \left\lfloor \frac{n}{2} \right\rfloor + 
 \left\lfloor \frac{n}{3} \right\rfloor + 
 \left\lfloor \frac{n}{4} \right\rfloor + 
 \ldots + 
@@ -1192,10 +1200,10 @@ Lielākiem skaitļiem ($n=6,7,8,9$) šie atlikumi sāks atkārtoties.
 
 
 
-# <lo-sample/> LV.VO.2015.11.2
+# <lo-sample/> LV.VO.2015.11.1
 
 Kvadrātvienādojuma
-$$(1+\sqrt{5})x^2 - \sqrt[4]{7}\cdot{}(1 + \sqrt)^2x + \sqrt[4]{7} = 0$$
+$$(1+\sqrt{5})x^2 - \sqrt[4]{7}\cdot{}(1 + \sqrt{5})^2x + \sqrt[4]{7} = 0$$
 saknes ir skaitļi $a$ un $b$.
 Pierādīt, ka izteiksmes
 $a^4b + ab^4+ 3a^3b^2 + 3a^2b^3 + 16a^4b^3 + 16a^3b^4$
@@ -1435,8 +1443,8 @@ ka citu nav!
 Naturālā piecciparu skaitlī vienādus ciparus 
 aizstāja ar vienādiem burtiem, bet dažādus ciparus – ar
 dažādiem burtiem, un ieguva pierakstu $\overline{GANGA}$. 
-Zināms, ka $\overline{GANGA}, dalot ar $7$, dod atlikumu $A$, 
-$\overline{GANGA}, dalot ar $11$, dod atlikumu $N$, 
+Zināms, ka $\overline{GANGA}$, dalot ar $7$, dod atlikumu $A$, 
+$\overline{GANGA}$, dalot ar $11$, dod atlikumu $N$, 
 bet $\overline{GANGA}$, dalot ar $13$, dod atlikumu 
 $G$, turklāt $G > A > N$. Kāds varēja būt
 sākotnējais skaitlis?

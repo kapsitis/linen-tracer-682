@@ -440,11 +440,11 @@ kongruents ar $-1$ pēc $n$ moduļa?
 
 <span>(1) [Grupas un to īpašības](#section)</span>  
 <span style="color:darkgreen">**(2) Eilera/Fermā teorēmas**</span>  
-(3) [Primitīvo sakņu teorēma](#section-2)  
-(4) [Ķīniešu atlikumu teorēma](#section-3)  
-(5) [Valuāciju ievads](#section-4)  
-(6) [Valuācijas priekš $x^n \pm y^n$](#section-5)  
-(7) [Henzela lemma](#section-6)
+<span>(3) [Primitīvo sakņu teorēma](#section-2)</span>  
+<span>(4) [Ķīniešu atlikumu teorēma](#section-3)</span>  
+<span>(5) [Valuāciju ievads](#section-4)</span>  
+<span>(6) [Valuācijas priekš $x^n \pm y^n$](#section-5)</span>  
+<span>(7) [Henzela lemma](#section-6)</span>
 
 </hgroup>
 

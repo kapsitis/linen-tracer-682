@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#9: Aritmētiskas un ģeometriskas progresijas
+</h1>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section_4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section_5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="ceļa-karte" class="title-slide slide level1"><h1><lo-roadmap/> Ceļa karte</h1><hgroup>
+<ul>
+<li>#1: Eksperimenti un piemēru konstruēšana</li>
+<li>#2: Mainīgo izteiksmes un pārveidojumi</li>
+<li>#3: Algebriskas struktūras</li>
+<li>#4: Dalāmība un dalīšana pirmreizinātājos</li>
+<li>#5: LKD, MKD un valuācijas</li>
+<li>#6: Kongruence pēc fiksēta moduļa</li>
+<li>#7: Pretrunas modulis</li>
+</ul>
+</hgroup>
+<hgroup>
+<ul>
+<li>#8: Skaitļa pieraksts</li>
+<li><red><strong>#9: Progresijas</strong></red></li>
+<li>#10: Rekurentu virkņu periodiskums</li>
+<li>#11: Ekstrēmie elementi un Dirihlē princips</li>
+<li>#12: Invarianti un pamatojumi ar indukciju</li>
+<li>#13: Nevienādības</li>
+<li>#14: Kombinatoriskas metodes</li>
+</ul>
+</hgroup></section>
+<section id="aritmētisku-progresiju-jautājumi" class="title-slide slide level1"><h1><lo-why/> Aritmētisku progresiju jautājumi</h1><ul>
+<li>Kāpēc vienmēr var izpildīt dalīšanu ar atlikumu?</li>
+<li>Kāpēc, dalot aritmētiskas progresijas locekļus ar kādu <span class="math inline">\(m\)</span>, ne vienmēr rodas pilns atlikumu komplekts?</li>
+<li>Kāpēc var būt jāmeklē progresijas locekļu skaits intervālā?</li>
+</ul></section>
+<section id="aritmētisku-progresiju-lietojumi" class="title-slide slide level1"><h1>Aritmētisku progresiju lietojumi</h1><ul>
+<li>Lineāri vienādojumi veselos skaitļos.</li>
+<li>Ūdens liešanas, biljardu uzdevumi.</li>
+<li>Eiklīda algoritms un LKD kā invariants.</li>
+</ul>
+<p>TODO: Motivējošas bildītes, kas ilustrē progresijas.</p></section>
+<section id="ģeometrisku-progresiju-jautājumi" class="title-slide slide level1"><h1><lo-why/> Ģeometrisku progresiju jautājumi</h1><ul>
+<li>Kāpēc ģeometriskas progresijas rodas uzdevumos par līdzīgām (pašlīdzīgām) figūrām un konstrukcijām?</li>
+<li>Kāpēc ģeometriskas progresijas rodas skaitļa decimālpierakstā?</li>
+<li>Kāpēc ģeometrisku progresiju formulas ļauj pārveidot algebriskas izteiksmes?</li>
+</ul></section>
+<section id="ģeometrisku-progresiju-lietojumi" class="title-slide slide level1"><h1>Ģeometrisku progresiju lietojumi</h1><ul>
+<li>Skaitļi ar atkārtotiem cipariem vai ciparu fragmentiem</li>
+<li>Bezgalīgu decimāldaļu izteikšana parastas daļas formā (izteiksmes <span class="math inline">\(0.111\ldots\)</span> un <span class="math inline">\(0.010101\ldots\)</span>).</li>
+<li>Pārveidot izteiksmes <span class="math inline">\(a^n - b^n\)</span>, <span class="math inline">\(a^{2n+1} + b^{2n+1}\)</span> lietojot ģeometriskas progresijas summu.</li>
+<li>Veidot virknes ar skaitļiem, kuriem katrus divus var izdalīt bez atlikuma.</li>
+<li>Ģeometriskas progresijas svēršanā un meklēšanā</li>
+<li>Ciparu skaita novērtējums pakāpēs</li>
+<li>Benforda sadalījums</li>
+</ul></section>
+<section id="sasniedzamie-rezultāti" class="title-slide slide level1"><h1>Sasniedzamie rezultāti</h1><ul>
+<li>Lietot skolas pamatkursa formulas par progresijām</li>
+<li>Atrast aritmētiskas progresijas locekļu skaitu intervālā</li>
+<li>Atrast iespējamos atlikumus, dalot progresiju ar skaitli</li>
+<li>Izmantot Bezū lemmu</li>
+<li>Pārrakstīt decimāldaļas kā ģeometriskas progresijas</li>
+<li>Noskaidrot, cik reizes jāreizina vai jādala ar <span class="math inline">\(q\)</span>, lai sasniegtu vēlamo vērtību</li>
+</ul></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#9: Aritmētiskas un ģeometriskas progresijas
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Pamatfakti</strong></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section_4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section_5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="aritmētiskas-progresijas-skolas-kursā" class="title-slide slide level1"><h1>Aritmētiskas progresijas skolas kursā</h1><ul>
+<li>Progresijas <span class="math inline">\(n\)</span>-tā locekļa formula</li>
+<li>Progresijas summas formula ar pirmo locekli un diferenci</li>
+<li>Progresijas summas formula ar malējo locekļu vidējo</li>
+</ul></section>
+<section id="progresijas-locekļu-skaits-intervālā" class="title-slide slide level1"><h1>Progresijas locekļu skaits intervālā</h1><p><strong>Apgalvojums:</strong> Intervālā <span class="math inline">\([1;n]\)</span> ir tieši <span class="math inline">\(\lfloor n/d \rfloor\)</span> daudzkārtņu progresijai <span class="math inline">\(a_k = k\cdot d\)</span>, <span class="math inline">\(k \in \mathbb{N}\)</span>.</p>
+<p>(Ja progresijas pirmais loceklis <span class="math inline">\(a_1 \neq d\)</span>, tad dalījums var būt jāapaļo gan uz augšu, gan uz leju.)</p></section>
+<section id="progresijas-summas-dalāmība" class="title-slide slide level1"><h1>Progresijas summas dalāmība</h1><ul>
+<li>Ja summēti nepāra skaits aritmētiskas progresijas locekļu <span class="math inline">\(S_n = a_1 + \ldots + a_n\)</span>, tad summa <span class="math inline">\(S_n\)</span> dalās ar <span class="math inline">\(n\)</span>.</li>
+<li>Ja summēti pāru skaits aritmētiskas progresijas locekļu, tad summa <span class="math inline">\(S_n\)</span> dalās ar <span class="math inline">\(n/2\)</span> (dažos gadījumos var dalīties arī ar <span class="math inline">\(n\)</span>, bet ne vienmēr).</li>
+</ul></section>
+<section id="mazākā-progresijas-diference" class="title-slide slide level1"><h1>Mazākā progresijas diference</h1><p><strong>Apgalvojums:</strong> Katrai augošai naturālu skaitļu virknei <span class="math inline">\(a_1 &lt; a_2 &lt; \ldots &lt; a_n\)</span> atradīsies tāds lielākais <span class="math inline">\(d\)</span>, ka visi <span class="math inline">\(a_i\)</span> pieder aritmētiskai progresijai ar diferenci <span class="math inline">\(d\)</span>.</p></section>
+<section id="bbk2012.p1.36" class="title-slide slide level1"><h1><lo-sample/> BBK2012.P1.36</h1><p>Trīs no aritmētiskās progresijas locekļiem ir <span class="math inline">\(41\)</span>, <span class="math inline">\(113\)</span>, <span class="math inline">\(193\)</span>. Atrast lielāko iespējamo diferences vērtību, ja zināms, ka tā ir vesels skaitlis.</p></section>
+<section id="lkd-saglabājas" class="title-slide slide level1"><h1>LKD saglabājas</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\(\mbox{LKD}(a_1,d) = k\)</span>, tad arī <span class="math inline">\(\mbox{LKD}(a_1+d,d)=k\)</span> un <span class="math inline">\(\mbox{LKD}(a_1 - d, d) = k\)</span>.</p>
+<p>Šis ir apgalvojums par invariantu: lielākais kopīgais dalītājs progresijas loceklim un diferencei saglabājas.</p></section>
+<section id="bbk2012.p1.104" class="title-slide slide level1"><h1><lo-sample/> BBK2012.P1.104</h1><p>Skaitļu virkne <span class="math inline">\((a_i)\)</span> tiek definēta šādi: <span class="math display">\[a_1=19,\;a_2=90,\;a_{n+2}=a_n+a_{n+1},\;\mbox{ja}\;n=1,2,3,\ldots.\]</span> Atrast skaitļu <span class="math inline">\(a_{1989}\)</span> un <span class="math inline">\(a_{1990}\)</span> lielāko kopīgo dalītāju.</p></section>
+<section id="eiklīda-algoritms" class="title-slide slide level1"><h1>Eiklīda algoritms</h1><p>Piemērs, kā aprēķināt divu skaitļu lielāko kopīgo dalītāju.</p></section>
+<section id="dalāmība-ar-atlikumu" class="title-slide slide level1"><h1>Dalāmība ar atlikumu</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\(a\)</span> ir vesels skaitlis, bet <span class="math inline">\(b\)</span> ir naturāls skaitlis, tad var izteikt: <span class="math display">\[a = q\cdot b +r,\;\;\mbox{kur $0 \leq r &lt; b$.}\]</span></p>
+<p><span class="math inline">\(q \in \mathbb{Z}\)</span> sauc par <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> dalījuma veselo daļu, bet <span class="math inline">\(r\)</span> sauc par <em>atlikumu</em>.<br />
+Šādi izdalīt vienmēr var, jo skaitlim <span class="math inline">\(b\)</span> var pieskaitīt (vai atņemt) <span class="math inline">\(a\)</span> tik daudzas reizes, lai rezultāts <span class="math inline">\(r\)</span> būtu viens no skaitļiem <span class="math inline">\(\{ 0,1,\ldots,a-1 \}\)</span>.</p></section>
+<section id="aritmētiskas-progresijas-atlikumi---1" class="title-slide slide level1"><h1>Aritmētiskas progresijas atlikumi - 1</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\((a_k)\)</span> ir aritmētiska progresija ar diferenci <span class="math inline">\(d\)</span>, <span class="math inline">\(m\)</span> ir kaut kāds naturāls skaitlis, un <span class="math inline">\(\mbox{LKD}(d,m)=1\)</span>, tad progresija <span class="math inline">\(a_k\)</span> pieņem visus iespējamos atlikumus, dalot ar <span class="math inline">\(m\)</span>.<br />
+Šādu atlikumu ir pavisam <span class="math inline">\(m\)</span>: <span class="math inline">\(\{ 0,1,\ldots,m-1 \}\)</span>.</p></section>
+<section id="aritmētiskas-progresijas-atlikumi---2" class="title-slide slide level1"><h1>Aritmētiskas progresijas atlikumi - 2</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\((a_k)\)</span> ir aritmētiska progresija ar diferenci <span class="math inline">\(d\)</span>, <span class="math inline">\(m\)</span> ir kaut kāds naturāls skaitlis, un <span class="math inline">\(\mbox{LKD}(d,m)=K&gt;1\)</span>, tad progresija <span class="math inline">\((a_k)\)</span> pieņem <span class="math inline">\(m/K\)</span> dažādus atlikumus dalot ar <span class="math inline">\(m\)</span>.</p></section>
+<section id="bbk2012.p1.122" class="title-slide slide level1"><h1><lo-sample/> BBK2012.P1.122</h1><p>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1983\)</span>, kuriem <span class="math inline">\(3n+5\)</span> dalās ar <span class="math inline">\(7\)</span>?</p></section>
+<section id="ģeometriskas-progresijas-skolas-kursā" class="title-slide slide level1"><h1>Ģeometriskas progresijas skolas kursā</h1><ul>
+<li>Progresijas <span class="math inline">\(n\)</span>-tā locekļa formula</li>
+<li>Galīgas progresijas summas formula</li>
+<li>Bezgalīgas progresijas summas formula</li>
+</ul></section>
+<section id="bbk2012.p1.52" class="title-slide slide level1"><h1><lo-sample/> BBK2012.P1.52</h1><p>Vai iespējams norādīt tādu galīgu skaitu ģeometrisko progresiju, kuru locekļi ir naturāli skaitļi, ka jebkurš naturāls skaitlis piederētu vismaz vienai progresijai?</p></section>
+<section id="lv.no.2004.8.2" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2004.8.2</h1><p>Ir zināms, ka skaitļa <span class="math inline">\(2^{200}\)</span> decimālajā pierakstā ir <span class="math inline">\(61\)</span> cipars. Cik daudziem no skaitļiem <span class="math inline">\(2^1; 2^2; 2^3; \ldots; 2^{199}; 2^{200}\)</span> decimālais pieraksts sākas ar ciparu <span class="math inline">\(1\)</span>?</p></section>
+<section id="logaritmiskā-skala" class="title-slide slide level1"><h1>Logaritmiskā skala</h1><ul>
+<li>Daži dabā sastopami lielumi (iedzīvotāju skaits dažādās valstīs; upju garums; balsotāju skaits balsošanas iecirkņos, utml.) atšķiras par vairākām kārtām - simtiem vai tūkstošiem reižu.</li>
+<li>Tie daudz vienmērīgāk izvietojas uz “logaritmiskas skalas”.</li>
+</ul></section>
+<section id="benforda-sadalījums" class="title-slide slide level1"><h1>Benforda sadalījums</h1><p>Divnieka pakāpēm pirmie cipari nepieņem visas <span class="math inline">\(9\)</span> vērtības vienādi bieži.</p></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#9: Aritmētiskas un ģeometriskas progresijas
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span style="color:darkgreen"><strong>(3) Aptauja</strong></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section_4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section_5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="jautājums-nr.1" class="title-slide slide level1"><h1>Jautājums Nr.1</h1><p>Dota aritmētiska progresija <span class="math inline">\((a_n)\)</span> (TODO: Definēt pirmo locekli un diferenci.). Atrast, cik daudzi tās locekļi ir divciparu skaitļi.</p></section>
+<section id="jautājums-nr.2" class="title-slide slide level1"><h1>Jautājums Nr.2</h1><p>Dota aritmētiska progresija <span class="math inline">\((a_n)\)</span> (TODO: Definēt pirmo locekli un diferenci.). Atrast, ar kādu ciparu var beigties tās locekļi.</p></section>
+<section id="jautājums-nr.3" class="title-slide slide level1"><h1>Jautājums Nr.3</h1><p>Dota aritmētiska progresija <span class="math inline">\((a_n)\)</span> (TODO: Definēt pirmo locekli un diferenci.). Atrast, kādu atlikumu var dot tās locekļi, dalot ar <span class="math inline">\(30\)</span>.</p></section>
+<section id="jautājums-nr.4" class="title-slide slide level1"><h1>Jautājums Nr.4</h1><p>Izteikt kā racionālas daļas:</p>
+<ol type="1">
+<li><span class="math inline">\(0.272727\ldots\)</span></li>
+<li><span class="math inline">\(0.123123123\ldots\)</span></li>
+</ol></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#9: Aritmētiskas un ģeometriskas progresijas
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span style="color:darkgreen"><strong>(4) Tipisks piemērs</strong></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="lv.ao.2004.8.5" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2004.8.5</h1><p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p></section>
+<section id="ieteikumi" class="title-slide slide level1"><h1>Ieteikumi</h1><ol type="1">
+<li>Novērtēt iterāciju skaitu</li>
+<li>Uzrakstīt formulu (ar pareizu noapaļošanu jeb veselo daļu), kas parāda, kurš numurs paliek pirmais neizsvītrotais kārtējā iterācijā.</li>
+</ol></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#9: Aritmētiskas un ģeometriskas progresijas
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span style="color:darkgreen"><strong>(5) Patstāvīgie uzdevumi</strong></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="bbk2012.p1.123" class="title-slide slide level1"><h1><lo-sample/> BBK2012.P1.123</h1><p>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1000\)</span>, kuri nedalās ne ar <span class="math inline">\(5\)</span>, ne ar <span class="math inline">\(7\)</span>?</p></section><section id="ieteikums-ieslēgšanas-izslēgšanas-princips" class="slide level2">
+<h2>Ieteikums: Ieslēgšanas-izslēgšanas princips</h2>
+<ul>
+<li>Uzzīmēt Eilera-Venna diagrammu, kurā redzami skaitļi, kas dalās ar <span class="math inline">\(5\)</span>, dalās ar <span class="math inline">\(7\)</span>, dalās ar abiem (t.i. ar <span class="math inline">\(35\)</span>).</li>
+<li>Novērtēt locekļu skaitu <span class="math inline">\(\mathbb{N}\)</span> sākumintervālā <span class="math inline">\([1;1000]\)</span></li>
+</ul>
+</section></section>
+<section id="lv.ao.2004.7.3" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2004.7.3</h1><p>Kādam mazākajam naturālajam <span class="math inline">\(n\)</span> visas daļas <span class="math display">\[\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, \ldots, \frac{35}{n+37}, \frac{36}{n+38}\]</span> ir nesaīsināmas?</p></section>
+<section id="lv.no.2008.7.1" class="title-slide slide level1"><h1><lo-sample/> LV.NO.2008.7.1</h1><p>Kurus naturālos skaitļus <span class="math inline">\(n\)</span> var izsacīt formā <span class="math inline">\(n=\frac{x}{y}\)</span>, kur <span class="math inline">\(x = a^3\)</span>, <span class="math inline">\(y = b^4\)</span>, <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> - naturāli skaitļi?</p></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#9: Aritmētiskas un ģeometriskas progresijas
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span style="color:darkgreen"><strong>(6) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1>Ko darījām šajā nodarbībā?</h1><ul>
+<li>Atkārtojām skolas formulas aritm. un ģeom. progresijām</li>
+<li>Izteicām progresijas locekļu skaitu intervālā ar veselo daļu: <span class="math inline">\(\lfloor n/d \rfloor\)</span></li>
+<li>Prognozējām, kādus atlikumus dod progresijas locekļi, dalot ar fiksētu skaitli <span class="math inline">\(m\)</span></li>
+<li>Izmantojām Bezū lemmu, izsakot LKD kā lineāru izteiksmju starpību.</li>
+<li>Pārveidojām atkārtojumus decimālpierakstā par ģeometrisku progresiju.</li>
+<li>Prognozējām ciparu skaitu pakāpēs un citās ģeometriskās progresijās.</li>
+</ul></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

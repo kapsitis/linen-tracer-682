@@ -61,27 +61,110 @@ Skaitļu teorija: 10.kl. LV
 </ul>
 <p></small></p></section>
 <section id="lv.vo.2001.9.2" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2001.9.2</h1><p>Naturāla skaitļa <span class="math inline">\(A\)</span> ciparus uzrakstīja pretējā secībā un ieguva skaitli <span class="math inline">\(B\)</span>. Izrādījās, ka <span class="math inline">\(B\)</span> dalās ar <span class="math inline">\(A\)</span>. Kāds var būt dalījums?</p></section>
-<section id="lv.vo.2001.10.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2001.10.5</h1><p>Kādiem naturāliem skaitļiem <span class="math inline">\(n\)</span> piemīt sekojoša īpašība: nosvītrojot skaitļa <span class="math inline">\(2^n\)</span> pirmo ciparu, iegūst divnieka pakāpi ar naturālu kāpinātāju?</p></section>
+<section><section id="lv.vo.2001.10.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2001.10.5</h1><p>Kādiem naturāliem skaitļiem <span class="math inline">\(n\)</span> piemīt sekojoša īpašība: nosvītrojot skaitļa <span class="math inline">\(2^n\)</span> pirmo ciparu, iegūst divnieka pakāpi ar naturālu kāpinātāju?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">misc.try</a></li>
+<li><a href="#/">mod.exp.period</a></li>
+<li><a href="#/">nota.divrule.3_9.divides</a></li>
+<li><a href="#/">div.fta.divisors</a></li>
+</ul>
+<p></small></p></section><section id="eksperimentēšana" class="slide level2">
+<h2>Eksperimentēšana</h2>
+<ul>
+<li>Divnieka pakāpes <span class="math inline">\(32\)</span> un <span class="math inline">\(64\)</span> der.</li>
+<li>Nosvītrotā cipara skaitliskā vērtība abos gadījumos ir <span class="math inline">\(15\)</span> daudzkārtnis. Piemēram:</li>
+</ul>
+<p><span class="math display">\[2^6-2^2 = 2^2(2^4-1)=2^2(8+4+2+1).\]</span></p>
+</section><section id="atlikumu-periodiskums" class="slide level2">
+<h2>Atlikumu periodiskums</h2>
+<ul>
+<li>Lai <span class="math inline">\(2^n - 2^m = 2^m(2^{n-m}-1)\)</span> būtu nosvītrojamais cipars, jādalās ar <span class="math inline">\(5\)</span></li>
+<li><span class="math inline">\(2^{n-m}\)</span>, dalot ar <span class="math inline">\(5\)</span>, dod periodiskus atlikumus; vajag <span class="math inline">\(1\)</span>.</li>
+<li>Tātad <span class="math inline">\(n-m\)</span> jādalās ar <span class="math inline">\(4\)</span> (atbilst <span class="math inline">\(16,256,\ldots\)</span>).</li>
+</ul>
+<p><strong>Secinājums:</strong> Ja <span class="math inline">\(2^{n-m} - 1\)</span> dalās ar <span class="math inline">\(5\)</span>, tad tas dalās arī ar <span class="math inline">\(3\)</span>.<br />
+<em>Pierādījums:</em> Divnieka pakāpes dalot ar <span class="math inline">\(3\)</span>, atlikumi arī ir periodiski (<span class="math inline">\(2^{n-m} - 1\)</span> dalās ar <span class="math inline">\(3\)</span> t.t.t. ja <span class="math inline">\(n-m\)</span> ir pāru). Bet tā kā <span class="math inline">\(n-m\)</span> dalās ar <span class="math inline">\(4\)</span>, tad tas dalīsies arī ar <span class="math inline">\(2\)</span>.</p>
+</section><section id="citi-pirmreizinātāji-nevar-būt" class="slide level2">
+<h2>Citi pirmreizinātāji nevar būt</h2>
+<ul>
+<li><span class="math inline">\(2^m\cdot{}(2^{n-m}-1)\)</span> ciparu summai jādalās ar <span class="math inline">\(3\)</span> (bet ne ar <span class="math inline">\(9\)</span>)</li>
+<li>Vienīgi cipari <span class="math inline">\(3\)</span>, <span class="math inline">\(6\)</span> apmierina šo īpašību.</li>
+<li>Dalot <span class="math inline">\(300\)</span>, <span class="math inline">\(600\)</span> (vai <span class="math inline">\(3000\)</span>, <span class="math inline">\(6000\)</span> utt.) ar divnieka pakāpēm, iegūsim tikai pirmreizinātājus <span class="math inline">\(3\)</span> un <span class="math inline">\(5\)</span>.</li>
+</ul>
+</section></section>
 <section id="lv.vo.2001.11.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2001.11.1</h1><p>Pierādīt, ka <span class="math inline">\(\sqrt[3]{5\sqrt{2} + 7} - \sqrt[3]{5\sqrt{2} - 7} = 2\)</span>.</p></section>
 <section id="lv.vo.2001.11.3" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2001.11.3</h1><p>Atrisināt naturālos skaitļos vienādojumu <span class="math inline">\(x^2+3^x=y^2\)</span>.</p></section>
 <section id="lv.vo.2001.12.3" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2001.12.3</h1><p>Atrisināt naturālos skaitļos vienādojumu <span class="math inline">\(x^2-y!=2001\)</span>. (Piezīme: ar <span class="math inline">\(y!\)</span> saprot visu naturālo skaitļu reizinājumu no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(y\)</span> ieskaitot.)</p></section>
-<section id="lv.vo.2002.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.9.1</h1><p>Par naturāliem skaitļiem <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> zināms, ka <span class="math inline">\(30&lt;x&lt;40&lt;y&lt;50\)</span> un <span class="math inline">\(xy\)</span> ir kāda vesela skaitļa kubs. Kādas ir <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> vērtības?</p>
+<section><section id="lv.vo.2002.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.9.1</h1><p>Par naturāliem skaitļiem <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> zināms, ka <span class="math inline">\(30&lt;x&lt;40&lt;y&lt;50\)</span> un <span class="math inline">\(xy\)</span> ir kāda vesela skaitļa kubs. Kādas ir <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> vērtības?</p>
 <p><small></p>
 <ul>
 <li><a href="#/">div.fta.pow</a></li>
+<li><a href="#/">comb.full</a></li>
 </ul>
-<p></small></p></section>
-<section id="lv.vo.2002.10.4" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.10.4</h1><p>Kādiem naturāliem skaitļiem n skaitlis <span class="math inline">\(n\cdot{}2^{n-1}\)</span> ir naturāla skaitļa kvadrāts?</p></section>
+<p></small></p></section><section id="kādi-skaitļi-ir-pilni-kubi" class="slide level2">
+<h2>Kādi skaitļi ir pilni kubi</h2>
+<ul>
+<li>Reizinājums <span class="math inline">\(xy\)</span> ir pilns kubs, ja ikviena <span class="math inline">\(xy\)</span> pirmreizinātāja pakāpe dalās ar <span class="math inline">\(3\)</span>.</li>
+<li>Daudzas <span class="math inline">\(x,y\)</span> vērtības (kas satur tādus pirmreizinātājus <span class="math inline">\(p\)</span>, kas nav kvadrātā, kam nevar piereizināt <span class="math inline">\(p^2\)</span>), var izslēgt: <span class="math display">\[\left\{ 
+\begin{array}{l}
+x \neq 31;\;33;\;34;\;35;\;37;\;38;\;39\\
+y \neq 41;\;42;\;43;\;44;\;45;\;46;\;47;\;49\\
+\end{array} \right.\]</span></li>
+</ul>
+</section><section id="gadījumi" class="slide level2">
+<h2>Gadījumi</h2>
+<p>Pirmreizinātājus <span class="math inline">\(5\)</span> un <span class="math inline">\(7\)</span> izmantot nav iespējams, jo <span class="math inline">\(y=49\)</span> varētu salikt kopā vienīgi ar <span class="math inline">\(x=35\)</span>, bet tad kāpinātājs pie <span class="math inline">\(5\)</span> nedalītos ar trīs (jo <span class="math inline">\(x,y \in (25;50)\)</span>). Paliek tikai pirmskaitļi <span class="math inline">\(2\)</span> un <span class="math inline">\(3\)</span> un šādas vērtības:</p>
+<p><span class="math display">\[x = 32;\;36\;\;\mbox{un}\;\;y=48.\]</span></p>
+<p>Der vienīgi <span class="math inline">\(x=36\)</span>, <span class="math inline">\(y=48\)</span>. Tad <span class="math inline">\(xy=2^63^3\)</span> un <span class="math inline">\(\sqrt[3]{xy}=12\)</span>.</p>
+</section></section>
+<section id="lv.vo.2002.10.4" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.10.4</h1><p>Kādiem naturāliem skaitļiem <span class="math inline">\(n\)</span> skaitlis <span class="math inline">\(n\cdot{}2^{n-1}\)</span> ir naturāla skaitļa kvadrāts?</p></section>
 <section id="lv.vo.2002.10.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.10.5</h1><p>Uz tāfeles sākotnēji pa reizei uzrakstīti veselie skaitļi no <span class="math inline">\(0\)</span> līdz <span class="math inline">\(1024\)</span> ieskaitot. Spēlētāji <span class="math inline">\(A\)</span> un <span class="math inline">\(B\)</span> spēlē sekojošu spēli. Vispirms <span class="math inline">\(A\)</span> nodzēš <span class="math inline">\(2^9=512\)</span> skaitļus. Pēc tam <span class="math inline">\(B\)</span> nodzēš <span class="math inline">\(2^8=256\)</span> skaitļus. Pēc tam <span class="math inline">\(A\)</span> nodzēš <span class="math inline">\(2^7=128\)</span> skaitļus. Pēc tam <span class="math inline">\(B\)</span> nodzēš <span class="math inline">\(2^6 =64\)</span> skaitļus utt., kamēr ar pēdējo gājienu <span class="math inline">\(B\)</span> nodzēš <span class="math inline">\(2^0=1\)</span> skaitli. Uz tāfeles paliek divi skaitļi; apzīmēsim tos ar <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>. Spēlētājs <span class="math inline">\(A\)</span> vēlas, lai <span class="math inline">\(\left| x-y \right|\)</span> būtu iespējami liels; <span class="math inline">\(B\)</span> vēlas, lai <span class="math inline">\(\left| x-y \right|\)</span> būtu iespējami mazs. Cik lielu <span class="math inline">\(\left| x-y \right|\)</span> vērtību <span class="math inline">\(A\)</span> var sasniegt?</p></section>
 <section id="lv.vo.2002.11.2" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.11.2</h1><p>Vienā kaudzītē ir <span class="math inline">\(m\)</span> konfektes, otrā - <span class="math inline">\(n\)</span> konfektes. Ar vienu gājienu var vai nu apēst vienu konfekti, vai apēst pa vienai konfektei no katras kaudzītes, vai arī pārlikt vienu konfekti no vienas kaudzītes uz otru. Kas nevar izdarīt gājienu, zaudē. Andris un Juris izdara pa vienam gājienam pēc kārtas; pirmais iet Andris. Kurš uzvar, pareizi spēlējot?</p></section>
-<section id="lv.vo.2002.11.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.11.5</h1><p>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība: visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</p>
+<section><section id="lv.vo.2002.11.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.11.5</h1><p>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība: visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</p>
 <p><small></p>
 <ul>
-<li><a href="#/">seq.arithm.mod</a></li>
+<li><a href="#/">div.fta.divisors</a></li>
+<li><a href="#/">seq.arithm</a></li>
 </ul>
-<p></small></p></section>
+<p></small></p></section><section id="nepilna-pārlase" class="slide level2">
+<h2>Nepilna pārlase</h2>
+<ul>
+<li>Der visi pirmskaitļi <span class="math inline">\(n&gt;3\)</span>, jo skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kas ir savstarpēji pirmskaitļi ar <span class="math inline">\(n\)</span> ir šie: <span class="math display">\[1,2,\ldots,n-2,n-1.\]</span></li>
+<li>Der visas pakāpes <span class="math inline">\(2^k &gt; 3\)</span>, jo savstarpēji pirmskaitļi ir visi nepāru skaitļi: <span class="math display">\[1,3,5,\ldots,2^k-3,2^k-1.\]</span></li>
+</ul>
+</section><section id="neder-citi-skaitļi" class="slide level2">
+<h2>Neder citi skaitļi</h2>
+<ul>
+<li>Pieņemsim, ka <span class="math inline">\(n = (2k+1)2^m\)</span> ir pāru skaitlis, kas nav <span class="math inline">\(2\)</span> pakāpe.</li>
+<li>Savstarpēji pirmskaitļi ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span> un <span class="math inline">\(3\)</span>.</li>
+<li>Ja <span class="math inline">\(n\)</span> ir pāru skaitlis, kas nav divnieka pakāpe, tam ir nepāru dalītājs.</li>
+<li>Tāpēc progresijā <span class="math inline">\(1,3,\ldots\)</span> būs kāds nepāru skaitlis. Pretruna.</li>
+</ul>
+<p>Līdzīgu iemeslu dēļ neder arī nepāru skaitļi, kas nav pirmskaitļi.</p>
+</section></section>
 <section id="lv.vo.2002.12.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.12.1</h1><p>Ja <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> - naturāli skaitļi, tad ar <span class="math inline">\((a,b)\)</span> apzīmējam <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> lielāko kopīgo dalītāju. Atrast lielāko iespējamo <span class="math inline">\((4n+3,6n+1)\)</span> vērtību, ja <span class="math inline">\(n\)</span> - naturāls skaitlis.</p></section>
-<section id="lv.vo.2003.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2003.9.1</h1><p>Naturālu skaitli sauc par simetrisku, ja, izlasot tā decimālo pierakstu no otra gala, iegūst to pašu skaitli. Piemēram, simetriski ir skaitļi <span class="math inline">\(111\)</span>; <span class="math inline">\(424\)</span>; <span class="math inline">\(88\)</span>; <span class="math inline">\(5225\)</span>; <span class="math inline">\(7\)</span>. Ir zināms, ka visi sešciparu simetriskie naturālie skaitļi dalās ar naturālu skaitli <span class="math inline">\(x\)</span>. Kādas var būt <span class="math inline">\(x\)</span> vērtības?</p></section>
+<section><section id="lv.vo.2003.9.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2003.9.1</h1><p>Naturālu skaitli sauc par simetrisku, ja, izlasot tā decimālo pierakstu no otra gala, iegūst to pašu skaitli. Piemēram, simetriski ir skaitļi <span class="math inline">\(111\)</span>; <span class="math inline">\(424\)</span>; <span class="math inline">\(88\)</span>; <span class="math inline">\(5225\)</span>; <span class="math inline">\(7\)</span>. Ir zināms, ka visi sešciparu simetriskie naturālie skaitļi dalās ar naturālu skaitli <span class="math inline">\(x\)</span>. Kādas var būt <span class="math inline">\(x\)</span> vērtības?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">nota.divrule.11</a></li>
+<li><a href="#/">misc.extr</a></li>
+<li><a href="#/">div.common.gcd.euclid</a></li>
+</ul>
+<p></small></p></section><section id="dalāmība-ar-11" class="slide level2">
+<h2>Dalāmība ar 11</h2>
+<ul>
+<li>Skaitlis <span class="math inline">\(\overline{abccba} = 100001a + 010010b + 001100c\)</span> noteikti dalās ar <span class="math inline">\(11\)</span> (dalāmības pazīme, kā arī <span class="math inline">\(100001\)</span>, <span class="math inline">\(10010\)</span>, <span class="math inline">\(1100\)</span> dalās ar <span class="math inline">\(11\)</span>).</li>
+<li>Vai <span class="math inline">\(11\)</span> ir lielākais kopīgais dalītājs (lielākā <span class="math inline">\(x\)</span> vērtība)?</li>
+</ul>
+</section><section id="ekstrēmi-elementi" class="slide level2">
+<h2>Ekstrēmi elementi</h2>
+<ul>
+<li>Divi mazākie simetriskie skaitļi (jeb palindromi) ir <span class="math inline">\(100001\)</span> un <span class="math inline">\(101101\)</span>. Atrodam to LKD: <span class="math display">\[\mbox{LKD}(101101,100001) = \mbox{LKD}(100001,1100).\]</span></li>
+<li>Skaitlis <span class="math inline">\(1100\)</span> satur pirmreizinātājus <span class="math inline">\(11\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(5\)</span>, bet ar <span class="math inline">\(2\)</span> un <span class="math inline">\(5\)</span> daudzi simetriski skaitļi nedalās.</li>
+</ul>
+<p>Tātad <span class="math inline">\(x=11\)</span> ir lielākā <span class="math inline">\(x\)</span> vērtība. Var būt arī <span class="math inline">\(x=1\)</span>.</p>
+</section></section>
 <section id="lv.vo.2003.10.2" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2003.10.2</h1><p>Dots, ka <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir naturāli skaitļi, pie tam <span class="math inline">\(a\)</span> nedalās ar <span class="math inline">\(5\)</span>. Skaitļu virkni <span class="math inline">\(x_1, x_2, x_3, \ldots\)</span> veido sekojoši: <span class="math inline">\(x_1 = 5\)</span>, <span class="math inline">\(x_{n+1} = ax_n + b\)</span>, ja <span class="math inline">\(n=1;2;3;\ldots\)</span>. Kādai lielākajai <span class="math inline">\(k\)</span> vērtībai iespējams, ka visi skaitļi <span class="math inline">\(x_1;x_2;x_3;\ldots;x_k\)</span> ir pirmskaitļi?</p></section>
 <section id="lv.vo.2003.11.2" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2003.11.2</h1><p>Naturālu skaitļu virknē <span class="math inline">\(a_1, a_2, \ldots\)</span> pirmo locekli <span class="math inline">\(a_1\)</span> izvēlas patvaļīgi, un pie <span class="math inline">\(n \geq 1\)</span> pastāv vienādība <span class="math inline">\(a_{n+1} = a_n^3 + 2003\)</span>. Kāds lielākais daudzums virknes locekļu var būt naturālu skaitļu kvadrāti?</p></section>
 <section id="lv.vo.2003.12.1" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2003.12.1</h1><p>Vai eksistē<br />

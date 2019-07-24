@@ -461,6 +461,20 @@
     };
 
     // KAP
+    var getHead = function() {
+        var theP = document.createElement("p"); 
+        theP.setAttribute("style","position:absolute;top:4px;right:16px;z-index:1;");
+	var theHead = document.createElement("img");
+        theHead.setAttribute("src","head.png");
+	theHead.setAttribute("width","42");
+        theHead.setAttribute("alt","asterisk");
+        theP.appendChild(theHead);
+        return theP;
+    };
+
+
+
+    // KAP
     var getLogo = function() {
 	var theLogo = document.createElement("img");
         theLogo.setAttribute("src","biglogo.png");
@@ -495,6 +509,16 @@
 		var theAsterisk = getAsterisk();
 		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
                 console.log("Added class 'summary'");
+            } else if (x[i].innerHTML.indexOf("lo-quiz") !== -1) {
+                x[i].classList.add('quiz');
+		var theHead = getHead();
+		x[i].parentNode.insertBefore(theHead,x[i].parentNode.firstChild);
+                console.log("Added class 'quiz'");
+            } else if (x[i].innerHTML.indexOf("lo-default") !== -1) {
+                x[i].classList.add('LOdefault');
+		var theAsterisk = getAsterisk();
+		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
+                console.log("Added class 'LOdefault'");
             } else {
                 x[i].classList.add('default');
             }

@@ -92,6 +92,46 @@ Izrādījās, ka $B$ dalās ar $A$. Kāds var būt dalījums?
 Kādiem naturāliem skaitļiem $n$ piemīt sekojoša īpašība: nosvītrojot
 skaitļa $2^n$ pirmo ciparu, iegūst divnieka pakāpi ar naturālu kāpinātāju?
 
+<small>
+
+* [misc.try](#)
+* [mod.exp.period](#)
+* [nota.divrule.3_9.divides](#)
+* [div.fta.divisors](#)
+
+
+</small>
+
+## Eksperimentēšana
+
+* Divnieka pakāpes $32$ un $64$ der. 
+* Nosvītrotā cipara skaitliskā vērtība abos gadījumos ir $15$ daudzkārtnis. 
+Piemēram:
+
+$$2^6-2^2 = 2^2(2^4-1)=2^2(8+4+2+1).$$ 
+
+## Atlikumu periodiskums
+
+* Lai $2^n - 2^m = 2^m(2^{n-m}-1)$ būtu 
+nosvītrojamais cipars, jādalās ar $5$
+* $2^{n-m}$, dalot ar $5$, 
+dod periodiskus atlikumus; vajag $1$.
+* Tātad $n-m$ jādalās ar $4$ (atbilst $16,256,\ldots$).
+
+
+**Secinājums:** Ja $2^{n-m} - 1$ dalās ar $5$, tad tas
+dalās arī ar $3$.   
+*Pierādījums:* Divnieka pakāpes dalot ar $3$, atlikumi arī 
+ir periodiski ($2^{n-m} - 1$ dalās ar $3$ t.t.t. ja $n-m$ ir 
+pāru). Bet tā kā $n-m$ dalās ar $4$, tad tas dalīsies arī ar $2$. 
+
+## Citi pirmreizinātāji nevar būt
+
+* $2^m\cdot{}(2^{n-m}-1)$ ciparu summai jādalās ar $3$ (bet ne ar $9$)
+* Vienīgi cipari $3$, $6$ apmierina šo īpašību.
+* Dalot $300$, $600$ (vai $3000$, $6000$ utt.) ar divnieka pakāpēm, 
+iegūsim tikai pirmreizinātājus $3$ un $5$.
+
 
 # <lo-sample/> LV.VO.2001.11.1
 
@@ -120,13 +160,40 @@ skaitļa kubs. Kādas ir $x$ un $y$ vērtības?
 <small>
 
 * [div.fta.pow](#)
+* [comb.full](#)
 
 </small>
 
 
+## Kādi skaitļi ir pilni kubi
+
+* Reizinājums $xy$ ir pilns kubs, ja ikviena $xy$ 
+pirmreizinātāja pakāpe dalās ar $3$.
+* Daudzas $x,y$ vērtības (kas satur tādus pirmreizinātājus $p$, 
+kas nav kvadrātā, kam nevar piereizināt $p^2$), var izslēgt:
+$$\left\{ 
+\begin{array}{l}
+x \neq 31;\;33;\;34;\;35;\;37;\;38;\;39\\
+y \neq 41;\;42;\;43;\;44;\;45;\;46;\;47;\;49\\
+\end{array} \right.$$
+
+## Gadījumi
+
+Pirmreizinātājus $5$ un $7$ izmantot nav iespējams, jo $y=49$ 
+varētu salikt kopā vienīgi ar $x=35$, bet tad kāpinātājs pie
+$5$ nedalītos ar trīs (jo $x,y \in (25;50)$). Paliek 
+tikai pirmskaitļi $2$ un $3$ un šādas vērtības:
+
+$$x = 32;\;36\;\;\mbox{un}\;\;y=48.$$
+
+Der vienīgi $x=36$, $y=48$. Tad $xy=2^63^3$ un $\sqrt[3]{xy}=12$.
+
+
+
+
 # <lo-sample/> LV.VO.2002.10.4
 
-Kādiem naturāliem skaitļiem n skaitlis $n\cdot{}2^{n-1}$ 
+Kādiem naturāliem skaitļiem $n$ skaitlis $n\cdot{}2^{n-1}$ 
 ir naturāla skaitļa kvadrāts?
 
 
@@ -168,9 +235,32 @@ veido aritmētisku progresiju?
 
 <small>
 
-* [seq.arithm.mod](#)
+* [div.fta.divisors](#)
+* [seq.arithm](#)
 
 </small>
+
+## Nepilna pārlase
+
+* Der visi pirmskaitļi $n>3$, jo skaitļi, kas mazāki par $n$
+un kas ir savstarpēji pirmskaitļi ar $n$ ir šie:
+$$1,2,\ldots,n-2,n-1.$$
+* Der visas pakāpes $2^k > 3$, jo savstarpēji pirmskaitļi 
+ir visi nepāru skaitļi: 
+$$1,3,5,\ldots,2^k-3,2^k-1.$$
+
+## Neder citi skaitļi
+
+* Pieņemsim, ka $n = (2k+1)2^m$ ir pāru skaitlis, kas nav $2$ pakāpe.
+* Savstarpēji pirmskaitļi ar $n$ ir $1$ un $3$. 
+* Ja $n$ ir pāru skaitlis, kas nav divnieka pakāpe, tam 
+ir nepāru dalītājs. 
+* Tāpēc progresijā $1,3,\ldots$ būs kāds nepāru skaitlis. 
+Pretruna.
+
+Līdzīgu iemeslu dēļ neder arī nepāru skaitļi, kas nav pirmskaitļi.
+
+
 
 
 # <lo-sample/> LV.VO.2002.12.1
@@ -187,6 +277,31 @@ pierakstu no otra gala, iegūst to pašu skaitli. Piemēram,
 simetriski ir skaitļi $111$; $424$; $88$; $5225$; $7$. 
 Ir zināms, ka visi sešciparu simetriskie naturālie skaitļi 
 dalās ar naturālu skaitli $x$. Kādas var būt $x$ vērtības?
+
+<small>
+
+* [nota.divrule.11](#)
+* [misc.extr](#)
+* [div.common.gcd.euclid](#)
+
+</small>
+
+## Dalāmība ar 11
+
+* Skaitlis $\overline{abccba} = 100001a + 010010b + 001100c$ 
+noteikti dalās ar $11$ (dalāmības pazīme, kā arī $100001$, 
+$10010$, $1100$ dalās ar $11$). 
+* Vai $11$ ir lielākais kopīgais dalītājs (lielākā $x$ vērtība)? 
+
+## Ekstrēmi elementi
+
+* Divi mazākie simetriskie skaitļi (jeb palindromi) ir 
+$100001$ un $101101$. Atrodam to LKD:
+$$\mbox{LKD}(101101,100001) = \mbox{LKD}(100001,1100).$$ 
+* Skaitlis $1100$ satur pirmreizinātājus $11$, $2$, $5$, bet
+ar $2$ un $5$ daudzi simetriski skaitļi nedalās. 
+
+Tātad $x=11$ ir lielākā $x$ vērtība. Var būt arī $x=1$. 
 
 
 

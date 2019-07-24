@@ -4152,7 +4152,12 @@
         "id": "LV.VO.2001.10.5",
         "qtypes": [],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "misc.try",
+            "mod.exp.period",
+            "nota.divrule.3_9.divides",
+            "div.fta.divisors"
+        ]
     },
     {
         "concepts": [],
@@ -4185,7 +4190,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "div.fta.pow"
+            "div.fta.pow",
+            "comb.full"
         ]
     },
     {
@@ -4219,7 +4225,8 @@
         "qtypes": [],
         "seeAlso": [],
         "tasks": [
-            "seq.arithm.mod"
+            "div.fta.divisors",
+            "seq.arithm"
         ]
     },
     {
@@ -4236,7 +4243,11 @@
         "id": "LV.VO.2003.9.1",
         "qtypes": [],
         "seeAlso": [],
-        "tasks": []
+        "tasks": [
+            "nota.divrule.11",
+            "misc.extr",
+            "div.common.gcd.euclid"
+        ]
     },
     {
         "concepts": [],

@@ -484,11 +484,11 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 <li>Trešajā sekundē krīt <span class="math inline">\(25\,m\)</span>, utt.</li>
 </ul>
 </section></section>
-<section><section id="lielākā-vai-mazākā-diference-lkd" class="title-slide slide level1"><h1><lo-theory/> Lielākā vai mazākā diference (LKD)</h1><p><strong>Apgalvojums:</strong> Katrai augošai naturālu skaitļu virknei <span class="math inline">\(a_1 &lt; a_2 &lt; \ldots &lt; a_n\)</span> atradīsies lielākais <span class="math inline">\(d\)</span>, ka visi <span class="math inline">\(a_i\)</span> pieder aritmētiskai progresijai ar diferenci <span class="math inline">\(d\)</span>. Tas ir visu pāru <span class="math inline">\(|a_i - a_j|\)</span> starpību lielākais kopīgais dalītājs.</p>
+<section><section id="lielāko-diferenci-meklējot-lkd" class="title-slide slide level1"><h1><lo-theory/> Lielāko diferenci meklējot (LKD)</h1><p><strong>Apgalvojums:</strong> Katrai augošai naturālu skaitļu virknei <span class="math inline">\(a_1 &lt; a_2 &lt; \ldots &lt; a_n\)</span> atradīsies lielākais <span class="math inline">\(d\)</span>, ka visi <span class="math inline">\(a_i\)</span> pieder aritmētiskai progresijai ar diferenci <span class="math inline">\(d\)</span>. Tas ir visu starpību <span class="math inline">\((a_i - a_j)\)</span> lielākais kopīgais dalītājs.</p>
 <figure>
 <img data-src="greatest-common-divisor.png" alt="LKD" /><figcaption>LKD</figcaption>
-</figure></section><section id="lielākā-vai-mazākā-diference-mkd" class="slide level2">
-<h2><lo-theory/> Lielākā vai mazākā diference (MKD)</h2>
+</figure></section><section id="mazāko-diferenci-meklējot-mkd" class="slide level2">
+<h2><lo-theory/> Mazāko diferenci meklējot (MKD)</h2>
 <p><strong>Apgalvojums:</strong> Divām aritmētiskām progresijām ar diferencēm <span class="math inline">\(d_1\)</span> un <span class="math inline">\(d_2\)</span> vai nu nav kopīgu locekļu, vai arī tie veido aritmētisku progresiju ar diferenci <span class="math inline">\(\mbox{MKD}(d_1,d_2)\)</span><br />
 <em>Piezīme.</em> Ar <span class="math inline">\(\mbox{MKD}(a,b)\)</span> apzīmējam divu skaitļu mazāko kopīgo dalāmo.</p>
 <figure>
@@ -513,9 +513,18 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 </ul>
 </section></section>
 <section><section id="locekļu-skaits-intervālā" class="title-slide slide level1"><h1><lo-theory/> Locekļu skaits intervālā</h1><p><strong>Apgalvojums:</strong> Intervālā <span class="math inline">\([1;n]\)</span> ir tieši <span class="math inline">\(\lfloor n/d \rfloor\)</span> daudzkārtņu progresijai <span class="math inline">\(a_k = k\cdot d\)</span>, <span class="math inline">\(k \in \mathbb{N}\)</span>.</p>
-<p>(Ja progresijas pirmais loceklis <span class="math inline">\(a_1 \neq d\)</span>, tad dalījums var būt jāapaļo gan uz augšu, gan uz leju.)</p></section><section id="intervāli-un-progresijas" class="slide level2">
+<p><em>Piezīme.</em> Ar <span class="math inline">\(\lfloor x \rfloor\)</span> apzīmē skaitļa <span class="math inline">\(x\)</span> apakšējo veselo daļu: tas ir lielākais veselais skaitlis, kas nepārsniedz <span class="math inline">\(x\)</span>. Piemēram, <span class="math inline">\(\lfloor 2.4 \rfloor = 2\)</span>, <span class="math inline">\(\lfloor -3.14 \rfloor = -4\)</span>.</p></section><section id="intervāli-un-progresijas" class="slide level2">
 <h2><lo-summary/> Intervāli un progresijas</h2>
-<p>TODO: Parasta un nobīdīta progresija attēlos…</p>
+<figure>
+<img data-src="rounding.png" alt="Rounding" /><figcaption>Rounding</figcaption>
+</figure>
+<ul>
+<li>Ja progresija ir <span class="math inline">\(d, 2d, 3d, \ldots\)</span>, tad locekļu skaitu iegūst <span class="math inline">\(n/d\)</span> noapaļojot <strong>uz leju</strong> - līdz tuvākajam veselajam skaitlim, kurš <strong>nepārsniedz</strong> <span class="math inline">\(n/d\)</span>.</li>
+<li>Citos gadījumos drošāk atrast pirmo un pēdējo locekli.</li>
+</ul>
+<p>Piemēri:<br />
+<strong>(A)</strong> <span class="math inline">\(a_k = 5k\)</span> ir <span class="math inline">\(\lfloor 24/5 \rfloor = \lfloor 4.8 \rfloor\)</span> jeb <red><span class="math inline">\(4\)</span></red> locekļi intervālā <span class="math inline">\([1;24]\)</span><br />
+<strong>(B)</strong> <span class="math inline">\(a_k = 2 + 5k\)</span> pirmais loceklis intervālā <span class="math inline">\([1;24]\)</span> ir <span class="math inline">\(a_0 = 2\)</span>, bet pēdējais ir <span class="math inline">\(a_4 = 22\)</span>. To pavisam ir <span class="math inline">\((4-0)+1\)</span> jeb <red><span class="math inline">\(5\)</span></red>.</p>
 </section><section id="bbk2012.p1.123" class="slide level2">
 <h2><lo-sample/> BBK2012.P1.123</h2>
 <p>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1000\)</span>, kuri nedalās ne ar <span class="math inline">\(5\)</span>, ne ar <span class="math inline">\(7\)</span>?</p>
@@ -529,34 +538,16 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 </ul>
 </section><section id="eilera-venna-diagramma" class="slide level2">
 <h2><lo-soln/> Eilera-Venna diagramma</h2>
-<p>TODO: Diagramma</p>
-</section></section>
-<section><section id="lkd-saglabājas" class="title-slide slide level1"><h1><lo-theory/> LKD saglabājas</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\(\mbox{LKD}(a_1,d) = k\)</span>, tad arī <span class="math inline">\(\mbox{LKD}(a_1+d,d)=k\)</span> un <span class="math inline">\(\mbox{LKD}(a_1 - d, d) = k\)</span>.</p>
-<p>Šis ir apgalvojums par invariantu: lielākais kopīgais dalītājs progresijas loceklim un diferencei saglabājas.</p></section><section id="piemērs-kalendārs" class="slide level2">
-<h2><lo-summary/> Piemērs: Kalendārs</h2>
-<p>TODO: Tabulkalendārs, kur nemainās atlikumi</p>
-<p>TODO: Attēls, kur <span class="math inline">\(9k\)</span> un <span class="math inline">\(15k\)</span> uzzīmētas tā, lai <span class="math inline">\(\mbox{LKD}(9,15) =3\)</span> ir sasniegta kā starpība.</p>
-</section><section id="bbk2012.p1.104" class="slide level2">
-<h2><lo-sample/> BBK2012.P1.104</h2>
-<p>Skaitļu virkne <span class="math inline">\((a_i)\)</span> tiek definēta šādi: <span class="math display">\[a_1=19,\;a_2=90,\;a_{n+2}=a_n+a_{n+1},\;\mbox{ja}\;n=1,2,3,\ldots.\]</span> Atrast skaitļu <span class="math inline">\(a_{1989}\)</span> un <span class="math inline">\(a_{1990}\)</span> lielāko kopīgo dalītāju.</p>
-</section><section id="bbk2012.p1.104-1" class="slide level2">
-<h2><lo-hints/> BBK2012.P1.104</h2>
 <ul>
-<li>Kādi ir daži pirmie locekļi virknē?</li>
-<li>Vai tā ir aritmētiska progresija?</li>
-<li>Kāda ir</li>
+<li>Ar <span class="math inline">\(5\)</span> dalās <span class="math inline">\(\left| A \right| = \lfloor 1000/5 \rfloor = 200\)</span> skaitļi.</li>
+<li>Ar <span class="math inline">\(7\)</span> dalās <span class="math inline">\(\left| B \right| = \lfloor 1000/7 \rfloor = 142\)</span> skaitļi.</li>
+<li>Ar abiem dalās <span class="math inline">\(\left| A \cap B \right| = \lfloor 1000/35 \rfloor = 28\)</span> skaitļi.</li>
+<li>Visa zilā daļa ir <span class="math inline">\(|A|+|B|-\left| A \cap B \right| = 314\)</span>.</li>
+<li>Ne ar <span class="math inline">\(5\)</span>, ne ar <span class="math inline">\(7\)</span> nedalās <span class="math inline">\(1000 - 314 = 686\)</span>.</li>
 </ul>
-</section><section id="bbk2012.p1.104-2" class="slide level2">
-<h2><lo-soln/> BBK2012.P1.104</h2>
-<ul>
-<li>Ievērojam, ka <span class="math inline">\(\mbox{LKD}(a_1,a_2)=\mbox{LKD}(19,90)=1\)</span>.</li>
-<li>Pamatojam ar indukciju, ka <span class="math inline">\(\mbox{LKD}(a_n,a_{n+1})=1\)</span> katram <span class="math inline">\(n=1,2,\ldots\)</span>.</li>
-</ul>
-<p>Jāpamato tikai indukcijas pāreja:</p>
-<ul>
-<li>Ja <span class="math inline">\(\mbox{LKD}(a_k,a_{k+1})=1\)</span>, tad arī <span class="math inline">\(\mbox{LKD}(a_{k+1},a_{k+2})=1\)</span>, jo <span class="math inline">\(a_{k+2} = a_{k} + a_{k+1}\)</span> un skaitļiem <span class="math inline">\((a_{k+1}, a_{k}+a_{k+1})\)</span> lietojam Eiklīda algoritmu - atņemam mazāko no lielākā:</li>
-</ul>
-<p><span class="math display">\[\mbox{LKD}(a_{k+1},a_{k+2}) = \mbox{LKD}(a_k,a_{k+1})=1.\]</span></p>
+<figure>
+<img data-src="venn-35.png" alt="Venn Diagram" /><figcaption>Venn Diagram</figcaption>
+</figure>
 </section></section>
 <section><section id="dalāmība-ar-atlikumu" class="title-slide slide level1"><h1><lo-theory/> Dalāmība ar atlikumu</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\(a\)</span> ir vesels skaitlis, bet <span class="math inline">\(b\)</span> ir naturāls skaitlis, tad var izteikt: <span class="math display">\[a = q\cdot b +r,\;\;\mbox{kur $0 \leq r &lt; b$.}\]</span></p>
 <p><span class="math inline">\(q \in \mathbb{Z}\)</span> sauc par <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> dalījuma veselo daļu, bet <span class="math inline">\(r\)</span> sauc par <em>atlikumu</em>.</p></section><section id="piemēri-dalīšanai-ar-atlikumu" class="slide level2">
@@ -569,9 +560,67 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 </section><section id="lv.no.2009.8.1" class="slide level2">
 <h2><lo-sample/> LV.NO.2009.8.1</h2>
 <p>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas <span class="math inline">\(4\)</span> rūtiņas tā, ka katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa. Pierādiet: neatkarīgi no tā, kuras <span class="math inline">\(4\)</span> rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs <span class="math inline">\(64\)</span>.</p>
-<figure>
-<img data-src="LV.NO.2009.8.1.png" alt="tabula" /><figcaption>tabula</figcaption>
-</figure>
+<!--
+![tabula](LV.NO.2009.8.1.png)
+-->
+<table>
+<tr>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(5\)</span>
+</td>
+<td>
+<span class="math inline">\(7\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(9\)</span>
+</td>
+<td>
+<span class="math inline">\(11\)</span>
+</td>
+<td>
+<span class="math inline">\(13\)</span>
+</td>
+<td>
+<span class="math inline">\(15\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(17\)</span>
+</td>
+<td>
+<span class="math inline">\(19\)</span>
+</td>
+<td>
+<span class="math inline">\(21\)</span>
+</td>
+<td>
+<span class="math inline">\(23\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(25\)</span>
+</td>
+<td>
+<span class="math inline">\(27\)</span>
+</td>
+<td>
+<span class="math inline">\(29\)</span>
+</td>
+<td>
+<span class="math inline">\(31\)</span>
+</td>
+</tr>
+</table>
 </section><section id="lv.no.2009.8.1-1" class="slide level2">
 <h2><lo-hints/> LV.NO.2009.8.1</h2>
 <ul>
@@ -581,13 +630,344 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 </ul>
 </section><section id="lv.no.2009.8.1-2" class="slide level2">
 <h2><lo-soln/> LV.NO.2009.8.1</h2>
-<p>Sadala tabuliņu divu tabuliņu summā: vienā <span class="math inline">\(1\ldots 7\)</span>, otrā <span class="math inline">\(8k\)</span>. Vienmēr <span class="math inline">\((1+3+5+7) + (0+8+16+24) = 64\)</span>.</p>
+<p>Dalot ar atlikumu, piemēram, ar <span class="math inline">\(8\)</span> katrs skaitlis <span class="math inline">\(a\)</span> pārveidojas par summu <span class="math inline">\(8k+r\)</span>, kur <span class="math inline">\(k\)</span> ir dalījums un <span class="math inline">\(r\)</span> - atlikums.</p>
+<figure>
+<img data-src="matrix-sum.png" alt="Matricas" /><figcaption>Matricas</figcaption>
+</figure>
+<p>Neatkarīgi no rūtiņu izvēles pirmajā tabuliņā būs tieši pa vienam skaitlim no <span class="math inline">\(\{ 0,8,16,24 \}\)</span>, bet otrajā pa vienam no <span class="math inline">\(\{ 1,3,5,7 \}\)</span>. To visu summa ir <span class="math inline">\(48 + 16 = 64\)</span>.</p>
 </section></section>
 <section><section id="aritmētiskas-progresijas-atlikumi" class="title-slide slide level1"><h1><lo-theory/> Aritmētiskas progresijas atlikumi</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\((a_k)\)</span> ir aritmētiska progresija ar diferenci <span class="math inline">\(d\)</span>, <span class="math inline">\(m\)</span> ir kaut kāds naturāls skaitlis, un <span class="math inline">\(\mbox{LKD}(d,m)=K\)</span>, tad progresija <span class="math inline">\(a_k\)</span> pieņem <span class="math inline">\(m/K\)</span> dažādus atlikumus, dalot ar <span class="math inline">\(m\)</span>.</p>
 <p><em>Piezīme:</em> Atlikumi ik pēc <span class="math inline">\(m/K\)</span> soļiem cikliski atkārtojas.<br />
-Ja diference <span class="math inline">\(d\)</span> un dalītājs <span class="math inline">\(m\)</span> ir savstarpēji pirmskaitļi, tad progresija pieņem visus <span class="math inline">\(m\)</span> atlikumus.</p></section><section id="piemēri" class="slide level2">
-<h2><lo-summary/> Piemēri</h2>
-<p>TODO: Parādām gadījumu, kad ir visi atlikumi <span class="math inline">\(K=1\)</span> un arī gadījumu, kad nav visi.</p>
+Ja diference <span class="math inline">\(d\)</span> un dalītājs <span class="math inline">\(m\)</span> ir savstarpēji pirmskaitļi, tad progresija pieņem visus <span class="math inline">\(m\)</span> atlikumus.</p></section><section id="piemēri-atlikumi-ar-8" class="slide level2">
+<h2><lo-summary/> Piemēri: Atlikumi ar 8</h2>
+<hgroup style="font-size: 70%">
+<table>
+<tr>
+<th>
+A0
+</th>
+<th>
+A1
+</th>
+<th>
+A2
+</th>
+<th>
+A3
+</th>
+<th>
+A4
+</th>
+<th>
+A5
+</th>
+<th>
+A6
+</th>
+<th>
+A7
+</th>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+5
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+10
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+15
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+20
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+25
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+30
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+35
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+45
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+</table>
+<p><span class="math inline">\(\mbox{LKD}(5,8)=1\)</span>, t.i. progresijai <span class="math inline">\(5k\)</span> ir visi atlikumi, dalot ar <span class="math inline">\(8\)</span>.</p>
+<figure>
+<img data-src="polygram-8-5.png" alt="Polygram" /><figcaption>Polygram</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size: 70%">
+<table>
+<tr>
+<th>
+A0
+</th>
+<th>
+A1
+</th>
+<th>
+A2
+</th>
+<th>
+A3
+</th>
+<th>
+A4
+</th>
+<th>
+A5
+</th>
+<th>
+A6
+</th>
+<th>
+A7
+</th>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+6
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+12
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+18
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+24
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+30
+</td>
+<td>
+ 
+</td>
+</tr>
+</table>
+<p><span class="math inline">\(\mbox{LKD}(6,8)=2\)</span>, t.i. progresijai <span class="math inline">\(6k\)</span> ir tikai <span class="math inline">\(8/2=4\)</span> atlikumi, dalot ar <span class="math inline">\(8\)</span>. Ja zīmē atlikumus pa apli (un savieno ik pēc <span class="math inline">\(6\)</span> soļiem), rodas nevis zvaigznīte, bet divi cikli - sarkanais un oranžais.</p>
+<figure>
+<img data-src="polygram-8-6.png" alt="Polygram" /><figcaption>Polygram</figcaption>
+</figure>
+</hgroup>
 </section><section id="bbk2012.p1.122lv.vo.1983.8.1" class="slide level2">
 <h2><lo-sample/> BBK2012.P1.122/LV.VO.1983.8.1</h2>
 <p>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1983\)</span>, kuriem <span class="math inline">\(3n+5\)</span> dalās ar <span class="math inline">\(7\)</span>?</p>
@@ -925,7 +1305,7 @@ Virknē <span class="math inline">\(4,\ldots,34\)</span> ir pavisam <span class=
 <li>Ievērojam, ka atlikumi, dalot ar <span class="math inline">\(21\)</span>, katrā solī samazinās par <span class="math inline">\(1\)</span>:<br />
 Tie veido virkni <span class="math inline">\(13,12,11,\ldots\)</span>.</li>
 <li>Tieši 11. loceklis sarkanajā progresijā dos atlikumu <span class="math inline">\(3\)</span>, dalot ar <span class="math inline">\(21\)</span>.</li>
-<li>Jāievieto <span class="math inline">\(k=10\)</span>: <span class="math inline">\(20k+13 = 213\)</span>.</li>
+<li>Jāievieto <span class="math inline">\(k=10\)</span>. Tad <span class="math inline">\(20k+13 = 213\)</span>.</li>
 </ul>
 <p><em>Sal. 7.klases Atklātās olimpiādes uzdevumu: <a href="http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-ao/content.html#/lv.ao.2011.7.3">LV.AO.2011.7.3</a>.</em> Šis uzdevums ir arī atsevišķs gadījums Ķīniešu atlikumu teorēmai, kuru 7.klase nav vēl mācījusies.</p>
 </section></section>
@@ -960,12 +1340,82 @@ Aritmētiskas progresijas
 <span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
 <span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
 </hgroup></section>
-<section><section id="lv.ao.2004.8.5" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2004.8.5</h1><p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p></section><section id="ieteikumi-1" class="slide level2">
-<h2>Ieteikumi</h2>
+<section><section id="lv.ao.2004.8.5" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2004.8.5</h1><p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p></section><section id="lv.ao.2004.8.5-lasīšana" class="slide level2">
+<h2><lo-hints/> LV.AO.2004.8.5 (Lasīšana)</h2>
+<p><strong>Lasīšana:</strong></p>
 <ol type="1">
-<li>Novērtēt iterāciju skaitu</li>
-<li>Uzrakstīt formulu (ar pareizu noapaļošanu jeb veselo daļu), kas parāda, kurš numurs paliek pirmais neizsvītrotais kārtējā iterācijā.</li>
+<li>Ar ko atšķiras “skaitlis” un “numurs” šajā uzdevumā?</li>
+<li>Vai skaitļu numuri var mainīties?</li>
+<li>Vai pārnumurēšana notiek jau pēc viena skaitļa izsvītrošanas? Vai vēlāk?</li>
+<li>Kas ir “palikusī virkne”? “Iegūtā virkne”?</li>
+<li>Vai uzdevumā aprakstītais beigu stāvoklis vienmēr iestājas? Ja nu paliek neizsvītroti divi vai vairāk skaitļi?</li>
 </ol>
+<p><strong>Novērojumi:</strong></p>
+<ol type="1">
+<li>Uzdevumā aprakstītā procedūra sastāv no vairākiem “gājieniem” jeb “iterācijām”.</li>
+<li>Katras iterācijas laikā izsvītro apmēram trešdaļu no virknes locekļiem, locekļus pārnumurē, iegūstot jaunu virkni.</li>
+</ol>
+</section><section id="lv.ao.2004.8.5-ieteikumi" class="slide level2">
+<h2><lo-hints/> LV.AO.2004.8.5 (Ieteikumi)</h2>
+<p><strong>Stratēģija:</strong> Vienkāršojam sev dzīvi</p>
+<ol type="1">
+<li>Kas paliktu beigās, ja svītrotu skaitļus, kas atrodas <span class="math inline">\(1.,3.,5.,\ldots\)</span> vietās?</li>
+<li>Vai skaitlis, kas paliek beigās, vienmēr mainās, ja sākumā ir par vienu skaitli vairāk?</li>
+</ol>
+<p><strong>Stratēģija:</strong> Sākam no beigām</p>
+<ol type="1">
+<li>Kāda izskatās pēdējā “iterācija”? Un priekšpēdējā?</li>
+<li>Vai ir kāds veids, kā aprakstīt pašreizējo “iterāciju”. (Teiksim, ja svītrojām <span class="math inline">\(1.,3.,5.,\ldots\)</span> vietās, tad pēc kārtējās <span class="math inline">\(k\)</span>-tās iterācijas pazuda skaitļi, kuri nedalījās ar <span class="math inline">\(2^k\)</span>.)</li>
+<li>Vai ir kāds veids, kā arī sākotnējā uzdevumā aprakstīt skaitļus, kuri ir “ilgdzīvotāji”, t.i. paliek neizsvītroti daudzās iterācijās.</li>
+</ol>
+</section><section id="lv.ao.2004.8.5-no-beigām" class="slide level2">
+<h2><lo-soln/> LV.AO.2004.8.5 (No beigām)</h2>
+<ul>
+<li>Konstrukcijā “no beigām” sākam ar vienu skaitli (pašu pēdējo). Pēc tam tam pievienojam tos, kas pirms viņa tika izsvītroti.</li>
+<li>Kā redzams diagrammā, skaitlis <span class="math inline">\(18\)</span> paliek neizsvītrots sešās pēdējās iterācijās, skaitlis <span class="math inline">\(12\)</span> - pēdējās piecās, utt.</li>
+</ul>
+<figure>
+<img data-src="konstrukcija-no-beigam.png" alt="No beigām" /><figcaption>No beigām</figcaption>
+</figure>
+</section><section id="lv.ao.2004.8.5-virkne" class="slide level2">
+<h2><lo-soln/> LV.AO.2004.8.5 (Virkne)</h2>
+<ul>
+<li>To kārtas numuru, kurš pirmais “izdzīvo” pēc <span class="math inline">\(n\)</span> iterācijām apzīmējam ar <span class="math inline">\(x_n\)</span>.</li>
+<li>Nulltais loceklis <span class="math inline">\(x_0 = 1\)</span> (pirmais izdzīvo, ja vairs neko nesvītro).</li>
+<li>Pēc iepriekšējās diagrammas, <span class="math inline">\(x_1 = 2\)</span>, <span class="math inline">\(x_2 = 3\)</span>, <span class="math inline">\(x_3 = 5\)</span>, <span class="math inline">\(x_4 = 8\)</span>, <span class="math inline">\(x_5 = 12\)</span>, <span class="math inline">\(x_6 = 18\)</span>, utt.</li>
+</ul>
+<p><strong>Apgalvojums:</strong> <span class="math inline">\({\displaystyle x_{n+1} = \left\lceil \frac{3x_n}{2} \right\rceil}\)</span>.<br />
+<em>Piezīme.</em> <span class="math inline">\(\lceil x \rceil\)</span> apzīmē <em>augšējo veselo daļu</em> - mazāko veselo skaitli, kas nav mazāks par <span class="math inline">\(x\)</span>.</p>
+<p>Apgalvojumu pierādām atsevišķi gadījumiem, kad <span class="math inline">\(x_n\)</span> ir pāru un <span class="math inline">\(x_n\)</span> ir nepāru.</p>
+</section><section id="lv.ao.2004.8.5-rekurences-pierādījums" class="slide level2">
+<h2><lo-soln/> LV.AO.2004.8.5 (Rekurences pierādījums)</h2>
+<ol type="1">
+<li>Ja <span class="math inline">\(x_n\)</span> ir pāru, tad konstrukcijā “no beigām” visas vietas no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(x_n\)</span> var sadalīt pāros pa divi un katram pārim priekšā pierakst izsvītrojamo skaitli (attiecīgi 1., 4., 7., utt. vietās). Tā rezultātā no jauna iesprausto (violeto) vietiņu skaits ir precīzi trešdaļa. Tādēļ <span class="math inline">\(x_n\)</span> pareizinās ar <span class="math inline">\(\frac{3}{2}\)</span> jeb <span class="math inline">\(x_{n+1} = \frac{3x_n}{2}\)</span>.</li>
+</ol>
+<figure>
+<img data-src="konstrukcija-even.png" alt="Konstrukcija pāru skaitļiem" /><figcaption>Konstrukcija pāru skaitļiem</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>Ja <span class="math inline">\(x_n\)</span> ir nepāru, tad spriedums ir līdzīgs - vietas no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(x_n-1\)</span> var sadalīt pāros, bet pati pēdējā vietiņa <span class="math inline">\(x_n\)</span> paliek bez pāra (un tai vienai pašai priekšā iesprauž vienu violeto rūtiņu). Tādēļ šajā gadījumā daļa <span class="math inline">\(\frac{3x_n}{2}\)</span> (kas nav vesela) jānoapaļo uz augšu.</li>
+</ol>
+</section><section id="lv.ao.2004.8.5-vispārīgais-gadījums" class="slide level2">
+<h2><lo-soln/> LV.AO.2004.8.5 (Vispārīgais gadījums)</h2>
+<div style="font-size:100%">
+<p>Esam pamatojuši, ka skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(x_n\)</span> pēc <span class="math inline">\(n\)</span> iterācijām tiek izsvītroti tā, ka paliek tikai pēdējais skaitlis (t.i. <span class="math inline">\(x_n\)</span>)</p>
+<p><strong>Apgalvojums:</strong> Ja uzrakstīti skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(X\)</span>, kur <span class="math inline">\(x_n &lt; X &lt; x_{n+1}\)</span>, tad pēc <span class="math inline">\(n\)</span> izsvītrošanām paliks pāri viens skaitlis (tas, kurš sākumā ir vietā ar numuru <span class="math inline">\(x_n\)</span>).<br />
+Piemēram, ja uzrakstīti skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(15\)</span>, tad pēc piecām iterācijām paliks pāri 12.skaitlis.</p>
+<p><em>Pierādījums:</em> Tā kā pirmais skaitlis, kurš “izdzīvo” pēc <span class="math inline">\(n+1\)</span> iterācijām ir <span class="math inline">\(x_{n+1}&gt;X\)</span>, tad no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(X\)</span> pēc <span class="math inline">\(k\)</span> svītrošanām paliks pāri tikai viens skaitlis (un tas var būt vienīgi <span class="math inline">\(x_n\)</span>, jo svītrošana aiz <span class="math inline">\(x_n\)</span> šī skaitļa izdzīvošanu neiespaido).</p>
+</div>
+</section><section id="lv.ao.2004.8.5-2004-skaitļi" class="slide level2">
+<h2><lo-soln/> LV.AO.2004.8.5 (2004 skaitļi)</h2>
+<p>Konstruējam virkni ar rekurento sakarību <span class="math inline">\({\displaystyle x_{n+1} = \left\lceil \frac{3x_n}{2} \right\rceil}\)</span> līdz tā pārsniedz <span class="math inline">\(X = 2004\)</span>: <span class="math display">\[1; 2; 3; 5; 8; 12; 18; 27; 41; 62; 93; 140; 210; 315; 473; 710; 1065; 1598\]</span></p>
+<p>Katrs nākamais loceklis ir <span class="math inline">\(1.5\)</span> reizes lielāks par iepriekšējo (vai noapaļots par <span class="math inline">\(\frac{1}{2}\)</span> uz augšu).</p>
+<p><strong>Atbilde:</strong> Esam ieguvuši, ka pēdējais neizsvītrotais ir skaitlis <span class="math inline">\(1598\)</span>.</p>
+</section><section id="žūrijas-atrisinājums" class="slide level2">
+<h2><lo-soln/> Žūrijas atrisinājums</h2>
+<figure>
+<img data-src="zurijas-atrisinajums.png" alt="Žūrijas atrisinājums" /><figcaption>Žūrijas atrisinājums</figcaption>
+</figure>
 </section></section>
 <section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">

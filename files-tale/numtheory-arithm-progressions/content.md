@@ -551,19 +551,19 @@ Brīvās krišanas paātrinājumam $g \approx 10\,m/s^2$:
 
 
 
-# <lo-theory/> Lielākā vai mazākā diference (LKD)
+# <lo-theory/> Lielāko diferenci meklējot (LKD)
 
 **Apgalvojums:** Katrai augošai naturālu skaitļu virknei 
 $a_1 < a_2 < \ldots < a_n$ atradīsies lielākais 
 $d$, ka visi $a_i$ pieder aritmētiskai progresijai ar
-diferenci $d$. Tas ir visu pāru $|a_i - a_j|$ starpību 
+diferenci $d$. Tas ir visu starpību $(a_i - a_j)$ 
 lielākais kopīgais dalītājs. 
 
 ![LKD](greatest-common-divisor.png)
 
 
 
-## <lo-theory/> Lielākā vai mazākā diference (MKD)
+## <lo-theory/> Mazāko diferenci meklējot (MKD)
 
 **Apgalvojums:** Divām aritmētiskām progresijām ar diferencēm $d_1$ 
 un $d_2$ vai nu nav kopīgu locekļu, vai arī
@@ -612,13 +612,24 @@ būt lielāks par $8$.
 $\lfloor n/d \rfloor$ daudzkārtņu progresijai 
 $a_k = k\cdot d$, $k \in \mathbb{N}$. 
 
-(Ja progresijas pirmais loceklis $a_1 \neq d$, tad
-dalījums var būt jāapaļo gan uz augšu, gan uz leju.)
+*Piezīme.* Ar $\lfloor x \rfloor$ apzīmē skaitļa $x$ apakšējo veselo 
+daļu: tas ir lielākais veselais skaitlis, kas nepārsniedz $x$. Piemēram, 
+$\lfloor 2.4 \rfloor = 2$, $\lfloor -3.14 \rfloor = -4$. 
 
 
 ## <lo-summary/> Intervāli un progresijas
 
-TODO: Parasta un nobīdīta progresija attēlos... 
+![Rounding](rounding.png)
+
+* Ja progresija ir $d, 2d, 3d, \ldots$, tad locekļu skaitu iegūst $n/d$ noapaļojot 
+**uz leju** - līdz tuvākajam veselajam skaitlim, kurš **nepārsniedz** $n/d$. 
+* Citos gadījumos drošāk atrast pirmo un pēdējo locekli.
+
+Piemēri:  
+**(A)** $a_k = 5k$ ir $\lfloor 24/5 \rfloor = \lfloor 4.8 \rfloor$ jeb <red>$4$</red> locekļi 
+intervālā $[1;24]$  
+**(B)** $a_k = 2 + 5k$ pirmais loceklis intervālā $[1;24]$ ir $a_0 = 2$, bet 
+pēdējais ir $a_4 = 22$. To pavisam ir $(4-0)+1$ jeb <red>$5$</red>.
 
 
 
@@ -639,61 +650,16 @@ sākumintervālā $[1;1000]$
 
 ## <lo-soln/> Eilera-Venna diagramma
 
-TODO: Diagramma 
+* Ar $5$ dalās $\left| A \right| = \lfloor 1000/5 \rfloor = 200$ skaitļi.
+* Ar $7$ dalās $\left| B \right| = \lfloor 1000/7 \rfloor = 142$ skaitļi.
+* Ar abiem dalās $\left| A \cap B \right| = \lfloor 1000/35 \rfloor = 28$ skaitļi.
+* Visa zilā daļa ir $|A|+|B|-\left| A \cap B \right| = 314$.
+* Ne ar $5$, ne ar $7$ nedalās $1000 - 314 = 686$. 
+
+![Venn Diagram](venn-35.png)
 
 
 
-
-
-
-
-
-
-# <lo-theory/> LKD saglabājas
-
-**Apgalvojums:** Ja $\mbox{LKD}(a_1,d) = k$, 
-tad arī $\mbox{LKD}(a_1+d,d)=k$ un 
-$\mbox{LKD}(a_1 - d, d) = k$. 
-
-Šis ir apgalvojums par invariantu: 
-lielākais kopīgais dalītājs progresijas loceklim 
-un diferencei saglabājas. 
-
-## <lo-summary/> Piemērs: Kalendārs
-
-TODO: Tabulkalendārs, kur nemainās atlikumi
-
-
-TODO: Attēls, kur $9k$ un $15k$ uzzīmētas tā, lai $\mbox{LKD}(9,15) =3$ ir
-sasniegta kā starpība.
-
-
-
-## <lo-sample/> BBK2012.P1.104
-
-Skaitļu virkne $(a_i)$ tiek definēta šādi: 
-$$a_1=19,\;a_2=90,\;a_{n+2}=a_n+a_{n+1},\;\mbox{ja}\;n=1,2,3,\ldots.$$
-Atrast skaitļu $a_{1989}$ un $a_{1990}$ lielāko kopīgo dalītāju.
-
-
-## <lo-hints/> BBK2012.P1.104
-
-* Kādi ir daži pirmie locekļi virknē? 
-* Vai tā ir aritmētiska progresija?
-* Kāda ir 
-
-## <lo-soln/> BBK2012.P1.104
-
-* Ievērojam, ka $\mbox{LKD}(a_1,a_2)=\mbox{LKD}(19,90)=1$. 
-* Pamatojam ar indukciju, ka $\mbox{LKD}(a_n,a_{n+1})=1$ katram $n=1,2,\ldots$. 
-
-Jāpamato tikai indukcijas pāreja: 
-
-* Ja $\mbox{LKD}(a_k,a_{k+1})=1$, tad arī $\mbox{LKD}(a_{k+1},a_{k+2})=1$, 
-jo $a_{k+2} = a_{k} + a_{k+1}$ un skaitļiem $(a_{k+1}, a_{k}+a_{k+1})$ 
-lietojam Eiklīda algoritmu - atņemam mazāko no lielākā:
-
-$$\mbox{LKD}(a_{k+1},a_{k+2}) = \mbox{LKD}(a_k,a_{k+1})=1.$$
 
 
 
@@ -725,7 +691,16 @@ Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka katrā rind
 katrā kolonnā tika izvēlēta tieši viena rūtiņa. Pierādiet: neatkarīgi no tā, kuras 
 $4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$. 
 
+<!--
 ![tabula](LV.NO.2009.8.1.png)
+-->
+
+<table>
+<tr><td>$1$</td><td>$3$</td><td>$5$</td><td>$7$</td></tr>
+<tr><td>$9$</td><td>$11$</td><td>$13$</td><td>$15$</td></tr>
+<tr><td>$17$</td><td>$19$</td><td>$21$</td><td>$23$</td></tr>
+<tr><td>$25$</td><td>$27$</td><td>$29$</td><td>$31$</td></tr>
+</table>
 
 
 ## <lo-hints/> LV.NO.2009.8.1
@@ -739,9 +714,15 @@ tos visus var pārbaudīt, tieši saskaitot?)
 no tā, kā izvēlamies četras rūtiņas?
 
 ## <lo-soln/> LV.NO.2009.8.1 
- 
-Sadala tabuliņu divu tabuliņu summā: vienā $1\ldots 7$, otrā $8k$. 
-Vienmēr $(1+3+5+7) + (0+8+16+24) = 64$.
+
+Dalot ar atlikumu, piemēram, ar $8$ katrs skaitlis $a$ pārveidojas
+par summu $8k+r$, kur $k$ ir dalījums un $r$ - atlikums. 
+
+![Matricas](matrix-sum.png)
+
+Neatkarīgi no rūtiņu izvēles pirmajā tabuliņā būs tieši pa vienam 
+skaitlim no $\{ 0,8,16,24 \}$, bet otrajā pa vienam no 
+$\{ 1,3,5,7 \}$. To visu summa ir $48 + 16 = 64$. 
 
 
 
@@ -762,9 +743,44 @@ Ja diference $d$ un dalītājs $m$ ir savstarpēji pirmskaitļi,
 tad progresija pieņem visus $m$ atlikumus. 
 
 
-## <lo-summary/> Piemēri
+## <lo-summary/> Piemēri: Atlikumi ar 8
 
-TODO: Parādām gadījumu, kad ir visi atlikumi $K=1$ un arī gadījumu, kad nav visi.
+<hgroup style="font-size: 70%">
+
+<table>
+<tr><th>A0</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th><th>A5</th><th>A6</th><th>A7</th></tr>
+<tr><td>0</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>5</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>10</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>15</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>20</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td>25</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>30</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>35</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>40</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>45</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+$\mbox{LKD}(5,8)=1$, t.i. progresijai $5k$ ir visi atlikumi, dalot ar $8$. 
+
+![Polygram](polygram-8-5.png)
+
+
+</hgroup>
+<hgroup style="font-size: 70%">
+
+<table>
+<tr><th>A0</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th><th>A5</th><th>A6</th><th>A7</th></tr>
+<tr><td>0</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>6</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>12</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>18</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>24</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>30</td><td>&nbsp;</td></tr>
+</table>
+
+$\mbox{LKD}(6,8)=2$, t.i. progresijai $6k$ ir tikai $8/2=4$ atlikumi, dalot ar $8$. Ja zīmē atlikumus pa apli (un savieno ik pēc 
+$6$ soļiem), rodas nevis zvaigznīte, bet divi cikli - sarkanais un oranžais.
+
+![Polygram](polygram-8-6.png)
+
+</hgroup>
+
+
 
 ## <lo-sample/> BBK2012.P1.122/LV.VO.1983.8.1
 
@@ -991,7 +1007,7 @@ bet, dalot ar $21$, atlikumā iegūst $3$.
 * Ievērojam, ka atlikumi, dalot ar $21$, katrā solī samazinās par $1$:  
 Tie veido virkni $13,12,11,\ldots$. 
 * Tieši 11. loceklis sarkanajā progresijā dos atlikumu $3$, dalot ar $21$.
-* Jāievieto $k=10$: $20k+13 = 213$. 
+* Jāievieto $k=10$. Tad $20k+13 = 213$. 
 
 *Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2011.7.3](http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-ao/content.html#/lv.ao.2011.7.3).*  Šis uzdevums ir arī atsevišķs gadījums Ķīniešu atlikumu teorēmai, kuru 7.klase nav vēl mācījusies.
 
@@ -1055,11 +1071,103 @@ izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās.
 Ar iegūto virkni rīkojamies tāpat, utt.,
 kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
 
-## Ieteikumi
+## <lo-hints/> LV.AO.2004.8.5 (Lasīšana)
 
-1. Novērtēt iterāciju skaitu
-2. Uzrakstīt formulu (ar pareizu noapaļošanu jeb veselo daļu), 
-kas parāda, kurš numurs paliek pirmais neizsvītrotais kārtējā iterācijā.
+**Lasīšana:**
+
+1. Ar ko atšķiras "skaitlis" un "numurs" šajā uzdevumā? 
+2. Vai skaitļu numuri var mainīties? 
+3. Vai pārnumurēšana notiek jau pēc viena skaitļa izsvītrošanas? Vai vēlāk? 
+4. Kas ir "palikusī virkne"? "Iegūtā virkne"?
+5. Vai uzdevumā aprakstītais beigu stāvoklis vienmēr iestājas? Ja nu paliek neizsvītroti divi vai vairāk skaitļi?
+
+**Novērojumi:**
+
+1. Uzdevumā aprakstītā procedūra sastāv no vairākiem "gājieniem" jeb "iterācijām".
+2. Katras iterācijas laikā izsvītro apmēram trešdaļu no virknes locekļiem, 
+locekļus pārnumurē, iegūstot jaunu virkni. 
+
+## <lo-hints/> LV.AO.2004.8.5 (Ieteikumi)
+
+**Stratēģija:** Vienkāršojam sev dzīvi
+
+1. Kas paliktu beigās, ja svītrotu skaitļus, kas atrodas $1.,3.,5.,\ldots$ vietās?
+2. Vai skaitlis, kas paliek beigās, vienmēr mainās, ja sākumā ir par vienu skaitli vairāk?
+
+**Stratēģija:** Sākam no beigām
+
+1. Kāda izskatās pēdējā "iterācija"? Un priekšpēdējā? 
+2. Vai ir kāds veids, kā aprakstīt pašreizējo "iterāciju". (Teiksim, ja svītrojām 
+$1.,3.,5.,\ldots$ vietās, tad pēc kārtējās $k$-tās iterācijas pazuda skaitļi, kuri nedalījās
+ar $2^k$.)
+3. Vai ir kāds veids, kā arī sākotnējā uzdevumā aprakstīt skaitļus, kuri ir "ilgdzīvotāji", t.i. paliek 
+neizsvītroti daudzās iterācijās.
+
+
+## <lo-soln/> LV.AO.2004.8.5 (No beigām)
+
+* Konstrukcijā "no beigām" sākam ar vienu skaitli (pašu pēdējo). Pēc tam tam pievienojam 
+tos, kas pirms viņa tika izsvītroti. 
+* Kā redzams diagrammā, skaitlis $18$ paliek neizsvītrots sešās pēdējās iterācijās, skaitlis $12$ - pēdējās piecās, utt. 
+
+
+![No beigām](konstrukcija-no-beigam.png)
+
+
+## <lo-soln/> LV.AO.2004.8.5 (Virkne)
+
+* To kārtas numuru, kurš pirmais "izdzīvo" pēc $n$ iterācijām apzīmējam ar $x_n$. 
+* Nulltais loceklis $x_0 = 1$ (pirmais izdzīvo, ja vairs neko nesvītro).
+* Pēc iepriekšējās diagrammas, $x_1 = 2$, $x_2 = 3$, $x_3 = 5$, $x_4 = 8$, $x_5 = 12$, $x_6 = 18$, utt. 
+
+**Apgalvojums:** ${\displaystyle x_{n+1} = \left\lceil \frac{3x_n}{2} \right\rceil}$.  
+*Piezīme.* $\lceil x \rceil$ apzīmē *augšējo veselo daļu* - mazāko veselo skaitli, kas nav mazāks par $x$. 
+
+Apgalvojumu pierādām atsevišķi gadījumiem, kad $x_n$ ir pāru un $x_n$ ir nepāru. 
+
+## <lo-soln/> LV.AO.2004.8.5 (Rekurences pierādījums)
+
+1. Ja $x_n$ ir pāru, tad konstrukcijā "no beigām" visas vietas no $1$ līdz $x_n$ var sadalīt pāros pa divi 
+un katram pārim priekšā pierakst izsvītrojamo skaitli (attiecīgi 1., 4., 7., utt. vietās). Tā rezultātā 
+no jauna iesprausto (violeto) vietiņu skaits ir precīzi trešdaļa. Tādēļ $x_n$ pareizinās ar $\frac{3}{2}$
+jeb $x_{n+1} = \frac{3x_n}{2}$. 
+
+![Konstrukcija pāru skaitļiem](konstrukcija-even.png)
+
+2. Ja $x_n$ ir nepāru, tad spriedums ir līdzīgs - vietas no $1$ līdz $x_n-1$ var sadalīt pāros, bet pati pēdējā
+vietiņa $x_n$ paliek bez pāra (un tai vienai pašai priekšā iesprauž vienu violeto rūtiņu). 
+Tādēļ šajā gadījumā daļa $\frac{3x_n}{2}$ (kas nav vesela) jānoapaļo uz augšu. 
+
+## <lo-soln/> LV.AO.2004.8.5 (Vispārīgais gadījums)
+
+<div style="font-size:100%">
+
+Esam pamatojuši, ka skaitļi no $1$ līdz $x_n$ pēc $n$ iterācijām tiek izsvītroti tā, ka paliek tikai 
+pēdējais skaitlis (t.i. $x_n$) 
+
+**Apgalvojums:** Ja uzrakstīti skaitļi no $1$ līdz $X$, kur $x_n < X < x_{n+1}$, tad pēc $n$ izsvītrošanām 
+paliks pāri viens skaitlis (tas, kurš sākumā ir vietā ar numuru $x_n$).  
+Piemēram, ja uzrakstīti skaitļi no $1$ līdz $15$, tad pēc piecām iterācijām paliks pāri 12.skaitlis. 
+
+*Pierādījums:* Tā kā pirmais skaitlis, kurš "izdzīvo" pēc $n+1$ iterācijām ir $x_{n+1}>X$, tad no $1$ līdz $X$ pēc 
+$k$ svītrošanām paliks pāri tikai viens skaitlis (un tas var būt vienīgi $x_n$, jo svītrošana aiz $x_n$ šī skaitļa
+izdzīvošanu neiespaido). 
+
+</div>
+
+## <lo-soln/> LV.AO.2004.8.5 (2004 skaitļi)
+
+Konstruējam virkni ar rekurento sakarību ${\displaystyle x_{n+1} = \left\lceil \frac{3x_n}{2} \right\rceil}$ līdz tā pārsniedz $X = 2004$: 
+$$1; 2; 3; 5; 8; 12; 18; 27; 41; 62; 93; 140; 210; 315; 473; 710; 1065; 1598$$
+
+Katrs nākamais loceklis ir $1.5$ reizes lielāks par iepriekšējo (vai noapaļots par $\frac{1}{2}$ uz augšu). 
+
+**Atbilde:** Esam ieguvuši, ka pēdējais neizsvītrotais ir skaitlis $1598$. 
+
+
+## <lo-soln/> Žūrijas atrisinājums
+
+![Žūrijas atrisinājums](zurijas-atrisinajums.png)
 
 
 

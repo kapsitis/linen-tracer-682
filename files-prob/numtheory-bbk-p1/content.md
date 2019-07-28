@@ -181,6 +181,7 @@ dalās ar $7$?
 
 <!--
 questionType=Find.Count
+seeAlso=LV.VO.1983.8.1
 -->
 
 

@@ -24,7 +24,7 @@
 
 <ul>
 {% for tale in main_tales %}
-<li><a href="../files-tale/{{tale.dir}}/content.html"><b>Modulis {{tale.id}}:</b> {{tale.title}}</a></li></li>
+<li><a href="../files-tale/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
 {% endfor %}
 </ul>
 
@@ -32,7 +32,7 @@
 
 <ul>
 {% for tale in remaining_tales %}
-<li><a href="../files-tale/{{tale.dir}}/content.html">{{tale.id}}: {{tale.title}}</a></li></li>
+<li><a href="../files-tale/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
 {% endfor %}
 </ul>
 

@@ -13,9 +13,14 @@ class TaleHandler(webapp2.RequestHandler):
         #the_comp = ['EE.PK', 'EE.LO', 'EE.LVS/LVT', 'LV.NO', 'LV.VO', 'LV.AO']
         main_tales = [
             {
-                'id':'NumTh.Progressions', 
-                'dir':'numtheory-progressions',
-                'title': u'Aritmētiskas un ģeometriskas progresijas'
+                'id':'NumTh.ArithmProgressions', 
+                'dir':'numtheory-arithm-progressions',
+                'title': u'Aritmētiskas progresijas'
+            },
+            {
+                'id':'NumTh.GeomProgressions', 
+                'dir':'numtheory-geom-progressions',
+                'title': u'Ģeometriskas progresijas'
             }
         ]
         remaining_tales = [

@@ -889,7 +889,7 @@ seeAlso=LV.NO.2005.8.1
 
 # <lo-sample/> LV.NO.2004.9.2 
 
-Dots, ka $x$ \textendash{} naturāls skaitlis. 
+Dots, ka $x$ – naturāls skaitlis. 
 Kāds lielākais daudzums no skaitļiem
 $$x;\; x + 2;\; x + 4;\; x + 6;\; x + 8$$
 var vienlaicīgi būt pirmskaitļi?
@@ -901,7 +901,7 @@ var vienlaicīgi būt pirmskaitļi?
 Uz tāfeles uzrakstīti $2004$ skaitļi; viens no tiem ir $1$. 
 Ar vienu gājienu atļauts
 nodzēst vienu skaitli un tā vietā uzrakstīt skaitli 
-$a + b - c$, kur $a$, $b$ un $c$ \textendash{} kaut
+$a + b - c$, kur $a$, $b$ un $c$ – kaut
 kādi trīs no nenodzēstajiem skaitļiem. Vai, atkārtojot 
 šādus gājienus vairākas
 reizes, var panākt, lai uz tāfeles vienlaicīgi 
@@ -1303,7 +1303,7 @@ seeAlso=LV.NO.2007.12.2
 
 
 Kurus naturālos skaitļus $n$ var izsacīt formā ${\displaystyle n=\frac{x}{y}}$, 
-kur $x = a^5$, $y = b^3$, $a$ un $b$ \textendash{} naturāli skaitļi? 
+kur $x = a^5$, $y = b^3$, $a$ un $b$ – naturāli skaitļi? 
 
 
 <small>
@@ -1313,6 +1313,11 @@ kur $x = a^5$, $y = b^3$, $a$ un $b$ \textendash{} naturāli skaitļi?
 * [alg.tra.pow.nest](#)
 
 </small>
+
+<!--
+seeAlso=LV.NO.2008.7.1
+seeAlso=LV.NO.2009.7.1
+-->
 
 ## ABC
  
@@ -1401,7 +1406,7 @@ Kādiem naturāliem skaitļiem $n$ vienlaicīgi piemīt sekojošas īpašības:
 # <lo-sample/> LV.NO.2008.7.1 
 
 Kurus naturālos skaitļus $n$ var izsacīt formā $n=\frac{x}{y}$, kur $x = a^3$, 
-$y = b^4$, $a$ un $b$ \textendash{} naturāli skaitļi? 
+$y = b^4$, $a$ un $b$ – naturāli skaitļi? 
 
 
 <small>
@@ -1411,6 +1416,11 @@ $y = b^4$, $a$ un $b$ \textendash{} naturāli skaitļi?
 * [alg.tra.pow.nest](#)
 
 </small>
+
+<!--
+seeAlso=LV.NO.2007.7.1
+seeAlso=LV.NO.2009.7.1
+-->
 
 
 ## ABC
@@ -1508,7 +1518,7 @@ Kādiem naturāliem skaitļiem $n$ vienlaicīgi piemīt sekojošas īpašības:
 
 
 Kurus naturālos skaitļus $n$ var izsacīt formā ${\displaystyle n=\frac{x}{y}}$, 
-kur $x = a^3$, $y = b^5$, $a$ un $b$ \textendash{} naturāli skaitļi? 
+kur $x = a^3$, $y = b^5$, $a$ un $b$ – naturāli skaitļi? 
 
 
 <small>
@@ -1518,6 +1528,12 @@ kur $x = a^3$, $y = b^5$, $a$ un $b$ \textendash{} naturāli skaitļi?
 * [alg.tra.pow.nest](#)
 
 </small>
+
+<!--
+seeAlso=LV.NO.2007.7.1
+seeAlso=LV.NO.2008.7.1
+-->
+
 
 ## ABC
  
@@ -1529,7 +1545,7 @@ Jebkuru pirmskaitļa pakāpi $p^v$ var izteikt kā $(p^k)^3/(p^m)^5$.
 # <lo-sample/> LV.NO.2009.7.3 
 
 
-Naturālam skaitlim $a$ ir tieši $4$ dalītāji, bet naturālam skaitlim $b$ \textendash{}
+Naturālam skaitlim $a$ ir tieši $4$ dalītāji, bet naturālam skaitlim $b$ –
 tieši $6$ dalītāji. Pierādiet, ka reizinājumam $ab$ ir **vismaz** $9$ dalītāji. 
 Vai var gadīties, ka šim reizinājumam ir **tieši** $9$ dalītāji?  
 *Piezīme.* Apskatām tikai tādus dalītājus, kas paši ir naturāli skaitļi. 
@@ -1823,7 +1839,7 @@ ${\displaystyle \frac{x^2}{2} + \frac{5}{y} = 7}$.
 
 # <lo-sample/> LV.NO.2010.12.1 
 
-Dots, ka  $n$ \textendash{} naturāls skaitlis, kas nedalās ar $5$. 
+Dots, ka  $n$ – naturāls skaitlis, kas nedalās ar $5$. 
 Kāda ir mazākā iespējamā ciparu summa skaitlim 
 ${\displaystyle \left( n^2 - 1 \right)\left( n^2 - 4 \right) + 7}$? 
 Pie kādām $n$ vērtībām tā tiek sasniegta?
@@ -1914,7 +1930,7 @@ Kāda ir mazākā iespējamā summas $a+b$ vērtība?
 
 Naturālu skaitli sauksim par *fantastisku*, ja tas ir vienāds ar sava kvadrāta ciparu 
 reizinājumu. Piemēram, $1$ ir fantastisks (jo $1^2 = 1$ un $1 = 1$), bet 
-$4$ \textendash{} nē (jo $4^2 = 16$, bet $1 \cdot 6 = 6 \neq 4$). 
+$4$ – nē (jo $4^2 = 16$, bet $1 \cdot 6 = 6 \neq 4$). 
 Pierādīt, ka visi nepāra skaitļi, kas lielāki par $1$, nav fantastiski. 
 
 
@@ -2390,7 +2406,7 @@ tieši $2015$ mājlopus?
 
 ## Salīdzina paritāti
  
-Katras maiņas iznākumā dzīvnieku kopskaits mainās par pāru skaitli. $99+21$ ir pāru, bet $2015$ \textendash{} nepāru.
+Katras maiņas iznākumā dzīvnieku kopskaits mainās par pāru skaitli. $99+21$ ir pāru, bet $2015$ – nepāru.
 
 
 # <lo-sample/> LV.NO.2015.7.3 
@@ -2662,8 +2678,8 @@ dalās ar $99$.
 
 ## ABC
  
-**#DalāmībaAr11** **#DalāmībaAr3Un9** Ar $9$ \textendash{} ciparu summa nemainās; 
-ar $11$ \textendash{} pāru/nepāru pozīcijās ciparu summas atšķiras par $11k$.
+**#DalāmībaAr11** **#DalāmībaAr3Un9** Dalāmībai ar $9$ ciparu summa nemainās; 
+ar $11$ – pāru/nepāru pozīcijās ciparu summas atšķiras par $11k$.
 
 
 # <lo-sample/> LV.NO.2016.7.5 
@@ -2700,8 +2716,8 @@ $a+b = cd$ un $ab = c+d$?
 # <lo-sample/> LV.NO.2016.8.2 
 
 Karlīna uzrakstīja divus skaitļus, kuru pierakstā nav izmantots cipars $0$. 
-Katru ciparu viņa aizstāja ar burtu: dažādus ciparus \textendash{} ar dažādiem burtiem, 
-vienādus \textendash{} ar vienādiem. Viens no uzrakstītajiem 
+Katru ciparu viņa aizstāja ar burtu: dažādus ciparus – ar dažādiem burtiem, 
+vienādus – ar vienādiem. Viens no uzrakstītajiem 
 skaitļiem *DUBĻUNNN* dalās ar $104$. Pierādi, ka otrais skaitlis *BURBUĻVANNA* nedalās ar $56$. 
 
 
@@ -2714,7 +2730,7 @@ skaitļiem *DUBĻUNNN* dalās ar $104$. Pierādi, ka otrais skaitlis *BURBUĻVAN
 ## ABC
  
 **#DalāmībaAr4Un8** **#LKD** *NNN* Dalās ar $8$ t.t.t. ja $N=0$ vai $N=8$. 
-*NNA* dalās ar $8$ tikai tad, ja $A=0$ vai $A=8$. T.i. $A=N$ \textendash{} pretruna.
+*NNA* dalās ar $8$ tikai tad, ja $A=0$ vai $A=8$. T.i. $A=N$ – pretruna.
 
 
 

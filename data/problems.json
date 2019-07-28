@@ -2980,7 +2980,10 @@
         "genre": [],
         "id": "LV.NO.2007.7.1",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2008.7.1",
+            "LV.NO.2009.7.1"
+        ],
         "tasks": [
             "div.common.gcd.bezout",
             "div.fta",
@@ -3035,7 +3038,10 @@
         "genre": [],
         "id": "LV.NO.2008.7.1",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2007.7.1",
+            "LV.NO.2009.7.1"
+        ],
         "tasks": [
             "div.common.gcd.bezout",
             "div.fta",
@@ -3102,7 +3108,10 @@
         "genre": [],
         "id": "LV.NO.2009.7.1",
         "qtypes": [],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.NO.2007.7.1",
+            "LV.NO.2008.7.1"
+        ],
         "tasks": [
             "div.common.gcd.bezout",
             "div.fta",
@@ -8870,7 +8879,9 @@
         "qtypes": [
             "Find.Count"
         ],
-        "seeAlso": [],
+        "seeAlso": [
+            "LV.VO.1983.8.1"
+        ],
         "tasks": [
             "seq.arithm.mod",
             "seq.arithm.numestimate",

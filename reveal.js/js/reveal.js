@@ -447,6 +447,12 @@
 	}
 
 
+    // KAP
+    var getYellowElt = function() {
+        var theP = document.createElement("p");
+        theP.setAttribute("style","background-color:yellow;z-index:1;position:absolute;top:60px;left:-30px;height:525px;width:20px;");
+        return theP;
+    };
 
     // KAP
     var getAsterisk = function() {
@@ -495,10 +501,16 @@
 
     // KAP
     var applyHeaderStyles = function() {
-        var x = document.getElementsByTagName("h1");
-        console.log("Found h1 elements: " + x.length);
 
-        for (var i = 0; i < x.length; i++) {
+        for (var j = 0; j < 2; j++) {
+          if (j == 0) {
+            var x = document.getElementsByTagName("h1");
+          } else {
+            var x = document.getElementsByTagName("h2");
+          }
+          console.log("Found h1 elements: " + x.length);
+
+          for (var i = 0; i < x.length; i++) {
             if (x[i].innerHTML.indexOf("lo-sample") !== -1) {
                 x[i].classList.add('sample');
 		var theAsterisk = getAsterisk();
@@ -514,14 +526,34 @@
 		var theHead = getHead();
 		x[i].parentNode.insertBefore(theHead,x[i].parentNode.firstChild);
                 console.log("Added class 'quiz'");
-            } else if (x[i].innerHTML.indexOf("lo-default") !== -1) {
-                x[i].classList.add('LOdefault');
+            } else if (x[i].innerHTML.indexOf("lo-theory") !== -1) {
+                x[i].classList.add('theory');
 		var theAsterisk = getAsterisk();
 		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
-                console.log("Added class 'LOdefault'");
+                console.log("Added class 'theory'");
+            } else if (x[i].innerHTML.indexOf("lo-hints") !== -1) {
+                x[i].classList.add('hints');
+		var theAsterisk = getAsterisk();
+		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
+                console.log("Added class 'hints'");		
+            } else if (x[i].innerHTML.indexOf("lo-soln") !== -1) {
+                x[i].classList.add('soln');
+		var theAsterisk = getAsterisk();
+		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
+                console.log("Added class 'soln'");
+            } else if (x[i].innerHTML.indexOf("lo-yellow") !== -1) {
+                x[i].classList.add('yellow');
+                var theYellowElt = getYellowElt();
+		x[i].parentNode.insertBefore(theYellowElt,x[i].parentNode.firstChild);
+		var theAsterisk = getAsterisk();
+		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
+                console.log("Added class 'yellow'");
+            } else if (x[i].innerHTML.indexOf("lo-why") !== -1) {
+                x[i].parentNode.classList.add('LOwhy');
             } else {
                 x[i].classList.add('default');
             }
+          }
         }
 
     };

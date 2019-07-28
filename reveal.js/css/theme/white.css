@@ -72,7 +72,7 @@ body {
 
 
 /* KAP added */
-.reveal h1.sample, .reveal h1.summary, .reveal h1.quiz, .reveal h1.LOdefault{
+.reveal h1.sample, .reveal h1.summary, .reveal h1.quiz, .reveal h1.theory, .reveal h1.soln, .reveal h1.hints, .reveal h1.yellow, .reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow {
   color: white;
   padding: 2px 20px 2px 20px;
   -moz-border-radius-topleft: 20px;
@@ -89,25 +89,48 @@ body {
 }
 
 /* KAP added */
-.reveal h1.sample {
+.reveal h1.sample, .reveal h2.sample {
   background-color: #FF6C0C;
 }
 
 /* KAP added */
-.reveal h1.summary {
+.reveal h1.summary, .reveal h2.summary {
   background-color: #0095CD;
 }
 
 /* KAP added */
-.reveal h1.quiz {
+.reveal h1.quiz, .reveal h2.quiz {
   background-color: #2F5370;
 }
 
-.reveal h1.LOdefault {
+/* KAP added */
+.reveal h1.theory, .reveal h2.theory {
   background-color: silver;
   color: black;
-  text-transform: none;
 }
+
+/* KAP added */
+.reveal h1.hints, .reveal h2.hints {
+  background-color: #8C0000;
+}
+
+/* KAP added */
+.reveal h1.soln, .reveal h2.soln {
+  background-color: #43B02A;
+}
+
+/* KAP added */
+.reveal h1.yellow, .reveal h2.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+
+.reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow {
+   text-transform: none;
+   font-weight: normal !important;
+}
+
 
 
 /* KAP added */
@@ -161,16 +184,44 @@ blue {
   /* color: #000080 !impportant; */
 }
 
-
+/* KAP */
 red {
   color: #FF0000 !important;
 }
 
+/* KAP */
 green {
   color: darkgreen !important;
 }
 
+/* KAP */
+white {
+  color: white !important;
+}
 
+/* KAP */
+.LOwhy {
+  background-image: url('objective-slide.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* KAP */
+.LOwhy section {
+  background-color: white;
+  z-index: 10;
+}
+
+/* KAP */
+.LOwhy h1 {
+  visibility:hidden !important;
+}
+
+/* KAP */
+.LOwhy h2 {
+  color: white;
+  text-transform: none;
+}
 
 .reveal small {
   text-align: left !important;
@@ -191,6 +242,31 @@ green {
 .reveal small li {
   font-family: "Lucida Console", "Courier New", monospace;
 }
+
+div.bigWhy {
+  background-color: #43B02A;
+  font-weight:bold;
+  color:white;
+  padding:20px;
+  position:absolute;
+  top:30px;
+  left:0px;
+  height:150px;
+  width:60%;
+}
+
+div.smallWhy {
+  z-index:1; 
+  background-color:white;
+  border: 1px solid silver; 
+  padding: 20px;
+  position: absolute; 
+  top: 190px; 
+  left:30px; 
+  width:80%; 
+  height: 350px; 
+}
+
 
 
 /* Ensure certain elements are never larger than the slide itself */

@@ -261,8 +261,8 @@ jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 **(6)** Fiksētu atlikumu izteiksmes ar $a=bq+r$:
 
 <table>
-<tr><td>Pāru sk.</td><td>$2k$</td></tr>
-<tr><td>Nepāru sk.</td><td>$2k+1$</td></tr>
+<tr><td>Pāra sk.</td><td>$2k$</td></tr>
+<tr><td>Nepāra sk.</td><td>$2k+1$</td></tr>
 <tr><td>Beidzas ar "3"</td><td>$10k+3$</td></tr>
 </table>
 
@@ -424,8 +424,8 @@ divu vidējo locekļu summu).
 * *Ja $n$ ir nepāru:* $S_7 = a_1+a_2+a_3 + a_4 + a_5 + a_6 + a_7 = \frac{a_1+a_7}{2}\cdot{}7$ dalās ar $7$ un ar $a_4=\frac{a_1+a_7}{2}$. 
 
 * *Ja $n$ ir pāru:* $S_8 = a_1+a_2+a_3 + a_4 + a_5 + a_6 + a_7 + a_8 = \frac{a_1+a_8}{2}\cdot{}7$ 
-dalās ar $n/2=4$ un ar $a_4+a_5$: $2\times$ progresijas aritmētisko vidējo.  
-(Ja $n$ ir pāru, tad pats aritmētiskais vidējais ne vienmēr ir vesels skaitlis.)
+dalās ar $n/2=4$ un ar $a_4+a_5$: divkāršotu progresijas aritmētisko vidējo.  
+(Ja $n$ ir pāru, tad aritmētiskais vidējais var nebūt vesels.)
 
 
 
@@ -507,7 +507,7 @@ no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek i
 ## <lo-hints/> LV.NO.2002.8.3 
 
 * Vai ir ekstrēma (lielākā/mazākā) vērtība, ko gribētu pārbaudīt?
-* Izraujot $1$ lapu, summai pievienojas divi lappušu nummuri. Kādas var
+* Izraujot $1$ lapu, summai pievienojas divi lappušu numuri. Kādas var
 būt šo abu lappušu numuru summas?
 
 
@@ -528,7 +528,7 @@ Jau $1+\ldots+60 > 1000$, tādēļ pat vismazāko lapu numuru summa ir par lielu
 **Apgalvojums:** Ja materiāls punkts kustas ar sākotnējo ātrumu 
 $v_0$ un paātrinājumu $a$, tad tā noietais ceļš iegūstams 
 ar formulu, kas līdzīgi iepriekšējai ir kvadrātfunkcija no laika $t$:
-$$s = vt + \frac{at^2}{2}.$$
+$$s = v_0t + \frac{at^2}{2}.$$
 
 *Piezīme.* Ja materiāls punkts sākumā ir nekustīgs ($v=0$) 
 un pēc tam brīvi krīt $t$ sekundes ar paātrinājumu $g = 9.81\,m/s^2$, 
@@ -679,8 +679,8 @@ bet $r$ sauc par *atlikumu*.
 
 ## <lo-summary/> Piemēri dalīšanai ar atlikumu
 
-* Pāru skaitļus $n$ var izteikt formā $2q$
-* Nepāru skaitļus $n$ var izteikt formā $2q+1$
+* Pāra skaitļus $n$ var izteikt formā $2q$
+* Nepāra skaitļus $n$ var izteikt formā $2q+1$
 * Skaitļus, kuru decimālpieraksts beidzas ar ciparu "7" var izteikt formā $10q+7$
 
 
@@ -937,7 +937,7 @@ $$5x + 3y = 1,\;\;\mbox{ja $(x,y)=(2,3)$.}$$
 
 # <lo-quiz/> Jautājums Nr.1
 
-Nosaukt piecus mazākos kopīgos dalītājus skaitļiem 
+Nosaukt piecus mazākos kopīgos dalāmos skaitļiem 
 $8$ un $18$. 
 
 ## <lo-quiz/> Jautājums Nr.1
@@ -1132,7 +1132,7 @@ un katram pārim priekšā pierakst izsvītrojamo skaitli (attiecīgi 1., 4., 7.
 no jauna iesprausto (violeto) vietiņu skaits ir precīzi trešdaļa. Tādēļ $x_n$ pareizinās ar $\frac{3}{2}$
 jeb $x_{n+1} = \frac{3x_n}{2}$. 
 
-![Konstrukcija pāru skaitļiem](konstrukcija-even.png)
+![Konstrukcija pāra skaitļiem](konstrukcija-even.png)
 
 2. Ja $x_n$ ir nepāru, tad spriedums ir līdzīgs - vietas no $1$ līdz $x_n-1$ var sadalīt pāros, bet pati pēdējā
 vietiņa $x_n$ paliek bez pāra (un tai vienai pašai priekšā iesprauž vienu violeto rūtiņu). 
@@ -1157,8 +1157,9 @@ izdzīvošanu neiespaido).
 
 ## <lo-soln/> LV.AO.2004.8.5 (2004 skaitļi)
 
-Konstruējam virkni ar rekurento sakarību ${\displaystyle x_{n+1} = \left\lceil \frac{3x_n}{2} \right\rceil}$ līdz tā pārsniedz $X = 2004$: 
-$$1; 2; 3; 5; 8; 12; 18; 27; 41; 62; 93; 140; 210; 315; 473; 710; 1065; 1598$$
+Konstruējam virkni ar rekurento sakarību ${\displaystyle x_{n+1} = \left\lceil \frac{3x_n}{2} \right\rceil}$ līdz tā pārsniedz $X = 2004$:   
+$1; 2; 3; 5; 8; 12; 18; 27; 41; 62;$  
+$\;\;\;\;\;93; 140; 210; 315; 473; 710; 1065; 1598;$<red>$2397$</red>
 
 Katrs nākamais loceklis ir $1.5$ reizes lielāks par iepriekšējo (vai noapaļots par $\frac{1}{2}$ uz augšu). 
 

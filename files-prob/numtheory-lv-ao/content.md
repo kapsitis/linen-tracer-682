@@ -808,6 +808,7 @@ skaitļu reizinājums?
 genre=optimization
 concepts=decimal-notation
 questionType=Find.Max
+seeAlso=LT.VILNIUS.2008.12.1
 -->
 
 

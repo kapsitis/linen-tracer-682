@@ -115,6 +115,20 @@
         "sen": 0
     },
     {
+        "c_id": "coprimes",
+        "col": "#FF8000",
+        "colidx": 1,
+        "jun": 4,
+        "pp": [
+            "EE.LO.2017.10.1",
+            "EE.LVS.2012.9_10.2",
+            "EE.LVS.2016.9_10.3",
+            "LV.NO.2001.7.4",
+            "LV.AO.2003.8.3"
+        ],
+        "sen": 1
+    },
+    {
         "c_id": "arithmetic-progression",
         "col": "#FFFF00",
         "colidx": 2,
@@ -132,6 +146,36 @@
             "BBK2012.P4.119"
         ],
         "sen": 3
+    },
+    {
+        "c_id": "gcd",
+        "col": "#80FF00",
+        "colidx": 3,
+        "jun": 6,
+        "pp": [
+            "EE.LVS.2013.9_10.3",
+            "EE.LVS.2015.11_12.1",
+            "EE.LVS.2018.9_10.3",
+            "EE.LVT.2014.9_10.3",
+            "EE.LVT.2016.9_10.3",
+            "LV.AO.2003.8.3",
+            "LV.AO.2004.7.3",
+            "LT.LKMMO.2009.13",
+            "BBK2012.P1.126"
+        ],
+        "sen": 3
+    },
+    {
+        "c_id": "quadratic-equation",
+        "col": "#80FF00",
+        "colidx": 3,
+        "jun": 2,
+        "pp": [
+            "EE.PK.2001.9B.3",
+            "EE.LVS.2012.9_10.3",
+            "LT.LKMMO.2010.8"
+        ],
+        "sen": 1
     },
     {
         "c_id": "divisibility",
@@ -189,7 +233,7 @@
         "colidx": 4,
         "jun": 3,
         "pp": [
-            "EE.LVT.2018.vanem.3",
+            "EE.LVT.2018.11_12.3",
             "LV.NO.2001.8.3",
             "LV.NO.2003.7.4/LV.NO.2005.7.1",
             "LV.NO.2004.7.1",
@@ -206,6 +250,32 @@
         "pp": [
             "EE.PK.2008.8B.2",
             "LV.NO.2003.12.5"
+        ],
+        "sen": 1
+    },
+    {
+        "c_id": "lcm",
+        "col": "#00FF00",
+        "colidx": 4,
+        "jun": 3,
+        "pp": [
+            "EE.PK.2016.10.3",
+            "EE.LVS.2015.11_12.1",
+            "EE.LVS.2018.9_10.3",
+            "EE.LVT.2014.9_10.3",
+            "EE.LVT.2016.9_10.3",
+            "LT.LKMMO.2013.7"
+        ],
+        "sen": 3
+    },
+    {
+        "c_id": "parity",
+        "col": "#00FF00",
+        "colidx": 4,
+        "jun": 1,
+        "pp": [
+            "EE.LVT.2016.9_10.4",
+            "LT.LKMMO.2017.7"
         ],
         "sen": 1
     },
@@ -229,42 +299,10 @@
         "sen": 5
     },
     {
-        "c_id": "remainder",
-        "col": "#00FF80",
-        "colidx": 5,
-        "jun": 4,
-        "pp": [
-            "EE.PK.1995.7B.2",
-            "EE.PK.1997.8B.1",
-            "EE.PK.1997.8B.1",
-            "EE.PK.2005.8B.1",
-            "EE.PK.2011.10.3",
-            "EE.LVS.2012.vanem.2",
-            "EE.LVS.2015.vanem.3",
-            "LT.LKMMO.2010.15",
-            "LT.LMMO.2010.11_12.4"
-        ],
-        "sen": 5
-    },
-    {
-        "c_id": "coprimes",
-        "col": "#00FF80",
-        "colidx": 5,
-        "jun": 2,
-        "pp": [
-            "EE.LO.2017.10.1",
-            "EE.LVS.2012.noorem.2",
-            "EE.LVS.2016.noorem.3",
-            "LV.NO.2001.7.4",
-            "LV.AO.2003.8.3"
-        ],
-        "sen": 3
-    },
-    {
         "c_id": "primes",
-        "col": "#00FFFF",
-        "colidx": 6,
-        "jun": 17,
+        "col": "#00FF80",
+        "colidx": 5,
+        "jun": 20,
         "pp": [
             "EE.PK.1995.7B.2",
             "EE.PK.1997.8B.1",
@@ -275,16 +313,16 @@
             "EE.PK.2005.7B.1",
             "EE.PK.2006.8B.3",
             "EE.PK.2013.8B.1",
-            "EE.LVS.2009.vanem.1",
-            "EE.LVT.2009.noorem.5",
-            "EE.LVT.2011.vanem.1",
-            "EE.LVS.2013.vanem.2",
-            "EE.LVS.2015.vanem.3",
-            "EE.LVS.2017.noorem.3",
-            "EE.LVS.2017.vanem.2",
-            "EE.LVT.2017.noorem.3",
-            "EE.LVT.2017.vanem.3",
-            "EE.LVT.2018.vanem.3",
+            "EE.LVS.2009.11_12.1",
+            "EE.LVS.2013.11_12.2",
+            "EE.LVS.2015.11_12.3",
+            "EE.LVS.2017.9_10.3",
+            "EE.LVS.2017.11_12.2",
+            "EE.LVT.2009.9_10.5",
+            "EE.LVT.2011.11_12.1",
+            "EE.LVT.2017.9_10.3",
+            "EE.LVT.2017.11_12.3",
+            "EE.LVT.2018.11_12.3",
             "LV.NO.2001.8.3",
             "LV.NO.2001.11.3",
             "LV.NO.2002.9.1",
@@ -312,7 +350,41 @@
             "BBK2012.P4.121",
             "BBK2012.P4.122"
         ],
-        "sen": 28
+        "sen": 25
+    },
+    {
+        "c_id": "remainder",
+        "col": "#00FF80",
+        "colidx": 5,
+        "jun": 4,
+        "pp": [
+            "EE.PK.1995.7B.2",
+            "EE.PK.1997.8B.1",
+            "EE.PK.1997.8B.1",
+            "EE.PK.2005.8B.1",
+            "EE.PK.2011.10.3",
+            "EE.LVS.2012.11_12.2",
+            "EE.LVS.2015.11_12.3",
+            "LT.LKMMO.2010.15",
+            "LT.LMMO.2010.11_12.4"
+        ],
+        "sen": 5
+    },
+    {
+        "c_id": "divisors",
+        "col": "#00FF80",
+        "colidx": 5,
+        "jun": 3,
+        "pp": [
+            "EE.LVS.2010.9_10.1",
+            "EE.LVS.2016.11_12.6",
+            "EE.LVS.2017.11_12.2",
+            "EE.LVT.2010.9_10.1",
+            "EE.LVT.2010.9_10.1",
+            "EE.LVT.2010.11_12.5",
+            "EE.LVT.2015.11_12.1"
+        ],
+        "sen": 4
     },
     {
         "c_id": "absolute-value",
@@ -339,13 +411,28 @@
         "sen": 2
     },
     {
+        "c_id": "factorial",
+        "col": "#00FFFF",
+        "colidx": 6,
+        "jun": 2,
+        "pp": [
+            "EE.PK.2001.8B.1",
+            "EE.LO.2012.10.5",
+            "EE.LVS.2010.9_10.5",
+            "EE.LVS.2012.11_12.3",
+            "LT.LKMMO.2014.10",
+            "LT.LKMMO.2015.6"
+        ],
+        "sen": 4
+    },
+    {
         "c_id": "integer-polynomials",
         "col": "#00FFFF",
         "colidx": 6,
         "jun": 1,
         "pp": [
             "EE.PK.1994.8B.2",
-            "EE.LVT.2013.vanem.5",
+            "EE.LVT.2013.11_12.5",
             "LV.VO.2014.10.2"
         ],
         "sen": 2
@@ -363,18 +450,6 @@
         "sen": 2
     },
     {
-        "c_id": "quadratic-equation",
-        "col": "#00FFFF",
-        "colidx": 6,
-        "jun": 1,
-        "pp": [
-            "EE.PK.2001.9B.3",
-            "EE.LVS.2012.noorem.3",
-            "LT.LKMMO.2010.8"
-        ],
-        "sen": 2
-    },
-    {
         "c_id": "sum-of-digits",
         "col": "#00FFFF",
         "colidx": 6,
@@ -384,7 +459,7 @@
             "EE.PK.2007.7B.1",
             "EE.PK.2011.7B.1",
             "EE.PK.2015.10.6",
-            "EE.LVS.2012.vanem.1",
+            "EE.LVS.2012.11_12.1",
             "LV.NO.2000.10.1",
             "LV.NO.2001.10.1",
             "LV.VO.2018.10.3",
@@ -444,37 +519,17 @@
         "sen": 3
     },
     {
-        "c_id": "gcd",
+        "c_id": "valuations",
         "col": "#0080FF",
         "colidx": 7,
-        "jun": 2,
-        "pp": [
-            "EE.LVS.2013.noorem.3",
-            "EE.LVT.2014.noorem.3",
-            "EE.LVS.2015.vanem.1",
-            "EE.LVT.2016.noorem.3",
-            "EE.LVS.2018.noorem.3",
-            "LV.AO.2003.8.3",
-            "LV.AO.2004.7.3",
-            "LT.LKMMO.2009.13",
-            "BBK2012.P1.126"
-        ],
-        "sen": 7
-    },
-    {
-        "c_id": "factorial",
-        "col": "#0000FF",
-        "colidx": 8,
         "jun": 1,
         "pp": [
-            "EE.PK.2001.8B.1",
-            "EE.LO.2012.10.5",
-            "EE.LVS.2010.noorem.5",
-            "EE.LVS.2012.vanem.3",
-            "LT.LKMMO.2014.10",
-            "LT.LKMMO.2015.6"
+            "EE.LVS.2011.11_12.1",
+            "EE.LVS.2017.9_10.3",
+            "LT.LKMMO.2015.6",
+            "LT.LKMMO.2018.9"
         ],
-        "sen": 5
+        "sen": 3
     },
     {
         "c_id": "power",
@@ -514,20 +569,14 @@
         "sen": 3
     },
     {
-        "c_id": "divisors",
+        "c_id": "constant-e",
         "col": "#8000FF",
         "colidx": 9,
         "jun": 0,
         "pp": [
-            "EE.LVS.2010.noorem.1",
-            "EE.LVT.2010.noorem.1",
-            "EE.LVT.2010.noorem.1",
-            "EE.LVT.2010.vanem.5",
-            "EE.LVT.2015.vanem.1",
-            "EE.LVS.2016.vanem.6",
-            "EE.LVS.2017.vanem.2"
+            "LV.OTHER.TST.1992.10.1"
         ],
-        "sen": 7
+        "sen": 1
     },
     {
         "c_id": "floor",
@@ -536,7 +585,7 @@
         "jun": 0,
         "pp": [
             "EE.LO.2014.10.1",
-            "EE.LVS.2016.vanem.2"
+            "EE.LVS.2016.11_12.2"
         ],
         "sen": 2
     },
@@ -572,12 +621,22 @@
         "sen": 1
     },
     {
+        "c_id": "groups",
+        "col": "#8000FF",
+        "colidx": 9,
+        "jun": 0,
+        "pp": [
+            "LV.TST.1995.2"
+        ],
+        "sen": 1
+    },
+    {
         "c_id": "integer-polynomial",
         "col": "#8000FF",
         "colidx": 9,
         "jun": 0,
         "pp": [
-            "EE.LVS.2010.vanem.2",
+            "EE.LVS.2010.11_12.2",
             "LV.VO.2011.10.5",
             "LT.LKMMO.2011.6"
         ],
@@ -593,21 +652,6 @@
             "LT.RAJ.2015.9_10.5"
         ],
         "sen": 2
-    },
-    {
-        "c_id": "lcm",
-        "col": "#8000FF",
-        "colidx": 9,
-        "jun": 0,
-        "pp": [
-            "EE.PK.2016.10.3",
-            "EE.LVT.2014.noorem.3",
-            "EE.LVS.2015.vanem.1",
-            "EE.LVT.2016.noorem.3",
-            "EE.LVS.2018.noorem.3",
-            "LT.LKMMO.2013.7"
-        ],
-        "sen": 6
     },
     {
         "c_id": "linear-expression",
@@ -639,7 +683,7 @@
         "colidx": 9,
         "jun": 0,
         "pp": [
-            "EE.LVS.2017.vanem.3"
+            "EE.LVS.2017.11_12.3"
         ],
         "sen": 1
     },
@@ -654,24 +698,13 @@
         "sen": 1
     },
     {
-        "c_id": "parity",
-        "col": "#8000FF",
-        "colidx": 9,
-        "jun": 0,
-        "pp": [
-            "EE.LVT.2016.noorem.4",
-            "LT.LKMMO.2017.7"
-        ],
-        "sen": 2
-    },
-    {
         "c_id": "power-sums",
         "col": "#8000FF",
         "colidx": 9,
         "jun": 0,
         "pp": [
             "EE.LO.2013.10.1",
-            "EE.LVS.2010.vanem.1"
+            "EE.LVS.2010.11_12.1"
         ],
         "sen": 2
     },
@@ -720,7 +753,7 @@
         "jun": 0,
         "pp": [
             "EE.LO.2012.10.1",
-            "EE.LVS.2013.vanem.1",
+            "EE.LVS.2013.11_12.1",
             "LV.NO.2001.10.4",
             "LT.LKMMO.2016.8",
             "BBK2012.P1.52"
@@ -736,18 +769,5 @@
             "LT.LKMMO.2012.10"
         ],
         "sen": 1
-    },
-    {
-        "c_id": "valuations",
-        "col": "#8000FF",
-        "colidx": 9,
-        "jun": 0,
-        "pp": [
-            "EE.LVS.2011.vanem.1",
-            "EE.LVS.2017.noorem.3",
-            "LT.LKMMO.2015.6",
-            "LT.LKMMO.2018.9"
-        ],
-        "sen": 4
     }
 ]

@@ -10,10 +10,20 @@
         "title": "Igaunijas gala kārta"
     },
     {
-        "dir": "numtheory-ee-lvs-lvt",
-        "id": "EE.LVS/LVT",
-        "title": "Igaunijas rudens/ziemas konkursi"
+        "dir": "numtheory-ee-lvs",
+        "id": "EE.LVS",
+        "title": "Igaunijas rudens konkurss"
     },
+    {
+        "dir": "numtheory-ee-lvt",
+        "id": "EE.LVT",
+        "title": "Igaunijas ziemas konkurss"
+    },
+    {
+        "dir": "numtheory-ee-tst",
+        "id": "EE.TST",
+        "title": "Igaunijas atlases sacensības"
+    },    
     {
         "dir": "numtheory-lv-no",
         "id": "LV.NO",
@@ -28,6 +38,16 @@
         "dir": "numtheory-lv-ao",
         "id": "LV.AO",
         "title": "Latvijas atklātā olimpiāde"
+    },
+    {
+        "dir": "numtheory-lv-tst",
+        "id": "LV.TST",
+        "title": "Latvijas atlases sacensības"
+    },
+    {
+        "dir": "numtheory-lv-other",
+        "id": "LV.OTHER",
+        "title": "Latvija - citi uzdevumi"
     },
     {
         "dir": "numtheory-lt-lkmmo",
@@ -45,6 +65,11 @@
         "title": "Lietuvas rajona/pilsētas posms"
     },
     {
+        "dir": "numtheory-lt-vilnius",
+        "id": "LT.VILNIUS",
+        "title": "Viļņas pilsētas olimpiāde"
+    },
+    {
         "dir": "numtheory-lt-lmmo",
         "id": "LT.LMMO",
         "title": "Lietuvas valsts posms"
@@ -53,6 +78,11 @@
         "dir": "numtheory-lt-vumif",
         "id": "LT.VUMIF",
         "title": "Viļņas universitātes olimpiāde"
+    },
+    {
+        "dir": "numtheory-lt-tst",
+        "id": "LT.TST",
+        "title": "Lietuvas papildsacensības"
     },
     {
         "dir":"numtheory-bbk-p1",
@@ -73,5 +103,30 @@
         "dir":"numtheory-bbk-p4",
         "id":"BBK2012.P4",
         "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 4.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p5",
+        "id":"BBK2012.P4",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 5.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p6",
+        "id":"BBK2012.P4",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 6.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p7",
+        "id":"BBK2012.P4",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 7.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p8",
+        "id":"BBK2012.P4",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 8.nodaļa"
+    },
+    {
+        "dir":"numtheory-bbk-p9",
+        "id":"BBK2012.P4",
+        "title":"A.Bērziņa, A.Bērziņš, D.Kūma. Uzdevumu krājums, 9.nodaļa"
     }
 ]

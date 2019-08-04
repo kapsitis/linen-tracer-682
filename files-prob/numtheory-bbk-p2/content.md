@@ -55,7 +55,7 @@ questionType=Prove.ForAll
 -->
 
 
-# <lo-sample/> BBK2012.P2.23
+# <LO-REFFF/> BBK2012.P2.23
 
 Skaitļu virkni $a_1,a_2,a_3,\ldots$ veido sekojoši: 
 $a_1 = 99$, $a_{n+1} = a_n + p(a_n)$, kur
@@ -63,8 +63,10 @@ ar $p(x)$ apzīmēts lielākais pirmskaitlis, ar kuru dalās $x$.
 Aprēķināt $a_{1999}$. 
 
 <!--
+mainEntry=LV.TST.1999.5
 questionType=Find.Only
 -->
+
 
 
 # <lo-sample/> BBK2012.P2.24
@@ -77,4 +79,72 @@ lai katrs naturāls skaitlis piederētu vismaz vienai no tām?
 questionType=ProveDisprove.Exists
 seeAlso=BBK2012.P1.52
 -->
+
+
+
+# <lo-sample/> BBL2012.P2.30
+
+Vai piecu pēc kārtas ņemtu naturālu skaitļu 
+reizinājums var būt naturāla skaitļa
+kvadrāts?
+
+
+<!--
+sameAs=LV.OTHER.TST.1988.9.1
+-->
+
+
+
+# <lo-sample/> BBK2012.P2.38
+
+Dots, ka $n$ – naturāls skaitlis un $n+1$ dalās ar $24$. 
+Pierādīt, ka skaitļa $n$ visu
+naturālo dalītāju summa arī dalās ar $24$.
+
+<!--
+sameAs=LV.OTHER.TST.1992.9.1
+-->
+
+
+
+
+
+# <lo-sample/> BBK2012.P2.73
+
+Pierādīt, ka katrā augošā aritmētiskā progresijā 
+ir bezgalīgi daudz skaitļu, kas nav
+vesela skaitļa pakāpes ar kāpinātāju, lielāku par $1$.
+
+<!--
+sameAs=LV.OTHER.TST.1984.9.1
+-->
+
+
+
+# <lo-sample/> BBK2012.P2.77
+
+Pierādīt, ka eksistē $1985$ pēc kārtas ņemti naturāli skaitļi, 
+no kuriem neviens nav naturāla skaitļa pakāpe, 
+augstāka par pirmo.
+
+<!--
+sameAs=LV.OTHER.TST.1985.11.2
+-->
+
+
+
+
+
+# <LO-REFFF/> BBK2012.P2.87
+
+Dots naturāls skaitlis $a > 2$. 
+Pierādīt, ka eksistē tikai galīgs skaits tādu naturālu
+$n$, ka $a^n - 1$ dalās ar $2^n$.
+
+<!--
+mainEntry=LV.TST.1993.2
+-->
+
+
+
 

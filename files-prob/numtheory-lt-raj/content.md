@@ -138,33 +138,6 @@ b) Kokie gali būti tie du skaičiai,
 jei jų skirtumas lygus $3$? Raskite visus variantus.
 -->
 
-# <lo-sample/> LT.VILNIUS.2011.9_10.4
-
-$p$ un $q$ ir tādi pirmskaitļi, ka 
-$p^2+1$ dalās ar $q$, bet $q^2-1$ dalās
-ar $p$. Pierādiet, ka $p+q+1$ ir salikts skaitlis.
-
-<!--
-$p$ ir $q$ – tokie pirminiai skaičiai, kad 
-$p^2+1$ dalijasi iš $q$, o $q^2-1$ dalijasi
-iš $p$. Įrodykite, kad $p+q+1$ – sudėtinis skaičius.
--->
-
-<!--
-concepts=primes,composite-numbers,divisibility
--->
-
-# <lo-sample/> LT.VILNIUS.2011.11_12.4
-
-Atrodiet visus veselos skaitļus $x$, 
-kuriem skaitlis $$2^x + 5$ ir
-racionāla skaitļa kvadrāts.
-
-<!--
-Raskite visus sveikuosius skaičius $x$, 
-su kuriais skaičius $2^x + 5$ yra
-racionalaus skaičiaus kvadratas.
--->
 
 # <lo-sample/> LT.RAJ.2012.9_10.1
 

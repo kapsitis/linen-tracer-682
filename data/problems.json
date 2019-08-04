@@ -1188,7 +1188,7 @@
         "genre": [
             "integer-equation"
         ],
-        "id": "EE.LVS.2009.noorem.1",
+        "id": "EE.LVS.2009.9_10.1",
         "qtypes": [
             "Find.All"
         ],
@@ -1205,7 +1205,7 @@
             "primes"
         ],
         "genre": [],
-        "id": "EE.LVS.2009.vanem.1",
+        "id": "EE.LVS.2009.11_12.1",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
@@ -1215,50 +1215,11 @@
         ]
     },
     {
-        "concepts": [],
-        "genre": [
-            "integer-equation"
-        ],
-        "id": "EE.LVT.2009.noorem.1",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "primes"
-        ],
-        "genre": [
-            "digit-manipulation"
-        ],
-        "id": "EE.LVT.2009.noorem.5",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "sequence-properties"
-        ],
-        "id": "EE.LVT.2009.vanem.3",
-        "qtypes": [
-            "ProveDisprove.ForAll",
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
         "concepts": [
             "divisors"
         ],
         "genre": [],
-        "id": "EE.LVS.2010.noorem.1",
+        "id": "EE.LVS.2010.9_10.1",
         "qtypes": [
             "Find.All"
         ],
@@ -1270,7 +1231,7 @@
             "factorial"
         ],
         "genre": [],
-        "id": "EE.LVS.2010.noorem.5",
+        "id": "EE.LVS.2010.9_10.5",
         "qtypes": [
             "Find.All"
         ],
@@ -1282,7 +1243,7 @@
             "power-sums"
         ],
         "genre": [],
-        "id": "EE.LVS.2010.vanem.1",
+        "id": "EE.LVS.2010.11_12.1",
         "qtypes": [
             "Prove.NotExists"
         ],
@@ -1294,54 +1255,10 @@
             "integer-polynomial"
         ],
         "genre": [],
-        "id": "EE.LVS.2010.vanem.2",
+        "id": "EE.LVS.2010.11_12.2",
         "qtypes": [
             "ProveDisprove.Exists",
             "Find.Min"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "divisors"
-        ],
-        "genre": [
-            "digit-manipulation"
-        ],
-        "id": "EE.LVT.2010.noorem.1",
-        "qtypes": [
-            "Find.All",
-            "Find.Min",
-            "Prove.Other"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "divisors"
-        ],
-        "genre": [
-            "digit-manipulation"
-        ],
-        "id": "EE.LVT.2010.noorem.1",
-        "qtypes": [
-            "Find.All",
-            "Find.Min",
-            "Prove.Other"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "divisors"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2010.vanem.5",
-        "qtypes": [
-            "Find.Count"
         ],
         "seeAlso": [],
         "tasks": []
@@ -1351,7 +1268,7 @@
         "genre": [
             "digit-manipulation"
         ],
-        "id": "EE.LVS.2011.noorem.1",
+        "id": "EE.LVS.2011.9_10.1",
         "qtypes": [
             "Find.All"
         ],
@@ -1363,7 +1280,7 @@
             "valuations"
         ],
         "genre": [],
-        "id": "EE.LVS.2011.vanem.1",
+        "id": "EE.LVS.2011.11_12.1",
         "qtypes": [
             "Prove.ForAll"
         ],
@@ -1374,56 +1291,8 @@
     },
     {
         "concepts": [],
-        "genre": [
-            "integer-equation"
-        ],
-        "id": "EE.LVT.2011.noorem.1",
-        "qtypes": [
-            "Prove.NotExists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "integer-geometry"
-        ],
-        "id": "EE.LVT.2011.noorem.5",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "primes"
-        ],
         "genre": [],
-        "id": "EE.LVT.2011.vanem.1",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "integer-equation"
-        ],
-        "id": "EE.LVT.2011.vanem.2",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVS.2012.noorem.1",
+        "id": "EE.LVS.2012.9_10.1",
         "qtypes": [
             "Find.Count"
         ],
@@ -1435,7 +1304,7 @@
             "coprimes"
         ],
         "genre": [],
-        "id": "EE.LVS.2012.noorem.2",
+        "id": "EE.LVS.2012.9_10.2",
         "qtypes": [
             "Prove.Exists"
         ],
@@ -1447,7 +1316,7 @@
             "quadratic-equation"
         ],
         "genre": [],
-        "id": "EE.LVS.2012.noorem.3",
+        "id": "EE.LVS.2012.9_10.3",
         "qtypes": [
             "ProveDisprove.Other"
         ],
@@ -1459,7 +1328,7 @@
             "sum-of-digits"
         ],
         "genre": [],
-        "id": "EE.LVS.2012.vanem.1",
+        "id": "EE.LVS.2012.11_12.1",
         "qtypes": [
             "Find.All"
         ],
@@ -1471,7 +1340,7 @@
             "remainder"
         ],
         "genre": [],
-        "id": "EE.LVS.2012.vanem.2",
+        "id": "EE.LVS.2012.11_12.2",
         "qtypes": [
             "Find.All"
         ],
@@ -1485,43 +1354,7 @@
         "genre": [
             "proving-inequality"
         ],
-        "id": "EE.LVS.2012.vanem.3",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "game"
-        ],
-        "id": "EE.LVT.2012.noorem.1",
-        "qtypes": [
-            "ProveDisprove.Other"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "integer-equation"
-        ],
-        "id": "EE.LVT.2012.noorem.5",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "digit-manipulation"
-        ],
-        "id": "EE.LVT.2012.vanem.1",
+        "id": "EE.LVS.2012.11_12.3",
         "qtypes": [
             "Prove.ForAll"
         ],
@@ -1531,29 +1364,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "EE.LVT.2012.vanem.2",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "functional-equation"
-        ],
-        "id": "EE.LVT.2012.vanem.5",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVS.2013.noorem.1",
+        "id": "EE.LVS.2013.9_10.1",
         "qtypes": [
             "Find.Min"
         ],
@@ -1565,7 +1376,7 @@
         "genre": [
             "cryptarithm"
         ],
-        "id": "EE.LVS.2013.noorem.2",
+        "id": "EE.LVS.2013.9_10.2",
         "qtypes": [
             "Find.All"
         ],
@@ -1577,7 +1388,7 @@
             "gcd"
         ],
         "genre": [],
-        "id": "EE.LVS.2013.noorem.3",
+        "id": "EE.LVS.2013.9_10.3",
         "qtypes": [
             "Find.All"
         ],
@@ -1589,7 +1400,7 @@
             "square-root"
         ],
         "genre": [],
-        "id": "EE.LVS.2013.vanem.1",
+        "id": "EE.LVS.2013.11_12.1",
         "qtypes": [
             "Find.Only"
         ],
@@ -1601,53 +1412,9 @@
             "primes"
         ],
         "genre": [],
-        "id": "EE.LVS.2013.vanem.2",
+        "id": "EE.LVS.2013.11_12.2",
         "qtypes": [
             "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "string-counting"
-        ],
-        "id": "EE.LVT.2013.noorem.1",
-        "qtypes": [
-            "Find.Count"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVT.2013.noorem.3",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVT.2013.vanem.1",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "integer-polynomials"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2013.vanem.5",
-        "qtypes": [
-            "ProveDisprove.Exists"
         ],
         "seeAlso": [],
         "tasks": []
@@ -1657,7 +1424,7 @@
         "genre": [
             "digit-manipulation"
         ],
-        "id": "EE.LVS.2014.noorem.1",
+        "id": "EE.LVS.2014.9_10.1",
         "qtypes": [
             "Find.Min"
         ],
@@ -1669,7 +1436,7 @@
         "genre": [
             "digit-manipulation"
         ],
-        "id": "EE.LVS.2014.noorem.3",
+        "id": "EE.LVS.2014.9_10.3",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
@@ -1681,7 +1448,7 @@
         "genre": [
             "proving-inequality"
         ],
-        "id": "EE.LVS.2014.noorem.4",
+        "id": "EE.LVS.2014.9_10.4",
         "qtypes": [
             "Find.Only"
         ],
@@ -1693,7 +1460,7 @@
         "genre": [
             "integer-equation"
         ],
-        "id": "EE.LVS.2014.vanem.1",
+        "id": "EE.LVS.2014.11_12.1",
         "qtypes": [
             "Find.All"
         ],
@@ -1703,64 +1470,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "EE.LVT.2014.noorem.1",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "decimal-manipulation"
-        ],
-        "id": "EE.LVT.2014.noorem.2",
-        "qtypes": [
-            "Find.Only"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "lcm",
-            "gcd"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2014.noorem.3",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVT.2014.vanem.1",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "optimization"
-        ],
-        "id": "EE.LVT.2014.vanem.3",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVS.2015.noorem.1",
+        "id": "EE.LVS.2015.9_10.1",
         "qtypes": [
             "Find.Only"
         ],
@@ -1770,7 +1480,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "EE.LVS.2015.noorem.2",
+        "id": "EE.LVS.2015.9_10.2",
         "qtypes": [
             "Find.Min"
         ],
@@ -1782,7 +1492,7 @@
         "genre": [
             "digit-manipulation"
         ],
-        "id": "EE.LVS.2015.noorem.3",
+        "id": "EE.LVS.2015.9_10.3",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
@@ -1792,7 +1502,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "EE.LVS.2015.noorem.6",
+        "id": "EE.LVS.2015.9_10.6",
         "qtypes": [
             "Find.Count"
         ],
@@ -1805,7 +1515,7 @@
             "gcd"
         ],
         "genre": [],
-        "id": "EE.LVS.2015.vanem.1",
+        "id": "EE.LVS.2015.11_12.1",
         "qtypes": [
             "Find.Max"
         ],
@@ -1818,7 +1528,7 @@
             "remainder"
         ],
         "genre": [],
-        "id": "EE.LVS.2015.vanem.3",
+        "id": "EE.LVS.2015.11_12.3",
         "qtypes": [
             "Find.Only"
         ],
@@ -1828,51 +1538,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "EE.LVT.2015.noorem.1",
-        "qtypes": [
-            "Find.Min"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVT.2015.noorem.3",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "divisors"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2015.vanem.1",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "prove-inequality"
-        ],
-        "id": "EE.LVT.2015.vanem.4",
-        "qtypes": [
-            "Find.Only"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVS.2016.noorem.2",
+        "id": "EE.LVS.2016.9_10.2",
         "qtypes": [
             "Find.Max"
         ],
@@ -1884,7 +1550,7 @@
             "coprimes"
         ],
         "genre": [],
-        "id": "EE.LVS.2016.noorem.3",
+        "id": "EE.LVS.2016.9_10.3",
         "qtypes": [
             "ProveDisprove.ForAll"
         ],
@@ -1896,7 +1562,7 @@
         "genre": [
             "magic-configuration"
         ],
-        "id": "EE.LVS.2016.noorem.6",
+        "id": "EE.LVS.2016.9_10.6",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
@@ -1910,7 +1576,7 @@
         "genre": [
             "prove-inequality"
         ],
-        "id": "EE.LVS.2016.vanem.2",
+        "id": "EE.LVS.2016.11_12.2",
         "qtypes": [
             "Prove.ForAll"
         ],
@@ -1922,7 +1588,7 @@
         "genre": [
             "game"
         ],
-        "id": "EE.LVS.2016.vanem.3",
+        "id": "EE.LVS.2016.11_12.3",
         "qtypes": [
             "Algorithm",
             "Find.Min"
@@ -1937,80 +1603,9 @@
         "genre": [
             "magic-configuration"
         ],
-        "id": "EE.LVS.2016.vanem.6",
+        "id": "EE.LVS.2016.11_12.6",
         "qtypes": [
             "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "digit-manipulation"
-        ],
-        "id": "EE.LVT.2016.noorem.2",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "lcm",
-            "gcd"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2016.noorem.3",
-        "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "parity"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2016.noorem.4",
-        "qtypes": [
-            "ProveDisprove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "magic-configuration"
-        ],
-        "id": "EE.LVT.2016.vanem.1",
-        "qtypes": [
-            "Find.Min"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "cryptarithm"
-        ],
-        "id": "EE.LVT.2016.vanem.2",
-        "qtypes": [
-            "Find.Count"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVT.2016.vanem.3",
-        "qtypes": [
-            "Find.Count"
         ],
         "seeAlso": [],
         "tasks": []
@@ -2021,7 +1616,7 @@
             "valuations"
         ],
         "genre": [],
-        "id": "EE.LVS.2017.noorem.3",
+        "id": "EE.LVS.2017.9_10.3",
         "qtypes": [
             "Find.Max"
         ],
@@ -2033,7 +1628,7 @@
         "genre": [
             "cryptarithm"
         ],
-        "id": "EE.LVS.2017.noorem.4",
+        "id": "EE.LVS.2017.9_10.4",
         "qtypes": [
             "Find.Count"
         ],
@@ -2046,7 +1641,7 @@
             "primes"
         ],
         "genre": [],
-        "id": "EE.LVS.2017.vanem.2",
+        "id": "EE.LVS.2017.11_12.2",
         "qtypes": [
             "Find.Max"
         ],
@@ -2058,7 +1653,7 @@
             "mediant-of-fractions"
         ],
         "genre": [],
-        "id": "EE.LVS.2017.vanem.3",
+        "id": "EE.LVS.2017.11_12.3",
         "qtypes": [
             "Prove.Other"
         ],
@@ -2067,56 +1662,8 @@
     },
     {
         "concepts": [],
-        "genre": [
-            "build-expression"
-        ],
-        "id": "EE.LVT.2017.noorem.2",
-        "qtypes": [
-            "Find.Min"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "primes"
-        ],
         "genre": [],
-        "id": "EE.LVT.2017.noorem.3",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [
-            "integer-geometry"
-        ],
-        "id": "EE.LVT.2017.vanem.2",
-        "qtypes": [
-            "Find.All"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [
-            "primes"
-        ],
-        "genre": [],
-        "id": "EE.LVT.2017.vanem.3",
-        "qtypes": [
-            "ProveDisprove.Exists"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "EE.LVS.2018.noorem.1",
+        "id": "EE.LVS.2018.9_10.1",
         "qtypes": [
             "Find.Only"
         ],
@@ -2129,7 +1676,7 @@
             "gcd"
         ],
         "genre": [],
-        "id": "EE.LVS.2018.noorem.3",
+        "id": "EE.LVS.2018.9_10.3",
         "qtypes": [
             "Prove.ForAll"
         ],
@@ -2141,7 +1688,7 @@
         "genre": [
             "word-problem"
         ],
-        "id": "EE.LVS.2018.noorem.4",
+        "id": "EE.LVS.2018.9_10.4",
         "qtypes": [
             "Find.All"
         ],
@@ -2153,7 +1700,7 @@
         "genre": [
             "fill-in-table"
         ],
-        "id": "EE.LVS.2018.noorem.6",
+        "id": "EE.LVS.2018.9_10.6",
         "qtypes": [
             "Find.Max"
         ],
@@ -2165,7 +1712,7 @@
         "genre": [
             "procedure"
         ],
-        "id": "EE.LVS.2018.vanem.3",
+        "id": "EE.LVS.2018.11_12.3",
         "qtypes": [
             "Algorithm",
             "ProveDisprove.Exists"
@@ -2175,8 +1722,461 @@
     },
     {
         "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2009.9_10.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2009.9_10.5",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "sequence-properties"
+        ],
+        "id": "EE.LVT.2009.11_12.3",
+        "qtypes": [
+            "ProveDisprove.ForAll",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2010.9_10.1",
+        "qtypes": [
+            "Find.All",
+            "Find.Min",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2010.9_10.1",
+        "qtypes": [
+            "Find.All",
+            "Find.Min",
+            "Prove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
         "genre": [],
-        "id": "EE.LVT.2018.noorem.1",
+        "id": "EE.LVT.2010.11_12.5",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2011.9_10.1",
+        "qtypes": [
+            "Prove.NotExists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-geometry"
+        ],
+        "id": "EE.LVT.2011.9_10.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2011.11_12.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2011.11_12.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "game"
+        ],
+        "id": "EE.LVT.2012.9_10.1",
+        "qtypes": [
+            "ProveDisprove.Other"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-equation"
+        ],
+        "id": "EE.LVT.2012.9_10.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2012.11_12.1",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2012.11_12.2",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "functional-equation"
+        ],
+        "id": "EE.LVT.2012.11_12.5",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "string-counting"
+        ],
+        "id": "EE.LVT.2013.9_10.1",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2013.9_10.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2013.11_12.1",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "integer-polynomials"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2013.11_12.5",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2014.9_10.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "decimal-manipulation"
+        ],
+        "id": "EE.LVT.2014.9_10.2",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2014.9_10.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2014.11_12.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "optimization"
+        ],
+        "id": "EE.LVT.2014.11_12.3",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2015.9_10.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2015.9_10.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "divisors"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2015.11_12.1",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "prove-inequality"
+        ],
+        "id": "EE.LVT.2015.11_12.4",
+        "qtypes": [
+            "Find.Only"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "digit-manipulation"
+        ],
+        "id": "EE.LVT.2016.9_10.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "lcm",
+            "gcd"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2016.9_10.3",
+        "qtypes": [
+            "Prove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "parity"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2016.9_10.4",
+        "qtypes": [
+            "ProveDisprove.ForAll"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "magic-configuration"
+        ],
+        "id": "EE.LVT.2016.11_12.1",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "cryptarithm"
+        ],
+        "id": "EE.LVT.2016.11_12.2",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2016.11_12.3",
+        "qtypes": [
+            "Find.Count"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "build-expression"
+        ],
+        "id": "EE.LVT.2017.9_10.2",
+        "qtypes": [
+            "Find.Min"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2017.9_10.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [
+            "integer-geometry"
+        ],
+        "id": "EE.LVT.2017.11_12.2",
+        "qtypes": [
+            "Find.All"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes"
+        ],
+        "genre": [],
+        "id": "EE.LVT.2017.11_12.3",
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.LVT.2018.9_10.1",
         "qtypes": [
             "ProveDisprove.Exists"
         ],
@@ -2188,7 +2188,7 @@
         "genre": [
             "digit-manipulation"
         ],
-        "id": "EE.LVT.2018.noorem.3",
+        "id": "EE.LVT.2018.9_10.3",
         "qtypes": [
             "Find.All"
         ],
@@ -2200,7 +2200,7 @@
         "genre": [
             "procedure"
         ],
-        "id": "EE.LVT.2018.noorem.4",
+        "id": "EE.LVT.2018.9_10.4",
         "qtypes": [
             "Find.Only"
         ],
@@ -2210,7 +2210,7 @@
     {
         "concepts": [],
         "genre": [],
-        "id": "EE.LVT.2018.vanem.1",
+        "id": "EE.LVT.2018.11_12.1",
         "qtypes": [
             "Prove.Other"
         ],
@@ -2223,10 +2223,402 @@
             "composite-numbers"
         ],
         "genre": [],
-        "id": "EE.LVT.2018.vanem.3",
+        "id": "EE.LVT.2018.11_12.3",
         "qtypes": [
             "Prove.ForAll"
         ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1993.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1994.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1995.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1995.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1996.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1997.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1998.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.1999.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2000.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2000.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2000.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2001.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2001.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2002.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2003.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2003.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2004.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2004.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2005.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2006.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2007.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2008.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2009.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2009.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2010.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2011.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2011.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2011.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2012.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2012.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2013.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2013.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2014.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2015.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2015.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2015.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2016.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2016.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2016.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2017.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2017.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2017.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2018.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2018.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2018.12",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2019.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2019.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2019.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "EE.TST.2019.10",
+        "qtypes": [],
         "seeAlso": [],
         "tasks": []
     },
@@ -5678,7 +6070,9 @@
         "qtypes": [
             "Find.Max"
         ],
-        "seeAlso": [],
+        "seeAlso": [
+            "LT.VILNIUS.2008.12.1"
+        ],
         "tasks": [
             "nota.divrule.2_5pow",
             "mod.congr.sumdiff"
@@ -7134,6 +7528,445 @@
         ]
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1993.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1994.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1994.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "groups"
+        ],
+        "genre": [],
+        "id": "LV.TST.1995.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1996.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1996.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1997.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1998.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.1999.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2004.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2004.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2005.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2006.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2007.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2008.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2009.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2010.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2011.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2012.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nota.divrule.3_9.rem",
+            "alg.ineq.equations"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2012.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2014.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2014.13",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2014.14",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2015.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2015.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2016.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2016.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2016.15",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2017.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2018.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2018.14",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.TST.2018.15",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1977.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1977.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1978.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1978.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1981.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1981.11.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1982.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1984.10.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1985.9.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1985.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1987.9.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1987.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1987.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1988.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1988.11.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1989.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1991.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "constant-e"
+        ],
+        "genre": [],
+        "id": "LV.OTHER.TST.1992.10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "# <lo-sample/>  LV.OTHER.TST.1992.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1992.10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1992.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LV.OTHER.TST.1992.12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "full-square"
         ],
@@ -8074,26 +8907,6 @@
         "tasks": []
     },
     {
-        "concepts": [
-            "primes",
-            "composite-numbers",
-            "divisibility"
-        ],
-        "genre": [],
-        "id": "LT.VILNIUS.2011.9_10.4",
-        "qtypes": [],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "LT.VILNIUS.2011.11_12.4",
-        "qtypes": [],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
         "concepts": [],
         "genre": [],
         "id": "LT.RAJ.2012.9_10.1",
@@ -8390,6 +9203,118 @@
         "concepts": [],
         "genre": [],
         "id": "LT.RAJ.2019.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2007.9.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2007.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2007.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2007.11.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2008.10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2008.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2008.12.1",
+        "qtypes": [],
+        "seeAlso": [
+            "LV.AO.2005.7.4"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2008.12.3",
+        "qtypes": [],
+        "seeAlso": [
+            "LT.VILNIUS.2008.10.3"
+        ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2009.9.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2009.10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2009.11.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [
+            "primes",
+            "composite-numbers",
+            "divisibility"
+        ],
+        "genre": [],
+        "id": "LT.VILNIUS.2011.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.VILNIUS.2011.11_12.4",
         "qtypes": [],
         "seeAlso": [],
         "tasks": []
@@ -8772,6 +9697,198 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "LT.TST.2008.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2009.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2010.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2011.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2011.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2012.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2012.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2012.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2013.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2013.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2013.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2014.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2014.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2014.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2015.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2015.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2016.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2017.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2017.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2017.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2018.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2018.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2019.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.TST.2019.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "BBK2012.P1.36",
         "qtypes": [
             "Find.Max"
@@ -8799,6 +9916,22 @@
     {
         "concepts": [],
         "genre": [],
+        "id": "BBK2012.P1.89",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.93",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
         "id": "BBK2012.P1.94",
         "qtypes": [
             "Find.Max"
@@ -8809,6 +9942,14 @@
         "tasks": [
             "div.common.gcd"
         ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.97",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
     },
     {
         "concepts": [],
@@ -8843,6 +9984,14 @@
         "qtypes": [
             "Find.All"
         ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P1.117",
+        "qtypes": [],
         "seeAlso": [],
         "tasks": []
     },
@@ -9029,16 +10178,7 @@
         "genre": [],
         "id": "BBK2012.P2.22",
         "qtypes": [
-            "Prove.ForAll"
-        ],
-        "seeAlso": [],
-        "tasks": []
-    },
-    {
-        "concepts": [],
-        "genre": [],
-        "id": "BBK2012.P2.23",
-        "qtypes": [
+            "Prove.ForAll",
             "Find.Only"
         ],
         "seeAlso": [],
@@ -9054,6 +10194,38 @@
         "seeAlso": [
             "BBK2012.P1.52"
         ],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBL2012.P2.30",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.38",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.73",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P2.77",
+        "qtypes": [],
+        "seeAlso": [],
         "tasks": []
     },
     {
@@ -9289,6 +10461,30 @@
         "tasks": []
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P4.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P4.48",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P4.69",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "recurrent-sequence",
             "primes",
@@ -9299,6 +10495,30 @@
         "qtypes": [
             "Prove.NotExists"
         ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P4.92",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P4.97",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P4.99",
+        "qtypes": [],
         "seeAlso": [],
         "tasks": []
     },
@@ -9500,6 +10720,142 @@
         "qtypes": [
             "Prove.ForAll"
         ],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.35",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.48",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.53",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.67",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.114",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.115",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P5.116",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P6.42",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P6.69",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P7.13",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P8.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P8.48",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P9.12",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P9.20",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P9.38",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P9.71",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "BBK2012.P9.72",
+        "qtypes": [],
         "seeAlso": [],
         "tasks": []
     }

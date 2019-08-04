@@ -951,6 +951,23 @@ seeAlso=LV.NO.2000.12.1
 
 
 
+# <LO-REFFF/> LV.NO.2005.7.1 
+
+
+Kādu mazāko daudzumu no skaitļiem   
+$1;2;3;\ldots;12;13$ var izsvītrot, lai 
+katru divu atlikušo summa būtu salikts skaitlis? 
+
+
+
+<!--
+mainEntry=LV.NO.2003.7.4
+-->
+
+
+
+
+
 
 
 # <lo-sample/> LV.NO.2005.7.4 

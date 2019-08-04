@@ -9,8 +9,8 @@ data = [
         "qtype_id": "Algorithm"
     },
     {
-        "EEjun": 48,
-        "EEsen": 35,
+        "EEjun": 61,
+        "EEsen": 22,
         "LVjun": 16,
         "LVsen": 9,
         "OOsen": 20,
@@ -18,8 +18,8 @@ data = [
         "qtype_id": "Find.All"
     },
     {
-        "EEjun": 1,
-        "EEsen": 8,
+        "EEjun": 6,
+        "EEsen": 3,
         "LVjun": 16,
         "LVsen": 5,
         "OOsen": 13,
@@ -27,8 +27,8 @@ data = [
         "qtype_id": "Find.Any.Only"
     },
     {
-        "EEjun": 0,
-        "EEsen": 9,
+        "EEjun": 4,
+        "EEsen": 5,
         "LVjun": 4,
         "LVsen": 1,
         "OOsen": 8,
@@ -36,8 +36,8 @@ data = [
         "qtype_id": "Find.Count"
     },
     {
-        "EEjun": 9,
-        "EEsen": 17,
+        "EEjun": 19,
+        "EEsen": 7,
         "LVjun": 21,
         "LVsen": 4,
         "OOsen": 16,
@@ -45,8 +45,8 @@ data = [
         "qtype_id": "Find.Min.Max"
     },
     {
-        "EEjun": 0,
-        "EEsen": 1,
+        "EEjun": 1,
+        "EEsen": 0,
         "LVjun": 2,
         "LVsen": 2,
         "OOsen": 1,
@@ -54,8 +54,8 @@ data = [
         "qtype_id": "Prove.Exists"
     },
     {
-        "EEjun": 2,
-        "EEsen": 19,
+        "EEjun": 8,
+        "EEsen": 13,
         "LVjun": 10,
         "LVsen": 13,
         "OOsen": 28,
@@ -63,8 +63,8 @@ data = [
         "qtype_id": "Prove.ForAll.NotExists"
     },
     {
-        "EEjun": 4,
-        "EEsen": 19,
+        "EEjun": 12,
+        "EEsen": 11,
         "LVjun": 20,
         "LVsen": 7,
         "OOsen": 13,
@@ -72,8 +72,8 @@ data = [
         "qtype_id": "ProveDisprove.Exists"
     },
     {
-        "EEjun": 1,
-        "EEsen": 6,
+        "EEjun": 3,
+        "EEsen": 4,
         "LVjun": 3,
         "LVsen": 0,
         "OOsen": 2,
@@ -81,8 +81,8 @@ data = [
         "qtype_id": "ProveDisprove.ForAll"
     },
     {
-        "EEjun": 2,
-        "EEsen": 8,
+        "EEjun": 6,
+        "EEsen": 4,
         "LVjun": 2,
         "LVsen": 6,
         "OOsen": 8,

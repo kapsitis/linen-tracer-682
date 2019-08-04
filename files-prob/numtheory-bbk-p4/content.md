@@ -14,6 +14,43 @@ Universitāte. 2012.g.</p>
 * <blue>4.nodaļa: Moduļa izvēle</blue>
 
 
+
+# <lo-sample/> BBK2012.P4.3
+
+Atrisināt naturālos skaitļos vienādojumu
+$x^2 + 8z = 2y^2 + 3$.
+
+<!--
+sameAs=LV.OTHER.TST.1978.9.3
+-->
+
+
+
+# <lo-sample/> BBK2012.P4.48
+
+Skaitļa $1982^{1982} +1$ ciparu summa ir $A$. 
+Skaitļa $A$ ciparu summa ir $B$. Skaitļa  $B$
+ciparu summa ir $C$. Skaitļa $C$ ciparu summa ir $D$. 
+Atrast $D$.
+
+<!--
+sameAs=LV.OTHER.TST.1982.10.1
+-->
+
+
+
+# <lo-sample/> BBK2012.P4.69
+
+Kādiem pirmskaitļiem $p$ skaitlis
+$2^p + p^2$ arī ir pirmskaitlis?
+
+<!--
+sameAs=LV.OTHER.TST.1986.9.3
+-->
+
+
+
+
 # <lo-sample/> BBK2012.P4.89
 
 Naturālu skaitļu virkni $p_1,p_2,p_3,\ldots$ 
@@ -23,9 +60,64 @@ lielākais pirmskaitlis, ar kuru dalās $p_1p_2p_3\ldots{}p_n+1$
 Pierādīt, ka šajā virknē nav skaitļa $5$.
 
 <!--
+sameAs=LV.OTHER.TST.1986.10.1
 concepts=recurrent-sequence,primes,divisibility
 questionType=Prove.NotExists
 -->
+
+
+
+
+
+# <lo-sample/> BBK2012.P4.92
+
+Pierādīt, ka katram pirmskaitlim $p$ var atrast 
+tādus naturālus skaitļus $x$ un $y$, ka
+$x^2 + y^2 + 1$ dalās ar $p$.
+
+<!--
+sameAs=LV.OTHER.TST.1983.11.4
+-->
+
+
+
+
+
+# <LO-REFFF/> BBK2012.P4.96
+
+Atrisināt naturālos skaitļos vienādojumu
+$$p^x - y^p = 1,$$
+ja $p$ ir pirmskaitlis.
+
+<!--
+mainEntry=LV.TST.1998.2
+-->
+
+
+
+# <lo-sample/> BBK2012.P4.97
+
+Vai var atrast četrus tādus naturālus skaitļus, lai, 
+katru divu reizinājumam
+pieskaitot $1990$, iegūtu kaut kāda naturāla skaitļa kvadrātu?
+
+<!--
+sameAs=LV.OTHER.TST.1990.9.5
+-->
+
+
+
+
+
+# <lo-sample/> BBK2012.P4.99
+
+Ar kādu lielāko skaitu vienādu, no nulles atšķirīgu ciparu 
+var beigties naturāla skaitļa kvadrāts?
+
+<!--
+sameAs=LV.OTHER.TST.1984.11.1
+-->
+
 
 
 # <lo-sample/> BBK2012.P4.115
@@ -124,9 +216,12 @@ Dots, ka $p$ – pirmskaitlis. Pierādīt, ka $2^p+3^p$
 nav naturāla skaitļa pakāpe ar kāpinātāju, lielāku par $1$.
 
 <!--
+sameAs=LV.OTHER.TST.1986.10.1
 concepts=primes,full-power
 questionType=Prove.ForAll
 -->
+
+
 
 # <lo-sample/> BBK2012.P4.123
 

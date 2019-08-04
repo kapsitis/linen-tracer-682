@@ -156,6 +156,13 @@ ir dažādi.
 
 </div>
 
+<!--
+sameAs=LV.OTHER.TST.1983.9.3
+-->
+
+
+
+
 
 # <lo-sample/> BBK2012.P3.108
 

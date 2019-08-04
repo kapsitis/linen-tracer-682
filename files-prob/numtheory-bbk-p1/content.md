@@ -62,6 +62,33 @@ concepts=square-root
 
 
 
+# <lo-sample/> BBK2012.P1.89
+
+Pierādīt, bezgalīgi daudziem pirmskaitļiem $p$ var 
+atrast tādus naturālus skaitļus $x$ un $y$, ka 
+$2x^2 + 2x + 1 = py$. 
+
+<!--
+sameAs=LV.OTHER.TST.1979.9.1
+-->
+
+
+
+
+
+# <lo-sample/> BBK2012.P1.93
+
+Dots, ka $n$ - naturāls skaitlis. Pierādīt, ka $3n + 2$ 
+un $7n + 5$ ir savstarpēji pirmskaitļi.
+
+<!--
+sameAs=LV.OTHER.TST.1976.9.3
+-->
+
+
+
+
+
 # <lo-sample/> BBK2012.P1.94
 
 Aritmētiskā progresija, kuras locekļi ir veseli skaitļi satur skaitļus 
@@ -78,6 +105,22 @@ Kāda var būt lielākā šīs progresijas diferences vērtība?
 seeAlso=BBK2012.P1.36
 questionType=Find.Max
 -->
+
+
+
+# <lo-sample/> BBK2012.P1.97
+
+Pierādīt, ka katru naturālu skaitli, kas lielāks par $17$, 
+var izsacīt kā triju tādu
+naturālu skaitļu summu, no kuriem katriem diviem 
+lielākais kopīgais dalītājs ir $1$.
+
+<!--
+sameAs=LV.OTHER.TST.1985.9.3
+-->
+
+
+
 
 
 # <lo-sample/> BBK2012.P1.99
@@ -125,6 +168,26 @@ kuriem skaitļi $ab$, $ac$ un $bc$ veido aritmētisko progresiju.
 <!--
 questionType=Find.All
 -->
+
+
+
+
+
+# <lo-sample/> BBK2012.P1.117
+
+Aplūkojam visus naturālos skaitļus no $1$ līdz  
+$2\,000\,000$ ieskaitot. Izvēlēsimies
+no tiem kaut kādus  $1\,000\,001$ skaitļus.
+Pierādīt, ka starp izvēlētajiem skaitļiem 
+noteikti atradīsies divi tādi, kas ir savstarpēji
+pirmskaitļi.
+Vai to noteikti var apgalvot, ja tiek izvēlēti 
+$1\,000\,000$ skaitļi?
+
+<!--
+sameAs=LV.OTHER.TST.1981.9.2
+-->
+
 
 
 

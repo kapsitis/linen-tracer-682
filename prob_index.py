@@ -24,7 +24,7 @@ class ProbHandler(webapp2.RequestHandler):
             
         ## TODO: Read this from JSON file competitions.json
         problemsets = ['EE.PK', 'EE.LO','EE.LVS', 'EE.LVT','EE.TST',
-                       'LV.NO','LV.VO','LV.AO','LV.TST','LV.OTHER',
+                       'LV.NO','LV.VO','LV.AO','LV.TST', 'LV.OTHER',
                        'LT.LKMMO','LT.LDK','LT.RAJ','LT.VILNIUS','LT.LMMO','LT.VUMIF','LT.TST',
                        'BBK2012.P1','BBK2012.P2','BBK2012.P3','BBK2012.P4',
                        'BBK2012.P5','BBK2012.P6','BBK2012.P7','BBK2012.P8','BBK2012.P9']
@@ -49,10 +49,6 @@ class ProbHandler(webapp2.RequestHandler):
         for pp in the_problems:
             prb_id = pp['id']
             pp_pref=re.sub(r'(LV|EE|LT|BBK2012)\.([^\.]+)\..*',r'\1.\2',prb_id)
-#            if pp_pref == 'EE.LVS' or pp_pref == 'EE.LVT':
-#                pp_pref = 'EE.LVS/LVT'
-#            if pp_pref == 'LT.VILNIUS':
-#                pp_pref = 'LT.RAJ'
             prb_total = prb_total + 1
             dict_totals[pp_pref] = dict_totals[pp_pref] + 1
             if len(pp['tasks'])>0:

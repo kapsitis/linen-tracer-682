@@ -464,7 +464,7 @@ kvadrāts?
 
 
 <!--
-mainEntry=BBL2012.P2.30
+mainEntry=BBK2012.P2.30
 -->
 
 
@@ -617,7 +617,7 @@ concepts=constant-e
 -->
 
 
-# <lo-sample/>  LV.OTHER.TST.1992.10.2
+# <lo-sample/> LV.OTHER.TST.1992.10.2
 
 Kādiem naturāliem $n$ vienādojumam
 $$x^n + (2 + x)^n + (2 - x)^n = 0$$

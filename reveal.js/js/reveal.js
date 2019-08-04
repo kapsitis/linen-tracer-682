@@ -505,17 +505,17 @@
         for (var j = 0; j < 2; j++) {
           if (j == 0) {
             var x = document.getElementsByTagName("h1");
+            console.log("Found h1 elements: " + x.length);
           } else {
             var x = document.getElementsByTagName("h2");
           }
-          console.log("Found h1 elements: " + x.length);
 
           for (var i = 0; i < x.length; i++) {
             if (x[i].innerHTML.indexOf("lo-sample") !== -1) {
                 x[i].classList.add('sample');
 		var theAsterisk = getAsterisk();
 		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
-                console.log("Added class 'sample'");		
+                console.log("Added class 'LOsample'");		
             } else if (x[i].innerHTML.indexOf("lo-summary") !== -1) {
                 x[i].classList.add('summary');
 		var theAsterisk = getAsterisk();
@@ -526,6 +526,9 @@
 		var theHead = getHead();
 		x[i].parentNode.insertBefore(theHead,x[i].parentNode.firstChild);
                 console.log("Added class 'quiz'");
+            } else if (x[i].innerHTML.indexOf("lo-refff") !== -1) {
+                x[i].classList.add('LOREFFF');
+                console.log("Added class 'LOREFFF'");
             } else if (x[i].innerHTML.indexOf("lo-theory") !== -1) {
                 x[i].classList.add('theory');
 		var theAsterisk = getAsterisk();

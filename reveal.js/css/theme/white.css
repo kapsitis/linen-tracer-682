@@ -72,6 +72,7 @@ body {
 
 
 /* KAP added */
+.reveal h1.LOREFFF, 
 .reveal h1.sample, .reveal h1.summary, .reveal h1.quiz, .reveal h1.theory, .reveal h1.soln, .reveal h1.hints, .reveal h1.yellow, .reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow {
   color: white;
   padding: 2px 20px 2px 20px;
@@ -125,6 +126,13 @@ body {
   color: black;
 }
 
+/* KAP added */
+.reveal h1.LOREFFF {
+  background-color: silver;
+  color: gray;
+  font-weight: normal;  
+  font-size: 80%;
+}
 
 .reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow {
    text-transform: none;

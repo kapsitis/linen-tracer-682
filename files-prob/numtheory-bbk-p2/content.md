@@ -82,7 +82,7 @@ seeAlso=BBK2012.P1.52
 
 
 
-# <lo-sample/> BBL2012.P2.30
+# <lo-sample/> BBK2012.P2.30
 
 Vai piecu pēc kārtas ņemtu naturālu skaitļu 
 reizinājums var būt naturāla skaitļa

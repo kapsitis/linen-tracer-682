@@ -7967,6 +7967,736 @@
         "tasks": []
     },
     {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.1999.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nota.algor.arithm",
+            "nota.est.numdigits",
+            "alg.ineq.equations",
+            "misc.extr.param"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.1999.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "nota.divrule.2_5pow.divides",
+            "misc.extr"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2000.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "div.fta.divisors",
+            "comb.full",
+            "nota.algor.longdiv",
+            "seq.recur.linear"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2001.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "div.fta.divisors",
+            "misc.extr"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2001.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2002.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": [
+            "div.fta.pow.square"
+        ]
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2002.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2002.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2003.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2003.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2004.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2004.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2005.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2006.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2006.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2007.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2007.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2008.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2008.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2008.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2009.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2009.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2010.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2010.7_8.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2011.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2011.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2012.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2012.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2012.7_8.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2012.7_8.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2013.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2013.7_8.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2014.7_8.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2014.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2015.7_8.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2015.7_8.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2016.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2016.7_8.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2017.7_8.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2017.7_8.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LJKMO.2018.7_8.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2001.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2001.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2001.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2001.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2001.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2001.15",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2002.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2002.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2002.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2002.12",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2003.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2003.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2003.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2003.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2003.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2003.12",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.12",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2004.16",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2005.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2005.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2005.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2005.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2005.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2005.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2006.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2006.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2006.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2006.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2006.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2007.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2007.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2007.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2007.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2007.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2007.18",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.5",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.6",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.7",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.8",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.9",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.10",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LKMMO.2008.11",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
         "concepts": [
             "full-square"
         ],
@@ -9315,6 +10045,102 @@
         "concepts": [],
         "genre": [],
         "id": "LT.VILNIUS.2011.11_12.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2003.9_10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2003.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2005.9_10.4",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2005.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2006.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2006.9_10.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2007.9_10.2",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2007.11_12.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2008.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2008.11_12.3",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2009.9_10.1",
+        "qtypes": [],
+        "seeAlso": [],
+        "tasks": []
+    },
+    {
+        "concepts": [],
+        "genre": [],
+        "id": "LT.LMMO.2009.11_12.4",
         "qtypes": [],
         "seeAlso": [],
         "tasks": []

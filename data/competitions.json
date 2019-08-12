@@ -50,6 +50,11 @@
         "title": "Latvija - citi uzdevumi"
     },
     {
+        "dir": "numtheory-lt-ljkmo",
+        "id": "LT.LJKMO",
+        "title": "Lietuvas jaunāko klašu olimpiāde"
+    },    
+    {
         "dir": "numtheory-lt-lkmmo",
         "id": "LT.LKMMO",
         "title": "Lietuvas komandu olimpiāde"

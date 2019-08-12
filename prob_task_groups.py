@@ -65,6 +65,7 @@ def get_html_links(lst_problems):
         'LV.AO':'numtheory-lv-ao',
         'LV.TST':'numtheory-lv-tst',
         'LV.OTHER':'numtheory-lv-other',
+        'LT.LJKMO':'numtheory-lt-ljkmo',
         'LT.LKMMO':'numtheory-lt-lkmmo',
         'LT.LDK':'numtheory-lt-ldk',
         'LT.RAJ':'numtheory-lt-raj',

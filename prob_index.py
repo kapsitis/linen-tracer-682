@@ -25,7 +25,7 @@ class ProbHandler(webapp2.RequestHandler):
         ## TODO: Read this from JSON file competitions.json
         problemsets = ['EE.PK', 'EE.LO','EE.LVS', 'EE.LVT','EE.TST',
                        'LV.NO','LV.VO','LV.AO','LV.TST', 'LV.OTHER',
-                       'LT.LKMMO','LT.LDK','LT.RAJ','LT.VILNIUS','LT.LMMO','LT.VUMIF','LT.TST',
+                       'LT.LJKMO','LT.LKMMO','LT.LDK','LT.RAJ','LT.VILNIUS','LT.LMMO','LT.VUMIF','LT.TST',
                        'BBK2012.P1','BBK2012.P2','BBK2012.P3','BBK2012.P4',
                        'BBK2012.P5','BBK2012.P6','BBK2012.P7','BBK2012.P8','BBK2012.P9']
         

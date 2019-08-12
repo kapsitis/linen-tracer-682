@@ -106,28 +106,6 @@ ac − bd = 19
 sameAs=LT.VILNIUS.2007.12.2
 -->
 
-# <LO-REFFF/> LT.VILNIUS.2007.12.2
-
-
-Atrodiet visus naturālu skaitļu kolekcijas $(a, b, c, d)$, 
-kas apmierina vienādojumu sistēmu
-$$\left\{ \begin{array}{l}
-ab + cd = 34,\\
-ac − bd = 19
-\end{array} \right.$$
-
-<!--
-Raskite visus natūraliųjų skaičių rinkinius $(a, b, c, d)$, 
-tenkinančius lygčių sistemą
-$$\left\{ \begin{array}{l}
-ab + cd = 34,\\
-ac − bd = 19
-\end{array} \right.$$
--->
-
-<!--
-mainEntry=LT.VILNIUS.2007.11.3
--->
 
 
 # <lo-sample/> LT.VILNIUS.2008.10.3
@@ -210,13 +188,22 @@ seeAlso=LT.VILNIUS.2008.10.3
 
 # <lo-sample/> LT.VILNIUS.2009.9.4
 
+**(a)** Atrodiet kaut vienu tādu naturālu skaitli, 
+kam būtu tieši četri naturāli dalītāji, bet šo 
+dalītāju aritmētiskais vidējais būtu vienāds ar $10$.  
+**(b)** Atrodiet visus naturālos skaitļus, kam būtu tieši četri 
+naturāli dalītāji, bet šo dalītāju aritmētiskais 
+vidējais būtu vienāds ar $10$.
+
+
+<!--
 **(a)** Raskite bent vieną tokį natūralųjį skaičių, 
 kuris turėtų lygiai keturis natūraliuosius daliklius, 
 o tų daliklių aritmetinis vidurkis būtų lygus $10$.  
 **(b)** Raskite visus tokius natūraliuosius skaičius, 
 kurie turėtų lygiai keturis natūraliuosius daliklius, 
 o tų daliklių aritmetinis vidurkis būtų lygus $10$.
-
+-->
 
 
 
@@ -271,24 +258,6 @@ sameAs=LT.VILNIUS.2009.12.2
 
 
 
-# <LO-REFFF/> LT.VILNIUS.2009.12.2
-
-$p_1$, $p_2$, $p_3$, $p_4$ ir četri dažādi pirmskaitļi, kas apmierina vienādības:
-$$2p_1 + 3p_2 + 5p_3 + 7p_4 = 162,$$
-$$11p_1 + 7p_2 + 5p_3 + 4p_4 = 162.$$
-Atrodiet visas iespējamās reizinājuma $p_1p_2p_3p_4$ vērtības.
-
-<!--
-$p_1$, $p_2$, $p_3$, $p_4$ yra keturi skirtingi pirminiai skaičiai, tenkinantys lygybes
-$$2p_1 + 3p_2 + 5p_3 + 7p_4 = 162,$$
-$$11p_1 + 7p_2 + 5p_3 + 4p_4 = 162.$$
-Raskite visas įmanomas sandaugos $p_1p_2p_3p_4$ reikšmes.
--->
-
-<!--
-mainEntry=LT.VILNIUS.2009.11.2
--->
-
 
 
 
@@ -311,7 +280,7 @@ concepts=primes,composite-numbers,divisibility
 # <lo-sample/> LT.VILNIUS.2011.11_12.4
 
 Atrodiet visus veselos skaitļus $x$, 
-kuriem skaitlis $$2^x + 5$ ir
+kuriem skaitlis $2^x + 5$ ir
 racionāla skaitļa kvadrāts.
 
 <!--

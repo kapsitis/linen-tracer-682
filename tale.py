@@ -21,6 +21,11 @@ class TaleHandler(webapp2.RequestHandler):
                 'id':'NumTh.GeomProgressions', 
                 'dir':'numtheory-geom-progressions',
                 'title': u'Ģeometriskas progresijas'
+            },
+            {
+                'id':'NumTh.PeriodicSequences', 
+                'dir':'numtheory-recurrence-relation',
+                'title': u'Rekurentu virkņu periodiskums'
             }
         ]
         remaining_tales = [

@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": "alg.equ.guess",
+        "links": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
+        "id": "alg.equ.parametrize",
+        "links": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
+        "id": "alg.equ.quadratic.discriminant",
+        "links": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
+        "id": "alg.ineq.quadratic",
+        "links": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    }
+]

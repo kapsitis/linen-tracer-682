@@ -31,7 +31,7 @@ jaunāko klašu skolēnu olimpiāde)**</blue>
 Atšifrējiet reizināšanu "stabiņā". Kā parasti, dažādiem 
 reizināmā un reizinātāja burtiem atbilst dažādi cipari. 
 Visi citi cipari apzīmēti ar vienādu simbolu "x".  
-Atšifrējiet šo reizinājumu:
+Atšifrējiet reizinājumu:
 
 ![Rēbuss](LT.LJKMO.1999.7_8.1.png)
 
@@ -45,15 +45,20 @@ Atšifrējiet šo reizinājumu:
 </small>
 
 <!--
+lt=
 Iššifruokite daugybą "stulpeliu". Kaip visada skirtingoms 
 dauginamojo ir daugiklio raidėms atitinka skirtingi skaičiai. 
 Visi kiti skaičiai pažymėti vienodu simboliu x.  
 Iššifruokite šią sandaugą.
 -->
 
+<!--
+questionType=Find.All
+-->
+
 ## <lo-soln/> LT.LJKMO.1999.7_8.1 (atrod S un R)
 
-* Reizināšana stabiņā pierakstīta, izlaižot otro no četriem saskaitāmajiem. To var darīt vienīgi tad, ja 
+* Reizināšana pierakstīta, izlaižot otro no četriem saskaitāmajiem. Tas notiek vienīgi tad, ja 
 $S=0$. 
 * Pēdējais no četriem saskaitāmajiem ir četrciparu skaitlis, 
 tātad $R \cdot \overline{RASK} < 10^5$ (četrciparu skaitlis) parāda, ka $R \leq 3$. 
@@ -84,18 +89,23 @@ Tātad $A \leq 3$.
 Atrodiet kādu $100$-ciparu skaitli, kurš dalās ar $100$ 
 un kura visu ciparu summa ir $100$. Atrodiet pašu mazāko šādu skaitli. 
 
-<!--
-Raskite kokį nors $100$-ženklį skaičių, kuris dalijasi 
-iš $100$ ir kurio visų skaitmenų suma yra
-$100$. Raskite patį mažiausią tokį skaičių.
--->
-
 <small>
 
 * [nota.divrule.2_5pow.divides](#)
 * [misc.extr](#)
 
 </small>
+
+<!--
+lt=
+Raskite kokį nors $100$-ženklį skaičių, kuris dalijasi 
+iš $100$ ir kurio visų skaitmenų suma yra
+$100$. Raskite patį mažiausią tokį skaičių.
+-->
+
+<!--
+questionType=Find.Any,Find.Min
+-->
 
 
 
@@ -106,7 +116,7 @@ $100$. Raskite patį mažiausią tokį skaičių.
 $$M = 100\ldots009999999999900.$$
 * Iegūstam skaitli $M$, kam ir $100$ cipari - sākumā $1$ vieninieks, tad $86$ nulles, tad $11$ deviņnieki, visbeidzot $2$ nulles.
 
-Mazāku sasniegt nevar, jo pirmais cipars nevar būt nulle. Bet jebkurā citā veidā iegūstot to pašu ciparu summu, 
+Mazāks skaitlis nevar būt, jo pirmais cipars nevar būt nulle. Bet jebkurā citā veidā iegūstot to pašu ciparu summu, 
 kāds no esošā skaitļa $M$ cipariem no nulles pārtaps par kaut ko citu, t.i. pieaugs.
 
 
@@ -115,11 +125,6 @@ kāds no esošā skaitļa $M$ cipariem no nulles pārtaps par kaut ko citu, t.i.
 
 Kādu pašu mazāko summu var iegūt, saskaitot visus ciparus skaitlim, 
 kurš bez atlikuma dalās ar $23$? 
-
-<!--
-Kokią pačią mažiausią sumą galime gauti sudėję visus be liekanos iš $23$
-besidalijančio skaičiaus skaitmenis?
--->
 
 <small>
 
@@ -130,6 +135,15 @@ besidalijančio skaičiaus skaitmenis?
 
 </small>
 
+<!--
+lt=
+Kokią pačią mažiausią sumą galime gauti sudėję visus be liekanos iš $23$
+besidalijančio skaičiaus skaitmenis?
+-->
+
+<!--
+questionType=Find.Min
+-->
 
 
 ## <lo-soln/> LT.LJKMO.2000.7_8.3 (pārlase)
@@ -176,10 +190,15 @@ Atrodiet pašu mazāko tādu skaitli.
 
 
 <!--
+lt=
 Sveikas teigiamas skaičius yra užrašomas vien tik 
 trejetais ir septynetais, o visų jo
 skaitmenų suma dalijasi ir iš $3$, ir iš $7$. 
 Raskite patį mažiausią tokį skaičių. 
+-->
+
+<!--
+questionType=Find.Min
 -->
 
 ## <lo-soln/> LT.LJKMO.2001.7_8.1
@@ -204,11 +223,68 @@ $3333333777$.
 Atrodiet veselus atrisinājumus vienādojumam
 $x-y= x^2 + xy+ y^2$.
 
+<small>
+
+* [alg.equ.guess](#)
+* [alg.equ.parametrize](#)
+* [alg.ineq.quadratic](#)
+* [alg.equ.quadratic.discriminant](#)
+
+</small>
+
 <!--
+lt=
 Raskite sveikuosius lygties 
 $x-y= x^2 + xy+ y^2$ sprendinius.
 -->
 
+<!--
+questionType=Find.All
+-->
+
+
+## <lo-soln/> LT.LJKMO.2001.7_8.2 (uzmin dažas saknes)
+
+2.pakāpes vienādojumiem ar 2 nezināmajiem (veselos skaitļos)
+saknes nav viegli izteikt ar formulām; tāpēc mēģinām uzminēt
+dažas saknes, ievietojot mazus $y$:
+
+* Ja $y=0$, tad $x = x^2$ un saknes ir $x_1 = 0$, $x_2=1$.  
+* Ja $y=1$, tad $x - 1 = x^2 + x + 1$ jeb $x^2 = -2$ (sakņu nav). 
+* Ja $y=-1$, tad $x + 1 = x^2 - x + 1$ jeb $x^2 - 2x = 0$ un saknes
+ir $x_1 = 0$, $x_2 = 2$.  
+
+
+## <lo-soln/> LT.LJKMO.2001.7_8.2 (citas saknes?)
+
+Fiksētam $y$ vienādojums ir kvadrātvienādojums pret $x$: 
+$$x^2 + (y-1)x + (y^2+y) = 0.$$ 
+Lai būtu atrisinājumi, diskriminantam jābūt nenegatīvam:
+$$D = (y-1)^2 - 4(y^2 + y) \geq 0$$
+jeb $y^2 - 2y + 1 - 4y^2 - 4y = -3y^2 -6y + 1\geq 0$ jeb
+$$3y^2 + 6y - 1 \leq 0.$$
+
+## <lo-soln/> LT.LJKMO.2001.7_8.2 (citas saknes?)
+
+Nevienādība $3y^2 + 6y - 1 \leq 0.$ izpildās, ja $y \in [y_1,y_2]$, kur
+$$y_{1,2} = \frac{-3 \pm \sqrt{9+3}}{3};\;\;y_1 \approx -2.15;\;\;y_2 \approx 0.15.$$
+
+Intervālā ir veselas $y$ vērtības: $y \in \{ -2,-1,0 \}$
+
+* Ja $y=-2$, tad $x+2 = x^2 - 2x + 4$ jeb $x^2 - 3x + 2$ un saknes ir $x_1 = 1$, $x_2 = 2$. 
+* Gadījumus $y = -1$, $y=0$ skatījām agrāk (pie minēšanas). 
+
+## <lo-soln/> LT.LJKMO.2001.7_8.2 (kopsavilkums)
+
+Apkopojam visas atbildes:
+$$\left\{ \begin{array}{l}
+\text{ja}\;y=-2,\;\text{tad}\;(x,y)=(1,-2)\;\text{vai}\;(2,-2)\\
+\text{ja}\;y=-1,\;\text{tad}\;(x,y) = (0,-1)\;\text{vai}\;(2,-1)\\
+\text{ja}\;y=0,\;\text{tad}\;(x,y) = (0,0)\;\text{vai}\;(1,0)
+\end{array} \right.$$
+
+Citām veselām $y$ vērtībām sakņu nav, jo tad diskriminants 
+(vienādojumam attiecībā pret $x$) ir negatīvs.
 
 # <lo-sample/> LT.LJKMO.2002.7_8.1
 
@@ -227,6 +303,7 @@ atlikušo skaitļu reizinājums būtu pilns kvadrāts?
 
 
 <!--
+lt=
 Jei iš skaičių $2$, $4$, $6$, $8$, $10$, $12$, 
 $14$ ir $16$ išbrauktume $4$, $8$, $10$, $14$ ir $16$, 
 tai likusių skaičių $2$, $6$ ir $12$ sandauga būtų lygi
@@ -234,6 +311,10 @@ $144 = 12 \cdot 12$, taigi būtų tikslus kvadratas.
 Kiek mažiausiai skaičių
 reikėtų išbraukti iš tos eilės, kad likusių skaičių 
 sandauga būtų tikslus kvadratas?
+-->
+
+<!--
+questionType=Find.Min
 -->
 
 ## <lo-soln/> LT.LJKMO.2002.7_8.1
@@ -255,7 +336,7 @@ gadījumos tur pirmreizinātājs $2$ ir nepāru pakāpē).
 <div style="font-size:70%">
 
 Dots vienādojums
-$$3xy - x - 2 y = 8.$$
+$$3xy - x - 2y = 8.$$
 **(a)** Atrodiet vienu veselu skaitļu pāri $(x; y)$, kas apmierina šo vienādojumu.  
 **(b)** Atrodiet divus veselu skaitļu pārus, kas apmierina šo vienādojumu.  
 **(c)** Atrodiet trīs veselu skaitļu pārus, kas apmierina šo vienādojumu.  
@@ -264,6 +345,7 @@ $$3xy - x - 2 y = 8.$$
 </div>
 
 <!--
+lt=
 Duota lygtis
 $$3xy - x - 2 y = 8.$$
 **(a)** Raskite vieną sveikųjų skaičių porą $(x; y)$, tenkinančią šią lygtį.  
@@ -271,6 +353,11 @@ $$3xy - x - 2 y = 8.$$
 **(c)** Raskite tris sveikųjų skaičių poras, tenkinančias šią lygtį.  
 **(d)** Raskite visas šios lygties sveikųjų sprendinių poras.
 -->
+
+<!--
+questionType=Find.Any,Find.All
+-->
+
 
 # <lo-sample/> LT.LJKMO.2002.7_8.4
 
@@ -282,6 +369,7 @@ $n+S(n)=m+S(m)$. Atrodiet:
 **(c)** vai eksistē $23$ savstarpēji radniecīgi skaitļi?
 
 <!--
+lt=
 Simboliu $S(n)$
 žymėsime natūraliojo skaičiaus $n$ skaitmenų sumą, pavyzdžiui,
 $S(129) = 1+2+9=12$. Skaičius $n$ ir $m$ vadinsime *giminingais*, jei
@@ -291,27 +379,148 @@ $n+S(n)=m+S(m)$. Raskite:
 **(c)** ar egzistuoja $23$ tarpusavyje giminingi skaičiai?
 -->
 
+<!--
+questionType=Find.Any,ProveDisprove.Exists
+-->
+
+
 # <lo-sample/> LT.LJKMO.2003.7_8.3
 
 Atrodiet kaut vienu tādu skaitli, kas beidzas ar "2003", 
 dalās ar $2003$ un kura ciparu summa vienāda ar $2003$. 
 
+<small>
+
+* [nota.combine.padding](#)
+* [misc.invar](#)
+* [seq.arithm.mod](#)
+
+</small>
+
 <!--
+lt=
 Nurodykite nors vieną tokį skaičių, kuris baigiasi "2003", 
 dalijasi iš $2003$ ir kurio skaitmenų suma yra lygi $2003$.
 -->
 
+<!--
+questionType=Find.Any
+-->
+
+## <lo-hints/>  LT.LJKMO.2003.7_8.3
+
+* Vai protam apmierināt katrus divus no trim nosacījumiem?
+* Kurus divus nosacījumus ir visgrūtāk apmierināt?
+* Kā noteikta lieluma soļiem palielināt ciparu summu, saglabājot dalāmību ar $2003$?
+Vai mākam izveidot (ja nepieciešams divus vai vairākus) tāda lieluma soļus, 
+lai ciparu summa varētu pieaugt tieši līdz $2003$.
+
+## <lo-soln/> LT.LJKMO.2003.7_8.3 (polsterēšana)
+
+* Ir viegli panākt, lai skaitlis beigtos ar cipariem "2003" - var vienkārši uzrakstīt $2003$. 
+* Sākotnējais skaitlis $2003$ dalās ar $2003$.
+* Sākotnējo skaitli var "polsterēt":
+    * Skaitļa pierakstā (izņemot beidzamos $4$ ciparus) iesprauž jaunus gabalus "2003" (vai skaitļa $2003$ 
+daudzkārtņus). 
+    * Skaitļa dalāmība ar $2003$ saglabājas, bet ciparu summa pieaug. 
+
+Pirmā polsterēšanas doma (var dabūt ciparu summas, kas dalās ar $5$):
+$$\underbrace{2003}\underbrace{2003}\ldots\underbrace{2003}.$$
+
+
+## <lo-soln/> LT.LJKMO.2003.7_8.3 (piemēra koriģēšana)
+
+* Iespraužot skaitļa pieraksta vidū jaunu fragmentu "2003", 
+ciparu summa pieaug par soli $5$ (tas joprojām 
+beidzas ar cipariem "2003" un dalās ar $2003$). 
+* Ciparu summu $2000$ var iegūt, iespraužot šo fragmentu $400$ reizes.
+* Kā dabūt par $3$ lielāku ciparu summu? Vai eksistē fragments, kurš 
+dalās ar $2003$, bet tā ciparu summa ir $3$ (vai skaitlis, kas dod 
+atlikumu $3$, dalot ar $5$)? 
+
+
+## <lo-soln/> LT.LJKMO.2003.7_8.3 (2003k ciparu summas)
+
+* Aplūkojam aritmētisku progresiju ar $2003$ daudzkārtņiem
+un katra šāda skaitļa $2003k$ ciparu summu $S(2003k)$:
+
+<table>
+<tr>
+<th>$k$</th><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td><td>$7$</td><td>$\ldots$</td>
+</tr>
+<tr>
+<th>$2003 \cdot{}k$</th>
+<td>$2003$</td><td>$4006$</td><td>$6009$</td><td>$8012$</td><td>$10015$</td><td>$12018$</td><td>$14021$</td><td>$\ldots$</td>
+</tr>
+<tr>
+<th>$S(2003 \cdot{}k)$</th>
+<td>$5$</td><td>$10$</td><td>$15$</td><td>$11$</td><td>$7$</td><td>$12$</td><td>$8$</td><td>$\ldots$</td>
+</tr>
+</table>
+
+
+
+Redzam, ka $7\cdot{}2003$ ciparu summa ir $8$. Tam pievienojot fragmentus $2003$, var dabūt, lai ciparu summa 
+būtu $8,13,18,23,\ldots,1998,2003$. Meklētā skaitļa piemērs:
+$$14021\underbrace{2003}_{\text{1.reize}}\underbrace{2003}_{\text{2.reize}}\ldots\underbrace{2003}_{\text{399.reize}}.$$
+
+
+
+
+
+
 # <lo-sample/> LT.LJKMO.2003.7_8.4
 
-No naturāliem skaitļiem $1,2,\ldots{},22\,$, izmantojot tos visus pa vienai reizei, 
-tika izveidotas $11$ parastas daļas. Kāds lielākais skaits no šīm daļām var būt 
+No naturāliem skaitļiem $1,2,\ldots{},22\,$, 
+izmantojot tos visus pa vienai reizei, tika 
+izveidotas $11$ parastas daļas. 
+Kāds lielākais skaits no šīm daļām var būt 
 vienāds veseliem skaitļiem?
 
+<small>
+
+* [comb.graph.bipartite](#)
+* [div.prop.primes](#)
+
+</small>
+
 <!--
-Iš natūraliųjų skaičių nuo $1$ iki $22$, panaudojus juos visus po vieną kartą, buvo
-sudaryta $11$ trupmenų. Koks galėjo būti didžiausias skaičius trupmenų, lygių
+lt=
+Iš natūraliųjų skaičių nuo $1$ iki $22$, 
+panaudojus juos visus po vieną kartą, buvo
+sudaryta $11$ trupmenų. Koks galėjo būti 
+didžiausias skaičius trupmenų, lygių
 sveikiems skaičiams?
 -->
+
+<!--
+questionType=Find.Max
+-->
+
+
+## <lo-soln/> LT.LJKMO.2003.7_8.4 (piemērs)
+
+* Visai daudzi skaitļi $[1;22]$ dalās viens ar otru.
+* Sadalām kopu divās daļās (no $1$ līdz $11$ un arī 
+no $12$ līdz $22$). Centīsimies iespējami vairāk likt pāros
+skaitļus no pretējām daļām, veidojot *divdaļīgu grafu*. 
+
+![Piemērs](LT.LJKMO.2003.7_8.4.png)
+
+Vairums bultiņu ir starp $n$ un $2n$. 
+Visas citas ir violetas. Viena ir novilkta starp virsotnēm $2$ un $4$ (abas 
+atrodas vienā daļā) - tas vairs neatbilst divdaļīga grafa nosacījumam.
+
+
+## <lo-soln/> LT.LJKMO.2003.7_8.4 (nevar labāk)
+
+* Pirmskaitļi $13,17,19$ visi pārsniedz $22/2 = 11$, tie nevar būt nevienai 
+veselai daļai saucējā. 
+* Visi šie pirmskaitļi dalās ar $1$, bet tikai vienu var savienot ar $1$, 
+jo skaitļi daļās nedrīkst atkārtoties. 
+* Tātad divi skaitļi noteikti paliek bez pāra (mūsu gadījumā $17$ un $19$). 
+To veidotā daļa būs vienīgā neveselā.
+
 
 # <lo-sample/> LT.LJKMO.2004.7_8.1
 
@@ -322,12 +531,18 @@ septiņiem saviem cipariem.
 **(c)** Atrodiet pašu mazāko tādu $7$-ciparu skaitli.
 
 <!--
+lt=
 $7$-ženklis skaičius užrašomas $7$ skirtingais skaitmenimis ir 
 dalijasi iš visų $7$ savo skaitmenų.  
 **(a)** Raskite vieną tokį $7$-ženklį skaičių;  
 **(b)** Raskite patį didžiausią tokį $7$-ženklį skaičių;  
 **(c)** Raskite patį mažiausią tokį $7$-ženklį skaičių.
 -->
+
+<!--
+questionType=Find.Any,Find.Max,Find.Min
+-->
+
 
 
 # <lo-sample/> LT.LJKMO.2004.7_8.3
@@ -338,10 +553,15 @@ $$mn - n + m = 2004.$$
 **(b)** Atrodiet visus iespējamos tādus skaitļu $m$ un $n$ pārus.
 
 <!--
+lt=
 Neneigiami sveikieji skaičiai $m$ ir $n$ tenkina sąlygą
 $$mn - n + m = 2004.$$
 **(a)** Raskite vieną tokią skaičių $m$ ir $n$ porą $(m; n)$;
 **(b)** Raskite visas galimas tokias skaičių $m$ ir $n$ poras.
+-->
+
+<!--
+questionType=Find.Any,Find.All
 -->
 
 
@@ -352,10 +572,17 @@ $83 + 8 + 9 = 100$ un $89 + 8 + 3 = 100$.
 Cik pavisam ir divciparu simta pāru? Atrodiet tos.
 
 <!--
+lt=
 Skaičių $83$ ir $89$ pora $(83;89)$ yra vadinama šimtine pora, 
 nes $83 + 8 + 9 = 100$ ir $89 + 8 + 3 = 100$. 
 Kiek yra dviženklių šimtinių skaičių porų? Nurodykite jas.
 -->
+
+<!--
+questionType=Find.Count,Find.All
+-->
+
+
 
 # <lo-sample/> LT.LJKMO.2006.7_8.1
 
@@ -366,6 +593,7 @@ dalās ar $11$.
 **(c)** Atrodiet pašu lielāko tādu $11$-ciparu skaitli.
 
 <!--
+lt=
 Vien tik nuliais ir vienetais užrašomas $11$-ženklis skaičius baigiasi "11" ir
 dalijasi iš $11$.  
 **(a)** Nurodykite kokį nors vieną tokį $11$-ženklį skaičių.  
@@ -373,7 +601,9 @@ dalijasi iš $11$.
 **(c)** Suraskite patį didžiausią tokį $11$-ženklį skaičių.
 -->
 
-
+<!--
+questionType=Find.Any,Find.Min,Find.Max
+-->
 
 
 # <lo-sample/> LT.LJKMO.2006.7_8.4
@@ -393,6 +623,7 @@ risināsim veselos skaitļos $a$, $b$, $c$ un $d$.
 </div>
 
 <!--
+lt=
 Lygčių sistemą
 $$\left\{ \begin{array}{l}
 a^2+b^2= 2(c+d)\\
@@ -402,6 +633,10 @@ spręsime sveikaisiais skaičiais $a$, $b$, $c$ ir $d$.
 **(a)** Nurodykite vieną tokį skaičių $a$, $b$, $c$ ir $d$ ketvertą $(a,b,c,d)$.  
 **(b)** Nurodykite du tokius skaičių $a$, $b$, $c$ ir $d$ ketvertus $(a,b,c,d)$.  
 **(c)** Raskite visus tokius skaičių $a$, $b$, $c$ ir $d$ ketvertus $(a,b,c,d)$.
+-->
+
+<!--
+questionType=Find.Any,Find.All
 -->
 
 
@@ -414,7 +649,15 @@ summa būtu pilns kvadrāts. Vai baronam ir taisnība, tam neticot?
 $1$ līdz $16$ var izrakstīt pa apli tā, ka jebkuru divu blakus esošu skaitļu 
 summa būtu pilns kvadrāts. Vai baronam ir taisnība, šādi uzskatot? 
 
+<small>
+
+* [comb.graph.cycle](#)
+
+</small>
+
+
 <!--
+lt=
 **(a)** Baronas Miunhauzenas nė už ką netiki, kad būtų galima 
 visus sveikuosius teigiamus skaičius nuo $1$ iki $16$ surašyti 
 į vieną eilutę taip, kad bet kurių dviejų kaimyninių skaičių
@@ -424,6 +667,11 @@ sveikuosius teigiamus skaičius nuo $1$ iki $16$ surašyti ratuku taip,
 kad bet kurių dviejų kaimyninių skaičių suma būtų tikslus
 kvadratas. Ar baronas yra teisus taip tikėdamas?
 -->
+
+<!--
+questionType=ProveDisprove.Exists
+-->
+
 
 # <lo-sample/> LT.LJKMO.2007.7_8.4
 
@@ -440,6 +688,7 @@ $$x^2 - y^2 - x + y = 2007.$$
 </div>
 
 <!--
+lt=
 **(a)** Šerlokas Holmsas kartu su daktaru Vatsonu norėtų surasti 
 visas sveikųjų teigiamų skaičių $x$ ir $y$ poras $(x, y)$, kad
 $$x^2 - y^2 - x + y = 10.$$
@@ -447,6 +696,10 @@ Kiek tokių porų jie suras, ir kokios yra tos poros?
 **(b)** Pamėginkite padėti jiems ir raskite, jeigu tai tik įmanoma, 
 tokią sveikųjų teigiamų skaičių $x$ ir $y$ porą $(x, y)$, kad
 $$x^2 - y^2 - x + y = 2007.$$
+-->
+
+<!--
+questionType=Find.Count,Find.All,ProveDisprove.Exists
 -->
 
 
@@ -475,6 +728,7 @@ Toms un Džerijs dabūtu prēmiju?
 
 
 <!--
+lt=
 Surimtėję Tomas ir Džeris įsidarbino kontrolieriais 
 Daliklių apskaitos inspekcijoje. Pats
 pirmasis jiems pavestas darbas buvo iš eilės tikrinti 
@@ -492,16 +746,23 @@ už kurį Tomas ir Džeris gautų premiją?
 **(d)** Ar gali Tomas ir Džeris gauti $8$ premijas? 
 -->
 
+<!--
+questionType=ProveDisprove.Exists
+-->
+
+
+
 # <lo-sample/> LT.LJKMO.2008.7_8.2
 
 Alisa raksta astoņus ciparus, kas lielāki par vienu - $2$, $3$, $4$, $5$, $6$, $7$, 
 $8$ un $9$ pa vienam katrā no $8$
 vienādības lodziņiem tā, lai vienādība būtu patiesa. 
-Kam ir vienāda lielākā no trim daļām šajā patiesajā vienādībā?
+Ar ko vienāda lielākā no trim daļām šajā vienādībā?
 
 ![Lodziņi](LT.LJKMO.2008.7_8.2.png)
 
 <!--
+lt=
 Alisa aštuonis didesnius už $1$ skaitmenis $2$, $3$, $4$, $5$, $6$, $7$, 
 $8$ ir $9$ įrašo kiekvieną į lygiai vieną iš $8$
 lygybės langelių taip, kad lygybė būtų teisinga. 
@@ -509,6 +770,9 @@ Kam yra lygi pati didžiausioji iš tų trijų
 teisingos lygybės trupmenų? 
 -->
 
+<!--
+questionType=Find.Max
+-->
 
 # <lo-sample/> LT.LJKMO.2008.7_8.4
 
@@ -521,6 +785,7 @@ Varbūt tiešām iespējams noskaidrot, cik tādu ir
 un kādi tie ir?
 
 <!--
+lt=
 Sveikas skeptikas Sanča Pansa nė už ką netiki, 
 kad nepatyręs ieškotojas galėtų surasti tokį
 natūralųjį skaičių $n$, kad didelis skaičius $n^6 + 206$ 
@@ -530,6 +795,9 @@ kad tokių skaičių yra. Negi tikrai įmanoma
 nustatyti, kiek jų yra ir kokie jie yra? 
 -->
 
+<!--
+questionType=ProveDisprove.Exists,Find.All
+-->
 
 # <lo-sample/> LT.LJKMO.2009.7_8.3
 
@@ -548,7 +816,7 @@ Tas, kurš agrāk nekā viņa pretinieks no savām kartiņām
 dalās ar $17$, uzvar. Portālā ihaha.com izplatījās
 nežēlīgi strīdi par to, vai var vāds no viņiem var vienmēr 
 ņemt kartiņas tā, lai uzvarētu, vienalga ko darītu viņa pretinieks. 
-Atradās viens gudrinieks, Reksas vārdā, kurš aizgūtnēm apgalvo, ka:  
+Atradās viens gudrinieks, Rekss, kurš nepaguris apgalvo, ka:  
 **(a)** ja kāds no viņiem arī var vienmēr uzvarēt, lai ko arī nemēģinātu 
 otrs spēlētājs, tad uzvarētājs ir tas, kurš sāk. 
 Vai gudriniekam Reksam ir taisnība? Atbildi pamatojiet.  
@@ -559,6 +827,7 @@ Kā tur ir? Atbildi pamatojiet.
 </div>
 
 <!--
+lt=
 Tyliomis žiemos naktimis, kai išsiskirsto paskutinieji
 negausūs praeiviai, amžinasis miesto sergėtojas tylusis
 Rolandas ramiai nulipa centre nuo pjedestalo ir su 
@@ -584,6 +853,10 @@ besigriebtų jo varžovas?
 Kaip čia yra? Atsakymą, suprantama, irgi pagrįskite.
 -->
 
+<!--
+questionType=ProveDisprove.ForAll,Algorithm
+-->
+
 
 # <lo-sample/> LT.LJKMO.2009.7_8.4
 
@@ -605,6 +878,7 @@ kādēļ šai krustskaitļu mīklai ir viens vienīgs atrisinājums.
 </div>
 
 <!--
+lt=
 Į šį kryžiaskaitį (nepainioti su kryžiažodžiu) maestro 
 Rainys nori žūtbūt įrašyti $4$ dviženklius skaičius - 
 $2$ horizontaliai ir $2$ vertikaliai. Jis yra gerai įsikalęs
@@ -619,6 +893,9 @@ sprendinį.
 **Vertikaliai:** 1. Skaičaus $25$ kartotinis. 2. Tikslusis kvadratas.
 -->
 
+<!--
+questionType=Prove.Exists
+-->
 
 
 
@@ -638,6 +915,7 @@ Vai to var izdarīt?
 </div>
 
 <!--
+lt=
 Jūrų princesė visų išmintingesnių Sinbado laivo jūrininkų klausinėdavo, ar
 galima tarp skaičių, esančių kairiojoje lygybės pusėje 
 $$7^5\;\;7^4\;\;7^3\;\;7^2\;\;7\;\;1\,=\,2009$$
@@ -647,6 +925,12 @@ Ką turėtų atsakyti princesei išmintingieji jūrininkai?
 Atsakymą, suprantama, jūreiviai pagrįsdavo, kad princesė iš jų nesišaipytų.  
 Ar tai įmanoma?
 -->
+
+<!--
+questionType=ProveDisprove.Exists
+-->
+
+
 
 # <lo-sample/> LT.LJKMO.2010.7_8.5
 
@@ -658,6 +942,7 @@ skaitlis ir pirmskaitlis, vai nē.)
 Kā tur ir? Atbildi princesei pamatojiet. 
 
 <!--
+lt=
 Princesė prašo Sinbado visiems paaiškinti, ar skaičius 
 $4^{20} + 2^{20} + 1$ tikrai
 dalijasi dar iš kokio nors trečiojo natūraliojo skaičiaus, 
@@ -667,6 +952,9 @@ teiraujasi, ar tas skaičius yra pirminis skaičius, ar nėra.)
 Tai kaip ten yra? Atsakymą princesei pagrįskite. 
 -->
 
+<!--
+questionType=ProveDisprove.Exists
+-->
 
 # <lo-sample/> LT.LJKMO.2011.7_8.1
 
@@ -681,6 +969,7 @@ Zirgs Dominiks nolēma atrast, kāds varētu būt tas pēdējais,
 ceturtais vēl nezināmās summas (vienu pozīcijas) cipars.
 
 <!--
+lt=
 Pempė Matilda iš kažkur (o iš kur – ji nė už ką nepasakys) 
 atnešė triženklį skaičių, kielė Kamilė tuojau žaismingai 
 perstatė vietomis jo vienetų ir dešimčių skaitmenis, 
@@ -691,6 +980,10 @@ Asiliukas Dainius staiga pasidarė labai paslaptingas ir tepasakė, kad tų skai
 turi $4$ skaitmenis ir prasideda skaitmenimis $173$.  
 Arklys Dominykas nusprendė surasti, koks galėtų būti tas 
 paskutinysis $4$-tasis dar nežinomas tos sumos (vienetų) skaitmuo.
+-->
+
+<!--
+questionType=Find.All
 -->
 
 # <lo-sample/> LT.LJKMO.2011.7_8.2
@@ -714,6 +1007,7 @@ un kāds skaitlis jāceļ kvadrātā, lai iegūtu sākotnējo skaitli.
 
 
 <!--
+lt=
 Guvioji Kielė Kamilė šimtamečio ąžuolo viršūnėje rado 
 senovinį pergamentą su tituliniame puslapyje užrašytu 
 šimtaženkliu skaičiumi. Jo pirmieji $49$ skaitmenys buvo 
@@ -730,6 +1024,9 @@ skaičiaus skaitmuo ir kol jis jai neparodys,
 keliaženklio ir kokio skaičiaus kvadratas yra tas pradinis skaičius. 
 --> 
 
+<!--
+questionType=Find.All
+-->
 
 
 # <lo-sample/> LT.LJKMO.2012.7_8.1
@@ -758,6 +1055,7 @@ tādas divkāršošanas var samazināties skaitļa ciparu reizinājums.
 
 
 <!--
+lt=
 Genelis Baltrus, kuris pats yra didis paukščių profsąjungų aktyvistas ir, ko čia
 slėpti, paties Atamano Šarkos rinkimų patikėtinis ir asmeninis patarėjas, baigęs pamainą
 labai mėgsta sausoje pušyje dar pakalinėti kokią sudėtį stulpeliu ar dalybą kampu.
@@ -773,6 +1071,10 @@ Kitaip sakant, genelis Baltrus turi “sukalti” tokį uždavinį. Triženklis 
 nulinių skaitmenų buvo padvigubintas ir nulinių skaitmenų padvigubintame skaičiuje vėl
 nėra. Kiek daugiausiai kartų po vieno tokio padvigubinimo gali sumažėti triženklio
 skaičiaus skaitmenų sandauga?
+-->
+
+<!--
+questionType=Find.Max
 -->
 
 
@@ -794,6 +1096,7 @@ bet vismazāko no visiem šādiem $100$-ciparu skaitļiem.
 
 
 <!--
+lt=
 Šarkų, kėkštų ir blezdingų profiliuotoje dailiųjų amatų mokykloje, kur nuo
 šimtmečių sustiprintai visada buvo dėstoma aritmetika bei puošniųjų akmenukų kainų
 svirduliavimai, per baigiamąjį kontrolinį šiais metais, tiesa, ne visiems, o tik giliau į
@@ -804,6 +1107,10 @@ Pirmojoje dalyje reikėjo užrašyti kokį nors vieną $100$-ženklį skaičių,
 vienetus, o pats skaičius be liekanos, gražiai turi pasidalinti į $12$ lygių dalių.
 Antrojoje dalyje jau be jokių užuolankų buvo klausinėjama bei reikalaujama
 surasti jau nebe bet kokį, o jau patį mažiausią iš visų tokių $100$-ženklių skaičių.
+-->
+
+<!--
+questionType=Find.Any,Find.Min
 -->
 
 
@@ -826,6 +1133,7 @@ skaitļu pāri $(m;n)$, kas atbilst šim vienādojumam;
 
 
 <!--
+lt=
 Genelis Baltrus savo sūnų Balį moko kantriai spėlioti viską, ką tik įmanoma,
 pavyzdžiui, visokiausius natūraliuosius (sveikuosius teigiamus) lygčių sprendinius.
 Genelis Baltrus savo sūnui visą savaitę kalė į galvą mintį, kad turint lygtį
@@ -837,6 +1145,10 @@ skaičių porą $(m;n)$ porą, tinkančią tai lygčiai;
 **(c)** toliau genelis Baltrus tiesiai paklausė sūnų Balį, kiek iš viso yra tokių porų?
 -->
 
+<!--
+questionType=Find.Any,Find.Count
+-->
+
 
 # <lo-sample/> LT.LJKMO.2012.7_8.6
 
@@ -846,8 +1158,10 @@ skaičių porą $(m;n)$ porą, tinkančią tai lygčiai;
 Atamana Žagatas pilnvarots doktorants Ūpis ar saviem maģistrantiem sīļiem un bakalauriem 
 zvirbuļiem pilnīgi bez kļūdām sareizināja visus veselos skaitļus no $1$ līdz $2012$ un, 
 no iegūtā reizinājuma atņēmuši $1$, iegūto skaitli viņi uzrakstīja uz tievas un garas 
-papīra strēmelītes. Pēc tam viņi, bolīdami acis uz šo strēmelīti, sāka apņēmīgi domāt, cik
-ciparu šajā garajā skaitlī jānomaina uz nullēm, lai iegūtais skaitlis dalītos ar $13$?  
+papīra strēmelītes. Pēc tam viņi, bolīdami acis 
+uz šo strēmelīti, sāka apņēmīgi domāt, kāds mazākais
+skaits ciparu šajā garajā skaitlī jānomaina uz nullēm, 
+lai iegūtais skaitlis dalītos ar $13$?  
 Atamans Žagada šajā sakarībā pajokoja reti atklāti, lai dzirdētu visa putnu ieleja, 
 kaut šo aforismu visi jau ne reizi bija dzirdējuši: Žagata atkārtoja, ka pieklājīgiem 
 putniem piedāvātie uzdevumi ir divējādi: vienkārši vai arī interesanti. 
@@ -855,6 +1169,7 @@ putniem piedāvātie uzdevumi ir divējādi: vienkārši vai arī interesanti.
 </div>
 
 <!--
+lt=
 Atamano Šarkos pavedimu doktorantas Apuokas su savo magistrantais
 kėkštais ir bakalaurais žvirbliais absoliučiai – neįtikėtina, bet be klaidų, įsidėmėkite, be
 klaidų – sudaugino visus sveikuosius skaičius nuo $1$ iki $2012$ ir, iš gautosios sandaugos
@@ -867,6 +1182,9 @@ juokų slėnis, nors tą aforizmą visi jau ne sykį buvo girdėję: atamanas Š
 kad padoriems paukščiams siūlomi uždaviniai būna dvejopi: paprasti arba įdomūs.
 -->
 
+<!--
+questionType=Find.Min
+-->
 
 # <lo-sample/> LT.LJKMO.2013.7_8.2
 
@@ -886,6 +1204,7 @@ ka tas būtu ne tāpat vien zinātnieku izdomāts?
 </div>
 
 <!--
+lt=
 Kurmio Karolio teta Kas(t)ė Rausytė nuo jaunų dienų tiki į triženklių skaičių
 harmoniją. Ji labai vertina visus tokius triženklius skaičius ir laiko, kad jie nebe reikalo
 yra mokslininkų sugalvoti – taip jai be jokių juokų atrodo – kuriuos galima gauti prie
@@ -898,6 +1217,10 @@ koks gi yra pats didžiausias triženklis skaičius, apie kurį niekaip nepasaky
 negausi, kad jis yra ne be reikalo mokslininkų sugalvotas?
 -->
 
+
+<!--
+questionType=Find.Max
+-->
 
 
 # <lo-sample/> LT.LJKMO.2013.7_8.6
@@ -915,6 +1238,7 @@ lai iegūtajās $7$ kaudzēs būtu vienāds akmeņu skaits. Atrodiet mazāko ies
 </div>
 
 <!--
+lt=
 Ant žemės guli $9$ akmenų krūvos (kiekvienoje bent po vieną akmenį). Bebras
 Babrungas-Bungas patikrino, kad bet kuriose dviejose krūvose yra po skirtingą akmenų
 skaičių, o didžiausioje krūvoje, jo žodžiais tariant, yra $n$ akmenų. Vėliau jam dar
@@ -923,6 +1247,11 @@ akmenų krūvas taip, kad gautose $8$ krūvose būtų po lygiai akmenų. Negana 
 dviejų krūvų visus akmenis įmanoma sumesti į likusias akmenų krūvas taip, kad gautose
 $7$ krūvose būtų po lygiai akmenų. Sužinokite mažiausią galimą $n$ reikšmę.
 -->
+
+<!--
+questionType=Find.Min
+-->
+
 
 # <lo-sample/> LT.LJKMO.2014.7_8.1
 
@@ -942,6 +1271,7 @@ izmaiņas būs beidzis pēdējais, 85.zaķis Pišķis, vārdā Mīkoliņš?
 </div>
 
 <!--
+lt=
 Miško viduryje stovi didžiulė lenta, prie kurios bruzda $85$ Kiškiai Piškiai, kurie ką moka, ką ne,
 bet visi jie skaičius rašo „šviesos greičiu“. Kaip sakyta, jie bruzda pačiame Mokyto Miško viduryje
 prie neįsivaizduojamo didumo lentos, kurioje iš eilės yra surašyti visi sveikieji skaičiai nuo $1$ iki
@@ -956,6 +1286,9 @@ Koks skaičius bus pats didžiausias iš visų lentoje parašytųjų, kai savo r
 paskutinysis, $85$-tasis Kiškis Piškis, vardu Mykoliukas?
 -->
 
+<!--
+questionType=Find.Max
+-->
 
 
 # <lo-sample/> LT.LJKMO.2014.7_8.2
@@ -979,6 +1312,7 @@ astoņnieku, un kurš nedalās bez atlikuma ar $4$?
 
 
 <!--
+lt=
 Lapė Snapė Saldžiūnė vėl porino Zuikučiui Paikučiui kažkokias veikiausiai jos pačios išgalvotas
 fantazijas apie tai, kad gyvena kažkur Aritmetikos brūzgynuose toks daugiaženklis skaičius,
 kuriame garantuotai yra bent du dvejetai, dar garantuotai yra dar ir bent du ketvertai – ir net dar ir
@@ -992,21 +1326,29 @@ daugiaženklis skaičius, kuriame yra bent du dvejetai, bent du ketvertai ir ben
 nesidalija be liekanos iš $4$?
 -->
 
+<!--
+questionType=Find.Any,Find.Min
+-->
 
 
 
 # <lo-sample/> LT.LJKMO.2015.7_8.5
 
 Naturāls skaitlis ir *taizemiski apaļīgs*, ja tas ir lielāks par $10$ un
-dalās ar savu ciparu reizinājumu. Cik naturālu skaitļu, kuri visi ir 
+dalās ar savu ciparu reizinājumu. Cik daudzi naturāli skaitļi, kuri visi ir 
 taizemiski apaļīgi, var sekot pēc kārtas?
 
 <!--
+lt=
 Natūralusis skaičius yra *tailandiškai apvalus*, jeigu jis yra didesnis 
 už $10$ ir dalijasi iš savo skaitmenų sandaugos. Kiek natūraliųjų skaičių, 
 kurių kiekvienas yra tailandiškai apvalus, gali eiti iš eilės?
 -->
 
+
+<!--
+questionType=Find.Max
+-->
 
 # <lo-sample/> LT.LJKMO.2015.7_8.6
 
@@ -1028,7 +1370,7 @@ saprotams, pareizi pamatojiet savu atbildi.
 
 
 <!--
-
+lt=
 Natūralusis skaičius $N$ vadinamas *nežemiško sumanumo skaičiumi*, 
 arba, trumpai, *tailandiškuoju perlu*, jeigu jis pasižymi 
 tokia savybe: egzistuoja teigiamas sveikasis skaičius $k$, 
@@ -1045,6 +1387,9 @@ kad jis tikrai yra toks.
 ar nėra ir, suprantama, deramai pagrįskite savo atsakymą.
 -->
 
+<!--
+questionType=Find.Any,Prove.Other,ProveDisprove.Exists
+-->
 
 
 # <lo-sample/> LT.LJKMO.2016.7_8.3
@@ -1070,6 +1415,7 @@ varētu būt skaitlis $N$?
 </div>
 
 <!--
+lt=
 Skaičius $4$ į skaičių $97$ „sutelpa“ net $24$ kartus ir 
 sutilpus dar $1$ „atlieka“, nes $97 = 4 \cdot 24 + 1$.
 Tada „aritmetiškai pasikaustę“ mokyti kinų tėvai 
@@ -1088,6 +1434,11 @@ Ar galėtumėte tik tiek težinodami paaiškinti mums,
 koks galėtų būti tas skaičius $N$?
 -->
 
+<!--
+questionType=Find.All
+-->
+
+
 # <lo-sample/> LT.LJKMO.2016.7_8.5
 
 Netālu no Lielā Ķīnas mūra dzīvo tāds vientuļnieks, kurš saka, ka 
@@ -1098,12 +1449,17 @@ pa vienam skaitlim katrā lodziņā tā, ka visu rindiņu un visu kolonnu skait�
 būtu vienādas $15$ dažādiem, pēc kārtas sekojošiem naturāliem skaitļiem? 
 
 <!--
+lt=
 Ne taip toli nuo Didžiosios Kinų sienos gyveno vienas toks atsiskyrėlis, kuris sakė, kad
 tikrąją skaitinę pilnametystę jis galėtų pripažinti tik tokiam jaunuoliui, kuris, išėjęs į
 dykumą, sugebėtų vienas pats, visai niekieno nepadedamas, atsakyti į tokį klausimą: ar
 galima į lentelės $5 \times 10$ langelius surašyti visus skaičius nuo $1$ iki $50$, 
 po vieną skaičių kiekviename langelyje, taip, kad visų eilučių ir visų stulpelių 
 skaičių sumos pasirodytų esančios lygios $15$-ai iš eilės einančių natūraliųjų skaičių?
+-->
+
+<!--
+questionType=ProveDisprove.Exists
 -->
 
 
@@ -1118,6 +1474,7 @@ Vai to pašu var izdarīt, neizmantojot kādi citu ciparu (citu nekā tas,
 kuru neizmantoja Romario)?
 
 <!--
+lt=
 Šią vasarą Brazilijos spaudoje pasirodė pranešimas apie neįtikėtiną
 aritmetikos mėgėjo Romario pasiekimą: jis, panaudojęs po vieną kartą 
 devynis iš dešimties skaitmenų $0$, $1$, $2$, $3$,
@@ -1126,6 +1483,12 @@ ir tų skaičių suma buvo $2017$. Ar tai tikrai įmanoma? Ar galima
 padaryti tą patį, nepanaudojus kurio nors kito skaitmens (kito nei tas,
 kurio nepanaudojo Romario)?
 -->
+
+<!--
+questionType=ProveDisprove.Exists
+-->
+
+
 
 # <lo-sample/> LT.LJKMO.2017.7_8.3
 
@@ -1138,6 +1501,7 @@ Pamēģiniet:
 **(b)** atrast vismazāko brazīliski nobriedušu skaitli.
 
 <!--
+lt=
 Natūralusis skaičius $n$ vadinamas *braziliškai brandžiu*, jei dalijasi 
 iš $9$, jo dešimtainiame užraše yra visi $10$ skaitmenų ir jei, be to, 
 jame vienetukų yra daugiau negu nuliukų, dvejetukų – daugiau nei vienetukų, 
@@ -1146,6 +1510,11 @@ panaudojamas užrašant $n$). Pabandykite:
 **(a)** užrašyti bent vieną braziliškai brandų skaičių;  
 **(b)** rasti patį mažiausią braziliškai brandų skaičių.
 -->
+
+<!--
+questionType=Find.Any,Find.Min
+-->
+
 
 # <lo-sample/> LT.LJKMO.2018.7_8.6
 
@@ -1171,6 +1540,7 @@ Vai arī jums viss ir tikpat acīmredzami kā Zirgam Dominikam?
 </div>
 
 <!--
+lt=
 Arklio Dominyko draugas Asiliukas Apolinaras dažnai mėgsta patikrinti 
 jo skaitinę ištvermę. Kartą jis sako Dominykui:  
 – Įsivaizduok dvi begalines skaičių eilutes. Pirmoje surašyti visi skaičiaus 
@@ -1188,6 +1558,10 @@ eilutėje ir koks skaičius parašytas virš jo,
 kai tas mažiausias skaičius pasirodo pirmą kartą.  
 Ar ir jums viskas taip pat akivaizdu, kaip ir 
 Arkliui Dominykui?
+-->
+
+<!--
+questionType=Prove.Other,Find.Only
 -->
 
 

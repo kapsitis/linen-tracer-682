@@ -50,11 +50,11 @@ Globāla terminoloģijas un apzīmējumu vārdnīca
 
 ::: notes
 
-Satura punkti (Ievads, Pamatfakti, ...) ir vienādi visās nodaļās.  
-Nodaļai būs lapa ar pamatfaktiem (A4 izdales materiāla pirmā puse) un
-papilduzdevumi (A4 otrā puse).  
-Prezentācijas beigās linki, mūsu 
-olimpiāžu datubāzi un šo prezentāciju kā PDF.
+* Satura punkti (Ievads, Pamatfakti, ...) ir vienādi visās nodaļās.
+* Nodaļai būs lapa ar pamatfaktiem (A4 izdales materiāla pirmā puse) un
+papilduzdevumi (A4 otrā puse).
+* Prezentācijas beigās linki uz ārējiem avotiem, mūsu 
+olimpiāžu datubāzē atlasītajiem uzdevumiem un šo prezentāciju kā PDF.
 
 :::
 
@@ -132,80 +132,65 @@ un iemīļotākās virknes.
 :::
 
 
+
 ## <lo-why/> Intuīcija par progresijām
 
-<section style="height:300px;">
 
-<hgroup style="width:33%; position:absolute; left: 0px">
+<table class="grid2x3">
+<tr>
+<td>
 
-Iepirkšanās un dažādi iepakojumi
+<span class="caption">Cenas un dažādi iepakojumi:</span> 
 
-![Linear shopping](shopping.png)
+![Similar stacks with objects](intuition-01.png)
 
-<!--
-TODO: Grēdā sakrauti dēļi, viena kaudzīte nepabeigta.
--->
+</td>
+<td>
 
-</hgroup>
-<hgroup style="width:33%; position:absolute; left: 320px">
+<span class="caption">Periodiski novietoti skaitļi</span>
 
-Daudzkārtņi
+![Equally spaced numbers](intuition-02.png)
 
-![Multiples of 8](multiples-of-8.png)
+</td>
+<td>
 
-<!--
-Ritmiski izvietoti skaitļi - ne obligāti daudzkārtņi
--->
+<span class="caption">Garumi trapecēs u.c.</span>
 
-</hgroup>
-<hgroup style="width:33%; position:absolute; left: 640px">
+![Trapezoid lengths](intuition-03.png)
 
-Elementi trijstūros un trapecēs.
+</td><tr/>
+<tr><td>
 
-</hgroup>
+<span class="caption">Dalīšanas atlikumi</span>
 
-</section>
+![Division remainders](intuition-04.png)
+$$30 = 4 \cdot 7 + \color{#F00}{2}$$
+
+</td>
+<td>
+
+<span class="caption">Sēdvietas, datumi</span>
+
+![Bus seats](intuition-05.png)
+
+</td>
+<td>
+
+<span class="caption">Cita vietu numurēšana</span>
+
+![Kantor's quadrant](intuition-06.png)
+
+</td>
+</tr>
+</table>
 
 
-<section style="height:300px;">
-
-<hgroup style="width:33%; position:absolute; left: 0px">
-
-Atlikumi, pēdējie cipari
-
-<!--
-![Division remainders](division-remainders.png)
--->
-
-<!--
-Atlikums rodas kā rezultāts nosoļošanai uz leju: dilstoša progresija uz 0
--->
-
-
-</hgroup>
-
-<hgroup style="width:33%; position:absolute; left: 320px">
-
-Sēdvietas, datumi
-
-<!--
-![Seat plan](seat-plan.jpg)
--->
-
-</hgroup>
-<hgroup style="width:33%; position:absolute; left: 640px">
-
-Sanumurējamā bezgalība
-
-</hgroup>
-
-</section>
 
 ::: notes
 
-Progresijas parasti nav pašmērķis, īsi uzskaitām dažas parādības,
-kas modelējamas ar progresijām. Teksta uzdevumi 
-par iepirkšanos, daudzkārtņi u.c. regulāri izvietoti 
+* Progresijas parasti nav pašmērķis, īsi uzskaitām dažas parādības,
+kas modelējamas ar progresijām. 
+* Teksta uzdevumi par iepirkšanos, daudzkārtņi u.c. regulāri izvietoti 
 skaitļi, sēdvietas/kalendāri un pat sanumurētais Kantora kvadrants.
 
 ::: 
@@ -446,11 +431,11 @@ jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 
 <hgroup style="font-size:70%">
 
-**(8)** $15$-staru zvaigznes zīmēšana:
+**(8)** $15$-staru zvaigzne reizēm nesanāk:
 
 ![Zvaigzne](regular-polygram.png)
 
-**(9)** Kā ar $15$ un $8$ centu monētām samaksāt 1¢:
+**(9)** Ar $15$ un $8$ centu monētām var samaksāt 1¢:
 
 ![Money Exchange](money-exchange.png)
 
@@ -491,21 +476,19 @@ jebkuru citu veselu skaitli.
 # <lo-theory/> Aritmētiskas progresijas jēdziens
 
 **Definīcija:** Virkni, kurā nākamo locekli iegūst, 
-iepriekšējam pieskaitot to pašu skaitli (diferenci $d$), sauc par
+iepriekšējam pieskaitot to pašu skaitli (<blue>*diferenci*</blue> $d$), sauc par
 <blue>*aritmētisko progresiju*</blue>:
 $$a_{n+1} = a_n + d,\;\;\mbox{ja}\;\;n \geq 1.$$
 
-*Secinājums:* Aritmētiskā progresijā
-jebkuru blakusesošu locekļu starpība ir konstanta: 
-$$a_{n+1} - a_n = d,\;\;\text{visiem}\;\;n \geq 1.$$
-(Vārds "diference" nozīmē to pašu, ko "starpība".)
+T.i. blakusesošu locekļu starpība ir konstanta: $a_{n+1} - a_n = d$ 
+visiem $n \geq 1$. (Vārds "diference" nozīmē "starpība".)
 
 TODO: Bilde ar skaitļu taisni
 
 ::: notes
 
-Progresiju parasti definē ar diferences pieskaitīšanu. Bet līdzvērtīgi 
-(un daudzos spriedumos noderīgi) ir konstantas blakusesošo locekļu starpības.
+Progresiju parasti definē ar diferences pieskaitīšanu. Bet 
+noderīgas ir arī konstantās blakusesošo locekļu starpības.
 
 :::
 
@@ -519,7 +502,7 @@ $$a_n = a_1 + (n-1)d,\;\;\mbox{kur $n>1$.}$$
 <blue>*Progresijas pirmo $n$ locekļu summa:*</blue>
 $$S_n = a_1 + a_2 + \ldots + a_n.$$
 
-<blue>*Šo summu var aprēķināt ar formulu:*</blue>
+*Šo summu var aprēķināt ar formulu:*
 $$S_n = \frac{a_1 + a_n}{2}\cdot{} n$$
 
 ::: notes
@@ -599,6 +582,14 @@ Vairāku pēc kārtas sekojošu naturālu skaitļu summa ir $177$.
 Kādas vērtības var pieņemt
 mazākais no šiem saskaitāmajiem?
 
+::: notes
+
+Šeit un turpmāk uzdevumiem lietoti kodi, kas apzīmē to pirmavotu. 
+"LV.NO" apzīmē Latvijas Novadu olimpiādi (jeb Valsts olimpiādes 2.posmu), 
+2015.g. 10.klases 3.uzdevumu.
+
+:::
+
 ## <lo-reading/> LV.NO.2015.10.3
 
 <hgroup class="reading">
@@ -633,45 +624,82 @@ TODO: Bilde, kur atzīmēts katrā grupiņā mazākais skaitlis...
 </hgroup>
 
 
-<!--
-Izskaidrot, ko uzdevuma kontekstā nozīmē: 
-
-* Vairāku...
-* ... pēc kārtas sekojošu ...
-* ... naturālu skaitļu summa ...
-* ... mazākais no šiem saskatāmajiem
--->
-
 ## <lo-hints/> LV.NO.2015.10.3
 
-* Vai var veikt pilno pārlasi, sākot saskaitīt no kādas vietas?
-* Cik daudzu pēc kārtas sekojošu naturālu skaitļu summa noteikti pārsniedz $177$?
+* Vai var veikt pilno pārlasi, sākot saskaitīt no kādas vietas? Ja tā, tad 
+kurā brīdī pārstājam pieskaitīt pēc kārtas sekojošos skaitļus?
 * Kā samazināt aplūkojamo gadījumu skaitu? Vai ir vērts pārbaudīt summas, 
 sākot ar jebkuru naturālu skaitli?
+* Vai pēc kārtas ņemtu skaitļu summai $177$ ir ar kaut ko jādalās?
 
+## <lo-soln/> LV.NO.2015.10.3 (pilnā pārlase)
 
-## <lo-soln/> LV.NO.2015.10.3
+**Stratēģija:** Pilnā pārlase
 
-<hgroup style="font-size:90%">
+* Aplūko iespējamos mazākos progresijas locekļus $a_1=1,2,\ldots$.
+Turklāt nav jēgas izvēlēties $a_1 > 177$, jo tad, pieskaitot jebko, summa pārsniegs $177$. 
+* Skaitlim $a_1$ pieskaita nākamo skaitli $a_1 + 1$, tad $a_1 + 2$, utt. 
+Līdzkamēr iegūstam precīzi summu $177$ (tad izraudzītais $a_1$ der), vai arī
+"pārlecam" skaitlim $177$ (tad pieskaitīšanu pārtraucam un izraudzītais $a_1$ neder).
 
-* Ja $n$ ir nepāru, tad $S_n = 177 = a_{vid}\cdot{}n$. 
-* Var būt $n=3$ vai $n = 59$  
-(bet $1 + \ldots + 59 > 177$).
+<!--
+TODO: Var apsvērt animāciju
+-->
 
-**(A)** $177 = 3\cdot 59 =$  
-$=58+$<red>$59$</red>$+60$.
+## <lo-soln/> LV.NO.2015.10.3 (vai var šķirot citādi?)
 
-</hgroup><hgroup style="font-size:90%">
+<hgroup>
 
-* Ja $n$ ir pāru, tad $S_n$ dalās ar $n/2$. 
-* Var būt $n = 2$ vai $n = 6$   
-(jo $n = 2\cdot 59$ ir par lielu).
+*Novērojums:* Pilnā pārlase nav ātra, jo starp veiksmīgiem 
+saskaitīšanas piemēriem atrodas daudz neveiksmīgu.
 
-**(B)** $177 = 2\cdot 88\frac{1}{2} =$<red>$88 + 89$</red>,  
-**(C)** $177 = 6\cdot 29\frac{1}{2} =$  
-$=27+28+$<red>$29+30$</red>$+31+32$.
+**Stratēģija:** "Sākam ar citu parametru" jeb 
+"skatāmies nevis pa horizontāli, bet pa vertikāli".
+
+Rezultāts tas pats, bet var sanākt ātrāk. Mūsu gadījumā
+bez $a_1$ otrs dabisks parametrs ir saskaitāmo skaits $n$, kuram 
+$$\frac{a_1 + a_n}{2} \cdot{} \color{#F00}{n} = 177.$$ 
 
 </hgroup>
+<hgroup>
+
+TODO: Bilde, kurā iešanu pa rindiņām $a_1$ aizstāj skatīšanās uz $n$. 
+
+</hgroup>
+
+
+::: notes
+
+Atzīmēsim, ka virziena (vai parametru secības) 
+nomaiņa meklēšanas vai summēšanas uzdevumos
+var ļoti paātrināt risinājumu. Arī tad, ja it kā
+nekas nemainās un "summa vai reizinājums nav atkarīgi 
+no secības".
+
+
+
+## <lo-soln/> LV.NO.2015.10.3 (nepāru n)
+
+<green>Ja $n$ ir nepāru</green>, tad $S_n = 177 = a_{vid}\cdot{}n$.   
+$177$ dalās ar nepāru skaitļiem $n=1$, $n=3$, $n = 59$, $n=177$. 
+
+* <green>Ja $n=1$</green>, tā nevar būt, jo dots, ka saskaitāmo ir vairāki.
+* <green>Ja $n=3$</green>, tad $177 = 3\cdot 59 =58+$<red>$59$</red>$+60$.
+* <green>Ja $n=59$ vai $n=177$</green>, tā nevar būt, jo pat vismazākajiem skaitļiem 
+$1+2+\ldots+59>177$ - saskaitāmo noteikti ir mazāk nekā $59$. 
+
+## <lo-soln/> LV.NO.2015.10.3 (pāru n)
+
+<green>Ja $n$ ir pāru</green>, tad $S_n$ dalās ar $n/2$.  
+Tas iespējams, ja $n=2$, $n=6$, $n=118$, $n=354$ (jo skaitlim $177$ ir 
+tieši $4$ nepāru dalītāji$).  
+
+* <green>Ja $n=2$</green>, tad $177 = 2\cdot 88\frac{1}{2} =$<red>$88 + 89$</red>,  
+* <green>Ja $n=6$</green>, tad \cdot 29\frac{1}{2} =$  
+$=27+28+$<red>$29+30$</red>$+31+32$.
+* <green>Ja $n=118$ vai $n=354$</green>, tad summa ir par lielu, kā jau 
+redzējām agrāk (ar $n=59$). 
+
 
 
 
@@ -684,11 +712,18 @@ Lai to pārbaudītu, pārveidojam:
 $$S_n = \frac{a_1 + a_n}{2}\cdot{}n = \frac{2a_1 + (n-1)d}{2}\cdot{}n = $$
 $$= \frac{d}{2}n^2 + \left( a_1 - \frac{d}{2} \right)n.$$
 
-## <lo-summary/> Tuvināšana ar trijstūra laukumu
+
+## <lo-theory/> Progresijas un summas grafiki
+
+TODO: Uzzīmēt piemēru progresijai $a_n$ un $S_n$ kā virknēm.
+
+## <lo-summary/> Ģeometriska S_n interpretācija ar laukumu
 
 <hgroup>
 
 ![Tuvināšana](approximation.png)
+
+TODO: Interpretācija ar $1+3+5+\ldots+(2n-1)$ un kvadrātu $n^2$. 
 
 </hgroup>
 <hgroup>
@@ -698,6 +733,19 @@ $$= \frac{d}{2}n^2 + \left( a_1 - \frac{d}{2} \right)n.$$
 trijstūra vai trapeces laukumu, jo ir jāpieskaita arī "zobiņu" laukums. 
 
 </hgroup>
+
+::: notes
+
+* Vienādsānu taisnleņķa trijstūrim, kuram abas katetes vienādas ar $n$, 
+laukums aug kvadrātiski. (Līdzīgi arī trapeces laukums, ja
+vienlaikus aug gan trapeces augstums, gan arī garākais pamats.)
+* Jāievēro, ka progresijas summa ir "trepītes" formas figūra, kas
+atšķiras no vienkāršām ģeometriskām figūrām. 
+Tomēr laukuma augšanas tendence gan "trepītei", gan, 
+teiksim, trijstūrim vai trapecei ir vienāda - abos gadījumos rodas 
+kvadrātiska funkcija.
+
+:::
 
 
 
@@ -950,7 +998,7 @@ Tabula ar gadījumiem?
 
 * Cik ir skaitļu, kas dalās ar $5$? Ar $7$?
 * Cik ir skaitļu, kas dalās ar abiem?
-* Kā novērtēt aritmētisko progresiju locekļu skaitu $\mathbb{N}$ 
+* Kā novērtēt aritmētisko progresiju locekļu skaitu 
 sākumintervālā $[1;1000]$
 
 
@@ -971,23 +1019,35 @@ sākumintervālā $[1;1000]$
 
 
 
-# <lo-theory/> Dalāmība ar atlikumu
+# <lo-theory/> Dalīšana ar atlikumu
 
 **Apgalvojums:** Ja $a$ ir vesels skaitlis, bet $b$ ir naturāls skaitlis, 
 tad var izteikt:
-$$a = q\cdot b +r,\;\;\mbox{kur $0 \leq r < b$.}$$
+$$a = q\cdot b +r,\;\;\text{kur}\;\;b \in \{ 0, 1, \ldots, b-1 \}.$$
 
-$q \in \mathbb{Z}$ sauc par $a$ un $b$ dalījuma veselo daļu, 
-bet $r$ sauc par *atlikumu*.
+$q \in \mathbb{Z}$ sauc par $a$ un $b$ dalījuma <blue>*veselo daļu*</blue>, 
+bet $r$ sauc par <blue>*atlikumu*</blue>.
 
 
 
 
 ## <lo-summary/> Piemēri dalīšanai ar atlikumu
 
+* Ar atlikumu var dalīt gan pozitīvus skaitļus, gan negatīvus skaitļus un nulli: 
+$$30 = 4\cdot 7 + 2;\;\;0 = 0 \cdot 7 + 0;\;\;-30 = (-5)\cdot 7 + 5.$$
 * Pāra skaitļus $n$ var izteikt formā $2q$
 * Nepāra skaitļus $n$ var izteikt formā $2q+1$
-* Skaitļus, kuru decimālpieraksts beidzas ar ciparu "7" var izteikt formā $10q+7$
+* Veselus pozitīvus skaitļus, kuru decimālpieraksts beidzas ar cipariem "37" var izteikt formā $100q+37$
+(un otrādi - katrs skaitlis, kuram $q > 0$). 
+
+::: notes
+
+* Jāievēro, ka arī tie skaitļi, kuri dalās bez atlikuma, ir izsakāmi 
+formā $q \cdot b + r$, bet tiem atlikums $r = 0$.
+* Arī, dalot negatīvus skaitļus, atlikumi vienmēr ir nenegatīvi 
+skaitļi no kopas $\mathbb{N} \cup \{ 0 \}$.
+
+::: 
 
 
 ## <lo-sample/> LV.NO.2009.8.1 
@@ -1104,7 +1164,7 @@ $m$ ir kaut kāds naturāls skaitlis, un $\mbox{LKD}(d,m)=K$, tad
 progresija $a_k$ pieņem $m/K$ dažādus atlikumus, 
 dalot ar $m$.   
 
-*Piezīme:* Atlikumi ik pēc $m/K$ soļiem cikliski atkārtojas.  
+*Piezīme:* Atlikumi ik pēc $m/K$ soļiem periodiski atkārtojas.  
 Ja diference $d$ un dalītājs $m$ ir savstarpēji pirmskaitļi, 
 tad progresija pieņem visus $m$ atlikumus. 
 
@@ -1230,13 +1290,15 @@ katrs septītais dalīsies ar $7$.
 # <lo-theory/> Bezū lemma
 
 **Lemma (<blue>Bézout's lemma</blue>):** Ja $a$ un $b$ ir naturāli skaitļi
-un $\mbox{LKD}(a,b)=d$, tad eksistē veseli $x$ un $y$, ka $ax+by=d$. 
+un $\mbox{LKD}(a,b)=d$, tad eksistē tādi veseli skaitļi $x$ un $y$, ka $ax+by=d$. 
 
 *Piezīme:* Ja $\mbox{LKD}(a,b)=1$, tad aritmētiskā progresijā $a_k = a\cdot{}k$ 
 atradīsies visi $b$ iespējamie atlikumi, dalot ar $b$ (ieskaitot atlikumu $1$).  
 *Piezīme 2:* Praktiski tas nozīmē, ka, mainoties ar $a$ un $b$ eirocentu monētām,
 var nomaksāt jebkuru veselu skaitu centu tad un tikai tad, ja $a,b$ ir
 savstarpēji pirmskaitļi.
+
+## <lo-yellow/> 
 
 
 ## <lo-summary/> Vienādojumi algebrā un skaitļu teorijā
@@ -1311,7 +1373,7 @@ $a=2^2=4$ un $b = 2^3 = 8$.
 
 Kāpēc izdevās manipulācija ar pakāpēm? Bezū identitāte skaitļiem $5$ un $3$: 
 
-$$5x + 3y = 1,\;\;\mbox{ja $(x,y)=(2,3)$.}$$
+$$5x + 3y = 1,\;\;\mbox{ja $(x,y)=(2,-3)$.}$$
 
 
 # &nbsp;
@@ -1409,7 +1471,13 @@ Tie veido virkni $13,12,11,\ldots$.
 
 *Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2011.7.3](http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-ao/content.html#/lv.ao.2011.7.3).*  Šis uzdevums ir arī atsevišķs gadījums Ķīniešu atlikumu teorēmai, kuru 7.klase nav vēl mācījusies.
 
+## <lo-quiz/> Jautājums Nr.4 (alternatīvi risinājumi)
 
+*Piezīme:* Var rakstīt virknes $20k+13$ un $21k+3$ tik ilgi, kamēr ir skaitlis, 
+kas parādās abās virknēs – tas arī būs meklētais. (**Stratēģija:** pilnā pārlase.)
+
+*Piezīme 2:* Var pārveidot $21k + 3 = 20k + k + 3$, no kā secināt, ka 
+$k + 3 = 13$ un $k = 10$. (**Stratēģija:** algebrisks pārveidojums.)
 
 # <lo-quiz/> Jautājums Nr.5
 
@@ -1418,7 +1486,9 @@ Brālītis – vienu pīrādziņu un vienu magoņmaizīti. Karlsons par savām
 pusdienām samaksāja tieši divus eiro (katra maizīte un pīrādziņš maksā veselu
 skaitu centu). Cik samaksāja Brālītis?
 
-## <lo-quize/> Jautājums Nr.5
+## <lo-quiz/> Jautājums Nr.5
+
+**Stratēģija:** Samazina meklējamo telpu (šeit - ar prasību dalīties ar $15$).
 
 * Apzīmējam: $x$ - pīrādziņa cena; $y$ - magoņmaizītes cena.
 * Lai $8x + 15y = 200$, $200-8x$ jādalās ar $15$. 
@@ -1429,7 +1499,7 @@ skaitu centu). Cik samaksāja Brālītis?
 *Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2016.7.2](http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-ao/content.html#/lv.ao.2016.7.2).* 
 
 
-## <lo-quize/> Jautājums Nr.5 (arī negatīvas cenas)
+## <lo-quiz/> Jautājums Nr.5 (arī negatīvas cenas)
 
 * Pēc Bezū lemmas eksistē veseli $(x,y)$, 
 kam $8x + 15y = 1$ (un, pareizinot $x,y$ ar konstanti $C$) var 
@@ -1440,6 +1510,39 @@ samaksāt $1$ centu, ja pīrādziņš maksā $2$ centus, bet magoņmaizīte $-1$
 * Ja cenas $x,y$ pareizina ar $200$ (t.i. ja $(x,y)=(200,-100)$), 
 Karlsons samaksāja tieši divus eiro. Brālītis šajā gadījumā samaksāja $x+y = 100$ jeb
 vienu eiro.
+
+
+## <lo-quiz/> Jautājums Nr.5 (alternatīvs risinājums)
+
+**Stratēģija:** Pilnā pārlase.  
+Var rakstīt pīrādziņu un magoņmaizīšu
+iespējamās cenas ($x=1,2,\ldots$ un $y=1,2,\ldots,200$), līdzkamēr 
+$8x$ vai $15y$ pārsniedz $200$. Tad atzīmē vērtības, kur $8x + 15y = 200$. 
+
+Progresijās $8x = 8,16,24,\ldots,200$ un $15y = 15,30,45,\ldots,195$
+ir attiecīgi $25$ un $13$ locekļi. Arī šoreiz labāk samazināt meklējumu telpu, lai 
+nebūtu mehāniski jāapskata visi $25 \cdot 13 = 325$ iespējamie pāri. 
+
+
+<table>
+<tr><th>$x$</th><td>$1$</td><td>$2$</td><td>$\ldots$</td><td>$10$</td><td>$\ldots$</td><td>$24$</td><td>$25$</td></tr>
+<tr><th>$8x$</th><td>$8$</td><td>$16$</td><td>$\ldots$</td><td>$80$</td><td>$\ldots$</td><td>$192$</td><td>$200$</td></tr>
+</table>
+
+<table>
+<tr><th>$y$</th><td>$1$</td><td>$2$</td><td>$\ldots$</td><td>$8$</td><td>$\ldots$</td><td>$12$</td><td>$13$</td></tr>
+<tr><th>$15x$</th><td>$15$</td><td>$30$</td><td>$\ldots$</td><td>$120$</td><td>$\ldots$</td><td>$180$</td><td>$195$</td></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
 
 # &nbsp;
 
@@ -1671,7 +1774,7 @@ Katrs nākamais loceklis ir $1.5$ reizes lielāks par iepriekšējo (vai noapaļ
 Atrast  
 (a) visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās ar $5$;  
 (b) visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās 
-vai nu ar $3$, vai ar $5$.
+ar $3$ vai ar $5$.
 
 
 ## <lo-reading/> BBK2012.P1.124
@@ -1686,7 +1789,11 @@ vai nu ar $3$, vai ar $5$.</u>
 </hgroup>
 <hgroup>
 
-TODO: Kas domāts ar "vai nu ... vai ..."?
+*Piezīme.* Grāmatas oriģinālā lietota frāze "... un dalās **vai nu** ar $3$, **vai** ar $5$". 
+Tas parasti nozīmē <blue>Izslēdzošo VAI</blue>: Der skaitļi, kas dalās vai nu 
+tikai ar $3$, vai ar $5$, bet ne ar abiem.  
+Grāmatas atrisinājumā tomēr izmantots parastais VAI (kas pieskaita arī tos skaitļus, kas 
+dalās ar $15$).
 
 </hgroup>
 
@@ -1782,15 +1889,16 @@ TODO: Pietiek vienai būt saīsināmai, attiecīgais $n$ tiek uzreiz izbrāķēt
 4. *Ekstrēmais elements:* Aplūkojam to daļu, kura visdrīzāk kļūst nesaīsināma.
 
 
-## <lo-hints/> LV.AO.2004.7.3
+## <lo-hints/> LV.AO.2004.7.3 (pārtulkošana)
+
+**Stratēģija:** Pilnā pārlase varētu strādāt (ja pieņemam, ka atrisinājums
+vispār eksistē), bet katram $n$ pārbaudīt $22$ daļas ir
+darbietilpīgi. Bez tam nav uzreiz redzams, cik daudzi $n=1,2,\ldots$ būs jāizmēģina.
 
 **Stratēģija:** Pārtulkojam jautājumu citādi.
 
 * Kādu progresiju locekļi ir daļu skaitītājos un saucējos?
 * Kā pateikt citādi, ka daļa ir nesaīsināma?
-
-Arī: 
-
 * Kāds ir invariants, kas saglabājas visās daļās?
 
 

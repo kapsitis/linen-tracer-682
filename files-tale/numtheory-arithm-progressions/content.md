@@ -16,6 +16,50 @@
 </hgroup>
 
 
+<!--
+TODO
+A4 lapa ar pamatfaktiem: 
+* Kas ir daudzkārtņi, 
+* Formulas no skolas par aritmētisko progresiju, 
+* Dalīšana ar atlikumu,
+* LKD definīcija, 
+* MKD definīcija, 
+* LKD invariants fiksētam skaitlim ar progresiju, 
+* Kas ir savstarpēji pirmskaitļi, 
+
+Jaunas lietas
+* 1+2+...+n summēšana
+* Bezū lemma.
+* Noteikt, kad 2 mainīgo lineāru vienādojumu var atrisināt veselos skaitļos
+-->
+
+<!--
+TODO
+Norādījumi skolotājam: 
+(1) Vairumā uzdevumu ir aprēķini pirmā tūkstoša robežās - dažiem 
+var rasties kārdinājums lietot kalkulatoru. Tas var paātrināt 
+nodarbības gaitu, bet olimpiādēs līdzīgi aprēķini nav retums un kalkulatorus
+tur nelieto.
+-->
+
+<!--
+TODO
+Globāla terminoloģijas un apzīmējumu vārdnīca
+--> 
+
+
+::: notes
+
+Satura punkti (Ievads, Pamatfakti, ...) ir vienādi visās nodaļās.  
+Nodaļai būs lapa ar pamatfaktiem (A4 izdales materiāla pirmā puse) un
+papilduzdevumi (A4 otrā puse).  
+Prezentācijas beigās linki, mūsu 
+olimpiāžu datubāzi un šo prezentāciju kā PDF.
+
+:::
+
+
+
 # <lo-theory/> Kurā nodaļā esam?
 
 <hgroup style="width: 48%; font-size:80%">
@@ -47,64 +91,124 @@
 
 </hgroup>
 
+::: notes
+
+* Tēmu rādītājs nav līdz galam izveidots.
+* 16 nodarbības pa 90 minūtēm nozīmētu 2 kredītpunktu kursu.
+Tas, iespējams, ir piemērots apjoms, ko, piemēram, 9.-10. klases 
+skolēns varētu veltīt (nacionāla līmeņa sacensību) skaitļu 
+teorijas uzdevumiem.
+
+:::
 
 
 # <lo-why/> why
 
 <div class="bigWhy">
-Kāpēc aritmētiskas progresijas 
-saistītas ar veselu skaitļu dalāmību?
+Kāpēc aritmētiskas progresijas
+noder dažādu matemātikas jomu uzdevumos?
 </div>
 
 <div class="smallWhy">
 
-* Kāpēc progresijas locekļu skaits intervālā atkarīgs ne vien no intervāla
-garuma, bet arī no tā novietojuma?
-* Kāpēc, dalot aritmētiskas progresijas locekļus ar skaitli, 
-ne vienmēr rodas visi atlikumi?
-* Kāpēc vienādojuma $ax+by=c$ atrisināšanai veselos skaitļos 
-nepietiek ar skolas pamatkursa algebru?
+* Kāpēc atkārtošanās un pieaugumi laikā, telpā, cenās, ātrumos u.c.
+bieži veido progresijas?
+* Kāpēc var noderēt vairāku progresiju, to veidoto "ritmu" salīdzināšana?
+* Kāpēc noteikta izskata vienādojumi (piemēram, $ax+by=c$) 
+algebrā un skaitļu teorijā risināmi atšķirīgi?
 
 </div>
 
-## <lo-why/> Aritmētisku progresiju lietojumi
+
+::: notes
+
+Šo "Kāpēc" slaidu nevajadzētu lasīt vai uztvert burtiski.
+Katram auditorijā jānāk pie atbildes uz savu 
+"kāpēc" (Kāpēc es šo vispār mācos?).
+
+Īsi sakot, progresijas olimpiādēs ir pazīstamākās 
+un iemīļotākās virknes.
+
+:::
+
+
+## <lo-why/> Intuīcija par progresijām
 
 <section style="height:300px;">
 
-<hgroup>
+<hgroup style="width:33%; position:absolute; left: 0px">
 
-Pirkumi, maksājumi
+Iepirkšanās un dažādi iepakojumi
 
 ![Linear shopping](shopping.png)
 
-</hgroup><hgroup>
+<!--
+TODO: Grēdā sakrauti dēļi, viena kaudzīte nepabeigta.
+-->
+
+</hgroup>
+<hgroup style="width:33%; position:absolute; left: 320px">
 
 Daudzkārtņi
 
 ![Multiples of 8](multiples-of-8.png)
 
+<!--
+Ritmiski izvietoti skaitļi - ne obligāti daudzkārtņi
+-->
+
+</hgroup>
+<hgroup style="width:33%; position:absolute; left: 640px">
+
+Elementi trijstūros un trapecēs.
 
 </hgroup>
 
 </section>
+
 
 <section style="height:300px;">
 
-<hgroup>
+<hgroup style="width:33%; position:absolute; left: 0px">
 
 Atlikumi, pēdējie cipari
 
+<!--
 ![Division remainders](division-remainders.png)
+-->
 
-</hgroup><hgroup>
+<!--
+Atlikums rodas kā rezultāts nosoļošanai uz leju: dilstoša progresija uz 0
+-->
 
-Sēdvietas, telpas, datumi
 
+</hgroup>
+
+<hgroup style="width:33%; position:absolute; left: 320px">
+
+Sēdvietas, datumi
+
+<!--
 ![Seat plan](seat-plan.jpg)
+-->
+
+</hgroup>
+<hgroup style="width:33%; position:absolute; left: 640px">
+
+Sanumurējamā bezgalība
 
 </hgroup>
 
 </section>
+
+::: notes
+
+Progresijas parasti nav pašmērķis, īsi uzskaitām dažas parādības,
+kas modelējamas ar progresijām. Teksta uzdevumi 
+par iepirkšanos, daudzkārtņi u.c. regulāri izvietoti 
+skaitļi, sēdvietas/kalendāri un pat sanumurētais Kantora kvadrants.
+
+::: 
 
 
  
@@ -132,7 +236,7 @@ ar $n$ un vidējo locekli (attiecīgi ar $n/2$ un abu vidējo locekļu summu).
 5. Aprakstīt progresiju $a\cdot{}k$ un $b\cdot{}k$ sakrītošos locekļus ar 
 jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 6. Izmantot izteiksmi dalījumam ar atlikumu.
-7. Izmantot $\mbox{LKD}(a_n,d)$ nemainību, ja $n$ aug.
+7. Izmantot $\mbox{LKD}(a_n,d)$ nemainību progresijā $(a_n)$.
 
 </div>
 
@@ -155,9 +259,16 @@ jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 
 ![Trepes](staircase-middle.png)
 
-
-
 </hgroup>
+
+::: notes
+
+* Skolas progresiju formulas (vispārīgajam loceklim un summai var viegli 
+izvest, to pierādījumi kursa dalībniekiem būtu jāsaprot). 
+* Veselu skaitļu progresijām no skolas formulām var secināt šo to par progresijas 
+summas dalāmību. Šīs sekas skolas kursā ne vienmēr pietiekoši akcentē.
+
+::: 
 
 
 
@@ -209,9 +320,18 @@ jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 
 ![Kalendārs](calendar.png)
 
-
-
 </hgroup>
+
+::: notes 
+
+* Nodarbības 3. un 4. mērķis ir "matalīzes redzējums" par progresijām:
+Kā novērtēt pašas progresijas $a_n$ (un tās locekļu 
+summu $S_n$) augšanu atkarībā no $n$, kā novērtēt locekļu skaitu intervālā.
+* Reizēm pietiek lielumus zināt tikai aptuveni (plus vai mīnus neliels skaitlis). 
+Tad formulas ir vienkāršākas - kvadrātfunkcijai var ņemt tikai pirmo saskaitāmo, 
+var nerēķināt augšējo veselo daļu.
+
+::: 
 
 
 
@@ -274,6 +394,17 @@ tad visiem $k$: $\mbox{LKD}(a_k,4)=2$.
 </hgroup>
 
 
+::: notes 
+
+* Aritmētiskas progresijas cieši saistītas ar skaitļu dalāmību, 
+dalīšanu ar atlikumu, ar Eiklīda algoritmu. 
+* Dabiski jautājumi par divu aritmētisku progresiju kopīgiem locekļiem 
+parāda saistību ar LKD un MKD jēdzieniem.
+
+::: 
+
+
+
 
 
 ## <lo-theory/> Sasniedzamie rezultāti (8-9)
@@ -326,6 +457,14 @@ jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 </hgroup>
 
 
+::: notes 
+
+Šajos apmācību mērķos divu progresiju (ar diferencēm attiecīgi $a$ un $b$) 
+uzdotos "ritmus" apskatām atkarībā no tā, vai $a$ un $b$ ir savstarpēji pirmskaitļi. 
+Ja ir, tad ar šo progresiju starpībām var izteikt skaitli $1$, tātad arī
+jebkuru citu veselu skaitli. 
+
+::: 
 
 
 
@@ -348,27 +487,47 @@ jaunu progresiju, kam $d = \mbox{MKD}(a,b)$.
 </hgroup>
 
 
-# <lo-theory/> Aritmētiskas progresijas skolā
 
-**Definīcija:** Par *aritmētisku progresiju* sauc tādu virkni $a_1,a_2,\ldots$, kurā
-jebkuru blakusesošu locekļu starpība ir konstanta: 
+# <lo-theory/> Aritmētiskas progresijas jēdziens
 
+**Definīcija:** Virkni, kurā nākamo locekli iegūst, 
+iepriekšējam pieskaitot to pašu skaitli (diferenci $d$), sauc par
+<blue>*aritmētisko progresiju*</blue>:
 $$a_{n+1} = a_n + d,\;\;\mbox{ja}\;\;n \geq 1.$$
 
-Šo nākamā un iepriekšējā locekļa starpību $d$ 
-sauc par progresijas *diferenci* (<blue>*common difference, die Differenz,
-шаг*</blue>).
+*Secinājums:* Aritmētiskā progresijā
+jebkuru blakusesošu locekļu starpība ir konstanta: 
+$$a_{n+1} - a_n = d,\;\;\text{visiem}\;\;n \geq 1.$$
+(Vārds "diference" nozīmē to pašu, ko "starpība".)
+
+TODO: Bilde ar skaitļu taisni
+
+::: notes
+
+Progresiju parasti definē ar diferences pieskaitīšanu. Bet līdzvērtīgi 
+(un daudzos spriedumos noderīgi) ir konstantas blakusesošo locekļu starpības.
+
+:::
+
+
 
 ## <lo-theory/> Progresiju formulas
 
-*Progresijas $n$-tais loceklis:*
+<blue>*Progresijas $n$-tais loceklis:*</blue>
 $$a_n = a_1 + (n-1)d,\;\;\mbox{kur $n>1$.}$$
 
-*Progresijas pirmo $n$ locekļu summa:*
+<blue>*Progresijas pirmo $n$ locekļu summa:*</blue>
 $$S_n = a_1 + a_2 + \ldots + a_n.$$
 
-*Šo summu var aprēķināt ar formulu:*
+<blue>*Šo summu var aprēķināt ar formulu:*</blue>
 $$S_n = \frac{a_1 + a_n}{2}\cdot{} n$$
+
+::: notes
+
+Pagaidām šo formulu izvedumus kursa materiālā neiekļaujam.  
+Ar laiku tie varētu būt "dzeltenie slaidi". 
+
+::: 
 
 
 ## <lo-summary/> Summa 1+2+...+n
@@ -381,6 +540,10 @@ $$ 1+2+\ldots+(n-1)+n = \frac{n(n+1)}{2}.$$
 Lai gan polinoma $\frac{n(n+1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n$ 
 abi koeficienti ir daļskaitļi, visas tā vērtības ir 
 naturāli skaitļi, jo reizinājums $n(n+1)$ vienmēr ir pāru. 
+
+*Pamatojums:* Divu pēc kārtas sekojošu skaitļu reizinājumā $n \cdot (n+1)$ 
+viens no reizinātājiem ir pāra skaitlis, otrs nepāra. Tādēļ 
+reizinājums vienmēr ir pāra.
 
 
 ## <lo-yellow/> Trijstūru skaitļi
@@ -423,9 +586,9 @@ divu vidējo locekļu summu).
 
 * *Ja $n$ ir nepāru:* $S_7 = a_1+a_2+a_3 + a_4 + a_5 + a_6 + a_7 = \frac{a_1+a_7}{2}\cdot{}7$ dalās ar $7$ un ar $a_4=\frac{a_1+a_7}{2}$. 
 
-* *Ja $n$ ir pāru:* $S_8 = a_1+a_2+a_3 + a_4 + a_5 + a_6 + a_7 + a_8 = \frac{a_1+a_8}{2}\cdot{}7$ 
+* *Ja $n$ ir pāru:* $S_8 = a_1+a_2+a_3 + a_4 + a_5 + a_6 + a_7 + a_8 = \frac{a_1+a_8}{2}\cdot{}8$ 
 dalās ar $n/2=4$ un ar $a_4+a_5$: divkāršotu progresijas aritmētisko vidējo.  
-(Ja $n$ ir pāru, tad aritmētiskais vidējais var nebūt vesels.)
+(Ja $n$ ir pāru, tad progresijas locekļu aritmētiskais vidējais var nebūt vesels.)
 
 
 
@@ -436,9 +599,52 @@ Vairāku pēc kārtas sekojošu naturālu skaitļu summa ir $177$.
 Kādas vērtības var pieņemt
 mazākais no šiem saskaitāmajiem?
 
+## <lo-reading/> LV.NO.2015.10.3
+
+<hgroup class="reading">
+
+<u><strong>Vairāku</strong> <strong>pēc kārtas sekojošu</strong> naturālu skaitļu summa ir $177$.</u>
+Kādas vērtības var pieņemt
+mazākais no šiem saskaitāmajiem?
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde, kur uzzīmēti dažādi skaitļi, kas ir/nav pēc kārtas sekojoši. 
+
+</hgroup>
+
+
+## <lo-reading/> LV.NO.2015.10.3
+
+<hgroup class="reading">
+
+Vairāku pēc kārtas sekojošu naturālu skaitļu summa ir $177$.
+<u>Kādas vērtības var pieņemt
+<strong>mazākais no šiem saskaitāmajiem</strong>?</u>
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde, kur atzīmēts katrā grupiņā mazākais skaitlis...
+
+</hgroup>
+
+
+<!--
+Izskaidrot, ko uzdevuma kontekstā nozīmē: 
+
+* Vairāku...
+* ... pēc kārtas sekojošu ...
+* ... naturālu skaitļu summa ...
+* ... mazākais no šiem saskatāmajiem
+-->
 
 ## <lo-hints/> LV.NO.2015.10.3
 
+* Vai var veikt pilno pārlasi, sākot saskaitīt no kādas vietas?
 * Cik daudzu pēc kārtas sekojošu naturālu skaitļu summa noteikti pārsniedz $177$?
 * Kā samazināt aplūkojamo gadījumu skaitu? Vai ir vērts pārbaudīt summas, 
 sākot ar jebkuru naturālu skaitli?
@@ -502,6 +708,48 @@ no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek i
 **(a)** $31$ lapa;   
 **(b)** $30$ lapas?   
 *Piezīme.* Lapas var neraut pēc kārtas.
+
+
+
+
+## <lo-reading/> LV.NO.2002.8.3 
+
+<hgroup class="reading">
+
+<u>Burtnīcā ir $100$ lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem 
+no $1$ līdz $200$</u>. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek izrautas  
+**(a)** $31$ lapa;   
+**(b)** $30$ lapas?   
+*Piezīme.* Lapas var neraut pēc kārtas.
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde par 1 lapu, kas ir divas lappuses.  
+Turklāt autori pasvītrojuši, ka $100$ lapām atbilst $200$ lappušu numuri.
+
+</hgroup>
+
+
+## <lo-reading/> LV.NO.2002.8.3 
+
+<hgroup class="reading">
+
+Burtnīcā ir $100$ lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem 
+no $1$ līdz $200$. <u>Vai izrauto lappušu numuru summa var būt $1000$</u>, ja tiek izrautas  
+**(a)** $31$ lapa;   
+**(b)** $30$ lapas?   
+*Piezīme.* Lapas var neraut pēc kārtas.
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)  
+
+
+</hgroup>
 
 
 ## <lo-hints/> LV.NO.2002.8.3 
@@ -585,6 +833,45 @@ Atrast lielāko iespējamo diferences vērtību, ja
 zināms, ka tā ir vesels skaitlis.
 
 
+## <lo-reading/> BBK2012.P1.36/LV.SO.2017.10.2
+
+<hgroup class="reading">
+
+<u>Trīs no aritmētiskās progresijas locekļiem ir $41$, $113$, $193$.</u>
+Atrast lielāko iespējamo diferences vērtību, ja 
+zināms, ka tā ir vesels skaitlis.
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)  
+
+
+</hgroup>
+
+
+
+## <lo-reading/> BBK2012.P1.36/LV.SO.2017.10.2
+
+<hgroup class="reading">
+
+Trīs no aritmētiskās progresijas locekļiem ir $41$, $113$, $193$.
+<u>Atrast <strong>lielāko iespējamo</strong> diferences vērtību, ja 
+zināms, ka tā ir vesels skaitlis.</u>
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)  
+
+
+</hgroup>
+
+
+
+
 ## <lo-hints/>  BBK2012.P1.36/LV.SO.2017.10.2
 
 * Vai progresijas locekļi $41$, $113$, $193$ seko pēc kārtas?
@@ -637,6 +924,25 @@ pēdējais ir $a_4 = 22$. To pavisam ir $(4-0)+1$ jeb <red>$5$</red>.
 
 Cik daudz ir tādu naturālu skaitļu $n \leq 1000$, 
 kuri nedalās ne ar $5$, ne ar $7$?
+
+
+
+## <lo-reading/> BBK2012.P1.123
+
+<hgroup class="reading">
+
+<u>Cik daudz ir tādu naturālu skaitļu $n \leq 1000$, 
+kuri <strong>nedalās ne ar $5$, ne ar $7$</strong>?</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde, kur redzama loģika "ne ar"/"ne ar".  
+Tabula ar gadījumiem?
+
+</hgroup>
+
+
 
 ## <lo-hints/> Ieteikumi 
 
@@ -703,13 +1009,73 @@ $4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierak
 </table>
 
 
+## <lo-reading/> LV.NO.2009.8.1 
+
+<hgroup class="reading">
+
+<u>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka katrā rindā un 
+katrā kolonnā tika izvēlēta tieši viena rūtiņa.</u> Pierādiet: neatkarīgi no tā, kuras 
+$4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$. 
+
+<!--
+![tabula](LV.NO.2009.8.1.png)
+-->
+
+<table>
+<tr><td>$1$</td><td>$3$</td><td>$5$</td><td>$7$</td></tr>
+<tr><td>$9$</td><td>$11$</td><td>$13$</td><td>$15$</td></tr>
+<tr><td>$17$</td><td>$19$</td><td>$21$</td><td>$23$</td></tr>
+<tr><td>$25$</td><td>$27$</td><td>$29$</td><td>$31$</td></tr>
+</table>
+
+
+</hgroup>
+<hgroup>
+
+TODO: "Katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa" -
+Kuras šaha figūras neapdraudētu cita citu, ja tās šādi izvietotu?
+
+</hgroup>
+
+
+
+## <lo-reading/> LV.NO.2009.8.1 
+
+<hgroup class="reading">
+
+Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka katrā rindā un 
+katrā kolonnā tika izvēlēta tieši viena rūtiņa. <u>Pierādiet: neatkarīgi no tā, kuras 
+$4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$.</u> 
+
+<!--
+![tabula](LV.NO.2009.8.1.png)
+-->
+
+<table>
+<tr><td>$1$</td><td>$3$</td><td>$5$</td><td>$7$</td></tr>
+<tr><td>$9$</td><td>$11$</td><td>$13$</td><td>$15$</td></tr>
+<tr><td>$17$</td><td>$19$</td><td>$21$</td><td>$23$</td></tr>
+<tr><td>$25$</td><td>$27$</td><td>$29$</td><td>$31$</td></tr>
+</table>
+
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde ar pāris piemēriem, kā var saskaitīt.
+
+</hgroup>
+
+
+
+
+
 ## <lo-hints/> LV.NO.2009.8.1
 
-* "Katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa" -
-Kuras šaha figūras neapdraudētu cita citu, ja tās šādi izvietotu?
+
 * Cik veidos kvadrātā $4 \times 4$ var izvēlēties četras rūtiņas 
-atbilstoši šim nosacījumam? (Ja veidu ir ļoti nedaudz - varbūt 
-tos visus var pārbaudīt, tieši saskaitot?)
+atbilstoši šim nosacījumam? (Ja veidu ir nedaudz - varbūt 
+tos var pārbaudīt, visus pārlasot?)
 * Kāda īpašība saglabājas nemainīga/invarianta, neatkarīgi 
 no tā, kā izvēlamies četras rūtiņas?
 
@@ -788,9 +1154,25 @@ Cik daudz ir tādu naturālu skaitļu $n \leq 1983$, kuriem $3n+5$
 dalās ar $7$?
 
 
+## <lo-reading/> BBK2012.P1.122/LV.VO.1983.8.1 
+
+<hgroup class="reading">
+
+<u>Cik daudz ir tādu naturālu skaitļu $n \leq 1983$, kuriem $3n+5$ 
+dalās ar $7$?</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Bilde ar skaitlīšiem formā $3n+5$, atrasts kāds, kas dalās...  
+
+</hgroup>
+
+
 ## <lo-hints/> BBK2012.P1.122/LV.VO.1983.8.1
 
 * Vai ir kaut viens skaitlis formā $3n + 5$, kas dalās ar $7$?
+* Kāpēc svarīgi "savstarpēji pirmskaitļi? (Kas būtu, ja skaitlis ir formā $28n + 5$?)
 * Ja kādai $n$ vērtībai $3n+5$ dalās ar $7$, kura būs nākamā $n$ vērtība, kurai 
 dalīsies?
 
@@ -892,6 +1274,22 @@ $21x + 14y \neq 2$.
 Kurus naturālos skaitļus $n$ var izsacīt formā 
 ${\displaystyle n=\frac{x}{y}}$, 
 kur $x = a^5$, $y = b^3$, $a$ un $b$ – naturāli skaitļi? 
+
+
+## <lo-reading/> LV.NO.2007.7.1  
+
+<hgroup class="reading">
+
+<u>Kurus naturālos skaitļus $n$ var izsacīt formā 
+${\displaystyle n=\frac{x}{y}}$, 
+kur $x = a^5$, $y = b^3$, $a$ un $b$ – naturāli skaitļi?</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Gari reizinājumi, no kuriem kaut kas noīsinās...  
+
+</hgroup>
 
 
 ## <lo-hints/> LV.NO.2007.7.1 
@@ -1071,23 +1469,100 @@ izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās.
 Ar iegūto virkni rīkojamies tāpat, utt.,
 kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
 
-## <lo-hints/> LV.AO.2004.8.5 (Lasīšana)
+## <lo-reading/> LV.AO.2004.8.5
 
-**Lasīšana:**
+<hgroup class="reading">
 
-1. Ar ko atšķiras "skaitlis" un "numurs" šajā uzdevumā? 
-2. Vai skaitļu numuri var mainīties? 
-3. Vai pārnumurēšana notiek jau pēc viena skaitļa izsvītrošanas? Vai vēlāk? 
-4. Kas ir "palikusī virkne"? "Iegūtā virkne"?
-5. Vai uzdevumā aprakstītais beigu stāvoklis vienmēr iestājas? Ja nu paliek neizsvītroti divi vai vairāk skaitļi?
+<u>Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
+katrs vienu reizi.</u> Izsvītrojam no tās skaitļus, kas atrodas 
+$1., 4., 7., 10., \ldots$ vietās. No palikušās virknes atkal
+izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
+Ar iegūto virkni rīkojamies tāpat, utt.,
+kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
 
-**Novērojumi:**
+</hgroup>
+<hgroup>
 
-1. Uzdevumā aprakstītā procedūra sastāv no vairākiem "gājieniem" jeb "iterācijām".
-2. Katras iterācijas laikā izsvītro apmēram trešdaļu no virknes locekļiem, 
-locekļus pārnumurē, iegūstot jaunu virkni. 
+TODO: Kāds sākumstāvoklis (vai stāvokļi) te aprakstīti?
 
-## <lo-hints/> LV.AO.2004.8.5 (Ieteikumi)
+</hgroup>
+
+
+
+<!--
+
+Lasīšana:
+
+Vai skaitļu numuri var mainīties?
+Vai pārnumurēšana notiek jau pēc viena skaitļa izsvītrošanas? Vai vēlāk?
+Kas ir “palikusī virkne”? “Iegūtā virkne”?
+Vai uzdevumā aprakstītais beigu stāvoklis vienmēr iestājas? Ja nu paliek neizsvītroti divi vai vairāk skaitļi?
+Novērojumi:
+
+
+-->
+
+
+
+## <lo-reading/> LV.AO.2004.8.5
+
+<hgroup class="reading">
+
+Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
+katrs vienu reizi. <u>Izsvītrojam no tās skaitļus, kas atrodas 
+$1., 4., 7., 10., \ldots$ vietās.</u> No palikušās virknes atkal
+izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
+Ar iegūto virkni rīkojamies tāpat, utt.,
+kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
+
+</hgroup>
+<hgroup>
+
+TODO: Kas kopīgs un atšķirīgs "skaitlim" ar viņa "vietu"? Vai skaitļa vieta var mainīties. Vai tā mainās uzreiz pēc 
+izsvītrošanas vai vēlāk? 
+
+</hgroup>
+
+
+
+
+## <lo-reading/> LV.AO.2004.8.5
+
+<hgroup class="reading">
+
+Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
+katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas 
+$1., 4., 7., 10., \ldots$ vietās. <u>No palikušās virknes atkal
+izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
+Ar iegūto virkni rīkojamies tāpat, utt.,
+kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Kas ir “palikusī virkne”? “Iegūtā virkne”?
+Vai uzdevumā aprakstītais beigu stāvoklis vienmēr iestājas? Ja nu paliek neizsvītroti divi vai vairāk skaitļi?  
+Uzdevumā aprakstītā procedūra sastāv no vairākiem “gājieniem” jeb “iterācijām”.
+Katras iterācijas laikā izsvītro apmēram trešdaļu no virknes locekļiem, locekļus pārnumurē, iegūstot jaunu virkni.
+
+</hgroup>
+
+
+
+
+
+## <lo-strategy/> LV.AO.2004.8.5
+
+1. *Vienkāršojam sev dzīvi:* Vispirms aplūkojam mazāk skaitļu vai vienkāršākus gājienus.
+2. *Matemātiskā indukcija:* Izvirzām hipotēzi un to pamatojam arvien lielākam skaitļu skaitam $N$, līdzkamēr $N=2004$.
+3. *Aprēķināšana pa daļām:* Pakāpeniski noskaidrojam pēdējā palikušā skaitļa ciparus vai atlikumus, dalot ar kaut ko.
+4. *Sākam no beigām:* Iztēlojamies, ka process ir jau gandrīz beidzies. Kāds izskatās tā pēdējais solis? Priekšpēdējais? Utt.
+
+
+
+
+
+## <lo-hints/> LV.AO.2004.8.5
 
 **Stratēģija:** Vienkāršojam sev dzīvi
 
@@ -1097,11 +1572,9 @@ locekļus pārnumurē, iegūstot jaunu virkni.
 **Stratēģija:** Sākam no beigām
 
 1. Kāda izskatās pēdējā "iterācija"? Un priekšpēdējā? 
-2. Vai ir kāds veids, kā aprakstīt pašreizējo "iterāciju". (Teiksim, ja svītrojām 
-$1.,3.,5.,\ldots$ vietās, tad pēc kārtējās $k$-tās iterācijas pazuda skaitļi, kuri nedalījās
-ar $2^k$.)
-3. Vai ir kāds veids, kā arī sākotnējā uzdevumā aprakstīt skaitļus, kuri ir "ilgdzīvotāji", t.i. paliek 
+2. Vai ir kāds veids, kā sākotnējā uzdevumā aprakstīt skaitļus, kuri ir "ilgdzīvotāji", t.i. paliek 
 neizsvītroti daudzās iterācijās.
+
 
 
 ## <lo-soln/> LV.AO.2004.8.5 (No beigām)
@@ -1173,6 +1646,8 @@ Katrs nākamais loceklis ir $1.5$ reizes lielāks par iepriekšējo (vai noapaļ
 
 
 
+
+
 # &nbsp;
 
 <hgroup>
@@ -1198,9 +1673,35 @@ Atrast
 (b) visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās 
 vai nu ar $3$, vai ar $5$.
 
+
+## <lo-reading/> BBK2012.P1.124
+
+<hgroup class="reading">
+
+Atrast  
+(a) visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās ar $5$;  
+(b) <u>visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās 
+vai nu ar $3$, vai ar $5$.</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Kas domāts ar "vai nu ... vai ..."?
+
+</hgroup>
+
+
+## <lo-strategies/> BBK2012.P1.124
+
+1. *Pilnā pārlase:* Izrakstām visus skaitļus un saskaitām.
+2. *Summēšanas formula:* Izmantojam gatavu virknes summēšanas formulu. 
+3. *Kombinēšana pa daļām:* Izveidojam meklējamo summu no citām, ko protam noteikt.
+3. *Matemātiskā indukcija:* Izvirzām hipotēzi par summas izteiksmi $S(n)$ un pamatojam to arvien lielākiem $n$, kamēr sasniegts $n=1000$. 
+
+
 ## <lo-hints/> BBK2012.P1.124
 
-**Stratēģija:** Skaitām kaut ko citu.
+**Stratēģija:** Kombinēšana pa daļām - skaitām kaut ko citu.
 
 * Kā aprakstīt visus skaitļus, kas nepārsniedz $1000$ un dalās ar $5$? Kā noteikt šādas
 kopas summu?
@@ -1236,6 +1737,51 @@ $$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9},
 \ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
 ir nesaīsināmas?
 
+## <lo-reading/> LV.AO.2004.7.3
+
+<hgroup class="reading">
+
+<u>Kādam <strong>mazākajam</strong> naturālajam $n$ <strong>visas</strong> daļas
+$$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, 
+\ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
+<strong>ir nesaīsināmas</strong>?</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Mazākais naturālais $n$? Vai vienmēr eksistē? Ko nozīmē "visas daļas nesaīsināmas"? 
+
+Vienam un tam pašam $n$ visas daļas būs nesaīsināmas. Un ja tādu $n$ ir vairāki, 
+jāatrod starp tiem vismazākais.
+
+</hgroup>
+
+
+## <lo-reading/> LV.AO.2004.7.3
+
+<hgroup class="reading">
+
+<u>Kādam mazākajam naturālajam $n$ visas <strong>daļas</strong>
+$$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, 
+\ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
+<strong>ir nesaīsināmas</strong>?</u>
+
+</hgroup>
+<hgroup>
+
+TODO: Pietiek vienai būt saīsināmai, attiecīgais $n$ tiek uzreiz izbrāķēts.
+
+</hgroup>
+
+
+## <lo-strategies/> LV.AO.2004.7.3
+
+1. *Pilnā pārlase:* Ievietojam visus $n$, sākot ar vismazāko $n=1$, kamēr visas daļas sanāk nesaīsināmas.
+2. *Izslēgšanas metode:* Atmetam tās $n$ vērtības, kas acīmredzami neder un aplūkojam mazāko no atlikušajām.
+3. *Pārformulēšana citos apzīmējumos:* Izsakām apgalvojumus par daļu nesaīsināmību citā, loģiski ekvivalentā veidā.
+4. *Ekstrēmais elements:* Aplūkojam to daļu, kura visdrīzāk kļūst nesaīsināma.
+
+
 ## <lo-hints/> LV.AO.2004.7.3
 
 **Stratēģija:** Pārtulkojam jautājumu citādi.
@@ -1270,6 +1816,47 @@ skaitļi, kas mazāki par $n$ un kuru lielākais kopīgais
 dalītājs ar $n$ ir $1$, veido aritmētisku progresiju?
 
 
+# <lo-reading/> LV.VO.2002.11.5
+
+<hgroup class="reading">
+
+<u>Kuriem naturāliem skaitļiem $n$, kas lielāki par $3$ 
+un nedalās ar $3$, izpildās īpašība:</u> visi tie naturālie 
+skaitļi, kas mazāki par $n$ un kuru lielākais kopīgais 
+dalītājs ar $n$ ir $1$, veido aritmētisku progresiju?
+
+</hgroup><hgroup>
+
+TODO: Raksturojam skaitļu kopu
+
+</hgroup>
+
+
+
+# <lo-reading/> LV.VO.2002.11.5
+
+<hgroup class="reading">
+
+Kuriem naturāliem skaitļiem $n$, kas lielāki par $3$ 
+un nedalās ar $3$, izpildās īpašība: <u>visi tie naturālie 
+skaitļi, kas mazāki par $n$ un kuru lielākais kopīgais 
+dalītājs ar $n$ ir $1$, veido aritmētisku progresiju?</u>
+
+</hgroup><hgroup>
+
+TODO: Raksturojam $\Phi(n)$ - tos skaitļus, kas savstarpēji pirmskaitļi ar $n$.
+Uzzīmējam parastās daļas $1/n,...,(n-1)/n$.
+
+</hgroup>
+
+
+
+## <lo-strategies/> LV.VO.2002.11.5
+
+1. *Eksperimentēšana:* Ievietojam dažādas $n$ vērtības, pārbaudām apgalvojuma patiesumu. Pēc tam vispārinām novērojumus.
+2. *Invariants:* Izmantot to, ka lielākais kopīgais dalītājs ar to pašu skaitli noteikta veida aritmētiskās progresijās nemainās.
+3. *Pamatojums no pretējā:* Uzminam visus atrisinājumus; par pārējiem pieņemam no pretējā, ka apgalvojums izpildās un apgāžam.
+4. *Vizualizācija ar grafu:* Attēlot attiecību par lielāko kopīgo dalītāju $1$ ar grafa šķautnēm un saredzēt, kuros grafos savienotās virsotnes ir aritmētiska progresija.
 
 ## <lo-soln/> LV.VO.2002.11.5
 

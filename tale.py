@@ -26,7 +26,13 @@ class TaleHandler(webapp2.RequestHandler):
                 'id':'NumTh.PeriodicSequences', 
                 'dir':'numtheory-recurrence-relation',
                 'title': u'Rekurentu virkņu periodiskums'
-            }
+            },
+            {
+                'id':'Comb.GamesSymmetry', 
+                'dir':'comb-games-symmetry',
+                'title': u'Simetrija spēlēs'
+            },
+            
         ]
         remaining_tales = [
             {

@@ -478,7 +478,17 @@
         return theP;
     };
 
-
+    // KAP
+    var getBookIcon = function() {
+        var theP = document.createElement("p"); 
+        theP.setAttribute("style","position:absolute;top:-2px;right:16px;z-index:1;");
+	var theBookIcon = document.createElement("img");
+        theBookIcon.setAttribute("src","book-icon.png");
+	theBookIcon.setAttribute("width","50");
+        theBookIcon.setAttribute("alt","asterisk");
+        theP.appendChild(theBookIcon);
+        return theP;
+    };
 
     // KAP
     var getLogo = function() {
@@ -544,6 +554,16 @@
 		var theAsterisk = getAsterisk();
 		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
                 console.log("Added class 'soln'");
+            } else if (x[i].innerHTML.indexOf("lo-reading") !== -1) {
+                x[i].classList.add('reading');
+		var theBookIcon = getBookIcon();
+		x[i].parentNode.insertBefore(theBookIcon,x[i].parentNode.firstChild);
+                console.log("Added class 'reading'");		
+            } else if (x[i].innerHTML.indexOf("lo-strategies") !== -1) {
+                x[i].classList.add('strategies');
+		var theAsterisk = getAsterisk();
+		x[i].parentNode.insertBefore(theAsterisk,x[i].parentNode.firstChild);
+                console.log("Added class 'strategies'");		
             } else if (x[i].innerHTML.indexOf("lo-yellow") !== -1) {
                 x[i].classList.add('yellow');
                 var theYellowElt = getYellowElt();

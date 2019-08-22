@@ -73,7 +73,7 @@ body {
 
 /* KAP added */
 .reveal h1.LOREFFF, 
-.reveal h1.sample, .reveal h1.summary, .reveal h1.quiz, .reveal h1.theory, .reveal h1.soln, .reveal h1.hints, .reveal h1.yellow, .reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow {
+.reveal h1.sample, .reveal h1.summary, .reveal h1.quiz, .reveal h1.theory, .reveal h1.soln, .reveal h1.hints, .reveal h1.reading, .reveal h1.strategies, .reveal h1.yellow, .reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.reading, .reveal h2.strategies, .reveal h2.yellow {
   color: white;
   padding: 2px 20px 2px 20px;
   -moz-border-radius-topleft: 20px;
@@ -121,6 +121,17 @@ body {
 }
 
 /* KAP added */
+.reveal h1.strategies, .reveal h2.strategies {
+  background-color: #3D1A73;
+}
+
+/* KAP added */
+.reveal h1.reading, .reveal h2.reading {
+  background-color: #2F5370;
+}
+
+
+/* KAP added */
 .reveal h1.yellow, .reveal h2.yellow {
   background-color: yellow;
   color: black;
@@ -134,7 +145,7 @@ body {
   font-size: 80%;
 }
 
-.reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow {
+.reveal h2.sample, .reveal h2.summary, .reveal h2.quiz, .reveal h2.theory, .reveal h2.soln, .reveal h2.hints, .reveal h2.yellow, .reveal h2.strategies, .reveal h2.reading {
    text-transform: none;
    font-weight: normal !important;
 }

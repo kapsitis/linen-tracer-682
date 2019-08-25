@@ -36,6 +36,11 @@ class TaleHandler(webapp2.RequestHandler):
         ]
         remaining_tales = [
             {
+                'id':'R.Intro', 
+                'dir':'r-language-intro',
+                'title': u'Valodas R ievads'
+            },
+            {
                 'id':'NumTh.Grade10', 
                 'dir':'stories-nt-grade10',
                 'title': u'10.klases mix'

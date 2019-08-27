@@ -605,17 +605,35 @@ iziet ārpus saprātīgiem mērogiem.
 
 ## <lo-summary/> Citas pārtrauktas funkcijas
 
+<hgroup>
+
+$$f = \left\{
+\begin{array}{l}
+x^2 - 1,\;\text{ja}\;x<1\\
+x^3 - 5,\;\text{ja}\;1 < x <2\\
+5-2x,\;\text{ja}\;x>2.1
+\end{array} \right.$$
+
 ```r
-a <- function(x) { 
-  ifelse((x < 1),x^2-1,
+f <- function(x) { 
+  ifelse((x<1),x^2-1,
     ifelse((1<x & x<2),x^3-5, 
-      ifelse((x>2.1),5 - 2*x, NA)
+     ifelse((x>2.1),5-2*x,NA)
     )
   ) 
 } 
-plot(a,xlim=c(-3,5), ylim = c(-4,7), col="red") 
+plot(f,xlim=c(-3,5),
+    ylim=c(-4,7), col="red") 
 abline(v=0, h=0)
 ```
+
+</hgroup>
+<hgroup>
+
+![Pārtraukts grafiks](discontinuous-graph.png)
+
+</hgroup>
+
 
 ## <lo-summary/> Izlabots tangenss
 
@@ -634,9 +652,12 @@ grid()
 abline(v=0, h=0)
 ```
 
+## <lo-summary/> Tangensa grafiks
+
+![Grafiks ar asimptotām](correct-tangent.png)
 
 
-## <lo-summary/> Vienkāršu animāciju veidošana
+# <lo-theory/> Vienkāršu animāciju veidošana
 
 * Animētas un interaktīvas bildes parasti veido ar JavaScript;
 tā ir cita programmēšanas valoda, ko saprot vairums pārlūkprogrammu (*browsers*). 
@@ -650,11 +671,29 @@ pašā attēla failā.
 * Var saglabāt failā ar dialogu **Export** > **Save as Image**
 * Var saglabāt scenārijā norādītajā failā
 
+## <lo-summary/> No vairākiem kadriem veidots GIF
+
+* Dažas matemātikas idejas viegli attēlot kustībā. 
+* Animēto GIF veidojam no kadriem, kam norāda, cik bieži tie mainīsies. 
+* To var izdarīt, izsaucot `convert` programmu.
+
+```r
+if (Sys.info()['sysname'] == "Windows") {
+  cmdPrefix <- "cmd /c "
+} else { cmdPrefix <- "" } 
+system(paste0(
+  cmdPrefix,
+  "convert -delay 75 -loop 0 sin*.png animation.gif"
+))
+```
+
+
+
 # <lo-sample/> Izveidot animētu Teilora rindu
 
 **Soļi:** 
 
-1. Izveidot funkciju, kas rēķina $y=sin(x)$ Teilora rindas parciālsummu
+1. Izveidot funkciju, kas rēķina $y=\sin(x)$ Teilora rindas parciālsummu
 līdz $k$-tajam loceklim:
 $$\sum_{i=0}^{k} \frac{(-1)^k x^{2k+1}}{(2k+1)!}.$$
 2. Izveidot bildītes, kurās šos grafikus var noglabāt.
@@ -737,9 +776,9 @@ būs (A) mazāk kā $5$ rozīnes; (B) neviena rozīne.
 ?rpois
 # Izsauc ar parametriem
 xx <- rpois(n=1000,lambda=10)
-# Saskaita TRUE (kam rozīņu < 5)
+# Saskaita TRUE (rozīņu < 5)
 sum(xx < 5)
-# Saskaita TRUE (kam rozīņu nav)
+# Saskaita TRUE (rozīņu nav)
 sum(xx == 0)
 # Tabula pa rozīņu skaitiem
 table(xx)

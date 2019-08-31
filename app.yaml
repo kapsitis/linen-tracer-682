@@ -59,6 +59,43 @@ handlers:
 - url: /data-js
   static_dir: data-js
 
+- url: /default/.*
+  script: default.app
+
+
+- url: /algorithms/.*
+  script: algorithms.app
+
+- url: /algorithms-bin
+  static_dir: algorithms-bin
+
+- url: /algorithms-tales
+  static_dir: algorithms-tales
+  
+- url: /numtheory/.*
+  script: numtheory.app
+  
+- url: /numtheory-bin
+  static_dir: numtheory-bin
+
+- url: /numtheory-tales
+  static_dir: numtheory-tales
+
+- url: /visualizations/.*
+  script: visualizations.app
+  
+- url: /visualizations-bin
+  static_dir: visualizations-bin
+
+- url: /visualizations-tales
+  static_dir: visualizations-tales
+
+- url: /style
+  static_dir: style
+
+- url: /problembase/problems.html
+  script: problembase-problems.app
+
 libraries:
 - name: webapp2
   version: "2.5.2"

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><h1 style="font-size:28pt">
+Skaitļu teorija (LT, 10.kl.)
+</h1>
+<ul>
+<li><strong>LT.LKMMO</strong> - Lietuvos komandinė mokinių matematikos olimpiada (Lietuvas komandveida skolēnu matemātikas olimpiāde)</li>
+<li><strong>LT.LDK</strong> - Varžybos Lietuvos Didžiosios Kunigaikštystės garbei (Sacensības Lietuvas Lielkņazistes godam)<br />
+</li>
+<li><strong>LT.RAJ</strong> - Rajono/miesto etapas (Rajona/pilsētas posms)<br />
+</li>
+<li><blue><strong>LT.LMMO</strong> - <strong>Lietuvos mokinių matematikos olimpiada</strong> (Lietuvas skolēnu matemātikas olimpiāde: nacionālais posms)</blue><br />
+</li>
+<li><strong>LT.VUMIF</strong> - Vilniaus universiteto Matematikos ir informatikos fakulteto olimpiada (Viļņas universitātes rīkota olimpiāde skolēniem)</li>
+</ul>
+<p><a href="http://mif.vu.lt/matematikos-olimpiados/">Matematikos olimpiados</a></p></section>
+<section id="lt.lmmo.2003.9_10.2" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2003.9_10.2</h1><p>Aplūkosim naturālu skaitļu četriniekus <span class="math inline">\((a,b,c,d)\)</span>, kas apmierina nosacījumus: <span class="math display">\[a + b + c + d = ab + cd,\;\;a \leq b \leq c \leq d.\]</span> <strong>(a)</strong> Atrodiet vismaz divus tādus četriniekus.<br />
+<strong>(b)</strong> Atrodiet visus tādus četriniekus.</p>
+<!--
+Nagrinėkime natūraliųjų skaičių ketvertus $(a,b,c,d)$, tenkinančius sąlygas:
+$$a + b + c + d = ab + cd,\;\;a \leq b \leq c \leq d.$$
+**(a)** Raskite bent du tokius ketvertus.  
+**(b)** Raskite visus tokius ketvertus.
+--></section>
+<section id="lt.lmmo.2003.11_12.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2003.11_12.1</h1><p>Naturāls skaitlis <span class="math inline">\(n\)</span> ir tāds, ka skaitļi<br />
+<span class="math inline">\(2n + 1\)</span> un <span class="math inline">\(3n + 1\)</span> ir veselu skaitļu kvadrāti.<br />
+<strong>(a)</strong> Pierādiet, ka <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(8\)</span>.<br />
+<strong>(b)</strong> Vai vienmēr <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(16\)</span>?</p>
+<!--
+Natūralusis skaičius $n$ yra toks, kad skaičiai 
+$2n + 1$ ir $3n + 1$ yra sveikųjų skaičių kvadratai.  
+**(a)** Įrodykite, kad $n$ dalijasi iš $8$.  
+**(b)** Ar būtinai $n$ dalijasi iš $16$?
+--></section>
+<section id="lt.lmmo.2005.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2005.9_10.4</h1><p>Vai eksistē tādi naturāli skaitļi <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span>, ka <span class="math display">\[(a+b)(b+c)(c+a) = 4242?\]</span></p>
+<!--
+Ar yra tokių natūraliųjų skaičių $a$, $b$ ir $c$, kad
+$$(a+b)(b+c)(c+a) = 4242?$$
+--></section>
+<section id="lt.lmmo.2005.11_12.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2005.11_12.1</h1><p>Doti <span class="math inline">\(2005\)</span> skaitļi <span class="math display">\[1^2\;\;2^2\;\;3^2\;\;\ldots\;\;2005^2\]</span> Pirms katra no tiem var pierakstīt <span class="math inline">\(+\)</span> vai <span class="math inline">\(-\)</span>. Kādu mazāko nenegatīvu skaitli var iegūt, veicot aritmētiskās darbības?</p>
+<!--
+Duoti $2005$ skaičiai
+$$1^2\;\;2^2\;\;3^2\;\;\ldots\;\;2005^2$$
+Prieš kiekvieną iš jų galima parašyti $+$ arba $-$. Kokį mažiausią neneigiamą skaičių
+galima gauti atlikus aritmetinius veiksmus?
+--></section>
+<section id="lt.lmmo.2006.9_10.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2006.9_10.1</h1><p>Pierādiet, ka <span class="math inline">\(n^2 + 2n + 12\)</span> nedalās ar <span class="math inline">\(121\)</span>, ja <span class="math inline">\(n\)</span> ir vesels skaitlis.</p>
+<!--
+Įrodykite, kad $n^2 + 2n + 12$ nesidalina iš $121$, jei $n$ yra sveikasis skaičius.
+--></section>
+<section id="lt.lmmo.2006.9_10.3" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2006.9_10.3</h1><p>Cik ir naturālu skaitļu <span class="math inline">\(a,b,c\)</span> trijnieku <span class="math inline">\((a,b,c)\)</span>, kuriem izpildās vienādība <span class="math inline">\(a^2 + 3b^2 = c^3\)</span>, ja<br />
+<strong>(a)</strong> starp skaitļiem <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> var būt vienādi?<br />
+<strong>(b)</strong> no skaitļiem <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> nekādi divi nav vienādi?</p>
+<!--
+Kiek yra natūraliųjų skaičių $a,b,c$ trejetų $(a,b,c)$, su kuriais teisinga
+lygybė $a^2 + 3b^2 = c^3$, jei  
+**(a)** tarp skaičių $a$, $b$, $c$ gali būti lygių?  
+**(b)** iš skaičių $a$, $b$, $c$ jokie du nėra lygūs?
+--></section>
+<section id="lt.lmmo.2007.9_10.2" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2007.9_10.2</h1><p>Virkni <span class="math inline">\((a_n)\)</span> ar visiem naturālajiem <span class="math inline">\(n\)</span> apmierina nosacījumu <span class="math display">\[n^2 a_n = a_1 + a_2 + \ldots + a_n.\]</span> Zināms, ka <span class="math inline">\(a_1 = 1002\)</span>. Atrodiet <span class="math inline">\(a_{2006}\)</span>.</p>
+<!--
+Seka $(a_n)$ su visais natūraliaisiais $n$ tenkina sąlygą
+$$n^2 a_n = a_1 + a_2 + \ldots + a_n.$$
+Duota, kad $a_1 = 1002$. Raskite $a_{2006}$.
+--></section>
+<section id="lt.lmmo.2007.11_12.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2007.11_12.1</h1><div style="font-size:70%">
+<p><strong>(a)</strong> <span class="math inline">\(k\)</span> ir vesels skaitlis. Pierādiet, ka skaitli <span class="math display">\[(2k + 1)^3 - (2k - 1 )^3\]</span> var izteikt kā triju veselu skaitļu kvadrātu summu.<br />
+<strong>(b)</strong> <span class="math inline">\(n\)</span> ir naturāls skaitlis. Pierādiet, ka skaitli <span class="math display">\[(2n + 1)^3 - 2\]</span> var izteikt kā <span class="math inline">\(3n-1\)</span> locekļu summu, no kuriem jebkurš ir naturāla skaitļa kvadrāts, kas lielāks par vienu.</p>
+</div>
+<!--
+**(a)** $k$ yra sveikasis skaičius. Įrodykite, kad skaičių
+$$(2k + 1)^3 - (2k - 1 )^3$$
+galima išreikšti trijų sveikųjų skaičių kvadratų suma.  
+**(b)** $n$ yra natūralusis skaičius. Įrodykite, kad skaičių
+$$(2n + 1)^3 - 2$$
+galima išreikšti suma $3n-1$ dėmenų, kurių kiekvienas yra 
+didesnio už vienetą natūraliojo skaičiaus kvadratas.
+--></section>
+<section id="lt.lmmo.2008.9_10.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2008.9_10.1</h1><p>Zināms, ka <span class="math display">\[M = (a - b)(a - c)(a - d)(b - c)(b - d)(c - d),\]</span> kur <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> un <span class="math inline">\(d\)</span> ir veseli skaitļi.<br />
+<strong>(a)</strong> Vai <span class="math inline">\(M\)</span> vienmēr dalās ar <span class="math inline">\(12\)</span>?<br />
+<strong>(b)</strong> Vai <span class="math inline">\(M\)</span> vienmēr dalās ar <span class="math inline">\(24\)</span>?</p>
+<!--
+Duota, kad
+$$M = (a - b)(a - c)(a - d)(b - c)(b - d)(c - d),$$
+kur $a$, $b$, $c$ ir $d$ – sveikieji skaičiai.  
+**(a)** Ar visada $M$ dalijasi iš $12$?  
+**(b)** Ar visada $M$ dalijasi iš $24$?
+--></section>
+<section id="lt.lmmo.2008.11_12.3" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2008.11_12.3</h1><p>Atrodiet visus naturālos skaitļus <span class="math inline">\(n\)</span>, kuriem <span class="math inline">\(n^7 + n^2 + 1\)</span> ir pirmskaitlis.</p>
+<!--
+Raskite visus natūraliuosius skaičius $n$, su kuriais 
+$n^7 + n^2 + 1$ yra pirminis skaičius.
+--></section>
+<section id="lt.lmmo.2009.9_10.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2009.9_10.1</h1><p>Naturāli skaitļi <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span> apmierina vienādību <span class="math display">\[28a + 30b + 31c = 365.\]</span> <strong>(a)</strong> Kādas vērtības var pieņemt summa <span class="math inline">\(a + b + c\)</span>?<br />
+<strong>(b)</strong> Atrodiet visus šī vienādojuma atrisinājumus naturālos skaitļos <span class="math inline">\((a,b,c)\)</span>.</p>
+<!--
+Natūralieji skaičiai $a$, $b$ ir $c$ tenkina lygybę
+$$28a + 30b + 31c = 365.$$
+**(a)** Kelias reikšmes gali ̨įgyti suma $a + b + c$?  
+**(b)** Raskite visus šios lygties natūraliuosius sprendinius 
+$(a,b,c)$.
+--></section>
+<section id="lt.lmmo.2009.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2009.11_12.4</h1><div style="font-size:70%">
+<p>Naturālu skaitli <span class="math inline">\(m\)</span> sauksim par paslankoju, ja to var uzrakstīt kā vairāku (ne obligāti dažādu) naturālu skaitļu summu tā, ka visu saskaitīto locekļu apgriezto lielumu summa vienāda ar <span class="math inline">\(1\)</span>. Piemēram <span class="math inline">\(11\)</span> ir paslankus skaitlis, jo <span class="math display">\[11 = 2 + 3 + 6\;\;\text{un}\]</span> <span class="math display">\[1 = \frac{1}{2} + \frac{1}{3} + \frac{1}{6}.\]</span> <strong>(a)</strong> Pierādiet, ka <span class="math inline">\(28\)</span> ir paslankus skaitlis.<br />
+<strong>(b)</strong> Vai <span class="math inline">\(58\)</span> ir paslankus skaitlis?<br />
+<strong>(c)</strong> Vai <span class="math inline">\(65\)</span> ir paslankus skaitlis?<br />
+<strong>(d)</strong> Vai <span class="math inline">\(2009\)</span> ir paslankus skaitlis?</p>
+</div>
+<!--
+Natūralųjį skaičių $m$ vadinkime paslankiuoju, jeigu jį galima užrašyti
+kelių (nebūtinai skirtingų) natūraliųjų skaičių suma taip, kad visų dėmenims 
+atvirkštinių skaičių suma būtų lygi $1$. Pavyzdžiui, $11$ yra paslankusis 
+skaičius, nes 
+$$11 = 2 + 3 + 6\;\;\text{ir}$$
+$$1 = \frac{1}{2} + \frac{1}{3} + \frac{1}{6}.$$
+**(a)** Įrodykite, kad $28$ yra paslankusis skaičius.  
+**(b)** Ar $58$ yra paslankusis skaičius?  
+**(c)** Ar $65$ yra paslankusis skaičius?  
+**(d)** Ar $2009$ yra paslankusis skaičius?
+--></section>
+<section id="lt.lmmo.2010.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2010.9_10.4</h1><p>Skaitlis <span class="math display">\[\overline{a0a0\ldots a0b0c0c0\ldots c0c}\]</span> (cipari <span class="math inline">\(a\)</span> un <span class="math inline">\(c\)</span> uzrakstīti katrs <span class="math inline">\(1001\)</span> reizi) dalās ar <span class="math inline">\(37\)</span>. Pierādiet, ka <span class="math inline">\(b = a + c\)</span>.</p>
+<!--
+Skaičius
+$$\overline{a0a0\ldots a0b0c0c0\ldots c0c}$$
+(skaitmenys $a$ ir $c$ parašyti po $1001$ kartą) dalijasi iš $37$. Įrodykite, kad
+$b = a + c$.
+--></section>
+<section id="lt.lmmo.2010.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2010.11_12.4</h1><p>Veseli skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(25\)</span> (ne obligāti parastajā secībā) sarakstīti pa apli. Tiek aprēķinātas <span class="math inline">\(25\)</span> summas: sākot ar katru skaitli, tiek saskaitīti <span class="math inline">\(5\)</span> pulksteņa rādītāja virzienā pēc kārtas sekojoši skaitļi. Pēc tam tiek atrasti šo summu atlikumi, dalot ar <span class="math inline">\(5\)</span> (t.i. viens no skaitļiem <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vai <span class="math inline">\(4\)</span>). Dažādu atlikumu skaitu apzīmējam ar <span class="math inline">\(d\)</span><br />
+(a) Pierādiet, ka <span class="math inline">\(d\)</span> var būt vienāds ar <span class="math inline">\(1\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span> vai <span class="math inline">\(5\)</span>.<br />
+(b) Pierādiet, ka <span class="math inline">\(d\)</span> nevar būt vienāds ar <span class="math inline">\(2\)</span>.</p>
+<!--
+Sveikieji skaičiai nuo $1$ iki $25$ (nebūtinai įprastine tvarka) surašyti ratu.
+Apskaičiuojamos $25$ sumos: pradedant kiekvienu skaičiumi 
+sudedami $5$ pagal laikrodžio rodyklę iš eilės einantys skaičiai. 
+Randamos tų sumų
+dalybos iš $5$ liekanos (t.y. vienas iš skaičių $0$, $1$, 
+$2$, $3$ arba $4$). Skirtingų
+liekanų skaičių pažymėkime $d$.  
+(a) Įrodykite, kad $d$ gali būti lygus $1$, $3$, $4$ arba $5$.  
+(b) Įrodykite, kad $d$ negali būti lygus $2$.
+-->
+<!--
+questionType=Prove.ForAll
+concepts=remainder
+--></section>
+<section id="lt.lmmo.2011.9_10.3" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2011.9_10.3</h1><p>Uz galda ir <span class="math inline">\(2011\)</span> monētu. Divi spēlētāji pēc kārtas ņem monētas. Pirmais var ņemt jebkuru nepāru monētu skaitu no <span class="math inline">\(1\)</span> līdž <span class="math inline">\(99\)</span>. Otrais var ņemt jeb kuru pāru monētu skaitu no <span class="math inline">\(2\)</span> līdz <span class="math inline">\(100\)</span>. Zaudē tas spēlētājs, kurš vairs nevar izdarīt gājienu. Vai pirmais spēlētājs var vienmēr uzvarēt? Ja tā, tad parādiet viņa stratēģiju.</p>
+<!--
+Ant stalo yra $2011$ monetų. Du žaidėjai paeiliui ima monetas. 
+Pirmasis gali imti bet kurį nelyginį monetų skaičių nuo 
+$1$ iki $99$. Antrasis gali imti
+bet kurį lyginį monetų skaičių nuo $2$ iki $100$. 
+Pralaimi tas žaidėjas, kuris
+nebegali padaryti ėjimo. Ar gali pirmasis žaidėjas laimėti? 
+Jei taip, tai nurodykite jo strategiją.
+--></section>
+<section id="lt.lmmo.2011.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2011.9_10.4</h1><p>Kopu <span class="math inline">\(S\)</span> definējam kā visu to naturālo skaitļu <span class="math inline">\(n\)</span> kopu, kuriem abi skaitļi <span class="math inline">\(3n+1\)</span> un <span class="math inline">\(10n+1\)</span> ir naturālu skaitļu kvadrāti.<br />
+(a) Atrodiet kaut vienu kopas <span class="math inline">\(S\)</span> elementu.<br />
+(b) Atrodiet vismaz vienu <span class="math inline">\(n \in S\)</span>, kuram skaitlis <span class="math inline">\(30n+11\)</span> ir salikts.<br />
+(c) Pierādiet, ka jebkuram <span class="math inline">\(n \in S\)</span> skaitlis <span class="math inline">\(29n+11\)</span> ir salikts.</p>
+<!-- 
+Tegul aibę $S$ sudaro tie natūralieji skaičiai $n$, 
+su kuriais abu skaičiai
+$3n + 1$ ir $10n + 1$ yra natūraliųjų skaičių kvadratai.  
+(a) Nurodykite bent vieną aibės $S$ elementą.  
+(b) Raskite bent vieną $n \in S$, su kuriuo skaičius 
+$30n+11$ yra sudėtinis.  
+(c) Įrodykite, kad su kiekvienu $n \in S$ skaičius 
+$29n + 11$ yra sudėtinis.
+--></section>
+<section id="lt.lmmo.2011.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2011.11_12.4</h1><p>Ar <span class="math inline">\(d(n)\)</span> apzīmējam naturāla skaitļa <span class="math inline">\(n\)</span> pozitīvo dalītāju skaitu (piemēŗam, <span class="math inline">\(d(1)=1\)</span>, <span class="math inline">\(d(2) = 2\)</span>, <span class="math inline">\(d(4) = 3\)</span>). Naturālu (ne obligāti atšķirīgu) skaitļu kolekciju <span class="math inline">\(a_1,a_2,\ldots,a_m\)</span> saucam par <em>pilnīgu</em>, ja <span class="math inline">\(d(a_1 + \cdots + a_k ) = a_k\)</span> jebkuram <span class="math inline">\(k = 1,2,\ldots,m\)</span>.<br />
+(a) Atrodiet vismaz vienu pilnīgu piecu skaitļu kolekciju.<br />
+(b) Atrodiet visas pilnīgas piecu skaitļu kolekcijas.<br />
+(c) Vai eksistē kaut viena pilnīga <span class="math inline">\(2011\)</span> naturālu skaitļu kolekcija?</p>
+<!--
+Tegul $d(n)$ yra natūraliojo skaičiaus $n$ daliklių skaičius 
+(pavyzdžiui, $d(1) = 1$, $d(2) = 2$, $d(4) = 3$). 
+Natūraliųjų (nebūtinai skirtingų)
+skaičių rinkinį $a_1,a_2,\ldots,a_n$ vadiname 
+*tobulu*, jei $d(a_1 + \cdots + a_k ) = a_k$
+su kiekvienu $k = 1,2,\ldots,m$.  
+(a) Nurodykite bent vieną tobulą penkių skaičių rinkinį.  
+(b) Raskite visus tobulus penkių skaičių rinkinius.  
+(c) Ar egzistuoja bent vienas tobulas $2011$ natūraliųjų 
+skaičių rinkinys?
+--></section>
+<section id="lt.lmmo.2012.9_10.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2012.9_10.1</h1><p>Cik ir tādu veselu skaitļu, kurus var izteikt kā <span class="math display">\[\frac{1}{a_1} + \frac{2}{a_2} + \frac{1}{a_3} + \cdots + 
+\frac{99}{a_{99}} + \frac{100}{a_{100}},\]</span> kur <span class="math inline">\(a_1 ,a_2, a_3,\ldots ,a_{99}, a_{100}\)</span> ir naturāli skaitļi?</p>
+<!--
+Kiek yra tokių sveikųjų skaičių, kuriuos galima išreikšti kaip
+$$\frac{1}{a_1} + \frac{2}{a_2} + \frac{1}{a_3} + \cdots + 
+\frac{99}{a_{99}} + \frac{100}{a_{100}},$$
+kur $a_1 ,a_2, a_3,\ldots ,a_{99}, a_{100}$ - natūralieji skaičiai?
+--></section>
+<section id="lt.lmmo.2012.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2012.9_10.4</h1><p>Naturālu skaitli sauc par <em>pieklājīgu</em>, ja to var izteikt kā <span class="math display">\[n = s + (s + 1) + ··· + (t − 1) + t,\]</span> kur <span class="math inline">\(s &lt; t\)</span> – naturāli skaitļi. piemēram, skaitlis <span class="math inline">\(18\)</span> ir pieklājīgs, jo <span class="math inline">\(18 = 5 + 6 + 7\)</span>.<br />
+(a) Vai skaitlis <span class="math inline">\(2012\)</span> ir pieklājīgs?<br />
+(b) Vai skaitlis <span class="math inline">\(2048\)</span> ir pieklājīgs?<br />
+(c) Atrodiet visus pieklājīgos skaitļus.</p>
+<!--
+Natūralusis skaičius $n$ yra vadinamas *mandagiu*, 
+jeigu jį galima išreikšti kaip
+$$n = s + (s + 1) + ··· + (t − 1) + t,$$
+kur $s < t$ – natūralieji skaičiai. Pavyzdžiui, skaičius 
+$18$ yra mandagus, nes $18 = 5 + 6 + 7$.  
+(a) Ar skaičius $2012$ yra mandagus?  
+(b) Ar skaičius $2048$ yra mandagus?  
+(c) Raskite visus mandagiuosius skaičius.
+--></section>
+<section id="lt.lmmo.2012.11_12.3" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2012.11_12.3</h1><div style="font-size:70%">
+<p>Uz tāfeles uzrakstītajai veselu skaitļu virkni <span class="math inline">\(a_1, a_2, \ldots, a_{n−1},a_n\)</span>, kur <span class="math inline">\(n \geq 2\)</span>, atļauts nodzēst un uzrakstīt jaunu virkni <span class="math display">\[\left| a_1 − a_2 \right|, 
+\left| a_2 − a_3 \right|, \ldots,
+\left| a_{n-1} − a_n \right|, 
+\left| a_n − a_1 \right|.\]</span> Ar iegūto virkni atkal atļauts veikt tādu pašu operāciju. Skaitli <span class="math inline">\(n\)</span> sauc par <em>dusmīgu</em>, ja no jebkuras sākuma virknes <span class="math inline">\(a_1, a_2,\ldots,a_{n−1},a_n\)</span> pēc galīga operāciju skaita iegūstama virkne <span class="math inline">\(0,0,\ldots,0,0\)</span>.<br />
+<strong>(a)</strong> Pierādiet ka jebkurš nepāru skaitlis <span class="math inline">\(n\)</span>, kur <span class="math inline">\(n &gt; 1\)</span>, nav dusmīgs.<br />
+<strong>(b)</strong> Vai skaitlis <span class="math inline">\(4\)</span> ir dusmīgs?<br />
+<strong>(c)</strong> Vai skaitlis 6 ir dusmīgs?</p>
+</div>
+<!--
+Lentoje užrašytą sveikųjų skaičių seką 
+$a_1, a_2, \ldots, a_{n−1},a_n$, kur $n \geq 2$,
+leidžiama nutrinti ir užrašyti naują seką
+$$\left| a_1 − a_2 \right|, 
+\left| a_2 − a_3 \right|, \ldots,
+\left| a_{n-1} − a_n \right|, 
+\left| a_n − a_1 \right|.$$
+Su gautąja seka vėl leidžiama atlikti tokią pačią operaciją. 
+Skaičius $n$ vadinamas *piktu*, 
+jei iš bet kokios pradinės 
+sekos $a_1, a_2,\ldots,a_{n−1},a_n$ po
+baigtinio operacijų skaičiaus gaunama seka 
+$0,0,\ldots,0,0$.  
+(a) Įrodykite, kad bet kuris nelyginis skaičius $n$, 
+kur $n > 1$, nėra piktas.
+(b) Ar skaičius $4$ yra piktas?
+(c) Ar skaičius $6$ yra piktas?
+--></section>
+<section id="lt.lmmo.2013.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2013.9_10.4</h1><p>Apzīmēsim skaitli, kura decimālpierakstā ir <span class="math inline">\(n\)</span> deviņnieki, ar simbolu <span class="math inline">\(d_n = 9\cdots{}99\)</span>.<br />
+<strong>(a)</strong> Atrodiet kaut vienu skaitļa <span class="math inline">\(d_3 = 999\)</span> daudzkārtni, kurā nav cipara <span class="math inline">\(9\)</span>.<br />
+<strong>(b)</strong> Atrast mazāko tādu skaitļa <span class="math inline">\(d_3 = 999\)</span> daudzkārtni.<br />
+<strong>(c)</strong> Atrodiet mazāko tādu skaitļa <span class="math inline">\(d_n = 9\cdots 99\)</span> daudzkārtni, kurā nav cipara <span class="math inline">\(9\)</span>.</p>
+<!--
+Pažymėkime skaičių, kurio dešimtainiame 
+užraše yra $n$ devynetų, simboliu $d_n = 9\cdots 99$.  
+(a) Raskite bent vieną skaičiaus $d_3 = 999$ 
+kartotinį, kuriame nėra skaitmens $9$.
+(b) Raskite mažiausią tokį skaičiaus $d_3 = 999$ kartotinį.
+(c) Raskite mažiausią tokį skaičiaus $d_n = 9\cdots 99$ kartotinį, kuriame
+nėra skaitmens $9$.
+--></section>
+<section id="lt.lmmo.2013.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2013.11_12.4</h1><ol type="a">
+<li>Intervālā <span class="math inline">\((25,36)\)</span> atrodiet tādus trīs dažādus veselus skaitļus <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span>, ka <span class="math inline">\(a^2 + b^2\)</span> dalās ar <span class="math inline">\(c\)</span>.</li>
+<li>Vai vienmēr intervālā <span class="math inline">\(\left( n^2 ,(n + 1)^2 \right)\)</span>, kur <span class="math inline">\(n\)</span> ir par <span class="math inline">\(1\)</span> lielāks naturāls skaitlis, eksistē tādi trīs dažādi veseli skaitļi <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span>, ka <span class="math inline">\(a^2 + b^2\)</span> dalās ar <span class="math inline">\(c\)</span>?</li>
+</ol>
+<!--
+(a) Intervale $(25,36)$ raskite tokius tris skirtingus sveikuosius skaičius
+$a$, $b$ ir $c$, kad $a^2 + b^2$ dalytųsi iš $c$.
+(b) Ar visada intervale $\left( n^2 ,(n + 1)^2 \right)$, kur $n$ didesnis už $1$ natūralusis
+skaičius, egzistuoja tokie trys skirtingi sveikieji skaičiai $a$, $b$ ir $c$,
+kad $a^2 + b^2$ dalijasi iš $c$?
+--></section>
+<section id="lt.lmmo.2014.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2014.9_10.4</h1><p>Atrodiet visus veselu skaitļu pārus <span class="math inline">\((m,n)\)</span>, ar kuriem ir patiesa vienādība <span class="math display">\[(n + 101)(n + 102)(n + 103)(n + 104) = (m + 1)(m + 2).\]</span></p>
+<!--
+Raskite visas sveikųjų skaičių poras $(m,n)$, 
+su kuriomis teisinga lygybė
+$$(n + 101)(n + 102)(n + 103)(n + 104) = (m + 1)(m + 2).$$
+--></section>
+<section id="lt.lmmo.2014.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2014.11_12.4</h1><p>Naturāli skaitļi <span class="math inline">\(a,b,c,d\)</span> apmierina vienādojumu <span class="math display">\[a^2 + b^2 + c^2 + d^2 = 7 \cdot 4^{2014}.\]</span> (a) Atrodiet kaut vienu šī vienādojuma atrisinājumu <span class="math inline">\((a,b,c,d)\)</span>.<br />
+(b) Atrodiet visus šī vienādojuma atrisinājumus <span class="math inline">\((a,b,c,d)\)</span>, kuri apmierina nosacījumu <span class="math inline">\(a \leq b \leq c \leq d\)</span>.</p>
+<!--
+Natūralieji skaičiai $a,b,c,d$ tenkina lygtį
+$$a^2 + b^2 + c^2 + d^2 = 7 \cdot 4^{2014}.$$
+(a) Raskite bent vieną šios lygties sprendinį $(a,b,c,d)$.  
+(b) Raskite visus šios lygties sprendinius $(a,b,c,d)$,
+tenkinančius sąlygą $a \leq b \leq c \leq d$.
+--></section>
+<section id="lt.lmmo.2015.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2015.9_10.4</h1><p>Naturālu skaitļu trijnieks <span class="math inline">\(a \leq b \leq c\)</span> apmierina vienādību <span class="math display">\[\left( 1 + \frac{1}{a} \right) 
+\left( 1 + \frac{1}{b} \right) 
+\left( 1 + \frac{1}{c} \right) = 2.\]</span> (a) Atrodiet vismaz divus tādus trijniekus.<br />
+(b) Atrodiet visus tādus trijniekus.</p>
+<!--
+Natūraliųjų skaičių trejetas $a \leq b \leq c$ tenkina lygybę
+$$\left( 1 + \frac{1}{a} \right) 
+\left( 1 + \frac{1}{a} \right) 
+\left( 1 + \frac{1}{a} \right) = 2.$$
+(a) Nurodykite bent du tokius trejetus.  
+(b) Raskite visus tokius trejetus.
+--></section>
+<section id="lt.lmmo.2015.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2015.11_12.4</h1><p>Veselu skaitli <span class="math inline">\(n\)</span> sauc par <em>dīvainu</em>, ja skaitlis <span class="math inline">\(n^4 +2014\)</span> dalās ar <span class="math inline">\(n^2 + 2014\)</span>, bet skaitlis <span class="math inline">\(n^4 + 2015\)</span> dalās ar <span class="math inline">\(n^2 + 2015\)</span>.<br />
+(a) Atrodiet vismaz trīs dīvainus skaitļus <span class="math inline">\(n\)</span>.<br />
+(b) Atrodiet visus dīvainus skaitļus <span class="math inline">\(n\)</span>.</p>
+<!--
+Sveikasis skaičius $n$ yra vadinamas *keistu*, jei skaičius 
+$n^4 +2014$ dalijasi
+iš $n^2 + 2014$, o skaičius $n^4 + 2015$ dalijasi iš $n^2 + 2015$.  
+(a) Nurodykite bent tris keistus skaičius $n$.  
+(b) Raskite visus keistus skaičius $n$.
+--></section>
+<section id="lt.lmmo.2016.9_10.1" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2016.9_10.1</h1><p>Atrodiet visus vienādojuma <span class="math inline">\(15a^2 − 8ab + b^2 + 8a − 2b + 38 = 0\)</span> veselos atrisinājumus <span class="math inline">\((a,b)\)</span>.</p>
+<!--
+Raskite visus lygties 
+$15a^2 − 8ab + b^2 + 8a − 2b + 38 = 0$ sveikuosius
+sprendinius $(a,b)$.
+--></section>
+<section id="lt.lmmo.2016.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2016.9_10.4</h1><p>Lai <span class="math inline">\(n \geq 7\)</span> ir tāds naturāls skaitlis, ka skaitļi <span class="math inline">\(n−1\)</span> un <span class="math inline">\(n+1\)</span> ir pirmskaitlis. Pierādiet, ka skaitlis <span class="math inline">\(n^4 + 16n^2\)</span> dalās:<br />
+(a) ar <span class="math inline">\(3\)</span>;<br />
+(b) ar <span class="math inline">\(720\)</span>.</p>
+<!--
+Tegul $n \geq 7$ yra toks natūralusis skaičius, 
+kad skaičiai $n−1$ ir $n+1$ yra
+pirminiai. Įrodykite, kad skaičius $n^4 + 16n^2$ dalijasi:  
+(a) iš $3$;  
+(b) iš $720$.
+--></section>
+<section id="lt.lmmo.2016.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2016.11_12.4</h1><p>Veselu skaitli <span class="math inline">\(n\)</span> sauc par <em>dīvainu</em>, ja <span class="math inline">\(\sqrt{3n^2 + 1}\)</span> ir nepāru vesels skaitlis.<br />
+(a) Atrodiet vismaz trīs dīvainus skaitļus <span class="math inline">\(n\)</span>.<br />
+(b) Pierādiet, ka ar jebkuru dīvainu skaitli <span class="math inline">\(n\)</span> skaitlis <span class="math inline">\(2+2\sqrt{3n^2 + 1}\)</span> ir naturāla skaitļa kvadrāts.</p>
+<!--
+Sveikasis skaičius $n$ vadinamas *keistu*, jei
+$\sqrt{3n^2 + 1}$ yra nelyginis sveikasis skaičius.  
+(a) Nurodykite bent tris keistus skaičius $n$.  
+(b) Įrodykite, kad su bet kuriuo keistu skaičiumi 
+$n$ skaičius $2+2\sqrt{3n^2 + 1}$
+yra natūraliojo skaičiaus kvadratas.
+--></section>
+<section id="lt.lmmo.2017.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2017.9_10.4</h1><p>Naturālu skaitļu četrinieks <span class="math inline">\((a, b, c, d)\)</span> apmierina vienādojumu sistēmu <span class="math display">\[\left\{ \begin{array}{rcl}
+ab - a - b &amp; = &amp; c + d - 3 \\
+cd - c - d &amp; = &amp; a + b - 3
+\end{array} \right.\]</span> (a) Atrodiet vismaz divus tādus četriniekus.<br />
+(b) Atrodiet visus tādus četriniekus.</p>
+<!--
+Natūraliųjų skaičių ketvertas $(a, b, c, d)$ tenkina lygčių sistemą
+$$\left\{ \begin{array}{rcl}
+ab - a - b & = & c + d - 3 \\
+cd - c - d & = & a + b - 3
+\end{array} \right.$$
+(a) Raskite bent du tokius ketvertus.  
+(b) Rasite visus tokius ketvertus.
+--></section>
+<section id="lt.lmmo.2017.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2017.11_12.4</h1><p>Naturālu skaitli <span class="math inline">\(m\)</span> sauc par <em>kārtīgu</em>, ja ar jebkuriem naturāliem skaitļiem <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, skaitlis <span class="math inline">\(a^{2m} + b^{2m} + a^mb^m\)</span> dalās ar <span class="math inline">\(a^2 + b^2 + ab\)</span>.<br />
+(a) Pierādiet, ka skaitlis <span class="math inline">\(2\)</span> ir kārtīgs.<br />
+(b) Vai skaitlis <span class="math inline">\(100\)</span> ir kārtīgs?<br />
+(c) Vai skaitlis <span class="math inline">\(101\)</span> ir kārtīgs?<br />
+(d) Atrodiet visus kārtīgos skaitļus.</p>
+<!--
+Natūralusis skaičius $m$ vadinamas *tvarkingu*, 
+jei su bet kuriais natūraliaisiais
+skaičiais $a$ ir $b$ skaičius 
+$a^{2m} + b^{2m} + a^mb^m$ dalijasi iš 
+$a^2 + b^2 + ab$.  
+(a) Įrodykite, kad skaičius $2$ yra tvarkingas.  
+(b) Ar skaičius $100$ yra tvarkingas?  
+(c) Ar skaičius $101$ yra tvarkingas?  
+(d) Raskite visus tvarkingus skaičius.
+--></section>
+<section id="lt.lmmo.2018.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2018.9_10.4</h1><p>Atrodiet visus veselu skaitļu pārus <span class="math inline">\((x,y)\)</span>, kas apmierina vienādību <span class="math inline">\(x^3 + 3x^2y = 4y^3 + 100\)</span>.</p>
+<!--
+Raskite visas sveikųjų skaičių poras $(x,y)$, tenkinančias lygybę
+$x^3 + 3x^2y = 4y^3 + 100$.
+--></section>
+<section id="lt.lmmo.2018.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2018.11_12.4</h1><p>Atrodiet visus naturālu skaitļu pārus <span class="math inline">\((m, n)\)</span>, kuriem <span class="math inline">\(m^{2018} + n\)</span> dalās ar <span class="math inline">\(mn\)</span>.</p>
+<!--
+Raskite visas natūraliųjų skaičių poras $(m, n)$, su kuriomis 
+$m^{2018} + n$ dalijasi iš $mn$.
+--></section>
+<section id="lt.lmmo.2019.9_10.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2019.9_10.4</h1><p>Skolotāja uzdeva no galvas iemācīties pēc iespējas lielāka skaitļa ciparus. Pirmrindniece Julija uz lielas tāfeles vienu pēc otra uzrakstīja visus skaitļa <span class="math inline">\(4^{2019}\)</span> ciparus. Nerātnis Juozs nolēma visiem pierādīt, ka viņš ir vēl brašāks: iegaumēja un vienu pēc otra uzrakstīja visus skaitļa <span class="math inline">\(25^{2019}\)</span> ciparus. Cik pavisam ciparu uzrakstīti uz tāfeles?</p>
+<!--
+Mokytoja uždavė mintinai išmokti kuo didesnio 
+skaičiaus skaitmenis. Pirmūnė Julija didelėje lentoje 
+vieną po kito užrašė visus skaičiaus $4^{2019}$
+skaitmenis. Išdykėlis Juozas visiems nusprendė įrodyti, 
+kad jis yra dar šaunesnis: įsiminė ir vieną po kito užrašė 
+visus skaičiaus $25^{2019}$ skaitmenis. 
+Kiek iš viso lentoje užrašyta skaitmenų?
+--></section>
+<section id="lt.lmmo.2019.11_12.3" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2019.11_12.3</h1><div style="font-size:70%">
+<p>Eugenijus saņēma dāvanā brīnumainu kastīti, kurā ir <span class="math inline">\(106000\)</span> eiru un divas pogas - dzeltena un za’la. Nospiežot dzelteno pogu eiru skaits kastītē divkāršojas, bet nospiežot zaļo - par <span class="math inline">\(17\)</span> eirām samazinās. (Ja spaužot zaļo pogu kastītē bija ne vairāk kā <span class="math inline">\(17\)</span> eiru, tad kastīte kļūst tukša.) Pogas Eugenijus var spiest jebkurā secībā. Vai var atbilstošā momentā dabūt kastītē tieši<br />
+<strong>(a)</strong> desmit eiras?<br />
+<strong>(b)</strong> tūkstots eiras?<br />
+<strong>(c)</strong> miljons eiras?<br />
+<strong>(d)</strong> Atrodiet visas naturālās <span class="math inline">\(m\)</span> vērtības, kurām ir iespējams, ka attiecīgā momentā kastītē būtu tieši <span class="math inline">\(m\)</span> eiras.</p>
+</div>
+<!--
+Eugenijus gavo dovanų stebuklingą dėžutę, kurioje 
+yra $106000$ eurų ir du mygtukai, geltonas ir žalias. 
+Paspaudus geltonąjį mygtuką eurų skaičius dėžutėje padvigubėja, 
+o paspaudus žaliąjį 17 eurų sumažėja. 
+(Jei spaudžiant žaliąjį mygtuką dėžutėje buvo ne daugiau 
+kaip $17$ eurų, tai dėžutė tampa tuščia.) 
+Mygtukus Eugenijus gali spaudyti bet kuria tvarka. Ar
+gali tam tikru momentu dėžutėje pasidaryti lygiai  
+a) dešimt eurų?  
+b) tūkstantis eurų?  
+c) milijonas eurų?  
+d) Raskite visas tokias natūraliąsias $m$ reikšmes, 
+kurioms yra įmanoma, kad tam tikru momentu 
+dėžutėje pasidarytų lygiai $m$ eurų.
+--></section>
+<section id="lt.lmmo.2019.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.LMMO.2019.11_12.4</h1><p>Atrodiet visus pirmskaitļu pārus <span class="math inline">\((p,q)\)</span>, ar kuriem vienādojumam <span class="math display">\[x^2 − (6p − 4q)x + 3pq = 0\]</span> ir divi dažādi veseli atrisinājumi.</p>
+<!--
+Raskite visas pirminių skaičių poras $(p,q)$, su kuriomis lygtis
+$$x^2 − (6p − 4q)x + 3pq = 0$$
+turi du skirtingus sveikuosius sprendinius.
+--></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

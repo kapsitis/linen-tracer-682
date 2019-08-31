@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+## DEPRECATED
+##
+
 import jinja2
 import json
 import os

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><h1 style="font-size:28pt">
+Skaitļu teorija: Igaunijas olimpiādes, 10.kl.
+</h1>
+<ul>
+<li><strong>EE.PK</strong> - Eesti Piirkonnavoor (Igaunijas reģionu kārta)</li>
+<li><strong>EE.LO</strong> - Eesti Lõppvoor (Igaunijas gala/valsts kārta)</li>
+<li><blue><strong>EE.LVS</strong> - <strong>Eesti Sügisene lahtine võistlus</strong> (Igaunijas rudens atvērtais konkurss)</blue></li>
+<li><strong>EE.LVT</strong> - Eesti Talvine lahtine võistlus (Igaunijas ziemas atvērtais konkurss)</li>
+</ul>
+<p><a href="http://www.math.olympiaadid.ut.ee/html/index.php">Matemaatikaolümpiaadid</a></p></section>
+<section><section id="ee.lvs.2009.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2009.9_10.1</h1><p>Atrast visus naturālos skaitļus <span class="math inline">\(n\)</span>, kuriem <span class="math inline">\(1 + 2^2 + 3^3 + 4^n\)</span> ir vesela skaitļa kvadrāts.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">alg.tra.pow.nest</a></li>
+<li><a href="#/">seq.gaps.squares</a></li>
+<li><a href="#/">alg.ineq.equations</a></li>
+<li><a href="#/">comb.full</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Найти все положительные целые числа $n$, при которых 
+$1 + 2^2 + 3^3 + 4^n$
+является квадратом некоторого целого числа.
+-->
+<!--
+questionType=Find.All
+genre=integer-equation
+--></section><section id="attālumi-starp-pilniem-kvadrātiem" class="slide level2">
+<h2>Attālumi starp pilniem kvadrātiem</h2>
+<ul>
+<li>Arī <span class="math inline">\(4^n = (2^n)^2\)</span> ir pilns kvadrāts.</li>
+<li>Tad <span class="math inline">\((2^n)^2 + 1 + 2^2 + 3^3 = (2^n)^2 +32\)</span> vērtībām <span class="math inline">\(N = 2^n \geq 16\)</span> noteikti nav pilns kvadrāts, jo nākamais pilnais kvadrāts: <span class="math display">\[(N+1)^2 = N^2 + 2N+ 1 \geq N^2 + 33.\]</span></li>
+<li>Piemēram <span class="math inline">\(4^4 = 16^2 = 256\)</span>. Bet jau nākamais pilnais kvadrāts <span class="math inline">\(17^2 = 289\)</span>. Atstarpe ir <span class="math inline">\(33\)</span>.</li>
+</ul>
+</section><section id="ievietojam-n123" class="slide level2">
+<h2>Ievietojam n=1,2,3</h2>
+<ul>
+<li>Vērtība <span class="math inline">\(n=4\)</span> neder, kā jau redzējām, jo <span class="math inline">\(288\)</span> nav pilns kvadrāts.</li>
+<li>Vērtībām <span class="math inline">\(n&gt;4\)</span> attālumi starp <span class="math inline">\(4^n\)</span> un nākamo pilno kvadrātu vēl vairāk pieaug (un ir vairāk par <span class="math inline">\(33\)</span>).</li>
+<li>Ievietojam visas <span class="math inline">\(n=1,2,3\)</span>: <span class="math display">\[4^1 + 32 = 36;\;4^2 + 32 = 48;\;4^3 + 32 = 96.\]</span></li>
+<li>Secinām, ka tikai pie <span class="math inline">\(n=1\)</span> skaitlis <span class="math inline">\(1 + 2^2 + 3^3 + 4^n = 36\)</span> ir pilns kvadrāts.</li>
+</ul>
+</section></section>
+<section><section id="ee.lvs.2009.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2009.11_12.1</h1><p>Vai eksistē pirmskaitlis <span class="math inline">\(p\)</span>, kuram <span class="math inline">\(p^3 + 2008\)</span> un <span class="math inline">\(p^3 + 2010\)</span> arī ir pirmskaitļi?</p>
+<p><small></p>
+<ul>
+<li><a href="#/">mod.eq.contradict</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Найдётся ли простое число $p$, при котором 
+$p^3 + 2008$ и $p^3 + 2010$ также
+являются простыми числами?
+-->
+<!--
+questionType=ProveDisprove.Exists
+concepts=primes
+--></section><section id="atlikumi" class="slide level2">
+<h2>Atlikumi</h2>
+<p>Kubiskām funkcijām <span class="math inline">\(p^3\)</span> mēdz būt izdevīgi aplūkot atlikumus, dalot ar <span class="math inline">\(7\)</span> vai <span class="math inline">\(9\)</span>. Ir zināms, ka</p>
+<p><span class="math display">\[\left\{ \begin{array}{ll}
+p^3 \equiv 0,1,6 &amp; (\mbox{mod}\,7)\\
+p^3 \equiv 0,1,8 &amp; (\mbox{mod}\,9)\\
+\end{array} \right.\]</span></p>
+</section><section id="pretrunas-modulis" class="slide level2">
+<h2>Pretrunas modulis</h2>
+<ul>
+<li>Pieskaitāmie skaitļi <span class="math inline">\(2008, 2010\)</span> dod atlikumus <span class="math inline">\(6\)</span> un <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(7\)</span>.</li>
+<li>Lai neviena no summām <span class="math inline">\(p^3 + 2008\)</span>, <span class="math inline">\(p^3 + 2010\)</span> nedalītos ar <span class="math inline">\(7\)</span>, jābūt <span class="math inline">\(p^3 \equiv 0\)</span> jeb <span class="math inline">\(p\)</span> jādalās ar <span class="math inline">\(7\)</span>.</li>
+<li>Vienīgais pirmskaitlis, kas dalās ar <span class="math inline">\(7\)</span>, ir pats <span class="math inline">\(7\)</span>.</li>
+<li><span class="math inline">\(7^3 + 2010 = 2353\)</span>. Šis skaitlis dalās ar <span class="math inline">\(13\)</span>.</li>
+</ul>
+<p><em>Secinājums.</em> Tāda pirmskaitļa <span class="math inline">\(p\)</span> nav.</p>
+</section></section>
+<section id="ee.lvs.2010.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2010.9_10.1</h1><p>Atrast visus naturālos skaitļus <span class="math inline">\(n\)</span>, kuriem visu viņu pozitīvo dalītāju reizinājums nav skaitļa <span class="math inline">\(n\)</span> pakāpe ar veselu kāpinātāju.</p>
+<!--
+ru=
+Найти все положительные целые числа $n$, 
+произведение всех положительных делителей которых не 
+является степенью числа $n$ с целочисленным
+показателем.
+-->
+<!--
+questionType=Find.All
+concepts=divisors
+--></section>
+<section id="ee.lvs.2010.9_10.5" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2010.9_10.5</h1><p>Atrast visus naturālu skaitļu pārus <span class="math inline">\((n,k)\)</span>, kuriem <span class="math inline">\(n! + (n + 1)! = k! + 120\)</span>.<br />
+<em>Piezīme. Pieraksts <span class="math inline">\(x!\)</span> apzīmē reizinājumu <span class="math inline">\(1 \cdot 2 \cdot \ldots \cdot x\)</span>.</em></p>
+<!--
+ru=
+Найти все пары положительных целых чисел $(n, k)$, при которых
+$n! + (n + 1)! = k! + 120$.  
+Замечание. Запись $x!$ обозначает произведение $1 \cdot 2 \cdot \ldots \cdot x$.
+-->
+<!--
+questionType=Find.All
+concepts=factorial
+--></section>
+<section id="ee.lvs.2010.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2010.11_12.1</h1><p>Pierādīt, ka nevienu naturālu skaitli, starp kura cipariem pa vienai reizei atrodami cipari <span class="math inline">\(2\)</span> un <span class="math inline">\(1\)</span>, bet visi pārējie cipari ir nulles, nevar izteikt kā divu veselu skaitļu kvadrātu summu vai divu veselu skaitļu kubu summu.</p>
+<!--
+ru=
+Доказать, что ни одно натуральное число, среди цифр которого 
+встречаются по одному разу $2$ и $1$, а остальные все цифры нули, 
+нельзя представить в виду суммы квадратов или суммы кубов двух целых чисел.
+-->
+<!--
+questionType=Prove.NotExists
+concepts=power-sums
+--></section>
+<section id="ee.lvs.2010.11_12.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2010.11_12.2</h1><p>Ar <span class="math inline">\(P(x)\)</span> apzīmēts polinoms ar veseliem koeficientiem, kas apmierina nosacījumu <span class="math inline">\(P(2010) = P(201) = 2010\)</span>.<br />
+a) Vai ir iespējams, ka <span class="math inline">\(P(2011) = 2011\)</span>?<br />
+b) Kāda ir mazākā iespējamā <span class="math inline">\(P(2011)\)</span> pozitīvā vērtība?</p>
+<!--
+ru=
+Пусть $P(x)$ –– многочлен с целочисленными коэффициентами, 
+удовлетворяющий условию $P(2010) = P(201) = 2010$.  
+а) Возможно ли, что $P(2011) = 2011$?  
+б) Каково наименьшее возможное положительное значение $P(2011)$?
+-->
+<!--
+questionType=ProveDisprove.Exists,Find.Min
+concepts=integer-polynomial
+--></section>
+<section id="ee.lvs.2011.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2011.9_10.1</h1><p>Atrast visus četrciparu skaitļus, kam, nodzēšot jebkuru ciparu, rodas trīsciparu skaitlis, kurš ir sākotnējā skaitļa dalītājs.</p>
+<!--
+ru=
+Найти все четырёхзначные числа, при стирании любой 
+цифры которых получается трёхзначное число, 
+являющееся делителем изначального числа.
+-->
+<!--
+questionType=Find.All
+genre=digit-manipulation
+--></section>
+<section id="ee.lvs.2011.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2011.11_12.1</h1><p>Katram naturālam skaitlim <span class="math inline">\(n\)</span> apzīmēsim ar simbolu <span class="math inline">\(a_n\)</span> lielāko skaitļa <span class="math inline">\(2\)</span> pakāpi, ar ko dalās skaitlis <span class="math inline">\(n\)</span> (piemēram, <span class="math inline">\(a_{2011} = 1\)</span>, <span class="math inline">\(a_{2012} = 4\)</span>). Pierādīt, ka patvaļīgiem naturāliem skaitļiem <span class="math inline">\(i\)</span> un <span class="math inline">\(j\)</span>, kur <span class="math inline">\(i &lt; j\)</span>, summa <span class="math display">\[\frac{1}{a_i} + \frac{1}{a_{i+1}} + \ldots + \frac{1}{a_j}\]</span> nav vesels skaitlis.</p>
+<p><small></p>
+<ul>
+<li><a href="#/">div.valu.change</a></li>
+</ul>
+<p></small></p>
+<!--
+ru=
+Для каждого положительного числа $n$ обозначим символом 
+$a_n$ наибольшую степень числа $2$, на которую делится 
+число $n$ (например, $a_{2011} = 1$,
+$a_{2012} = 4$). Доказать, что для произвольных положительных 
+целых чисел $i$ и $j$ , где $i < j$, сумма
+$$\frac{1}{a_i} + \frac{1}{a_{i+1}} + \ldots + \frac{1}{a_j}$$
+не является целым числом.
+-->
+<!--
+questionType=Prove.ForAll
+concepts=valuations
+--></section>
+<section id="ee.lvs.2012.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2012.9_10.1</h1><p>Cik ir tādu sešciparu naturālu skaitļu, kuru pierakstā ir cipari <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span> un <span class="math inline">\(5\)</span> katrs vienu reizi un kuri dalās ar katru savu ciparu, kas nav nulle.</p>
+<!--
+ru=
+Сколько всего таких шестизначных натуральных чисел, в записи которых
+присутствуют цифры 0, 1, 2, 3, 4 и 5 каждая по одному разу, и которые
+делятся на каждую свою цифру, отличную от нуля?
+-->
+<!--
+questionType=Find.Count
+--></section>
+<section id="ee.lvs.2012.9_10.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2012.9_10.2</h1><p>No nulles atšķirīgi veseli skaitļi <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> un <span class="math inline">\(c\)</span> apmierina nosacījumu <span class="math inline">\(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}=0\)</span>. Pierādīt, ka starp skaitļiem <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> var atrast divus tādus skaitļus, kuriem ir kopīgs dalītājs, kas lielāks par <span class="math inline">\(1\)</span>.</p>
+<!--
+ru=
+Отличные от нуля целые числа $a$, $b$ и $c$ удовлетворяют условию
+$\frac{1}{a}+\frac{1}{b}+\frac{1}{c}=0$.
+Доказать, что среди чисел $a$, $b$, $c$ можно найти два таких числа, 
+у которых найдётся общий делитель, который больше числа $1$.
+-->
+<!--
+questionType=Prove.Exists
+concepts=coprimes
+--></section>
+<section id="ee.lvs.2012.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2012.9_10.3</h1><p>Skolotājs pateica Jüri divus veselus skaitļus <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, kas nav nulles, turklāt <span class="math inline">\(b\)</span> dalās ar <span class="math inline">\(a\)</span>. Jüri ir jāatrod tādu nenulles veselu skaitli <span class="math inline">\(c\)</span>, ka <span class="math inline">\(c\)</span> dalās ar <span class="math inline">\(b\)</span>, un visi kvadrātvienādojuma <span class="math inline">\(ax^2+bx+c=0\)</span> atrisinājumi ir veseli skaitļi. Vai Jüri vienmēr var atrisināt šo uzdevumu?</p>
+<!--
+ru=
+Учитель сказал Юре два отличных от нуля целых числа $a$ и $b$, причём
+$b$ делится на $a$. Юра должен найти такое отличное от нуля целое число
+$c$, что $c$ делилось бы на $b$, и чтобы все решения квадратного уравнения
+$ax^2+bx+c=0$ являлись целыми числами. Всегда ли у Юры есть 
+возможность верно решить это задание?
+-->
+<!--
+questionType=ProveDisprove.Other
+concepts=quadratic-equation
+--></section>
+<section id="ee.lvs.2012.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2012.11_12.1</h1><p>Atrast visus naturālos skaitļus, kuri ir tieši <span class="math inline">\(2013\)</span> reizes lielāki par savu ciparu summu.</p>
+<!--
+ru=
+Найти все положительные целые числа, которые ровно в $2013$ раз больше
+суммы своих цифр.
+-->
+<!--
+questionType=Find.All
+concepts=sum-of-digits
+--></section>
+<section id="ee.lvs.2012.11_12.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2012.11_12.2</h1><p>Atrast visus atlikumus, kurus, dalot ar <span class="math inline">\(6\)</span>, dod vesels skaitlis <span class="math inline">\(n\)</span>, kurš kādam veselam <span class="math inline">\(m\)</span> apmierina vienādību <span class="math inline">\(n^3 = m^2 + m + 1\)</span>.</p>
+<!--
+ru=
+Найти все остатки, которые при делении на число $6$ может 
+дать целое число $n$, которое для некоторого 
+целого числа $m$ удовлетворяет равенству
+$n^3 = m^2 + m + 1$.
+-->
+<!--
+questionType=Find.All
+concepts=remainder
+--></section>
+<section id="ee.lvs.2012.11_12.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2012.11_12.3</h1><p>Pierādīt, ka <span class="math inline">\((2n)! &lt; n^{2n}\)</span> katram veselam skaitlim <span class="math inline">\(n \geq 3\)</span>. <em>Piezīme. Par naturāla skaitļa <span class="math inline">\(x\)</span> faktoriālu <span class="math inline">\(x!\)</span> sauc reizinājumu <span class="math inline">\(1\cdot{}2\cdot\ldots\cdot{}x\)</span>.</em></p>
+<!--
+Доказать, что $(2n)! < n^{2n}$
+для каждого целого числа $n \geq 3$.
+*Замечание. Факториалом $x!$ положительного целого числа $x$ называется
+произведение $1\cdot{}2\cdot\ldots\cdot{}x$.*
+-->
+<!--
+questionType=Prove.ForAll
+concepts=factorial
+genre=proving-inequality
+--></section>
+<section id="ee.lvs.2013.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2013.9_10.1</h1><p>Volli grib no naturāliem skaitļiem <span class="math inline">\(1, 2, 3, \ldots, 100\)</span> izvēlēties <span class="math inline">\(x\)</span> skaitļus tā, lai tieši četri no tiem dalītos ar <span class="math inline">\(4\)</span>, tieši četri dalītos ar <span class="math inline">\(5\)</span> un tieši trīs skaitļi dalītos ar <span class="math inline">\(6\)</span>. Atrast mazāko skaitļa <span class="math inline">\(x\)</span> vērtību.</p>
+<!--
+ru=
+Витя желает выбрать среди натуральных чисел 
+$1, 2, 3, \ldots, 100$ всего $x$ чисел так, 
+чтобы ровно четыре из них делились на число $4$, 
+ровно четыре из них делились на число $5$ и ровно 
+три из них делились на число $6$. Найти
+наименьшее возможное значение числа $x$.
+-->
+<!--
+questionType=Find.Min
+--></section>
+<section id="ee.lvs.2013.9_10.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2013.9_10.2</h1><p>Vienādiem burtiem atbilst vienādi cipari, bet dažādiem burtiem - dažādi cipari. Atrast visus veidus, kā aizstāt burtus ar cipariem tā, lai darbība izrādītos pareiza.</p>
+<figure>
+<img data-src="EE.LVS.2013.9_10.2.png" alt="Saskaitīšana stabiņā" /><figcaption>Saskaitīšana stabiņā</figcaption>
+</figure>
+<!--
+ru=
+Одинаковым буквам соответствуют одинаковые цифры, 
+а различным буквам − различные цифры. 
+Найти все возможные способы замены букв цифрами так, 
+чтобы данное действие было верным.
+-->
+<!--
+questionType=Find.All
+genre=cryptarithm
+--></section>
+<section id="ee.lvs.2013.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2013.9_10.3</h1><p>Doti naturāli skaitļi <span class="math inline">\(a, b, c\)</span>, to lielākais kopīgais dalītājs ir <span class="math inline">\(1\)</span>. Zināms, ka skaitļi <span class="math inline">\(a+2b\)</span> un <span class="math inline">\(a^2 − b^2\)</span> dalās ar <span class="math inline">\(c\)</span>. Pierādīt, ka arī <span class="math inline">\(a-b\)</span> dalās ar <span class="math inline">\(c\)</span>.</p>
+<!--
+ru=
+Даны положительные целые числа $a, b, c$, 
+наибольший общий делитель которых равен 1. 
+Известно, что числа $a+2b$ и $a^2 − b^2$
+делятся на число $c$.
+Доказать, что на число $c$ делится также число $a − b$.
+-->
+<!--
+questionType=Find.All
+concepts=gcd
+--></section>
+<section id="ee.lvs.2013.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2013.11_12.1</h1><p>Atrast veselo daļu skaitlim <span class="math display">\[A = \sqrt{2013 + \sqrt{2012 + \sqrt{2011 + \ldots \sqrt{2 +\sqrt{1}}}}}.\]</span> <em>Piezīme:</em> Par skaitļa <span class="math inline">\(x\)</span> veselo daļu sauc lielāko veselo skaitli, kurš nepārsniedz <span class="math inline">\(x\)</span>.</p>
+<!--
+ru=
+Найти целую часть числа 
+$$A = \sqrt{2013 + \sqrt{2012 + \sqrt{2011 + \ldots \sqrt{2 +\sqrt{1}}}}}.$$
+Замечание: целой частью числа называется наибольшее 
+целое число, которое не превышает данное число.
+-->
+<!--
+questionType=Find.Only
+concepts=square-root
+--></section>
+<section id="ee.lvs.2013.11_12.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2013.11_12.2</h1><p>Atrast visus naturālos skaitļus <span class="math inline">\(n\)</span>, kuriem atradīsies tādi pirmskaitļi <span class="math inline">\(p\)</span> un <span class="math inline">\(q\)</span>, ka <span class="math display">\[p(p + 1) + q(q + 1) = n(n + 1).\]</span></p>
+<!--
+ru=
+Найти все натуральные числа $n$, при которых найдутся такие простые
+числа $p$ и $q$, что
+$$p(p + 1) + q(q + 1) = n(n + 1).$$
+-->
+<!--
+questionType=Find.All
+concepts=primes
+--></section>
+<section id="ee.lvs.2014.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2014.9_10.1</h1><p>Atrast tādu vismazāko naturālo <span class="math inline">\(n\)</span>, kuram katrs no cipariem no <span class="math inline">\(0\)</span> līdz <span class="math inline">\(9\)</span> būtu decimālpierakstā kaut vienam no sešiem pēc kārtas sekojošiem skaitļiem <span class="math inline">\(n+1\)</span>, <span class="math inline">\(n+2\)</span>, <span class="math inline">\(n+3\)</span>, <span class="math inline">\(n+4\)</span>, <span class="math inline">\(n+5\)</span> un <span class="math inline">\(n+6\)</span>.</p>
+<!--
+ru=
+Найти такое наименьшее натуральное число $n$, при котором каждая из
+цифр от $0$ до $9$ присутствовала бы в записи хотя бы одного 
+из шести последовательных чисел $n+1$, $n+2$, $n+3$, $n+4$, $n+5$ 
+и $n+6$.
+-->
+<!--
+questionType=Find.Min
+genre=digit-manipulation
+--></section>
+<section id="ee.lvs.2014.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2014.9_10.3</h1><p>Vispirms uz lapiņas uzraksta skaitli <span class="math inline">\(1\)</span>. Katrā solī zem pēdējā uzrakstītā skaitļa uzraksta vai nu skaitli, kurš par to tieši divreiz lielāks, vai arī skaitli, kuru iegūst pēdējā uzrakstītajā skaitlī mainot vietām ciparus (ņemot vērā, ka skaitļi nevar sākties ar ciparu <span class="math inline">\(0\)</span>). Vai var gadīties, ka pēc galīga skaita šādu soļu uz lapiņas būs uzrakstīts<br />
+a) skaitlis <span class="math inline">\(1000000000\)</span>?<br />
+b) skaitlis <span class="math inline">\(9876543210\)</span>?</p>
+<!--
+ru=
+Сначала на листок бумаги записывают число 1. 
+Каждым шагом под последним записанным числом записывают 
+либо число, которое ровно в два
+раза больше этого числа, либо число, полученное 
+перестановкой цифр записанного последним числа 
+(учитывая, что числа не могут начинаться с
+цифры 0). Возможно ли после конечного числа таких шагов записать на
+этом листке бумаги  
+а) число $1000000000$?  
+б) число $9876543210$?
+-->
+<!--
+questionType=ProveDisprove.Exists
+genre=digit-manipulation
+--></section>
+<section id="ee.lvs.2014.9_10.4" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2014.9_10.4</h1><p>Kurš no skaitļiem lielāks: <span class="math inline">\(2^{2014}\)</span> vai <span class="math inline">\(3^{303} \cdot 4^{404} \cdot 5^{505}\)</span>?</p>
+<!--
+ru=
+Какое из чисел больше, $2^{2014}$ или 
+$3^303 \cdot 4^{404} \cdot 5^{505}$?
+-->
+<!--
+questionType=Find.Only
+genre=proving-inequality
+--></section>
+<section id="ee.lvs.2014.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2014.11_12.1</h1><p>Atrast visus tos naturālos skaitļus <span class="math inline">\(n\)</span>, kuriem vienādojumam <span class="math inline">\((x^2+y^2)^n = (xy)^{2014}\)</span> ir atrisinājums naturālos skaitļos.</p>
+<!--
+ru=
+Найти все такие положительные целые числа $n$, 
+при которых уравнение
+$(x^2+y^2)^n = (xy)^{2014}$ имеет решение в положительных целых числах.
+-->
+<!--
+questionType=Find.All
+genre=integer-equation
+--></section>
+<section id="ee.lvs.2015.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2015.9_10.1</h1><p>Skaitlī <span class="math display">\[0,123456789101112\;\ldots\;998999\]</span> pēc komata ir visi pozitīvie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(999\)</span>. Atrast šī skaitļa <span class="math inline">\(2015\)</span>-to ciparu pēc komata.</p>
+<!--
+ru=
+В числе
+$$0,123456789101112\;\ldots\;998999$$
+после запятой идут подряд все положительные целые числа от $1$ до $999$.
+Найти $2015$-ую после запятой цифру этого числа.
+-->
+<!--
+questionType=Find.Only
+--></section>
+<section id="ee.lvs.2015.9_10.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2015.9_10.2</h1><p>Nosauksim naturālu skaitli <span class="math inline">\(n\)</span> par interesantu, ja eksistē naturāls skaitlis <span class="math inline">\(m\)</span> un naturāli skaitļi <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, kas mazāki par <span class="math inline">\(m\)</span>, kuriem <span class="math inline">\(\frac{m^2}{ab}=n\)</span>. Piemēram, skaitlis <span class="math inline">\(10\)</span> ir interesants, jo <span class="math inline">\(\frac{20^2}{4\cdot{}10}=10\)</span>.<br />
+Atrast vismazāko interesanto skaitli.</p>
+<!--
+ru=
+Назовём положительное целое число $n$ интересным, если существуют 
+положительное целое число $m$ и положительные целые числа $a$ и $b$ меньшие
+чем $m$, при которых $\frac{m^2}{ab}=n$. Например, число $10$ интересное, так как
+$\frac{20^2}{4\cdot{}10}=10$.  
+Найти наименьшее интересное число.
+-->
+<!--
+questionType=Find.Min
+--></section>
+<section id="ee.lvs.2015.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2015.9_10.3</h1><p>Katrā no trim gadījumiem, noskaidrot, vai eksistē divciparu skaitlis <span class="math inline">\(n\)</span>, kurš nebeidzas ar nulli un apmierina attiecīgo nosacījumu:<br />
+a) visi skaitļi, ko iegūst, ievietojot vienu vai dažas nulles starp tā cipariem, dalās ar sākotnējo skaitli.<br />
+b) neviens skaitlis, ko iegūst, ievietojot vienu vai dažas nulles starp tā cipariem, nedalās ar sākotnējo skaitli.<br />
+c) daži no skaitļiem, ko iegūst, ievietojot vienu vai dažas nulles starp tā cipariem, dalās, bet daži nedalās ar sākotnējo skaitli.</p>
+<!--
+ru=
+Существует ли не оканчивающееся на нуль двузначное число n такое, что  
+а) все числа, получаемые при добавлении одного или нескольких нулей
+между его цифрами, делятся на него?  
+б) ни одно число, получаемое при добавлении одного или нескольких
+нулей между его цифрами, не делится на него?  
+в) какие-то из чисел, получаемых при добавлении одного или нескольких 
+нулей между его цифрами, делятся, а какие-то не делятся на него?
+-->
+<!--
+genre=digit-manipulation
+questionType=ProveDisprove.Exists
+--></section>
+<section id="ee.lvs.2015.9_10.6" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2015.9_10.6</h1><p>Cik ir piecciparu skaitļu, kas dalās ar <span class="math inline">\(8\)</span> un nesatur savā pierakstā ciparu nulle?</p>
+<!--
+ru=
+Сколько пятизначных делящихся на 8 чисел не имеют в своей записи цифры нуль?
+-->
+<!--
+questionType=Find.Count
+--></section>
+<section id="ee.lvs.2015.11_12.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2015.11_12.1</h1><ol type="a">
+<li>Atrast lielāko skaitli, kurš ir četru dažādu divciparu skaitļu lielākais kopīgais dalītājs.<br />
+</li>
+<li>Atrast lielāko skaitli, kurš ir četru dažādu divciparu skaitļu mazākais kopīgais dalāmais.</li>
+</ol>
+<!--
+ru=
+а) Найти наибольшее число, являющееся наибольшим общим делителем
+каких-то четырёх различных двузначных чисел.  
+б) Найти наибольшее число, являющееся наименьшим общим кратным
+каких-то четырёх различных двузначных чисел.
+-->
+<!--
+concepts=lcm,gcd
+questionType=Find.Max
+--></section>
+<section id="ee.lvs.2015.11_12.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2015.11_12.3</h1><p>Dots naturāls skaitlis <span class="math inline">\(n\)</span>, kam gan <span class="math inline">\(n+1\)</span>, <span class="math inline">\(n+3\)</span>, <span class="math inline">\(n+7\)</span> un <span class="math inline">\(n+9\)</span>, gan arī <span class="math inline">\(n+31\)</span>, <span class="math inline">\(n+33\)</span>, <span class="math inline">\(n+37\)</span> un <span class="math inline">\(n+39\)</span> - ir pirmskaitļi. Atrast atlikumu, dalot skaitli <span class="math inline">\(n\)</span> ar <span class="math inline">\(210\)</span>.</p>
+<!--
+ru=
+Дано натуральное число $n$ такое, что как $n+1$, $n+3$, $n+7$ и $n+9$, так и
+$n+31$, $n+33$, $n+37$ и $n+39$ − простые числа. Найти остаток от деления
+числа $n$ на $210$.
+-->
+<!--
+concepts=primes,remainder
+questionType=Find.Only
+--></section>
+<section id="ee.lvs.2016.9_10.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2016.9_10.2</h1><p>Uz tāfeles uzrakstītas <span class="math inline">\(11\)</span> daļas, kuru skaitītāji un saucēji ir visi naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(22\)</span>. Kāds lielākais iespējamais skaits no šīm daļām var būt veseli skaitļi?</p>
+<!--
+ru=
+На доске записано $11$ дробей, числителями и знаменателями которых 
+являются все целые числа от $1$ до $22$. Каково наибольшее возможное 
+количество дробей, значения которых являются целыми числами?
+-->
+<!--
+questionType=Find.Max
+--></section>
+<section id="ee.lvs.2016.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2016.9_10.3</h1><p>Juku izvirzīja matemātiskā pulciņā šādu hipotēzi: Vienmēr, ja divu savstarpēju pirmskaitļu <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> reizinājums dalās ar citu divu savstarpēju pirmskaitļu <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> reizinājumu, tad vismaz viens no skaitļiem <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> dalās ar <span class="math inline">\(a\)</span> vai ar <span class="math inline">\(b\)</span>. Vai Juku hipotēze ir patiesa?<br />
+<em>Piezīme:</em> Divus veselus skaitļus <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> sauc par savstarpējiem pirmskaitļiem, ja to lielākais kopīgais dalītājs <span class="math inline">\(\mbox{LKD}(a, b) = 1\)</span>.</p>
+<!--
+ru=
+Юра выдвинул на математическом кружке следующую гипотезу: всегда,
+когда произведение двух взаимно простых целых чисел $x$ и $y$ делится на
+произведение двух взаимно простых целых чисел $a$ и $b$, то хотя бы одно
+из чисел $x$ и $y$ делится на $a$ или на $b$. Выполняется ли гипотеза Юры?
+Примечание. Говорят, что целые числа $a$ и $b$ взаимно просты, если
+$\mbox{НОД}(a, b) = 1$.
+-->
+<!--
+concepts=coprimes
+questionType=ProveDisprove.ForAll
+--></section>
+<section id="ee.lvs.2016.9_10.6" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2016.9_10.6</h1><p>Vai eksistē tāds naturāls skaitlis <span class="math inline">\(n\)</span>, kuram ir tieši <span class="math inline">\(9\)</span> pozitīvi dalītāji, bet visus tā dalītājus var novietot tabulā <span class="math inline">\(3\times{}3\)</span> tā, lai katrā rindiņā, katrā kolonnā un abās diagonālēs skaitļu reizinājums būtu viens un tas pats?</p>
+<!--
+ru=
+Найдётся ли такое положительное целое число $n$, у которого ровно 
+$9$ положительных делителей, а все его делители можно расположить 
+в таблице $3\times{}3$ таким образом, что произведение чисел каждой строки, каждого
+столбца и обеих диагоналей будет одинаковым?
+-->
+<!--
+genre=magic-configuration
+questionType=ProveDisprove.Exists
+--></section>
+<section id="ee.lvs.2016.11_12.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2016.11_12.2</h1><p>Definējam virkni <span class="math inline">\(a_1=1\)</span> un <span class="math inline">\(a_n = n \cdot a_{\lfloor{}n/2\rfloor}\)</span>, visiem <span class="math inline">\(n&gt;1\)</span>. Pierādīt, ka <span class="math inline">\(a_n&gt;n^2\)</span> katram <span class="math inline">\(n \geq 12\)</span>.<br />
+<em>Piezīme:</em> Skaitļa <span class="math inline">\(x\)</span> veselā daļa <span class="math inline">\(\lfloor x \rfloor\)</span> ir lielākais veselais skaitlis, kas nepārsniedz <span class="math inline">\(x\)</span>. Piemēram, <span class="math inline">\(\lfloor 4,6 \rfloor = 4\)</span>. Tātad <span class="math inline">\(a_2 = 2 \cdot a_1\)</span>, <span class="math inline">\(a_3 = 3 \cdot a_1\)</span>, <span class="math inline">\(a_4 = 4 \cdot a_2\)</span>, <span class="math inline">\(a_5 = 5 \cdot a_2\)</span> utt.</p>
+<!--
+ru=
+Зададим $a_1=1$ и $a_n = n \cdot a_{\lfloor{}n/2\rfloor}$
+для каждого $n>1$. Доказать, что $a_n>n^2$
+для каждого $n \geq 12$.
+*Примечание.* Целая часть $\lfloor x \rfloor$ числа $x$ − это наибольшее целое число, не
+превышающее числа $x$. Например, $\lfloor 4,6 \rfloor = 4$. Т.е. $a_2 = 2 \cdot a_1$, 
+$a_3 = 3 \cdot a_1$, $a_4 = 4 \cdot a_2$, 
+$a_5 = 5 \cdot a_2$ и т.д.
+-->
+<!--
+concepts=floor
+genre=prove-inequality
+questionType=Prove.ForAll
+--></section>
+<section id="ee.lvs.2016.11_12.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2016.11_12.3</h1><p>Kati un Peeter spēlē sekojošu spēli. Vispirms Kati uzraksta uz tāfeles kādu naturālu skaitli <span class="math inline">\(a &gt; 2016\)</span>. Pēc tam Peeter pieraksta jaunus skaitļus: katrā solī viņš pievieno skaitli <span class="math inline">\(2016b + 1\)</span>, kur <span class="math inline">\(b\)</span> − lielākais skaitlis, kas tobrīd ir uz tāfeles. Peeter uzvar, ja viņš kādā solī uzraksta uz tāfeles skaitli, kas dalās ar <span class="math inline">\(2017\)</span>. Ja viņš to nevar izdarīt, tad uzvar Kati. Vai Kati var uzvarēt, un ja jā, tad kāds ir mazākais skaitlis <span class="math inline">\(a\)</span>, kas viņai jāuzraksta uz tāfeles, lai uzvarētu?</p>
+<!--
+ru=
+Катя и Петя играют в следующую игру. Вначале Катя записывает на доске
+какое-то целое положительное число $a > 2016$. Затем Петя дописывает
+на доску числа, на каждом шаге добавляя туда число $2016b + 1$, где $b$
+− наибольшее на данный момент число на доске. Петя выиграет, если на
+каком-то шаге запишет на доске число, делящееся на $2017$. Если он это
+сделать не может, то выигрывает Катя. Может ли Катя выиграть игру и
+если да, то каково наименьшее число $a$, которое она должна записать на
+доске, чтобы выиграть?
+-->
+<!--
+genre=game
+questionType=Algorithm,Find.Min
+--></section>
+<section id="ee.lvs.2016.11_12.6" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2016.11_12.6</h1><p>Atrast visus naturālos skaitļus <span class="math inline">\(n\)</span>, kuriem visus <span class="math inline">\(n\)</span> pozitīvos dalītājus var bez atkārtošanās izrakstīt taisnstūrveida tabulā tā, lai katrā tabulas šūnā būtu tieši viens dalītājs, skaitļu summas visās tabulas rindiņās ir vienādas, un arī skaitļu summas visās tabulas kolonnās ir vienādas.</p>
+<!--
+ru=
+Найти все целые положительные числа $n$, при которых все 
+положительные делители числа $n$ можно без повторений расположить 
+в прямоугольную таблицу так, что в каждой ячейке находится ровно один делитель,
+сумма чисел в каждой строке одинакова, а также сумма чисел в каждом
+столбце одинакова.
+-->
+<!--
+genre=magic-configuration
+concepts=divisors
+questionType=Find.All
+--></section>
+<section id="ee.lvs.2017.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2017.9_10.3</h1><p>Mari ieraksta burtnīcā <span class="math inline">\(8\)</span> pirmskaitļus, kas mazāki par <span class="math inline">\(200\)</span> (starp šiem pirmskaitļiem var būt arī atkārtojumi). Pirmajam pirmskaitlim viņa pieskaita <span class="math inline">\(1\)</span>, otrajam <span class="math inline">\(2\)</span>, trešajam <span class="math inline">\(3\)</span>, utt., pēdējam <span class="math inline">\(8\)</span>. Pēc tam visas <span class="math inline">\(8\)</span> summas sareizina. Atrast lielāko <span class="math inline">\(2\)</span> pakāpi, ar kuru var dalīties iegūtais reizinājums.</p>
+<!--
+ru=
+Маша записывает в тетради $8$ простых чисел, меньших чем $200$ (среди
+простых чисел могут быть повторяющиеся). Далее к первому простому
+числу она прибавляет $1$, ко второму $2$, к третьему $3$ и т.д. 
+пока не прибавит к последнему $8$, затем перемножает все полученные $8$ сумм. Найти
+наибольшую степень числа $2$, на которую может делится полученное произведение.
+-->
+<!--
+concepts=primes,valuations
+questionType=Find.Max
+--></section>
+<section id="ee.lvs.2017.9_10.4" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2017.9_10.4</h1><p>Cik veidos zīmējumā var aizstāt burtus ar cipariem tā, lai rastos pareiza darbība? Vienādus burtus jāaizstāj ar vienādiem cipariem, dažādus burtus - ar dažādiem cipariem.</p>
+<figure>
+<img data-src="EE.LVS.2017.9_10.4.png" alt="Skaitļu rēbuss" /><figcaption>Skaitļu rēbuss</figcaption>
+</figure>
+<!--
+ru=
+Сколькими способами можно на рисунке заменить буквы цифрами так, 
+чтобы получилось корректное действие? Одну и ту же букву нужно заменять на ту же
+цифру, разные буквы на разные цифры.
+-->
+<!--
+genre=cryptarithm
+questionType=Find.Count
+--></section>
+<section id="ee.lvs.2017.11_12.2" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2017.11_12.2</h1><p>Atrast lielāko naturālo skaitli, kas nepārsniedz <span class="math inline">\(500\)</span> un kuram nevar atrast citu naturālu skaitli, kas ir mazāks par <span class="math inline">\(500\)</span> un kurš dalītos ar vairāk dažādiem pirmskaitļiem.</p>
+<!--
+ru=
+Найти наибольшее целое положительное число меньше чем 500, 
+для которого не найдётся ни одного целого положительного числа меньше чем
+$500$, имеющего больше различных простых делителей.
+-->
+<!--
+concepts=divisors,primes
+questionType=Find.Max
+--></section>
+<section id="ee.lvs.2017.11_12.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2017.11_12.3</h1><p>Par racionālu skaitļu <span class="math inline">\(u\)</span> un <span class="math inline">\(v\)</span> mediānu sauc skaitli <span class="math inline">\(x = \frac{a + c}{b + d}\)</span>, kur <span class="math inline">\(\frac{a}{b}\)</span> un <span class="math inline">\(\frac{c}{d}\)</span> Ir attiecīgi skaitļu <span class="math inline">\(u\)</span> un <span class="math inline">\(v\)</span> izteiksmes nesaīsināmu daļu veidā. Pierādīt, ka jebkuriem dažādiem pozitīviem racionāliem skaitļiem <span class="math inline">\(u\)</span> un <span class="math inline">\(x\)</span> var atrast bezgalīgi daudzus pozitīvus racionālus skaitļus <span class="math inline">\(v\)</span>, kam <span class="math inline">\(x\)</span> ir <span class="math inline">\(u\)</span> un <span class="math inline">\(v\)</span> mediāna.</p>
+<!--
+ru=
+Медианта рациональных чисел $u$ и $v$ − это число $x = \frac{a + c}{b + d}$, где
+$\frac{a}{b}$ и
+$\frac{c}{d}$
+являются соответственно представлениями чисел $u$ и $v$ в виде несократимых дробей.
+Доказать, что для любых различных положительных рациональных чисел
+$u$ и $x$ можно найти бесконечно много положительных рациональных чисел 
+$v$ таких, что $x$ будет медиантой $u$ и $v$.
+-->
+<!--
+concepts=mediant-of-fractions
+questionType=Prove.Other
+--></section>
+<section id="ee.lvs.2018.9_10.1" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2018.9_10.1</h1><p>Skaitļus <span class="math inline">\(1,2,\ldots,2018\)</span> pieraksta vienu pēc otra bez atstarpēm, turklāt no pieraksta izlaiž visus ciparus <span class="math inline">\(8\)</span>. Vai iegūtais skaitlis dalās ar <span class="math inline">\(3\)</span>?</p>
+<!--
+ru=
+Числа $1,2,\ldots,2018$ записываются одно за другим без промежутков,
+причём все цифры $8$ при записи пропускаются. Делится ли полученное число
+на $3$?
+-->
+<!--
+questionType=Find.Only
+--></section>
+<section id="ee.lvs.2018.9_10.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2018.9_10.3</h1><p>Naturāli skaitļi <span class="math inline">\(n\)</span>, <span class="math inline">\(m\)</span> un <span class="math inline">\(k\)</span> ir tādi, ka <span class="math inline">\(\mbox{MKD}(m,k)\)</span> dalās ar <span class="math inline">\(n\)</span>, bet <span class="math inline">\(\mbox{MKD}(n,k)\)</span> dalās ar <span class="math inline">\(m\)</span>. Pierādīt, ka <span class="math inline">\(n\cdot\mbox{LKD}(m,k) = m\cdot\mbox{LKD}(n,k)\)</span>.<br />
+<em>Piezīme.</em> <span class="math inline">\(\mbox{LDK}(a,b)\)</span> apzīmē skaitļu <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> lielāko kopīgo dalītāju, bet <span class="math inline">\(\mbox{MKD}\)</span> apzīmē skaitļu <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> mazāko kopīgo dalāmo.</p>
+<!--
+ru=
+Целые положительные числа $n$, $m$ и $k$ таковы, что $\mbox{НОК}(m,k)$ делится на
+$n$, а $\mbox{НОК}(n,k)$ делится на $m$. Доказать, что 
+$n\cdot\mbox{НОД}(m,k) = m\cdot\mbox{НОД}(n,k)$.  
+*Примечание.* $\mbox{НОД}(a,b)$ обозначает наибольший общий делитель чисел $a$
+и $b$, а $\mbox{НОК}(a,b)$ – наименьшее общее кратное чисел $a$ и $b$.
+-->
+<!--
+concepts=lcm,gcd
+questionType=Prove.ForAll
+--></section>
+<section id="ee.lvs.2018.9_10.4" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2018.9_10.4</h1><p>Brālim Jüri ir māsa Mari. Viņu māte gaida dvīņus. Ja piedzimtu abi puisīši, tad Jüri būs tieši <span class="math inline">\(k\)</span> reizes vairāk brāļu nekā māsu. Ja piedzimtu abas meitenītes, tad Mari būs <span class="math inline">\(l\)</span> reizes mazāk māsu nekā brāļu. Tomēr piedzima viens puisītis un viena meitenīte. Cik reizes piedzimušajam puisītim ir vairāk brāļu nekā māsu? Un cik reizes piedzimušajai meitenītei mazāk māsu kā brāļu?</p>
+<!--
+ru=
+Мама Юры и Маши ждёт двойняшек. Если родятся мальчики, то у Юры
+будет ровно в $k$ раз больше братьев, чем сестёр. Если родятся девочки, то
+у Маши будет ровно в $l$ раз меньше сестёр, чем братьев. Однако подходит
+время и рождаются мальчик и девочка. Во сколько раз у родившегося
+мальчика больше братьев, чем сестёр, и во сколько раз у родившейся
+девочки меньше сестёр, чем братьев?
+-->
+<!--
+genre=word-problem
+questionType=Find.All
+--></section>
+<section id="ee.lvs.2018.9_10.6" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2018.9_10.6</h1><p>Skaitļus no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(9\)</span> ieraksta tabulā <span class="math inline">\(3 \times 3\)</span> rūtiņas tā, ka ikvienā rūtiņā ir viens skaitlis un skaitļi neatkārtojas. Atrast lielāko iespējamo skaitu ar tādu rūtiņu pāriem, kam ir kopīga mala un kur skaitlis no vienas rūtiņas dalās ar skaitli no otras rūtiņas.</p>
+<!--
+ru=
+Числа от $1$ до $9$ записываются в ячейки таблицы $3 \times 3$ 
+так, что в каждой ячейке ровно одно число, причём числа не повторяются. 
+Найти наибольшее возможное число пар имеющих общую сторону ячеек, 
+где число из первой ячейки делится на число из второй ячейки.
+-->
+<!--
+genre=fill-in-table
+questionType=Find.Max
+--></section>
+<section id="ee.lvs.2018.11_12.3" class="title-slide slide level1"><h1><lo-sample/> EE.LVS.2018.11_12.3</h1><p>Bēniņos atrastam kalkulatoram ir taustiņi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(9\)</span> un viens darbības taustiņš <span class="math inline">\(\otimes\)</span>, kur <span class="math inline">\(x \otimes y\)</span> apzīmē skaitli <span class="math inline">\(x+\frac{x\cdot{}y}{x-y}\)</span>. Pirmoreiz nospiežot darbības taustiņu, uz ekrāna paliek līdz tam ievadītais skaitlis, bet pēc katras nākamās šī taustiņa nospiešanas uz ekrāna parādās skaitlis <span class="math inline">\(x \otimes y\)</span>, kur <span class="math inline">\(y\)</span> - vesels skaitlis, kurš ievadīts tieši pirms iepriekšējās darbības taustiņa nospiešanas, bet <span class="math inline">\(x\)</span> - skaitlis, kurš bija uz ekrāna līdz skaitļa <span class="math inline">\(y\)</span> ievadīšanai. Piemēram, ja lietotājs nospiež taustiņus secībā <span class="math inline">\(2\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(\otimes\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(\otimes\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(\otimes\)</span>, tad uz ekrāna būs attiecīgi redzami skaitļi <span class="math inline">\(2\)</span>, <span class="math inline">\(22\)</span>, <span class="math inline">\(22\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(33\)</span>, <span class="math inline">\(-44\)</span> (darbības <span class="math inline">\(22 \otimes 33\)</span> rezultāts), <span class="math inline">\(4\)</span>, <span class="math inline">\(44\)</span>, <span class="math inline">\(-22\)</span> (darbības <span class="math inline">\((-44) \otimes 44\)</span> rezultāts). Ja lietotājs nospiež darbības taustiņu pašā sākumā, nospiež to divreiz pēc kārtas vai pieļauj tādas darbības izpildi, kuras vērtība nav vesels skaitlis, tad kalkulators salūst. Vai uz šī kalkulatora var uz ekrāna iegūt skaitli <span class="math inline">\(2018\)</span>?</p>
+<!--
+ru=
+У найденного на чердаке калькулятора есть клавиши от $1$ до $9$ и клавиша
+действия $\otimes$, где $x \otimes y$ обозначает число $x+\frac{x\cdot{}y}{x-y}$. 
+При первоначальном
+нажатии клавиши действия на экране остаётся введённое до этого число,
+а после каждого следующего нажатия на экране появляется число $x \otimes y$,
+где $y$ – целое число, введённое непосредственно перед нажатием клавиши
+действия, а $x$ – число, бывшее на экране до ввода числа $y$. Например,
+если пользователь нажимает клавиши в порядке $2$, $2$, $\otimes$, 
+$3$, $3$, $\otimes$, $4$, $4$, $\otimes$, 
+то на экране соответственно будут видны числа $2$, $22$, $22$, $3$, $33$, $-44$
+(результат действия $22 \otimes 33$), $4$, $44$, $-22$ 
+(результат действия $(-44) \otimes 44$).
+Если пользователь нажимает клавишу действия в самом начале, нажимает
+её два раза подряд или допускает выполнение действия, значения которого
+не является целым числом, то калькулятор выходит из строя. Можно ли
+на этом калькуляторе получить на экране число $2018$?
+-->
+<!--
+genre=procedure
+questionType=Algorithm,ProveDisprove.Exists
+--></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

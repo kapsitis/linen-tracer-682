@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<h1>Skaitļu teorija (juniori): Prezentācijas</h1>
+
+
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Uz sākumu</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Uzdevumi</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Prezentācijas</b></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Pārbaudes darbi</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
+</tr>
+</table>
+
+<b>Junioru izlases nodarbības (2019./2020.m.g.)</b>
+
+<ul>
+{% for tale in global_tales %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
+{% endfor %}
+</ul>
+
+<b>Vidusskolu 7.-12.klašu tēmas</b>
+
+<p>Šīs ir elementārās matemātikas tēmas, lai pārvarētu Latvijas novadu/valsts 
+olimpiāžu filtrus; pieņemam, ka junioru kursu dalībnieki to pazīst. 
+Junioru nodarbībās to parasti neizmanto, bet linki noder kā savdabīgs
+kursa priekšnoteikums ((<i>prerequisite<i>).</p> 
+
+<ul>
+{% for tale in local_tales %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
+{% endfor %}
+</ul>
+
+
+
+
+
+
+
+</body>
+
+</html>
+

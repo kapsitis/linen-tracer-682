@@ -456,15 +456,21 @@ Aritmētiskas progresijas
 <p>Šis ir teorijas faktu izklāsts; katram jaunam jēdzienam vai teorēmai (pelēkais slaids) vispirms seko vienkārša ilustrācija (gaišzilais slaids), pēc tam kāds uzdevums (oranžais un turpmākie slaidi).</p>
 </aside></section>
 <section><section id="aritmētiskas-progresijas-jēdziens" class="title-slide slide level1"><h1><lo-theory/> Aritmētiskas progresijas jēdziens</h1><p><strong>Definīcija:</strong> Virkni, kurā nākamo locekli iegūst, iepriekšējam pieskaitot to pašu skaitli (<blue><em>diferenci</em></blue> <span class="math inline">\(d\)</span>), sauc par <blue><em>aritmētisko progresiju</em></blue>: <span class="math display">\[a_{n+1} = a_n + d,\;\;\mbox{ja}\;\;n \geq 1.\]</span></p>
-<p>T.i. blakusesošu locekļu starpība ir konstanta: <span class="math inline">\(a_{n+1} - a_n = d\)</span> visiem <span class="math inline">\(n \geq 1\)</span>. (Vārds “diference” nozīmē “starpība”.)</p>
-<p>TODO: Bilde ar skaitļu taisni</p>
+<p>T.i. blakusesošu locekļu starpība ir konstanta: <span class="math inline">\(a_{n+1} - a_n = d\)</span> visiem <span class="math inline">\(n \geq 1\)</span>. (Vārds “diference” nozīmē arī “starpība”.)</p>
+<figure>
+<img data-src="numerical-axis.png" alt="Skaitļu taisne" /><figcaption>Skaitļu taisne</figcaption>
+</figure>
 <aside class="notes">
-<p>Progresiju parasti definē ar diferences pieskaitīšanu. Bet noderīgas ir arī konstantās blakusesošo locekļu starpības.</p>
+<ul>
+<li>Progresiju parasti definē ar diferences pieskaitīšanu. Bet noderīgas ir arī konstantās blakusesošo locekļu starpības.</li>
+<li>Aritmētiska progresija parasti sākas ar pirmo locekli - nemēdz būt “mīnus pirmais” vai citi negatīvi locekļi. Dažreiz tā turpinās bezgalīgi, citreiz apraujas ar kādu locekli (un locekļi aiz tā uzdevuma kontekstā nav jāaplūko).</li>
+<li>Locekļus var sākt numurēt ar nullto (<span class="math inline">\(a_0,a_1,\ldots\)</span>) - sākt numurēt ar “0” vai ar “1” ir gaumes lieta.</li>
+</ul>
 </aside></section><section id="progresiju-formulas" class="slide level2">
 <h2><lo-theory/> Progresiju formulas</h2>
 <p><blue><em>Progresijas <span class="math inline">\(n\)</span>-tais loceklis:</em></blue> <span class="math display">\[a_n = a_1 + (n-1)d,\;\;\mbox{kur $n&gt;1$.}\]</span></p>
 <p><blue><em>Progresijas pirmo <span class="math inline">\(n\)</span> locekļu summa:</em></blue> <span class="math display">\[S_n = a_1 + a_2 + \ldots + a_n.\]</span></p>
-<p><em>Šo summu var aprēķināt ar formulu:</em> <span class="math display">\[S_n = \frac{a_1 + a_n}{2}\cdot{} n\]</span></p>
+<p>Šo summu var aprēķināt ar formulu: <span class="math display">\[S_n = \frac{a_1 + a_n}{2}\cdot{} n\]</span></p>
 <aside class="notes">
 <p>Pagaidām šo formulu izvedumus kursa materiālā neiekļaujam.<br />
 Ar laiku tie varētu būt “dzeltenie slaidi”.</p>
@@ -496,7 +502,10 @@ Ar laiku tie varētu būt “dzeltenie slaidi”.</p>
 </figure>
 </hgroup>
 <aside class="notes">
-<p>Zīmējums ar trijstūrī izkārtotiem aplīšiem mūsu gadījumā ir <em>interpretācija</em> kombinatorikas problēmai (izvēlēties <span class="math inline">\(2\)</span> no <span class="math inline">\(n+1\)</span>). Katram aplītim var piekārtot tieši vienu izvēlēšanās veidu (un arī katram izvēlēšanās veidam atbilst viens aplītis). Tādēļ pietiek saskaitīt aplīšus. * Skaitļu teorijā šādas ģeometriskas interpretācijas var palīdzēt iztēloties dažas konkrētas situācijas. Jāņem tomēr vērā, ka skaitļu teorijas apgalvojumi parasti ir par <strong>bezgalīgu</strong> skaitļu kopu.</p>
+<ul>
+<li>Zīmējums ar trijstūrī izkārtotiem aplīšiem mūsu gadījumā ir <em>interpretācija</em> kombinatorikas problēmai (izvēlēties <span class="math inline">\(2\)</span> no <span class="math inline">\(n+1\)</span>). Katram aplītim var piekārtot tieši vienu izvēlēšanās veidu (un arī katram izvēlēšanās veidam atbilst viens aplītis). Tādēļ pietiek saskaitīt aplīšus.</li>
+<li>Skaitļu teorijā šādas ģeometriskas interpretācijas var palīdzēt iztēloties dažas konkrētas situācijas. Jāņem tomēr vērā, ka skaitļu teorijas apgalvojumi parasti ir par <strong>bezgalīgu</strong> skaitļu kopu.</li>
+</ul>
 </aside>
 </section></section>
 <section><section id="progresijas-summas-dalāmība" class="title-slide slide level1"><h1><lo-theory/> Progresijas summas dalāmība</h1><p><strong>Apgalvojums:</strong> Katrai aritmētiskai progresijai ar <span class="math inline">\(n\)</span> veseliem locekļiem <span class="math inline">\(a_1,a_2,\ldots,a_n\)</span> ir spēkā:<br />
@@ -523,7 +532,7 @@ Ar laiku tie varētu būt “dzeltenie slaidi”.</p>
 </section><section id="lv.no.2015.10.3-1" class="slide level2">
 <h2><lo-reading/> LV.NO.2015.10.3</h2>
 <hgroup class="reading">
-<p><u><strong>Vairāku</strong> <strong>pēc kārtas sekojošu</strong> naturālu skaitļu summa ir <span class="math inline">\(177\)</span>.</u> Kādas vērtības var pieņemt mazākais no šiem saskaitāmajiem?</p>
+<p><u>Vairāku <strong>pēc kārtas sekojošu</strong><sup>(i)</sup> naturālu skaitļu <strong>summa ir <span class="math inline">\(177\)</span></strong><sup>(ii)</sup>.</u> Kādas vērtības var pieņemt mazākais no šiem saskaitāmajiem?</p>
 </hgroup>
 <hgroup>
 <p>TODO: Bilde, kur uzzīmēti dažādi skaitļi, kas ir/nav pēc kārtas sekojoši.</p>
@@ -531,7 +540,7 @@ Ar laiku tie varētu būt “dzeltenie slaidi”.</p>
 </section><section id="lv.no.2015.10.3-2" class="slide level2">
 <h2><lo-reading/> LV.NO.2015.10.3</h2>
 <hgroup class="reading">
-<p>Vairāku pēc kārtas sekojošu naturālu skaitļu summa ir <span class="math inline">\(177\)</span>. <u>Kādas vērtības var pieņemt <strong>mazākais no šiem saskaitāmajiem</strong>?</u></p>
+<p>Vairāku pēc kārtas sekojošu naturālu skaitļu summa ir <span class="math inline">\(177\)</span>. <u>Kādas vērtības var pieņemt <strong>mazākais no šiem saskaitāmajiem</strong><sup>(iii)</sup>?</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Bilde, kur atzīmēts katrā grupiņā mazākais skaitlis…</p>
@@ -556,15 +565,16 @@ TODO: Var apsvērt animāciju
 </section><section id="lv.no.2015.10.3-vai-var-šķirot-citādi" class="slide level2">
 <h2><lo-soln/> LV.NO.2015.10.3 (vai var šķirot citādi?)</h2>
 <hgroup>
+<p><strong>Stratēģija:</strong> Sākam ar citu parametru (jeb “skatāmies nevis pa horizontāli, bet pa vertikāli”).</p>
 <p><em>Novērojums:</em> Pilnā pārlase nav ātra, jo starp veiksmīgiem saskaitīšanas piemēriem atrodas daudz neveiksmīgu.</p>
-<p><strong>Stratēģija:</strong> “Sākam ar citu parametru” jeb “skatāmies nevis pa horizontāli, bet pa vertikāli”.</p>
-<p>Rezultāts tas pats, bet var sanākt ātrāk. Mūsu gadījumā bez <span class="math inline">\(a_1\)</span> otrs dabisks parametrs ir saskaitāmo skaits <span class="math inline">\(n\)</span>, kuram <span class="math display">\[\frac{a_1 + a_n}{2} \cdot{} \color{#F00}{n} = 177.\]</span></p>
+<p>Mūsu gadījumā bez <span class="math inline">\(a_1\)</span> otrs dabisks parametrs ir saskaitāmo skaits <span class="math inline">\(n\)</span>, kuram <span class="math display">\[\frac{a_1 + a_n}{2} \cdot{} \color{#F00}{n} = 177.\]</span></p>
 </hgroup>
 <hgroup>
 <p>TODO: Bilde, kurā iešanu pa rindiņām <span class="math inline">\(a_1\)</span> aizstāj skatīšanās uz <span class="math inline">\(n\)</span>.</p>
 </hgroup>
-<p>::: notes</p>
-<p>Atzīmēsim, ka virziena (vai parametru secības) nomaiņa meklēšanas vai summēšanas uzdevumos var ļoti paātrināt risinājumu. Arī tad, ja it kā nekas nemainās un “summa vai reizinājums nav atkarīgi no secības”.</p>
+<aside class="notes">
+<p>Jautājumus “Vai var sākt summu ar skaitli 1,2,3,…?” aizstājam ar citiem jautājumiem “Vai summu var iegūt, saskaitot 1,2,3,… locekļus?” Izklausās līdzīgi, bet jāpārbauda krietni mazāk variantu.</p>
+</aside>
 </section><section id="lv.no.2015.10.3-nepāru-n" class="slide level2">
 <h2><lo-soln/> LV.NO.2015.10.3 (nepāru n)</h2>
 <p><green>Ja <span class="math inline">\(n\)</span> ir nepāru</green>, tad <span class="math inline">\(S_n = 177 = a_{vid}\cdot{}n\)</span>.<br />
@@ -619,7 +629,7 @@ Tas iespējams, ja <span class="math inline">\(n=2\)</span>, <span class="math i
 </section><section id="lv.no.2002.8.3-1" class="slide level2">
 <h2><lo-reading/> LV.NO.2002.8.3</h2>
 <hgroup class="reading">
-<p><u>Burtnīcā ir <span class="math inline">\(100\)</span> lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(200\)</span></u>. Vai izrauto lappušu numuru summa var būt <span class="math inline">\(1000\)</span>, ja tiek izrautas<br />
+<p><u>Burtnīcā ir <span class="math inline">\(100\)</span> lapas; tās <strong>lappuses sanumurētas dabīgā kārtībā</strong><sup>(i)</sup> ar numuriem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(200\)</span></u>. Vai izrauto lappušu numuru summa var būt <span class="math inline">\(1000\)</span>, ja tiek izrautas<br />
 <strong>(a)</strong> <span class="math inline">\(31\)</span> lapa;<br />
 <strong>(b)</strong> <span class="math inline">\(30\)</span> lapas?<br />
 <em>Piezīme.</em> Lapas var neraut pēc kārtas.</p>
@@ -631,10 +641,10 @@ Turklāt autori pasvītrojuši, ka <span class="math inline">\(100\)</span> lap�
 </section><section id="lv.no.2002.8.3-2" class="slide level2">
 <h2><lo-reading/> LV.NO.2002.8.3</h2>
 <hgroup class="reading">
-<p>Burtnīcā ir <span class="math inline">\(100\)</span> lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(200\)</span>. <u>Vai izrauto lappušu numuru summa var būt <span class="math inline">\(1000\)</span></u>, ja tiek izrautas<br />
+<p>Burtnīcā ir <span class="math inline">\(100\)</span> lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(200\)</span>. <u>Vai <strong>izrauto lappušu numuru summa</strong><sup>(ii)</sup> var būt <span class="math inline">\(1000\)</span></u>, ja tiek izrautas<br />
 <strong>(a)</strong> <span class="math inline">\(31\)</span> lapa;<br />
 <strong>(b)</strong> <span class="math inline">\(30\)</span> lapas?<br />
-<em>Piezīme.</em> Lapas var neraut pēc kārtas.</p>
+<em>Piezīme.</em> <u>Lapas <strong>var neraut pēc kārtas</strong><sup>(iii)</sup>.</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)</p>
@@ -683,15 +693,15 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 </section><section id="bbk2012.p1.36lv.so.2017.10.2-1" class="slide level2">
 <h2><lo-reading/> BBK2012.P1.36/LV.SO.2017.10.2</h2>
 <hgroup class="reading">
-<p><u>Trīs no aritmētiskās progresijas locekļiem ir <span class="math inline">\(41\)</span>, <span class="math inline">\(113\)</span>, <span class="math inline">\(193\)</span>.</u> Atrast lielāko iespējamo diferences vērtību, ja zināms, ka tā ir vesels skaitlis.</p>
+<p><u><strong>Trīs no aritmētiskās progresijas locekļiem</strong><sup>(i)</sup> ir <span class="math inline">\(41\)</span>, <span class="math inline">\(113\)</span>, <span class="math inline">\(193\)</span>.</u> Atrast lielāko iespējamo diferences vērtību, ja zināms, ka tā ir vesels skaitlis.</p>
 </hgroup>
 <hgroup>
-<p>TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)</p>
+<p>TODO: Bilde, kur parādītas diferences - nemaz nevar būt pēc kārtas.</p>
 </hgroup>
 </section><section id="bbk2012.p1.36lv.so.2017.10.2-2" class="slide level2">
 <h2><lo-reading/> BBK2012.P1.36/LV.SO.2017.10.2</h2>
 <hgroup class="reading">
-<p>Trīs no aritmētiskās progresijas locekļiem ir <span class="math inline">\(41\)</span>, <span class="math inline">\(113\)</span>, <span class="math inline">\(193\)</span>. <u>Atrast <strong>lielāko iespējamo</strong> diferences vērtību, ja zināms, ka tā ir vesels skaitlis.</u></p>
+<p>Trīs no aritmētiskās progresijas locekļiem ir <span class="math inline">\(41\)</span>, <span class="math inline">\(113\)</span>, <span class="math inline">\(193\)</span>. <u>Atrast <strong>lielāko iespējamo</strong><sup>(ii)</sup> diferences vērtību, ja zināms, ka <strong>tā ir vesels skaitlis</strong><sup>(iii)</sup>.</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)</p>
@@ -730,7 +740,7 @@ Jau <span class="math inline">\(1+\ldots+60 &gt; 1000\)</span>, tādēļ pat vis
 </section><section id="bbk2012.p1.123-1" class="slide level2">
 <h2><lo-reading/> BBK2012.P1.123</h2>
 <hgroup class="reading">
-<p><u>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1000\)</span>, kuri <strong>nedalās ne ar <span class="math inline">\(5\)</span>, ne ar <span class="math inline">\(7\)</span></strong>?</u></p>
+<p><u>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1000\)</span>, kuri <strong>nedalās ne ar <span class="math inline">\(5\)</span>, ne ar <span class="math inline">\(7\)</span></strong><sup>(i)</sup>?</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Bilde, kur redzama loģika “ne ar”/“ne ar”.<br />
@@ -838,8 +848,8 @@ Tabula ar gadījumiem?</p>
 </table>
 </section><section id="lv.no.2009.8.1-1" class="slide level2">
 <h2><lo-reading/> LV.NO.2009.8.1</h2>
-<hgroup class="reading">
-<p><u>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas <span class="math inline">\(4\)</span> rūtiņas tā, ka katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa.</u> Pierādiet: neatkarīgi no tā, kuras <span class="math inline">\(4\)</span> rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs <span class="math inline">\(64\)</span>.</p>
+<hgroup class="reading" style="font-size:70%">
+<p><u>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas <span class="math inline">\(4\)</span> rūtiņas tā, ka <strong>katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa</strong><sup>(i)</sup>.</u> Pierādiet: neatkarīgi no tā, kuras <span class="math inline">\(4\)</span> rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs <span class="math inline">\(64\)</span>.</p>
 <!--
 ![tabula](LV.NO.2009.8.1.png)
 -->
@@ -907,8 +917,8 @@ Tabula ar gadījumiem?</p>
 </hgroup>
 </section><section id="lv.no.2009.8.1-2" class="slide level2">
 <h2><lo-reading/> LV.NO.2009.8.1</h2>
-<hgroup class="reading">
-<p>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas <span class="math inline">\(4\)</span> rūtiņas tā, ka katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa. <u>Pierādiet: neatkarīgi no tā, kuras <span class="math inline">\(4\)</span> rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs <span class="math inline">\(64\)</span>.</u></p>
+<hgroup class="reading" style="font-size:70%">
+<p>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas <span class="math inline">\(4\)</span> rūtiņas tā, ka katrā rindā un katrā kolonnā tika izvēlēta tieši viena rūtiņa. <u>Pierādiet: <strong>neatkarīgi no tā, kuras <span class="math inline">\(4\)</span> rūtiņas</strong> saskaņā ar šiem noteikumiem <strong>Katrīna izvēlēsies</strong><sup>(ii)</sup>, tajās ierakstīto skaitļu summa būs <span class="math inline">\(64\)</span>.</u></p>
 <!--
 ![tabula](LV.NO.2009.8.1.png)
 -->
@@ -972,7 +982,7 @@ Tabula ar gadījumiem?</p>
 </table>
 </hgroup>
 <hgroup>
-<p>TODO: Bilde ar pāris piemēriem, kā var saskaitīt.</p>
+<p>TODO: Bilde ar pāris piemēriem, kā var saskaitīt. Konstanta funkcija (eksistē summa <span class="math inline">\(64\)</span>, kas der visiem).</p>
 </hgroup>
 </section><section id="lv.no.2009.8.1-3" class="slide level2">
 <h2><lo-hints/> LV.NO.2009.8.1</h2>
@@ -1326,10 +1336,10 @@ A7
 </section><section id="bbk2012.p1.122lv.vo.1983.8.1-1" class="slide level2">
 <h2><lo-reading/> BBK2012.P1.122/LV.VO.1983.8.1</h2>
 <hgroup class="reading">
-<p><u>Cik daudz ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1983\)</span>, kuriem <span class="math inline">\(3n+5\)</span> dalās ar <span class="math inline">\(7\)</span>?</u></p>
+<p><u><strong>Cik daudz</strong> ir tādu naturālu skaitļu <span class="math inline">\(n \leq 1983\)</span>, kuriem <strong><span class="math inline">\(3n+5\)</span> dalās ar <span class="math inline">\(7\)</span></strong><sup>(i)</sup>?</u></p>
 </hgroup>
 <hgroup>
-<p>TODO: Bilde ar skaitlīšiem formā <span class="math inline">\(3n+5\)</span>, atrasts kāds, kas dalās…</p>
+<p>TODO: Daudz skaitļu, no tiem daži der, jāsaskaita…</p>
 </hgroup>
 </section><section id="bbk2012.p1.122lv.vo.1983.8.1-2" class="slide level2">
 <h2><lo-hints/> BBK2012.P1.122/LV.VO.1983.8.1</h2>
@@ -1537,10 +1547,24 @@ A6
 </ul>
 </hgroup>
 </section></section>
-<section><section id="bezū-lemma" class="title-slide slide level1"><h1><lo-theory/> Bezū lemma</h1><p><strong>Lemma (<blue>Bézout’s lemma</blue>):</strong> Ja <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir naturāli skaitļi un <span class="math inline">\(\mbox{LKD}(a,b)=d\)</span>, tad eksistē tādi veseli skaitļi <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>, ka <span class="math inline">\(ax+by=d\)</span>.</p>
+<section><section id="bezū-lemma-jeb-identitāte" class="title-slide slide level1"><h1><lo-theory/> Bezū lemma (jeb identitāte)</h1><p><strong>Lemma (<blue>Bézout’s lemma</blue>):</strong> Ja <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir naturāli skaitļi un <span class="math inline">\(\mbox{LKD}(a,b)=d\)</span>, tad eksistē tādi veseli skaitļi <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>, ka <span class="math inline">\(ax+by=d\)</span>.</p>
 <p><em>Piezīme:</em> Ja <span class="math inline">\(\mbox{LKD}(a,b)=1\)</span>, tad aritmētiskā progresijā <span class="math inline">\(a_k = a\cdot{}k\)</span> atradīsies visi <span class="math inline">\(b\)</span> iespējamie atlikumi, dalot ar <span class="math inline">\(b\)</span> (ieskaitot atlikumu <span class="math inline">\(1\)</span>).<br />
-<em>Piezīme 2:</em> Praktiski tas nozīmē, ka, mainoties ar <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> eirocentu monētām, var nomaksāt jebkuru veselu skaitu centu tad un tikai tad, ja <span class="math inline">\(a,b\)</span> ir savstarpēji pirmskaitļi.</p></section><section id="section-2" class="slide level2">
-<h2><lo-yellow/></h2>
+<em>Piezīme 2:</em> Praktiski tas nozīmē, ka, mainoties ar <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> eirocentu monētām, var nomaksāt jebkuru veselu skaitu centu tad un tikai tad, ja <span class="math inline">\(a,b\)</span> ir savstarpēji pirmskaitļi.</p></section><section id="bezū-lemmasidentitātes-vēsture" class="slide level2">
+<h2><lo-yellow/> Bezū lemmas/identitātes vēsture</h2>
+<hgroup style="font-size:70%">
+<p>Bezū identitāti pamatoja Etjēns Bezū (<em>Étienne Bézout</em>, 1730–1783) 1779.gadā – turklāt uzreiz polinomiem. Veseliem skaitļiem līdzīgs rezultāts ir jau Kloda Bašē de Meziriaka darbos (<em>Claude Gaspard Bachet de Méziriac</em>, 1581–1638)</p>
+<p><img data-src="Etienne_Bezout.jpg" alt="Etjēns Bezū" /><br />
+<em>Etjēns Bezū</em></p>
+</hgroup>
+<hgroup>
+<p>Izmantojot Bezū lemmu, var pierādīt citus svarīgus rezultātus.</p>
+<figure>
+<img data-src="bezout-identity.png" alt="Bezū identitāte" /><figcaption>Bezū identitāte</figcaption>
+</figure>
+</hgroup>
+<aside class="notes">
+<p>Bezū lemmas pierādījumā izmanto ekstrēmā elementa metodi; aplūko mazāko pozitīvo skaitli, kas izsakāms kā <span class="math inline">\(ax+by\)</span> veseliem <span class="math inline">\(x,y\)</span>. Tad pamato, ka tas ir skaitļu <span class="math inline">\(a,b\)</span> lielākais kopīgais dalītājs</p>
+</aside>
 </section><section id="vienādojumi-algebrā-un-skaitļu-teorijā" class="slide level2">
 <h2><lo-summary/> Vienādojumi algebrā un skaitļu teorijā</h2>
 <hgroup>
@@ -1563,10 +1587,11 @@ Ja abi koeficienti vienlaikus nav <span class="math inline">\(0\)</span>, vienm�
 </section><section id="lv.no.2007.7.1-1" class="slide level2">
 <h2><lo-reading/> LV.NO.2007.7.1</h2>
 <hgroup class="reading">
-<p><u>Kurus naturālos skaitļus <span class="math inline">\(n\)</span> var izsacīt formā <span class="math inline">\({\displaystyle n=\frac{x}{y}}\)</span>, kur <span class="math inline">\(x = a^5\)</span>, <span class="math inline">\(y = b^3\)</span>, <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> – naturāli skaitļi?</u></p>
+<p><u>Kurus naturālos skaitļus <span class="math inline">\(n\)</span> <strong>var izsacīt formā</strong><sup>(i)</sup> <span class="math inline">\({\displaystyle n=\frac{x}{y}}\)</span>, kur <span class="math inline">\(x = a^5\)</span>, <span class="math inline">\(y = b^3\)</span><sup>(ii)</sup>, <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> – naturāli skaitļi?</u></p>
 </hgroup>
 <hgroup>
-<p>TODO: Gari reizinājumi, no kuriem kaut kas noīsinās…</p>
+<p>TODO: (i) Mājiens, ka dažus var, bet nav zināms, vai visus var (<span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> var izvēlēties).<br />
+(ii) Pilni kubi un pilnas piektās pakāpes ir īpaši skaitļi, katrā pietiekami garā intervālā to īpatsvars ir neliels.</p>
 </hgroup>
 </section><section id="lv.no.2007.7.1-2" class="slide level2">
 <h2><lo-hints/> LV.NO.2007.7.1</h2>
@@ -1585,7 +1610,7 @@ Ja abi koeficienti vienlaikus nav <span class="math inline">\(0\)</span>, vienm�
 <p>Kāpēc izdevās manipulācija ar pakāpēm? Bezū identitāte skaitļiem <span class="math inline">\(5\)</span> un <span class="math inline">\(3\)</span>:</p>
 <p><span class="math display">\[5x + 3y = 1,\;\;\mbox{ja $(x,y)=(2,-3)$.}\]</span></p>
 </section></section>
-<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
 Aritmētiskas progresijas
 </h1>
@@ -1816,7 +1841,7 @@ Var rakstīt pīrādziņu un magoņmaizīšu iespējamās cenas (<span class="ma
 </tr>
 </table>
 </section></section>
-<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
 Aritmētiskas progresijas
 </h1>
@@ -1831,8 +1856,8 @@ Aritmētiskas progresijas
 </hgroup></section>
 <section><section id="lv.ao.2004.8.5" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2004.8.5</h1><p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p></section><section id="lv.ao.2004.8.5-1" class="slide level2">
 <h2><lo-reading/> LV.AO.2004.8.5</h2>
-<hgroup class="reading">
-<p><u>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi.</u> Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p>
+<hgroup class="reading" style="font-size:70%">
+<p><u><strong>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi.</strong><sup>(i)</sup></u> Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p>
 </hgroup>
 <hgroup>
 <p>TODO: Kāds sākumstāvoklis (vai stāvokļi) te aprakstīti?</p>
@@ -1851,23 +1876,23 @@ Novērojumi:
 -->
 </section><section id="lv.ao.2004.8.5-2" class="slide level2">
 <h2><lo-reading/> LV.AO.2004.8.5</h2>
-<hgroup class="reading">
-<p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. <u>Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās.</u> No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p>
+<hgroup class="reading" style="font-size:70%">
+<p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. <u>Izsvītrojam no tās skaitļus, <strong>kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās</strong><sup>(ii)</sup>.</u> No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</p>
 </hgroup>
 <hgroup>
-<p>TODO: Kas kopīgs un atšķirīgs “skaitlim” ar viņa “vietu”? Vai skaitļa vieta var mainīties. Vai tā mainās uzreiz pēc izsvītrošanas vai vēlāk?</p>
+<p>TODO: Kas kopīgs un atšķirīgs “skaitlim” ar viņa “vietu”? Vai skaitļa vieta var mainīties. Vai tā mainās uzreiz pēc izsvītrošanas vai vēlāk? Uzdevumi par kopotu rakstu sējumu pārkārtošanu.</p>
 </hgroup>
 </section><section id="lv.ao.2004.8.5-3" class="slide level2">
 <h2><lo-reading/> LV.AO.2004.8.5</h2>
-<hgroup class="reading">
-<p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. <u>No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. Ar iegūto virkni rīkojamies tāpat, utt., kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</u></p>
+<hgroup class="reading" style="font-size:70%">
+<p>Virknē augošā kārtībā izrakstīti naturālie skaitļi no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(2004\)</span> ieskaitot, katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas <span class="math inline">\(1., 4., 7., 10., \ldots\)</span> vietās. <u>No palikušās virknes atkal izsvītrojam skaitļus, kas tajā atrodas <span class="math inline">\(1., 4., 7., \ldots\)</span> vietās. <strong>Ar iegūto virkni rīkojamies tāpat, utt.</strong><sup>(iii)</sup>, kamēr <strong>paliek neizsvītrots viens skaitlis</strong><sup>(iv)</sup>. Kurš tas ir?</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Kas ir “palikusī virkne”? “Iegūtā virkne”? Vai uzdevumā aprakstītais beigu stāvoklis vienmēr iestājas? Ja nu paliek neizsvītroti divi vai vairāk skaitļi?<br />
 Uzdevumā aprakstītā procedūra sastāv no vairākiem “gājieniem” jeb “iterācijām”. Katras iterācijas laikā izsvītro apmēram trešdaļu no virknes locekļiem, locekļus pārnumurē, iegūstot jaunu virkni.</p>
 </hgroup>
 </section><section id="lv.ao.2004.8.5-4" class="slide level2">
-<h2><lo-strategy/> LV.AO.2004.8.5</h2>
+<h2><lo-strategies/> LV.AO.2004.8.5</h2>
 <ol type="1">
 <li><em>Vienkāršojam sev dzīvi:</em> Vispirms aplūkojam mazāk skaitļu vai vienkāršākus gājienus.</li>
 <li><em>Matemātiskā indukcija:</em> Izvirzām hipotēzi un to pamatojam arvien lielākam skaitļu skaitam <span class="math inline">\(N\)</span>, līdzkamēr <span class="math inline">\(N=2004\)</span>.</li>
@@ -1937,7 +1962,7 @@ Piemēram, ja uzrakstīti skaitļi no <span class="math inline">\(1\)</span> lī
 <img data-src="zurijas-atrisinajums.png" alt="Žūrijas atrisinājums" /><figcaption>Žūrijas atrisinājums</figcaption>
 </figure>
 </section></section>
-<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
 Aritmētiskas progresijas
 </h1>
@@ -1957,7 +1982,7 @@ Aritmētiskas progresijas
 <hgroup class="reading">
 <p>Atrast<br />
 (a) visu to naturālo skaitļu summu, kas nepārsniedz <span class="math inline">\(1000\)</span> un dalās ar <span class="math inline">\(5\)</span>;<br />
-(b) <u>visu to naturālo skaitļu summu, kas nepārsniedz <span class="math inline">\(1000\)</span> un dalās vai nu ar <span class="math inline">\(3\)</span>, vai ar <span class="math inline">\(5\)</span>.</u></p>
+(b) <u>visu to naturālo skaitļu summu, kas nepārsniedz <span class="math inline">\(1000\)</span> un dalās <strong>vai nu ar <span class="math inline">\(3\)</span>, vai ar <span class="math inline">\(5\)</span></strong><sup>(i)</sup>.</u></p>
 </hgroup>
 <hgroup>
 <p><em>Piezīme.</em> Grāmatas oriģinālā lietota frāze “… un dalās <strong>vai nu</strong> ar <span class="math inline">\(3\)</span>, <strong>vai</strong> ar <span class="math inline">\(5\)</span>”. Tas parasti nozīmē <blue>Izslēdzošo VAI</blue>: Der skaitļi, kas dalās vai nu tikai ar <span class="math inline">\(3\)</span>, vai ar <span class="math inline">\(5\)</span>, bet ne ar abiem.<br />
@@ -1999,8 +2024,7 @@ Grāmatas atrisinājumā tomēr izmantots parastais VAI (kas pieskaita arī tos 
 \ldots, \frac{35}{n+37}, \frac{36}{n+38}\]</span> ir nesaīsināmas?</p></section><section id="lv.ao.2004.7.3-1" class="slide level2">
 <h2><lo-reading/> LV.AO.2004.7.3</h2>
 <hgroup class="reading">
-<p><u>Kādam <strong>mazākajam</strong> naturālajam <span class="math inline">\(n\)</span> <strong>visas</strong> daļas <span class="math display">\[\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, 
-\ldots, \frac{35}{n+37}, \frac{36}{n+38}\]</span> <strong>ir nesaīsināmas</strong>?</u></p>
+<p><u>Kādam <strong>mazākajam</strong><sup>(i)</sup> naturālajam <span class="math inline">\(n\)</span> <strong>visas daļas</strong><sup>(ii)</sup> <span class="math display">\[\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9},\]</span> <span class="math display">\[\ldots, \frac{35}{n+37}, \frac{36}{n+38}\]</span> ir nesaīsināmas?</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Mazākais naturālais <span class="math inline">\(n\)</span>? Vai vienmēr eksistē? Ko nozīmē “visas daļas nesaīsināmas”?</p>
@@ -2009,8 +2033,7 @@ Grāmatas atrisinājumā tomēr izmantots parastais VAI (kas pieskaita arī tos 
 </section><section id="lv.ao.2004.7.3-2" class="slide level2">
 <h2><lo-reading/> LV.AO.2004.7.3</h2>
 <hgroup class="reading">
-<p><u>Kādam mazākajam naturālajam <span class="math inline">\(n\)</span> visas <strong>daļas</strong> <span class="math display">\[\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, 
-\ldots, \frac{35}{n+37}, \frac{36}{n+38}\]</span> <strong>ir nesaīsināmas</strong>?</u></p>
+<p><u>Kādam mazākajam naturālajam <span class="math inline">\(n\)</span> visas daļas <span class="math display">\[\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9},\]</span> <span class="math display">\[\ldots, \frac{35}{n+37}, \frac{36}{n+38}\]</span> <strong>ir nesaīsināmas</strong><sup>(iii)</sup>?</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Pietiek vienai būt saīsināmai, attiecīgais <span class="math inline">\(n\)</span> tiek uzreiz izbrāķēts.</p>
@@ -2042,19 +2065,23 @@ Grāmatas atrisinājumā tomēr izmantots parastais VAI (kas pieskaita arī tos 
 </ul>
 <p>Jāatrod mazākais skaitlis <span class="math inline">\(n+2\)</span>, kas ir savstarpējs pirmskaitlis ar visiem skaitļiem <span class="math inline">\(5,6,\ldots,36\)</span>.</p>
 </section></section>
-<section id="lv.vo.2002.11.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.11.5</h1><p>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība: visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</p></section>
-<section id="lv.vo.2002.11.5-1" class="title-slide slide level1"><h1><lo-reading/> LV.VO.2002.11.5</h1><hgroup class="reading">
-<p><u>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība:</u> visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</p>
+<section><section id="lv.vo.2002.11.5" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2002.11.5</h1><p>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība: visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</p></section><section id="lv.vo.2002.11.5-1" class="slide level2">
+<h2><lo-reading/> LV.VO.2002.11.5</h2>
+<hgroup class="reading">
+<p><u>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas <strong>lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span></strong><sup>(i)</sup></u>, izpildās īpašība: visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</p>
 </hgroup>
 <hgroup>
 <p>TODO: Raksturojam skaitļu kopu</p>
-</hgroup></section>
-<section><section id="lv.vo.2002.11.5-2" class="title-slide slide level1"><h1><lo-reading/> LV.VO.2002.11.5</h1><hgroup class="reading">
-<p>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība: <u>visi tie naturālie skaitļi, kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span>, veido aritmētisku progresiju?</u></p>
+</hgroup>
+</section><section id="lv.vo.2002.11.5-2" class="slide level2">
+<h2><lo-reading/> LV.VO.2002.11.5</h2>
+<hgroup class="reading">
+<p>Kuriem naturāliem skaitļiem <span class="math inline">\(n\)</span>, kas lielāki par <span class="math inline">\(3\)</span> un nedalās ar <span class="math inline">\(3\)</span>, izpildās īpašība: <u>visi tie naturālie skaitļi, <strong>kas mazāki par <span class="math inline">\(n\)</span> un kuru lielākais kopīgais dalītājs ar <span class="math inline">\(n\)</span> ir <span class="math inline">\(1\)</span></strong><sup>(ii)</sup>, <strong>veido aritmētisku progresiju</strong><sup>(iii)</sup>?</u></p>
 </hgroup>
 <hgroup>
 <p>TODO: Raksturojam <span class="math inline">\(\Phi(n)\)</span> - tos skaitļus, kas savstarpēji pirmskaitļi ar <span class="math inline">\(n\)</span>. Uzzīmējam parastās daļas <span class="math inline">\(1/n,...,(n-1)/n\)</span>.</p>
-</hgroup></section><section id="lv.vo.2002.11.5-3" class="slide level2">
+</hgroup>
+</section><section id="lv.vo.2002.11.5-3" class="slide level2">
 <h2><lo-strategies/> LV.VO.2002.11.5</h2>
 <ol type="1">
 <li><em>Eksperimentēšana:</em> Ievietojam dažādas <span class="math inline">\(n\)</span> vērtības, pārbaudām apgalvojuma patiesumu. Pēc tam vispārinām novērojumus.</li>
@@ -2091,7 +2118,7 @@ Grāmatas atrisinājumā tomēr izmantots parastais VAI (kas pieskaita arī tos 
 <img data-src="phi-wrong.png" alt="Phi samples" /><figcaption>Phi samples</figcaption>
 </figure>
 </section></section>
-<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
 Aritmētiskas progresijas
 </h1>

@@ -35,18 +35,13 @@ div.chart p.bar {
 
 <body>
 
-<h1>Concept: {{title}}</h1>
+<h1>{{title}}</h1>
 
 {% for problem in problems %}
 {{problem}}
 {% endfor %}
 
-
-
-
-
-<p id="first"><a href="../prob/index.html">Uz uzdevumu sarakstu</a></p>
-
+<p id="first"><a href="../reports.html">Visi pārskati</a></p>
 
 <script>
 var topConcepts = allConcepts.slice(0,allConcepts.length);
@@ -67,8 +62,7 @@ d3.select("body")
     .style("background-color", function(d) { return d.col })
 //    .style("color", function(d) { return ((d.colidx < 1 || d.colidx > 6) ? "white":"black") })    
     .append("a")
-    .attr("href",function(d) { return "../concept/" + d.c_id})
-    .attr("target","_blank")
+    .attr("href",function(d) { return "../reports-concepts/" + d.c_id})
     .attr("title",function(d) { return d.pp })
     .style("color", function(d) { return ((d.colidx < 1 || d.colidx > 6) ? "white":"black") })
     .text(function(d) {return d.c_id + " (" + d.jun + "/" + d.sen + ")"})

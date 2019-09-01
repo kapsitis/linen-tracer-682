@@ -7,13 +7,31 @@
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+<title>{{title}}</title>
 </head>
 
 <body>
-<h1>Skaitļu teorijas uzdevumi: Prasmju analīze</h1>
+<h1>{{title}}</h1>
 
 
-<a href="index.html">Uz uzdevumu lapu</a>
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/index.html">Uz sākumu</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/problems.html">Uzdevumi</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Prasmes</b></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/reports.html">Pārskati</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/references.html">Norādes</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+   <option value="../numtheory/index.html">Skaitļu teorija</option>
+   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
+   <option value="../visualizations/index.html">Vizualizācijas</option>
+   <option value="../problembase/index.html" selected="selected">Uzdevumu DB</option>
+</select>
+</td>
+</tr>
+</table>
+
 
 <table class="tasks">
 <colgroup>

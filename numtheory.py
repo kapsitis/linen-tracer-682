@@ -12,12 +12,12 @@ class NumtheoryHandler(webapp2.RequestHandler):
     local_tales = [
         {
             'id':'NumTh.ArithmProgressions', 
-            'dir':'numtheory-arithm-progressions',
+            'dir':'tale-numtheory-arithm-progressions',
             'title': u'Aritmētiskas progresijas'
         },
         {
             'id':'NumTh.GeomProgressions', 
-            'dir':'numtheory-geom-progressions',
+            'dir':'tale-numtheory-geom-progressions',
             'title': u'Ģeometriskas progresijas'
         },
         {
@@ -27,12 +27,12 @@ class NumtheoryHandler(webapp2.RequestHandler):
         },
         {
             'id':'NumTh.Grade10', 
-            'dir':'stories-nt-grade10',
+            'dir':'tale-numtheory-grade10',
             'title': u'10.klases mix'
         },
         {
             'id':'Comb.GamesSymmetry', 
-            'dir':'comb-games-symmetry',
+            'dir':'tale-numtheory-games-symmetry',
             'title': u'Simetrija spēlēs'
         },
     
@@ -41,20 +41,21 @@ class NumtheoryHandler(webapp2.RequestHandler):
     global_tales = [
         {
             'id':'NumTh.Multiplicative', 
-            'dir':'numtheory-multiplicative',
-            'title': u'Multiplikatīva teorija' 
+            'dir':'tale-numtheory-multiplicative',
+            'title': u'Multiplikatīva teorija',
+            'date': '2019-06-10'
         }
     ]
 
     exam_lst = [
         {
             'id':'G10.ALG', 
-            'dir':'nt10-algebra',
+            'dir':'exam-numtheory-algebra',
             'title': u'Algebras prasmes'
         },
         {
             'id':'G10.MOD', 
-            'dir':'nt10-modular-arithmetic',
+            'dir':'exam-numtheory-modular-arithmetic',
             'title': u'Modulārās aritmētikas prasmes'
         }
     ]

@@ -3,68 +3,51 @@
 <head>
 <meta charset="UTF-8"/> 
 <link rel="stylesheet" type="text/css" href="../style/style.css"/>
-
-<style>
-/*
-body {
-  margin: 5%;
-  font-family: "Calibri (Body)", Calibri, sans-serif;
-}
-h1 {
-  font-weight: normal;
-}
-red {
-  color: red;
-}
-*/
-</style>
 <title>{{title}}</title>
 </head>
 
 <body>
 <h1>{{title}}</h1>
 
+
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../main/index.html">Uz sākumu</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Uzdevumi</b></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../tale/index.html">Prezentācijas</a></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../exam/index.html">Pārbaudes darbi</a></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../downloads/index.html">Lejupielādes</a></td>
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Uz sākumu</b></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/problems.html">Uzdevumi</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/tasks.html">Prasmes</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/reports.html">Pārskati</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="../problembase/references.html">Norādes</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+   <option value="../numtheory/index.html">Skaitļu teorija</option>
+   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
+   <option value="../visualizations/index.html">Vizualizācijas</option>
+   <option value="../problembase/index.html" selected="selected">Uzdevumu DB</option>
+</select>
+</td>
 </tr>
 </table>
 
-<a href="https://github.com/hakimel/reveal.js/wiki/Keyboard-Shortcuts">Speciālās
-komandas prezentācijās</a>: <b>F</b> - pilnekrāna režīms; 
-<b>Esc</b> - pārskats; <b>Home</b> - uz sākumu; <b>End</b> - uz beigām. 
+<p>Olimpiāžu uzdevumi (skaitļu teorijā) no Baltijas u.c. valstu olimpiādēm 
+ir gan praktiskai risināšanai, gan arī meta-analīzei domāta datu kopa. 
+<a href="../problembase-bin/NumTheoryProblems.pdf">Number Theory Problems – 
+Differences by Grade</a> 
+kurā izskaidroti šīs uzdevumu datubāzes lauki un statistika par tiem.</p>
 
+<p>Olimpiāžu skaitļu teorijas uzdevumus dalām 3 lielās kategorijās:
+(A) 4.-6.klašu (vai dažu izklaidējošas matemātikas mīklu) uzdevumi; 
+(B) 7.-12.klašu skaitļu teorijas uzdevumi, kas piedāvāti 
+reģionālās vai, piemēram, Latvijas, Lietuvas un Igaunijas
+nacionālajās sacensībās. (C) Latvijas u.c. valstu atlases sacensības
+un dažādu starptautisku konkursu (IMO, BW, EGMO) uzdevumi.</p>
 
-<ul style="margin:3px;">
-{% for comp in lst_comp %}
-<li><a href="../files-prob/{{comp.dir}}/content.html">{{comp.id}}: {{comp.title}}</a> 
-({{comp.total}} - anotēti {{comp.marked}})</li></li>
-{% endfor %}
-</ul>
+<p>"Pavisam mazo" (4.-6.kl.) bērnu un arī izklaidējošās matemātikas
+uzdevumu mūsu datubāzē praktiski nav. Novadu un atklātā olimpiāde gan 
+notiek 5. un 6. klasēm; bet 4.klasēm notiek konkurss "Tik vai cik" - tomēr
+šos uzdevumus neesam te apkopojuši. Visvairāk ir 7.-12.klašu nacionālo 
+olimpiāžu uzdevumu, ir arī starptautiska līmeņa konkursu uzdevumi, kas
+mēdz būt vēl sarežģītāki.</p>
 
-<p style="font-size:120%; margin: 0px"><b>Kopsavilkums</b></p>
-
-<ul style="margin:3px;">
-<li>Uzdevumi kopā: {{prb_total}}. Jau anotēti ar prasmēm: {{prb_marked}}</li>
-<li>Prasmes  
-<a href='https://docs.google.com/spreadsheets/d/1w5FBJztKrhEj1hf-1Qx_fKVocXu08IxP1G8kJWL_0HI/edit?usp=sharing'>prasmju kokā</a>: 
-{{total_tasks}}, no tām izmantotas anotācijās: {{used_tasks}}</li>
-<li>Prasmju kokā neesošas, kļūdaini anotētas prasmes: {{nfound_tasks}}</li>
-<li>Uzdevumu-prasmju marķējumu kopskaits: {{markings_size}}</li>
-</ul>
-
-<p style="font-size:120%; margin: 0px; "><b>Reports on Baltic Olympiad problems</b></p>
-
-<ul style="margin:3px;">
-<li><a href="../prob/tasks.html">All tasks with related problems</a></li>
-<li><a href="../prob/task_groups.html">Task groups: Statistics</a></li>
-<li><a href="../charts/qtypes-summary.html">Problems summarized by question type</a></li>
-<li><a href="../charts/concepts-summary.html">Problems summarized by concepts used in their formulation</li>
-</ul>
 
 
 </body>

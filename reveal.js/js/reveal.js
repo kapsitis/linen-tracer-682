@@ -491,6 +491,29 @@
     };
 
     // KAP
+    var getHomeIndex = function(arg) {
+        var i1 = arg.indexOf('numtheory-tales');
+        var i2 = arg.indexOf('algorithms-tales');
+        var i3 = arg.indexOf('visualizations-tales');
+        var i4 = arg.indexOf('problembase-tales');
+        if (i1 > 0) {
+            return "../../numtheory/tales.html";
+        }
+        else if (i2 > 0) {
+            return "../../algorithms/tales.html";
+        }
+        else if (i3 > 0) {
+            return "../../visualizations/tales.html";
+        }
+        else if (i4 > 0) {
+            return "../../problembase/problems.html";
+        }
+        else {
+            return "../../default/tales.html";
+        }
+    }
+
+    // KAP
     var getLogo = function() {
 	var theLogo = document.createElement("img");
         theLogo.setAttribute("src","biglogo.png");
@@ -499,7 +522,8 @@
         theLogo.setAttribute("style","border:0;");
 
 	var theLink = document.createElement("a");
-        theLink.setAttribute("href","../../prob/index.html");
+        var theDest = getHomeIndex(window.location.href);
+        theLink.setAttribute("href",theDest);
         theLink.setAttribute("class","image");
         theLink.appendChild(theLogo);
 

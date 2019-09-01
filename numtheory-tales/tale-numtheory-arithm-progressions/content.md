@@ -488,14 +488,20 @@ iepriekšējam pieskaitot to pašu skaitli (<blue>*diferenci*</blue> $d$), sauc 
 $$a_{n+1} = a_n + d,\;\;\mbox{ja}\;\;n \geq 1.$$
 
 T.i. blakusesošu locekļu starpība ir konstanta: $a_{n+1} - a_n = d$ 
-visiem $n \geq 1$. (Vārds "diference" nozīmē "starpība".)
+visiem $n \geq 1$. (Vārds "diference" nozīmē arī "starpība".)
 
-TODO: Bilde ar skaitļu taisni
+![Skaitļu taisne](numerical-axis.png)
 
 ::: notes
 
-Progresiju parasti definē ar diferences pieskaitīšanu. Bet 
+* Progresiju parasti definē ar diferences pieskaitīšanu. Bet 
 noderīgas ir arī konstantās blakusesošo locekļu starpības.
+* Aritmētiska progresija parasti sākas ar pirmo locekli - nemēdz būt 
+"mīnus pirmais" vai citi negatīvi locekļi. Dažreiz tā turpinās
+bezgalīgi, citreiz apraujas ar kādu locekli (un locekļi aiz tā 
+uzdevuma kontekstā nav jāaplūko).
+* Locekļus var sākt numurēt ar nullto ($a_0,a_1,\ldots$) - sākt numurēt ar "0" 
+vai ar "1" ir gaumes lieta.
 
 :::
 
@@ -509,7 +515,7 @@ $$a_n = a_1 + (n-1)d,\;\;\mbox{kur $n>1$.}$$
 <blue>*Progresijas pirmo $n$ locekļu summa:*</blue>
 $$S_n = a_1 + a_2 + \ldots + a_n.$$
 
-*Šo summu var aprēķināt ar formulu:*
+Šo summu var aprēķināt ar formulu:
 $$S_n = \frac{a_1 + a_n}{2}\cdot{} n$$
 
 ::: notes
@@ -568,7 +574,7 @@ izvēlēties divus: $T_n = C_{n+1}^2$.
 
 ::: notes
 
-Zīmējums ar trijstūrī izkārtotiem aplīšiem mūsu gadījumā ir *interpretācija*
+* Zīmējums ar trijstūrī izkārtotiem aplīšiem mūsu gadījumā ir *interpretācija*
 kombinatorikas problēmai (izvēlēties $2$ no $n+1$). Katram aplītim 
 var piekārtot tieši vienu izvēlēšanās veidu (un arī katram izvēlēšanās veidam
 atbilst viens aplītis). Tādēļ pietiek saskaitīt aplīšus. 
@@ -629,7 +635,8 @@ mazākais no šiem saskaitāmajiem?
 
 <hgroup class="reading">
 
-<u><strong>Vairāku</strong> <strong>pēc kārtas sekojošu</strong> naturālu skaitļu summa ir $177$.</u>
+<u>Vairāku <strong>pēc kārtas sekojošu</strong><sup>(i)</sup> 
+naturālu skaitļu <strong>summa ir $177$</strong><sup>(ii)</sup>.</u>
 Kādas vērtības var pieņemt
 mazākais no šiem saskaitāmajiem?
 
@@ -648,7 +655,7 @@ TODO: Bilde, kur uzzīmēti dažādi skaitļi, kas ir/nav pēc kārtas sekojoši
 
 Vairāku pēc kārtas sekojošu naturālu skaitļu summa ir $177$.
 <u>Kādas vērtības var pieņemt
-<strong>mazākais no šiem saskaitāmajiem</strong>?</u>
+<strong>mazākais no šiem saskaitāmajiem</strong><sup>(iii)</sup>?</u>
 
 
 </hgroup>
@@ -685,13 +692,13 @@ TODO: Var apsvērt animāciju
 
 <hgroup>
 
+**Stratēģija:** Sākam ar citu parametru 
+(jeb "skatāmies nevis pa horizontāli, bet pa vertikāli").
+
 *Novērojums:* Pilnā pārlase nav ātra, jo starp veiksmīgiem 
 saskaitīšanas piemēriem atrodas daudz neveiksmīgu.
 
-**Stratēģija:** "Sākam ar citu parametru" jeb 
-"skatāmies nevis pa horizontāli, bet pa vertikāli".
-
-Rezultāts tas pats, bet var sanākt ātrāk. Mūsu gadījumā
+Mūsu gadījumā
 bez $a_1$ otrs dabisks parametrs ir saskaitāmo skaits $n$, kuram 
 $$\frac{a_1 + a_n}{2} \cdot{} \color{#F00}{n} = 177.$$ 
 
@@ -705,12 +712,11 @@ TODO: Bilde, kurā iešanu pa rindiņām $a_1$ aizstāj skatīšanās uz $n$.
 
 ::: notes
 
-Atzīmēsim, ka virziena (vai parametru secības) 
-nomaiņa meklēšanas vai summēšanas uzdevumos
-var ļoti paātrināt risinājumu. Arī tad, ja it kā
-nekas nemainās un "summa vai reizinājums nav atkarīgi 
-no secības".
+Jautājumus "Vai var sākt summu ar skaitli 1,2,3,...?" aizstājam 
+ar citiem jautājumiem "Vai summu var iegūt, saskaitot 1,2,3,... locekļus?"
+Izklausās līdzīgi, bet jāpārbauda krietni mazāk variantu.
 
+:::
 
 
 ## <lo-soln/> LV.NO.2015.10.3 (nepāru n)
@@ -799,7 +805,7 @@ no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek i
 
 <hgroup class="reading">
 
-<u>Burtnīcā ir $100$ lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem 
+<u>Burtnīcā ir $100$ lapas; tās <strong>lappuses sanumurētas dabīgā kārtībā</strong><sup>(i)</sup> ar numuriem 
 no $1$ līdz $200$</u>. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek izrautas  
 **(a)** $31$ lapa;   
 **(b)** $30$ lapas?   
@@ -820,10 +826,11 @@ Turklāt autori pasvītrojuši, ka $100$ lapām atbilst $200$ lappušu numuri.
 <hgroup class="reading">
 
 Burtnīcā ir $100$ lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem 
-no $1$ līdz $200$. <u>Vai izrauto lappušu numuru summa var būt $1000$</u>, ja tiek izrautas  
+no $1$ līdz $200$. <u>Vai <strong>izrauto lappušu numuru summa</strong><sup>(ii)</sup> 
+var būt $1000$</u>, ja tiek izrautas  
 **(a)** $31$ lapa;   
 **(b)** $30$ lapas?   
-*Piezīme.* Lapas var neraut pēc kārtas.
+*Piezīme.* <u>Lapas <strong>var neraut pēc kārtas</strong><sup>(iii)</sup>.</u>
 
 
 </hgroup>
@@ -920,7 +927,7 @@ zināms, ka tā ir vesels skaitlis.
 
 <hgroup class="reading">
 
-<u>Trīs no aritmētiskās progresijas locekļiem ir $41$, $113$, $193$.</u>
+<u><strong>Trīs no aritmētiskās progresijas locekļiem</strong><sup>(i)</sup> ir $41$, $113$, $193$.</u>
 Atrast lielāko iespējamo diferences vērtību, ja 
 zināms, ka tā ir vesels skaitlis.
 
@@ -928,7 +935,7 @@ zināms, ka tā ir vesels skaitlis.
 </hgroup>
 <hgroup>
 
-TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)  
+TODO: Bilde, kur parādītas diferences - nemaz nevar būt pēc kārtas.  
 
 
 </hgroup>
@@ -940,14 +947,15 @@ TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iek
 <hgroup class="reading">
 
 Trīs no aritmētiskās progresijas locekļiem ir $41$, $113$, $193$.
-<u>Atrast <strong>lielāko iespējamo</strong> diferences vērtību, ja 
-zināms, ka tā ir vesels skaitlis.</u>
+<u>Atrast <strong>lielāko iespējamo</strong><sup>(ii)</sup> diferences vērtību, ja 
+zināms, ka <strong>tā ir vesels skaitlis</strong><sup>(iii)</sup>.</u>
 
 
 </hgroup>
 <hgroup>
 
-TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iekaviņās)  
+TODO: Bilde, kur skaita pa pāriem lappušu numurus 
+(liek 1 lappuses numurus iekaviņās)  
 
 
 </hgroup>
@@ -1015,7 +1023,7 @@ kuri nedalās ne ar $5$, ne ar $7$?
 <hgroup class="reading">
 
 <u>Cik daudz ir tādu naturālu skaitļu $n \leq 1000$, 
-kuri <strong>nedalās ne ar $5$, ne ar $7$</strong>?</u>
+kuri <strong>nedalās ne ar $5$, ne ar $7$</strong><sup>(i)</sup>?</u>
 
 </hgroup>
 <hgroup>
@@ -1106,11 +1114,12 @@ $4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierak
 
 ## <lo-reading/> LV.NO.2009.8.1 
 
-<hgroup class="reading">
+<hgroup class="reading" style="font-size:70%">
 
-<u>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka katrā rindā un 
-katrā kolonnā tika izvēlēta tieši viena rūtiņa.</u> Pierādiet: neatkarīgi no tā, kuras 
-$4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$. 
+<u>Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka <strong>katrā rindā un 
+katrā kolonnā tika izvēlēta tieši viena rūtiņa</strong><sup>(i)</sup>.</u> 
+Pierādiet: neatkarīgi no tā, kuras $4$ rūtiņas saskaņā ar šiem 
+noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$. 
 
 <!--
 ![tabula](LV.NO.2009.8.1.png)
@@ -1136,11 +1145,14 @@ Kuras šaha figūras neapdraudētu cita citu, ja tās šādi izvietotu?
 
 ## <lo-reading/> LV.NO.2009.8.1 
 
-<hgroup class="reading">
+<hgroup class="reading" style="font-size:70%">
 
 Tabulā (sk. zīmējumu) Katrīnai jāizvēlas $4$ rūtiņas tā, ka katrā rindā un 
-katrā kolonnā tika izvēlēta tieši viena rūtiņa. <u>Pierādiet: neatkarīgi no tā, kuras 
-$4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierakstīto skaitļu summa būs $64$.</u> 
+katrā kolonnā tika izvēlēta tieši viena rūtiņa. 
+<u>Pierādiet: <strong>neatkarīgi no tā, kuras 
+$4$ rūtiņas</strong> saskaņā ar šiem noteikumiem 
+<strong>Katrīna izvēlēsies</strong><sup>(ii)</sup>, 
+tajās ierakstīto skaitļu summa būs $64$.</u> 
 
 <!--
 ![tabula](LV.NO.2009.8.1.png)
@@ -1158,6 +1170,7 @@ $4$ rūtiņas saskaņā ar šiem noteikumiem Katrīna izvēlēsies, tajās ierak
 <hgroup>
 
 TODO: Bilde ar pāris piemēriem, kā var saskaitīt.
+Konstanta funkcija (eksistē summa $64$, kas der visiem). 
 
 </hgroup>
 
@@ -1253,13 +1266,13 @@ dalās ar $7$?
 
 <hgroup class="reading">
 
-<u>Cik daudz ir tādu naturālu skaitļu $n \leq 1983$, kuriem $3n+5$ 
-dalās ar $7$?</u>
+<u><strong>Cik daudz</strong> ir tādu naturālu skaitļu $n \leq 1983$, kuriem <strong>$3n+5$ 
+dalās ar $7$</strong><sup>(i)</sup>?</u>
 
 </hgroup>
 <hgroup>
 
-TODO: Bilde ar skaitlīšiem formā $3n+5$, atrasts kāds, kas dalās...  
+TODO: Daudz skaitļu, no tiem daži der, jāsaskaita...  
 
 </hgroup>
 
@@ -1322,7 +1335,7 @@ katrs septītais dalīsies ar $7$.
 </hgroup>
 
 
-# <lo-theory/> Bezū lemma
+# <lo-theory/> Bezū lemma (jeb identitāte)
 
 **Lemma (<blue>Bézout's lemma</blue>):** Ja $a$ un $b$ ir naturāli skaitļi
 un $\mbox{LKD}(a,b)=d$, tad eksistē tādi veseli skaitļi $x$ un $y$, ka $ax+by=d$. 
@@ -1333,7 +1346,39 @@ atradīsies visi $b$ iespējamie atlikumi, dalot ar $b$ (ieskaitot atlikumu $1$)
 var nomaksāt jebkuru veselu skaitu centu tad un tikai tad, ja $a,b$ ir
 savstarpēji pirmskaitļi.
 
-## <lo-yellow/> 
+## <lo-yellow/> Bezū lemmas/identitātes vēsture
+
+<hgroup style="font-size:70%">
+
+Bezū identitāti pamatoja Etjēns Bezū 
+(*Étienne Bézout*, 1730–1783) 1779.gadā – turklāt uzreiz
+polinomiem. Veseliem skaitļiem līdzīgs rezultāts
+ir jau Kloda Bašē de Meziriaka darbos 
+(*Claude Gaspard Bachet de Méziriac*, 1581–1638)
+
+![Etjēns Bezū](Etienne_Bezout.jpg)  
+*Etjēns Bezū*
+
+</hgroup>
+<hgroup>
+
+Izmantojot Bezū lemmu, var pierādīt
+citus svarīgus rezultātus.
+
+![Bezū identitāte](bezout-identity.png)
+
+
+
+</hgroup>
+
+::: notes
+
+Bezū lemmas pierādījumā izmanto ekstrēmā elementa metodi; 
+aplūko mazāko pozitīvo skaitli, kas izsakāms
+kā $ax+by$ veseliem $x,y$. Tad pamato, ka tas ir 
+skaitļu $a,b$ lielākais kopīgais dalītājs
+
+:::
 
 
 ## <lo-summary/> Vienādojumi algebrā un skaitļu teorijā
@@ -1377,14 +1422,16 @@ kur $x = a^5$, $y = b^3$, $a$ un $b$ – naturāli skaitļi?
 
 <hgroup class="reading">
 
-<u>Kurus naturālos skaitļus $n$ var izsacīt formā 
+<u>Kurus naturālos skaitļus $n$ <strong>var izsacīt formā</strong><sup>(i)</sup>
 ${\displaystyle n=\frac{x}{y}}$, 
-kur $x = a^5$, $y = b^3$, $a$ un $b$ – naturāli skaitļi?</u>
+kur $x = a^5$, $y = b^3$<sup>(ii)</sup>, $a$ un $b$ – naturāli skaitļi?</u>
 
 </hgroup>
 <hgroup>
 
-TODO: Gari reizinājumi, no kuriem kaut kas noīsinās...  
+TODO: (i) Mājiens, ka dažus var, bet nav zināms, vai visus var ($a$, $b$ var izvēlēties).  
+(ii) Pilni kubi un pilnas piektās pakāpes ir īpaši skaitļi, 
+katrā pietiekami garā intervālā to īpatsvars ir neliels.  
 
 </hgroup>
 
@@ -1609,10 +1656,10 @@ kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
 
 ## <lo-reading/> LV.AO.2004.8.5
 
-<hgroup class="reading">
+<hgroup class="reading" style="font-size:70%">
 
-<u>Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
-katrs vienu reizi.</u> Izsvītrojam no tās skaitļus, kas atrodas 
+<u><strong>Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
+katrs vienu reizi.</strong><sup>(i)</sup></u> Izsvītrojam no tās skaitļus, kas atrodas 
 $1., 4., 7., 10., \ldots$ vietās. No palikušās virknes atkal
 izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
 Ar iegūto virkni rīkojamies tāpat, utt.,
@@ -1644,11 +1691,11 @@ Novērojumi:
 
 ## <lo-reading/> LV.AO.2004.8.5
 
-<hgroup class="reading">
+<hgroup class="reading" style="font-size:70%">
 
 Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
-katrs vienu reizi. <u>Izsvītrojam no tās skaitļus, kas atrodas 
-$1., 4., 7., 10., \ldots$ vietās.</u> No palikušās virknes atkal
+katrs vienu reizi. <u>Izsvītrojam no tās skaitļus, <strong>kas atrodas 
+$1., 4., 7., 10., \ldots$ vietās</strong><sup>(ii)</sup>.</u> No palikušās virknes atkal
 izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
 Ar iegūto virkni rīkojamies tāpat, utt.,
 kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
@@ -1658,6 +1705,7 @@ kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?
 
 TODO: Kas kopīgs un atšķirīgs "skaitlim" ar viņa "vietu"? Vai skaitļa vieta var mainīties. Vai tā mainās uzreiz pēc 
 izsvītrošanas vai vēlāk? 
+Uzdevumi par kopotu rakstu sējumu pārkārtošanu.
 
 </hgroup>
 
@@ -1666,14 +1714,14 @@ izsvītrošanas vai vēlāk?
 
 ## <lo-reading/> LV.AO.2004.8.5
 
-<hgroup class="reading">
+<hgroup class="reading" style="font-size:70%">
 
 Virknē augošā kārtībā izrakstīti naturālie skaitļi no $1$ līdz $2004$ ieskaitot, 
 katrs vienu reizi. Izsvītrojam no tās skaitļus, kas atrodas 
 $1., 4., 7., 10., \ldots$ vietās. <u>No palikušās virknes atkal
 izsvītrojam skaitļus, kas tajā atrodas $1., 4., 7., \ldots$ vietās. 
-Ar iegūto virkni rīkojamies tāpat, utt.,
-kamēr paliek neizsvītrots viens skaitlis. Kurš tas ir?</u>
+<strong>Ar iegūto virkni rīkojamies tāpat, utt.</strong><sup>(iii)</sup>,
+kamēr <strong>paliek neizsvītrots viens skaitlis</strong><sup>(iv)</sup>. Kurš tas ir?</u>
 
 </hgroup>
 <hgroup>
@@ -1689,7 +1737,7 @@ Katras iterācijas laikā izsvītro apmēram trešdaļu no virknes locekļiem, l
 
 
 
-## <lo-strategy/> LV.AO.2004.8.5
+## <lo-strategies/> LV.AO.2004.8.5
 
 1. *Vienkāršojam sev dzīvi:* Vispirms aplūkojam mazāk skaitļu vai vienkāršākus gājienus.
 2. *Matemātiskā indukcija:* Izvirzām hipotēzi un to pamatojam arvien lielākam skaitļu skaitam $N$, līdzkamēr $N=2004$.
@@ -1819,7 +1867,7 @@ ar $3$ vai ar $5$.
 Atrast  
 (a) visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās ar $5$;  
 (b) <u>visu to naturālo skaitļu summu, kas nepārsniedz $1000$ un dalās 
-vai nu ar $3$, vai ar $5$.</u>
+<strong>vai nu ar $3$, vai ar $5$</strong><sup>(i)</sup>.</u>
 
 </hgroup>
 <hgroup>
@@ -1883,10 +1931,11 @@ ir nesaīsināmas?
 
 <hgroup class="reading">
 
-<u>Kādam <strong>mazākajam</strong> naturālajam $n$ <strong>visas</strong> daļas
-$$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, 
-\ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
-<strong>ir nesaīsināmas</strong>?</u>
+<u>Kādam <strong>mazākajam</strong><sup>(i)</sup> naturālajam $n$ 
+<strong>visas daļas</strong><sup>(ii)</sup>
+$$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9},$$ 
+$$\ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
+ir nesaīsināmas?</u>
 
 </hgroup>
 <hgroup>
@@ -1903,10 +1952,10 @@ jāatrod starp tiem vismazākais.
 
 <hgroup class="reading">
 
-<u>Kādam mazākajam naturālajam $n$ visas <strong>daļas</strong>
-$$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9}, 
-\ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
-<strong>ir nesaīsināmas</strong>?</u>
+<u>Kādam mazākajam naturālajam $n$ visas daļas
+$$\frac{5}{n+7}, \frac{6}{n+8}, \frac{7}{n+9},$$ 
+$$\ldots, \frac{35}{n+37}, \frac{36}{n+38}$$
+<strong>ir nesaīsināmas</strong><sup>(iii)</sup>?</u>
 
 </hgroup>
 <hgroup>
@@ -1959,12 +2008,12 @@ skaitļi, kas mazāki par $n$ un kuru lielākais kopīgais
 dalītājs ar $n$ ir $1$, veido aritmētisku progresiju?
 
 
-# <lo-reading/> LV.VO.2002.11.5
+## <lo-reading/> LV.VO.2002.11.5
 
 <hgroup class="reading">
 
-<u>Kuriem naturāliem skaitļiem $n$, kas lielāki par $3$ 
-un nedalās ar $3$, izpildās īpašība:</u> visi tie naturālie 
+<u>Kuriem naturāliem skaitļiem $n$, kas <strong>lielāki par $3$ 
+un nedalās ar $3$</strong><sup>(i)</sup></u>, izpildās īpašība: visi tie naturālie 
 skaitļi, kas mazāki par $n$ un kuru lielākais kopīgais 
 dalītājs ar $n$ ir $1$, veido aritmētisku progresiju?
 
@@ -1976,14 +2025,15 @@ TODO: Raksturojam skaitļu kopu
 
 
 
-# <lo-reading/> LV.VO.2002.11.5
+## <lo-reading/> LV.VO.2002.11.5
 
 <hgroup class="reading">
 
 Kuriem naturāliem skaitļiem $n$, kas lielāki par $3$ 
 un nedalās ar $3$, izpildās īpašība: <u>visi tie naturālie 
-skaitļi, kas mazāki par $n$ un kuru lielākais kopīgais 
-dalītājs ar $n$ ir $1$, veido aritmētisku progresiju?</u>
+skaitļi, <strong>kas mazāki par $n$ un kuru lielākais kopīgais 
+dalītājs ar $n$ ir $1$</strong><sup>(ii)</sup>, 
+<strong>veido aritmētisku progresiju</strong><sup>(iii)</sup>?</u>
 
 </hgroup><hgroup>
 

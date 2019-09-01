@@ -11,7 +11,7 @@ class DefaultHandler(webapp2.RequestHandler):
  
     
     def get(self,my_id):
-        
+        page_ids = ['references.html', 'problems.html', 'exams.html']        
         if (my_id == 'index.html'):
             template_context = {
                 'my_id': my_id
@@ -26,27 +26,8 @@ class DefaultHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('default/tales.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'references.html'):
-            template_context = {
-                'my_id': my_id
-            }
-            template = jinja_env.get_template('default/references.html')
-            output = template.render(template_context)
-            self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'problems.html'):
-            template_context = {
-                'my_id': my_id
-            }
-            template = jinja_env.get_template('default/problems.html')
-            output = template.render(template_context)
-            self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'exams.html'):
-            template_context = {
-                'my_id': my_id,
-            }
-            template = jinja_env.get_template('default/exams.html')
-            output = template.render(template_context)
-            self.response.out.write(output.encode('utf-8'))
+        elif (my_id in page_ids):            
+            self.redirect('index.html')
         else: 
             self.response.set_status(404)
             

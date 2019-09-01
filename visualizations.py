@@ -8,6 +8,14 @@ jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class VisualizationsHandler(webapp2.RequestHandler):
+
+    tales = [
+        {
+            'id':'Visualizations.RIntro', 
+            'dir':'r-language-intro',
+            'title': u'Valodas R ievads'
+        }
+    ]         
  
     
     def get(self,my_id):
@@ -21,6 +29,7 @@ class VisualizationsHandler(webapp2.RequestHandler):
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'tales.html'):            
             template_context = {
+                'tales': self.tales,
                 'my_id': my_id
             }
             template = jinja_env.get_template('visualizations/tales.html')
@@ -52,7 +61,7 @@ class VisualizationsHandler(webapp2.RequestHandler):
             
 
 app = webapp2.WSGIApplication([    
-    ('/default/(.*)', VisualizationsHandler)
+    ('/visualizations/(.*)', VisualizationsHandler)
 ], debug=True)
 
 

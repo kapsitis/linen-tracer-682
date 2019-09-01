@@ -13,7 +13,7 @@ class AlgorithmsHandler(webapp2.RequestHandler):
     tales = [
         {
             'id':'Algorithms.Lossless1', 
-            'dir':'tale-lossless-part1',
+            'dir':'tale-algorithms-lossless-part1',
             'title': u'Bezzudumu saspiešana - 1'
         }
     ]         

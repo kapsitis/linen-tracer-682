@@ -16,34 +16,53 @@
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Uz sākumu</a></td>
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
 <td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Uzdevumi</a></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Prezentācijas</b></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Pārbaudes darbi</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Aptaujas</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+   <option value="../numtheory/index.html" selected="selected">Skaitļu teorija</option>
+   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
+   <option value="../visualizations/index.html">Vizualizācijas</option>
+   <option value="../problembase/index.html">Uzdevumu DB</option>
+</select>
+</td>
 </tr>
 </table>
 
-<b>Junioru izlases nodarbības (2019./2020.m.g.)</b>
+<p><b>Vidusskolu 7.-12.klašu tēmas:</b> 
+Šīs ir elementārās matemātikas tēmas, lai pārvarētu Latvijas novadu/valsts 
+olimpiāžu filtrus. Junioru nodarbībās šos materiālus tieši neizmanto, bet tie
+ir šī kursa priekšnoteikums (<i>prerequisite</i>).
+<a href="/problembase/tasks.html">Vidusskolēnu prasmju saraksts</a>.</p>
 
-<ul>
-{% for tale in global_tales %}
-<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
-{% endfor %}
-</ul>
 
-<b>Vidusskolu 7.-12.klašu tēmas</b>
-
-<p>Šīs ir elementārās matemātikas tēmas, lai pārvarētu Latvijas novadu/valsts 
-olimpiāžu filtrus; pieņemam, ka junioru kursu dalībnieki to pazīst. 
-Junioru nodarbībās to parasti neizmanto, bet linki noder kā savdabīgs
-kursa priekšnoteikums ((<i>prerequisite<i>).</p> 
+<b>Speciālās komandas HTML prezentācijās:</b> 
+<b>S</b> - spīkera skats; <b>F</b> - pilnekrāna režīms; 
+<b>Esc</b> - pārskats; <b>Home</b> - uz sākumu; <b>End</b> - uz beigām; 
+bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.
 
 <ul>
 {% for tale in local_tales %}
-<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
+{% if tale.dir=='numtheory-recurrence-relation' %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}} (Emīls)</a></li>
+{% else %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li>
+{% endif %}
 {% endfor %}
 </ul>
+
+<b>Izlases nodarbību nodaļas (2019./2020.m.g.)</b>
+
+<ul>
+{% for tale in global_tales %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a> ({{tale.date}})</li></li>
+{% endfor %}
+</ul>
+
+
 
 
 

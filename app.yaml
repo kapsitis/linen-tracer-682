@@ -8,53 +8,20 @@ handlers:
 - url: /
   script: root.app
 
+- url: /tale/.*
+  script: root.app
+
 - url: /static
   static_dir: static
   
 - url: /main
   static_dir: main
-  
-- url: /prob/index\.html
-  script: prob_index.app
-
-- url: /prob/tasks\.html
-  script: prob_tasks.app
-
-- url: /prob/task_groups\.html
-  script: prob_task_groups.app
-  
-- url: /concept/(.*)
-  script: prob_get_concept.app
-  
-- url: /files-exam
-  static_dir: files-exam
-  
-- url: /files-misc
-  static_dir: files-misc
- 
-- url: /files-prob
-  static_dir: files-prob
-  
-- url: /files-tale
-  static_dir: files-tale
-  
+      
 - url: /reveal.js
   static_dir: reveal.js
   
-- url: /analysis/.*
-  script: analysis.app
-  
-- url: /exam/.*
-  script: exam.app
-  
-- url: /tale/.*
-  script: tale.app
-  
 - url: /downloads
   static_dir: downloads
-
-- url: /charts
-  static_dir: charts
 
 - url: /data-js
   static_dir: data-js
@@ -93,11 +60,45 @@ handlers:
 - url: /style
   static_dir: style
 
+- url: /problembase/index.html
+  script: problembase-index.app
+
 - url: /problembase/problems.html
   script: problembase-problems.app
+
+- url: /problembase/tasks.html
+  script: problembase-tasks.app
+
+- url: /problembase/reports.html
+  script: problembase-reports.app
+
+- url: /problembase/reports-concepts.html
+  script: problembase-reports-concepts.app
+  
+- url: /problembase/reports-concepts/(.*)
+  script: problembase-reports-concepts.app
+  
+
+- url: /problembase/reports-qtypes.html
+  script: problembase-reports-qtypes.app
+
+- url: /problembase/reports-taskgroups.html
+  script: problembase-reports-taskgroups.app
+
+- url: /problembase/references.html
+  script: problembase-references.app
+
+
+- url: /problembase-bin
+  static_dir: problembase-bin
+
+- url: /problembase-tales
+  static_dir: problembase-tales
+
 
 libraries:
 - name: webapp2
   version: "2.5.2"
 - name: jinja2
   version: latest
+  

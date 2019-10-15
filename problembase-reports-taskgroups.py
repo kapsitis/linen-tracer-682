@@ -97,6 +97,9 @@ class ProblembaseReportsTaskgroupsHandler(webapp2.RequestHandler):
     def get(self,my_id):
         with open('data/problems.json') as f1:
             the_problems = json.load(f1)
+        with open('data/global_navigation.json') as f2:
+            nav_items = json.load(f2)   
+            
        
         sections = ['alg','div','mod','nota','seq','misc','comb']
         skill_groups = {
@@ -186,7 +189,9 @@ class ProblembaseReportsTaskgroupsHandler(webapp2.RequestHandler):
             'skill_groups': skill_groups,
             'topic_titles': topic_titles,
             'grp_jun': grp_jun,
-            'grp_sen': grp_sen
+            'grp_sen': grp_sen,
+            'course': 'problembase',
+            'nav_items': nav_items
         }            
         template = jinja_env.get_template('problembase/reports-taskgroups.html')
         output = template.render(template_context)

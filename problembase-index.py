@@ -13,9 +13,13 @@ jinja_env = jinja2.Environment(
 class ProblembaseIndexHandler(webapp2.RequestHandler):    
     
     def get(self,my_id):
+        with open('data/global_navigation.json') as f1:
+            nav_items = json.load(f1)                
         template_context = {
             'my_id': my_id,
-            'title': u'Uzdevumu DB: Sākumlapa'            
+            'title': u'Uzdevumu DB: Sākumlapa',
+            'course': 'problembase',
+            'nav_items': nav_items    
         }
         template = jinja_env.get_template('problembase/index.html')
         output = template.render(template_context)

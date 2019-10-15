@@ -57,6 +57,16 @@ handlers:
 - url: /visualizations-tales
   static_dir: visualizations-tales
 
+- url: /rbs/.*
+  script: rbs.app
+  
+- url: /rbs-bin
+  static_dir: rbs-bin
+
+- url: /rbs-tales
+  static_dir: rbs-tales
+
+
 - url: /style
   static_dir: style
 
@@ -101,4 +111,5 @@ libraries:
   version: "2.5.2"
 - name: jinja2
   version: latest
+
   

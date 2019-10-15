@@ -11,24 +11,58 @@
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Sākums</b></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Mājasdarbi</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Piemēri</a></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tales.html">Prezentācijas</a></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Aptaujas</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html" selected="selected">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
 
+
+<p>"Pārskati un datu vizualizācija" ir seminārs, kura ietvaros var apspriest un apgūt
+dažas populāras pārskatu un datu zīmēšanas tehnoloģijas - R, JavaScript (īpaši tās
+bibliotēku D3 dinamiskai vektorgrafiku radīšanai) un Python. 
+Datu apkopošana pārskatos un diagrammu zīmēšana ir nepieciešams solis, lai 
+lietotājam izceltu kādu būtisku aspektu, jo parasti visu datu punktu 
+individuāla aplūkošana būtu pārāk darbietilpīga.</p>
+
+<p>Kursa ietvaros būs nelieli pasniedzēja priekšnesumi par konkrētām tēmām; 
+katrs semināra dalībnieks izvēlēsies vizualizēt kādu datu kopu, kas
+var būt saistīta ar mācībām vai profesionālo darbību (vēlams anonimizēt 
+vai pseidonomizēt datus, kam varētu būt privātuma vai konfidencialitātes problēmas). 
+Kursa ietvaros piedāvājam izstrādes vidi, kur ar 
+nelielu programmēšanas apjomu var atrsināt semināra dalībnieku un arī 
+pasniedzēja piedāvātās pārskatu veidošanas un vizualizācijas problēmas.</p>
+
+<b>Lai seminārā iegūtu ieskaiti:</b>
+
 <ul>
-<li>TODO: Kursa apraksts</li>
+<li>Jāpierakstās uz vismaz pusi no semināra nodarbībām un tās arī jāapmeklē - 
+prezentējot pašiem un sniedzot atgriezenisko saiti citiem. (Viena no semināra vērtībām
+ir saprast, kuras infografikas un vizualizācijas mūs pārliecina.)</li>
+<li>Aktīvi jāpiedalās semināru nodarbībās - jābalso, jāpiedalās aptaujās.</li>
+<li>Jāizveido vizualizācija - kā pārskata dokuments (piemēram Word vai PDF fails), 
+vai arī interaktīva Web lapa vai neliels video.</li>
+<li>Jāprezentē šī vizualizācija semināra laikā.</li>
 </ul>
+
+Pēc izvēles (ja Jūsu dati ir par plašākai publikai interesantu tēmu):
+arī jāpublisko datu vizualizācijas sociālajos tīklos (linki uz pārskatiem  
+vai attēli Twitter; video - YouTube u.c.) - un jānoskaidro citu lietotāju 
+reakcija. 
+
+
 
 
 

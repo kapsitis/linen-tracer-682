@@ -15,24 +15,71 @@
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Mājasdarbi</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Piemēri</a></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tales.html">Prezentācijas</a></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Aptaujas</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>Norādes</b></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html" selected="selected">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
 
-<p>Kursa lasāmviela pa tēmām</p>
+<p>Kursa lasāmviela pa tēmām: Lai nenogurdinātu ar apjomīgiem tehniskiem ievadiem, klasificējam 
+tēmas atbilstoši pielietojumu veidam - šo var uztvert kā uzziņas materiālu, kurā ievietojam un 
+atjaunojam linkus, kas noved pie lasāmvielas (vai videolekcijām). Kursa sākumposmā iepazīsim tehnoloģiju 
+"repertuāru" - kādi ir vienkāršākie un industrijas standarti vizualizāciju zīmēšanā. Tam seko 
+iepazīšanās pa nozarēm.</p>
+
+<p>Kas no tā attiecas uz konkrētu semināra apmeklētāju: Jāapgūst viena vizualizāciju tehnika tiktāl, 
+lai ar to varētu uzzīmēt savai darba vai mācību specifikai piemērotu, labajām praksēm atbilstošu un arī
+
+<h2>R kā matemātikas un statistikas rīks</h2>
 
 
+<h2>Ģeogrāfiski un citi telpiski dati</h2>
+
+<ul>
+<li><a href=""></a>Vienkārši eksperimenti ar Geocoding (koordināšu atrašana no )</li>
+</ul>
+
+
+
+<h2>Matemātisku procesu vizualizācijas</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=spUNpyF58BY">YouTube: What is the Fourier Transform? </a> - funkciju izvirzīšana Furjē rindā</li>
+<li><a href="https://www.youtube.com/watch?v=b9gj737v9UQ">YouTube: Ar Blender animēts MIDI fails (Bēthovena sonāte Nr.14)</a></li>
+<li><a href="https://www.youtube.com/watch?v=3s7h2MHQtxc&t=414s">YouTube: Hilbert's Curve: Is infinite math useful</a></li>
+</ul>
+
+
+
+
+
+<h2>Klimatiski un nenoteikti dati</h2>
+
+<ul>
+<li><a href="https://rstudio-pubs-static.s3.amazonaws.com/490914_dd66f78a92c042a8932da96726b2d877.html#1">Visualizing Uncertainty in R</a></li>
+</ul>
+
+
+
+<h2>Maldināšana ar statistiku un vizualizācijām</h2>
+
+<ul>
+<li><a href="https://youtu.be/Low28hx4wyk">YouTube: Alberto Cairo - How Charts Lie</a> - pārskats par to, kā pareizi nolasīt grafisko informāciju no diagrammām.</li>
+<li><a href="https://www.youtube.com/watch?v=uoH_kK-jR58">YouTube: Andrey Movchan: Economic Myths (in Russian)</a> - Par cēloņiem, kādēļ personīgi ieinteresēti vai neinformēti cilvēki 
+slikti interpretē datus par ekonomikas izaugsmi, kredītportfeļiem un nonāk pie nepareiziem vai kaitīgiem secinājumiem.</li>
+</ul>
 
 
 </body>

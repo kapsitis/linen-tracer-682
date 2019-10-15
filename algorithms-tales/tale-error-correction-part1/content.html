@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Kļūdu detekcija un korekcija</a></span><br />
+<span>(3) <a href="#/section-2">Kļūdu korekcijas kodi</a></span><br />
+<span>(4) <a href="#/section-3">Heminga kodi</a></span><br />
+<span>(5) <a href="#/section-4">Citi lineāri kodi</a></span><br />
+<span>(6) <a href="#/section-5">Rīda-Solomona pamatdoma</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup>
+<!--
+* Izvākt vairumu R-S kodu uz 2.daļu. 
+* Pievienot bildi, kurā 2d+1 attālums pamatots ar trijstūra nevienādību
+* Pievienot bildi ar epsilon-apkārtnēm - pie Heminga kodu optimalitātes pierādījuma. 
+* Atgādināt dzeltenajā slaidā par kreisi asociatīvām un labēji asociatīvām darbībām.
+
+--></section><section id="mērķi" class="slide level2">
+<h2><lo-theory/> Mērķi</h2>
+<ul>
+<li>Definēt kļūdu detekcijas un korekcijas atšķirības</li>
+<li>Pamatot apgalvojumu par divu kļūdu korekcijas kodu attālumu.</li>
+<li>Lietot un pamatot Heminga kodus.</li>
+</ul>
+</section></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Kļūdu detekcija un korekcija</strong></span><br />
+<span>(3) <a href="#/section-2">Kļūdu korekcijas kodi</a></span><br />
+<span>(4) <a href="#/section-3">Heminga kodi</a></span><br />
+<span>(5) <a href="#/section-4">Citi lineāri kodi</a></span><br />
+<span>(6) <a href="#/section-5">Rīda-Solomona pamatdoma</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="kļūdu-detekcija-un-korekcija" class="title-slide slide level1"><h1><lo-theory/> Kļūdu detekcija un korekcija</h1><p>Kļūdu detekcija:</p>
+<figure>
+<img data-src="error-detection.png" alt="Error detection" /><figcaption>Error detection</figcaption>
+</figure>
+<p>Kļūdu korekcija:</p>
+<figure>
+<img data-src="error-correction.png" alt="Error detection" /><figcaption>Error detection</figcaption>
+</figure></section><section id="bitu-paritātes-metode" class="slide level2">
+<h2><lo-summary/> Bitu paritātes metode</h2>
+<p><strong>Situācija:</strong> Pārraida <span class="math inline">\(n\)</span> bitu virkni <span class="math inline">\(x_1,x_2,\ldots,x_n \in \{ 0; 1\}\)</span>. Lai konstatētu iespējamu kļūdu <span class="math inline">\(1\)</span> bitā (kas var gan iestāties, gan neiestāties), pārraida <span class="math inline">\(n+1\)</span> bitus:<br />
+Visus <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> un arī pēdējo bitu <span class="math display">\[\left( x_1 + x_2 + \ldots + x_n \right)\,\text{mod}\,2.\]</span></p>
+<p>Pēdējais bits glabā visu iepriekšējo bitu paritāti. Tāpēc visu <span class="math inline">\(n+1\)</span> bitu paritāte ir <span class="math inline">\(0\)</span>. Ja pārraidē rodas viena kļūda, tad paritāte būs <span class="math inline">\(1\)</span>, un kļūdu varēs konstatēt.</p>
+</section><section id="crc-kontrolsumma" class="slide level2">
+<h2><lo-summary/> CRC kontrolsumma</h2>
+<figure>
+<img data-src="ethernet-frame.png" alt="Ethernet frame" /><figcaption>Ethernet frame</figcaption>
+</figure>
+<p>“Frame Check Sequence” (FCS) izmanto 32-bitu CRC (cyclical redundancy check). Tajā veic bitveida “XOR-ošanu stabiņā” ar maģisko skaitli <code>0xC704DD7B</code>.</p>
+<p>FCS 4 baitos ieraksta CRC doto atlikumu. Viena bita pārbaudīšana nav pietiekami droša; CRC32 ir noturīgāks pret pārraides kļūdām, kas var pārmainīt vairākus blakusesošus bitus.</p>
+<p>“Data link layer” (OSI Layer2) izmet tos freimus, kuri ir kļūdaini. Augstāka līmeņa transporta protokoli (TCP) palūdz kļūdainos freimus sūtīt atkārtoti.</p>
+</section><section id="md5-hešfunkcija" class="slide level2">
+<h2><lo-summary/> MD5 hešfunkcija</h2>
+<p>Garākiem failiem (kuri varbūt tikuši bojāti apzināti) var izmantot hešfunkcijas. Piemēram MD5 izveido 128 bitu virknīti (pieraksta kā 32 hex ciparus).</p>
+<figure>
+<img data-src="hashtools-1.png" alt="Hešfunkcijas" /><figcaption>Hešfunkcijas</figcaption>
+</figure>
+<p>MD5 hešfunkcijas kolīzijas…</p>
+</section></section>
+<section><section id="kļūdu-korekcija" class="title-slide slide level1"><h1><lo-theory/> Kļūdu korekcija</h1><figure>
+<img data-src="error-correction.png" alt="Error correction" /><figcaption>Error correction</figcaption>
+</figure>
+<p>Ideja visās metodēs - papildināt pārraidāmos datus ar papildinformāciju, cerot, ka papildinformācija ļaus pamanīt kļūdas.</p></section><section id="triviāls-kods-3x-atkārtošana" class="slide level2">
+<h2><lo-summary/> Triviāls kods: 3x atkārtošana</h2>
+<figure>
+<img data-src="repetition-code.png" alt="Repetition code" /><figcaption>Repetition code</figcaption>
+</figure>
+<p>Katru pārraidāmo bitu atkārto trīs reizes. Saņēmējs atrod, kādu bitu ir vairāk – nuļļu vai vieninieku. Šāds kods var izlabot kļūdu vienā bitā.</p>
+</section></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu detekcija un korekcija</a></span><br />
+<span style="color:darkgreen"><strong>(3) Kļūdu korekcijas kodi</strong></span><br />
+<span>(4) <a href="#/section-3">Heminga kodi</a></span><br />
+<span>(5) <a href="#/section-4">Citi lineāri kodi</a></span><br />
+<span>(6) <a href="#/section-5">Rīda-Solomona pamatdoma</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="korekcijas-koda-jēdziens" class="title-slide slide level1"><h1><lo-theory/> Korekcijas koda jēdziens</h1><p><strong>Definīcija:</strong> Par <span class="math inline">\([n,k,d]\)</span>-kodu sauc kļūdu korekcijas kodu, kurā<br />
+<span class="math inline">\(n\)</span> – bitu skaits, kurus kodējums faktiski pārraida,<br />
+<span class="math inline">\(k\)</span> – kodējamo bitu skaits,<br />
+<span class="math inline">\(d\)</span> – kļūdu skaits, ko iespējams koriģēt.</p>
+<p><strong>Piemērs:</strong> Atkārtošanas metodei <span class="math inline">\(n=3\)</span>, <span class="math inline">\(k=1\)</span>, <span class="math inline">\(d=1\)</span>, tāpēc tas ir <span class="math inline">\([3,1,1]\)</span>-kods.</p></section><section id="negatīvs-piemērs" class="slide level2">
+<h2><lo-summary/> Negatīvs piemērs</h2>
+<p>Vēlamies veidot kļūdu korekcijas kodu alfabētam, kurā ir <span class="math inline">\(3\)</span> ziņojumi: <span class="math inline">\(A = \{ a,b,c \}\)</span>. (Ziņojumu skaits nav divnieka pakāpe; informācijas saturs vienam ziņojumam ir <span class="math inline">\(\log_2 3 \approx 1.585\)</span> biti.)</p>
+<p>Piedāvājam kodēt ziņojumus <span class="math inline">\(a,b,c\)</span> attiecīgi ar kodiem <span class="math inline">\(S = \{ 1000,0101,1101 \}\)</span>.<br />
+Šāds kods nespēj koriģēt vienu kļūdu, jo, saņemot virkni <code>0101</code>, nav skaidrs, vai tika pārraidīta virkne <code>0101</code> (bez kļūdām) vai arī virkne <code>1101</code> (ar vienu kļūdu – pirmajā bitā).<br />
+Divdomīgs ir arī <code>1001</code> u.c.</p>
+</section></section>
+<section><section id="kļūdu-labošanas-koda-pazīmes" class="title-slide slide level1"><h1><lo-theory/> Kļūdu labošanas koda pazīmes</h1><p><strong>Teorēma:</strong> Kopa <span class="math inline">\(S\)</span> ir <span class="math inline">\([n,k,d]\)</span>-kods tad un tikai tad, ja<br />
+(1) <span class="math inline">\(S\)</span> sastāv no virknēm garumā <span class="math inline">\(n\)</span>,<br />
+(2) <span class="math inline">\(|S| \geq 2^k\)</span>, lai visām <span class="math inline">\(k\)</span>-bitu virknēm pietiktu kodu.<br />
+(3) katras divas virknes no <span class="math inline">\(S\)</span> atšķiras vismaz <span class="math inline">\(2d+1\)</span> vietās.</p>
+<p><strong>Pierādījums:</strong> Kods nespēj koriģēt <span class="math inline">\(d\)</span> kļūdas, ja eksistē virkne <span class="math inline">\(z = z_1z_2\ldots{}z_n\)</span> un divas kopas virknes <span class="math inline">\(x=x_1x_2\ldots{}x_n\)</span> un <span class="math inline">\(y=y_1y_2\ldots{}y_n\)</span>, kas katra atšķiras no <span class="math inline">\(z\)</span> ne vairāk kā <span class="math inline">\(d\)</span> vietās. Līdz ar to virknes <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> atšķiras ne vairāk kā <span class="math inline">\(2d\)</span> vietās. Tāpēc, lai kods spētu koriģēt kļūdas, katrām divām kopas <span class="math inline">\(S\)</span> virknēm ir jāatšķiras vismaz <span class="math inline">\(2d+1\)</span> vietā. <span class="math inline">\(\blacksquare\)</span></p></section><section id="piemērs-n3" class="slide level2">
+<h2><lo-summary> Piemērs n=3</h2>
+<p>Ja pārraidāmo bitu skaits ir <span class="math inline">\(n=3\)</span>, bet maksimāli pieļaujamo kļūdu skaits <span class="math inline">\(d=1\)</span>, tad vairāk par divām virknēm kopai <span class="math inline">\(S\)</span> nevar piederēt. Ja <span class="math inline">\(x_1x_2x_3 \in S\)</span>, tad otra var būt vienīgi tāda <span class="math inline">\(y_1y_2y_3\)</span>, ka <span class="math inline">\(y_1 \neq x_1\)</span>, <span class="math inline">\(y_2 \neq x_2\)</span>, <span class="math inline">\(y_3 \neq x_3\)</span>.</p>
+<p><strong>Secinājums:</strong> Eksistē <span class="math inline">\([n,k,d]\)</span> kods <span class="math inline">\([3,1,1]\)</span>, kas <span class="math inline">\(n=3\)</span> bitos pārraida <span class="math inline">\(k=1\)</span> satura bitu un var izlabot kļūdas, kuru skaits nepārsniedz <span class="math inline">\(d = 1\)</span>.<br />
+Lielāku bitu skaitu nekā <span class="math inline">\(k=1\)</span> (jeb divas atšķiramas virknes) pārraidīt nevar.</p>
+</section><section id="piemērs-n4" class="slide level2">
+<h2><lo-summary/> Piemērs n=4</h2>
+<p><strong>Apgalvojums:</strong> Ja pārraida <span class="math inline">\(n=4\)</span> bitus, arī tad nevar iekodēt vairāk par divām virknēm (kuras atšķiramas, ja kļūdu skaits nepārsniedz <span class="math inline">\(d=1\)</span>).</p>
+<p><strong>Pierādījums:</strong> Pieņemsim pretējo un aplūkosim trīs virknes, ko satur kopa <span class="math inline">\(S\)</span>: <span class="math inline">\(x_1x_2x_3x_4\)</span>,<br />
+<span class="math inline">\(y_1y_2y_3y_4\)</span> un <span class="math inline">\(z_1z_2z_3z_4\)</span>. Nekādas divas virknes nevar sakrist vairāk kā vienā vietā. Līdz ar to kopējais sakritību skaits nevar būt lielāks par <span class="math inline">\(3\)</span>.</p>
+</section><section id="piemērs-n4-turpināts" class="slide level2">
+<h2><lo-summary/> Piemērs n=4 (turpināts)</h2>
+<p>Ja kādā pozīcijā <span class="math inline">\(i\)</span> visi trīs biti sakristu (<span class="math inline">\(x_i = y_i = z_i\)</span>), tad būtu iegūta pretruna: visas trīs sakritības jau izlietotas, bet kaut kādām sakritībām jābūt arī citās pozīcijās <span class="math inline">\(j \neq i\)</span>, jo ir trīs skaitļi <span class="math inline">\(x_j\)</span>, <span class="math inline">\(y_j\)</span>, <span class="math inline">\(z_j\)</span> un tikai divas vērtības.</p>
+<p>Ja divi biti sakrīt, bet trešais – atšķiras, tad sakritību skaits šajā bitā ir 1. Tā kā mums ir 4 biti, tad varam secināt, ka kopējais sakritību skaits būs vismaz 4, kas ir pretrunā ar to, ka šis skaits nevar būt lielāks par 3.</p>
+<p>Tātad kopa <span class="math inline">\(S\)</span> nevar saturēt vairāk par divām virknēm. <span class="math inline">\(\blacksquare\)</span></p>
+</section><section id="piemērs-ja-n5-k2" class="slide level2">
+<h2><lo-sample/> Piemērs, ja n=5, k=2</h2>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1,x_1,x_2,x_2,(x_1 + x_2)\,\text{mod}\,2\)</span>
+</th>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<code>00000</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<code>00111</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<code>11001</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<code>11110</code>
+</td>
+</tr>
+</table>
+<p>Tabula parāda, kā kodēt divu bitu virknītes par piecu bitu virknītēm: divreiz pārraida pirmo bitu, divreiz - otro, bet pēdējais baits ir abu satura bitu paritāte.</p>
+<p><em>Piezīme:</em> Tabulā redzams <span class="math inline">\([5,2,1]\)</span>-kods.</p>
+</section><section id="vai-pie-n5-būt-vairāk-par-4-virknēm" class="slide level2">
+<h2><lo-sample/> Vai pie n=5 būt vairāk par 4 virknēm?</h2>
+<p><strong>Apgalvojums:</strong> Kopa <span class="math inline">\(S\)</span> pie <span class="math inline">\(n=5\)</span> un <span class="math inline">\(d=1\)</span> nevar saturēt vairāk par četrām virknēm.</p>
+<p>Pieņemsim pretējo un aplūkosim piecas virknes, ko satur kopa <span class="math inline">\(S\)</span>. Vismaz trim no tām pirmais bits būs vienāds, t.i., vai nu būs vismaz <span class="math inline">\(3\)</span> virknes, kurām pirmais bits vienāds ar <span class="math inline">\(0\)</span>, vai arī vismaz <span class="math inline">\(3\)</span> virknes, kurām pirmais bits vienāds ar <span class="math inline">\(1\)</span>.</p>
+<p>Šīm trim virknēm atšķirības var būt tikai pēdējos četros bitos. Bet četru bitu gadījumā jau tika pierādīts, ka lielākais atšķiramo virkņu skaits ir <span class="math inline">\(2\)</span>. Tāpēc kādas divas no šīm trim virknēm atšķirsies mazāk nekā trijās vietās. Pretruna. <span class="math inline">\(\blacksquare\)</span></p>
+</section></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu detekcija un korekcija</a></span><br />
+<span>(3) <a href="#/section-2">Kļūdu korekcijas kodi</a></span><br />
+<span style="color:darkgreen"><strong>(4) Heminga kodi</strong></span><br />
+<span>(5) <a href="#/section-4">Citi lineāri kodi</a></span><br />
+<span>(6) <a href="#/section-5">Rīda-Solomona pamatdoma</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="ja-pārraida-n7-bitus" class="title-slide slide level1"><h1><lo-theory/> Ja pārraida n=7 bitus</h1><hgroup>
+<p>No <span class="math inline">\(n=7\)</span> iespējams izveidot <span class="math inline">\(2^4 = 16\)</span> atšķiramas virknes:</p>
+</hgroup>
+<hgroup>
+<pre><code>0000000
+0000111
+0011001
+0011110
+0101010
+0101101
+0110011
+0110100
+1001011
+1001100
+1010010
+1010101
+1100001
+1100110</code></pre>
+</hgroup></section><section id="heminga-koda-konstruēšana" class="slide level2">
+<h2><lo-summary/> Heminga koda konstruēšana</h2>
+<p>Virkni <span class="math inline">\(x_1x_2x_3x_4\)</span> pārraida kā <span class="math inline">\(x_1x_2x_3y_1x_4y_2y_3\)</span>, kur</p>
+<p><span class="math display">\[y_1 = \left( x_1 + x_2 + x_3 \right)\,\text{mod}\,2\]</span> <span class="math display">\[y_2 = \left( x_1 + x_2 + x_4 \right)\,\text{mod}\,2\]</span> <span class="math display">\[y_1 = \left( x_1 + x_3 + x_4 \right)\,\text{mod}\,2\]</span></p>
+<p>Šis ir <span class="math inline">\([7,4,1]\)</span>-kods, ko sauc arī par <blue><em>Heminga kodu</em></blue> (<em>Haming code</em>).</p>
+</section></section>
+<section><section id="apgalvojums-par-hemingu-741" class="title-slide slide level1"><h1><lo-theory/> Apgalvojums par Hemingu [7,4,1]</h1><p><strong>Teorēma:</strong> Katras divas šādi konstruētas 7-bitu virknes atšķirsies vismaz <span class="math inline">\(3\)</span> vietās (tātad varēs izlabot vienu kļūdu).</p>
+<p><strong>Pierādījums:</strong> Apskatīsim jebkuras divas pareizi izrēķinātas (bez kļūdām saņemtas) virknes <span class="math inline">\(x_1x_2x_3y_1x_4y_2y_3\)</span> un <span class="math inline">\(x&#39;_1x&#39;_2x&#39;_3y&#39;_1x&#39;_4y&#39;_2y&#39;_3\)</span>.</p></section><section id="pierādījums---1" class="slide level2">
+<h2><lo-summary/> Pierādījums - 1</h2>
+<p><strong>1.gadījums:</strong> Atšķiras viens <span class="math inline">\(x_i\)</span>.<br />
+Katrs <span class="math inline">\(x_i\)</span> ietilpst vismaz <span class="math inline">\(2\)</span> no formulām priekš <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span>, <span class="math inline">\(y_3\)</span> un, mainoties <span class="math inline">\(x_i\)</span> vērtībai, mainīsies šo formulu vērtības. Tāpēc virknes atšķiras vismaz <span class="math inline">\(3\)</span> vietās: vienā <span class="math inline">\(x_i\)</span> un vismaz divos <span class="math inline">\(y_i\)</span>.</p>
+<div style="font-size:70%; color:blue;">
+<p><span class="math display">\[y_1 = \left( x_1 + x_2 + x_3 \right)\,\text{mod}\,2\]</span> <span class="math display">\[y_2 = \left( x_1 + x_2 + x_4 \right)\,\text{mod}\,2\]</span> <span class="math display">\[y_1 = \left( x_1 + x_3 + x_4 \right)\,\text{mod}\,2\]</span></p>
+</div>
+</section><section id="pierādījums---1-1" class="slide level2">
+<h2><lo-summary/> Pierādījums - 1</h2>
+<p><strong>2.gadījums:</strong> Atšķiras divi <span class="math inline">\(x_i\)</span>.<br />
+Apzīmējam atšķirīgos bitus ar <span class="math inline">\(x_i\)</span> un <span class="math inline">\(x_j\)</span>. Lai kādi būtu <span class="math inline">\(i\)</span> un <span class="math inline">\(j\)</span>, mēs vienmēr varam atrast vienu no <span class="math inline">\(y_i\)</span> formulām, kurā ietilpst viens no <span class="math inline">\(x_i\)</span> un <span class="math inline">\(x_j\)</span>, bet ne otrs. Virknes atšķirsies vismaz <span class="math inline">\(3\)</span> vietās: divos <span class="math inline">\(x_i\)</span> un šajā vienā <span class="math inline">\(y_i\)</span>.</p>
+<p><strong>3.gadījums:</strong> Atšķiras trīs <span class="math inline">\(x_i\)</span>.<br />
+Tad uzreiz ir <span class="math inline">\(3\)</span> atšķirības attiecīgajos <span class="math inline">\(x_i\)</span> (jo tos pārraida arī pašus).</p>
+</section></section>
+<section><section id="heminga-kods-vispārīgais-gadījums" class="title-slide slide level1"><h1><lo-theory/> Heminga kods: Vispārīgais gadījums</h1><p>Heminga kods sastāv no <span class="math inline">\(2^n-1\)</span> bitu virknēm, kurās <span class="math inline">\(2^n-n-1\)</span> biti tiek izmantoti ziņojumam, bet <span class="math inline">\(n\)</span> ir kontrolbiti, kas tiek izrēķināti no ziņojuma bitiem.</p>
+<p>Lai aprakstītu šo kodu, sanumurējam <span class="math inline">\(2^n-1\)</span> bitu pozīcijas ar skaitļiem <span class="math inline">\(1, 2, \ldots, 2^n-1\)</span>, šos skaitļus pierakstot binārajā skaitīšanas sistēmā (<code>000001</code>, <code>000010</code>, <span class="math inline">\(\ldots\)</span>, <code>111111</code>). Ir <span class="math inline">\(n\)</span> skaitļi, kuru binārajā pierakstā ir tieši viens <span class="math inline">\(1\)</span> (<code>000001</code>, <code>000010</code>, <span class="math inline">\(\ldots\)</span>, <code>100000</code>). Šajās pozīcijās būs kontrolbiti.</p>
+<p>Pārējās pozīcijas ir ziņojuma biti, kas var būt patvaļīgi.</p></section><section id="piemēri" class="slide level2">
+<h2><lo-theory/> Piemēri</h2>
+<p>Vispārinātais Hemings ir <span class="math inline">\(\left[ 2^n - 1, 2^n - n - 1,1 \right]\)</span> kods - koriģē tikai <span class="math inline">\(1\)</span> bitu.</p>
+<ul>
+<li>Ja <span class="math inline">\(n = 2\)</span>, tad iegūstam <span class="math inline">\([3,1,1]\)</span> (trīskāršā atkārtošana).</li>
+<li>Ja <span class="math inline">\(n = 3\)</span>, tad Hemings <span class="math inline">\([7,4,1]\)</span>.</li>
+<li>Ja <span class="math inline">\(n = 4\)</span>, tad Hemings <span class="math inline">\([15,11,1]\)</span>.</li>
+<li>Ja <span class="math inline">\(n = 5\)</span>, tad Hemings <span class="math inline">\([31,26,1]\)</span>.</li>
+<li>Ja <span class="math inline">\(n = 6\)</span>, tad Hemings <span class="math inline">\([64,57,1]\)</span>.</li>
+</ul>
+</section><section id="kontrolbitu-izrēķināšana" class="slide level2">
+<h2><lo-summary/> Kontrolbitu izrēķināšana</h2>
+<p><span class="math display">\[x_{0\ldots{}010\ldots{}0} = \left( 
+\sum\limits_{i_1,\ldots,i_{k-1},i_{k+1},\ldots,i_{n}}
+x_{i_1\ldots{}i_{k-1}1i_{k+1}\ldots{}i_n} \right)\;\text{mod}\;2.\]</span></p>
+<p>Lai atrastu, vai ir kļūda, rīkojās šādi. Ja kontrolbits pozīcijā <span class="math inline">\(0\ldots{}010\ldots{}0\)</span> (ar 1-nieku <span class="math inline">\(k\)</span>-tajā ciparā) <strong>nesakrīt</strong> ar to, kas izrēķināts pēc formulas, tad mēs zinām, ka kādā no bitiem, kuru numuriem <span class="math inline">\(k\)</span>-tā pozīcija <span class="math inline">\(=1\)</span> ir kļūda.</p>
+<p>Ja kontrolbits pozīcijā <span class="math inline">\(0\ldots{}010\ldots{}0\)</span> (ar 1-nieku <span class="math inline">\(k\)</span>-tajā ciparā) <strong>sakrīt</strong> ar to, kas izrēķināts pēc formulas, tad kļūda var būt tikai tajos bitos, kuru numuriem <span class="math inline">\(k\)</span>-tajā pozīcijā ir <span class="math inline">\(0\)</span> (jo visi biti ar 1 k-tajā pozīcijā ietilpst formulā).</p>
+</section><section id="kļūdas-atrašana" class="slide level2">
+<h2><lo-summary/> Kļūdas atrašana</h2>
+<p>Šādā veidā pēc katra kontrolbita var noteikt vienu bitu pozīcijai, kurā ir kļūda, numura. Kontrolbiti tad pilnībā nosaka šīs pozīcijas numuru. Ja iegūtais numurs ir <span class="math inline">\(000\ldots{}000\)</span> (t.i., visi kontrolbiti sakrita), tad kļūdas nav vispār. Citādi, mēs zinām, kurā vietā tā ir.</p>
+<p>Kas notiek, ja kļūda ir pašā kontrolbitā?</p>
+</section></section>
+<section><section id="heminga-koda-optimalitāte" class="title-slide slide level1"><h1><lo-theory/> Heminga koda optimalitāte</h1><p><strong>Teorēma:</strong> Ja <span class="math inline">\(S \subseteq \{ 0, 1\}^{2^n-1}\)</span> ir kods, kas spēj koriģēt vienu kļūdu, tad <span class="math display">\[|S| \leq 2^{2^n-n-1}.\]</span></p>
+<p>Šī teorēma nozīmē, ka virkņu skaitu Heminga kodā nevar uzlabot pat par <span class="math inline">\(1\)</span> virkni!</p></section><section id="optimalitātes-pierādījums" class="slide level2">
+<h2><lo-summary/> Optimalitātes pierādījums</h2>
+<p>Apzīmējam koda virknes ar <span class="math inline">\(v_1,\ldots,v_m\)</span>. Ar <span class="math inline">\(V_i\)</span> apzīmējam kopu, kur ietilpst <span class="math inline">\(v_i\)</span> un visas virknes, kas atšķiras no <span class="math inline">\(v_i\)</span> tieši vienā vietā (koda <span class="math inline">\(v_i\)</span> “<span class="math inline">\(\varepsilon\)</span>-apkārtne”).</p>
+<ol type="1">
+<li>Apkārtnēm <span class="math inline">\(V_i\)</span> un <span class="math inline">\(V_j\)</span> (<span class="math inline">\(i \neq j\)</span>) nav kopīgu elementu, citādi nevarētu veikt kļūdu korekciju.</li>
+<li>Katrā <span class="math inline">\(V_i\)</span> ietilpst tieši <span class="math inline">\(2^n\)</span> virknes: <span class="math inline">\(v_i\)</span> un <span class="math inline">\(2^n - 1\)</span> virknes, kas atšķiras no tās kādā <span class="math inline">\(1\)</span> pozīcijā.</li>
+</ol>
+<p>Tāpēc kopās <span class="math inline">\(V_1,V_2,\ldots,V_m\)</span> kopā ir <span class="math inline">\(2^n \cdot m\)</span> elementi. Tā kā ir pavisam <span class="math inline">\(2^{2^n - 1}\)</span> virkņu garumā <span class="math inline">\(2^n-1\)</span>, tad</p>
+<p><span class="math display">\[2^n \cdot m \leq 2^{2^n - 1} \;\;\Rightarrow\;\; m \leq 2^{2^n - n-1}.\]</span></p>
+</section></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu detekcija un korekcija</a></span><br />
+<span>(3) <a href="#/section-2">Kļūdu korekcijas kodi</a></span><br />
+<span>(4) <a href="#/section-3">Heminga kodi</a></span><br />
+<span style="color:darkgreen"><strong>(5) Citi lineāri kodi</strong></span><br />
+<span>(6) <a href="#/section-5">Rīda-Solomona pamatdoma</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="lineāra-koda-jēdziens" class="title-slide slide level1"><h1><lo-theory/> Lineāra koda jēdziens</h1><p>Jebkuru kodu, kurā katrs nokodētās virknes bits ir aprakstāms ar formulu <span class="math display">\[\left( x_{i_1} + \ldots + x_{i_k} \right)\,\text{mod}\,2\]</span> sauc par lineāru kodu. Heminga kods ir lineārs kods un gandrīz visi citi praksē lietotie kodi arī ir lineāri.</p>
+<p>Lineāru kodu var aprakstīt ar tā ģeneratormatricu. Ja <span class="math inline">\(n\)</span> ir kodētā ziņojuma garums, bet <span class="math inline">\(k\)</span> – nokodēto bitu skaits, tad ģeneratormatrica ir <span class="math inline">\(n \times k\)</span> matrica. Ja bits <span class="math inline">\(x_i\)</span> ietilpst formulāpēc kuras rēķina <span class="math inline">\(j\)</span>-to nokodētā ziņojuma bitu, tad šīs matricas <span class="math inline">\((i,j)\)</span>-ajā vietā ir <span class="math inline">\(1\)</span>. Citādi tur ir <span class="math inline">\(0\)</span>.</p></section><section id="lineāra-koda-piemērs" class="slide level2">
+<h2><lo-summary/> Lineāra koda piemērs</h2>
+<div style="font-size:70%">
+<p>Heminga <span class="math inline">\([7,4,1]\)</span> ģeneratormatrica izskatās šādi:</p>
+<p><span class="math display">\[G = \left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 1 &amp; 1 
+\end{array} \right)\]</span></p>
+<p>1.,2.,3. un 5. rinda apraksta kodētā ziņojuma bitu sakrišanu ar sākotnējā ziņojuma bitiem.<br />
+Pārējās rindas apraksta formulas kontrolbitiem.</p>
+</div>
+</section><section id="ziņojuma-kodēšana" class="slide level2">
+<h2><lo-summary/> Ziņojuma kodēšana</h2>
+<p>Lai nokodētu ziņojumu, mēs aprakstām to ar vektoru:</p>
+<p><span class="math display">\[\mathbf{x} = \left( \begin{array}{l}
+x_1\\
+x_2\\
+x_3\\
+x_4
+\end{array} \right)\]</span></p>
+<p>un tad reizinām šo vektoru ar ģeneratormatricu <span class="math inline">\(M\)</span>.<br />
+Nokodētais ziņojums būs <span class="math inline">\(M\mathbf{x}\)</span>, visus tā elementus rēķinot pēc moduļa <span class="math inline">\(2\)</span>.</p>
+</section><section id="lineāru-kodu-pareizības-pārbaude---1" class="slide level2">
+<h2><lo-summary/> Lineāru kodu pareizības pārbaude - 1</h2>
+<p>Atkodēšanai izmanto arī paritātes pārbaudes matricu. Hemingam <span class="math inline">\([7,4,1]\)</span> tā ir šāda:</p>
+<p><span class="math display">\[P = \left( \begin{array}{ccccccc}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1
+\end{array} \right).\]</span></p>
+<p>Katra tabulas rinda apraksta vienu no Heminga koda pārbaudēm (vai kontrolbits sakrīt ar noteiktu bitu summu pēc mod <span class="math inline">\(2\)</span>).</p>
+</section><section id="lineāru-kodu-pareizības-pārbaude---2" class="slide level2">
+<h2><lo-summary/> Lineāru kodu pareizības pārbaude - 2</h2>
+<p>Ja <span class="math inline">\(\mathbf{y}\)</span> – nokodētais ziņojums, <span class="math inline">\(P\)</span> – paritātes pārbaudes matrica un kļūdu nav, tad, rēķinot pēc mod <span class="math inline">\(2\)</span>, jāizpildās</p>
+<p><span class="math display">\[P\mathbb{y} = \left( \begin{array}{c}
+0 \\ 
+0 \\
+0 
+\end{array} \right).\]</span></p>
+<p>Paritātes pārbaudes matricu var izmantot arī, lai noteiktu, kur ir kļūdas, ja tādas ir, bet tas ir sarežģītāk un šajā kursā netiks aplūkots.</p>
+</section></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu detekcija un korekcija</a></span><br />
+<span>(3) <a href="#/section-2">Kļūdu korekcijas kodi</a></span><br />
+<span>(4) <a href="#/section-3">Heminga kodi</a></span><br />
+<span>(5) <a href="#/section-4">Citi lineāri kodi</a></span><br />
+<span style="color:darkgreen"><strong>(6) Rīda-Solomona pamatdoma</strong></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="rīda-solomona-metodes-ievads" class="title-slide slide level1"><h1><lo-theory/> Rīda-Solomona metodes ievads</h1><ul>
+<li>Ļauj labot lielu daudzumu kļūdu.</li>
+<li>Ziņojums pirms un pēc kodēšanas būs skaitļu virkne.</li>
+</ul>
+<p><strong>Metode:</strong> Sadala datus grupās pa <span class="math inline">\(k\)</span> skaitļiem.<br />
+<span class="math inline">\(a_1,a_2,\ldots,a_k\)</span> - viena grupa. Definē polinomu:<br />
+<span class="math display">\[f(x) = a_1x^{k-1} + a_2x^{k-2}+\ldots + a_{k-1}x + a_k.\]</span></p>
+<p>Skaitļu <span class="math inline">\(a_1,\ldots,a_k\)</span> vietā nosūta polinoma vērtības: <span class="math display">\[f(0),f(1),\ldots,f(s-1)\]</span> atbilstoši izraudzītam <span class="math inline">\(s&gt;k\)</span>.</p></section><section id="rīda-solomona-kodu-lietojumi" class="slide level2">
+<h2><lo-theory/> Rīda-Solomona kodu lietojumi</h2>
+<p>Patērētāju tehnoloģijas, kur nolasīšanā var rasties kļūdas</p>
+<ul>
+<li>Audio CD, DVD, Blu-ray diski,</li>
+<li>QR codes,</li>
+<li>Datu pārraide ar DSL un WiMAX,</li>
+<li>Satelītu sakari, DVB un ATSC,</li>
+<li>RAID 6.</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction">Reed-Solomon error correction</a></p>
+</section></section>
+<section><section id="algebras-pamatteorēma" class="title-slide slide level1"><h1><lo-theory/> Algebras pamatteorēma</h1><p><strong>Algebras pamatteorēma:</strong> Polinomu <span class="math inline">\(P(x)\)</span> ar pakāpi <span class="math inline">\(n&gt;0\)</span> var vienā vienīgā veidā izteikt sekojošā veidā: <span class="math display">\[P(x)=c(x-x_1)(x-x_2)\cdots(x-x_n),\]</span> kur <span class="math inline">\(x_i\)</span> ir polinoma <span class="math inline">\(P(x)\)</span> (kompleksas) saknes.<br />
+Izteikšanas veidus, kas atšķiras tikai ar reizinātāju secību uzskatām par vienādiem. Šeit <span class="math inline">\(c \neq 0\)</span> un kompleksie skaitļi <span class="math inline">\(x_1,\ldots,x_n\)</span> ne obligāti ir visi dažādi.</p></section><section id="vienas-sekas-no-pamatteorēmas" class="slide level2">
+<h2><lo-theory/> Vienas sekas no pamatteorēmas</h2>
+<p><strong>Sekas 1:</strong> Ja ir polinoms <span class="math inline">\(h(x)\)</span> ar pakāpi ne lielāku par <span class="math inline">\(k\)</span> un <span class="math inline">\(h(x) \neq 0\)</span> (nav identiski vienāds ar <span class="math inline">\(0\)</span>), tad ir ne vairāk kā <span class="math inline">\(k\)</span> tādi <span class="math inline">\(x\)</span>, kam <span class="math inline">\(h(x) = 0\)</span>.<br />
+Citiem vārdiem: <span class="math inline">\(h(x)\)</span> ir ne vairāk kā <span class="math inline">\(k\)</span> saknes.</p>
+<p><strong>Pierādījums:</strong> Izriet no algebras pamatteorēmas: ja sakņu <span class="math inline">\(x_i\)</span> būtu vairāk, <span class="math inline">\(h(x)\)</span> varētu izteikt kā visu <span class="math inline">\((x-x_i)\)</span> reizinājumu. Atverot iekavas izrādītos, ka <span class="math inline">\(h(x)\)</span> pakāpe pārsniedz <span class="math inline">\(k\)</span>. Pretruna.</p>
+</section><section id="otras-sekas-no-pamatteorēmas" class="slide level2">
+<h2><lo-theory/> Otras sekas no pamatteorēmas</h2>
+<div style="font-size:70%">
+<p><strong>Sekas 2:</strong> Ja diviem polinomiem <span class="math inline">\(f(x)\)</span> un <span class="math inline">\(g(x)\)</span> pakāpes nepārsniedz <span class="math inline">\(k-1\)</span> un to vērtības sakrīt <span class="math inline">\(k\)</span> dažādos punktos, tad tie ir identiski vienādi.</p>
+<p><strong>Pierādījums:</strong> Atņemam abus polinomus un apzīmējam: <span class="math display">\[h(x) = f(x)-g(x).\]</span> Katrs punkts <span class="math inline">\(x_i\)</span>, kur <span class="math inline">\(f(x)=g(x)\)</span> ir sakne polinomam <span class="math inline">\(h(x)\)</span>. Arī polinoma <span class="math inline">\(h(x)\)</span> pakāpe nepārsniedz <span class="math inline">\(k-1\)</span>. Ja sakņu būtu vairāk par <span class="math inline">\(k\)</span>, tad <span class="math inline">\(h(x)\)</span> būtu identiska nulle.</p>
+<p><em>Piemēri:</em> Caur diviem punktiem var novilkt tikai vienu taisni (1.pakāpes polinomu) <span class="math inline">\(P(x)=a_1x+a_2\)</span>.<br />
+Caur trim punktiem <span class="math inline">\((a_1,b_1)\)</span>,<span class="math inline">\((a_2,b_2)\)</span>,<span class="math inline">\((a_3,b_3)\)</span>, kur <span class="math inline">\(a_1,a_2,a_3\)</span> ir pa pāriem dažādi, var novilkt tikai vienu parabolu vai taisni (t.i. 2.pakāpes vai 1.pakāpes polinomu, utt.).</p>
+</div>
+</section></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu detekcija un korekcija</a></span><br />
+<span>(3) <a href="#/section-2">Kļūdu korekcijas kodi</a></span><br />
+<span>(4) <a href="#/section-3">Heminga kodi</a></span><br />
+<span>(5) <a href="#/section-4">Citi lineāri kodi</a></span><br />
+<span>(6) <a href="#/section-5">Rīda-Solomona pamatdoma</a></span><br />
+<span style="color:darkgreen"><strong>(7) Kopsavilkums</strong></span></p>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -84,6 +84,9 @@ class ProblembaseTasksHandler(webapp2.RequestHandler):
             lst_tasks = json.load(f)
         with open('data/nfound.json') as f2:
             lst_nfound = json.load(f2)
+        with open('data/global_navigation.json') as f3:
+            nav_items = json.load(f3) 
+
         
         for task in lst_tasks:
             task['esc_desc'] = escape_math_seq(task['desc'])
@@ -105,7 +108,9 @@ class ProblembaseTasksHandler(webapp2.RequestHandler):
         template_context = {                
             'lst_tasks': lst_tasks,
             'title': u'Uzdevumu DB: Prasmes',
-            'nfound_lst': lst_nfound
+            'nfound_lst': lst_nfound,
+            'course': 'problembase',
+            'nav_items': nav_items
         }            
         template = jinja_env.get_template('problembase/tasks.html')
         output = template.render(template_context)

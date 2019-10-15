@@ -20,6 +20,58 @@
 </hgroup>
 
 
+
+<!--
+(1) Deskriptīvā statistika. 
+----------------------------
+Par to, kā atšķiras vidējā vērtība plus sd no mediānas un IQR - starpkvartiļu attāluma. 
+Par to, kas ir Q80/Q20 rādītājs. 
+Par to, kas ir Džini indekss. 
+
+Kāpēc vidējais rezultāts par centralizēto matemātiku neatspoguļo 
+neko tādu īpašu; kā vajadzētu kalibrēt datus, put the grade on curve. 
+Kuri dati jāmēra ar vidējo vērtību, kuri ar mediānu? 
+
+
+Kas ir kvalitatīvi un kas - kvantitatīvi dati. 
+Kādas lietas attēlo histogrammās, kādas - joslu diagrammās? 
+
+Kādā veidā nevajag attēlot histogrammas, ja intervāli ir nevienādi. 
+(Histogrammas depopulācijas gadījumā...)
+
+Kā var šmaukties ar lineālu... Kā parādīt fuel-efficiency nepareizi? 
+
+Statistiskie modeļi - lineārās regresijas diagramma... 
+
+
+Burbuļu diagrammas... 
+Interaktīvas kartes....
+
+
+
+---- Kuros jautājumos vajag vizualizācijas
+(1) Augsta līmeņa pārskati - 
+(2) Komunicēt ļoti piņķerīgus datus (klimata zinātne, makroekonomika, u.c.)
+(3) Parādīt drošības notikuma "traceability" - ja no datora lēmuma atkarīga
+reālu cilvēku dzīve, nevar atstāt to kā melno kasti. 
+
+
+-->
+
+
+<!--
+(1) Rīki: Kā uzlikt R, RStudio. 
+(2) Kā uzlikt Web serverīti, JavaScript. 
+(3) Kā uzlikt Python vidi. 
+
+
+--> 
+
+
+
+
+
+<!--
 # <lo-theory/> "Zinātnisks kalkulators"
 
 Valodas R iespējas mācību priekšmetos:
@@ -34,25 +86,124 @@ Valodas R iespējas mācību priekšmetos:
 Informātikas olimpiādēs lieto citas
 valodas (Pascal, C/C++, Java, Python).
 
-## <lo-summary/> R alternatīvas
+--> 
 
-* **Izklājlapas:** <blue>MS Excel</blue>, <blue>LibreOffice Calc</blue>. Labi piemērotas datu *ievadei* un 
-arī "gudrai" pārlūkošanai - iespējamas formiņas, atklikšķināmas hierarhijas, filtri, u.c.
-Zīmē diagrammas, to uzvedību var arī mainīt ar programmām 
+# <lo-theory/> Pārskati un datu vizualizācija
+
+Datu vizualizācija (tāpat kā, teiksim, teātris) ir "sintētiska" 
+lietojumu joma, kur apvienojas dažas konkrētas lietas:
+
+* Deskriptīvā statistika un statistiskā modelēšana
+* Mašīnmācīšanās - klasterizācija, rezultātu ranžēšana
+* Analītiskā ģeometrija, vektorgrafika, datoranimācija
+* Datubāzes u.c. datu struktūras
+* Datu noliktavas un semantiskais tīmeklis
+* Ģeogrāfiski u.c. telpiski dati
+* UI, grafiskais dizains, lietojamība
+* PDF, HTML, Word dokumentu radīšana ar WYSIWYG un marķēšanas valodām
+* Programmēšana un Web izstrāde
+* Prezentāciju veidošana, cilvēku pārliecināšana, un demagoģija
+
+
+
+## <lo-theory/> Deskriptīvā statistika
+
+**Kāpēc to vajag?** Tiešā veidā skatoties uz (statistiski neapstrādātiem) 
+datiem, tajos ir grūti kaut ko saprast. 
+
+Deskriptīvā statistika parāda veidus, 
+kā īsi apkopot (*summarize*) lielas datu kopas datu atribūtus. 
+**Kvantitatīviem** datu atribūtiem aplūko
+caurmēra novērtējumus (vidējo vērtību, mediānu) un izkliedes novērtējumus 
+(dispersiju vai standartnovirzi, starpkvartiļu attālumu, datu diapazonu u.c.).  
+**Kvalitatīviem** datu atribūtiem var apskatīt vērtību relatīvo biežumu. 
+Šos raksturlielumus var tālāk attēlot histogrammās 
+(attiecīgi kvalitatīviem datiem - joslu vai sektoru diagrammās).
+
+**Piemērs:** Centralizētais matemātikas eksāmens pēc 12.kl. Vai eksāmena datus 
+analizē pareizi? 
+
+::: notes
+
+https://www.statisticshowto.datasciencecentral.com/point-biserial-correlation/
+
+:::
+
+
+## <lo-theory/> Statistiskā modelēšana
+
+
+**Modeļi** apskata reālu datu tuvināšanu ar 
+matemātiski aprakstāmu deterministisku vai varbūtisku procesu, ko ir vieglāk 
+analizēt un arī zīmēt. Kļūdu novērtējumi, piemēram, dabaszinātņu eksperimentos 
+vai socioloģiskās aptaujās izriet no statistiskiem modeļiem.
+
+Slikti izvēlēts modelis ir kā Roršaha tests - jebkuros datos var ieraudzīt
+neparastas formas, korelācijas u.c. (MMR vakcīnas un autisms...)
+
+**Piemērs:** Francis Galtons - tēvu un dēlu garumi, piemēram, centimetros. 
+Viena no pirmajām lineārajām regresijām.  
+(Bet ne katram punktu mākonītim var vilkt cauri regresijas taisni. Jābūt
+precīzi nomērītam neatkarīgajam mainīgajam, neatkarīgiem mērījumiem, 
+normāli sadalītiem un homogēni izvietotiem atlikumiem.)
+
+::: notes
+
+https://socratic.org/questions/how-do-you-know-when-a-linear-regression-model-is-appropriate
+
+:::
+
+
+
+
+# <lo-summary/> Praktiska vizualizācija: Rīki 
+
+* **R/RStudio/KnitR+ggplot2** - veido pārskatus u.c. strukturētus dokumentus.  
+Marķēšana ar `Markdown` (arī Pandoc, Github, Reveal.JS izmantots standarts). 
+Dokumentu kompilē visu uzreiz vai pa daļām; tajā līdz ar datu kopu 
+atjaunojas visas tabulas un diagrammas. 
+* **Python/Eclipse-PyDev/Matplotlib** - veido atsevišķus attēlus vai vienkāršas 
+animācijas. 
+* **JavaScript/IDE-?/D3** - veid
+
+
+::: notes
+
+https://towardsdatascience.com/animations-with-matplotlib-d96375c5442c
+
+Mums ir iecere - uzstādīt katram studentam minimālu vizualizācijas rīku komplektu: R+RStudio (vajadzības gadījumā arī Python un/vai JavaScript vidi ar mazu vietējo Web serverīti - piemēram Google Web Apps), kur Jūs varēsiet palaist dažus piemērus - un sākt taisīt sev vajadzīgās bildes vai pārskatus. 
+
+:::
+
+
+
+
+
+
+
+## <lo-summary/> R alternatīvas datu apstrādē
+
+* **Izklājlapas:** <blue>MS Excel</blue>, 
+<blue>LibreOffice Calc</blue>. Piemērotas datu ievadei un pārlūkošanai. 
+Datu ievades formiņas, atsevišķu gabalu noslēpšana vai atfiltrēšana.
+Diagrammas zīmē ar VBA
 (VBA - Visual Basic for Applications).
-* **Maksas produkti:** <blue>IBM SPSS</blue>, <blue>STATA</blue>. Arī <blue>MATLAB</blue>, 
-<blue>Mathematica</blue>, <blue>Maple</blue>. Sk. 
-[ComputerBasedMath](https://www.computerbasedmath.org).
-* **Universālas programmēšanas valodas:** Python, Java/Scala, JavaScript/D3.
+* **Maksas produkti:** <blue>IBM SPSS</blue>, 
+<blue>STATA</blue>. Arī <blue>MATLAB</blue>, 
+<blue>Mathematica</blue>, <blue>Maple</blue>.
+* **Universālas programmēšanas valodas:** Python, 
+Java/Scala, JavaScript/D3.
 [PYPL - Programmēšanas valodu salīdzinājums](http://pypl.github.io/PYPL.html)
+
+
 
 
 ## <lo-summary/> Ko satur R programmēšanas vide
 
-* R ir <blue>programmēšanas valoda</blue>; nav atkarīga 
-no tā, kur to raksta (RStudio, Notepad++, u.c.).
+* R ir <blue>programmēšanas valoda</blue>; 
+kodu var rakstīt ar (RStudio, Notepad++, u.c.).
 * RStudio ir <blue>*integrētā vide*</blue> (*IDE*), 
-kur programmēt valodā R. 
+kur programmē valodā R. 
 * R ir daudz bezmaksas <blue>*pakotņu*</blue> (*packages*), 
 kas veic sarežģītus aprēķinus, zīmē bildes, u.c.
 
@@ -67,7 +218,7 @@ Sk. [Microsoft acquires Revolution Analytics (2015)](https://www.cio.com/article
 
 **Soļi:**
 
-1. Vispirms uzstāda R, 
+1. Vispirms uzstāda R,
 2. Tad uzstāda RStudio. 
 3. Pārbauda, vai RStudio pareizi strādā
 4. Instalē dažas pakotnes. 

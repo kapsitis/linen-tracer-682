@@ -53,14 +53,17 @@ def get_html_links(lst_problems):
 class ProblembaseReportsConceptsHandler(webapp2.RequestHandler):    
     
     def get(self,my_id):
+        with open('data/summary_concepts.json') as f1:
+            summary_concepts = json.load(f1)
+        with open('data/global_navigation.json') as f2:
+            nav_items = json.load(f2)  
+
         if my_id.find('/') > -1:
             params = my_id.split('/')
             theParam = params[1]
         else:
             theParam = my_id
         
-        with open('data/summary_concepts.json') as f1:
-            summary_concepts = json.load(f1)
         problems = list()
         for concept in summary_concepts:
             if concept['c_id'] == theParam:
@@ -69,7 +72,9 @@ class ProblembaseReportsConceptsHandler(webapp2.RequestHandler):
         template_context = {
             'title': u'Uzdevumu DB: Populārie jēdzieni',
             'problems': get_html_links(problems),
-            'my_id': theParam
+            'my_id': theParam,
+            'course': 'problembase',
+            'nav_items': nav_items
         }            
         template = jinja_env.get_template('problembase/reports-concepts.html')
         output = template.render(template_context)

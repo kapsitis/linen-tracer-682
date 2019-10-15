@@ -17,20 +17,27 @@
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html" selected="selected">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
 
+<table border="0">
+<tr>
+<td><img src="../algorithms-bin/Pictures/logo.png" style="width:200px"/></td>
+<td style="vertical-align:top">
 <ul>
 <li><a href="../algorithms-bin/lu-datz4020-syllabus-2019-fall.pdf">DatZ4020 Syllabus, 2019.g. rudens</a></li>
-<li><a href="https://www.lu.lv/lv/nc/studijas/studiju-celvedis/programmu-un-kursu-katalogi/kursu-katalogs/?tx_lustudycatalogue_pi1%5Bcourse%5D=DatZ4020&tx_lustudycatalogue_pi1%5Baction%5D=detail&tx_lustudycatalogue_pi1%5Bcontroller%5D=Course&cHash=c3ba047ba1e7775b94f0d291e49368ef">LU Kursu katalogs</a></li>
 </ul>
-
-
+</td>
+</tr>
+</table>
 
 </html>

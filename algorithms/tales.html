@@ -22,14 +22,25 @@
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html" selected="selected">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
+
+
+<a href="https://www.lu.lv/lv/nc/studijas/studiju-celvedis/programmu-un-kursu-katalogi/kursu-katalogs/?tx_lustudycatalogue_pi1%5Bcourse%5D=DatZ4020&tx_lustudycatalogue_pi1%5Baction%5D=detail&tx_lustudycatalogue_pi1%5Bcontroller%5D=Course&cHash=c3ba047ba1e7775b94f0d291e49368ef">DatZ4020 apraksts LU Kursu katalogā</a></li>
+
+<p><small>Tastatūras komandas Reveal.JS prezentācijās:
+<b>S</b> - spīkera skats; <b>F</b> - pilnekrāna režīms; 
+<b>Esc</b> - pārskats; <b>Home</b> - uz sākumu; <b>End</b> - uz beigām; 
+bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
 
 <ul>
 {% for tale in tales %}

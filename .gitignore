@@ -16,6 +16,7 @@ dist/
 downloads/
 # lib/
 lib64/
+data/algorithms_grades.json
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

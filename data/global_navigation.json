@@ -1,0 +1,22 @@
+[
+    {
+        "subdir": "numtheory",
+        "title": "Skaitļu teorija"
+    },
+    {
+        "subdir": "algorithms",
+        "title": "4020: Lietišķie algoritmi"
+    },
+    {
+        "subdir": "visualizations",
+        "title": "Vizualizāciju seminārs"
+    },
+    {
+        "subdir": "rbs",
+        "title": "RBS Courses"
+    },
+    {
+        "subdir": "problembase",
+        "title": "Olimpiāžu uzdevumu DB"
+    }
+]    

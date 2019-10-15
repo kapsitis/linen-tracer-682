@@ -16,26 +16,94 @@
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Mājasdarbi</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Piemēri</a></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Prezentācijas</b></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Aptaujas</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html" selected="selected">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
+
 
 <ul>
 {% for tale in tales %}
 <li><a href="../visualizations-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
 {% endfor %}
 </ul>
+
+
+<p><small>Tastatūras komandas Reveal.JS prezentācijās:
+<b>S</b> - spīkera skats; <b>F</b> - pilnekrāna režīms; 
+<b>Esc</b> - pārskats; <b>Home</b> - uz sākumu; <b>End</b> - uz beigām; 
+bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
+
+<b>2019-09-12: Iepazīšanās ar tematiku un aprakstošā statistika</b>
+
+<ul>
+<li>Semināra satura pārskats. Datu mācības iedvesmas avoti. 
+Vizualizāciju kvalitāte; lietotāju atsaucības mērīšana.</li>
+<li>Aprakstošā statistika (<i>descriptive statistics</i>).  
+Jēdzieni kvalitatīviem datiem (relatīvais biežums, joslu diagrammas un reizēm sektoru diagrammas), 
+kvantitatīviem datiem (histogrammas). Kāpēc histogrammas atšķiramas no joslu diagrammām 
+(nepārtraukts sadalījums, nav atstarpju 
+starp stabiņiem, dažādu platumu intervāli, laukuma saglabāšanas princips).
+Kad izmantojama vidējā vērtība un standartnovirze, kad - mediāna un starpkvartiļu attālums. 
+Kastīšu diagramma (<i>boxplot</i>). Džini koeficients un 20:20 attiecība kā nevienlīdzības
+mēri.</li>
+<li><a href="http://linen-tracer-682.appspot.com/visualizations/problems.html">Vizualizāciju piemēri</a>.</li>
+<li><b>Dalībnieki:</b> (30') Par profesionālajā darbībā, kursa- un bakalauru darbos, 
+citos priekšmetos sastaptajiem datiem, to vizualizēšanu</a></li> 
+</ul>
+
+<b>2019-09-19: Vizualizācijas ar D3</b>
+
+<ul>
+<li><a href="../visualizations-tales/d3-intro/content.html">D3 intro</a></li>
+<li>(15') Kā uzlikt vidi, lai strādātu ar D3 (interaktīva SVG vektorgrafika ar JavaScript).</li>
+<li><b>Dalībnieki:</b> Par lietotāju datu savākšanu formās. Datu vākšanas piemērs: 
+Emocionālā reakcija uz dažādām ģeometriskām figūrām.</li>
+</ul>
+
+<b>2019-09-26: Datu iegūšana no Web lapām</b>
+
+<ul>
+<li><a href="../visualizations-tales/r-language-intro/content.html">Valodas R ievads</a></li>
+<li><b>Dalībnieki:</b> Turpinām skatīties figūriņu datu kopu. 
+Kā arī aneirismu datu kopu.</li>
+</ul>
+
+<b>2019-10-03: Matplotlib</b>
+
+<ul>
+<li><a href="../visualizations-tales/matplotlib-intro/content.html">Matplotlib ievads</a></li>
+<li><b>Dalībnieki:</b> LU kursu aptauju dati.</li>
+</ul>
+
+
+
+<b>Nākamās tēmas</b>
+
+<ul>
+<li>Pārskatu veidošana ar KnitR un Jupyter Notebook</li>
+<li>Lietotāju datu savākšana savā mājaslapā un citās lapās. 
+Lietotāju izsekošanas paņēmieni - sīkdatnes, 
+pikseļu tagi, pārlūkprogrammu digitālnospiedumi (<i>fingerprints</i>), 
+Bluetooth/ultraskaņas bojas (<i>beacons</i>). 
+Web lapu datu savākšana, izmantojot programmējamu API, 
+TagSoup un regulāras izteiksmes. 
+</li>
+</ul>
+
 
 
 

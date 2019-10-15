@@ -10,7 +10,9 @@
 </head>
 
 <body>
-<h1>Skaitļu teorija (juniori): Prezentācijas</h1>
+
+
+<h1>Izlases nodarbības (2019./2020.m.g.)</h1>
 
 
 
@@ -23,26 +25,41 @@
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html" selected="selected">Skaitļu teorija</option>
-   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
 
-<p><b>Vidusskolu 7.-12.klašu tēmas:</b> 
-Šīs ir elementārās matemātikas tēmas, lai pārvarētu Latvijas novadu/valsts 
-olimpiāžu filtrus. Junioru nodarbībās šos materiālus tieši neizmanto, bet tie
-ir šī kursa priekšnoteikums (<i>prerequisite</i>).
-<a href="/problembase/tasks.html">Vidusskolēnu prasmju saraksts</a>.</p>
 
 
-<b>Speciālās komandas HTML prezentācijās:</b> 
+
+<p>Speciālās komandas HTML prezentācijās: 
 <b>S</b> - spīkera skats; <b>F</b> - pilnekrāna režīms; 
 <b>Esc</b> - pārskats; <b>Home</b> - uz sākumu; <b>End</b> - uz beigām; 
-bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.
+bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</p>
+
+<ul>
+{% for tale in global_tales %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a> ({{tale.date}})</li></li>
+{% endfor %}
+</ul>
+
+<hr style="width:50%"/>
+
+<section style="font-size:80%">
+<b>Nacionālā līmeņa olimpiāde (7.-12.klašu tēmas):</b> 
+Elementārās matemātikas tēmas, lai pārvarētu Latvijas novadu/valsts 
+olimpiāžu filtrus. Junioru nodarbībās šos materiālus tieši neizmanto, bet tie
+ir kursa priekšnoteikums (<i>prerequisite</i>).
+Sk. arī <a href="/problembase/tasks.html">Vidusskolēnu prasmju saraksts</a>.</p>
+
 
 <ul>
 {% for tale in local_tales %}
@@ -54,16 +71,7 @@ bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.
 {% endfor %}
 </ul>
 
-<b>Izlases nodarbību nodaļas (2019./2020.m.g.)</b>
-
-<ul>
-{% for tale in global_tales %}
-<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a> ({{tale.date}})</li></li>
-{% endfor %}
-</ul>
-
-
-
+</section>
 
 
 

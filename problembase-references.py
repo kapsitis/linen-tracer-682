@@ -13,9 +13,13 @@ jinja_env = jinja2.Environment(
 class ProblembaseReferencesHandler(webapp2.RequestHandler):    
     
     def get(self,my_id):
+        with open('data/global_navigation.json') as f1:
+            nav_items = json.load(f1)                
         template_context = {
             'my_id': my_id,
-            'title': u'Uzdevumu DB: Norādes'            
+            'title': u'Uzdevumu DB: Norādes',
+            'course': 'problembase',
+            'nav_items': nav_items   
         }
         template = jinja_env.get_template('problembase/references.html')
         output = template.render(template_context)

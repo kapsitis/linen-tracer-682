@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Introduction</strong></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup>
+<!--
+
+Validate - Your TODO lists
+Your plans to learn new skills
+
+--></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>How do the course deliverables (timetable, grading guidelines) align with the goals of your project?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Why the implementation of an idea leads you to other/deeper ideas?</li>
+<li>Why does the focus of your activities shift as you develop a solution?</li>
+</ul>
+</div>
+<aside class="notes">
+<p>The devil is in the details. Every successful human endeavor is based on loads of technical expertise in a range of topics.</p>
+</aside></section><section id="reminder-hackathon" class="slide level2">
+<h2><lo-summary/> Reminder: Hackathon</h2>
+<p><strong>Can ask your colleagues, who is going there:</strong></p>
+<ul>
+<li>Valmiera; October 18, 2019. Continues until October 19, 2019.</li>
+<li>Contacts (both IT and BizDev) and similar project ideas.</li>
+<li>Large data solutions (Hadoop, etc.)</li>
+<li>Mentors who could assist with Virtual Reality.</li>
+</ul>
+<p><strong>Other news from the North-East:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Nn8pSfcrxbM">ALTUM ad: How to experience 8 centuries in 10 minutes?</a> - a tourist-oriented product about the castle in Cēsis/Wenden (a town with about 18 thousand inhabitants).</li>
+</ul>
+<aside class="notes">
+<p>Uzņēmums Lumiere Brothers Cēsu pilī radījis vēl nebijušu piedzīvojumu laikā, ļaujot skatītājam izdzīvot 8 gadsimtus 10 minūtēs. Kā radās biznesa ideja? Uzzini vairāk par valsts atbalstu biznesam: www.altum.lv. #ESfondi | #InvestEU</p>
+</aside>
+</section><section id="optional-reading" class="slide level2">
+<h2><lo-summary/> Optional Reading</h2>
+<hgroup>
+<p><em>What makes it hard to use “big data” solutions in government agencies?</em></p>
+<p><a href="https://medium.com/code-for-america/ai-deserts-fc210fc2fd41">AI Deserts by Jennifer Pahlka</a></p>
+</hgroup>
+<hgroup>
+<figure>
+<img data-src="desert-picture.jpeg" alt="AI Deserts" /><figcaption>AI Deserts</figcaption>
+</figure>
+<p><small>image courtesy <a href="https://flickr.com/photos/fotos_medem/">Santiago Medem</a> via flickr (CC BY-SA 2.0)</small></p>
+</hgroup>
+</section><section id="our-plan-for-today" class="slide level2">
+<h2><lo-summary/> Our Plan for Today</h2>
+<p><strong>Explain some new concepts:</strong></p>
+<ul>
+<li>Functional Design</li>
+<li>Technical Design</li>
+<li>Proof of Concept (POC)</li>
+<li>Development Environment, Production Environment</li>
+<li>V-Model and Iterations; Software Engineering process</li>
+<li>Minimum Viable Product (MVP)</li>
+</ul>
+</section></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span style="color:darkgreen"><strong>(2) Grading Activities</strong></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="items-in-your-syllabus" class="title-slide slide level1"><h1><lo-theory/> Items in your Syllabus</h1><ul>
+<li>Prototype: 300 points (The product and its technical implementation; mostly Kalvis)</li>
+<li>Class contribution: 200 points (various assignments and evaluations: mostly Claudio and Kalvis)</li>
+<li>Team Progress Reports (4 x 50): 200 points (Business Development perspective: mostly Viesturs)</li>
+<li>Final presentation 300 points (Delivering the product including progress reports: All 3 instructors)</li>
+</ul>
+<p>Most items are graded for the team; some individual grades.</p></section><section id="what-is-prototype" class="slide level2">
+<h2><lo-summary/> What is “Prototype”</h2>
+<div style="font-size:70%">
+<ol type="1">
+<li><red><strong>Functional Design and Technical Design</strong></red> (documents are readable and traceable):<br />
+<blue><strong>up to 50 points</strong></blue> – explained today; due date: <blue><em>October 18, 2019</em></blue>.</li>
+<li><strong>The Delivered Product matches the requirements and design</strong> (demos of the product reflect the actual promises):<br />
+<blue><strong>up to 50 points</strong></blue> – “Iteration Reviews” on November 1, November 15, November 29, 2019.</li>
+<li><strong>Development Environment (the ease of project configuration)</strong> (can run on all machines, easy to update and to make changes):<br />
+<blue><strong>up to 50 points</strong></blue> – By the end of the 1st Iteration (November 1, 2019).</li>
+<li><strong>Testability of the solution</strong> (controllable procedures to follow the quality of your content, to fix the user experience; peer-reviews; change-requests; issue management; regression testing): <blue><strong>up to 50 points</strong></blue> – All 3 iteration reviews (and the iteration when you deliver MVP).</li>
+<li><strong>Customer satisfaction</strong> (evaluation or measurable feedback from the customers - Bauska municipality, its instututions and schools; end users):<br />
+<blue><strong>up to 100 points</strong></blue> – During the final presentation (early December).</li>
+</ol>
+</div>
+</section><section id="what-is-class-contribution" class="slide level2">
+<h2><lo-summary/> What is “Class contribution”</h2>
+<ol type="1">
+<li><strong>Working Agreement</strong>: <blue><strong>up to 20 points</strong></blue> - already submitted</li>
+<li><strong>Tools and Methods for Productivity</strong>: <blue><strong>up to 30 points</strong></blue> (individual plan to learn some simple skill to make your project work more efficient) - skill wishlists already submitted</li>
+<li><strong>Agile Development Process</strong>: <blue><strong>up to 50 points</strong></blue> - Small reading assignments about the software engineering best practices. (Essential Scrum: A Practical Guide to the Most Popular Agile Process. Addison-Wesley.)</li>
+</ol>
+<p>Up to 100 more points awarded by Claudio.</p>
+</section><section id="what-are-team-progress-reports" class="slide level2">
+<h2><lo-summary/> What are Team Progress Reports?</h2>
+<ul>
+<li>These are assignments by Viesturs; they include proper planning, analyzing stakeholders and interaction with the customer.*</li>
+</ul>
+</section><section id="what-is-final-presentation" class="slide level2">
+<h2><lo-summary/> What is “Final Presentation”</h2>
+<div style="font-size:70%">
+<ol type="1">
+<li><red><strong>Orderly communication of statuses</strong></red> (assigned tasks are visible; we know who is responsible for doing what):<br />
+<blue><strong>up to 50 points</strong></blue> – Backlog should be created by <red>October 18, 2019</red>. It should be kept in a current state and should match your Working Agreement. Will be checked occasionally.</li>
+<li><red><strong>Team reports during Iteration Reviews</strong> (Each Iteration Review produces a short presentation that outlines the “stories” being added):<br />
+<blue><strong>up to 50 points</strong></blue> – Whenever an Iteration Review (November 1, 15, 29).</li>
+<li><strong>The contribution of each team member</strong> (all contributions clearly attributed, traceable to the prototype, its documentation and other deliverables):<br />
+<blue><strong>up to 50 points</strong></blue> – use version control such as Git. Keep other documents in a way specified in your Working Agreement. It could be Git as well; it could be Google Docs, etc.</li>
+<li><strong>The presentation (as files/delivarables)</strong> (the “final” presentation slides/artefacts are done well actually match the product prototype being delivered)<br />
+<blue><strong>up to 50 points</strong></blue> – November 1, 15, 29 (for Iteration Reviews - presenting your user stories), Early December (presenting your final presentation)</li>
+<li><strong>Final Presentation (as an activity)</strong> (reflects professional standards in technical communication, avoids pitfalls and anti-patterns):<br />
+<blue><strong>up to 100 points</strong></blue> – Early December.</li>
+</ol>
+</div>
+</section></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span style="color:darkgreen"><strong>(3) Technical Design and POC</strong></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="requirements-a.k.a.-functional-design" class="title-slide slide level1"><h1><lo-sample/> Requirements a.k.a. Functional Design</h1><ul>
+<li>Functional requirements answer the question: What the product or solution should do.</li>
+<li>Large projects may have a separate list of requirements (traceable to the customer communication) and the Functional Design.</li>
+<li>You can start right with the Functional Design (and list all your requirements there).</li>
+</ul>
+<p><a href="https://uit.stanford.edu/sites/default/files/2017/08/30/Functional%20Specification%20Document%20Template.docx">Functional Design template</a></p></section><section id="major-parts" class="slide level2">
+<h2><lo-summary/> Major parts</h2>
+<hgroup>
+<ul>
+<li>Title; Document changes and approvals (tables).</li>
+<li>Project scope (what is covered by your solution and what is not).</li>
+<li>Explicit assumptions and risks. (Your solution may be affected by some factors not under your control).</li>
+</ul>
+</hgroup>
+<hgroup>
+<p><strong>Functional requirements:</strong></p>
+<ul>
+<li>Solution Overview (Actors/Roles in your system; how they will interact with your system)</li>
+<li>Data used in your solution</li>
+</ul>
+<p><strong>Non-functional requirements:</strong></p>
+<ul>
+<li>Performance/speed</li>
+<li>Audit and logging</li>
+<li>Integrations with other systems (if any)</li>
+</ul>
+</hgroup>
+</section></section>
+<section><section id="technical-design" class="title-slide slide level1"><h1><lo-sample/> Technical Design</h1><ul>
+<li>Describe your implementation/architecture - what systems and components you will need and support.</li>
+<li>How the users will interact with your system.</li>
+</ul></section><section id="tech.design-for-a-web-resource-1-3" class="slide level2">
+<h2><lo-summary/> Tech.Design for a Web Resource (1-3)</h2>
+<ol type="1">
+<li>Which client devices are typically used? HTML friendly for small screens?</li>
+<li>Webpage hosting? Add to an existing website? On an independent server?</li>
+<li>How will you measure the user engagement? Which sections are most visited, who are the visitors. Google Analytics and other trackers.</li>
+</ol>
+</section><section id="tech.design-for-a-web-resource-4-7" class="slide level2">
+<h2><lo-summary/> Tech.Design for a Web Resource (4-7)</h2>
+<ol start="4" type="1">
+<li>What is the change management? Who is authorized to modify the content; how do they log in?</li>
+<li>How it will be tested? QA for the content (for example, to avoid publishing unverified claims). Manual tests? Automated regression testing (to ensure some core functionality).</li>
+<li>Web-marketing approach. Social media posts? Asking your friends to link to your page? Shortened links/QRcodes to the entrypoint (or, perhaps, other parts).</li>
+<li>Host it on a social networking platform such as Instagram of Facebook as well? Who updates the content there? How do you receive user feedback and measure their activity on your page?</li>
+</ol>
+</section></section>
+<section id="proof-of-concept" class="title-slide slide level1"><h1><lo-theory/> Proof of Concept</h1><ul>
+<li>“Proof of Concept” - verify early that the stuff you want to display works as you want.</li>
+<li>Try doing one core thing first.</li>
+<li>Test, if it really works as you want.</li>
+</ul>
+<p><strong>Goal:</strong> Address highest risks (show-stoppers) early. If you cannot get the Proof-of-Concept (POC) done, then you may need to reconsider your whole project.</p></section>
+<section id="proof-of-concept-examples" class="title-slide slide level1"><h1><lo-theory/> Proof of Concept: Examples</h1><p><strong>Example 1:</strong> If you plan to use a video, check if you can record (at least something very short and simple) and publish it in the media you wanted. See the resolution and other qualities.</p>
+<p><strong>Example 2:</strong> If you plan to support a voting system, check that you can deploy a simple system (on somebody’s laptop) that counts votes - even without proper authentication.</p>
+<p><strong>Example 3:</strong> If you plan to integrate with some existing Webpage (for example, use your solution in a school), ask, if the owners of the Website can give you the right privileges.</p></section>
+<section id="poc-check-for-insufficient-skills" class="title-slide slide level1"><h1><lo-theory/> POC: Check for Insufficient Skills</h1><ul>
+<li>The skills to carry something to the completion is also a part of the POC.</li>
+<li>Check, if you have the right skills at a very specific level.</li>
+</ul></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span style="color:darkgreen"><strong>(4) Development Environments</strong></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="development-and-proudction-environments" class="title-slide slide level1"><h1><lo-theory/> Development and Proudction Environments</h1><hgroup>
+<p><strong>Development Environment</strong></p>
+<ul>
+<li>Can be checked out from Git.</li>
+<li>Can be updated very often:<br />
+<code>git clone repository-name</code><br />
+<code>git pull origin master</code></li>
+<li>Experienced by developers.</li>
+</ul>
+</hgroup>
+<hgroup>
+<p><strong>Production Environment</strong></p>
+<ul>
+<li>Updated in a controlled manner (product releases)</li>
+<li>Experienced by end users</li>
+</ul>
+<p>Moving stuff from the development environment to the production environment is called <strong>deployment</strong> (similar to how armies or emergency services <strong>deploy</strong> their forces to a new location).</p>
+</hgroup></section><section id="each-team-will-have-development-environment" class="slide level2">
+<h2><lo-summary/> Each team will have development environment</h2>
+<ul>
+<li>Majority of files needed for your product should go there</li>
+<li><strong>Except</strong> some files which contain personal data or other sensitive material. (Big IT companies use much safer version control systems - they can check in everything).</li>
+</ul>
+<p>Sensitive files do not change often - you can copy them around with other means.</p>
+</section></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span style="color:darkgreen"><strong>(5) Iterations</strong></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="the-v-model-vs.-agile-loop" class="title-slide slide level1"><h1><lo-theory/> The V-Model vs. Agile Loop</h1><ul>
+<li><a href="https://www.360logica.com/blog/enhancing-waterfall-process-through-v-model-software-development-methodology/">V Model</a></li>
+<li><a href="https://www.visual-paradigm.com/scrum/what-are-scrum-ceremonies/">Agile Software Engineering</a></li>
+</ul></section><section id="suggested-schedule" class="slide level2">
+<h2><lo-summary/> Suggested Schedule</h2>
+<table>
+<tr>
+<th>
+From today to 2019-10-18
+</th>
+<td>
+Iteration 0. Proof of Concept is done. Development Environment exists for all developers (everyone can access files to update content or software).
+</td>
+</tr>
+<tr>
+<th>
+2019-10-18 … 2019-11-01
+</th>
+<td>
+<b>Iteration 1:</b> (depends on your project)
+</td>
+</tr>
+<tr>
+<th>
+2019-10-18 … 2019-11-15
+</th>
+<td>
+<b>Iteration 2:</b> (depends on your project; can release MVU)
+</td>
+</tr>
+<tr>
+<th>
+2019-10-18 … 2019-11-29
+</th>
+<td>
+<b>Iteration 3:</b> (depends on your project)
+</td>
+</tr>
+</table>
+</section><section id="iterations-for-your-project" class="slide level2">
+<h2><lo-summary/> Iterations for your Project</h2>
+<p>If your project has unusual release schedule, you can declare your intention to have different iterations - but you have to decide <strong>before</strong> October 18, 2019. Please inform all instructors (Claudio, Viesturs, Kalvis) that your project will benefit from different planning. And send in your iterations (and approximate descriptions of the work done by each iteration).</p>
+</section></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span style="color:darkgreen"><strong>(6) Minimum Viable Product (MVP)</strong></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section id="what-is-the-mvp" class="title-slide slide level1"><h1><lo-theory/> What is the MVP</h1><p><strong>Definition</strong> (by Eric Ries - a consultant on startups):</p>
+<p>A minimum viable product (MVP) is the the most limited version of a product that can still be released. An MVP has three key characteristics:</p>
+<ul>
+<li>It has enough value that people are willing to use it or buy it.</li>
+<li>It demonstrates enough future benefit to retain early adopters.</li>
+<li>It provides a feedback loop to guide future development.</li>
+</ul>
+<p>The MVP technique assumes that early adopters can see the vision or promise of the final product and provide their feedback. Feedback is essential to move ahead.</p></section>
+<section><section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span style="color:darkgreen"><strong>(7) Team Presentations</strong></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section><section id="assignment-present-your-technical-design" class="slide level2">
+<h2><lo-sample/> Assignment: Present your Technical Design</h2>
+<ol type="1">
+<li><strong>What IT platform(s)</strong> your solution depends on?<br />
+<small>(Mobile, website, part of existing website, social media site, other devices/gadgets,…)</small></li>
+<li><strong>What constitutes a POC</strong> in your case?<br />
+<small>(what is the first step that involves risks and does not seem trivial?)</small></li>
+<li><strong>What kinds of files your developers will need and create?</strong><br />
+<small>(this is in version control such as Git)</small></li>
+<li><strong>At what point will you validate your solution?</strong><br />
+<small>(What should happen before the first end-users are exposed to your product?)</small></li>
+</ol>
+</section><section id="bauska-youth-development-program" class="slide level2">
+<h2><lo-sample/> (1) Bauska Youth Development Program</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+A backlog could be a google document which available to all participants of our team and we could all put our ideas there to come up with the most efficient one.</p>
+<p><strong>Appendix A: Gaps in Technical Skills</strong><br />
+Google Drive, MS Office, Social Media; Research (Source evaluation, IP rights…), Computer Skills (?repeated); ; Troubleshooting; Planning; Project Management Skills; Presenting; Administrative Technical skills.</p>
+</section><section id="mbga" class="slide level2">
+<h2><lo-sample/> (2) MBGA</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+Detailed backlog is stored on google drive.</p>
+<p><strong>Appendix A: Gaps in Technical Skills</strong></p>
+<ul>
+<li>Web-development, Web-design</li>
+<li>Negotiation and Communication skills</li>
+<li>Design skills</li>
+<li>Strategic planning</li>
+<li>Risk management</li>
+</ul>
+</section><section id="bauska-move" class="slide level2">
+<h2><lo-sample/> (3) Bauska, Move</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?</p>
+<ul>
+<li>Decide on the scale of the project</li>
+<li>Come up with the details of the route</li>
+<li>Think about how to get the message out to customer. Marketing plan (advertisement).</li>
+<li>Communicate with potential stakeholders.</li>
+</ul>
+<p><strong>Appendix A: Gaps in Technical Skills</strong>:<br />
+Designing; Cost Management; Communication; Time Management; Reporting; Visualization</p>
+</section><section id="vote-bauska" class="slide level2">
+<h2><lo-sample/> (4) Vote Bauska</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+The backlog is kept in Jira.</p>
+<p><strong>Appendix A: Gaps in Technical Skills</strong>:</p>
+<p>1.Communication skills 2.Programming skills (JavaScript, HTML, PHP, Python, SCSS, Docker) 3.Creativeness in terms of design – UI/UX</p>
+</section><section id="bunch-of-bricks" class="slide level2">
+<h2><lo-sample/> (5) Bunch of Bricks</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+Google drive; On personal computers</p>
+<p><strong>Appendix A: Gaps in Technical Skills</strong>:</p>
+<ul>
+<li>Communication (even specific people!)</li>
+<li>Programming</li>
+<li>3D modeling</li>
+<li>Advertising</li>
+</ul>
+</section><section id="bauska-agritech" class="slide level2">
+<h2><lo-sample/> (6) Bauska Agritech</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+Backlog’ will be available at the team’s ‘GitHub’ group as well. Certain responsibilities will be distributed among the team members; they have their own choice where to keep it.</p>
+<p><strong>Appendix A: Gaps in Technical Skills</strong>:</p>
+<p>N/A…</p>
+</section><section id="edubauska" class="slide level2">
+<h2><lo-sample/> (7) EduBauska</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+We will mainly use Trello to be on track of things that have to be done, however, backlog will be kept in group’s Google Drive folder.</p>
+<p><strong>Appendix A: Gaps in Technical Skills:</strong></p>
+<ul>
+<li>GitHub – skill to use GitHub. All team members</li>
+<li>Programming a mobile application - skills to write and create a mobile application. 1 to 2 members of the team</li>
+<li>Designing skills – sense of style and ability to express one’s vision in a physical format. All the team members at some level</li>
+</ul>
+</section><section id="bausvote" class="slide level2">
+<h2><lo-sample/> (8) BausVote</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?</p>
+<p>?</p>
+<p><strong>Appendix A: Gaps in Technical Skills</strong>:</p>
+<p>?</p>
+</section><section id="bauska-live" class="slide level2">
+<h2><lo-sample/> (9) Bauska Live</h2>
+<p><strong>Question 3:</strong> Where is the “backlog” (TODO list of your project)?<br />
+Meistertask, Google drive.</p>
+<p><strong>Appendix A: Gaps in Technical Skills:</strong></p>
+<ul>
+<li>Communication</li>
+<li>Online media culture</li>
+<li>Surveys</li>
+<li>Video editing</li>
+</ul>
+</section></section>
+<section><section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span style="color:darkgreen"><strong>(8) Summary</strong></span></p>
+</hgroup></section><section id="some-important-reminders" class="slide level2">
+<h2><lo-theory/> Some Important Reminders</h2>
+<ul>
+<li>Submit the Functional Design (with all the Requirements) - <strong>October 18</strong></li>
+<li>Submit the Techical Design - <strong>October 18</strong></li>
+<li>Create the Development Environment - set of your project files - between <strong>October 18</strong> and <strong>October 25</strong> (we can schedule short sessions where you can show this).</li>
+<li>Complete the “POC” (create a tangible asset) by <strong>November 1</strong> (End of Iteration 0).</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

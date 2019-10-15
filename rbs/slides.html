@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>RBS Courses: Slides</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Home</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tasks.html">Tasks</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Slides</b></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="polls.html">Polls</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<p><small>Keyboard commands in Reveal.JS:
+<b>S</b> - Speaker view; <b>F</b> - Full screen; 
+<b>Esc</b> - Outline; <b>Home</b> - To the 1st slide; <b>End</b> - To the last slide; 
+arrows <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
+
+<ul>
+{% for tale in tales %}
+<li><a href="../rbs-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
+{% endfor %}
+</ul>
+
+<p><small>Presentations for schools etc.</small></p>
+
+<ul>
+{% for tale in other_tales %}
+<li><a href="../rbs-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
+{% endfor %}
+</ul>
+
+
+
+
+</body>
+</html>

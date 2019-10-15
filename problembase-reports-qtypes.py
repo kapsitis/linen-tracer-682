@@ -16,8 +16,12 @@ jinja_env = jinja2.Environment(
 class ProblembaseReportsQtypesHandler(webapp2.RequestHandler):    
     
     def get(self,my_id):
+        with open('data/global_navigation.json') as f1:
+            nav_items = json.load(f1)        
         template_context = {                
-            'title': u'Uzdevumu DB: Jautājumu tipu pārskats'
+            'title': u'Uzdevumu DB: Jautājumu tipu pārskats',
+            'course': 'problembase',
+            'nav_items': nav_items
         }            
      
         template = jinja_env.get_template('problembase/reports-qtypes.html')

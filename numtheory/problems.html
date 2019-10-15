@@ -1,18 +1,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<style>
-body {
-  margin: 5%;
-  font-family: "Calibri (Body)", Calibri, sans-serif;
-}
-h1 {
-  font-weight: normal;
-}
-red {
-  color: red;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
 </head>
 
 <body>
@@ -27,10 +17,13 @@ red {
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html" selected="selected">Skaitļu teorija</option>
-   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
@@ -38,14 +31,17 @@ red {
 
 <p><b>2019./2020.m.g. uzdevumu lapas</b></p>
 
-TBD
+<ul>
+<li><a href="../numtheory-bin/hw01-divisibility-modular.pdf">Mājasdarbs #1, (2019-09-28)</a></li>
+</ul>
+
 
 
 <p><b>Vecākas uzdevumu lapas</b></p>
 
 <ul>
-<li><a href="../numtheory-bin/numtheory-prob-2019-06-10.pdf">Izlases uzdevumu lapa (2019-06-10)</a></li>
-<li><a href="../numtheory-bin/numtheory-prob-2019-06-21.pdf">Izlases uzdevumu lapa (2019-06-21)</a></li>
+<li><a href="../numtheory-bin/numtheory-prob-2019-06-10.pdf">Izlases vasaras nodarbību uzdevumi (2019-06-10)</a></li>
+<li><a href="../numtheory-bin/numtheory-prob-2019-06-21.pdf">Izlases vasaras nodarbību uzdevumi (2019-06-21)</a></li>
 <!--<li><a href="prob/bak-numtheory-imo-shl2/content.html">Prezentācija IMO.SHL 
 (2014-2018)</a> (22)</li>-->
 </ul>

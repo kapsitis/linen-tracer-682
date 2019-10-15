@@ -6,28 +6,44 @@
 </head>
 
 <body>
-<h1>Vizualizācijas: Mājasdarbi</h1>
+<h1>Vizualizācijas: Piemēri</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Mājasdarbi</b></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Piemēri</b></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tales.html">Prezentācijas</a></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams.html">Aptaujas</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html" selected="selected">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
 
+<h2>D3 demonstrācijas</h2>
 
+<ul>
+<li><a href="../visualizations-bin/demo-d3-scatterplot/index.html">D3: Izkliedes diagramma (scatterplot)</a></li>
+<li><a href="../visualizations-bin/demo-d3-barchart/index.html">D3: Joslu diagramma (barchart)</a></li>
+<li><a href="../visualizations-bin/demo-py-sine/index.html">PY: Animēts sinuss</a></li>
+<li><a href="http://www.demografija.lv/age-distribution/population-pyramid.html">R: Animēta vecumpiramīda</a></li>
+<li><a href="http://www.demografija.lv/numerical-analysis/runge-function.html">R: Skaitliskās metodes</a></li>
+<li><a href="http://www.demografija.lv/visc/sampledata/temp2/MAT9-UnemploymentRate-2014.svg">R: SVG diagramma</a></li>
+<li><a href="http://www.demografija.lv/NMS/olympiad-participation.html">R: Izkrāsota karte</a></li>
+<li><a href="http://www.dudajevagatve.lv/schoolmap/ao2016-map.html">R: Karte ar karodziņiem</a></li>
+</ul>
 
-
+<p>Par Python ir arī <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">Python vizualizācijas 
+YouTube kanālā 3Blue1Brown</a>, kas iegūti ar MAnim bibliotēku - sk. 
+<a href="https://www.3blue1brown.com/faq">FAQ</a>.</p> 
 
 </html>

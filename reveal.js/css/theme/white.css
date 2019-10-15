@@ -470,6 +470,13 @@ div.smallWhy {
 .reveal table td[align="right"] {
   text-align: right; }
 
+
+table.optable td {
+  text-align: left;
+}
+
+
+
 /*
 .reveal table tbody tr:last-child th,
 .reveal table tbody tr:last-child td {

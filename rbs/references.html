@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>RBS Courses: References</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Home</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tasks.html">Tasks</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="polls.html">Polls</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>References</b></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<dl>
+<dt>(Hogbin Westby, 2015)</dt>
+<dd>Hogbin Westby, E. (2015). <i>Git for Teams.</i> O'Reilly Media.<br/> 
+(Describes <tt>git</tt> and how to use it for teamwork. 
+Custom <tt>git</tt> workflows and branching strategies. Code reviews, continuous
+integration, the roles of contributor, a reviewer, and so on.)</dd> 
+<dt>(Rubin, 2012)</dt>
+<dd>Rubin, K. (2012). <i>Essential Scrum: A Practical Guide to the Most Popular Agile Process.</i> 
+Addison-Wesley.<br/>
+A thorough explanation of all Agile-related project practices and values. 
+Scrum is one specific way to practice Agile methodology, which is most useful for 
+technology related tasks that should quickly adopt to an environment with changing
+customer requirements and priorities. 
+</dd>
+</dl>
+
+
+<h2>YouTube as a Social Network</h2>
+
+<dl>
+<dt>[Goodrow2014]</dt>
+<dd><a href="https://youtu.be/BsCeNCVb-d8">YouTube's Secret Algorithm</a>
+by Cristos Goodrow from YouTube.</dd>
+<dt>[Pound2017]</dt>
+<dd><a href="https://youtu.be/XyMdpcAPnZc">AI YouTube Comments</a>
+by Mike Pound, University of Nottingham.</dd>
+<dt>[Riley2013]</dt>
+<dd><a href="https://youtu.be/OqQk7kLuaK4">How YouTube Works</a>
+by Computerphile</dd>
+</dl>
+
+
+
+</body>
+</html>
+

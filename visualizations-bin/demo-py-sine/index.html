@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body>
+       <p><img src="sine_wave.gif"/></p>
+
+<pre>
+import numpy as np
+from matplotlib import pyplot as plt
+from matplotlib.animation import FuncAnimation
+plt.style.use('seaborn-pastel')
+
+fig = plt.figure()
+ax = plt.axes(xlim=(0, 4), ylim=(-2, 2))
+line, = ax.plot([], [], lw=3)
+
+def init():
+    line.set_data([], [])
+    return line,
+def animate(i):
+    x = np.linspace(0, 4, 1000)
+    y = np.sin(2 * np.pi * (x - 0.01 * i))
+    line.set_data(x, y)
+    return line,
+
+anim = FuncAnimation(fig, animate, init_func=init,
+                               frames=200, interval=20, blit=True)
+
+anim.save('sine_wave.gif', writer='imagemagick')
+</pre>
+
+Piemērs ar PHP koda attēlošanu.
+
+<pre>
+&lt;?php
+    echo "Hello, world!\n";
+?>
+</pre>
+
+<p>
+Piemērs no <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element">HTML5 specifikācijas</a></p>
+
+<pre><samp>You are in an open field west of a big white house with a boarded
+front door.
+There is a small mailbox here.
+
+></samp> <b>open mailbox</b>
+
+<samp>Opening the mailbox reveals:
+A leaflet.
+
+></samp></pre>
+
+    </body>
+</html>

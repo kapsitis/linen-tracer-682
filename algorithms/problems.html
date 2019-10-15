@@ -17,17 +17,40 @@
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
-   <option value="../numtheory/index.html">Skaitļu teorija</option>
-   <option value="../algorithms/index.html" selected="selected">Lietišķie algoritmi</option>
-   <option value="../visualizations/index.html">Vizualizācijas</option>
-   <option value="../problembase/index.html">Uzdevumu DB</option>
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
 </select>
 </td>
 </tr>
 </table>
 
+<ul>
+<li><a href="../algorithms-bin/homeworks/hw01-lossless-compression.pdf"><b>MD01: Bezzudumu saspiešana</b></a> 
+(Termiņš: 2019-09-30);  
+<a href="../algorithms-bin/homeworks/hw01-lossless-compression-solution.pdf">MD01: Atrisinājums</a>
+</li>
+<li><a href="../algorithms-bin/homeworks/hw02-lossy-and-error-correction.pdf"><b>MD02: Zudumradoša saspiešana
+un kļūdu korekcijas kodi</b></a> 
+(Termiņš: 2019-10-28)</li>
+</ul>
 
+<section style="font-size: 80%">
 
+<p><b>Agrāk piedāvātie mājasdarbi:</b> Šiem uzdevumiem ir tikai 
+ilustratīva nozīme; tie NAV jāiesniedz mūsu kursā.</p>
 
+<ul>
+<li><a href="../algorithms-bin/legacy-hw01-compression.pdf">MD - Bezzudumu saspiešana (2018.g.)</a></li>
+<li><a href="../algorithms-bin/legacy-hw02-error-correction.pdf">MD - Kļūdu korekcija (2018.g.)</a></li>
+<li><a href="../algorithms-bin/legacy-hw03-linear-programming.pdf">MD - Lineārā optimizācija (2018.g.)</a></li>
+<li><a href="../algorithms-bin/legacy-hw04-string-search.pdf">MD - Virkņu meklēšana (2018.g.)</a></li>
+</ul>
+
+</section>
 
 </html>

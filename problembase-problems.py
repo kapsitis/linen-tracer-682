@@ -15,7 +15,7 @@ jinja_env = jinja2.Environment(
 
 class ProblembaseProblemsHandler(webapp2.RequestHandler):    
     
-    def get(self,my_id):        
+    def get(self,my_id):  
         with open('data/competitions.json') as f1:
             the_comp = json.load(f1)
         with open('data/tasks.json') as f2:
@@ -24,6 +24,9 @@ class ProblembaseProblemsHandler(webapp2.RequestHandler):
             the_nfound = json.load(f3)
         with open('data/problems.json') as f4:
             the_problems = json.load(f4)
+        with open('data/global_navigation.json') as f5:
+            nav_items = json.load(f5) 
+
             
         ## TODO: Read this from JSON file competitions.json
         problemsets = ['EE.PK', 'EE.LO','EE.LVS', 'EE.LVT','EE.TST',
@@ -73,7 +76,9 @@ class ProblembaseProblemsHandler(webapp2.RequestHandler):
             'prb_total': prb_total,
             'prb_marked': prb_marked,
             'dict_totals': dict_totals,
-            'dict_marked': dict_marked
+            'dict_marked': dict_marked,
+            'course': 'problembase',
+            'nav_items': nav_items    
         }            
         template = jinja_env.get_template('problembase/problems.html')
         output = template.render(template_context)

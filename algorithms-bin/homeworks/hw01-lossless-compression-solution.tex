@@ -19,7 +19,7 @@
 \topmargin -0.1in
 \headheight 0.0in
 \headsep 0.0in
-\textheight 9.50in
+\textheight 9.0in
 
 %\setlength\parindent{0pt}
 
@@ -107,7 +107,34 @@ Plašāku diskusiju par "pseido EOF" sk. Stenfordas universitātes uzdotajā pro
 
 \noindent
 {\bf (b)} Sākam ar intevālu 
-$$[0.0011101011_2;0.0011101100_2) = [235/1024;236/1024) \approx [0.2294922; 0.2304688).$$
+$$[0.0011101011_2;0.0011101100_2) = [235/1024;236/1024) \approx [0.2294921875 0.2304687500).$$
+Turpmākajos soļos noskaidrojam, kurā no ziņojumiem $\{ A,B,C,D \}$ atbilstošajiem intervāliem
+($[0;0.2)$, $[0.2;0.7)$, $[0.7;0.9)$, $[0.9;1.0)$) šis intervāls ietilpst. 
+Tiklīdz kā esam to atraduši, tad pierakstām atkodēto ziņojuma burtu un 
+intervālu (kādu no $[0;0.2)$, $[0.2;0.7)$, $[0.7;0.9)$, $[0.9;1.0)$) ``izstiepjam'' tā, 
+lai tas būtu garumā $[0;1]$. Pēc tam šo soli atkārto tikmēr, kamēr sākotnējais intervāls 
+vairs nav viennozīmīgi ievietojams nevienā no tiem. Tad atkodēšana beidzas. 
+
+\begin{itemize}
+\item 1.solis: $I_1 = [0.2294921875 0.2304687500) \subseteq [0.2;0.7)$. Atkodēts {\tt B}.
+\item 2.solis: No abiem $I_1$ galapunktiem atņem $0.2$ un dala ar $[0.2;0.7)$ garumu jeb $0.5$:\\
+$I_2 = [0.058984375 0.060937500) \subseteq [0;0.2)$. Atkodēts {\tt A}.
+\item 3.solis: No abiem $I_2$ galapunktiem atņem $0$ un dala ar $[0;0.2)$ garumu jeb $0.2$:\\
+$I_3 = [0.294921875 0.304687500) \subseteq [0.2;0.7)$. Atkodēts {\tt B}.
+\item 4.solis: Atņem $0.2$, dala ar $0.5$: $I_4 = [0.18984375 0.20937500)$. Intervāls vēl ir pietiekami 
+īss, bet tas vairs nav viennozīmīgi atkodējams, jo šķeļas gan ar $[0;0.2)$, gan $[0.2;0.7)$. 
+\end{itemize}
+
+Atkodētais ziņojums ir ${\tt BAB}$. 
+
+{\em Piezīme:} Praksē aritmētiskā koda atkodēšanas algoritms tiek pārcelts no peldošā punkta aritmētikas uz veselo skaitļu aritmētiku. 
+Šajā gadījumā atkodē nevis visu intervālu, bet tikai tā kreiso galapunktu - piemēram, skaitli $235/1024$. 
+Viens skaitlis allaž nonāks tieši vienā no $4$ apakšintervāliem un allaž varēs atkodēt.
+Atkodēšanu turpina tikmēr, kamēr sasniegts "pseido EOF" simbols, par kuru rakstījām augstāk. 
+Ja par "pseido EOF" uzskata ziņojumu {\tt D}, tad, atkodēšana rada citu atbildi ${\tt BABAD}$. 
+Ja kādam bija šāda atbilde, tad arī tā atbilst citam aritmētiskā koda dialektam.\\
+Ja atbilde ir pavisam cita (nevis {\tt BAB} vai {\tt BABAD}), tad Jūsu aprēķinos ir kļūda.
+
 
 
 

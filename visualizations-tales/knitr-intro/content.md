@@ -97,7 +97,25 @@ KnitR ievades šablonu formāti:
 </hgroup>
 
 
+# <lo-theory/> Sagatavojot R vidi
 
+```
+install.packages("Cairo")
+install.packages("cairoDevice")
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("knitr")
+install.packages("plyr")
+install.packages("RColorBrewer")
+install.packages("tinytex")
+install.packages("utf8")
+install.packages("xtable")
+```
+
+
+GTK+ 
+
+"Sweave" iestatījumi
 
 
 

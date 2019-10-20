@@ -40,4 +40,31 @@
 </tr>
 </table>
 
+<p>Līdz 8.oktobrim uzkrājušies<br/>
+6/16 no 10% jeb 3.75 procentpunkti (p.p.) par apmeklējumiem,<br/> 
+10 p.p. par 1.mājasdarbu (visi mājasdarbi kopā būs 50).<br/>
+Uz 2019-10-08 teorētiski maksimālais vērtējums ir 3.75+10=13.75 procentpunkti.</p>
+
+
+<table style="border-collapse: collapse; margin-top:5px" border="1">
+<tr><th>ID</th>
+{% for ddate in grades.dates %}
+<th>{{ddate.mm}}<br/>{{ddate.dd}}</th>
+{% endfor %}
+<th>MD1</th>
+<th>Total</th>
+</tr>
+{% for grade in grades.students %}
+<tr><td>{{grade.id}}</td>
+  {% for pres in grade.presence %}
+  <td>...</td>
+  {% endfor %}
+  <td>{{grade.hw1}}</td>
+  <td>...</td>
+</tr>
+{% endfor %}
+</table>
+
 </html>
+
+

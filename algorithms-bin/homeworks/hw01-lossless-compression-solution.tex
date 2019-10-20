@@ -10,6 +10,7 @@
 \usepackage{tabularx}
 \usepackage{lipsum}
 \usepackage{hyperref}
+\usepackage{color}
 
 \oddsidemargin 0.0in
 \evensidemargin 0.0in
@@ -84,12 +85,12 @@ I_6 & = & [0.74260,0.74280)
 Pēdējo intervālu $I_6$ kodē bitu virkne {\tt 1011111000100}, jo 
 skaitlis ${\displaystyle 0.1011111000100_2 = \frac{6084}{2^{13}}}$
 un 
-$$\left[ \frac{6084}{2^{13}}}; \frac{6085}{2^{13}} \right] \subseteq [0.74260,0.74280).$$
+$$\left[ \frac{6084}{2^{13}}; \frac{6085}{2^{13}} \right] \subseteq [0.74260,0.74280).$$
 Kodiem garumā $13$ citus skaitļus (izņemot jau atrastos $6064/8192$ un $6065/8192$) izmantot nevar: 
-intervāls pilnībā neietilps $I_6$. 
+intervāls pilnībā neietilps $I_6$.
 
-{\em Piezīme:} Ja esat ņēmuši kodu, kurš ir $14$ vienības garš vai garāku, tad 
-būs arī citi atrisinājumi. Tos neuzskatām par nepareiziem, ja vien 
+{\em Piezīme:} Ja esat ņēmuši kodu, kurš garāks par $13$, tad
+iespējami arī citi atrisinājumi. Tos neuzskatām par nepareiziem, ja vien 
 Jūsu kodam atbilstošais intervāls pilnībā ietilpst intervālā $I_6$. 
 Praksē lietojamie aritmētiskie kodi vai nu pievieno ziņojumu 
 alfabētam EOF (faila beigu) ziņojumu vai nu arī kaut kur 
@@ -100,7 +101,7 @@ atkodētājs zinātu, kur apstāties.
 Atšķirībā no bināriem skaitļiem, Hafmana prefiksu kodu virknē it kā ir redzams, kur 
 vajag apstāties, bet praksē tas bieži nenostrādā, jo failam jāsatur vesels skaits baitu; 
 pēc visu Hafmana kodavārdu izrakstīšanas var gadīties daži lieki biti, kurus negribam atkodēt. 
-Plašāku diskusiju par "pseido EOF" sk. Stenfordas universitātes uzdotajā programmēšanas mājasdarbā: 
+Plašāku diskusiju par "pseido EOF" sk. Stenfordas universitātes uzdotajā programmēšanas mājasdarbā:\\
 \url{https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1172/assn/huffman.html}. 
 
 
@@ -232,7 +233,7 @@ ariirasulaalus
 Berouza-Vīlera transformācijas rezultāts ir pēdējā kolonna: {\tt lasrriuaiauals}. 
 Tas ir cits vārds nekā {\tt lasrriuaiauasl} (pēdējie $2$ burti ir pretējā secībā). 
 Arī Move-to-Front kods izskatās citādi: 
-$$214404542121\color{#F00}{66}\;\;\text{nevis}\;\;214404542121\color{#F00}{46}$$
+$$214404542121\textcolor{red}{66}\;\;\text{nevis}\;\;214404542121\textcolor{red}{46}$$
 kā iepriekšējā variantā.
 
 

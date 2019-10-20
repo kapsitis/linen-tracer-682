@@ -48,7 +48,10 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'title': u'Kļūdu labošanas algoritmi - 2'
         }        
         
-    ]         
+    ]       
+
+    total_grades = { '40200A': '24.1', 
+                    '40200B': '29.2'}    
     
     def get(self,my_id):
         #nav_items = global_navigation.nav_items()
@@ -59,11 +62,22 @@ class AlgorithmsHandler(webapp2.RequestHandler):
         
         
         if (my_id == 'index.html'):
+            for grade in grades['students']:
+                my_total = 0
+                for gg in grade['presence']:
+                    if (gg == 'Y'):
+                        my_total += 10/16
+                    else:
+                        my_total += 10/16
+                #my_total += float(grade['hw1'])
+                self.total_grades[grade['id']] = str(my_total)
+            
             template_context = {
                 'my_id': my_id,
                 'course': 'algorithms',
                 'nav_items': nav_items,
-                'grades': grades 
+                'grades': grades,
+                'total_grades': self.total_grades
             }
             template = jinja_env.get_template('algorithms/index.html')
             output = template.render(template_context)

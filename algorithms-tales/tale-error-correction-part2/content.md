@@ -1068,8 +1068,8 @@ a + 4 \cdot{} b + c \equiv 2\;(\text{mod}\,5).
 Ievietojot $c=2$ otrajā un trešajā vienādojumā, iegūstam
 
 $$\left\{ \begin{array}
-\mbox{}a + b = 3 – 2 \equiv 1\;(\text{mod}\,5),\\
-a + 4 b = 2 – 2 \equiv 0\;(\text{mod}\,5).
+\mbox{}a + b = 3 - 2 \equiv 1\;(\text{mod}\,5),\\
+a + 4 b = 2 - 2 \equiv 0\;(\text{mod}\,5).
 \end{array} \right.$$
 
 </div>
@@ -1134,7 +1134,7 @@ $(x-r_j)=0$, kas visu reizinājumu padara par $0$.
 ## <lo-theory/> Interpolāciju lietošana atkodēšanai
 
 Meklētais polinoms ir:
-$$f(x) = r_1 \cdot f_1(x) + r_2 \cdot f_2 (x) + \ldots + r_k *f_k (x).$$
+$$f(x) = r_1 \cdot f_1(x) + r_2 \cdot f_2 (x) + \ldots + r_k \cdot f_k (x).$$
 
 Kāpēc šis polinoms dod pareizu rezultātu?
 Ja $x = r_i$, tad visi $f_j(x)$ ($i \neq j$) vienādi ar $0$, 

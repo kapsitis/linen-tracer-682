@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.3.22)  16 OCT 2019 02:17
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.3.22)  22 OCT 2019 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,17 +377,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (9.29366pt too wide) in paragraph at lines 125--127
-[]\TU/lmr/m/n/9 Nokodēt (a) punkta tekstu “abracadabra, abracadabra” ar LZ77 me
-todi, kā logu lietojot visu nokodēto/atkodēto
- []
-
-
-Overfull \hbox (13.08078pt too wide) in paragraph at lines 146--148
-[]\TU/lmr/m/n/9 Kāds ir iepriekšējā piemērā iegūtās transformētās simbolu virkn
-es pieraksts, izmantojot Move-to-Front kodēšanu? 
- []
-
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -395,35 +384,52 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 [1
 
 ]
-Overfull \hbox (3.15543pt too wide) in paragraph at lines 156--165
+Overfull \hbox (9.29366pt too wide) in paragraph at lines 152--154
+[]\TU/lmr/m/n/9 Nokodēt (a) punkta tekstu “abracadabra, abracadabra” ar LZ77 me
+todi, kā logu lietojot visu nokodēto/atkodēto
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 217--226
+
+ []
+
+
+Overfull \hbox (13.08078pt too wide) in paragraph at lines 250--252
+[]\TU/lmr/m/n/9 Kāds ir iepriekšējā piemērā iegūtās transformētās simbolu virkn
+es pieraksts, izmantojot Move-to-Front kodēšanu? 
+ []
+
+
+Overfull \hbox (3.15543pt too wide) in paragraph at lines 260--269
 [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][] [] [][] [] [][] [] [
 ][][][][][][][][] [] [][][][][][][][][]$[] \TU/lmr/m/n/10.95 –piemērā ar vārdu 
 \TU/lmtt/m/n/10.95 ^BANANA|\TU/lmr/m/n/10.95 , tad
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 365--367
 
  []
 
 File: prefix-trees.png Graphic file (type bmp)
 <prefix-trees.png>
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 427.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 427.
  (./hw01-lossless-compression-solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 323.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 323.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 427.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 427.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 427.
  ) 
 Here is how much of TeX's memory you used:
  9625 strings out of 493007
  134003 string characters out of 6136719
- 319365 words of memory out of 5000000
+ 320365 words of memory out of 5000000
  13487 multiletter control sequences out of 15000+600000
  11765 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 28i,7n,26p,362b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,8n,26p,362b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw01-lossless-compression-solution.pdf (4 pages).
+Output written on hw01-lossless-compression-solution.pdf (6 pages).

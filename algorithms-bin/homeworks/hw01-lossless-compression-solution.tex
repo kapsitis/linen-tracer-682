@@ -55,7 +55,7 @@
 
 {\footnotesize
 \noindent
-{\bf 1.uzdevums: Aritmētiskais kods.}
+{\bf 1.uzdevums: Aritmētiskais kods (max 3 punkti).}
 Dota ziņojumu kopa $S = \{ A,B,C,D \}$ ar attiecīgajām varbūtībām 
 $\{ 0.2, 0.5, 0.2, 0.1 \}$.
 \begin{enumerate}[(a)]
@@ -141,7 +141,7 @@ Ja atbilde ir pavisam cita (nevis {\tt BAB} vai {\tt BABAD}), tad Jūsu aprēķi
 {\footnotesize 
 \vspace{10ex}
 \noindent
-{\bf 2.uzdevums: Lempela-Ziva algoritms.}
+{\bf 2.uzdevums: Lempela-Ziva algoritms (max 4 punkti).}
 \begin{enumerate}[(a)]
 \item 
 Ar LZ78 metodi nokodēt tekstu “abracadabra, abracadabra”.
@@ -155,20 +155,97 @@ ar LZ77 metodi, kā logu lietojot visu nokodēto/atkodēto tekstu.
 }
 
 \noindent
-{\bf (a)} 
+{\bf (a)} Teksts satur alfabēta simbolus $\mathtt{"a"}$, $\mathtt{"b"}$,
+$\mathtt{"c"}$,$\mathtt{"d"}$,$\mathtt{"r"}$,$\mathtt{","}$,$\mathtt{"\;\;"}$, ieskaitot 
+komatu un tukšumu. 
+
+\begin{center}
+\begin{tabular}{ |l|l|l|l|l| } \hline
+Solis & $w$ & $k$ & Izvade & Pievieno vārdnīcai \\ \hline
+1 & {\tt a} & {\tt "b"} & {\tt a} & {\tt ab} \\
+2 & {\tt b} & {\tt "r"} & {\tt b} & {\tt br} \\ 
+3 & {\tt r} & {\tt "a"} & {\tt r} & {\tt ra} \\ 
+4 & {\tt a} & {\tt "c"} & {\tt a} & {\tt ac} \\ 
+5 & {\tt c} & {\tt "a"} & {\tt c} & {\tt ca} \\ 
+6 & {\tt a} & {\tt "d"} & {\tt a} & {\tt ad} \\ 
+7 & {\tt d} & {\tt "a"} & {\tt d} & {\tt da} \\ 
+8 & {\tt ab} & {\tt "r"} & {\tt ab} $\rightarrow$ 1 & {\tt abr} \\
+9 & {\tt ra} & {\tt ","} & {\tt ra} $\rightarrow$ 3 & {\tt ra,} \\ 
+10 & $\mathtt{","}$ & $\mathtt{"\;\;"}$ & $\mathtt{","}$ & $\mathtt{",\;\;"}$ \\
+11 & $\mathtt{"\;\;"}$ & $\mathtt{a}$ & $\mathtt{"\;\;"}$ & $\mathtt{"\;\;a"}$ \\
+12 & {\tt abr} & {\tt a} & {\tt abr} $\rightarrow$ 8 & {\tt abra}\\
+13 & {\tt ac} & {\tt a} & {\tt ac} $\rightarrow$ 4 & {\tt aca}\\
+14 & {\tt ad} & {\tt a} & {\tt ad} $\rightarrow$ 6 & {\tt ada}\\
+15 & {\tt abra} & {\tt EOF} & {\tt abra} $\rightarrow$ 12 & $-$\\ \hline
+\end{tabular}
+\end{center}
+
+Izvade: $\mathtt{a.b.r.a.c.a.d.1.3.","."\;\;".8.4.6.12}$.\\
+{\em Piezīme.} Komatu un atstarpi likām pēdiņās un koda izvades atdalījām ar punktiem. 
+(Reālā algoritma izvadē kodus atdala citādi - ar baitu robežām; tāpēc punkti un pēdiņas 
+ir tikai pieraksta ērtība, nevis izvades sastāvdaļa.)
+Atkarībā no tā, vai risinātājs tukšumu starp vārdiem pamanīja un uzskatīja par ziņojumu, 
+iespējams arī cits, līdzīgs kodējums, par kuru vērtējums netiek samazināts.
+
+\noindent
+{\bf (b)}
+
+\begin{center}
+\begin{tabular}{ |l|l|l|l|l| } \hline
+Solis & $w$ & $k$ & Izvade & Pievieno vārdnīcai \\ \hline
+1 & {\tt a} & {\tt b} & {\tt a} & {\tt ab} \\
+2 & {\tt b} & {\tt c} & {\tt b} & {\tt bc} \\ 
+3 & {\tt c} & {\tt d} & {\tt c} & {\tt cd} \\ 
+4 & {\tt d} & {\tt b} & {\tt d} & {\tt db} \\ 
+5 & {\tt bc} & {\tt b} & {\tt bc} $\rightarrow$ 2 & {\tt bcb} \\ 
+6 & {\tt bcb} & {\tt a} & {\tt bcb} $\rightarrow$ 5 & {\tt bcba} \\ 
+7 & {\tt bcba} & {\tt EOF} & {\tt bcba} $\rightarrow$ 6 & $-$ \\ \hline
+\end{tabular}
+\end{center}
+
+Atkodējums: $\mathtt{a.b.c.d.2.5.a.6}$ $\rightarrow$ $\mathtt{a.b.c.d.bc.bcb.a.bcba}$ $\rightarrow$ 
+$\mathtt{abcdbcbcbabcba}$.
 
 
 
+\noindent
+{\bf (c)} Katrā LZ77 algoritma solī apzīmējam kursora stāvokli ar mazu pasvītrojumzīmi zem burta.
+Garāko kopīgo apakšvirkni meklēšanas logā krāsojam sarkanu.
+Iekavas, pēdiņas un semikoli mūsu ziņojumu alfabētā neietilpst, tie ir metasimboli, lai 
+vieglāk uztvert LZ77 algoritma izvadi.
+
+\noindent
+$\underline{\mathtt{a}}\mathtt{bracadabra,\;\;abracadabra}$ \textendash{} izvade $(0;0;\mathtt{"a"})$\\
+$\mathtt{a}\underline{\mathtt{b}}\mathtt{racadabra,\;\;abracadabra}$ \textendash{} izvade $(0;0;\mathtt{"b"})$\\
+$\mathtt{ab}\underline{\mathtt{r}}\mathtt{acadabra,\;\;abracadabra}$ \textendash{} izvade $(0;0;\mathtt{"r"})$\\
+$\mathtt{\textcolor{red}{a}br}\underline{\mathtt{a}}\mathtt{cadabra,\;\;abracadabra}$ \textendash{} izvade $(3;1;\mathtt{"c"})$\\
+$\mathtt{\textcolor{red}{a}brac}\underline{\mathtt{a}}\mathtt{dabra,\;\;abracadabra}$ \textendash{} izvade $(5;1;\mathtt{"d"})^{\ast}$\\
+$\mathtt{\textcolor{red}{abra}cad}\underline{\mathtt{a}}\mathtt{bra,\;\;abracadabra}$ \textendash{} izvade $(7;4;\mathtt{","})$\\
+$\mathtt{abracadabra,}\underline{\;\;}\mathtt{abracadabra}$ \textendash{} izvade $(0;0;\mathtt{"\;\;"})$\\
+$\mathtt{\textcolor{red}{abracadabra},\;\;}\underline{\mathtt{a}}\mathtt{bracadabra}$ \textendash{} izvade $(13;11;-)$\\
+
+
+{\em Piezīme.} Dažreiz logā (jau nokodētajā teksta gabalā) atrodas vairāki visgarākie
+apakšstringi; var izvēlēties starp diviem identiskiem apakšstringiem, kuru kopēt. 
+Vēlāk kursā aplūkosim Bojera-Mūra garākās kopīgās apakšvirknes meklēšanas algoritmu; tas (līdzīgi 
+citiem līdzīga veida algoritmiem) sāk virkņu salīdzināšanu no kreisās uz labo pusi. 
+Tāpēc aplūkotajā piemērā, 5.solī izvadītais kods ir $(5,1,\mathtt{d})^{\ast}$
+(kaut arī varēja rakstīt arī $(2,1,\mathtt{d})$ jeb skatīties atpakaļ nevis piecas pozīcijas, bet tikai divas). 
+No atkodēšanas viedokļa nekādas atšķirības nav; tāpēc šajā piemērā (lai būtu konsekventi) rakstām 
+pirmo atrasto pozīciju no kreisās puses. Bet par kļūdu neuzskatām arī jebkuru citu pozīciju, ja 
+arī tā ir visgarākā. Diskusiju par šo apakšvirkņu meklēšanas metodēm sk.\ 
+\url{https://bit.ly/2pD7m2Y} ({\em Longest-match String Searching for Ziv–Lempel Compression} by 
+Timothy Bell, David Kulp). 
 
 
 {\footnotesize
 \vspace{10ex}
 \noindent
-{\bf 3.uzdevums: Berouza-Vīlera transformācija.}
+{\bf 3.uzdevums: Berouza-Vīlera transformācija (max 3 punkti).}
 \begin{enumerate}[(a)]
-\item 
-Kāds ir rezultāts (transformētā simbolu virkne un sākotnējās virknes pozīcija), 
-lietojot Berouza-Vīlera transformāciju 
+\item Kāds ir rezultāts (transformētā simbolu virkne un 
+sākotnējās virknes pozīcija), lietojot 
+Berouza-Vīlera transformāciju 
 $14$ simbolu virknei {\tt alusariirasula}?
 \item Kāds ir iepriekšējā piemērā iegūtās transformētās simbolu virknes pieraksts,
 izmantojot Move-to-Front kodēšanu?
@@ -270,7 +347,7 @@ kā iepriekšējā variantā.
 {\footnotesize
 \vspace{10ex}
 \noindent
-{\bf 4.uzdevums: I-iespēja (atzīmei 10).} 
+{\bf 4.uzdevums: I-iespēja (max 10 punkti).} 
 Pieņemsim, ka ziņojumu kopai $S = \{ x_1, x_2, \ldots, x_n \}$ ar 
 izveidots optimāls prefiksu kodējums. Šis kodējums jāpārraida,
 izmantojot minimālu bitu skaitu.\\

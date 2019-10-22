@@ -46,8 +46,12 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'id':'Algorithms.ErrorCorrection2',
             'dir':'tale-error-correction-part2',
             'title': u'Kļūdu labošanas algoritmi - 2'
-        }        
-        
+        },
+        {
+            'id':'Algorithms.AsymmetricCryptography',
+            'dir':'tale-asymmetric-cryptography-part1',
+            'title': u'Asimetriskā kriptogrāfija - 1'
+        }           
     ]       
 
     total_grades = { '40200A': '24.1', 
@@ -57,7 +61,7 @@ class AlgorithmsHandler(webapp2.RequestHandler):
         #nav_items = global_navigation.nav_items()
         with open('data/global_navigation.json') as f1:
             nav_items = json.load(f1)
-        with open('data/algorithms_grades.json') as f2:
+        with open('data-private/algorithms_grades.json') as f2:
             grades = json.load(f2)
         
         

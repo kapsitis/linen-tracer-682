@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style>
+  <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,250 +32,27 @@
     <div class="slides">
 
 
-<section id="section" class="title-slide slide level1"><h1> </h1><h1 style="font-size:28pt">
-Skaitļu teorija: Testi
-</h1>
-<ul>
-<li><blue>Algebras prasmes sk.teorijā</blue></li>
-<li>Dalāmības prasmes</li>
-<li>Modulārās aritmētikas prasmes</li>
-</ul></section>
-<section id="q.nt10.alg.1" class="title-slide slide level1"><h1>Q.NT10.ALG.1</h1><p>Aritmētiskā progresijā <span class="math inline">\(a, a+d, a+2d, a+3d, \ldots\)</span> saskaitīja pirmo <span class="math inline">\(4\)</span> locekļu kvadrātus. Ieguva izteiksmi <span class="math inline">\(4a^2 + ?? ad + 14d^2\)</span>. Atrast, kāds koeficients ir pie saskaitāmā <span class="math inline">\(ad\)</span> (“??” vietā).</p>
-<p>(<em>Ierakstīt skaitli.</em>)</p>
-<p><strong>Atbilde:</strong> <code>12</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\((a+d)^2\)</span> dod saskaitāmo <span class="math inline">\(2ad\)</span>, <span class="math inline">\((a+2d)^2\)</span> dod <span class="math inline">\(4ad\)</span> un <span class="math inline">\((a+3d)^2\)</span> dod <span class="math inline">\(6ad\)</span>. Saskaitot <span class="math inline">\(2ad+4ad+6ad\)</span> iegūstam <span class="math inline">\(12ad\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2016.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.2" class="title-slide slide level1"><h1>Q.NT10.ALG.2</h1><p>Aritmētiskā progresijā <span class="math inline">\(a - 3x, a-x, a+x, a+3x\)</span> saskaitīja visu locekļu kvadrātus. Ieguva izteiksmi <span class="math inline">\(a^2 + ?? x^2\)</span>. Atrast koeficientu pie <span class="math inline">\(x^2\)</span> (“??” vietā).</p>
-<p>(<em>Ierakstīt skaitli.</em>)</p>
-<p><strong>Atbilde:</strong> <code>20</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\((a-3x)^2\)</span> un <span class="math inline">\((a+3x)^2\)</span> abi dod saskaitāmo <span class="math inline">\(9x^2\)</span>, <span class="math inline">\((a-x)^2\)</span> un <span class="math inline">\((a+x)^2\)</span> dod <span class="math inline">\(x^2\)</span>.<br />
-Saskaitām <span class="math inline">\(9x^2 + x^2 + x^2 + 9x^2 = 20x^2\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2016.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.3" class="title-slide slide level1"><h1>Q.NT10.ALG.3</h1><p>Kāds atvēra iekavas <span class="math inline">\((a-3b)^3\)</span> un ieguva izteiksmi ar <span class="math inline">\(4\)</span> saskaitāmajiem: <span class="math display">\[??a^3 + ??a^2b^1 + ??a^1b^2 + ??b^3.\]</span> Atrast koeficientu pie <span class="math inline">\(a^1b^2\)</span> (trešā “??” vietā).</p>
-<p>(<em>Ierakstīt skaitli.</em>)</p>
-<p><strong>Atbilde:</strong> <code>27</code><br />
-<strong>Skaidrojums:</strong> Formulā <span class="math inline">\((x-y)^3 = x^3 - 3x^2y + 3xy^2 - y^3\)</span> ievietojam <span class="math inline">\(x=a\)</span>, <span class="math inline">\(y=3b\)</span>. Tad trešais saskaitāmais ir <span class="math display">\[3xy^2 = 3a(3b)^2 = 27ab^2.\]</span></p>
-<blockquote>
-<p><a href="#/">LV.NO.2010.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.4" class="title-slide slide level1"><h1>Q.NT10.ALG.4</h1><p>Kāds atvēra iekavas izteiksmē <span class="math inline">\((a+b)^4\)</span> un ieguva izteiksmi ar <span class="math inline">\(5\)</span> saskaitāmajiem (koeficienti aizstāti ar “??”): <span class="math display">\[??a^4 + ??a^3b^1 + ??a^2b^2 + ??a^1b^3 + ??b^4.\]</span> Kādu skaitli iegūst, ja saskaita visus piecus koeficientus?</p>
-<p>(<em>Ierakstīt skaitli.</em>)</p>
-<p><strong>Atbilde:</strong> <code>16</code><br />
-<strong>Skaidrojums:</strong> Formulā <span class="math inline">\((a+b)^4=a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4\)</span> ievietojam <span class="math inline">\(a = b = 1\)</span>. Tad <span class="math inline">\((1+1)^4 = 1+4+6+4+1=16\)</span>. Tādēļ ceturtā rindiņa Paskāla trijstūrī dod summā <span class="math inline">\(2^4 = 16\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.NO.2010.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.5" class="title-slide slide level1"><h1>Q.NT10.ALG.5</h1><p>Dota kvadrātfunkcija <span class="math inline">\(f(x)=ax^2 + bx + c\)</span>, kur <span class="math inline">\(a,b,c\)</span> ir kaut kādi veseli skaitļi. Ja zināms, ka <span class="math inline">\(f(4)=14\)</span>, kādas vērtības var pieņemt <span class="math inline">\(f(7)\)</span>:</p>
-<p>(<em>Atzīmēt visas iespējas.</em>)</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(21\)</span></li>
-<li><span class="math inline">\(22\)</span></li>
-<li><span class="math inline">\(23\)</span></li>
-<li><span class="math inline">\(24\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> Var pamatot, ka <span class="math inline">\(f(7)-f(4)\)</span> dalās ar <span class="math inline">\((7-4)\)</span> (izmanto to, ka <span class="math inline">\(x_1^2 - x_2^2\)</span> dalās ar <span class="math inline">\(x_1 - x_2\)</span>). Tādēļ <span class="math inline">\(f(7)-f(4)\)</span> dalās ar <span class="math inline">\(3\)</span> jeb <span class="math inline">\(f(7)-14\)</span> dalās ar <span class="math inline">\(3\)</span>.<br />
-Vienīgais skaitlis, kurš der ir <span class="math inline">\(23\)</span>, jo <span class="math inline">\(23 - 14 = 9\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2011.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.6" class="title-slide slide level1"><h1>Q.NT10.ALG.6</h1><p>Ja <span class="math inline">\(a,b\)</span> ir veseli skaitļi, ar kuru izteiksmi noteikti dalās <span class="math inline">\(a^3 - b^3\)</span>:</p>
-<p><small></p>
-<ol type="1">
-<li>Ar <span class="math inline">\(ab\)</span></li>
-<li>Ar <span class="math inline">\(a - b\)</span></li>
-<li>Ar <span class="math inline">\(a + b\)</span></li>
-<li>Ar <span class="math inline">\(a^2 - b^2\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> Pēc formulas <span class="math inline">\(a^3 - b^3 = (a-b)(a^2 + ab + b^2)\)</span>. Tātad, ja dala <span class="math inline">\(a^3-b^3\)</span> ar <span class="math inline">\(a-b\)</span>, tad iegūst <span class="math inline">\(a^2 + ab + b^2\)</span>, kas ir vesels.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2011.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.7" class="title-slide slide level1"><h1>Q.NT10.ALG.7</h1><p>Dots, ka <span class="math inline">\(P(x)\)</span> ir polinoms, kura visi koeficienti ir veseli skaitļi. Ar kādu skaitli noteikti dalās <span class="math inline">\(P(16)-P(9)\)</span>?</p>
-<p><small></p>
-<ol type="1">
-<li>Ar <span class="math inline">\(3\)</span></li>
-<li>Ar <span class="math inline">\(4\)</span></li>
-<li>Ar <span class="math inline">\(7\)</span></li>
-<li>Ar <span class="math inline">\(10\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\(P(16)-P(9)\)</span> noteikti dalās ar <span class="math inline">\((16-9) = 7\)</span>.<br />
-Tas tādēļ, ka jebkurai pakāpei <span class="math inline">\(n\)</span>, <span class="math inline">\((x^n - y^n)\)</span> dalās ar <span class="math inline">\((x-y)\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2011.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.8" class="title-slide slide level1"><h1>Q.NT10.ALG.8</h1><p>Zināms, ka <span class="math inline">\(n\)</span> ir naturāls skaitlis un <span class="math inline">\(m = n^2 + 6n + 9\)</span>.</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(m\)</span> vienmēr ir kāda naturāla skaitļa kvadrāts.</li>
-<li><span class="math inline">\(m\)</span> var būt un var nebūt naturāla skaitļa kvadrāts atkarībā no <span class="math inline">\(n\)</span> vērtības.</li>
-<li><span class="math inline">\(m\)</span> nekad nav naturāla skaitļa kvadrāts.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>A</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\(n^2 + 6n + 9 = (n+3)^2\)</span> (atdalām pilno kvadrātu - nekas nepaliek pāri). Tādēļ skaitlis <span class="math inline">\(m\)</span> vienmēr būs naturāla skaitļa kvadrāts: konkrēti, iegūstams, kāpinot kvadrātā <span class="math inline">\((n+3)\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2016.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.9" class="title-slide slide level1"><h1>Q.NT10.ALG.9</h1><p>Zināms, ka <span class="math inline">\(n\)</span> ir naturāls skaitlis un <span class="math inline">\(m = n^2 + 10n + 20\)</span>.</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(m\)</span> vienmēr ir kāda naturāla skaitļa kvadrāts.</li>
-<li><span class="math inline">\(m\)</span> var būt un var nebūt naturāla skaitļa kvadrāts atkarībā no <span class="math inline">\(n\)</span> vērtības.</li>
-<li><span class="math inline">\(m\)</span> nekad nav naturāla skaitļa kvadrāts.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> Atdalām pilno kvadrātu: <span class="math display">\[n^2 + 10n + 20 = (n+5)^2 - 25 + 20 = (n+5)^2 - 5.\]</span> Vienīgie pilnie kvadrāti, kuri atšķiras par <span class="math inline">\(5\)</span> ir <span class="math inline">\(3^2 =9\)</span> un <span class="math inline">\(2^2=4\)</span>. Tādēļ var izvēlēties <span class="math inline">\(n\)</span> tā, lai <span class="math inline">\(n+5=3\)</span> jeb <span class="math inline">\(n=-2\)</span>. Tas gan nav naturāls skaitlis. Tāpēc <span class="math inline">\(m\)</span> nekad nesanāk pilns kvadrāts.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2016.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.10" class="title-slide slide level1"><h1>Q.NT10.ALG.10</h1><p>Zināms, ka naturāli skaitļi <span class="math inline">\(x,y\)</span> apmierina sakarību <span class="math inline">\(x^5 = 10y^2\)</span>. Ar cik nullēm noteikti beidzas <span class="math inline">\(y\)</span>, neatkarīgi no tā, kāds ir <span class="math inline">\(x\)</span>?</p>
-<p>(<em>Ja ir pareizas vairākas iespējas, atzīmēt atbildi, kas atbilst lielākajam nuļļu skaitam.</em>)</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(y\)</span> beidzas vismaz ar <span class="math inline">\(1\)</span> nulli.</li>
-<li><span class="math inline">\(y\)</span> beidzas vismaz ar <span class="math inline">\(2\)</span> nullēm.</li>
-<li><span class="math inline">\(y\)</span> beidzas vismaz ar <span class="math inline">\(3\)</span> nullēm.</li>
-<li><span class="math inline">\(y\)</span> beidzas vismaz ar <span class="math inline">\(4\)</span> nullēm.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\(x\)</span> noteikti dalās ar <span class="math inline">\(10\)</span>, tādēļ <span class="math inline">\(x^5\)</span> noteikti beidzas ar <span class="math inline">\(5\)</span> nullēm. Tātad <span class="math inline">\(y=\sqrt{x^5/10}\)</span> beidzas vismaz ar <span class="math inline">\(2\)</span> nullēm, jo <span class="math inline">\(x^5/10\)</span> dalās ar <span class="math inline">\(10000=10^4\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.NO.2010.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.11" class="title-slide slide level1"><h1>Q.NT10.ALG.11</h1><p>Zināms, ka <span class="math inline">\(x^3 = 6y^2\)</span>. Ar kādu augstāko skaitļa <span class="math inline">\(2\)</span> pakāpi noteikti dalās <span class="math inline">\(x^3\)</span>?</p>
-<p>(<em>Ja ir pareizas vairākas iespējas, atzīmēt atbildi, kas atbilst augstākajai pakāpei.</em>)</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(x^3\)</span> dalās ar <span class="math inline">\(2=2^1\)</span>.</li>
-<li><span class="math inline">\(x^3\)</span> dalās ar <span class="math inline">\(4=2^2\)</span>.</li>
-<li><span class="math inline">\(x^3\)</span> dalās ar <span class="math inline">\(8=2^3\)</span>.</li>
-<li><span class="math inline">\(x^3\)</span> dalās ar <span class="math inline">\(16=2^4\)</span>.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\(x\)</span> noteikti ir pāru skaitlis <span class="math inline">\(2k\)</span>, tādēļ <span class="math inline">\(x^3=(2k)^3=8k^3\)</span> dalās ar <span class="math inline">\(8\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.NO.2010.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.12" class="title-slide slide level1"><h1>Q.NT10.ALG.12</h1><p>Kura izteiksme ir identiska <span class="math inline">\(\frac{1}{n^2-1} = \frac{1}{(n-1)(n+1)}\)</span>, ja to pārveido par divu daļu starpību:</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(\frac{1}{n-1} - \frac{1}{n+1}\)</span></li>
-<li><span class="math inline">\(\frac{1}{2(n-1)} - \frac{1}{2(n+1)}\)</span></li>
-<li><span class="math inline">\(\frac{1}{n-1} - \frac{1}{n}\)</span></li>
-<li><span class="math inline">\(\frac{2}{n-1} - \frac{2}{n+1}\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\(\frac{1}{n-1}-\frac{1}{n+1}=\frac{(n+1)-(n-1)}{(n-1)(n+1)}=\frac{2}{n^2-1}\)</span>. Pārveidojamā izteiksme ir divreiz mazāka, tādēļ pareizā atbilde ir tā, kur abu daļu saucējos ir papildu reizinātājs <span class="math inline">\(2\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2016.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.13" class="title-slide slide level1"><h1>Q.NT10.ALG.13</h1><p>Izteikt daļu <span class="math inline">\(\frac{3}{7}\)</span> kā summu: <span class="math inline">\(\frac{2}{a}+\frac{1}{b}\)</span>, kur <span class="math inline">\(a \neq 7\)</span> un <span class="math inline">\(b \neq 7\)</span>.</p>
-<p>(<em>Ierakstīt atbildi formā: <code>2/a+1/b</code></em>)</p>
-<p><strong>Atbilde:</strong> <code>2/5+1/35</code>,<code>2/21+1/3</code><br />
-<strong>Skaidrojums:</strong> <span class="math inline">\(\frac{3}{7}\)</span> ir lielāka par <span class="math inline">\(\frac{2}{5}\)</span>. Ja atņem <span class="math inline">\(\frac{3}{7}-\frac{2}{5}\)</span>, tad sanāk <span class="math inline">\(\frac{1}{35}\)</span>.<br />
-<span class="math inline">\(\frac{3}{7}\)</span> ir lielāka arī par <span class="math inline">\(\frac{1}{3}\)</span>, šo daļu starpība ir <span class="math inline">\(\frac{2}{21}\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2016.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.14" class="title-slide slide level1"><h1>Q.NT10.ALG.14</h1><p>Kurš skaitlis lielāks:<br />
-<span class="math inline">\(A = \overline{9\ast\ast\ast\ast\ast\ast}\)</span> vai <span class="math inline">\(B = 9^7\)</span>.<br />
-(Ar zvaigznītēm apzīmēti seši nezināmi cipari; tie var būt arī vienādi.)</p>
-<p><small></p>
-<ol type="1">
-<li>Vienmēr <span class="math inline">\(A &gt; B\)</span>.</li>
-<li>Vienmēr <span class="math inline">\(A &lt; B\)</span>.</li>
-<li>Atkarībā no nezināmajiem cipariem var būt <span class="math inline">\(A &lt; B\)</span>, <span class="math inline">\(A=B\)</span> vai <span class="math inline">\(A&gt;B\)</span>.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>A</code><br />
-<strong>Skaidrojums:</strong> Ja skaitlis sākas ar ciparu <span class="math inline">\(9\)</span>, kam seko seši nezināmi cipari, tas ir vismaz <span class="math inline">\(9\)</span> miljoni: <span class="math inline">\(A \geq 9\cdot{}10^6\)</span>. Savukārt skaitlī <span class="math inline">\(B = 9^7\)</span> arī septiņi reizinātāji, bet vairāki no tiem ir mazāki: <span class="math inline">\(9 &lt; 10\)</span>. Tādēļ vienmēr <span class="math inline">\(A &gt; B\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2015.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.15" class="title-slide slide level1"><h1>Q.NT10.ALG.15</h1><p>Izteiksmē <span class="math inline">\(\frac{1}{a} + \frac{1}{b} + \frac{1}{a+b}\)</span> pozitīvu skaitli <span class="math inline">\(a\)</span> atstāja nemainīgu, bet pozitīvu skaitli <span class="math inline">\(b\)</span> palielināja. Kā mainījās izteiksmes vērtība?</p>
-<p><small></p>
-<ol type="1">
-<li>Izteiksmes vērtība palielinājās.</li>
-<li>Izteiksmes vērtība samazinājās.</li>
-<li>Izteiksmes vērtība var gan palielināties, gan samazināties atkarībā no <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> Palielinot <span class="math inline">\(b\)</span>, samazinās abas daļas <span class="math inline">\(\frac{1}{b}\)</span> un <span class="math inline">\(\frac{1}{a+b}\)</span>, tādēļ arī visa izteiksme samazinās.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2013.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.16" class="title-slide slide level1"><h1>Q.NT10.ALG.16</h1><p>Zināms, ka daļa <span class="math inline">\(\frac{1}{6}\)</span> izteikta kā divu naturālu skaitļu apgriezto lielumu summa: <span class="math inline">\(\frac{1}{a} + \frac{1}{b}\)</span>, turklāt <span class="math inline">\(a&lt;b\)</span> un <span class="math inline">\(a \neq 7\)</span> (t.i. summa nav <span class="math inline">\(\frac{1}{7} + \frac{1}{42}\)</span>).<br />
-Atrast kādu šādas summas piemēru.</p>
-<p>(<em>Ierakstīt atbildi formā: <code>1/a+1/b</code></em>)</p>
-<p><strong>Atbilde:</strong> <code>1/8+1/24</code>,<code>1/9+1/18</code>,<code>1/10+1/15</code><br />
-<strong>Skaidrojums:</strong> No <span class="math inline">\(\frac{1}{6}\)</span> var atņemt ne tikai <span class="math inline">\(\frac{1}{7}\)</span>, bet arī <span class="math inline">\(\frac{1}{8}\)</span>, <span class="math inline">\(\frac{1}{9}\)</span>, <span class="math inline">\(\frac{1}{10}\)</span>, <span class="math inline">\(\frac{1}{11}\)</span> (bet <span class="math inline">\(a=12\)</span> neder, jo <span class="math inline">\(a \neq b\)</span>).<br />
-Trijos gadījumos starpība <span class="math inline">\(\frac{1}{6}-\frac{1}{a}\)</span> ir formā <span class="math inline">\(\frac{1}{b}\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2013.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.17" class="title-slide slide level1"><h1>Q.NT10.ALG.17</h1><p>Pastniekam Fibonači ir neierobežots skaits pastmarku <span class="math inline">\(5\)</span> un <span class="math inline">\(8\)</span> centu vērtībā. Atrast lielāko skaitli <span class="math inline">\(N\)</span> ar šādām īpašībām:<br />
-(a) <span class="math inline">\(N\)</span> dod atlikumu <span class="math inline">\(2\)</span>, dalot ar <span class="math inline">\(5\)</span>,<br />
-(b) <span class="math inline">\(N\)</span> centu summu nav iespējams uzlīmēt uz aploksnes, izmantojot tikai <span class="math inline">\(5\)</span> un <span class="math inline">\(8\)</span> centu pastmarkas.</p>
-<p>(<em>Ierakstīt skaitli.</em>)</p>
-<p><strong>Atbilde:</strong> <code>27</code><br />
-<strong>Skaidrojums:</strong> Šķirojam gadījumus atkarībā no <span class="math inline">\(8\)</span>-centu pastmarku skaita. To skaits var būt <span class="math inline">\(k=0,1,2,3,4\)</span> (lielākas <span class="math inline">\(k\)</span> vērtības var reducēt uz agrākām - teiksim, <span class="math inline">\(k=8\)</span> var aizstāt ar <span class="math inline">\(k=3\)</span> - un piecas <span class="math inline">\(8\)</span>-centu markas aizstāt ar astoņām <span class="math inline">\(5\)</span>-centu pastmarkām). "Vissliktākais gadījums - ja vajag četras <span class="math inline">\(8\)</span>-centu markas. Mazākā summa, ko VAR uzlīmēt ir <span class="math inline">\(32\)</span> (atlikums <span class="math inline">\(2\)</span>, dalot ar <span class="math inline">\(5\)</span>). Bet <span class="math inline">\(27\)</span> uzlīmēt nevar, jo tam arī vajadzētu vismaz četras <span class="math inline">\(8\)</span>-centu pastmarkas.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2014.10.3</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.18" class="title-slide slide level1"><h1>Q.NT10.ALG.18</h1><p><strong>Atbilde:</strong> Zināms, ka <span class="math inline">\(a,b\)</span> ir naturāli skaitļi un <span class="math inline">\(3a + b\)</span> dalās ar <span class="math inline">\(8\)</span>. Kura cita izteiksme noteikti dalās ar <span class="math inline">\(8\)</span>?</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(a+b\)</span></li>
-<li><span class="math inline">\(a+3b\)</span></li>
-<li><span class="math inline">\(2a+2b\)</span></li>
-<li><span class="math inline">\(a-b\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> Ja <span class="math inline">\(3a+b = 8k\)</span>, tad apzīmē <span class="math inline">\(a+3b=m\)</span> jeb <span class="math inline">\(3a+9b=3m\)</span>. Atņemam <span class="math inline">\((3a+9b)-(3a+b)=3m-8k\)</span> jeb <span class="math inline">\(8b = 3m-8k\)</span>. Iegūstam, ka <span class="math inline">\(3m\)</span> dalās ar <span class="math inline">\(8\)</span> jeb <span class="math inline">\(m\)</span> dalās ar <span class="math inline">\(8\)</span>.<br />
-Citos variantos var viegli atrast pretpiemērus.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2016.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.19" class="title-slide slide level1"><h1>Q.NT10.ALG.19</h1><p>Zināmi divu naturālu skaitļu sadalījumi pirmreizinātājos:<br />
-<span class="math inline">\(A = 2^5\cdot{}3^2\)</span> un <span class="math inline">\(B = 2^1\cdot{}3^{10}\)</span>. Skaitļa <span class="math inline">\(C=A^3B\)</span> sadalījums pirmreizinātājos ir <span class="math inline">\(2^x3^y\)</span>. Atrast kāpinātāju <span class="math inline">\(x\)</span>.</p>
-<p>(<em>Ierakstīt skaitli: pašu x vērtību, nevis divnieku uzkāpinātu šajā pakāpē.</em>)</p>
-<p><strong>Atbilde:</strong> <code>16</code><br />
-<strong>Skaidrojums:</strong> Pārveidojam <span class="math inline">\(A^3B=(2^53^2)^3(2^13^{10})\)</span>. Pirmais reizinātājs dalās ar <span class="math inline">\(2^{5\cdot3}=2^{15}\)</span>, otrais dalās ar <span class="math inline">\(2^1\)</span>. Viss kopā dalās ar <span class="math inline">\(2^{16}\)</span> jeb <span class="math inline">\(x=16\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2016.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.alg.20" class="title-slide slide level1"><h1>Q.NT10.ALG.20</h1><p>Atrast skaitli, ar ko vienāda summa:<br />
-<span class="math inline">\(S = \frac{1}{10\cdot{}11} + \frac{1}{11\cdot{}12} + \ldots + \frac{1}{18\cdot{}19} + \frac{1}{19\cdot{}20}.\)</span></p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(S = \frac{1}{10}\)</span></li>
-<li><span class="math inline">\(S = \frac{1}{11} - \frac{1}{19}\)</span></li>
-<li><span class="math inline">\(S = \frac{1}{20}\)</span></li>
-<li><span class="math inline">\(S = \frac{1}{10}+\frac{1}{20}\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> Saskaitām <span class="math inline">\(\left(\frac{1}{10}-\frac{1}{11}\right)\)</span> utt. līdz <span class="math inline">\(\left(\frac{1}{19}-\frac{1}{20}\right)\)</span>. Pēc saīsināšanas paliek <span class="math inline">\(\left(\frac{1}{10}-\frac{1}{20}\right) = \frac{1}{20}\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2016.10.3</a></p>
-</blockquote></section>
+<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="q.nt10.alg.1" class="title-slide slide level1"><h1>Q.NT10.ALG.1</h1></section></section>
+<section><section id="q.nt10.alg.2" class="title-slide slide level1"><h1>Q.NT10.ALG.2</h1></section></section>
+<section><section id="q.nt10.alg.3" class="title-slide slide level1"><h1>Q.NT10.ALG.3</h1></section></section>
+<section><section id="q.nt10.alg.4" class="title-slide slide level1"><h1>Q.NT10.ALG.4</h1></section></section>
+<section><section id="q.nt10.alg.5" class="title-slide slide level1"><h1>Q.NT10.ALG.5</h1></section></section>
+<section><section id="q.nt10.alg.6" class="title-slide slide level1"><h1>Q.NT10.ALG.6</h1></section></section>
+<section><section id="q.nt10.alg.7" class="title-slide slide level1"><h1>Q.NT10.ALG.7</h1></section></section>
+<section><section id="q.nt10.alg.8" class="title-slide slide level1"><h1>Q.NT10.ALG.8</h1></section></section>
+<section><section id="q.nt10.alg.9" class="title-slide slide level1"><h1>Q.NT10.ALG.9</h1></section></section>
+<section><section id="q.nt10.alg.10" class="title-slide slide level1"><h1>Q.NT10.ALG.10</h1></section></section>
+<section><section id="q.nt10.alg.11" class="title-slide slide level1"><h1>Q.NT10.ALG.11</h1></section></section>
+<section><section id="q.nt10.alg.12" class="title-slide slide level1"><h1>Q.NT10.ALG.12</h1></section></section>
+<section><section id="q.nt10.alg.13" class="title-slide slide level1"><h1>Q.NT10.ALG.13</h1></section></section>
+<section><section id="q.nt10.alg.14" class="title-slide slide level1"><h1>Q.NT10.ALG.14</h1></section></section>
+<section><section id="q.nt10.alg.15" class="title-slide slide level1"><h1>Q.NT10.ALG.15</h1></section></section>
+<section><section id="q.nt10.alg.16" class="title-slide slide level1"><h1>Q.NT10.ALG.16</h1></section></section>
+<section><section id="q.nt10.alg.17" class="title-slide slide level1"><h1>Q.NT10.ALG.17</h1></section></section>
+<section><section id="q.nt10.alg.18" class="title-slide slide level1"><h1>Q.NT10.ALG.18</h1></section></section>
+<section><section id="q.nt10.alg.19" class="title-slide slide level1"><h1>Q.NT10.ALG.19</h1></section></section>
+<section><section id="q.nt10.alg.20" class="title-slide slide level1"><h1>Q.NT10.ALG.20</h1></section></section>
     </div>
   </div>
 

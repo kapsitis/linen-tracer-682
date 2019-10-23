@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style>
+  <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,240 +32,27 @@
     <div class="slides">
 
 
-<section id="section" class="title-slide slide level1"><h1> </h1><h1 style="font-size:28pt">
-Skaitļu teorija: Testi
-</h1>
-<ul>
-<li>Algebras prasmes sk.teorijā</li>
-<li>Dalāmības prasmes</li>
-<li><blue>Modulārās aritmētikas prasmes</blue></li>
-</ul></section>
-<section id="q.nt10.mod.1" class="title-slide slide level1"><h1>Q.NT10.MOD.1</h1><p>Vai eksistē skaitlis <span class="math inline">\(x \in [1,100]\)</span>, kuram gan <span class="math inline">\(x+23\)</span>, gan <span class="math inline">\(x+121\)</span> dalās ar <span class="math inline">\(4\)</span>?</p>
-<p>(<em>Atzīmēt jā vai nē. Ja ‘jā’, tad ierakstiet šāda skaitļa piemēru.</em>)</p>
-<p><strong>Atbilde:</strong> <code>(no,)</code><br />
-<strong>Skaidrojums:</strong> Starpība <span class="math inline">\((x+121)-(x+23) = 98\)</span>. Tikai viens no abiem skaitļiem var dalīties ar <span class="math inline">\(4\)</span>. Piemēram, ja <span class="math inline">\((x+23)\)</span> dalās ar <span class="math inline">\(4\)</span>, tad <span class="math inline">\((x+121)\)</span> dod atlikumu <span class="math inline">\(2\)</span>, dalot ar <span class="math inline">\(4\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.NO.2015.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.2" class="title-slide slide level1"><h1>Q.NT10.MOD.2</h1><p>Vai izteiksmes <span class="math inline">\(f(n) = 3n^5+5n^4\)</span> vērtība ir pāru skaitlis?</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(f(n)\)</span> ir pāru, ja <span class="math inline">\(n\)</span> ir pāru; <span class="math inline">\(f(n)\)</span> ir nepāru, ja <span class="math inline">\(n\)</span> ir nepāru.</li>
-<li><span class="math inline">\(f(n)\)</span> ir pāru abos gadījumos.</li>
-<li><span class="math inline">\(f(n)\)</span> ir nepāru abos gadījumos.</li>
-<li><span class="math inline">\(f(n)\)</span> ir nepāru, ja <span class="math inline">\(n\)</span> ir pāru; <span class="math inline">\(f(n)\)</span> ir pāru, ja <span class="math inline">\(n\)</span> ir nepāru.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> Ja <span class="math inline">\(n\)</span> ir pāru skaitlis, tad <span class="math inline">\(f(n)\)</span> ir pāru (divu pāru skaitļu summa).<br />
-Ja <span class="math inline">\(n\)</span> ir nepāru skaitlis, tad <span class="math inline">\(f(n)\)</span> ir nepāru (divu nepāru skaitļu summa).</p>
-<blockquote>
-<p><a href="#/">LV.VO.2015.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.3" class="title-slide slide level1"><h1>Q.NT10.MOD.3</h1><p>Ar kādu lielāko <span class="math inline">\(2\)</span> pakāpi <strong>katram</strong> <span class="math inline">\(n\)</span> noteikti dalās izteiksme <span class="math inline">\(f(n) = 8n^2 + 8n\)</span>?</p>
-<p>(<em>Ja der vairākas atbildes, atzīmēt to, kura atbilst augstākai <span class="math inline">\(2\)</span> pakāpei.</em>)</p>
-<p><small></p>
-<ol type="1">
-<li>Ar <span class="math inline">\(2^3 = 8\)</span>.</li>
-<li>Ar <span class="math inline">\(2^4 = 16\)</span>.</li>
-<li>Ar <span class="math inline">\(2^5 = 32\)</span>.</li>
-<li>Ar <span class="math inline">\(2^6 = 64\)</span>.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojujms:</strong> Pārveidojam <span class="math inline">\(f(n)\)</span> par reizinājumu: <span class="math inline">\(f(n)=8n(n+1)\)</span>. Vismaz viens no abiem skaitļiem <span class="math inline">\(n\)</span> vai <span class="math inline">\(n+1\)</span> ir pāru skaitlis. Tādēļ <span class="math inline">\(f(n)\)</span> dalās ne vien ar <span class="math inline">\(8\)</span>, bet arī ar <span class="math inline">\(16\)</span> (jebkuram <span class="math inline">\(n\)</span>).</p>
-<blockquote>
-<p><a href="#/">LV.VO.2015.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.4" class="title-slide slide level1"><h1>Q.NT10.MOD.4</h1><p>Zināms, ka <span class="math inline">\(n, n+9, n+22\)</span> ir naturālu skaitļu pakāpes, kas augstākas par pirmo (pilni kvadrāti, kubi, ceturtās pakāpes, u.c.). Ko var secināt par skaitļa <span class="math inline">\(n\)</span> paritāti?</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(n\)</span> noteikti ir pāru skaitlis.</li>
-<li><span class="math inline">\(n\)</span> noteikti ir nepāru skaitlis.</li>
-<li><span class="math inline">\(n\)</span> var būt gan pāru, gan nepāru.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> Ja <span class="math inline">\(n\)</span> būtu pāru skaitlis, tad <span class="math inline">\(n\)</span> un <span class="math inline">\(n+22\)</span> būtu pāru skaitļu pakāpes (abi dalītos vismaz ar <span class="math inline">\(4\)</span>). Tas nav iespējams, jo <span class="math inline">\(22\)</span> dod atlikumu <span class="math inline">\(2\)</span>, dalot ar <span class="math inline">\(4\)</span>.<br />
-Tādēļ <span class="math inline">\(n\)</span> ir nepāru skaitlis. Var, teiksim, ņemt <span class="math inline">\((n,n+9,n+22)=(27,36,49)\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.NO.2015.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.5" class="title-slide slide level1"><h1>Q.NT10.MOD.5</h1><p>Zināms, ka <span class="math inline">\(n, n+11, n+33\)</span> ir naturālu skaitļu pakāpes, kas augstākas par pirmo (pilni kvadrāti, kubi, ceturtās pakāpes, u.c.). Ko var secināt par skaitļa <span class="math inline">\(n\)</span> paritāti?</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(n\)</span> noteikti ir pāru skaitlis.</li>
-<li><span class="math inline">\(n\)</span> noteikti ir nepāru skaitlis.</li>
-<li><span class="math inline">\(n\)</span> var būt gan pāru, gan nepāru.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>A</code><br />
-<strong>Skaidrojums:</strong> Ja <span class="math inline">\(n\)</span> būtu nepāru, tad <span class="math inline">\(n+11\)</span> un <span class="math inline">\(n+33\)</span> abi būtu pāru skaitļu pakāpes - tātad dalītos ar <span class="math inline">\(4\)</span>. Tas nav iespējams, jo <span class="math inline">\((n+33)-(n+11)=22\)</span> un <span class="math inline">\(22\)</span> dod atlikumu <span class="math inline">\(2\)</span>, dalot ar <span class="math inline">\(4\)</span>.<br />
-Tādēļ <span class="math inline">\(n\)</span> ir pāru skaitlis. Var izvēlēties, piemēram, <span class="math inline">\((n,n+11,n+33)=(16,25,49)\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.NO.2015.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.6" class="title-slide slide level1"><h1>Q.NT10.MOD.6</h1><p>Zināms, ka <span class="math inline">\(n\)</span> ir naturāls trīsciparu skaitlis. Atrast, cik daudzi naturāli skaitļi intervālā <span class="math inline">\([n;n+5]\)</span> noteikti ir salikti skaitļi, neatkarīgi no <span class="math inline">\(n\)</span>.</p>
-<p>(<em>Ja der vairākas atbildes, atzīmēt to, kura atbilst lielākam skaitlim.</em>)</p>
-<p><small></p>
-<ol type="1">
-<li>Vismaz <span class="math inline">\(2\)</span>.</li>
-<li>Vismaz <span class="math inline">\(3\)</span>.</li>
-<li>Vismaz <span class="math inline">\(4\)</span>.</li>
-<li>Vismaz <span class="math inline">\(5\)</span>.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>4</code><br />
-<strong>Skaidrojums:</strong> Intervālā <span class="math inline">\([n;n+5]\)</span> ir pavisam seši skaitļi. Vismaz <span class="math inline">\(3+1\)</span> nav pirmskaitļi (trīs pāru skaitļi un viens nepāru skaitlis, kas dalās ar <span class="math inline">\(3\)</span>).<br />
-Secinām, ka ir vismaz <span class="math inline">\(4\)</span> salikti skaitļi. Vairāk saliktu skaitļu var nebūt, jo intervālā <span class="math inline">\([100;105]\)</span> ir divi pirmskaitļi (<span class="math inline">\(101\)</span> un <span class="math inline">\(103\)</span>); ir arī vairāki citi <em>dvīņu pirmskaitļu</em> pāri.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2019.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.7" class="title-slide slide level1"><h1>Q.NT10.MOD.7</h1><p>Atrast lielāko naturālo skaitli, kuru nav iespējams izteikt kā pirmskaitļa un divu saliktu skaitļu summu.</p>
-<p>(<em>Ierakstīt naturālu skaitli.</em>)</p>
-<p><strong>Atbilde:</strong> <code>9</code><br />
-<strong>Skaidrojums:</strong> Mazākais saliktais skaitlis ir <span class="math inline">\(4\)</span> (skaitlis <span class="math inline">\(1\)</span> nav ne pirmskaitlis, ne salikts skaitlis). Tādēļ mazākā summa ir <span class="math inline">\(2+4+4=10\)</span>. Var izteikt arī <span class="math inline">\(11 = 3+4+4\)</span> (un vēl lielākiem skaitļiem var aizstāt kādu no četriniekiem ar lielāku pāru skaitli).<br />
-Lielākais skaitlis, kuru nevar šādi izteikt ir <span class="math inline">\(9\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2019.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.8" class="title-slide slide level1"><h1>Q.NT10.MOD.8</h1><p>Zināms, ka naturāli skaitļi <span class="math inline">\(x,y\)</span> ir vienādojuma <span class="math inline">\(x^2 = y! + 1\)</span> atrisinājumi.<br />
-Ko var secināt par skaitli <span class="math inline">\(x\)</span>?<br />
-(Ar <span class="math inline">\(y!\)</span> apzīmē reizinājumu <span class="math inline">\(1\cdot{}2\cdot{}3\cdot\ldots\cdot{}y\)</span>.)</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(x\)</span> noteikti ir pāru skaitlis.</li>
-<li><span class="math inline">\(x\)</span> noteikti ir nepāru skaitlis.</li>
-<li><span class="math inline">\(x\)</span> var būt gan pāru, gan nepāru skaitlis.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>B</code><br />
-<strong>Skaidrojums:</strong> Ja <span class="math inline">\(y=1\)</span>, tad <span class="math inline">\(1!+1=2\)</span> nav pilns kvadrāts. Tātad <span class="math inline">\(y&gt;1\)</span> un <span class="math inline">\(y!\)</span> ir pāru skaitlis. Savukārt <span class="math inline">\(y!+1\)</span> ir nepāru skaitlis un var būt vienīgi nepāru skaitļa kvadrāts.<br />
-Der, piemēram, atrisinājumi <span class="math inline">\(11^2=121=5!+2\)</span> un <span class="math inline">\(71^2=5041=7!+1\)</span> (tie nav jāatrod, lai noskaidrotu pareizo atbildi).</p>
-<blockquote>
-<p><a href="#/">LV.NO.2010.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.9" class="title-slide slide level1"><h1>Q.NT10.MOD.9</h1><p>Zināms, ka naturāli skaitļi <span class="math inline">\(x,y\)</span> ir vienādojuma <span class="math inline">\(x^2 - 18^2 = y!\)</span> atrisinājumi.<br />
-Ko var secināt par skaitli <span class="math inline">\(x\)</span>?<br />
-(Ar <span class="math inline">\(y!\)</span> apzīmē reizinājumu <span class="math inline">\(1\cdot{}2\cdot{}3\cdot\ldots\cdot{}y\)</span>.)</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(x\)</span> noteikti ir pāru skaitlis.</li>
-<li><span class="math inline">\(x\)</span> noteikti ir nepāru skaitlis.</li>
-<li><span class="math inline">\(x\)</span> var būt gan pāru, gan nepāru skaitlis.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>A</code><br />
-<strong>Skaidrojums:</strong> Atbilde <span class="math inline">\(y=1\)</span> neder, jo <span class="math inline">\(1+18^2\)</span> nav pilns kvadrāts. Tādēļ <span class="math inline">\(y&gt;1\)</span> un <span class="math inline">\(y! + 18^2\)</span> ir pāru skaitlis. Tātad arī <span class="math inline">\(x\)</span> ir pāru skaitlis.<br />
-Der, piemēram, atrisinājums <span class="math inline">\(6318^2 - 18^2 = 11!\)</span> (tas nav jāatrod, lai noskaidrotu pareizo atbildi).</p>
-<blockquote>
-<p><a href="#/">LV.NO.2010.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.10" class="title-slide slide level1"><h1>Q.NT10.MOD.10</h1><p>Uz tāfeles uzrakstīja <span class="math inline">\(6\)</span> naturālus skaitļus un katriem diviem no tiem aprēķināja summu (dažas no tām var būt arī vienādas). Kāds lielākais skaits no šīm summām var būt nepāru skaitļi?</p>
-<p><strong>Atbilde:</strong> <code>9</code><br />
-<strong>Skaidrojums:</strong> Aplūkojam visas iespējas, cik no <span class="math inline">\(6\)</span> skaitļiem var būt pāru/nepāru. <span class="math inline">\(6=0+6=1+5=2+4=3+3=4+2=5+1=6+0\)</span>. Visvairāk nepāru summu ir tad, ja ir <span class="math inline">\(3\)</span> pāru un <span class="math inline">\(3\)</span> nepāru skaitļi. Tad no visām <span class="math inline">\(15\)</span> summām tieši <span class="math inline">\(3\cdot{}3 =9\)</span> būs tādas, kas ir nepāru.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2014.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.11" class="title-slide slide level1"><h1>Q.NT10.MOD.11</h1><p>Uz tāfeles uzrakstīja <span class="math inline">\(6\)</span> naturālus skaitļus un katriem diviem no tiem aprēķināja summu (dažas no tām var būt arī vienādas). Kāds lielākais skaits no šīm summām var būt pāru skaitļi?</p>
-<p><strong>Atbilde:</strong> <code>15</code><br />
-<strong>Skaidrojums:</strong> Pietiek izvēlēties visus pāru (vai visus nepāru) skaitļus. Tad visas <span class="math inline">\(15\)</span> summas (tik veidos <span class="math inline">\(2\)</span> var izvēlēties no <span class="math inline">\(6\)</span>) būs pāru skaitļi.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2014.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.12" class="title-slide slide level1"><h1>Q.NT10.MOD.12</h1><p>Zināms, ka <span class="math inline">\(1000000\)</span> (viens miljons), dalot ar <span class="math inline">\(7\)</span>, dod atlikumu <span class="math inline">\(1\)</span>. Atrast, kurš no skaitļiem dalās ar <span class="math inline">\(7\)</span>:</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(5000002\)</span></li>
-<li><span class="math inline">\(2000001\)</span></li>
-<li><span class="math inline">\(4000009\)</span></li>
-<li><span class="math inline">\(9000011\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>A</code><br />
-<strong>Skaidrojums:</strong> Ievērojam, ka <span class="math inline">\(5.000.000\)</span> (pieci miljoni), dalot ar <span class="math inline">\(7\)</span> dod atlikumu <span class="math inline">\(5\)</span>, <span class="math inline">\(2.000.000\)</span> - atlikumu <span class="math inline">\(2\)</span>, utt.<br />
-Pārbaudām summas: <span class="math inline">\(5+2\)</span>, <span class="math inline">\(2+1\)</span>, <span class="math inline">\(4+9\)</span>, <span class="math inline">\(9+11\)</span>. No tām tikai pirmā dalās ar <span class="math inline">\(7\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2017.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.13" class="title-slide slide level1"><h1>Q.NT10.MOD.13</h1><p>Kādām naturālām <span class="math inline">\(p\)</span> vērtībām izteiksme <span class="math inline">\(f(n) = 2n^2+1\)</span> nedalās ar <span class="math inline">\(3\)</span>?</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(f(p) = 2p^2+1\)</span> dalās ar <span class="math inline">\(3\)</span> visiem <span class="math inline">\(p\)</span>.</li>
-<li><span class="math inline">\(f(p) = 2p^2+1\)</span> nedalās ar <span class="math inline">\(3\)</span> tad un tikai tad, ja <span class="math inline">\(p\)</span> nedalās ar <span class="math inline">\(3\)</span>.</li>
-<li><span class="math inline">\(f(p) = 2p^2+1\)</span> nedalās ar <span class="math inline">\(3\)</span> tad un tikai tad, ja <span class="math inline">\(p\)</span> dalās ar <span class="math inline">\(3\)</span>.</li>
-<li><span class="math inline">\(f(p) = 2p^2+1\)</span> nedalās ar <span class="math inline">\(3\)</span> tad un tikai tad, ja <span class="math inline">\(p\)</span> ir nepāru.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> Ievērojam, ka <span class="math inline">\(n^2\)</span> dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(3\)</span> (ja pats <span class="math inline">\(n\)</span> nedalās ar <span class="math inline">\(3\)</span>) vai atlikumu <span class="math inline">\(0\)</span> (ja pats <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(3\)</span>). Tādēļ <span class="math inline">\(2n^2+1\)</span> nedalās ar <span class="math inline">\(3\)</span> vienīgi tad, ja <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(3\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2012.10.1</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.14" class="title-slide slide level1"><h1>Q.NT10.MOD.14</h1><p><span class="math inline">\(1,4,9,16,25,\ldots\)</span> ir naturālu skaitļu kvadrāti. Kādus atlikumus šie skaitļi dod, dalot ar <span class="math inline">\(3\)</span>?</p>
-<p>(<em>Atzīmēt visas iespējas.</em>)</p>
-<p><small></p>
-<ol type="1">
-<li>Atlikumu <span class="math inline">\(0\)</span>.</li>
-<li>Atlikumu <span class="math inline">\(1\)</span>.</li>
-<li>Atlikumu <span class="math inline">\(2\)</span>.</li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>A,B</code><br />
-<strong>Skaidrojums:</strong> Pilns kvadrāts var dot atlikumu <span class="math inline">\(0\)</span>, dalot ar <span class="math inline">\(3\)</span> (ja kāpina skaitli, kas pats dalās ar <span class="math inline">\(3\)</span>), vai arī atlikumu <span class="math inline">\(1\)</span>. Pat, kāpinot skaitli, kas dod atlikumu <span class="math inline">\(2\)</span>: <span class="math inline">\(n=3k+2\)</span>.<br />
-Iegūstam <span class="math inline">\((3k+2)^2=9k^2 + 12k + 4\)</span> un <span class="math inline">\(4\)</span> dod atlikumu <span class="math inline">\(1\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.VO.2013.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.15" class="title-slide slide level1"><h1>Q.NT10.MOD.15</h1><p>Cik ir tādu ciparu, ar kuriem nevar beigties neviena naturāla skaitļa kvadrāta decimālpieraksts.</p>
-<p>(<em>Ierakstīt skaitli - šādu ciparu skaitu.</em>)</p>
-<p><strong>Atbilde:</strong> <code>4</code> <strong>Skaidrojums:</strong> Pilni kvadrāti nekad nebeidzas ar cipariem <span class="math inline">\(2,3,7,8\)</span>. To pārbauda, kāpinot kvadrātā visus skaitļus no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(10\)</span> (vēl lielākiem skaitļiem pēdējie cipari sāk atkārtoties).</p>
-<blockquote>
-<p><a href="#/">LV.VO.2013.10.4</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.16" class="title-slide slide level1"><h1>Q.NT10.MOD.16</h1><p>Skaitļu <span class="math inline">\(1,\ldots,9\)</span> kubi ir sekojoši: <span class="math inline">\(1,8,27,64,125,216,343,512,729\)</span>. Kādus atlikumus šie skaitļi dod, dalot ar <span class="math inline">\(9\)</span>?<br />
-(Varat izmantot faktu, ka skaitlis, dalot ar <span class="math inline">\(9\)</span>, dod to pašu atlikumu, ko šī skaitļa ciparu summa.)</p>
-<p>(<em>Ierakstīt visus iespējamos atlikumus, atdalot tos ar komatiem.</em>)</p>
-<p><strong>Atbilde:</strong> <code>0,1,8</code><br />
-<strong>Skaidrojums:</strong> Varam eksperimentāli pārbaudīt, dalot visus 9 kubus: atlikumi ir tikai <span class="math inline">\(0,1,8\)</span> (lielāku skaitļu kubi sāks atkārtot šos pašus atlikumus).<br />
-Starp citu, pietiek pārbaudīt atlikumus, dalot ar <span class="math inline">\(3\)</span>: kāpināt kubā <span class="math inline">\(3k\)</span>, <span class="math inline">\(3k+1\)</span> un <span class="math inline">\(3k-1\)</span>. Teiksim, <span class="math inline">\((3k-1)^3=27k^3 - 27k^2 + 9k - 1\)</span>, t.i. atlikums ir <span class="math inline">\(8\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2016.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.17" class="title-slide slide level1"><h1>Q.NT10.MOD.17</h1><p>Spriežot pēc atlikumiem, dalot ar <span class="math inline">\(4\)</span>, kuram no vienādojumiem eksistē atrisinājums naturālos skaitļos <span class="math inline">\((x,y)\)</span>?</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(x^2 - 2018 = 120y\)</span></li>
-<li><span class="math inline">\(x^2 - 2019 = 120y\)</span></li>
-<li><span class="math inline">\(x^2 - 2020 = 120y\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code> <strong>Skaidrojums:</strong> Labā puse (<span class="math inline">\(120y\)</span>) noteikti dalās ar <span class="math inline">\(4\)</span>, tātad arī kreisā puse dalās. No otras puses, <span class="math inline">\(x^2\)</span> var dot tikai atlikumus <span class="math inline">\(0\)</span> vai <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(4\)</span>. Skaitļi <span class="math inline">\(2018\)</span> un <span class="math inline">\(2019\)</span> dod attiecīgi atlikumus <span class="math inline">\(2\)</span> vai <span class="math inline">\(3\)</span> - tātad tie neder.<br />
-Der, piemēram, <span class="math inline">\(50^2 - 2020 = 480 = 120\cdot{}4\)</span>.</p>
-<blockquote>
-<p><a href="#/">LV.AO.2016.10.2</a></p>
-</blockquote></section>
-<section id="q.nt10.mod.18" class="title-slide slide level1"><h1>Q.NT10.MOD.18</h1><p>Zināms, ka skaitlis <span class="math inline">\(x = 3k+1\)</span> dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(3\)</span>.<br />
-Kādu atlikumu dod <span class="math inline">\(x^3\)</span>, dalot ar <span class="math inline">\(9\)</span>?</p>
-<p>(<em>Ierakstīt atlikumu.</em>)</p>
-<p><strong>Atbilde:</strong> <code>1</code> <strong>Skaidrojums:</strong> Atlikumus var reizināt - tātad <span class="math inline">\(x^3=x\cdot{}x\cdot{}x\)</span> dos tādu pašu atlikumu kā <span class="math inline">\(1\cdot{}1\cdot{}1 = 1\)</span>.<br />
-Garāks risinājums ir atverot iekavas: <span class="math inline">\((3k+1)^3=27k^3 + 27k^2 + 9k + 1\)</span>. Visi saskaitāmie dalās ar <span class="math inline">\(9\)</span> bez atlikuma, bet pēdējais dod atlikumu <span class="math inline">\(1\)</span>.</p></section>
-<section id="q.nt10.mod.19" class="title-slide slide level1"><h1>Q.NT10.MOD.19</h1><p>Izteiksmi <span class="math inline">\(13^n + 7^n\)</span> dalīja ar skaitli <span class="math inline">\(d\)</span> un ieguva atlikumu. Atrast to <span class="math inline">\(d\)</span>, kuram atlikums nav atkarīgs no skaitļa <span class="math inline">\(n\)</span> izvēles.</p>
-<p><small></p>
-<ol type="1">
-<li><span class="math inline">\(d=4\)</span></li>
-<li><span class="math inline">\(d=5\)</span></li>
-<li><span class="math inline">\(d=6\)</span></li>
-<li><span class="math inline">\(d=7\)</span></li>
-</ol>
-<p></small></p>
-<p><strong>Atbilde:</strong> <code>C</code><br />
-<strong>Skaidrojums:</strong> Dalot ar <span class="math inline">\(6\)</span>, gan <span class="math inline">\(13^n\)</span>, gan arī <span class="math inline">\(7^n\)</span> dos tādu pašu atlikumu kā <span class="math inline">\(1^n\)</span> (jo <span class="math inline">\(13\)</span> un <span class="math inline">\(7\)</span>, dalot ar <span class="math inline">\(6\)</span>, dod atlikumu <span class="math inline">\(1\)</span>).</p></section>
-<section id="q.nt10.mod.20" class="title-slide slide level1"><h1>Q.NT10.MOD.20</h1><p>Dots, ka <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> ir nepāru skaitļi, kas nedalās ar <span class="math inline">\(5\)</span>. Ar kādu ciparu var beigties <span class="math inline">\(x^4-y^4 = (x^2-y^2)(x^2+y^2)\)</span>?<br />
-(Var izmantot to, ka skaitļa pēdējais cipars nosaka, kāds būs tā kvadrāta pēdējais cipars.)</p>
-<p>(<em>Ierakstīt visus iespējamos ciparus, atdalot ar komatiem.</em>)</p>
-<p><strong>Atbilde:</strong> <code>0</code> <strong>Skaidrojums:</strong> Visiem skaitļiem <span class="math inline">\(1,3,7,9\)</span> ceturtās pakāpes (<span class="math inline">\(1,81,2401,6561\)</span>) beidzas ar to pašu ciparu <span class="math inline">\(1\)</span>. Tādēļ to starpības būs <span class="math inline">\(0\)</span>. Lielākiem skaitļiem pēdējie cipari atkārtosies - teiksim, <span class="math inline">\(19^4\)</span> beidzas ar to pašu ciparu, ar ko <span class="math inline">\(9^4\)</span>.<br />
-Var arī aplūkot kvadrātu (<span class="math inline">\(1,9,49,81\)</span>) summas un starpības.</p></section>
+<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="q.nt10.mod.1" class="title-slide slide level1"><h1>Q.NT10.MOD.1</h1></section></section>
+<section><section id="q.nt10.mod.2" class="title-slide slide level1"><h1>Q.NT10.MOD.2</h1></section></section>
+<section><section id="q.nt10.mod.3" class="title-slide slide level1"><h1>Q.NT10.MOD.3</h1></section></section>
+<section><section id="q.nt10.mod.4" class="title-slide slide level1"><h1>Q.NT10.MOD.4</h1></section></section>
+<section><section id="q.nt10.mod.5" class="title-slide slide level1"><h1>Q.NT10.MOD.5</h1></section></section>
+<section><section id="q.nt10.mod.6" class="title-slide slide level1"><h1>Q.NT10.MOD.6</h1></section></section>
+<section><section id="q.nt10.mod.7" class="title-slide slide level1"><h1>Q.NT10.MOD.7</h1></section></section>
+<section><section id="q.nt10.mod.8" class="title-slide slide level1"><h1>Q.NT10.MOD.8</h1></section></section>
+<section><section id="q.nt10.mod.9" class="title-slide slide level1"><h1>Q.NT10.MOD.9</h1></section></section>
+<section><section id="q.nt10.mod.10" class="title-slide slide level1"><h1>Q.NT10.MOD.10</h1></section></section>
+<section><section id="q.nt10.mod.11" class="title-slide slide level1"><h1>Q.NT10.MOD.11</h1></section></section>
+<section><section id="q.nt10.mod.12" class="title-slide slide level1"><h1>Q.NT10.MOD.12</h1></section></section>
+<section><section id="q.nt10.mod.13" class="title-slide slide level1"><h1>Q.NT10.MOD.13</h1></section></section>
+<section><section id="q.nt10.mod.14" class="title-slide slide level1"><h1>Q.NT10.MOD.14</h1></section></section>
+<section><section id="q.nt10.mod.15" class="title-slide slide level1"><h1>Q.NT10.MOD.15</h1></section></section>
+<section><section id="q.nt10.mod.16" class="title-slide slide level1"><h1>Q.NT10.MOD.16</h1></section></section>
+<section><section id="q.nt10.mod.17" class="title-slide slide level1"><h1>Q.NT10.MOD.17</h1></section></section>
+<section><section id="q.nt10.mod.18" class="title-slide slide level1"><h1>Q.NT10.MOD.18</h1></section></section>
+<section><section id="q.nt10.mod.19" class="title-slide slide level1"><h1>Q.NT10.MOD.19</h1></section></section>
+<section><section id="q.nt10.mod.20" class="title-slide slide level1"><h1>Q.NT10.MOD.20</h1></section></section>
     </div>
   </div>
 

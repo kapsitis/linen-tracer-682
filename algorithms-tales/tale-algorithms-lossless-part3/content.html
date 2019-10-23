@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style>
+  <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,84 +32,11 @@
     <div class="slides">
 
 
-<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span style="color:darkgreen"><strong>(2) LZ78/LZW atkārtojums</strong></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup>
-<aside class="notes">
-<p>https://stackoverflow.com/questions/40054218/what-if-dictionary-size-in-lzw-algorithm-is-full</p>
-</aside></section>
-<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span style="color:darkgreen"><strong>(3) LZ77 saspiešana</strong></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span style="color:darkgreen"><strong>(4) Berouza - Vı̄lera algoritms</strong></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section><section id="berouza-vīlera-transformācija" class="title-slide slide level1"><h1><lo-theory/> Berouza-Vīlera transformācija</h1><hgroup>
-<figure>
-<img data-src="cyclic-permuations.png" alt="Cyclic permutations" /><figcaption>Cyclic permutations</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<p>Katram burtam atrodam visas cikliskās permutācijas. Tās pēc tam sakārtojam inversi-leksikogrāfiski.</p>
-</hgroup>
-<aside class="notes">
-<p>https://www.cs.helsinki.fi/u/tpkarkka/opetus/12s/spa/lecture11.pdf https://docs.python.org/3/library/bz2.html https://serverfault.com/questions/2600/how-do-you-set-bzip2-block-size-when-using-tar</p>
-</aside></section><section id="inversi-leksikogrāfiskā-kārtība" class="slide level2">
+<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="berouza-vīlera-transformācija" class="title-slide slide level1"><h1><lo-theory/> Berouza-Vīlera transformācija</h1></section><section id="inversi-leksikogrāfiskā-kārtība" class="slide level2">
 <h2><lo-theory/> Inversi leksikogrāfiskā kārtība</h2>
 <hgroup>
 <figure>
@@ -145,49 +72,9 @@ Lietišķie algoritmi
 <img data-src="sorted-contexts.png" alt="Izejas teksts" /><figcaption>Izejas teksts</figcaption>
 </figure>
 </section></section>
-<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span style="color:darkgreen"><strong>(5) Rīki un bibliotēkas</strong></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section id="kritēriji" class="title-slide slide level1"><h1><lo-theory/> Kritēriji</h1><ul>
-<li>Rīka standartizācija un saspiešanas/atspiešanas vispārēja pieejamība. (Dažos gadījumos arī - nedaudz sabojātu arhīvu atjaunošana).</li>
-<li>Rīka izmaksas un licencēšanas kārtība.</li>
-<li>Vai tikai saspiež vai arī sapako lielākas direktorijas un/vai pievieno šifrēšanu vai e-parakstu.</li>
-<li>Rīka saspiešanas attiecība, piemēram, cilvēku valodas tekstiem (arī programmu izejas tekstiem, rastra grafikai, u.c.).</li>
-<li>Rīka saspiešanas un atspiešanas ātrums.</li>
-</ul></section>
-<section><section id="linux-komandrindu-rīks-tar" class="title-slide slide level1"><h1><lo-theory/> Linux komandrindu rīks “tar”</h1><pre class="console"><code>
-# install on Ubuntu/Debian
-sudo apt-get install tar
-# install on CentOS
-sudo yum install tar
-
-# compress
-tar -cvfz result.tar.gz original.txt
-# uncompress
-tar xvzf result.tar.gz
-</code></pre>
-<ul>
-<li>“c” - <strong>create</strong> (veidot arhīvu),</li>
-<li>“x” - <strong>eXtract</strong> (atpakot arhīvu),</li>
-<li>“z” - <strong>gZip</strong> (lietot gzip saspiedēju papildus “Tape ARchive”).</li>
-<li>“z” vietā “j” - (lietot bzip2 saspiedēju - t.i. Berouza-Vīlera algoritmu).</li>
-</ul>
-<aside class="notes">
-<p>https://www.unixmen.com/top-15-file-compression-utilities-linux/ https://en.wikipedia.org/wiki/List_of_archive_formats</p>
-</aside></section><section id="rīks-gzip" class="slide level2">
+<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="kritēriji" class="title-slide slide level1"><h1><lo-theory/> Kritēriji</h1></section></section>
+<section><section id="linux-komandrindu-rīks-tar" class="title-slide slide level1"><h1><lo-theory/> Linux komandrindu rīks “tar”</h1></section><section id="rīks-gzip" class="slide level2">
 <h2><lo-theory/> Rīks gzip</h2>
 <pre class="console"><code>
 # Uzstāda uz Ubuntu/Debian
@@ -249,22 +136,14 @@ https://stackabuse.com/python-zlib-library-tutorial/
 
 -->
 </section></section>
-<section><section id="kalgari-un-kenterberijas-korpusi" class="title-slide slide level1"><h1><lo-theory/> Kalgari un Kenterberijas korpusi</h1><ul>
-<li><a href="http://corpus.canterbury.ac.nz/descriptions/#calgary">Kalgari korpuss</a> - dažādi failu tipi (ieskaitot melnbaltus attēlus, faksus, veclaicīgu mašīnkodu); <a href="https://en.wikipedia.org/wiki/Calgary_corpus#Benchmarks">dažu algoritmu salīdzinājums</a>.<br />
-Kalgari korpusu arvien lieto metožu salīdzināšanai un pat saspiešanas sacensībām.</li>
-<li><a href="http://corpus.canterbury.ac.nz/">Kenterberijas korpuss</a> - mūsdienīgāks korpuss.</li>
-</ul></section><section id="saspiežamība-pēc-algoritma" class="slide level2">
+<section><section id="kalgari-un-kenterberijas-korpusi" class="title-slide slide level1"><h1><lo-theory/> Kalgari un Kenterberijas korpusi</h1></section><section id="saspiežamība-pēc-algoritma" class="slide level2">
 <h2><lo-summary/> Saspiežamība pēc algoritma</h2>
 <p>TODO: Attēls, kurā salīdzināti algoritmu compression ratio</p>
 </section><section id="ātrums-pēc-algoritma" class="slide level2">
 <h2><lo-summary/> Ātrums pēc algoritma</h2>
 <p>TODO: Attēls, kurā salīdzināti</p>
 </section></section>
-<section><section id="par-png-formātu" class="title-slide slide level1"><h1><lo-theory/> Par PNG formātu</h1><ul>
-<li>PNG ir bezzudumu = pēc atspiešanas vienmēr tas pats rezultāts (turklāt atspiešanas ātrums būtiski nemainās).</li>
-<li>Augstāks līmenis - lielāks bloku izmērs, lielāka vārdnīca.</li>
-<li><code>pngcrush</code> var piemeklēt optimālus parametrus, ja svarīgi iegūt vismazāko PNG.</li>
-</ul></section><section id="png-saspiešanas-līmeņi" class="slide level2">
+<section><section id="par-png-formātu" class="title-slide slide level1"><h1><lo-theory/> Par PNG formātu</h1></section><section id="png-saspiešanas-līmeņi" class="slide level2">
 <h2><lo-theory/> PNG saspiešanas līmeņi</h2>
 <p>Saspiešanas līmenis (0 - nesaspiests, ātrākais), (9 - visvairāk saspiests, lēnākais).</p>
 <pre class="console"><code>
@@ -282,31 +161,8 @@ $ ffmpeg -i input -vframes 1 -compression_level 100 100.png
 <img data-src="png-ratio-vs-block-size.png" alt="By block size" /><figcaption>By block size</figcaption>
 </figure>
 </section></section>
-<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span style="color:darkgreen"><strong>(6) Aptauja</strong></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section><section id="jautājums-nr.1" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.1</h1><hgroup>
-<figure>
-<img data-src="markov-chain.png" alt="Markova ķēde" /><figcaption>Markova ķēde</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<p>Dota Markova ķēde, kurā automāta sākumstāvoklis (un izvades pirmais burts) vienmēr ir <span class="math inline">\(A\)</span>. Atrast tajā trešā burta varbūtību sadalījumu (ar kādām varbūtībām tur ir attiecīgi <span class="math inline">\(A,B,C\)</span>).</p>
-<p>Ierakstīt trīs racionālus skaitļus, atdalot tos ar komatiem formātā <red><code>a/b,c/d,e/f</code></red> _____</p>
-</hgroup></section><section id="jautājums-nr.1-atrisinājums" class="slide level2">
+<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="jautājums-nr.1" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.1</h1></section><section id="jautājums-nr.1-atrisinājums" class="slide level2">
 <h2><lo-quiz/> Jautājums Nr.1: Atrisinājums</h2>
 <hgroup style="width:35%">
 <figure>
@@ -331,9 +187,7 @@ Abu varbūtību summa <span class="math inline">\(\frac{3}{16} + \frac{3}{16} = 
 <h2><lo-quiz/> Jautājums Nr.1: Atrisinājums</h2>
 <p>Starp citu, trešajam burtam atbilstošā varbūtību sadalījuma <span class="math inline">\(\{ 1/4, 3/8, 3/8 \}\)</span> entropija ir <span class="math inline">\(1.56\)</span>. Bet faktiski no Markova ķēdes saņemtās virknes var saspiest labāk nekā šī entropija, jo burti <span class="math inline">\(A,B,C\)</span> nav pilnīgi neatkarīgi. Tādēļ aritmētisko saspiešanu šajā gadījumā lietot nav optimāli. LZ78, Berouza-Vīlera u.c. algoritmi varētu būt labāki.</p>
 </section></section>
-<section><section id="jautājums-nr.2" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.2</h1><p>Aritmētisko kodu definē garai virknei, ko veido no diviem ziņojumiem <code>(A,B)</code> ar varbūtībām <span class="math inline">\(p(A) = 0.9\)</span>, <span class="math inline">\(p(B) = 0.1\)</span>.<br />
-Šajā aritmētiskajā kodā nosūta <span class="math inline">\(1/3\)</span> (binārajā pierakstā <span class="math inline">\(0.010101\ldots_2\)</span>). Ja <span class="math inline">\(1/3\)</span> atkodē, ar cik ziņojumiem <code>A</code> sākas virkne, pirms tajā parādās pirmais <code>B</code>.</p>
-<p>Ierakstīt ziņojumu <code>A</code> skaitu pirms pirmā <code>B</code>: _____</p></section><section id="jautājums-nr.2-atrisinājums" class="slide level2">
+<section><section id="jautājums-nr.2" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.2</h1></section><section id="jautājums-nr.2-atrisinājums" class="slide level2">
 <h2><lo-quiz/> Jautājums Nr.2: Atrisinājums</h2>
 <ul>
 <li>Ja <span class="math inline">\(x \geq 0.9\)</span>, tad <span class="math inline">\(x\)</span> atkodējums sākas ar <code>B</code>.</li>
@@ -350,8 +204,7 @@ Abu varbūtību summa <span class="math inline">\(\frac{3}{16} + \frac{3}{16} = 
 <p><em>Bezgalīgas ģeometriskas progresijas summas formula:</em></p>
 <p><span class="math display">\[b_1 + b_1q + b_1q^2 + b_2q^3 + \ldots = \frac{b_1}{1 - q}.\]</span></p>
 </section></section>
-<section><section id="jautājums-nr.3" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.3</h1><p>Ierakstīt Berouza-Vīlera transformāciju vārdam <code>ABBA$</code>. Aiz tās norādīt, kurā vietā šajā transformācijā ir strings <code>ABBA$</code>.<br />
-<em>Piezīme.</em> Sakārtotajā matricā virkņu numerācija sākas no <span class="math inline">\(1\)</span>.</p></section><section id="jautājums-nr.3-atrisinājums" class="slide level2">
+<section><section id="jautājums-nr.3" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.3</h1></section><section id="jautājums-nr.3-atrisinājums" class="slide level2">
 <h2><lo-quiz/> Jautājums Nr.3: Atrisinājums</h2>
 <p>Iegūst cikliskas <code>ABBA$</code> permutācijas, sakārto leksikogrāfiski:</p>
 <p><span class="math display">\[\left( \begin{array}
@@ -371,10 +224,7 @@ B &amp; B &amp; A &amp; \$ &amp; \color{#F00}{A}
 <p>Transformācijas rezultāts ir labējā kolonna: <red><code>AB$BA</code></red>.<br />
 Sākotnējā virkne ir 3.rindiņa.</p>
 </section></section>
-<section><section id="jautājums-nr.4" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.4</h1><p>Iepriekšējā jautājumā iegūtajai <code>ABBA$</code> Berouza-Vīlera transformācijas virknei uzrakstīt <strong>Move-to-Front</strong> kodu, ja sākotnējā burtu secība alfabētā ir <span class="math inline">\(\text{&#39;\$&#39;} &lt; \text{&#39;A&#39;} &lt; \text{&#39;B&#39;}\)</span>.<br />
-<em>Piezīme.</em> <strong>Move-to-Front</strong> algoritmos alfabēta numerācija sākas no <span class="math inline">\(0\)</span>.</p>
-<p>Ar BV transformētā virkne: _____<br />
-Tās <strong>Move-to-Front</strong> kods: _____</p></section><section id="jautājums-nr.4-atrisinājums" class="slide level2">
+<section><section id="jautājums-nr.4" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.4</h1></section><section id="jautājums-nr.4-atrisinājums" class="slide level2">
 <h2><lo-quiz/> Jautājums Nr.4: Atrisinājums</h2>
 <p>Katrā <strong>Move-to-Front</strong> kodēšanas solī pārliekam tekošo simbolu uz alfabēta sākumu.</p>
 <table>
@@ -447,29 +297,8 @@ Alfabēts
 </table>
 <p>Iegūtais kods ir <code>12222</code>.</p>
 </section></section>
-<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span style="color:darkgreen"><strong>(7) (P) DLP - Datu noplūdes novēršana</strong></span><br />
-<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section><section id="arhivatori-un-datu-noplūde" class="title-slide slide level1"><h1><lo-yellow/> Arhivatori un datu noplūde</h1><ul>
-<li><p><a href="https://www.symantec.com/products/dlp">Symantec DLP risinājumi</a></p></li>
-<li><p><a href="https://www.forcepoint.com/product/dlp-data-loss-prevention">Forcepoint DLP risinājumi</a></p></li>
-<li><p><a href="https://digitalguardian.com/products/endpoint-dlp">Digital Guardian DLP aģents</a></p></li>
-<li><p>Arhīvu atspiešana, saspiešana (reizēm arī TLS atšifrēšana/aizšifrēšana) ir laikietilpīga.</p></li>
-<li><p>DLP notiek kanālos, kuri ir jūtīgi pret novēlošanos (Web, Email) - sk. <a href="https://www.websense.com/content/support/library/data/v84/file_support/file_size_limits.aspx">failu izmēru limiti</a>, <a href="https://www.websense.com/content/support/library/data/v84/file_support/dlp_file_support.pdf">atbalstītie arhīvu formāti</a>.</p></li>
-</ul></section><section id="daži-arhīvu-lietojumi-dlp" class="slide level2">
+<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="arhivatori-un-datu-noplūde" class="title-slide slide level1"><h1><lo-yellow/> Arhivatori un datu noplūde</h1></section><section id="daži-arhīvu-lietojumi-dlp" class="slide level2">
 <h2><lo-yellow/> Daži arhīvu lietojumi DLP</h2>
 <ul>
 <li>Kas notiek, ja atarhivējot failu, rodas ļoti daudz failu?</li>
@@ -487,22 +316,7 @@ Vai saņēmējs arhīvu var saprast arī tad, ja saņemta daļa no tā?</li>
 <li>Dažus grūti analizējamus failus (dīvaini saspiestus, ar parolēm aizsargātus biroja programmu dokumentus, šifrētus datus) var nelaist cauri vārtejām, piespiest lietotājus sūtīt DLP rīkam saprotami.</li>
 </ul>
 </section></section>
-<section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Lietišķie algoritmi
-</h1>
-<p><blue>Bezzudumu saspiešana - 3</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">LZ78/LZW atkārtojums</a></span><br />
-<span>(3) <a href="#/section-2">LZ77 saspiešana</a></span><br />
-<span>(4) <a href="#/section-3">Berouza - Vı̄lera algoritms</a></span><br />
-<span>(5) <a href="#/section-4">Rīki un bibliotēkas</a></span><br />
-<span>(6) <a href="#/section-5">Aptauja</a></span><br />
-<span>(7) <a href="#/section-6">(P) DLP - Datu noplūdes novēršana</a></span><br />
-<span style="color:darkgreen"><strong>(8) Kopsavilkums</strong></span></p>
-</hgroup></section>
+<section><section id="section-7" class="title-slide slide level1"><h1> </h1></section></section>
     </div>
   </div>
 

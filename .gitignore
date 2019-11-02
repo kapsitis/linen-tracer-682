@@ -8,7 +8,9 @@ __pycache__/
 problems-bak/*
 *.bak
 .Rhistory
-
+*.aux
+*.log
+*.out
 # Distribution / packaging
 .Python
 build/

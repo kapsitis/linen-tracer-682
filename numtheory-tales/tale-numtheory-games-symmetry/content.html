@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,9 +32,37 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="kurā-nodaļā-esam" class="title-slide slide level1"><h1><lo-theory/> Kurā nodaļā esam?</h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section><section id="spēļu-analīzes-lietojumi" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+Simetrija spēlēs
+</h1>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="kurā-nodaļā-esam" class="title-slide slide level1"><h1><lo-theory/> Kurā nodaļā esam?</h1><p>TBD. Spēles izmanto vairākas teorijas tēmas:</p>
+<ul>
+<li>Gadījumu skaitīšana; reizināšanas likums. (Novērtēt, cik gājieni ir iespējami, cik ilgi spēle var turpināties.)</li>
+<li>Bijektīvi kopu attēlojumi un simetrijas. (Izveidot simetriskus attēlojumus starp spēles elementiem un pozīcijām.)</li>
+<li>Grafi un koki. (Analizēt spēles ar minimaksa jeb karsto/auksto stāvokļu aplūkošanu.)</li>
+<li>Invarianti. (Definēt “aukstos” spēles stāvokļus ar invariantu, ko spēlētājs atjauno pēc katra sava gājiena.)</li>
+<li>Skaitļa binārais pieraksts, Fibonači skaitļi u.c. (Izmantojami dažu sarežģītāku invariantu veidošanai, piemēram spēlei NIM.)</li>
+</ul></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc spēles gājienu un stāvokļu regularitāšu pamanīšana palīdz izveidot uzvarošu stratēģiju?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Kāpēc daudzas spēles ar “pilnu informāciju” ir kombinatoriskas?</li>
+<li>Kāpēc katru kombinatorisku spēli (vismaz teorētiski) var pilnībā izanalizēt?</li>
+<li>Kāpēc analīzei un praktiskai uzvarošai stratēģijai ir jānosaka iespējamo gājienu un spēles stāvokļu simetrija?</li>
+</ul>
+</div></section><section id="spēļu-analīzes-lietojumi" class="slide level2">
 <h2><lo-why/> Spēļu analīzes lietojumi</h2>
 <ul>
 <li>Kombinatorisku spēļu uzdevumu atrisinājums bieži ir <em>algoritms</em> - pamatota uzvarētāja stratēģija.</li>
@@ -42,9 +70,57 @@
 <li>Spēles liek risinātājam katrā gājienā mainīt perspektīvu - pārsēsties viena vai otra spēlētāja lomā, lai pamatotu, ka eksistē (<span class="math inline">\(\exists\)</span>) atbildes gājiens uz katru (<span class="math inline">\(\forall\)</span>) pretinieka gājienu. Tajās var aprakstīt sarežģītus loģikas spriedumus.</li>
 </ul>
 </section></section>
-<section><section id="sasniedzamie-rezultāti-1-2" class="title-slide slide level1"><h1><lo-theory/> Sasniedzamie rezultāti (1-2)</h1></section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="kāpēc-kombinatoriskas-spēles" class="title-slide slide level1"><h1><lo-theory/> Kāpēc kombinatoriskas spēles?</h1></section><section id="šahs-kā-kombinatoriska-spēle" class="slide level2">
+<section id="sasniedzamie-rezultāti-1-2" class="title-slide slide level1"><h1><lo-theory/> Sasniedzamie rezultāti (1-2)</h1><hgroup style="font-size:70%">
+<div style="color:black">
+<ol type="1">
+<li>Aprakstīt kombinatorisku spēļu pozīciju skaitu; novērtēt iespējamo gājienu skaitu.</li>
+<li>Izmantot <em>minimax</em> analīzi jeb “karstos” un “aukstos” stāvokļus.</li>
+</ol>
+</div>
+<div style="color:silver">
+<ol start="3" type="1">
+<li>Izmantot simetriju aritmētiskās spēlēs.</li>
+<li>Izmantot simetriju kombinatoriskās un ģeometriskās spēlēs.</li>
+</ol>
+</div>
+<div style="color:silver">
+<ol start="5" type="1">
+<li>Pazīt gadījumus, kuros simetriskie gājieni nav viennozīmīgi vai nav atļauti.</li>
+<li>Analizēt dažas skaitļu (vai kaudzīšu) samazināšanas spēles.</li>
+</ol>
+</div>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Kaut kādas bildes…</p>
+</hgroup></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+Simetrija spēlēs
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Pamatfakti</strong></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="kāpēc-kombinatoriskas-spēles" class="title-slide slide level1"><h1><lo-theory/> Kāpēc kombinatoriskas spēles?</h1><hgroup>
+<figure>
+<img data-src="tic-tac-toe.png" alt="tic-tac-toe" /><figcaption>tic-tac-toe</figcaption>
+</figure>
+<figure>
+<img data-src="robocup.png" alt="robocup" /><figcaption>robocup</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<ul>
+<li>Galīgs skaits pozīciju</li>
+<li>Katrā pozīcijā galīgs skaits iespējamo gājienu</li>
+<li>Dotajā sākumpozīcijā gājienu skaits ir ierobežots</li>
+</ul>
+</hgroup></section><section id="šahs-kā-kombinatoriska-spēle" class="slide level2">
 <h2><lo-summary/> Šahs kā kombinatoriska spēle</h2>
 <hgroup>
 <figure>
@@ -59,10 +135,44 @@
 </ul>
 </hgroup>
 </section></section>
-<section><section id="citi-ierobežojumi" class="title-slide slide level1"><h1><lo-theory/> Citi ierobežojumi</h1></section></section>
-<section><section id="kā-spēles-analizēt" class="title-slide slide level1"><h1><lo-theory/> Kā spēles analizēt?</h1></section></section>
-<section><section id="milzīgs-variantu-skaits" class="title-slide slide level1"><h1><lo-theory/> Milzīgs variantu skaits</h1></section></section>
-<section><section id="piemērs-noņemšanas-spēle" class="title-slide slide level1"><h1><lo-sample/> Piemērs: Noņemšanas spēle</h1></section><section id="spēles-analīze-no-beigām" class="slide level2">
+<section id="citi-ierobežojumi" class="title-slide slide level1"><h1><lo-theory/> Citi ierobežojumi</h1><hgroup>
+<img data-src="two-player-game.png" alt="chess" />
+</hgroup>
+<hgroup>
+<ul>
+<li>Divi spēlētāji</li>
+<li>Gājienus izdara pārmaiņus, tos nedrīkst izlaist</li>
+<li>Zaudē tas, kurš nevar izdarīt kārtējo gājienu</li>
+<li>Pilna informācija</li>
+<li>Spēlei ir “nulles summa” - lai viens uzvarētu, otram jāzaudē</li>
+<li>Nav neizšķirtu</li>
+</ul>
+</hgroup></section>
+<section id="kā-spēles-analizēt" class="title-slide slide level1"><h1><lo-theory/> Kā spēles analizēt?</h1><ul>
+<li>Uzdevuma mērķis:
+<ul>
+<li><strong>Noskaidrot, kurš uzvar, pareizi spēlējot:</strong> Pirmais vai otrais spēlētājs. (<em>Kombinatoriskā spēlē, ja zināma sākumpozīcija, tajā viens no 2 spēlētājiem var nodrošināt sev uzvaru.</em>)</li>
+<li><strong>Atrast uzvarošo stratēģiju:</strong> Algoritmiski pierakstītu veidu, kā spēlēt, lai noteikti uzvarētu.</li>
+</ul></li>
+</ul>
+<p>Uzvarētājam jāvar atbildēt <strong>visiem</strong> pretinieka gājieniem.<br />
+Risinājumā nedrīkst pieņemt, ka zaudētājs rīkosies noteiktā veidā.</p></section>
+<section id="milzīgs-variantu-skaits" class="title-slide slide level1"><h1><lo-theory/> Milzīgs variantu skaits</h1><figure>
+<img data-src="exponential-by-four.png" alt="Eksponenciālais sprādziens" /><figcaption>Eksponenciālais sprādziens</figcaption>
+</figure>
+<p><strong>Būtiska grūtība:</strong> Kombinatoriskās spēlēs mēdz būt ārkārtīgi daudz spēles scenāriju. Parasti nevar atsevišķi pierakstīt, ko darīt katrā pozīcijā, atbildot uz katru pretinieka gājienu.</p>
+<p><strong>Kā meklēt atrisinājumu?</strong><br />
+Var aplūkot <em>invariantus</em> - spēles pozīciju īpašības, kas gājienu veikšanas laikā nemainās.</p></section>
+<section><section id="piemērs-noņemšanas-spēle" class="title-slide slide level1"><h1><lo-sample/> Piemērs: Noņemšanas spēle</h1><hgroup>
+<figure>
+<img data-src="the-takeaway-game.png" alt="Noņemšanas spēle" /><figcaption>Noņemšanas spēle</figcaption>
+</figure>
+<p>(<em>Attēls no Paul Zeitz, “The Art and Craft of Mathematical Problem Solving”. 2010.</em>)</p>
+</hgroup>
+<hgroup>
+<p>Sākumā uz galda ir <span class="math inline">\(n=17\)</span> monētas. Divi spēlētāji pārmaiņus izdara gājienus. Ar vienu gājienu atļauts paņemt <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vai <span class="math inline">\(4\)</span> monētas. Uzvar tas spēlētājs, kurš paņem pēdējo monētu. Kurš uzvar, pareizi spēlējot?</p>
+<p>Kas notiek citām <span class="math inline">\(n\)</span> vērtībām?</p>
+</hgroup></section><section id="spēles-analīze-no-beigām" class="slide level2">
 <h2><lo-soln/> Spēles analīze no beigām</h2>
 <figure>
 <img data-src="take-away-game-states.png" alt="Noņemšanas spēles stāvokļi" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
@@ -101,7 +211,17 @@ Turpmāk 2.spēlētājs ikreiz dalāmību ar <span class="math inline">\(5\)</sp
 <img data-src="take-away-game-responses.png" alt="Noņemšanas spēles atbildes" /><figcaption>Noņemšanas spēles atbildes</figcaption>
 </figure>
 </section></section>
-<section><section id="kas-jāraksta-atrisinājumā---1" class="title-slide slide level1"><h1><lo-theory/> Kas jāraksta atrisinājumā - 1</h1></section><section id="kas-jāraksta-atrisinājumā---2" class="slide level2">
+<section><section id="kas-jāraksta-atrisinājumā---1" class="title-slide slide level1"><h1><lo-theory/> Kas jāraksta atrisinājumā - 1</h1><hgroup>
+<figure>
+<img data-src="solution-structure-01.png" alt="Atrisinājuma struktūra - 1" /><figcaption>Atrisinājuma struktūra - 1</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<p><strong>Ja uzvar 1.spēlētājs:</strong><br />
+Jāuzraksta, kā ar pirmo gājienu nonākt stāvoklī, kas atbilst invariantam.<br />
+<blue><strong>Piemērs:</strong> Uzvarētājs sākumā panāk, ka monētu skaits uz galda dalās ar <span class="math inline">\(5\)</span>.</blue></p>
+<p>(<em>Invariants jāizdomā patstāvīgi. Dažreiz palīdz spēles analīze “no beigām”.</em>)</p>
+</hgroup></section><section id="kas-jāraksta-atrisinājumā---2" class="slide level2">
 <h2><lo-theory/> Kas jāraksta atrisinājumā - 2</h2>
 <hgroup>
 <figure>
@@ -138,7 +258,11 @@ tad līdzīga atrisinājuma struktūra kā iepriekš. Nav pirmā soļa, nav jār
 <blue><strong>Piemērs:</strong> Ja sākumā ir <span class="math inline">\(n=15\)</span> monētas, tad, pareizi spēlējot, uzvar 2.spēlētājs - atbildot uz katru 1.spēlētāja gājienu, viņš allaž var atjaunot dalāmību ar <span class="math inline">\(5\)</span>.</blue></p>
 </hgroup>
 </section></section>
-<section><section id="kāpēc-visas-pozīcijas-dala-2-grupās" class="title-slide slide level1"><h1><lo-theory/> Kāpēc visas pozīcijas dala 2 grupās?</h1></section><section id="dalītāju-noņemšanas-spēle" class="slide level2">
+<section><section id="kāpēc-visas-pozīcijas-dala-2-grupās" class="title-slide slide level1"><h1><lo-theory/> Kāpēc visas pozīcijas dala 2 grupās?</h1><p>Uzvaroša stratēģija nozīmē spēju kontrolēt invariantu - pēc katra gājiena nokļūstot “aukstā pozīcijā”.</p>
+<p>(<em>Spēļu analīzē par <a href="https://en.wikipedia.org/wiki/Hot_game">Hot game</a> sauc pozīcijas, kur ar kārtējo gājienu var uzlabot savas izredzes. “Cold game” ir otrādi - spēlētājs ar savu gājienu izredzes pasliktina.</em>)</p>
+<figure>
+<img data-src="state-transitions.png" alt="Stāvokļu pārejas" /><figcaption>Stāvokļu pārejas</figcaption>
+</figure></section><section id="dalītāju-noņemšanas-spēle" class="slide level2">
 <h2><lo-sample/> Dalītāju noņemšanas spēle</h2>
 <p>Sākumā uz galda ir <span class="math inline">\(100\)</span> monētas. Divi spēlētāji <span class="math inline">\(A\)</span> un <span class="math inline">\(B\)</span> pārmaiņus izdara gājienus. Ja uz galda ir <span class="math inline">\(N\)</span> monētas, tad ar kārtējo gājienu var paņemt tādu monētu skaitu, kas ir kāds no skaitļa <span class="math inline">\(N\)</span> dalītājiem, izņemot pašu <span class="math inline">\(N\)</span>. (Piemēram, pirmajā gājienā <span class="math inline">\(A\)</span> var paņemt <span class="math inline">\(1,2,4,5,10,20,25\)</span> vai <span class="math inline">\(50\)</span> monētas, bet ne <span class="math inline">\(100\)</span> monētas.)<br />
 Spēlē uzvar tas, kurš izdara pēdējo atļauto gājienu, un uz galda atstāj 1 monētu (tai vairs nav dalītāju, kas atšķirtos no paša skaitļa).<br />
@@ -161,7 +285,7 @@ Kurš uzvar, pareizi spēlējot?</p>
 <strong>C:</strong> “9” (pārejas uz “6” un “8”) ir auksta, jo <strong>katra</strong> pāreja uz karstu.</p>
 </hgroup>
 </section></section>
-<section><section id="lv.ao.2002.7.4" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2002.7.4</h1></section><section id="divu-veidu-pamatojumi" class="slide level2">
+<section><section id="lv.ao.2002.7.4" class="title-slide slide level1"><h1><lo-sample/> LV.AO.2002.7.4</h1><p>Divi spēlētāji pamīšus raksta uz tāfeles pa vienam naturālam skaitlim no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(8\)</span> ieskaitot. Nedrīkst rakstīt skaitļus, ar kuriem dalās kaut viens jau uzrakstīts skaitlis. Kas nevar izdarīt gājienu, zaudē. Parādiet, kā tas, kas izdara pirmo gājienu, var uzvarēt.</p></section><section id="divu-veidu-pamatojumi" class="slide level2">
 <h2><lo-soln/> Divu veidu pamatojumi</h2>
 <hgroup style="font-size:70%">
 <p><strong>Nekonstruktīva stratēģija</strong></p>
@@ -185,7 +309,11 @@ Tad 1.spēlētājs sāk ar “1” (un turpmāk ikreiz atgriežas aukstā pozīc
 </figure>
 </hgroup>
 </section></section>
-<section><section id="piemērs-no-nms-lapas" class="title-slide slide level1"><h1><lo-sample/> 1.piemērs no NMS lapas</h1></section><section id="piemērs-no-nms-lapas-1" class="slide level2">
+<section><section id="piemērs-no-nms-lapas" class="title-slide slide level1"><h1><lo-sample/> 1.piemērs no NMS lapas</h1><p>Vienā horizontālā rindā savilktas <strong>(a)</strong> <span class="math inline">\(9\)</span>; <strong>(b)</strong> <span class="math inline">\(10\)</span> svītriņas.<br />
+Divi spēlētāji pamīšus izdara gājienus. Vienā gājienā var par krustiņu pārvērst vai nu vienu svītriņu, vai arī divas blakus esošas svītriņas. Zaudē tas spēlētājs, kurš nevar izdarīt gājienu, tas ir, nevar atbilstoši noteikumiem, svītriņu pārvērst par krustiņu. Kurš spēlētājs – pirmais vai otrais – vienmēr var uzvarēt?</p>
+<figure>
+<img data-src="matchstick-picture-01.png" alt="Sērkociņu virknes" /><figcaption>Sērkociņu virknes</figcaption>
+</figure></section><section id="piemērs-no-nms-lapas-1" class="slide level2">
 <h2><lo-hints/> 1.piemērs no NMS lapas</h2>
 <ol type="1">
 <li>Kurš uzvar līdzīgā (vienkāršākā) spēlē, kur arī <span class="math inline">\(2\)</span> svītriņas var pārkrustot <em>jebkādi</em> - ja tās nav noteikti jāizvēlas blakus?</li>
@@ -207,8 +335,22 @@ Tad 1.spēlētājs sāk ar “1” (un turpmāk ikreiz atgriežas aukstā pozīc
 <img data-src="matchstick-picture-03.png" alt="Sērkociņu virknes" /><figcaption>Sērkociņu virknes</figcaption>
 </figure>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="piemērs-no-nms-lapas-2" class="title-slide slide level1"><h1><lo-sample/> 2.piemērs no NMS lapas</h1></section><section id="piemērs-no-nms-lapas-3" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+Simetrija spēlēs
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span style="color:darkgreen"><strong>(5) Patstāvīgie uzdevumi</strong></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="piemērs-no-nms-lapas-2" class="title-slide slide level1"><h1><lo-sample/> 2.piemērs no NMS lapas</h1><p>Uz galda ir divas konfekšu kaudzes. Divi spēlētāji pamīšus ņem konfektes. Vienā gājienā viens spēlētājs drīkst paņemt jebkuru konfekšu skaitu no vienas kaudzes un apēst. Zaudē tas spēlētājs, kuram vairs nav ko paņemt. Kurš spēlētājs – pirmais vai otrais – vienmēr var uzvarēt, ja sākumā<br />
+<strong>(a)</strong> abās konfekšu kaudzēs ir pa <span class="math inline">\(10\)</span> konfektēm;<br />
+<strong>(b)</strong> vienā kaudzē ir <span class="math inline">\(12\)</span> konfektes, bet otrā – <span class="math inline">\(10\)</span> konfektes?</p></section><section id="piemērs-no-nms-lapas-3" class="slide level2">
 <h2><lo-hints/> 2.piemērs no NMS lapas</h2>
 <ol type="1">
 <li>Cik dažādi spēles stāvokļi ir sasniedzami, ja sākumstāvoklis <span class="math inline">\((10,10)\)</span>? Vai <span class="math inline">\((12,10)\)</span>?</li>
@@ -236,8 +378,32 @@ Tad 1.spēlētājs sāk ar “1” (un turpmāk ikreiz atgriežas aukstā pozīc
 <li>Pirmā neiekrāsotā, kas ved tikai uz karstajām ir <blue><span class="math inline">\(\color{#06C}{(2,2)}\)</span></blue>, utt.</li>
 </ul>
 </section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="kopsavilkums" class="title-slide slide level1"><h1><lo-summary/> Kopsavilkums</h1></section></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+Simetrija spēlēs
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span style="color:darkgreen"><strong>(6) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="kopsavilkums" class="title-slide slide level1"><h1><lo-summary/> Kopsavilkums</h1><ul>
+<li><strong>Universāla stratēģija:</strong><br />
+Uzvarētājam pēc katra gājiena jāatgriežas aukstā pozīcijā.<br />
+Var tomēr būt grūti noskaidrot, kura ir “auksta pozīcija”. Arī - kurš, pareizi spēlējot, uzvar.</li>
+<li>Reizēm var pamatot, <strong>kuram</strong> no spēlētājiem būs uzvaroša stratēģija (uzdevumā par dalītāju rakstīšanu), bet tā ir arī jākonstruē.</li>
+<li>“Aukstās” pozīcijas reizēm izceļas ar lielāku regularitāti
+<ul>
+<li>Monētu skaits dalās ar <span class="math inline">\(5\)</span></li>
+<li>Abās kaudzītēs vienāds skaits konfekšu</li>
+<li>Spēles pozīcija ir simetriska (piemēram, pret simetrijas asi).</li>
+</ul></li>
+<li>Zaudētājs katrā gājienā simetriju izjauc, uzvarētājs - atjauno.</li>
+</ul></section>
     </div>
   </div>
 

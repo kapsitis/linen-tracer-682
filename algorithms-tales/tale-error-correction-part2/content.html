@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,11 +32,114 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="bitu-heminga-kods" class="title-slide slide level1"><h1><lo-summary/> 7-bitu Heminga kods</h1></section></section>
-<section><section id="piemērs-1" class="title-slide slide level1"><h1><lo-sample/> Piemērs #1</h1></section><section id="piemērs-1-1" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc kļūdu korekcijas algoritma izvēle (un pat atkodēšana) atkarīga no situācijas?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Kā vienkārši atkodēt Heminga kodus?</li>
+<li>Kādu skaitļu pasaulē darbojas Rīda-Solomona kodi?</li>
+</ul>
+</div></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Kļūdu korekcijas piemēri</strong></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="bitu-heminga-kods" class="title-slide slide level1"><h1><lo-summary/> 7-bitu Heminga kods</h1><div style="font-size:90%">
+<table>
+<tr>
+<th>
+<span class="math inline">\(x;y\)</span> apzīmējumi
+</th>
+<td>
+<span class="math inline">\(x_1\)</span>
+</td>
+<td>
+<span class="math inline">\(x_2\)</span>
+</td>
+<td>
+<span class="math inline">\(x_3\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#F00}{y_1}\)</span>
+</td>
+<td>
+<span class="math inline">\(x_4\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#F00}{y_2}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#F00}{y_3}\)</span>
+</td>
+</tr>
+<tr>
+<th>
+<blue>Vispārīgais apzīmējums</blue>
+</th>
+<td>
+<span class="math inline">\(\color{#00F}{x_{111}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{x_{110}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{x_{101}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{x_{100}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{x_{011}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{x_{010}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{x_{001}}\)</span>
+</td>
+</tr>
+</table>
+<p>Kodi <span class="math inline">\(x_{111},\ldots,x_{001}\)</span> izkārtoti <blue><em>apgrieztā leksikogrāfiskā secībā</em></blue> (<em>reverse lexicographic order</em> - <a href="https://oeis.org/wiki/Orderings#Reverse_lexicographic_order">Wikipedia</a>).</p>
+<p>Kāpēc virknītē <span class="math inline">\(x_1,x_2,x_3,y_1,x_4,y_2,y_3\)</span> ziņojuma biti <span class="math inline">\(x_i\)</span> nedaudz sajaukti ar kontrolbitiem <span class="math inline">\(y_j\)</span>?</p>
+<p><span class="math display">\[\left\{
+\begin{array}{l}
+y_{1} = \color{#00F}{x_{100}} = \color{#00F}{x_{111} \oplus x_{110} \oplus x_{101}} = x_1 \oplus x_2 \oplus x_3\\
+y_{2} = \color{#00F}{x_{010}} = \color{#00F}{x_{111} \oplus x_{110} \oplus x_{011}} = x_1 \oplus x_2 \oplus x_4\\
+y_{3} = \color{#00F}{x_{001}} = \color{#00F}{x_{111} \oplus x_{101} \oplus x_{011}} = x_1 \oplus x_3 \oplus x_4
+\end{array} \right.\]</span></p>
+<p>Ar <span class="math inline">\(x_1 \oplus x_2\)</span> apzīmējam <span class="math inline">\(\left(x_1+x_2\right)\,\text{mod}\,2\)</span>.<br />
+Saskaitīšana pēc moduļa <span class="math inline">\(2\)</span> jeb XOR, jeb “izslēdzošais VAI”.</p>
+</div></section>
+<section><section id="piemērs-1" class="title-slide slide level1"><h1><lo-sample/> Piemērs #1</h1><p>Izmantojot Heminga kodu <span class="math inline">\([7,4,1]\)</span>, nokodēt virkni 0110.</p></section><section id="piemērs-1-1" class="slide level2">
 <h2><lo-soln/> Piemērs #1</h2>
 <hgroup style="font-size:70%">
 <p>Ņemam <span class="math inline">\(x_1 = 0\)</span>, <span class="math inline">\(x_2 = 1\)</span>, <span class="math inline">\(x_3 = 1\)</span>, <span class="math inline">\(x_4 = 0\)</span>.<br />
@@ -87,7 +190,7 @@ Tātad kodētais ziņojums būs: <code>0110011</code>.</p>
 </table>
 </hgroup>
 </section></section>
-<section><section id="piemērs-2" class="title-slide slide level1"><h1><lo-sample/> Piemērs #2</h1></section><section id="piemērs-2-1" class="slide level2">
+<section><section id="piemērs-2" class="title-slide slide level1"><h1><lo-sample/> Piemērs #2</h1><p>Izmantojot Heminga kodu <span class="math inline">\([7,4,1]\)</span>, atkodēt virkni <code>0111101</code>.</p></section><section id="piemērs-2-1" class="slide level2">
 <h2><lo-soln/> Piemērs #2</h2>
 <hgroup style="font-size:70%">
 <p><span class="math display">\[\left\{
@@ -248,7 +351,7 @@ X
 </table>
 </hgroup>
 </section></section>
-<section><section id="piemērs-3" class="title-slide slide level1"><h1><lo-sample/> Piemērs #3</h1></section><section id="piemērs-3-1" class="slide level2">
+<section><section id="piemērs-3" class="title-slide slide level1"><h1><lo-sample/> Piemērs #3</h1><p>Izmantojot Heminga kodu <span class="math inline">\([7,4,1]\)</span>, atkodēt virkni <code>1010010</code>.</p></section><section id="piemērs-3-1" class="slide level2">
 <h2><lo-soln/> Piemērs #3</h2>
 <hgroup style="font-size:70%">
 <p><span class="math display">\[\left\{
@@ -409,7 +512,7 @@ X
 </table>
 </hgroup>
 </section></section>
-<section><section id="piemērs-4" class="title-slide slide level1"><h1><lo-sample/> Piemērs #4</h1></section><section id="piemērs-4-1" class="slide level2">
+<section><section id="piemērs-4" class="title-slide slide level1"><h1><lo-sample/> Piemērs #4</h1><p>Izmantojot Heminga kodu <span class="math inline">\([7,4,1]\)</span>, atkodēt virkni <code>1101110</code>.</p></section><section id="piemērs-4-1" class="slide level2">
 <h2><lo-soln/> Piemērs #4</h2>
 <hgroup style="font-size:70%">
 <p><span class="math display">\[\left\{
@@ -570,8 +673,27 @@ X
 </table>
 </hgroup>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="rīda-solomona-koda-analīze" class="title-slide slide level1"><h1><lo-summary/> Rīda-Solomona koda analīze</h1></section><section id="cik-no-pārraidītajām-drīkst-būt-kļūdas" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span style="color:darkgreen"><strong>(3) Rīda-Solomona kodi</strong></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="rīda-solomona-koda-analīze" class="title-slide slide level1"><h1><lo-summary/> Rīda-Solomona koda analīze</h1><p>Ja ir <span class="math inline">\(2\)</span> ziņojumi: <span class="math inline">\(a_1,\ldots,a_k\)</span> un <span class="math inline">\(b_1, \ldots, b_k\)</span>, tad <span class="math display">\[f(x) = a_1x^{k-1} + a_2x^{k-2}+\ldots+a_{k-1}x + a_k,\]</span> <span class="math display">\[g(x) = b_1x^{k-1} + b_2x^{k-2}+\ldots+b_{k-1}x + b_k.\]</span></p>
+<ul>
+<li>Tā kā katram no šiem polinomiem pakāpe nepārsniedz <span class="math inline">\(k-1\)</span>, tad <span class="math inline">\(f(x)\)</span> un <span class="math inline">\(g(x)\)</span> sakrīt ne vairāk kā <span class="math inline">\(k-1\)</span> vietās. (Tās ir otrās sekas no algebras pamatteorēmas.)</li>
+<li>Ja nosūta <span class="math inline">\(s\)</span> polinoma vērtības, tad viņi atšķiras pārējās <span class="math inline">\(s - (k-1)\)</span> vietās.</li>
+</ul></section><section id="cik-no-pārraidītajām-drīkst-būt-kļūdas" class="slide level2">
 <h2><lo-summary/> Cik no pārraidītajām drīkst būt kļūdas?</h2>
 <p>Augstāk redzējām, ka ja divi kodētie ziņojumi atšķiras vismaz <span class="math inline">\(2c+1\)</span> vietās, tad kods spēj labot jebkuras <span class="math inline">\(c\)</span> kļūdas.</p>
 <p><span class="math display">\[s-(k-1) \geq 2c+1 \;\;\Rightarrow\;\; s - k \geq 2c \;\;\Rightarrow\]</span> <span class="math display">\[\Rightarrow\;\;c \leq (s-k)/2\]</span></p>
@@ -584,8 +706,8 @@ X
 <h2><lo-sample/> Vingrinājums</h2>
 <ul>
 <li><p>Cik kļūdas var labot, ja <span class="math inline">\(k=4\)</span>, <span class="math inline">\(s=9\)</span>, tad <span class="math inline">\(c \leq (s-k)/2 = 2.5\)</span>. <strong>Tātad varēs labot <span class="math inline">\(2\)</span> kļūdas.</strong></p></li>
-<li>Kāpēc nevaram labot <span class="math inline">\(3\)</span> kļūdas. Lai tās labotu, katriem diviem pārraidītajiem ziņojumiem jāatšķiras <span class="math inline">\(2c+1\)</span> vietās (<span class="math inline">\(2\cdot 3 + 1 = 7\)</span> vietās).</li>
-<li>No algebras pamatteorēmas seko, ka <span class="math inline">\(f(x)\)</span> un <span class="math inline">\(g(x)\)</span> sakrīt ne vairāk kā <span class="math inline">\(k-1\)</span> vietās un atšķiras vismaz <span class="math inline">\(s - (k-1)\)</span> vietās.</li>
+<li><p>Kāpēc nevaram labot <span class="math inline">\(3\)</span> kļūdas. Lai tās labotu, katriem diviem pārraidītajiem ziņojumiem jāatšķiras <span class="math inline">\(2c+1\)</span> vietās (<span class="math inline">\(2\cdot 3 + 1 = 7\)</span> vietās).</p></li>
+<li><p>No algebras pamatteorēmas seko, ka <span class="math inline">\(f(x)\)</span> un <span class="math inline">\(g(x)\)</span> sakrīt ne vairāk kā <span class="math inline">\(k-1\)</span> vietās un atšķiras vismaz <span class="math inline">\(s - (k-1)\)</span> vietās.</p></li>
 <li><p>Tātad tieši <span class="math inline">\(s-(k-1)=6\)</span> vietās var atšķirties. Tā ir pretruna: Ja mēģinātu labot <span class="math inline">\(3\)</span> kļūdas, tad <span class="math inline">\(2\)</span> kodus, kas atšķiras <span class="math inline">\(6\)</span> vietās, nevarētu atšķirt.</p></li>
 </ul>
 </section><section id="piemērs-ar-polinomiem." class="slide level2">
@@ -594,8 +716,27 @@ X
 <p>Ja sākotnējās virknes ir <span class="math inline">\((1;-3;2;0)\)</span> un <span class="math inline">\((2;-6;4;0)\)</span>, tad pārraida ziņojumu argumentu vērtībām <span class="math inline">\((0,1,2,3,4,5,6,7,8)\)</span>: <span class="math display">\[0,0,0,f(3),f(4),f(5),g(6),g(7),g(8).\]</span></p>
 <p>Tas var rasties gan pārraidot <span class="math inline">\(f\)</span> (ar kļūdām pēdējās <span class="math inline">\(3\)</span> vietās), gan arī pārraidot <span class="math inline">\(g\)</span> (ar kļūdām ziņojumos <span class="math inline">\(f(3),f(4),f(5)\)</span>).</p>
 </section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="galuā-lauki-un-rīds-solomons" class="title-slide slide level1"><h1><lo-theory/> Galuā lauki un Rīds-Solomons</h1></section><section id="lauka-jēdziens" class="slide level2">
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span style="color:darkgreen"><strong>(4) Galīgi lauki</strong></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="galuā-lauki-un-rīds-solomons" class="title-slide slide level1"><h1><lo-theory/> Galuā lauki un Rīds-Solomons</h1><ul>
+<li>Ja polinomus rēķina parastiem veseliem skaitļiem, tad to vērtības ātri kļūst lielas.</li>
+<li>Rīda-Solomona kodiem veselo skaitļu vietā izmanto polinomu koeficientus un vērtības no galīga lauka, piemēram <span class="math inline">\(\text{GF}\!\left(2^{12}\right)\)</span> (Galuā lauks ar <span class="math inline">\(2^{12}\)</span> elementiem).</li>
+</ul>
+<p><a href="https://www.partow.net/programming/polynomials/index.html">Sk. primitīvo polinomu sarakstu</a>, lai konstruētu <span class="math inline">\(\text{GF}\!\left(2^n\right)\)</span> pakāpēm līdz <span class="math inline">\(2^{32}\)</span>.</p></section><section id="lauka-jēdziens" class="slide level2">
 <h2><lo-theory/> Lauka jēdziens</h2>
 <div style="font-size:70%">
 <p><strong>Definīcija:</strong> Par <blue><em>lauku</em></blue> (<em>field</em>) sauc kopu <span class="math inline">\(L\)</span>, kurā definētas operācijas <span class="math inline">\(+\)</span> un <span class="math inline">\(\ast\)</span> ar šādām īpašībām:</p>
@@ -614,7 +755,14 @@ X
 </ul>
 </div>
 </section></section>
-<section><section id="bezgalīgi-lauki" class="title-slide slide level1"><h1><lo-summary/> Bezgalīgi lauki</h1></section><section id="galīgi-lauki" class="slide level2">
+<section><section id="bezgalīgi-lauki" class="title-slide slide level1"><h1><lo-summary/> Bezgalīgi lauki</h1><p>Lauks ir jebkura skaitļu vai citu objektu kopa, kurā var izpildīt visas četras aritmētiskās darbības pēc parastajiem likumiem.</p>
+<ul>
+<li>Racionālo skaitļu kopa <span class="math inline">\(\mathbb{Q}\)</span> ir lauks (katrai racionālai daļai <span class="math inline">\(a/b\)</span> eksistē pretējā: <span class="math inline">\(-a/b\)</span> un apgrieztā: <span class="math inline">\(b/a\)</span>).</li>
+<li>Reālo skaitļu kopa <span class="math inline">\(\mathbb{R}\)</span> ir lauks</li>
+<li>Komplekso skaitļu kopa <span class="math inline">\(\mathbb{C}\)</span> (vai arī tikai to komplekso skaitļu kopa <span class="math inline">\(a+bi\)</span>, kur <span class="math inline">\(a,b \in \mathbb{Q}\)</span>) ir lauks.</li>
+<li>Visu to nogriežņu garumu attiecību kopa, ko var uzkonstruēt ar cirkuli un lineālu (pievienojas kvadrātsaknes operācija, bet ne augstāku pakāpju saknes).</li>
+<li>Visu racionālu daļu <span class="math inline">\(\frac{P(x)}{Q(x)}\)</span> kopa ir lauks.</li>
+</ul></section><section id="galīgi-lauki" class="slide level2">
 <h2><lo-summary/> Galīgi lauki</h2>
 <p><strong>Apgalvojums:</strong> (1) Galīgs lauks ar elementu skaitu <span class="math inline">\(q\)</span> (šo skaitu sauc arī par <blue><em>kārtu</em></blue> jeb <em>order</em>) eksistē tad un tikai tad, ja <span class="math inline">\(q\)</span> ir izsakāms kā pakāpe <span class="math inline">\(p^k\)</span>, kur <span class="math inline">\(p\)</span> ir pirmskaitlis, bet <span class="math inline">\(k=1,2,3,\ldots\)</span>.<br />
 (2) Ja <span class="math inline">\({\displaystyle q=p^{k}}\)</span>, tad visi lauki ar kārtu <span class="math inline">\(q\)</span> ir <blue><em>izomorfi</em></blue> (<em>isomorphic</em>) - to struktūra attiecībā pret saskaitīšanas un reizināšanas operācijām ir vienāda, atšķiras tikai elementu apzīmējumi.</p>
@@ -1366,8 +1514,27 @@ X
 </table>
 </div>
 </section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="galīgie-lauki-r-s-kodos" class="title-slide slide level1"><h1><lo-theory> Galīgie lauki R-S kodos</h1></section><section id="r-s-kodēšana-un-atkodēšana" class="slide level2">
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span style="color:darkgreen"><strong>(5) R-S kodu atkodēšana</strong></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="galīgie-lauki-r-s-kodos" class="title-slide slide level1"><h1><lo-theory> Galīgie lauki R-S kodos</h1><div style="font-size:70%">
+<p><span class="math inline">\(\text{GF}(p^k)\)</span> elementus (kuri paši bieži izskatās kā polinomi!) izmanto kā koeficientus Solomona-Rīda algoritmā esošajos polinomos - viņi tur ir gan argumenti, gan vērtības.</p>
+<p>Izvēlamies galīgu lauku <span class="math inline">\(\text{GF}(q)\)</span>. Datus pārveidojam par šī lauka elementu virkni. Virknes elementus sadalām blokos garumā <span class="math inline">\(k\)</span>:<br />
+<span class="math inline">\(a_0, a_1, \ldots, a_{k-1}\)</span> (kur <span class="math inline">\(k &lt; q\)</span>). Definējam polinomu <span class="math display">\[f(x) = a_{k-1} x^{k-1} + \ldots + a_1 x + a_0.\]</span> Izrēķinām vērtības <span class="math inline">\(f(a_0), f(a_1), \ldots, f(a_{s-1})\)</span> galīgā lauka elementiem <span class="math inline">\(a_0, a_1, \ldots, a_{s-1} \in \text{GF}(q)\)</span>, par darbībām izmantojot <span class="math inline">\(+\)</span> un <span class="math inline">\(\ast\)</span>, kas definētas šajā galīgajā laukā.</p>
+</div></section><section id="r-s-kodēšana-un-atkodēšana" class="slide level2">
 <h2><lo-theory/> R-S kodēšana un atkodēšana</h2>
 <div style="font-size:70%">
 <p>Atkodēšanas algoritms un izlabojamo kļūdu skaits nemainās, jo pierādījumā par kļūdu korekcijas spējām neizmanto neko tādu, kas neizpildās patvaļīgam laukam. Galīgi lauki toties ļauj izvairīties no darbībām ar lieliem skaitļiem.</p>
@@ -1375,7 +1542,8 @@ X
 Informāciju kodē ar <span class="math inline">\(2\)</span> pakāpes polinomu <span class="math inline">\(f(x) = a \cdot x^2 + b \cdot x + c\)</span>, ņemot 5 polinoma vērtības: <span class="math inline">\(f(0)\)</span>, <span class="math inline">\(f(1)\)</span>, <span class="math inline">\(f(2)\)</span>, <span class="math inline">\(f(3)\)</span> un <span class="math inline">\(f(4)\)</span>.</p>
 </div>
 </section></section>
-<section><section id="piemērs-nr.1" class="title-slide slide level1"><h1><lo-sample/> Piemērs Nr.1</h1></section><section id="piemērs-nr.1-risinājums" class="slide level2">
+<section><section id="piemērs-nr.1" class="title-slide slide level1"><h1><lo-sample/> Piemērs Nr.1</h1><p>Nokodēt <span class="math inline">\(3, 2, 1\)</span>.<br />
+Izmantot polinomus ar koeficientiem, argumentiem un vērtībām no <span class="math inline">\(\text{GF}(5)\)</span>.</p></section><section id="piemērs-nr.1-risinājums" class="slide level2">
 <h2><lo-soln/> Piemērs Nr.1: Risinājums</h2>
 <div style="font-size:70%">
 <p>Ņemam polinomu <span class="math inline">\(f(x) = 3\cdot{}x^2 + 2\cdot{}x + 1\)</span>.</p>
@@ -1390,7 +1558,8 @@ f(4) = \left(3\cdot{}4^2 + 2\cdot{}4 + 1\right)\;\text{mod}\;5 = 57\;\text{mod}\
 <p>Tātad, tiek pārraidītas vērtības <span class="math inline">\(1, 1, 2, 4, 2\)</span>.</p>
 </div>
 </section></section>
-<section><section id="piemērs-nr.2" class="title-slide slide level1"><h1><lo-sample/> Piemērs Nr.2</h1></section><section id="piemērs-nr.2-risinājums" class="slide level2">
+<section><section id="piemērs-nr.2" class="title-slide slide level1"><h1><lo-sample/> Piemērs Nr.2</h1><p>Atkodēt <span class="math inline">\(1, 1, \ast, 4, \ast\)</span>, kur <span class="math inline">\(\ast\)</span> ir pazaudēta vērtība (saņemtās vērtības visas ir pareizas).<br />
+Izmantot polinomus ar koeficientiem, argumentiem un vērtībām no <span class="math inline">\(\text{GF}(5)\)</span>.</p></section><section id="piemērs-nr.2-risinājums" class="slide level2">
 <h2><lo-soln/> Piemērs Nr.2: Risinājums</h2>
 <div style="font-size:70%">
 <p>Sastādām vienādojumu sistēmu (pēc mod <span class="math inline">\(5\)</span>):</p>
@@ -1422,7 +1591,7 @@ a + b = 1 - 1 = 0\;(\text{mod}\,5),\\
 <p>No vienādojuma <span class="math inline">\(a + b \equiv 0\;(\text{mod}\,5)\)</span> iegūstam, ka <span class="math inline">\(b = 0 - 3 = -3 = 2\;(\text{mod}\,5)\)</span>. Tātad polinoms bija <span class="math display">\[f(x)=3x^2 + 2x + 1.\]</span></p>
 </div>
 </section></section>
-<section><section id="piemērs-nr.3" class="title-slide slide level1"><h1><lo-sample/> Piemērs Nr.3</h1></section><section id="piemērs-nr.3-risinājums" class="slide level2">
+<section><section id="piemērs-nr.3" class="title-slide slide level1"><h1><lo-sample/> Piemērs Nr.3</h1><p>Atkodēt <span class="math inline">\(2, 3, \ast, \ast, 2\)</span>, kur <span class="math inline">\(\ast\)</span> ir pazaudēta vērtība (saņemtās vērtības visas ir pareizas). Izmantot polinomus ar koeficientiem, argumentiem un vērtībām no <span class="math inline">\(\text{GF}(5)\)</span>.</p></section><section id="piemērs-nr.3-risinājums" class="slide level2">
 <h2><lo-soln/> Piemērs Nr.3: Risinājums</h2>
 <div style="font-size:70%">
 <p>Sastādām vienādojumu sistēmu (pēc mod 5):</p>
@@ -1459,7 +1628,15 @@ Tātad <span class="math inline">\(b \equiv 3\;(\text{mod}\,5)\)</span>.<br />
 <p>No vienādojuma <span class="math inline">\(a + b \equiv 1\;(\text{mod}\,5)\)</span> iegūstam, ka <span class="math inline">\(a = 1 - 3 = -2 \equiv 3\;(\text{mod}\,5)\)</span>. Tātad polinoms bija <span class="math display">\[f(x) = 3 x^2 + 3x + 2.\]</span></p>
 </div>
 </section></section>
-<section><section id="lagranža-interpolācija" class="title-slide slide level1"><h1><lo-theory/> Lagranža interpolācija</h1></section><section id="interpolāciju-lietošana-atkodēšanai" class="slide level2">
+<section><section id="lagranža-interpolācija" class="title-slide slide level1"><h1><lo-theory/> Lagranža interpolācija</h1><div style="font-size:70%">
+<p>Vēl viens veids, kā veikt atkodēšanu ir interpolācija (labi strādā pie neliela polinomu skaita un pakāpēm).</p>
+<p>Ja zinām, ka <span class="math display">\[f(x_1)=r_1;\;\;f(x_2)=r_2;\;\;\ldots,\;\;f(x_k)=r_k,\]</span> tad definējam polinomus:</p>
+<p><span class="math display">\[f_i (x) = \frac{(x-r_1)\cdot\ldots\cdot(x-r_{i-1})\cdot(x-r_{i+1})\cdot\ldots\cdot(x-r_k)}
+{(r_i-r_1)\cdot\ldots\cdot(r_i-r_{i-1})\cdot(r_i-r_{i+1})\cdot\ldots\cdot(r_i-r_k)}.\]</span></p>
+<p>Šiem polinomem <span class="math inline">\(f_i(x)\)</span> ir šādas īpašības:<br />
+(1) Ja <span class="math inline">\(x=r_i\)</span>, tad <span class="math inline">\(f_i(x) = 1\)</span>,<br />
+(2) Ja <span class="math inline">\(x=r_j\)</span>, (<span class="math inline">\(i= \neq j\)</span>), tad <span class="math inline">\(f_i(x)=0\)</span>, jo kaut kur polinomā ir reizinātājs <span class="math inline">\((x-r_j)=0\)</span>, kas visu reizinājumu padara par <span class="math inline">\(0\)</span>.</p>
+</div></section><section id="interpolāciju-lietošana-atkodēšanai" class="slide level2">
 <h2><lo-theory/> Interpolāciju lietošana atkodēšanai</h2>
 <p>Meklētais polinoms ir: <span class="math display">\[f(x) = r_1 \cdot f_1(x) + r_2 \cdot f_2 (x) + \ldots + r_k \cdot f_k (x).\]</span></p>
 <p>Kāpēc šis polinoms dod pareizu rezultātu? Ja <span class="math inline">\(x = r_i\)</span>, tad visi <span class="math inline">\(f_j(x)\)</span> (<span class="math inline">\(i \neq j\)</span>) vienādi ar <span class="math inline">\(0\)</span>, un vienīgi <span class="math inline">\(f_i (r_i) = 1\)</span>.</p>
@@ -1476,8 +1653,32 @@ Ja vienīgais kļūdu veids ir dažu vērtību pazušana, tad pietiek ar šo pie
 </ul>
 <p>Rezultātā ir pietiekami daudz pareizo vērtību, lai atrastu kļūdas, taču nezinām tieši kuras ir pareizas, lai tās varētu izmantot kļūdu meklēšanā.</p>
 </section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="polinoms-yx---kļūdu-lokators" class="title-slide slide level1"><h1><lo-theory/> Polinoms Y(x) - kļūdu lokators</h1></section><section id="polinoms-zx-yx-un-px-reizinājums" class="slide level2">
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span style="color:darkgreen"><strong>(6) Berlekampa-Velča atkodēšana</strong></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="polinoms-yx---kļūdu-lokators" class="title-slide slide level1"><h1><lo-theory/> Polinoms Y(x) - kļūdu lokators</h1><div style="font-size:70%">
+<p>Berlekampa-Velča algoritms ir Rīda-Solomona atkodēšanas metode, ko lieto tad, ja iespējama ne tikai datu pazušana, bet arī nepareizu datu saņemšana pareizo datu vietā. Ieviešam apzīmējumus:</p>
+<ul>
+<li>Kļūdas ir <span class="math inline">\(x_1, x_2, \ldots, x_c\)</span> (pagaidām nezināmās vietās)</li>
+<li>Pārraidītais polinoms bija <span class="math inline">\(k-1\)</span> pakāpes polinoms <span class="math inline">\(p(x)\)</span></li>
+<li>Vērtību <span class="math inline">\(p(x_i)\)</span> vietā saņemtās vērtības apzīmējam ar <span class="math inline">\(r_i\)</span>.</li>
+<li>Atskaitot <span class="math inline">\(c\)</span> vērtības (punktos <span class="math inline">\(x_1,\ldots,x_c\)</span>), citas vērtības ir pareizas.</li>
+</ul>
+<p>Definējam kļūdu lokatoru: <span class="math display">\[Y(x) = (x-x_1)(x-x_2) \ldots (x-x_c).\]</span> Polinoma pakāpe <span class="math inline">\(\text{deg}\,Y(x) \leq c\)</span>. Šis polinoms ir <span class="math inline">\(0\)</span> visām tām argumenta vērtībām <span class="math inline">\(x_i\)</span>, kurām saņemta nepareiza <span class="math inline">\(p(x)\)</span> vērtība.</p>
+</div></section><section id="polinoms-zx-yx-un-px-reizinājums" class="slide level2">
 <h2><lo-theory/> Polinoms Z(x): Y(x) un p(x) reizinājums</h2>
 <div style="font-size:70%">
 <p>Definējam polinomu <span class="math inline">\(Z(x)\)</span>, kas ir kļūdu lokatora un sākotnējā polinoma reizinājums: <span class="math display">\[Z(x) = Y(x) \cdot p(x).\]</span> Pakāpe <span class="math inline">\(\text{deg}\,Z(x) = \text{deg}\,Y(x) + \text{deg}\,p(x) \leq c+(k-1) = k + c - 1\)</span>.</p>
@@ -1517,7 +1718,24 @@ Z(s-1) = Y(s-1) \cdot r_{s-1}
 <p><span class="math inline">\(Z(i) = Y(i) \cdot r_i\)</span> - <span class="math inline">\(s\)</span> vienādojumu sistēma ar <span class="math inline">\(k+2 \cdot c +1\)</span> nezināmajiem. Atrisinām šo vienādojumu sistēmu un no nezināmajiem iegūstam <span class="math inline">\(Z(x)\)</span> un <span class="math inline">\(Y(x)\)</span>. Tad izmantojot <span class="math inline">\(p(x) = Z(x)/Y(x)\)</span> aprēķinām <span class="math inline">\(p(x)\)</span>.</p>
 </div>
 </section></section>
-<section><section id="jautājumi-par-berlekampu-velču" class="title-slide slide level1"><h1><lo-theory/> Jautājumi par Berlekampu-Velču</h1></section><section id="berlekampa-velča-atrisināmība" class="slide level2">
+<section><section id="jautājumi-par-berlekampu-velču" class="title-slide slide level1"><h1><lo-theory/> Jautājumi par Berlekampu-Velču</h1><hgroup style="font-size:70%">
+<p><strong>Jautājumi:</strong></p>
+<ol type="1">
+<li>Vai vienādojumu sistēmai ir atrisinājums?</li>
+<li>Vai vienādojumu sistēmai nav vairāki atrisinājumi?</li>
+<li>Vai varam atrast algoritmisku metodi, kā atrisināt vienādojumu sistēmu?</li>
+</ol>
+</hgroup>
+<hgroup style="font-size:70%">
+<p><strong>Atbildes:</strong></p>
+<ol type="1">
+<li>Jā, atrisinājums vienmēr būs pareizais (meklējamais) <span class="math inline">\(Y(x)\)</span> un <span class="math inline">\(Z(x)\)</span> polinomu pāris, jo tas apmierina visus nosacījumus.</li>
+<li>Principā varētu būt vairāki atrisinājumi <span class="math inline">\((Y(x), Z(x))\)</span> un <span class="math inline">\((Y’(x), Z’(x))\)</span> un <span class="math inline">\(Z(x)/Y(x) \neq Z’(x)/Y’(x)\)</span>.<br />
+Vai tā var būt?<br />
+Ja tiek pārraidītas pietiekami daudzas vērtības, tad atrisinājums izrādīsies viennozīmīgi noteikts <span class="math inline">\((Y(x), Z(x))\)</span>.</li>
+<li>Jā; tālākos slaidos piedāvāsim pakāpeniskas izslēgšanas metodi.</li>
+</ol>
+</hgroup></section><section id="berlekampa-velča-atrisināmība" class="slide level2">
 <h2><lo-theory/> Berlekampa-Velča atrisināmība</h2>
 <div style="font-size:70%">
 <p><strong>Apgalvojums:</strong> Doti polinomi <span class="math inline">\(Y\)</span> un <span class="math inline">\(Z\)</span>, kuriem:<br />
@@ -1547,8 +1765,28 @@ Izdalām abas puses ar <span class="math inline">\(Y(x)\)</span> un <span class=
 <h2><lo-summary/> Algoritmiska Berlekampa-Velča atrisināšana</h2>
 <p>Nosacījumos <span class="math inline">\(Z(i) = Y(i) \cdot r_i\)</span> ievietojot <span class="math inline">\(i\)</span> un <span class="math inline">\(r_i\)</span>, iegūst lineārus vienādojumus ar nezināmajiem <span class="math inline">\(a_i\)</span>, <span class="math inline">\(b_i\)</span>, kuriem ir koeficienti <span class="math inline">\(y_i\)</span> un <span class="math inline">\(z_i\)</span>: <span class="math display">\[y_{1,1} a_{k+c-1} + \ldots + y_{1,k+c} a_0 = z_{1,1} b_c + \ldots + z_{1,c+1}b_0.\]</span> Ja lineārai vienādojumu sistēmai ir atrisinājums, tad izslēdzot pa vienam mainīgajam (ar apzīmēšanas palīdzību) var atrast atrisinājumu.</p>
 </section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="tornado-kodu-ievads" class="title-slide slide level1"><h1><lo-theory/> Tornado kodu ievads</h1></section><section id="tornado-kodi-un-xor" class="slide level2">
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span style="color:darkgreen"><strong>(7) Tornado kodi</strong></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="tornado-kodu-ievads" class="title-slide slide level1"><h1><lo-theory/> Tornado kodu ievads</h1><ul>
+<li>Tornado kodi izstrādāti 1990-to gadu beigās.</li>
+<li>Datu pārraide, ja liela datu daļa var tikt pazaudēta, bet saņemtie dati ir pareizi. (Piemēram, ja datu pakete tiek saņemta, tad tās dati ir pareizi, bet pakešu pazušana ir bieža.)</li>
+<li>Var lietot arī Rīda-Solomona kodus. Taču to atkodēšanai jārisina vai nu lineāras vienādojumu sistēmas vai arī interpolācija. Abi aprēķini ir diezgan darbietilpīgi.</li>
+<li>Tornado kodi ļauj koriģēt (datu pazušanas) kļūdu apjomu līdzīgu Rīda-Solomona kodiem, izmantojot tikai XOR operāciju.</li>
+</ul></section><section id="tornado-kodi-un-xor" class="slide level2">
 <h2><lo-theory/> Tornado kodi un XOR</h2>
 <p>Vienkāršākais Tornado kodu speciālgadījums ir šāds. Kods sastāv no ziņojuma bitiem <span class="math inline">\(x_1, x_2, \ldots\)</span> un kontrolbitiem <span class="math inline">\(y_1, y_2, \ldots\)</span>. Katrs kontrolbits ir vairāku ziņojuma bitu XOR (summa pēc moduļa <span class="math inline">\(2\)</span>).</p>
 <p>Šādu kodu var attēlot ar divdaļīgu grafu, kur virsotnes kreisajā pusē atbilst ziņojuma bitiem <span class="math inline">\(x_1, x_2, \ldots\)</span>, bet virsotnes labajā pusē - kontrolbitiem <span class="math inline">\(y_1, y_2, \ldots\)</span>. Ja kontrolbits <span class="math inline">\(y_i\)</span> ir kaut kādu ziņojuma bitu <span class="math inline">\(x_j\)</span> XOR, tad <span class="math inline">\(y_i\)</span> atbilstošā virsotne tiek savienota ar katram <span class="math inline">\(x_j\)</span> atbilstošo virsotni.</p>
@@ -1578,7 +1816,15 @@ y_3 = x_1 \oplus x_3 \oplus x_4\\
 <li>Ja vēl nav atrasti visi <span class="math inline">\(x_j\)</span>, atgriežamies pie 1.soļa un meklējam nākošo <span class="math inline">\(y_i\)</span>, kuram ir zināmi visi tajā ietilpstošie <span class="math inline">\(x_j\)</span>, atskaitot vienu.</li>
 </ol>
 </section></section>
-<section><section id="piemērs" class="title-slide slide level1"><h1><lo-sample/> Piemērs</h1></section><section id="piemēra-atrisinājums" class="slide level2">
+<section><section id="piemērs" class="title-slide slide level1"><h1><lo-sample/> Piemērs</h1><hgroup>
+<figure>
+<img data-src="tornado-problem.png" alt="Tornado problem" /><figcaption>Tornado problem</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p>Kļūdas koriģējošs kods uzdots ar zīmējumā redzamo grafu.<br />
+Zināms, ka <span class="math inline">\(x_1 = 1\)</span>, <span class="math inline">\(x_2 = 0\)</span>, <span class="math inline">\(x_5 = 1\)</span>, <span class="math inline">\(y_1 = 0\)</span>, <span class="math inline">\(y_2 = 1\)</span>, <span class="math inline">\(y_3 = 1\)</span>, <span class="math inline">\(y_4 = 0\)</span>. Noteikt pazaudētos ziņojuma bitus.</p>
+</hgroup></section><section id="piemēra-atrisinājums" class="slide level2">
 <h2><lo-soln/> Piemēra atrisinājums</h2>
 <hgroup style="font-size:70%">
 <figure>
@@ -1595,8 +1841,29 @@ y_3 = x_1 \oplus x_3 \oplus x_4\\
 </ul>
 </hgroup>
 </section></section>
-<section><section id="section-7" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="ko-darījām-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām nodarbībā</h1></section></section>
+<section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Kļūdu korekcija - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kļūdu korekcijas piemēri</a></span><br />
+<span>(3) <a href="#/section-2">Rīda-Solomona kodi</a></span><br />
+<span>(4) <a href="#/section-3">Galīgi lauki</a></span><br />
+<span>(5) <a href="#/section-4">R-S kodu atkodēšana</a></span><br />
+<span>(6) <a href="#/section-5">Berlekampa-Velča atkodēšana</a></span><br />
+<span>(7) <a href="#/section-6">Tornado kodi</a></span><br />
+<span style="color:darkgreen"><strong>(8) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="ko-darījām-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām nodarbībā</h1><ul>
+<li>Nokodējām un atkodējām Heminga kodus</li>
+<li>Definējām Rīda-Solomona kodus</li>
+<li>Saskaitījām un reizinājām galīgu lauku elementus</li>
+<li>Aplūkojām dažas Rīda-Solomona kodu atkodēšanas metodes, t.sk. Berlekampa-Velča algoritmu.</li>
+<li>Aplūkojām dažus vienkāršus Tornado kodu piemērus.</li>
+</ul></section>
     </div>
   </div>
 

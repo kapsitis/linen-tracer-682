@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,8 +32,65 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section><section id="what-are-influencers-ietekmeļi-iespaidotāji" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Introduction</strong></span><br />
+<span>(2) <a href="#/section-1">Data in and around Videos</a></span><br />
+<span>(3) <a href="#/section-2">LAB 1: Structured Data Testing Tool</a></span><br />
+<span>(4) <a href="#/section-3">Automated Data Extraction</a></span><br />
+<span>(5) <a href="#/section-4">Sentiment Analysis</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2: Sentiment Analysis Webpage</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup>
+<aside class="notes">
+<ul>
+<li>What are your first idea or association regarding Data Science (<em>datu mācība</em>)?</li>
+<li>It is perfectly fine to have different ideas, since it is a large and versatile topic.</li>
+</ul>
+</aside>
+<!--
+(1) Slaidu tekstam jābūt minimālam; tam tikai jādod neliels rāmītis skolēnu pašu darbam.
+(2) Slaidu idejai jābūt vienkārši izstāstāmai, nav jāizmanto grūti un mulsinoši termini.
+(3) Jautājumiem jāizskatās dabiskiem, jārada interesi uzzināt vairāk, atnākt uz vēl kādu darbnīcu.
+(4) Jautājumiem jāasociējas ar skolēnu reālo dzīvi, jāmudina kaut ko pajautāt draugam vai vecmāmiņai. 
+(5) Praktiskajiem uzdevumiem jāmudina darboties grupās (vai vismaz pa pāriem), lai nostiprinātu RBS saistību ar pašu sadarbošanās ideju. 
+
+Vienlaikus, ir virkne lietu, kas IT darbnīcas atšķirs no biznesa vai radošuma darbnīcām. Piemēram - darbnīcas aktivitātēm izvirzāmie mērķi būs krietni konkrētāki un "izmērāmāki". 
+
+Pagaidām plānotas 2 darbnīcas:
+(A) Darbnīcas mērķis: 
+(A1) Kopā ar komandas biedriem izraudzīties tēmu, par kādu pētīt klipus vai soctīklu ierakstus. 
+(A2) Atrast kanālu vai kanālus, kur šī tēma plaši pārstāvēta. 
+(A3) Identificēt to klipu (vai cita veida sociālā tīkla ierakstu - Instagram u.c.), kurš izraisījis vislielāko lietotāju iesaisti/engagement. Iesaisti noteikt skatījumu, laiku/tīkšķu, komentāru veidā. Katrā tēmu grupā varētu būt kāds "rekords" (teiksim, kosmētikai vai datorspēlēm veltītie YouTub klipi parasti saņem lielāku atsaucību nekā opermūzikas klipi - bet var pētīt gan tos, gan tos). 
+
+(B) Darbnīcas mērķis: 
+(B1) Identificēt (gan starp pasniedzēju piedāvātajiem kanāliem, gan arī no iepriekšējā darbnīcā izraudzītajiem) klipos esošo komentāru populārākos vārdus, kas pauž auditorijas attieksmi. 
+(B2) Meklēt šos vārdus, lai atrastu līdzīgu saturu.  
+(B3) Redzēt, kā sociālajos tīklos izpaužas auditorijas reakcija ne vien kvantitatīvi, bet arī kvalitatīvi (t.s. "sentiment analysis"). Atrast, kuri video radījuši visvairāk pozitīvos vārdiņus vai emoji ("emotikonus" vai smailijus).
+
+Citu workshop/darbnīcu idejas:
+===============================
+(C) Google meklētājs (un citi līdzīgi meklēšanas servisi) darbībā - kā mērķtiecīgi izmantot visādas tur noslēptas funkcijas. Kā atminēt noslēpumus (teiksim, atbildes par angļu daiļliteratūru) ar Google palīdzību. 
+(D) Kā cilvēkus izspiego Internetā - kādas pēdas katrs no mums atstāj Google Maps, Twitter, u.c. servisos.
+--></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>What makes some social media content successful?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Are the emotional reactions to videos subjective? Are there any patterns?</li>
+<li>Are all engaging videos engaging in the same manner?</li>
+<li>What is “influencer-literacy” (<em>influencer-pratība</em>)?</li>
+</ul>
+</div>
+<aside class="notes">
+<p>https://www.db.lv/zinas/ptac-uzraudzis-instagram-un-youtube-influencerus-492378</p>
+</aside></section><section id="what-are-influencers-ietekmeļi-iespaidotāji" class="slide level2">
 <h2><lo-summary> What are Influencers (ietekmeļi, iespaidotāji)</h2>
 <hgroup>
 <figure>
@@ -76,8 +133,28 @@
 -->
 </hgroup>
 </section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="technologies-to-track-users" class="title-slide slide level1"><h1><lo-theory/> Technologies to Track Users</h1></section><section id="remarketing-mechanisms-combined" class="slide level2">
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span style="color:darkgreen"><strong>(2) Data in and around Videos</strong></span><br />
+<span>(3) <a href="#/section-2">LAB 1: Structured Data Testing Tool</a></span><br />
+<span>(4) <a href="#/section-3">Automated Data Extraction</a></span><br />
+<span>(5) <a href="#/section-4">Sentiment Analysis</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2: Sentiment Analysis Webpage</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section><section id="technologies-to-track-users" class="title-slide slide level1"><h1><lo-theory/> Technologies to Track Users</h1><ul>
+<li>Cookies (<em>sīkdatnes</em>).</li>
+<li>Tracking pixels and 3rd party banners (<em>trešo pušu izvietotie pikseļi un reklāmas baneri</em>).</li>
+<li>Browser fingerprinting (<em>pārlūkprogrammu digitālnospiedumi</em>).</li>
+<li>eBeacons (<em>e-bojas</em>) - typically Bluetooth or ultrasound.</li>
+</ul>
+<p><a href="https://www.cookiebot.com/en/website-tracking/">More about Website tracking</a></p></section><section id="remarketing-mechanisms-combined" class="slide level2">
 <h2><lo-summary/> Remarketing: Mechanisms Combined</h2>
 <div style="font-size:80%">
 <figure>
@@ -100,7 +177,24 @@
 <li><strong>End Users:</strong> Can see the information posted to the Internet (sometimes they need “honeypot accounts” to see Ads from “Saskaņa” political party etc.).</li>
 </ul>
 </section></section>
-<section><section id="demo-tools-for-authors" class="title-slide slide level1"><h1><lo-sample/> Demo: Tools for Authors</h1></section><section id="analytics-example-1-timeline" class="slide level2">
+<section><section id="demo-tools-for-authors" class="title-slide slide level1"><h1><lo-sample/> Demo: Tools for Authors</h1><hgroup style="font-size:70%">
+<ol type="1">
+<li>Log into your Google account, navigate to YouTube.</li>
+<li>Click your picture at the top right, select <strong>Go to Studio (Beta)</strong></li>
+</ol>
+<figure>
+<img data-src="youtube-go-to-studio.png" alt="YouTube Go To Studio" /><figcaption>YouTube Go To Studio</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<ol start="3" type="1">
+<li>Open <strong>Analytics</strong> and select the statistics you want.</li>
+</ol>
+<figure>
+<img data-src="youtube-analytics-page.png" alt="YouTube Analytics Page" /><figcaption>YouTube Analytics Page</figcaption>
+</figure>
+<p><strong>Note:</strong> You need to publish some videos to see analytics (who is watching them, when, for how many seconds, how did they find you, etc.)</p>
+</hgroup></section><section id="analytics-example-1-timeline" class="slide level2">
 <h2><lo-soln/> Analytics Example 1: Timeline</h2>
 <figure>
 <img data-src="analytics-timeline.png" alt="Analytics Timeline" /><figcaption>Analytics Timeline</figcaption>
@@ -121,8 +215,29 @@
 <img data-src="analytics-demography.png" alt="Analytics Timeline" /><figcaption>Analytics Timeline</figcaption>
 </figure>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="lab-1-verify-youtube-video-metadata" class="title-slide slide level1"><h1><lo-sample/> LAB 1: Verify YouTube Video Metadata</h1></section><section id="lab-1-navigating-to-the-tool" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Data in and around Videos</a></span><br />
+<span style="color:darkgreen"><strong>(3) LAB 1: Structured Data Testing Tool</strong></span><br />
+<span>(4) <a href="#/section-3">Automated Data Extraction</a></span><br />
+<span>(5) <a href="#/section-4">Sentiment Analysis</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2: Sentiment Analysis Webpage</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section><section id="lab-1-verify-youtube-video-metadata" class="title-slide slide level1"><h1><lo-sample/> LAB 1: Verify YouTube Video Metadata</h1><p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Turn off sound on your mobile device.</li>
+<li>Visit some YouTube video, copy its URL.</li>
+<li>Open Google’s <em>Structured Data Testing Tool</em>.</li>
+<li>Paste the copied URL.</li>
+<li>View the metadata.</li>
+</ol></section><section id="lab-1-navigating-to-the-tool" class="slide level2">
 <h2><lo-soln/> LAB 1: Navigating to the Tool</h2>
 <hgroup>
 <figure>
@@ -147,15 +262,77 @@
 </figure>
 </hgroup>
 </section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="using-youtube-api" class="title-slide slide level1"><h1><lo-theory/> Using YouTube API</h1></section><section id="abbreviated-counts" class="slide level2">
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Data in and around Videos</a></span><br />
+<span>(3) <a href="#/section-2">LAB 1: Structured Data Testing Tool</a></span><br />
+<span style="color:darkgreen"><strong>(4) Automated Data Extraction</strong></span><br />
+<span>(5) <a href="#/section-4">Sentiment Analysis</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2: Sentiment Analysis Webpage</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section><section id="using-youtube-api" class="title-slide slide level1"><h1><lo-theory/> Using YouTube API</h1><p><strong>Why do you need this:</strong> Sometimes you need quick information on user engagement (subscriptions for the channel, number of videos, likes per each video, number of comments, title, etc.).</p>
+<ul>
+<li><a href="https://towardsdatascience.com/what-is-api-and-how-to-use-youtube-api-65525744f520">YouTube API</a> gives you a fast and programmable way to extract this data.</li>
+</ul></section><section id="abbreviated-counts" class="slide level2">
 <h2><lo-summary/> Abbreviated counts</h2>
 <p><img data-src="Abbeviated%20subscriber%20counts" alt="https://support.google.com/youtube/thread/6543166" /> - “For consistency” all accounts over 1000 are displayed in abbreviated format “1.4K”, “23M” etc.</p>
 </section></section>
-<section><section id="info-not-structured-as-metadata" class="title-slide slide level1"><h1><lo-theory/> Info not structured as “metadata”</h1></section></section>
-<section><section id="ethical-robots" class="title-slide slide level1"><h1><lo-theory/> Ethical Robots</h1></section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="sentiment-analysis-basics" class="title-slide slide level1"><h1><lo-summary/> Sentiment Analysis Basics</h1></section><section id="sentiment-analysis-in-latvian" class="slide level2">
+<section id="info-not-structured-as-metadata" class="title-slide slide level1"><h1><lo-theory/> Info not structured as “metadata”</h1><ul>
+<li>Using robots (a.k.a. crawlers, spiderbots) can save your time.</li>
+<li>Record texts of comments and video descriptions.</li>
+<li>Automate your actions, pretend that you are an actual user with a browser screen.</li>
+</ul></section>
+<section id="ethical-robots" class="title-slide slide level1"><h1><lo-theory/> Ethical Robots</h1><div style="font-size:70%">
+<p>Not all robots are welcome in YouTube. See <a href="https://www.youtube.com/robots.txt">robots.txt</a>.</p>
+<pre><code>User-agent: Mediapartners-Google*
+Disallow:
+
+User-agent: *
+Disallow: /channel/*/community
+Disallow: /comment
+Disallow: /get_video
+Disallow: /get_video_info
+Disallow: /live_chat
+Disallow: /login
+Disallow: /results
+Disallow: /signup
+Disallow: /t/terms
+Disallow: /timedtext_video
+Disallow: /user/*/community
+Disallow: /verify_age
+Disallow: /watch_ajax
+... 
+
+Sitemap: https://www.youtube.com/yt/sitemap/sitemap.xml</code></pre>
+</div></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Data in and around Videos</a></span><br />
+<span>(3) <a href="#/section-2">LAB 1: Structured Data Testing Tool</a></span><br />
+<span>(4) <a href="#/section-3">Automated Data Extraction</a></span><br />
+<span style="color:darkgreen"><strong>(5) Sentiment Analysis</strong></span><br />
+<span>(6) <a href="#/section-5">LAB 2: Sentiment Analysis Webpage</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section><section id="sentiment-analysis-basics" class="title-slide slide level1"><h1><lo-summary/> Sentiment Analysis Basics</h1><ul>
+<li><a href="https://github.com/sharan1/youtube-data-sentimental-analysis">YouTube Sentiment Analysis</a></li>
+<li>Sentiment Analysis is often used to study user reaction - mostly, if their comments about something are positive or negative. (It could be used to analyze more varied emotions as well.)</li>
+<li><a href="https://en.wikipedia.org/wiki/Sentiment_analysis">Sentiment Analysis</a> is meant to decode opinions rather than any objective facts.</li>
+<li>In YouTube sentiments often appear in user comments.</li>
+</ul></section><section id="sentiment-analysis-in-latvian" class="slide level2">
 <h2><lo-summary/> Sentiment Analysis in Latvian</h2>
 <ul>
 <li>For English language there are some Machine Learning models that are already trained to find the sentiments (the model has to be <em>trained</em> by sample data).</li>
@@ -180,10 +357,50 @@ akvapark.*</code></pre>
 <li><a href="https://youtu.be/AJVP96tAWxw">Sentiment Analysis with ML</a></li>
 </ul>
 </section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="lab-2-your-visualization-website" class="title-slide slide level1"><h1><lo-sample/> LAB 2: Your visualization website</h1></section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="what-did-we-cover" class="title-slide slide level1"><h1><lo-theory/> What did we cover?</h1></section><section id="what-comes-next" class="slide level2">
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Data in and around Videos</a></span><br />
+<span>(3) <a href="#/section-2">LAB 1: Structured Data Testing Tool</a></span><br />
+<span>(4) <a href="#/section-3">Automated Data Extraction</a></span><br />
+<span>(5) <a href="#/section-4">Sentiment Analysis</a></span><br />
+<span style="color:darkgreen"><strong>(6) LAB 2: Sentiment Analysis Webpage</strong></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section id="lab-2-your-visualization-website" class="title-slide slide level1"><h1><lo-sample/> LAB 2: Your visualization website</h1><p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Register with GitHub (unless you already have an account).</li>
+<li>Clone a small repository with 2 files.</li>
+<li>Publish that repository using GitHub pages.</li>
+<li>Edit <code>index.html</code> code to display a list of sentiments.</li>
+</ol></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube, Google Analytics and Web Marketing
+</h1>
+<p><blue>Engagement and Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Data in and around Videos</a></span><br />
+<span>(3) <a href="#/section-2">LAB 1: Structured Data Testing Tool</a></span><br />
+<span>(4) <a href="#/section-3">Automated Data Extraction</a></span><br />
+<span>(5) <a href="#/section-4">Sentiment Analysis</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2: Sentiment Analysis Webpage</a></span><br />
+<span style="color:darkgreen"><strong>(7) Summary</strong></span></p>
+</hgroup></section>
+<section><section id="what-did-we-cover" class="title-slide slide level1"><h1><lo-theory/> What did we cover?</h1><ul>
+<li>We identified 4 ways to track website users.</li>
+<li>We read YouTube data from the author’s perspective (inspected YouTube analytics).</li>
+<li>In the <strong>LAB01:</strong> you browsed the YouTube “VideoObjects”, and their metadata in the <blue>Google Structured Data Testing Tool</blue>.</li>
+<li>We demonstrated the data extraction automation using a Python script and browser automation tool Selenium.</li>
+<li>In the <strong>LAB02:</strong> you browsed some sentiment data in an ad hoc website hosted on GitHub Pages. (More visualization would likely coding on a proper computer.)</li>
+</ul></section><section id="what-comes-next" class="slide level2">
 <h2><lo-summary/> What Comes Next?</h2>
 <p>In a typical research project, one question leads to <strong>multiple</strong> new questions.</p>
 <ul>
@@ -199,7 +416,11 @@ akvapark.*</code></pre>
 </ul>
 <p><blue>Please send your comments and suggestions!</blue></p>
 </section></section>
-<section><section id="notes-for-instructors" class="title-slide slide level1"><h1><lo-theory/> Notes for Instructors</h1></section></section>
+<section id="notes-for-instructors" class="title-slide slide level1"><h1><lo-theory/> Notes for Instructors</h1><ol type="1">
+<li>Check, if you have Python 3.7, Pip3 package manager and Selenum installed. You will need them when running the crawler automation task. See <a href="https://www.analyticsvidhya.com/blog/2019/05/scraping-classifying-youtube-video-data-python-selenium/">Scraping YouTube</a> for details.</li>
+<li>You will also need to share your mobile device screen on your desktop (so that your mobile phone can be shown on the big screen). Either <strong>Vysor</strong> or <strong>scrcpy</strong> could be used. See e.g. <a href="https://www.omgubuntu.co.uk/2019/07/scrcpy-mirror-android-to-ubuntu-linux">Scrcpy description</a>.</li>
+<li>Before the screen sharing works, you will also need to enable USB debugging on the mobile device and connect your phone with the laptop with a USB cable.</li>
+</ol></section>
     </div>
   </div>
 

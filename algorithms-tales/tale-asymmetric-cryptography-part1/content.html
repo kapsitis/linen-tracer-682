@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,10 +32,54 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="kriptoloģijas-apakštēmas" class="title-slide slide level1"><h1><lo-theory/> Kriptoloģijas apakštēmas</h1></section><section id="vienreiz-lietojamās-atslēgas" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc epastu pasaulē šifrēšana noved pie skaitļu teorijas algoritmiem?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Kāpēc ir tikai galīgs (neliels) skaits asimetrisko atslēgu algoritmu?</li>
+</ul>
+</div></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Simetriska šifrēšana</strong></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="kriptoloģijas-apakštēmas" class="title-slide slide level1"><h1><lo-theory/> Kriptoloģijas apakštēmas</h1><ul>
+<li>Kriptogrāfija un kriptoanalīze ir pretējas nodarbes (kopīgā nozare ir kriptoloģija).</li>
+</ul>
+<figure>
+<img data-src="cryptography-subparts.png" alt="Cryptography subparts" /><figcaption>Cryptography subparts</figcaption>
+</figure></section><section id="vienreiz-lietojamās-atslēgas" class="slide level2">
 <h2><lo-summary/> Vienreiz lietojamās atslēgas</h2>
 <div style="font-size:70%">
 <ul>
@@ -51,12 +95,96 @@ s_{i+1} = 1103515245s_i + 12345\;(\text{mod}\,2^{31})
 <small>(c) <a href="https://dilbert.com/strip/2001-10-25">Dilbert.com</a></small></p>
 </div>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="pgp-vēsture" class="title-slide slide level1"><h1><lo-theory/> PGP vēsture</h1></section><section id="pgp-programmatūra" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span style="color:darkgreen"><strong>(3) Asimetriska šifrēšana</strong></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span style="color:darkgreen"><strong>(4) RSA algoritmi</strong></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span style="color:darkgreen"><strong>(5) Par skaitļu teoriju</strong></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span style="color:darkgreen"><strong>(6) Difī-Helmana atslēgu apmaiņa</strong></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span style="color:darkgreen"><strong>(7) PGP programmatūra</strong></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="pgp-vēsture" class="title-slide slide level1"><h1><lo-theory/> PGP vēsture</h1><ul>
+<li>Fils Cimermans (<em>Phil Zimmermann</em>), 1991.gads.</li>
+<li>OpenPGP standarts</li>
+<li>Šifrē epastu saturu (nevis SMTP hederus!), var izmantot citiem failiem, ko glabā nedrošās vietās - uz mobilām ierīcēm vai mākonī.</li>
+</ul></section><section id="pgp-programmatūra" class="slide level2">
 <h2><lo-theory/> PGP programmatūra</h2>
 <ul>
 <li>PGP spraudņi</li>
@@ -69,9 +197,39 @@ s_{i+1} = 1103515245s_i + 12345\;(\text{mod}\,2^{31})
 <li>Kā manuāli eksportēt un importēt šādas atslēgas</li>
 </ul>
 </section></section>
-<section><section id="pki-un-web-of-trust" class="title-slide slide level1"><h1><lo-theory/> PKI un “Web of trust”</h1></section></section>
-<section><section id="section-7" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="epastu-infrastruktūra" class="title-slide slide level1"><h1><lo-theory/> Epastu infrastruktūra</h1></section><section id="section-8" class="slide level2">
+<section id="pki-un-web-of-trust" class="title-slide slide level1"><h1><lo-theory/> PKI un “Web of trust”</h1><ul>
+<li>Atslēgu apmaiņai jābūt mērogojamai</li>
+<li>PKI veido hierarhiju, sākot ar “Saknes sertifikātu”, ar kuru paraksta zemāku līmeņu sertifikātus u.c.</li>
+<li>“Web of trust” nozīmē transitīvu uzticēšanos: Ja <span class="math inline">\(A\)</span> uzticas <span class="math inline">\(B\)</span> sertifikātiem, tad <span class="math inline">\(A\)</span> uzticas arī sertifikātiem, kuriem uzticas <span class="math inline">\(B\)</span>.</li>
+</ul></section>
+<section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span style="color:darkgreen"><strong>(8) (P) Epastu drošība</strong></span><br />
+<span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="epastu-infrastruktūra" class="title-slide slide level1"><h1><lo-theory/> Epastu infrastruktūra</h1><hgroup>
+<p>TODO: Attēls ar pamata topoloģiju</p>
+</hgroup>
+<hgroup>
+<ul>
+<li>MUA (<em>Mail User Agent</em>) jeb klienta epasta programma.</li>
+<li>MDA (<em>Mail Delivery Agent</em>) jeb epasta serveris.</li>
+<li>MTA (<em>Mail Transfer Agent</em>) jeb epasta maršrutētājs.</li>
+</ul>
+<p>Atšķirībā no HTTP, SMTP ieejošās un izejošās epastu ķēdītes var būt pilnīgi atšķirīgas un savstarpēji nesaistītas. Biežas situācijas, kad domēna izsūtīšanas adrese(s) ir pavisam citas nekā saņemšanas adrese(s).</p>
+</hgroup></section><section id="section-8" class="slide level2">
 <h2><lo-theory/></h2>
 </section><section id="epastu-vārtejas" class="slide level2">
 <h2><lo-theory/> Epastu vārtejas</h2>
@@ -91,8 +249,24 @@ s_{i+1} = 1103515245s_i + 12345\;(\text{mod}\,2^{31})
 <h2><lo-summary/> SMTP pieprasījumi</h2>
 <p>TODO: Attēls ar SMTP hederiem un vēstules satura paraugu.</p>
 </section></section>
-<section><section id="section-9" class="title-slide slide level1"><h1></h1></section></section>
-<section><section id="section-10" class="title-slide slide level1"><h1> </h1></section></section>
+<section id="section-9" class="title-slide slide level1"><h1></h1></section>
+<section id="section-10" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Asimetriska kriptogrāfija</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Simetriska šifrēšana</a></span><br />
+<span>(3) <a href="#/section-2">Asimetriska šifrēšana</a></span><br />
+<span>(4) <a href="#/section-3">RSA algoritmi</a></span><br />
+<span>(5) <a href="#/section-4">Par skaitļu teoriju</a></span><br />
+<span>(6) <a href="#/section-5">Difī-Helmana atslēgu apmaiņa</a></span><br />
+<span>(7) <a href="#/section-6">PGP programmatūra</a></span><br />
+<span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
+<span style="color:darkgreen"><strong>(9) Kopsavilkums</strong></span></p>
+</hgroup></section>
     </div>
   </div>
 

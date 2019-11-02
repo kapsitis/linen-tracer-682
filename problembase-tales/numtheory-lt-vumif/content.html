@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,8 +32,33 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="lt.vumif.2016.9.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.9.3</h1></section><section id="dalām-divus-polinomus" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><h1 style="font-size:28pt">
+Skaitļu teorija (LT, 10.kl.)
+</h1>
+<ul>
+<li><strong>LT.LKMMO</strong> - Lietuvos komandinė mokinių matematikos olimpiada (Lietuvas komandveida skolēnu matemātikas olimpiāde)</li>
+<li><strong>LT.LDK</strong> - Varžybos Lietuvos Didžiosios Kunigaikštystės garbei (Sacensības Lietuvas Lielkņazistes godam)<br />
+</li>
+<li><strong>LT.RAJ</strong> - Rajono/miesto etapas (Rajona/pilsētas posms)<br />
+</li>
+<li><strong>LT.LMMO</strong> - Lietuvos mokinių matematikos olimpiada (Lietuvas skolēnu matemātikas olimpiāde: nacionālais posms)<br />
+</li>
+<li><blue><strong>LT.VUMIF</strong> - <strong>Vilniaus universiteto Matematikos ir informatikos fakulteto olimpiada</strong> (Viļņas universitātes rīkota olimpiāde skolēniem)</blue></li>
+</ul>
+<p><a href="http://mif.vu.lt/matematikos-olimpiados/">Matematikos olimpiados</a></p></section>
+<section><section id="lt.vumif.2016.9.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.9.3</h1><p>Atrodiet visas naturālas <span class="math inline">\(n\)</span> vērtības, kurām skaitlis <span class="math inline">\(\frac{n^3 + 3}{n^2 + 7}\)</span> ir naturāls.</p>
+<!--
+Raskite visas natūraliąsias $n$ reikšmes, su kuriomis skaičius
+$\frac{n^3 + 3}{n^2 + 7}$
+yra natūralusis.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">alg.poly.division</a></li>
+<li><a href="#/">alg.ineq.equations</a></li>
+<li><a href="#/">comb.full</a></li>
+</ul>
+<p></small></p></section><section id="dalām-divus-polinomus" class="slide level2">
 <h2>Dalām divus polinomus</h2>
 <p>Ja skaitītājā polinoma pakāpe (kubs) ir vismaz tāda pati kā saucējā (kvadrāts), tad tos var dalīt, iegūstot atlikumu:</p>
 <p><span class="math display">\[\frac{n^3 + 3}{n^2 + 7} = \frac{n(n^2 + 7) - 7n + 3}{n^2 + 7} = 
@@ -51,7 +76,21 @@ n + \frac{-7n+3}{n^2 + 7}.\]</span></p>
 <li>Vērtībām <span class="math inline">\(n=1,3,4,6\)</span> sanāk daļskaitļi.</li>
 </ul>
 </section></section>
-<section><section id="lt.vumif.2016.10.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.10.3</h1></section><section id="sadalījums-pirmreizinātājos" class="slide level2">
+<section><section id="lt.vumif.2016.10.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.10.3</h1><p>Atrodiet mazāko naturālo skaitli <span class="math inline">\(n\)</span>, kuram skaitļi <span class="math inline">\(\sqrt[5]{5n}\)</span>, <span class="math inline">\(\sqrt[6]{6n}\)</span>, <span class="math inline">\(\sqrt[7]{7n}\)</span> ir naturāli.</p>
+<!--
+Raskite mažiausią natūralųjį skaičių $n$, kuriam skaičiai
+$\sqrt[5]{5n}$, $\sqrt[6]{6n}$, $\sqrt[7]{7n}$
+yra natūralieji.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">div.fta</a></li>
+<li><a href="#/">div.fta.pow.other</a></li>
+<li><a href="#/">div.common.lcm.maxexp</a></li>
+<li><a href="#/">seq.arithm.mod.gaps</a></li>
+<li><a href="#/">mod.eq.chinese</a></li>
+</ul>
+<p></small></p></section><section id="sadalījums-pirmreizinātājos" class="slide level2">
 <h2>Sadalījums pirmreizinātājos</h2>
 <p>Apzīmējam <span class="math inline">\(n = 2^a3^b5^c7^d\)</span> ir <span class="math inline">\(n\)</span> sadalījums pirmreizinātājos. Citus pirmreizinātājus neieviešam (aizdomas, ka tie nebūs vajadzīgi - citi kāpinātāji būs <span class="math inline">\(0\)</span>).</p>
 <ul>
@@ -68,9 +107,38 @@ n + \frac{-7n+3}{n^2 + 7}.\]</span></p>
 </ul>
 <p><span class="math display">\[n = 2^{35}\cdot{}3^{35}\cdot{}5^{84}\cdot{}7^{90}.\]</span></p>
 </section></section>
-<section><section id="lt.vumif.2016.11_12.1" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.11_12.1</h1></section></section>
-<section><section id="lt.vumif.2016.11_12.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.11_12.3</h1></section></section>
-<section><section id="lt.vumif.2017.9.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.9.2</h1></section><section id="ciparu-skaita-novērtējums" class="slide level2">
+<section id="lt.vumif.2016.11_12.1" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.11_12.1</h1><p>Agne savā traukā ielēja <span class="math inline">\(p\)</span> litrus ūdens, bet Bens savā traukā ielēja <span class="math inline">\(q\)</span> litrus ūdens. Pārmaiņus veikdami gājienus, viņi spēlē sekojošu spēli. Gājiena laikā spēlētājs no sava trauka otra spēlētāja traukā ielej tik daudz ūdens, cik ūdens jau ir otrā spēlētāja traukā. Spēli sāk Agne. Pēc simts gājieniem Agnes traukā bija <span class="math inline">\(q\)</span> litri ūdens, bet Bena traukā - <span class="math inline">\(p\)</span> litri ūdens. Atrodiet <span class="math inline">\(\frac{p}{q}\)</span>.</p>
+<!--
+Agnė į savo turimą indą įpylė $p$ litrų vandens, 
+o Benas į savąjį indą įpylė $q$ litrų vandens.
+Pakaitomis atlikdami ėjimus, jie žaidžia tokį žaidimą. 
+Ėjimo metu žaidėjas iš savo indo į
+kito žaidėjo indą turi įpilti tiek vandens, 
+kiek jo tuo metu yra kito žaidėjo inde. Žaidimą
+pradėjo Agnė. Po šimto ėjimų Agnės inde buvo $q$ 
+litrų vandens, o Beno – $p$ litrų vandens.
+Raskite $\frac{p}{q}$.
+--></section>
+<section id="lt.vumif.2016.11_12.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.11_12.3</h1><p>Noskaidrojiet, vai eksistē tāds naturāls skaitlis <span class="math inline">\(n\)</span>, ka skaitlis <span class="math inline">\(n \cdot 2^{2016} - 7\)</span> ir naturāla skaitļa kvadrāts.</p>
+<!--
+Nustatykite, ar egzistuoja toks natūralusis skaičius $n$, 
+kad skaičius $n \cdot 2^{2016} - 7$ yra
+natūraliojo skaičiaus kvadratas.
+--></section>
+<section><section id="lt.vumif.2017.9.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.9.2</h1><p>Vai izmantojot tieši pa vienai reizei visus desmit ciparus <span class="math inline">\(0,1,2,\ldots,9\)</span> var uzrakstīt divus naturālus skaitļus, ka viens skaitlis būtu otra kvadrāts?<br />
+<em>Piezīme.</em> Pirmais skaitļa cipars nevar būt nulle.</p>
+<!--
+Ar panaudojus po lygiai vieną kartą visus dešimt skaitmenų
+$0,1,2,\ldots,9$ galima užrašyti du natūraliuosius skaičius, 
+kad vienas skaičius būtų kito kvadratas?  
+*Pastaba.* Pirmasis skaičiaus skaitmuo negali būti nulis. 
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">nota.est.numdigits.prod</a></li>
+<li><a href="#/">comb.full</a></li>
+</ul>
+<p></small></p></section><section id="ciparu-skaita-novērtējums" class="slide level2">
 <h2>Ciparu skaita novērtējums</h2>
 <p><strong>Apgalvojums:</strong> Ja naturāla skaitļa <span class="math inline">\(n\)</span> decimālpierakstā ir <span class="math inline">\(k\)</span> cipari, tad tā kvadrāta <span class="math inline">\(n^2\)</span> decimālpierakstā ir <span class="math inline">\(2k\)</span> vai <span class="math inline">\(2k-1\)</span> cipari.</p>
 <p><em>Pierādījums.</em> Mazākā <span class="math inline">\(n\)</span> vērtība ar <span class="math inline">\(k\)</span> cipariem ir <span class="math inline">\(10^{k-1}\)</span> (vieninieks ar <span class="math inline">\(k-1\)</span> nullēm). Šī skaitļa kvadrāts ir <span class="math inline">\(10^{2k-2}\)</span>, t.i. <span class="math inline">\(2k-1\)</span> cipari.<br />
@@ -97,8 +165,27 @@ Savukārt lielākā <span class="math inline">\(n\)</span> vērtība ir <span cl
 <p>Der, piemēram, šādi skaitļi:</p>
 <p><span class="math display">\[567^2=321489;\;\;854^2=729316.\]</span></p>
 </section></section>
-<section><section id="lt.vumif.2017.10.1" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.10.1</h1></section></section>
-<section><section id="lt.vumif.2017.10.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.10.2</h1></section><section id="atdalām-pilno-kvadrātu" class="slide level2">
+<section id="lt.vumif.2017.10.1" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.10.1</h1><p>Atrodiet visus veselu skaitļu pārus <span class="math inline">\((a,b)\)</span>, kuriem eksistē tādi veseli skaitļi <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>, ka <span class="math display">\[8x^4 + 8y^4 = a^4 + 6a^2b^2 + b^4.\]</span></p>
+<!--
+Raskite visas sveikųjų skaičių poras $(a,b)$, 
+kurioms egzistuoja tokie sveikieji skaičiai $x$ ir
+$y$, kad
+$$8x^4 + 8y^4 = a^4 + 6a^2b^2 + b^4.$$
+--></section>
+<section><section id="lt.vumif.2017.10.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.10.2</h1><p>Atrodiet visus veselo skaitļu <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> pārus <span class="math inline">\((m,n)\)</span>, kas apmierina vienādību <span class="math display">\[m^2 + 2m - 9 = n^2 + n.\]</span></p>
+<!--
+Raskite visas sveikųjų skaičių $m$ ir $n$ poras 
+$(m, n)$, tenkinančias lygybę
+$$m^2 + 2m - 9 = n^2 + n.$$
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">alg.tra.binom.complsquare</a></li>
+<li><a href="#/">seq.gaps.squares</a></li>
+<li><a href="#/">alg.ineq.monotonicity</a></li>
+<li><a href="#/">comb.full</a></li>
+</ul>
+<p></small></p></section><section id="atdalām-pilno-kvadrātu" class="slide level2">
 <h2>Atdalām pilno kvadrātu</h2>
 <p>Pārrakstām doto vienādību:<br />
 <span class="math inline">\(m^2 +2m +1 -10 = n^2 + n.\)</span><br />
@@ -122,8 +209,33 @@ Savukārt lielākā <span class="math inline">\(n\)</span> vērtība ir <span cl
 <li>Atrisinājumi: <span class="math display">\[(m,n) \in \{ (9; -10), (3; -3), (3; 2), (9; 9) \}.\]</span></li>
 </ul>
 </section></section>
-<section><section id="lt.vumif.2017.11_12.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.11_12.2</h1></section></section>
-<section><section id="lt.vumif.2017.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.11_12.4</h1></section><section id="sākšana-no-beigām---1" class="slide level2">
+<section id="lt.vumif.2017.11_12.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.11_12.2</h1><p>Atrodiet vienādojuma <span class="math display">\[x^2y^2 + 208 + 4(\mbox{LKD}(x,y) + \mbox{MKD}(x,y))^2\]</span> visus naturālos atrisinājumus <span class="math inline">\((x,y)\)</span>. Šeit <span class="math inline">\(\mbox{LKD}(x,y)\)</span> un <span class="math inline">\(\mbox{MKD}(x,y)\)</span> attiecīgi apzīmē skaitļu <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span> lielāko kopīgo dalītāju un mazāko kopīgo dalāmo.</p>
+<!--
+Raskite lygties
+$$x^2y^2 + 208 + 4(\mbox{DBD}(x,y) + \mbox{MBK}(x,y))^2$$
+visus natūraliuosius sprendinius $(x,y)$. 
+Čia $\mbox{DBD}(x,y)$ ir $\mbox{MBK}(x,y)$ atitinkamai žymi
+skaičių $x$ ir $y$ didžiausią bendrą daliklį ir 
+mažiausią bendrą kartotinį.
+--></section>
+<section><section id="lt.vumif.2017.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2017.11_12.4</h1><p>Uz tāfeles uzrakstīts skaitlis <span class="math inline">\(636363\)</span>. Divi spēlētāji <span class="math inline">\(A\)</span> un <span class="math inline">\(B\)</span> pārmaiņus veic gājienus, pirmo gājienu izdara <span class="math inline">\(A\)</span>. Gājiena laikā ir jānodzēš uz tāfeles esošais skaitlis un jāuzraksta tā starpība ar jebkuru viņa naturālu dalītāju. Spēlētājs, kurš uzraksta <span class="math inline">\(0\)</span>, zaudē. Noskaidrojiet, kuram spēlētājam ir uzvaras stratēģija, un parādiet to.</p>
+<!--
+Lentoje užrašytas skaičius $636363$. 
+Du žaidėjai $A$ ir $B$ pakaitomis atlieka ėjimus, pirmąjį
+ėjimą atlieka $A$. Ėjimo metu reikia nutrinti 
+lentoje esantį skaičių ir užrašyti jo ir bet kurio
+jo natūraliojo daliklio skirtumą. Žaidėjas, užrašęs 
+skaičių $0$, pralaimi. Nustatykite, kuris
+žaidėjas turi pergalės strategiją, ir nurodykite ją.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">misc.invar.game</a></li>
+</ul>
+<p></small></p>
+<!--
+strategy=begin-at-the-end
+--></section><section id="sākšana-no-beigām---1" class="slide level2">
 <h2>Sākšana no beigām - 1</h2>
 <blockquote>
 <p><strong>Definīcija:</strong> Par “aukstām” pozīcijām sauksim tās, no kurām sākot, uzvar otrais spēlētājs <span class="math inline">\(B\)</span>. (Visas citas ir “karstas” pozīcijas.)</p>
@@ -148,8 +260,33 @@ Savukārt lielākā <span class="math inline">\(n\)</span> vērtība ir <span cl
 </blockquote>
 <p><em>Pierādījums.</em> Ja</p>
 </section></section>
-<section><section id="lt.vumif.2018.9.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2018.9.4</h1></section></section>
-<section><section id="lt.vumif.2018.10.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2018.10.4</h1></section><section id="cik-dalītāju-ir-skaitlim-n" class="slide level2">
+<section id="lt.vumif.2018.9.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2018.9.4</h1><p>Naturālam skaitlim <span class="math inline">\(M = 3N\)</span> ir tikpat ciparu, cik naturālam skaitlim <span class="math inline">\(N &gt; 10\)</span>. Lai iegūtu skaitli <span class="math inline">\(M\)</span>, vajag palielināt ikvienu skaitļa <span class="math inline">\(N\)</span> ciparu: vienam no cipariem pieskaitīt <span class="math inline">\(2\)</span>, bet pie atlikušajiem cipariem pieskaitīt pa nepāru naturālam skaitlim (ne obligāti visiem to pašu). Atrodiet visas iespējamās skaitļa <span class="math inline">\(N\)</span> pēdējā cipara vērtības.</p>
+<!--
+Natūralusis skaičius $M = 3N$ 
+turi tiek pat skaitmenų, kaip ir
+natūralusis skaičius $N > 10$. 
+Norint gauti skaičių $M$, reikia padidinti 
+kiekvieną iš skaičiaus $N$ skaitmenų: prie vieno skaitmens
+pridėti $2$, o prie likusių skaitmenų 
+pridėti po nelyginį natūralųjį
+skaičių (nebūtinai po tą patį). 
+Raskite visas galimas skaičiaus $N$
+paskutinio skaitmens reikšmes.
+--></section>
+<section><section id="lt.vumif.2018.10.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2018.10.4</h1><p>Skaitļa <span class="math inline">\(n&gt;1\)</span> visu pozitīvo dalītāju (ieskaitot <span class="math inline">\(1\)</span> un <span class="math inline">\(n\)</span>) reizinājums vienāds ar <span class="math inline">\(n^3\)</span>. Norādiet visas iespējamās skaitļa <span class="math inline">\(n\)</span> vērtības, uzrakstot, kāds var būt skaitļa <span class="math inline">\(n\)</span> sadalījums pirmreizinātājos.</p>
+<!--
+Skaičiaus $n>1$ visų teigiamų daliklių 
+(įskaitant $1$ ir $n$) sandauga lygi $n^3$.
+Nurodykite visas galimas skaičiaus $n$ reikšmes, 
+užrašydami, koks gali būti skaičiaus $n$ 
+skaidinys pirminiais daugikliais.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">div.fta.divisors.num</a></li>
+<li><a href="#/">div.fta.divisors.struct</a></li>
+</ul>
+<p></small></p></section><section id="cik-dalītāju-ir-skaitlim-n" class="slide level2">
 <h2>Cik dalītāju ir skaitlim <span class="math inline">\(n\)</span></h2>
 <blockquote>
 <p><strong>Apgalvojums:</strong> Ja skaitlis <span class="math inline">\(n\)</span> nav pilns kvadrāts, tad tā dalītājus var sadalīt pa pāriem <span class="math inline">\((d_1,d_2)\)</span>, kur katrā pārī reizinājums <span class="math inline">\(d_1d_2=n\)</span>. (Ja <span class="math inline">\(n\)</span> ir pilns kvadrāts, tad dalītājam <span class="math inline">\(\sqrt{n}\)</span> nav pāra.)</p>
@@ -171,9 +308,58 @@ Savukārt lielākā <span class="math inline">\(n\)</span> vērtība ir <span cl
 <li>Skaitlim <span class="math inline">\(n=12=2^23^1\)</span> ir 6 dalītāji: <span class="math inline">\(1,2,3,4,6,12\)</span>. To reizinājums ir <span class="math inline">\(12^3\)</span>.</li>
 </ul>
 </section></section>
-<section><section id="lt.vumif.2018.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2018.11_12.4</h1></section></section>
-<section><section id="lt.vumif.2019.9.1" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.9.1</h1></section></section>
-<section><section id="lt.vumif.2019.9.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.9.2</h1></section><section id="spriedumi-no-beigām" class="slide level2">
+<section id="lt.vumif.2018.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2018.11_12.4</h1><p>Naturālie skaitļi <span class="math inline">\(p\)</span>, <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> apmierina vienādojumus: <span class="math display">\[p + 1 = 2x^2,\;\;p^2 + 1 = 2y^2.\]</span> Noskaidrojiet visas iespējamās skaitļa <span class="math inline">\(p\)</span> vērtības, ja zināms, ka šis skaitlis ir pirmskaitlis.</p>
+<!--
+Natūralieji skaičiai $p$, $x$, $y$ tenkina lygtis:
+$p + 1 = 2x^2,\;\;p^2 + 1 = 2y^2.$$
+Nustatykite visas galimas skaičiaus $p$ reikšmes, 
+jei žinoma, kad šis skaičius pirminis.
+--></section>
+<section id="lt.vumif.2019.9.1" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.9.1</h1><p>Atrodiet visus veselu skaitļu trijniekus <span class="math inline">\((x,y,z)\)</span>, kas apmierina vienādojumu sistēmu <span class="math display">\[
+\left\{ \begin{array}{l}
+x^3 + y^3 = z^3 + 1,\\
+y^2 - x^2 = x+y,\\
+2x^3 - 6x = z^3 - 4x^2.
+\end{array} \right.\]</span></p>
+<!--
+Raskite visus sveikųjų skaičių trejetus $(x,y,z)$, 
+tenkinančius lygčių sistemą
+$$
+\left\{ \begin{array}{l}
+x^3 + y^3 = z^3 + 1,\\
+y^2 - x^2 = x+y,\\
+2x^3 - 6x = z^3 - 4x^2.
+\end{array} \right.$$
+--></section>
+<section><section id="lt.vumif.2019.9.2" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.9.2</h1><div style="font-size:70%">
+<p>Algis un Balis spēlē sekojošu spēli, pārmaiņus izdarīdami gājienus. Sākumā ir divas monētu kaudzītes: vienā kaudzītē ir <span class="math inline">\(m\)</span> monētas, bet otrā <span class="math inline">\(n\)</span> monētas. Gājiena laikā jāveic jebkura viena no trim sekojošām darbībām: 1) izmest vienu monētu no jebkuras kaudzītes; 2) izmest pa vienai monētai no abām kaudzītēm; 3) pārcelt vienu monētu no jebkuras kaudzītes uz otru kaudzīti. Sāk Algis. Spēlētājs, kurš nevar veikt gājienu, zaudē. Noskaidrojiet visus naturālu skaitļu pārus <span class="math inline">\((m,n)\)</span>, kuriem Balim ir uzvaras stratēģija, t.i. kurām viņš var nodrošināt uzvaru, lai kā spēlētu Algis.</p>
+</div>
+<!--
+Algis ir Balys žaidžia tokį žaidimą, 
+pakaitomis atlikdami ėjimus. Pradžioje
+yra dvi monetų krūvelės: vienoje krūvelėje 
+yra $m$ monetų, o kitoje yra $n$
+monetų. Ėjimo metu reikia atlikti bet 
+kurį vieną iš šių trijų veiksmų: 
+1) išmesti vieną monetą iš bet kurios krūvelės; 
+2) išmesti po vieną monetą iš abiejų krūvelių; 
+3) perkelti vieną monetą iš bet kurios krūvelės į kitą. 
+Pradeda Algis. Žaidėjas, negalintis atlikti ėjimo, 
+pralaimi. Nustatykite visas natūraliųjų skaičių $(m,n)$ 
+poras, kurioms Balys turi pergalės strategiją, t. y.
+kurioms jis gali užsitikrinti pergalę, 
+kad ir kaip žaistų Algis.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">misc.invar.game</a></li>
+<li><a href="#/">mod.fix.parity</a></li>
+<li><a href="#/">misc.ind.least</a></li>
+</ul>
+<p></small></p>
+<!--
+strategy=begin-at-the-end
+--></section><section id="spriedumi-no-beigām" class="slide level2">
 <h2>Spriedumi no beigām</h2>
 <p><blue>Aukstās pozīcijās</blue> zaudē tas, kam gājiens.</p>
 <table>
@@ -286,7 +472,25 @@ Savukārt lielākā <span class="math inline">\(n\)</span> vērtība ir <span cl
 (Ņemam vērā, ka Balis nekad nepārliek no vienas kaudzītes otrā.)</p>
 <p>Skaitļiem <span class="math inline">\((m_2,n_2)\)</span> Balis uzvar pēc induktīvā pieņēmuma. Pretruna.</p>
 </section></section>
-<section><section id="lt.vumif.2019.9.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.9.4</h1></section><section id="kongruenču-vienādojumi" class="slide level2">
+<section><section id="lt.vumif.2019.9.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.9.4</h1><p>Jurgis uzrakstīja trīs naturālus skaitļus, no kuriem katrs beidzas ar to pašu ciparu, ar kuru beidzas pārējo divu skaitļu summa, un sareizināja tos. Jurgis uzrakstīja tikai reizinājuma pēdējos trīs ciparus. Kādu ciparu trijnieku viņš varēja iegūt? Atrodiet visas iespējas.</p>
+<!--
+Jurgis užrašė tris natūraliuosius skaičius, 
+iš kurių kiekvienas baigiasi tuo
+pačiu skaitmeniu kaip kitų dviejų skaičių 
+suma, ir sudaugino juos. Jurgis
+užrašė tik sandaugos paskutinius tris 
+skaitmenis. Kokį skaitmenų trejetą jis
+galėjo gauti? Raskite visas galimybes.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">mod.fix.lastdigits</a></li>
+<li><a href="#/">mod.eq</a></li>
+<li><a href="#/">misc.symm</a></li>
+<li><a href="#/">comb.full</a></li>
+<li><a href="#/">nota.divrule.2_5pow.divides</a></li>
+</ul>
+<p></small></p></section><section id="kongruenču-vienādojumi" class="slide level2">
 <h2>Kongruenču vienādojumi</h2>
 <p><strong>Definīcija:</strong> Ar <span class="math inline">\(a \equiv b\;(\mbox{mod}\,10)\)</span> apzīmējam to, ka <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> dod vienādus atlikumus, dalot ar <span class="math inline">\(10\)</span> (jeb beidzas ar to pašu ciparu).</p>
 <p><span class="math display">\[\left\{ \begin{array}{ll}
@@ -359,7 +563,21 @@ a+b+c \equiv 0\ &amp; (\mbox{mod}\,10).
 </tr>
 </table>
 </section></section>
-<section><section id="lt.vumif.2019.10.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.10.4</h1></section><section id="ciparu-pārvietošana-un-dalāmība-ar-9" class="slide level2">
+<section><section id="lt.vumif.2019.10.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.10.4</h1><p>Naturālu skaitli sauksim par <em>septiņīgu</em>, ja tam ir tieši <span class="math inline">\(70\)</span> ciparu: <span class="math inline">\(10\)</span> vieninieku, <span class="math inline">\(10\)</span> divnieku, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(10\)</span> septiņnkieku. Pierādīt, ka, ja viens septiņīgs skaitlis dalās ar citu septiņīgu skaitli, tad tie ir vienādi.</p>
+<!--
+Natūralųjį skaičių vadinsime *septintiniu*, 
+jei jis turi lygiai $70$ skaitmenų: $10$
+vienetų, $10$ dvejetų, $\ldots$, $10$ septynetų. 
+Įrodykite, kad jei vienas septintinis
+skaičius dalijasi iš kito, tai jie lygūs.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">nota.divrule.3_9.rem</a></li>
+<li><a href="#/">misc.invar</a></li>
+<li><a href="#/">mod.congr.prod</a></li>
+</ul>
+<p></small></p></section><section id="ciparu-pārvietošana-un-dalāmība-ar-9" class="slide level2">
 <h2>Ciparu pārvietošana un dalāmība ar 9</h2>
 <blockquote>
 <p><strong>Apgalvojums:</strong> Skaitlis <span class="math inline">\(n\)</span> un tā ciparu summa <span class="math inline">\(S(n)\)</span> dod vienādus atlikumus, dalot ar <span class="math inline">\(9\)</span> (vispārināta dalāmības pazīme).<br />
@@ -376,7 +594,29 @@ a+b+c \equiv 0\ &amp; (\mbox{mod}\,10).
 </ul>
 <p><em>Secinājums.</em> Vienīgais septiņīga skaitļa daudzkārtnis, kas var būt septiņīgs ir viņš pats.</p>
 </section></section>
-<section><section id="lt.vumif.2019.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.11_12.4</h1></section><section id="ciparu-pārvietošana-un-dalāmība-ar-9-1" class="slide level2">
+<section><section id="lt.vumif.2019.11_12.4" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2019.11_12.4</h1><p>Naturālu skaitli sauksim par <em>piecīgu</em>, ja tam ir tieši <span class="math inline">\(500\)</span> ciparu: pa <span class="math inline">\(100\)</span> divnieku, trijnieku, četrinieku, piecinieku un sešinieku. Pie piecīga skaitļa <span class="math inline">\(M\)</span> labajā pusē pierakstot divus ciparus <span class="math inline">\(81\)</span>, iegūts skaitlis <span class="math inline">\(N = \overline{M81}\)</span>. Pierādiet, ka<br />
+a) <span class="math inline">\(M\)</span> nedalās ne ar vienu piecīgu skaitli, izņemot sevi pašu;<br />
+b) <span class="math inline">\(N\)</span> nedalās ne ar vienu piecīgu skaitli.</p>
+<!--
+Natūralųjį skaičių vadinsime *penktiniu*, 
+jei jis turi lygiai $500$ skaitmenų: po
+$100$ dvejetų, trejetų, ketvertų, penketų ir šešetų. 
+Prie penktinio skaičiaus $M$
+iš dešinės prirašius du skaitmenis $81$, 
+gautas skaičius $N = \overline{M81}$. Įrodykite,
+kad a) $M$ nesidalija iš jokio penktinio skaičiaus, 
+išskyrus save patį; 
+b) $N$ nesidalija iš jokio penktinio skaičiaus.
+-->
+<p><small></p>
+<ul>
+<li><a href="#/">nota.divrule.3_9.rem</a></li>
+<li><a href="#/">mod.congr.prod</a></li>
+<li><a href="#/">mod.eq.chinese</a></li>
+<li><a href="#/">alg.ineq.monotonicity</a></li>
+<li><a href="#/">comb.full</a></li>
+</ul>
+<p></small></p></section><section id="ciparu-pārvietošana-un-dalāmība-ar-9-1" class="slide level2">
 <h2>Ciparu pārvietošana un dalāmība ar 9</h2>
 <ul>
 <li>Piecīgam skaitlim ciparu summa: <span class="math display">\[100\cdot(2+3+4+5+6) = 100\cdot{}20=2000.\]</span></li>

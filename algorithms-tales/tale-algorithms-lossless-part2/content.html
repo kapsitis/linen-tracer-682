@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,8 +32,44 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section><section id="sasniedzamie-rezultāti" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span>(5) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup>
+<!--
+https://en.wikipedia.org/wiki/Asymmetric_numeral_systems
+
+Aplūkot šīs ANS kā iespēju paātrināt saspiešanu "entropijas kodiem"
+
+
+PSEUDO_EOF - Hafmana kods var beigties baita vidū. Parasti pievieno īpašu simbolu (teksta beigu marķieri), 
+lai saprastu, kad atkodēšana jāpārtrauc. 
+https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1172/assn/huffman.html
+
+
+--></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc (nav) jāspiež simboli pa vienam?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Kāpēc Hafmana algoritms ir optimāls, bet tīrā veidā maz izmantots?</li>
+<li>Kāpēc var izmantot teksta fragmentu atkārtošanos?</li>
+<li>Kāpēc Lempela Ziva algoritmi var uzlabot Hafmana saspiešanu un kļuvuši par industrijas standartu?</li>
+</ul>
+</div></section><section id="sasniedzamie-rezultāti" class="slide level2">
 <h2><lo-theory/> Sasniedzamie rezultāti</h2>
 <ol type="1">
 <li>Identificēt Hafmaņa algoritma praktiskus ierobežojumus.</li>
@@ -42,8 +78,25 @@
 <li>Saprast un lietot Lempela-Ziva (LZ78) algoritmu.</li>
 </ol>
 </section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="šenona-informācijas-saturs" class="title-slide slide level1"><h1><lo-theory/> Šenona informācijas saturs</h1></section><section id="negodīga-monēta" class="slide level2">
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Entropijas atkārtojums</strong></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span>(5) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="šenona-informācijas-saturs" class="title-slide slide level1"><h1><lo-theory/> Šenona informācijas saturs</h1><p><strong>Definīcija</strong> (<em>Shannon information content</em>): Gadījumlieluma <span class="math inline">\(S\)</span> iznākumam <span class="math inline">\(x_i \in S\)</span> informācijas saturu izsaka logaritms ar bāzi <span class="math inline">\(2\)</span> no apgrieztā skaitļa varbūtībai, ka iestājas šis iznākums <span class="math inline">\(s_i\)</span>: <span class="math display">\[h(x_i) = \log_2 \frac{1}{p(x = x_i)}.\]</span></p>
+<p><blue><em>Entropiju</em></blue> visam gadījumlielumam <span class="math inline">\(S\)</span> apraksta visu iespējamo informācijas saturu <em>paredzamā vērtība</em> (<em>expected value</em>):</p>
+<p><span class="math display">\[H(S)= \sum\limits_{x_i \in S} p(x = x_i) \log_2 \frac{1}{p(x = x_i)}.\]</span></p></section><section id="negodīga-monēta" class="slide level2">
 <h2><lo-theory/> Negodīga monēta</h2>
 <hgroup>
 <figure>
@@ -77,7 +130,8 @@
 <p><strong>Apgalvojums:</strong> Ja nosūtām ziņojumu <span class="math inline">\(x\)</span> no iespējamo ziņojumu alfabēta <span class="math inline">\(S\)</span>, tad <span class="math inline">\(h(x)\)</span> ir vislabākais (saspiestā) ziņojuma faila izmērs bitos, uz kuru varam tiekties.</p>
 <p>Kāpēc entropiju nevar pārsniegt? Intuitīvi: Ja mums ir ziņojumi <span class="math inline">\(x_i\)</span> ar varbūtībām <span class="math inline">\(p_i\)</span>, tad katrs no tiem aizņem kaut kādu gabalu no “kodu telpas”. Piemēram, ja tā kodēšanai izmanto <span class="math inline">\(4\)</span> bitus, tad tas aizņem <span class="math inline">\(1/16\)</span>.</p>
 </section></section>
-<section><section id="monētas" class="title-slide slide level1"><h1><lo-sample/> 12 monētas</h1></section><section id="uzdevuma-sarežģītības-analīze" class="slide level2">
+<section><section id="monētas" class="title-slide slide level1"><h1><lo-sample/> 12 monētas</h1><p><strong>Uzdevums:</strong> Dotas <span class="math inline">\(12\)</span> monētas, no kurām visām ir vienādas masas, izņemot vienu, kura ir vai nu vieglāka, vai nu smagāka nekā citas.<br />
+Ar kādu mazāko svēršanu skaitu var noskaidrot, vai tā ir vieglāka vai smagāka kā arī atrast šo monētu?</p></section><section id="uzdevuma-sarežģītības-analīze" class="slide level2">
 <h2><lo-summary/> Uzdevuma sarežģītības analīze</h2>
 <ul>
 <li>Cik svēršanas būtu nepieciešamas, ja jau zinām atbildi un mums tā jāpierāda, piemēram, tiesas ekspertīzē?<br />
@@ -175,8 +229,24 @@ Entropija (biti)
 <p><strong>Situācija Nr.2</strong> Ja kaut kas jāmeklē ar mazāko iespējamo svēršanu skaitu, tad vislabāk <blue><strong>maksimizēt</strong></blue> informācijas saturu, ko ceram saņemt 1 svēršanā. Vislabāk, ja svēršanas eksperimentu iznākumi ir ar līdzīgām varbūtībām. Sviras svariem ideāli: <span class="math inline">\({\displaystyle \left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right)}\)</span>.</p>
 </hgroup>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="entropija-kā-saspiežamības-robeža" class="title-slide slide level1"><h1><lo-theory/> Entropija kā saspiežamības robeža</h1></section><section id="krafta-makmilana-nevienādība" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span style="color:darkgreen"><strong>(3) Hafmana optimalitāte</strong></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span>(5) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="entropija-kā-saspiežamības-robeža" class="title-slide slide level1"><h1><lo-theory/> Entropija kā saspiežamības robeža</h1><p><strong>Teorēma:</strong> Katrai ziņojumu kopai <span class="math inline">\(S\)</span> ar zināmu varbūtību sadalījumu un optimālu prefiksu kodējumu <span class="math inline">\(C\)</span>: <span class="math display">\[\ell_a(C) \leq H(S) + 1.\]</span></p>
+<p><strong>Sekas:</strong> Tā kā Hafmana algoritms rada optimālo (vai vienu no optimālajiem) prefiksu kodējumu - sal. <a href="../tale-algorithms-lossless-part1/content.html#/hafmana-koka-optimalitāte">iepriekšējo nodarbību</a>, tad arī Hafmana kodējumam <span class="math inline">\(C^{\ast}\)</span> ir spēkā: <span class="math display">\[\ell_a(C^{\ast}) \leq H(S) + 1.\]</span></p></section><section id="krafta-makmilana-nevienādība" class="slide level2">
 <h2><lo-theory/> Krafta-Makmilana nevienādība</h2>
 <p><strong>Teorēma:</strong> (<em>Kraft-McMillan Inequality</em>) Dots prefiksu kods <span class="math inline">\(C = \{ (x_1,w_1),\ldots,(x_n,w_n)\}\)</span>, tad <span class="math display">\[\sum\limits_{(x_i,w_i) \in C} 2^{-\ell(w_i)} \leq 1.\]</span></p>
 <p>Un arī otrādi: Ja ir doti vairāki kodējumu garumi <span class="math inline">\(l_i\)</span>, kas apmierina <span class="math inline">\(\sum 2^{-l_i} \leq 1\)</span>, tad no tiem var uzbūvēt prefiksu koku, kur katram garumam <span class="math inline">\(l_i\)</span> atbilst lapa šajā kokā, kuras dziļums ir tieši <span class="math inline">\(l_i\)</span>.</p>
@@ -198,8 +268,27 @@ Katram ziņojumam $x \in S$ ar $\ell(s)$ apzīmējam $s$ kodavārda garumu
 <p><strong>Jensena nevienādība:</strong> Dota $f(x) divreiz nepārtraukti diferencējama funkcija intervālā <span class="math inline">\([a;b]\)</span> un šajā intervālā <span class="math inline">\(f&#39;&#39;(x) \leq 0\)</span>, t.i. <span class="math inline">\(f(x)\)</span> grafiks ir izliekts uz augšu. Doti arī <span class="math inline">\(n\)</span> skaitļi <span class="math inline">\(x_1,x_2,\ldots,x_n \in [a;b]\)</span> un svari <span class="math inline">\(p_1,p_2,\ldots,p_n\)</span>, kuru summa ir <span class="math inline">\(1\)</span>. Tad ir spēkā nevienādība:</p>
 <p><span class="math display">\[p_1f(x_1) + p_2f(x_2) + \ldots + p_nf(x_n) \leq f \left( p_1x_1 + \ldots p_nx_n \right).\]</span></p>
 </section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="simbolu-grupēšana" class="title-slide slide level1"><h1><lo-theory/> Simbolu grupēšana</h1></section><section id="prediktīva-kodēšana" class="slide level2">
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span style="color:darkgreen"><strong>(4) Hafmana modifikācijas</strong></span><br />
+<span>(5) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="simbolu-grupēšana" class="title-slide slide level1"><h1><lo-theory/> Simbolu grupēšana</h1><p><strong>Piemērs:</strong> Negodīgās monētas alfabēts <span class="math inline">\(S = \{ A,B \}\)</span> ar varbūtībām <span class="math inline">\(p(A) = 0.9\)</span> un <span class="math inline">\(p(B) = 0.1\)</span>.</p>
+<ul>
+<li><p>Kodējot pa vienam simbolam, iegūstam vidējo koda garumu <span class="math inline">\(\ell_a(C) = 1\)</span>, kaut arī entropija <span class="math inline">\(H(S) = 0.4689956\)</span>.</p></li>
+<li><p>Kodējot pa diviem simboliem: <span class="math inline">\(T = \{ AA,AB,BA,BB \}\)</span> ar varbūtībām <span class="math inline">\(\{ 0.81, 0.09, 0.09,0.01 \}\)</span>, vidējais koda garums Hafmana kodam ir <span class="math display">\[\ell_a(C_2) = 1 \cdot 0.81 + 2\cdot 0.09 + 3\cdot 0.09 + 3 \cdot 0.01 = 1.29/2 = 0.645.\]</span></p></li>
+</ul></section><section id="prediktīva-kodēšana" class="slide level2">
 <h2><lo-theory/> Prediktīva kodēšana</h2>
 <ul>
 <li>Parasti nevajag aplūkot pilnu Dekarta reizinājumu <span class="math inline">\(S \times S\)</span>, ko veido <strong>visi</strong> iespējamie simbolu pārīši <span class="math inline">\((s_i,s_j)\)</span>, jo ne katri divi (vai trīs, četri, utt.) simboli mēdz atrasties blakus.</li>
@@ -221,8 +310,29 @@ Katram ziņojumam $x \in S$ ar $\ell(s)$ apzīmējam $s$ kodavārda garumu
 </ul>
 </hgroup>
 </section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="aritmētiskā-saspiešana" class="title-slide slide level1"><h1><lo-theory/> Aritmētiskā saspiešana</h1></section><section id="algoritma-apraksts" class="slide level2">
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span style="color:darkgreen"><strong>(5) Aritmētiskā saspiešana</strong></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="aritmētiskā-saspiešana" class="title-slide slide level1"><h1><lo-theory/> Aritmētiskā saspiešana</h1><ul>
+<li>Kāpēc lietot aritmētisko kodēšanu?</li>
+<li>Ja ziņojumu telpā ir jocīgas varbūtības, tad Hafmana kodi (kas dala kodu telpas “nekustamo īpašumu” gabalos pa <span class="math inline">\(1/2\)</span>, <span class="math inline">\(1/4\)</span> utt.) iznieko daudz vietas.</li>
+<li>Neizmantojam to, ka dažu ziņojumu informācijas saturs ir daudz mazāks par <span class="math inline">\(1\)</span>.</li>
+</ul>
+<p><strong>Jautājums:</strong> Kā nosūtīt informācijas saturu, kas ir 0.4 biti?<br />
+<strong>Aritmētiskās saspiešanas ideja:</strong> Griežam kodu telpu tādos gabalos, kā mums vajag (un bitos iekodējam tikai pašās beigās).</p></section><section id="algoritma-apraksts" class="slide level2">
 <h2><lo-theory/> Algoritma apraksts</h2>
 <p><strong>Ievade:</strong> Alfabēts un tā varbūtību sadalījums. Ziņojumu virkne šajā alfabētā.<br />
 <strong>Izvade:</strong> Intervāls <span class="math inline">\(I \subseteq [0;1]\)</span> (pietiek nosūtīt skaitli no šī intervāla).</p>
@@ -271,9 +381,36 @@ s_i = s_{i-1} \cdot p(x_i)
 </ul>
 <p>Sk arī 21.lpp. no teksta <a href="https://www.cs.cmu.edu/~guyb/realworld/compression.pdf">G.Blelloch. Introduction to Data Compression</a> - ar veseliem skaitļiem tuvināts aritmētiskās kodēšanas algoritms.</p>
 </section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="piemērs-labai-saspiešanai-ar-lz78" class="title-slide slide level1"><h1><lo-sample/> Piemērs labai saspiešanai ar LZ78</h1></section></section>
-<section><section id="lz78-iekodēšanas-pseidokods" class="title-slide slide level1"><h1><lo-theory> LZ78 iekodēšanas pseidokods</h1></section><section id="lz78-iekodēšanas-piemērs" class="slide level2">
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span>(5) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span style="color:darkgreen"><strong>(6) LZ78 algoritms</strong></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="piemērs-labai-saspiešanai-ar-lz78" class="title-slide slide level1"><h1><lo-sample/> Piemērs labai saspiešanai ar LZ78</h1><p>Nejauša pastaiga pa Markova ķēdi ar <span class="math inline">\(3\)</span> stāvokļiem:</p>
+<figure>
+<img data-src="markov-chain.png" alt="Markova ķēde" /><figcaption>Markova ķēde</figcaption>
+</figure>
+<p><span class="math inline">\(18\)</span> burtu virknīte, sākot ar <span class="math inline">\(A\)</span>:<br />
+<blue><code>ABCABCBCAAABCABBAB</code></blue></p>
+<aside class="notes">
+<p>sample(1:4,size=17, replace=TRUE)<br />
+[1] 3 3 1 2 3 4 3 2 1 1 4 4 2 3 2 1 4</p>
+</aside></section>
+<section><section id="lz78-iekodēšanas-pseidokods" class="title-slide slide level1"><h1><lo-theory> LZ78 iekodēšanas pseidokods</h1><p>Sākumā vārdnīcā jau atrodas visi simboli. Tad tai pievieno garākas virknītes:</p>
+<figure>
+<img data-src="LZ78-encode.png" alt="LZ78 iekodēšana" /><figcaption>LZ78 iekodēšana</figcaption>
+</figure></section><section id="lz78-iekodēšanas-piemērs" class="slide level2">
 <h2><lo-sample/> LZ78 iekodēšanas piemērs</h2>
 <div style="font-size:70%">
 <p>Kodējam augšminēto <blue><code>ABCABCBCAAABCABBAB</code></blue></p>
@@ -505,13 +642,34 @@ Aizstājam virknes ar soļiem, kur tās iesprauda vārdnīcā:<br />
 <red><code>A.B.C.1.C.2.A.7.6.B.B.1</code></red></p>
 </div>
 </section></section>
-<section><section id="lz78-atkodēšanas-pseidokods" class="title-slide slide level1"><h1><lo-theory> LZ78 atkodēšanas pseidokods</h1></section><section id="lz78-atkodēšanas-piemērs" class="slide level2">
+<section><section id="lz78-atkodēšanas-pseidokods" class="title-slide slide level1"><h1><lo-theory> LZ78 atkodēšanas pseidokods</h1><figure>
+<img data-src="LZ78-decode.png" alt="LZ78 atkodēšana" /><figcaption>LZ78 atkodēšana</figcaption>
+</figure></section><section id="lz78-atkodēšanas-piemērs" class="slide level2">
 <h2><lo-sample/> LZ78 atkodēšanas piemērs</h2>
 <p><strong>Piemērs:</strong> Izmantot LZ78, lai atkodētu virknīti: <red><code>A.B.C.1.3.2.D.4.1.A</code></red></p>
 <p>Ja atkodēšana veikta pareizi, vajadzētu sanākt <blue><code>A.B.C.AB.CA.BC.D.ABC.AB.A</code></blue>.</p>
 </section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="pasaka-kur-lieto-lz-saimes-algoritmus" class="title-slide slide level1"><h1><lo-yellow/> Pasaka: Kur lieto LZ saimes algoritmus</h1></section><section id="patenti-saistībā-ar-saspiešanu" class="slide level2">
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span>(4) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span style="color:darkgreen"><strong>(7) (P) Proprietāri formāti</strong></span><br />
+<span>(8) <a href="#/section-7">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="pasaka-kur-lieto-lz-saimes-algoritmus" class="title-slide slide level1"><h1><lo-yellow/> Pasaka: Kur lieto LZ saimes algoritmus</h1><ul>
+<li>Gzip, ZIP un V.42bis (modēmos lietots protokols) balstās uz LZ77.</li>
+<li>Unix <code>compress</code>, un GIF formāti izmanto LZ78.</li>
+<li><em>“LZ78 was covered by U.S. Patent 4,464,650 by Lempel, Ziv, Cohn, and Eastman, assigned to Sperry Corporation, later Unisys Corporation, filed on August 10, 1981. Two US patents were issued for the LZW algorithm: U.S. Patent 4,814,746 by Victor S. Miller and Mark N. Wegman and assigned to IBM, originally filed on June 1, 1983, and U.S. Patent 4,558,302 by Welch, assigned to Sperry Corporation, later Unisys Corporation, filed on June 20, 1983.”</em> (sk. <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch#Patents">LZW Patents</a>)</li>
+</ul></section><section id="patenti-saistībā-ar-saspiešanu" class="slide level2">
 <h2><lo-yellow/> Patenti saistībā ar saspiešanu</h2>
 <ul>
 <li>GIF (Unisys patents beidzās ap 2004.g.). Radās aizstājējformāts PNG - tāda pati bezzudumu saspiesta rastra grafika (tika pievienota “alpha-transparency”).</li>
@@ -525,9 +683,33 @@ Aizstājam virknes ar soļiem, kur tās iesprauda vārdnīcā:<br />
 <li>Debian Linux papildu repozitoriji.</li>
 </ul>
 </section></section>
-<section><section id="section-7" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām šajā nodarbībā?</h1></section></section>
-<section><section id="atsauces" class="title-slide slide level1"><h1><lo-theory/> Atsauces</h1></section></section>
+<section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Entropijas atkārtojums</a></span><br />
+<span>(3) <a href="#/section-2">Hafmana optimalitāte</a></span><br />
+<span>(4) <a href="#/section-3">Hafmana modifikācijas</a></span><br />
+<span>(5) <a href="#/section-4">Aritmētiskā saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">LZ78 algoritms</a></span><br />
+<span>(7) <a href="#/section-6">(P) Proprietāri formāti</a></span><br />
+<span style="color:darkgreen"><strong>(8) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām šajā nodarbībā?</h1><ol type="1">
+<li>Aplūkojām informācijas saturu un entropiju vairākos kontekstos</li>
+<li>Pamatojām, ka Hafmana kods (kā optimāls kods ar min. vidējo garumu) nevar saspiest labāk par entropiju.</li>
+<li>Aplūkojām dažas Hafmana algoritma modifikācijas (simbolu grupēšanu un PPM)</li>
+<li>Lietojām aritmētisko saspiešanu saspiešanai un atspiešanai.</li>
+<li>Iesākām apspriest Lempela Ziva algoritmus.</li>
+</ol></section>
+<section id="atsauces" class="title-slide slide level1"><h1><lo-theory/> Atsauces</h1><ul>
+<li><a href="https://www.cs.cmu.edu/~guyb/realworld/compression.pdf">G.Blelloch. Introduction to Data Compression</a> - Pamatots Hafmana algoritms un apgalvojumi par entropiju.</li>
+<li><a href="https://www.youtube.com/watch?v=y5VdtQSqiAI">Lecture 2: Entropy and Data Compression (I): Introduction to Compression, Inf.Theory and Entropy</a> Kembridžas lekcija par informācijas teoriju nr.2.</li>
+</ul></section>
     </div>
   </div>
 

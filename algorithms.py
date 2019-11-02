@@ -51,6 +51,11 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'id':'Algorithms.AsymmetricCryptography',
             'dir':'tale-asymmetric-cryptography-part1',
             'title': u'Asimetriskā kriptogrāfija - 1'
+        },
+        {
+            'id':'Algorithms.LinearOptimization1',
+            'dir':'tale-linear-optimization-part1',
+            'title': u'Lineārā optimizācija - 1'
         }           
     ]       
 

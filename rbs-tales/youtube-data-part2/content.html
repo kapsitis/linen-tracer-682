@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,9 +32,36 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section></section>
-<section><section id="objectives" class="title-slide slide level1"><h1><lo-theory/> Objectives</h1></section><section id="what-is-sentiment-analysis" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Introduction</strong></span><br />
+<span>(2) <a href="#/section-1">Dictionary-based analysis</a></span><br />
+<span>(3) <a href="#/section-2">LAB 2.1: Filter by Regular Expressions</a></span><br />
+<span>(4) <a href="#/section-3">Browser Automation</a></span><br />
+<span>(5) <a href="#/section-4">Analysis by Machine Learning</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2.2: Clustering Videos</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Why reactions to videos matter?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Why user feedback can improve your content?</li>
+<li>Why measuring feedback may depend on the genre and the objectives?</li>
+</ul>
+</div></section>
+<section><section id="objectives" class="title-slide slide level1"><h1><lo-theory/> Objectives</h1><ul>
+<li>Analyze texts to learn what customers are saying about you; how they react to various content.</li>
+<li>Classify comments by sentiment lexicons.</li>
+<li>Define regular expressions for search and classification.</li>
+<li>Classify comments by Machine Learning (Naive Bayes, SVM)</li>
+</ul></section><section id="what-is-sentiment-analysis" class="slide level2">
 <h2><lo-summary/> What is Sentiment Analysis</h2>
 <ul>
 <li>Comments may not always be sufficient: Some users only watch (or even just listen) YouTube, they do not interact as in a social network.</li>
@@ -83,8 +110,27 @@ The key problem in sentiment analysis is defining the semantic orientation of a 
 <li>In Latvian we use a different approach: dictionaries with word stems expressing emotions.</li>
 </ul>
 </section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="rule-based-approach" class="title-slide slide level1"><h1><lo-theory/> Rule-based Approach</h1></section><section id="what-is-ml-based-sentiment-analysis" class="slide level2">
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span style="color:darkgreen"><strong>(2) Dictionary-based analysis</strong></span><br />
+<span>(3) <a href="#/section-2">LAB 2.1: Filter by Regular Expressions</a></span><br />
+<span>(4) <a href="#/section-3">Browser Automation</a></span><br />
+<span>(5) <a href="#/section-4">Analysis by Machine Learning</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2.2: Clustering Videos</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section><section id="rule-based-approach" class="title-slide slide level1"><h1><lo-theory/> Rule-based Approach</h1><ul>
+<li>Start with a large corpus of texts; analyze common words.</li>
+<li>Come up with mini-dictionaries (called <em>lexicons</em>) or patterns (called <em>regular expressions</em>) to filter out interesting “features” in the texts.</li>
+<li>Also relationships between words.</li>
+</ul>
+<p><strong>Note:</strong> Lexicons are similar to <em>dictionaries</em>, but unlike dictionaries they do not store meanings of words.</p></section><section id="what-is-ml-based-sentiment-analysis" class="slide level2">
 <h2><lo-theory/> What is ML-based Sentiment Analysis</h2>
 <ul>
 <li>ML learns from data itself using statistics or neural networks or similar.</li>
@@ -92,11 +138,25 @@ The key problem in sentiment analysis is defining the semantic orientation of a 
 <li>May need data classified by humans for supervised learning.</li>
 </ul>
 </section></section>
-<section><section id="positive-negative-and-neutral-words" class="title-slide slide level1"><h1><lo-theory/> Positive, Negative and Neutral Words</h1></section><section id="emojis" class="slide level2">
+<section><section id="positive-negative-and-neutral-words" class="title-slide slide level1"><h1><lo-theory/> Positive, Negative and Neutral Words</h1><p>Some emotional words are used for emphasis (they do not express attitude towards the video or other product):<br />
+(“Man <strong>šausmīgi</strong> patika…”/“This was <strong>terribly</strong> nice”)</p>
+<p><strong>Some positive words:</strong></p>
+<pre><code>(vis)?jauk.*,(vis)?mīlīg.*,(vis)?skaist.*,(vis)?smukāk.*,
+piestāv.*,iespārd.*,reeciig.*,rēcīg.*,
+wow,super,tii+k,omg,haha</code></pre>
+<p><strong>Some negative words:</strong></p>
+<pre><code>(vis)?šausmīg.*,(vis)?nejauk.*,(vis)?slikt*,(vis)?garlaicīg.*,(vis)?stulb.*,
+heito.*,neciešam.*,
+fuj,depressing,</code></pre>
+<p><strong>Some neutral words:</strong></p>
+<pre><code>instagram,fortnite,akvaparks</code></pre></section><section id="emojis" class="slide level2">
 <h2><lo-summary/> Emojis</h2>
 <p><blue><em>Emoji</em></blue> (lv:<em>emocijikonas</em>, jp:絵文字) small standardized images that accompany other text symbols. There are no orthography rules, but we can measure the presence of the most popular ones.</p>
 </section></section>
-<section><section id="weight-and-threshold-method" class="title-slide slide level1"><h1><lo-sample/> Weight and Threshold Method</h1></section><section id="stemming" class="slide level2">
+<section><section id="weight-and-threshold-method" class="title-slide slide level1"><h1><lo-sample/> Weight and Threshold Method</h1><ul>
+<li><blue><em>Space-normalization</em></blue> (<em>atstarpju normalizēšana</em>) - replace with lower-case (may need to detect massive use of <em>ALL CAPS</em> before this), replace punctuation and newlines by spaces; replace multiple spaces by a single space. Also separate emojis into separate “words”.</li>
+</ul>
+<p>TODO: Show how text normalization works (before and after).</p></section><section id="stemming" class="slide level2">
 <h2><lo-sample/> Stemming</h2>
 <ul>
 <li><blue><em>Stemming</em></blue> (<em>celmošana</em>) - inflected languages such as Latvian may need to separate stems from changing endings. English is analytic language; usually do not need this.</li>
@@ -108,12 +168,78 @@ The key problem in sentiment analysis is defining the semantic orientation of a 
 <p>Word “brīnišķīgs” (en:“wonderful”) may have a larger positive weight than “jauks” (en:“nice”) as it expresses a stronger emotion. But it depends on your approach.</p>
 <p>In either case you need <blue><em>lexicons</em></blue> (<em>leksikoni</em>) to recognize positive, negative or neutral words.</p>
 </section></section>
-<section><section id="more-complex-rule-based-systems" class="title-slide slide level1"><h1><lo-theory/> More complex rule-based systems</h1></section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="lab-2.1-filter-by-regular-expression" class="title-slide slide level1"><h1><lo-sample/> LAB 2.1: Filter by Regular Expression</h1></section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="info-visible-not-available-from-youtube-api" class="title-slide slide level1"><h1><lo-theory/> Info visible, not available from YouTube API</h1></section></section>
-<section><section id="not-all-crawlers-are-welcome-everywhere" class="title-slide slide level1"><h1><lo-theory/> Not All Crawlers are Welcome Everywhere</h1></section><section id="screen-scraping-technicalities" class="slide level2">
+<section id="more-complex-rule-based-systems" class="title-slide slide level1"><h1><lo-theory/> More complex rule-based systems</h1><p><a href="https://github.com/cjhutto/vaderSentiment">VADER Sentiment Analysis</a> - a Python library.</p>
+<ul>
+<li>All-caps, emoji, some punctuation symbols and combinations.</li>
+<li>Signals indicating shift to an opposite emotion (“… BUT …”).</li>
+<li>Intensifiers of meaning (“very”, “really”, “hardly”, “extremely”, “terribly”).</li>
+</ul>
+<p>Rules more complicated; but eventually things add up to a numerical <strong>score</strong> - just as in a weighted sum model.</p></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Dictionary-based analysis</a></span><br />
+<span style="color:darkgreen"><strong>(3) LAB 2.1: Filter by Regular Expressions</strong></span><br />
+<span>(4) <a href="#/section-3">Browser Automation</a></span><br />
+<span>(5) <a href="#/section-4">Analysis by Machine Learning</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2.2: Clustering Videos</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section id="lab-2.1-filter-by-regular-expression" class="title-slide slide level1"><h1><lo-sample/> LAB 2.1: Filter by Regular Expression</h1><p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Navigate to … (scan your QR code)</li>
+<li>Enter Lab 2.1 …</li>
+<li>Open some predefined links.</li>
+<li>Edit regular expressions according to your worksheet, filter out some language or emojis.</li>
+</ol></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Dictionary-based analysis</a></span><br />
+<span>(3) <a href="#/section-2">LAB 2.1: Filter by Regular Expressions</a></span><br />
+<span style="color:darkgreen"><strong>(4) Browser Automation</strong></span><br />
+<span>(5) <a href="#/section-4">Analysis by Machine Learning</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2.2: Clustering Videos</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section id="info-visible-not-available-from-youtube-api" class="title-slide slide level1"><h1><lo-theory/> Info visible, not available from YouTube API</h1><ul>
+<li>Use crawlers (robots, spiders) can save your time.</li>
+<li>Record texts, authors, dates for the comments.</li>
+<li>Automate your actions, pretend that you are an actual user with a browser screen.</li>
+</ul></section>
+<section><section id="not-all-crawlers-are-welcome-everywhere" class="title-slide slide level1"><h1><lo-theory/> Not All Crawlers are Welcome Everywhere</h1><div style="font-size:70%">
+<p>Visit <a href="https://www.youtube.com/robots.txt">robots.txt</a> on YouTube.</p>
+<pre><code>User-agent: Mediapartners-Google*
+Disallow:
+
+User-agent: *
+Disallow: /channel/*/community
+Disallow: /comment
+Disallow: /get_video
+Disallow: /get_video_info
+Disallow: /live_chat
+Disallow: /login
+Disallow: /results
+Disallow: /signup
+Disallow: /t/terms
+Disallow: /timedtext_video
+Disallow: /user/*/community
+Disallow: /verify_age
+Disallow: /watch_ajax
+... 
+
+Sitemap: https://www.youtube.com/yt/sitemap/sitemap.xml</code></pre>
+</div></section><section id="screen-scraping-technicalities" class="slide level2">
 <h2><lo-summary/> Screen Scraping Technicalities</h2>
 <ul>
 <li>YouTube initially opens just the video itself, comments start to appear when you scroll down.</li>
@@ -125,8 +251,30 @@ The key problem in sentiment analysis is defining the semantic orientation of a 
 <h2><lo-summary/> Can use semi-automatic browsing</h2>
 <p>For example, log in manually (to avoid storing your password data), but do screen scraping automatically.</p>
 </section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="sentiment-analysis-basics" class="title-slide slide level1"><h1><lo-summary/> Sentiment Analysis Basics</h1></section><section id="supervised-learning" class="slide level2">
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Dictionary-based analysis</a></span><br />
+<span>(3) <a href="#/section-2">LAB 2.1: Filter by Regular Expressions</a></span><br />
+<span>(4) <a href="#/section-3">Browser Automation</a></span><br />
+<span style="color:darkgreen"><strong>(5) Analysis by Machine Learning</strong></span><br />
+<span>(6) <a href="#/section-5">LAB 2.2: Clustering Videos</a></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section><section id="sentiment-analysis-basics" class="title-slide slide level1"><h1><lo-summary/> Sentiment Analysis Basics</h1><ul>
+<li>Naive Bayes</li>
+<li>SVM</li>
+<li>Neural Networks and TensorFlow library</li>
+<li>Logistic regression classifiers…</li>
+<li>Maximum entropy classifiers…</li>
+</ul>
+<p>No clear advantages; setup for different methods may be different (in particular, training data). Need labeled data…</p>
+<p>Documents have different representations - individual words, word pairs, frequency vector…</p></section><section id="supervised-learning" class="slide level2">
 <h2><lo-summary/> Supervised learning</h2>
 <ul>
 <li>Already need documents marked as positive or negative.</li>
@@ -148,19 +296,69 @@ NLTK - installs some datasets.
 <li>YouTube videos and also user comments have likes and dislikes.</li>
 </ul>
 </section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="lab-2.2-clustering-videos" class="title-slide slide level1"><h1><lo-sample/> LAB 2.2: Clustering Videos</h1></section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="what-did-we-cover" class="title-slide slide level1"><h1><lo-theory/> What did we cover?</h1></section></section>
-<section><section id="where-to-go-next" class="title-slide slide level1"><h1><lo-summary/> Where to Go Next</h1></section><section id="references" class="slide level2">
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Dictionary-based analysis</a></span><br />
+<span>(3) <a href="#/section-2">LAB 2.1: Filter by Regular Expressions</a></span><br />
+<span>(4) <a href="#/section-3">Browser Automation</a></span><br />
+<span>(5) <a href="#/section-4">Analysis by Machine Learning</a></span><br />
+<span style="color:darkgreen"><strong>(6) LAB 2.2: Clustering Videos</strong></span><br />
+<span>(7) <a href="#/section-6">Summary</a></span></p>
+</hgroup></section>
+<section id="lab-2.2-clustering-videos" class="title-slide slide level1"><h1><lo-sample/> LAB 2.2: Clustering Videos</h1><p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Register with GitHub (unless you already have an account).</li>
+<li>Clone a small repository with 2 files.</li>
+<li>Publish that repository using GitHub pages.</li>
+<li>Edit a file that displays the video clusters.</li>
+</ol></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+YouTube Data
+</h1>
+<p><blue>Sentiment Analysis</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Dictionary-based analysis</a></span><br />
+<span>(3) <a href="#/section-2">LAB 2.1: Filter by Regular Expressions</a></span><br />
+<span>(4) <a href="#/section-3">Browser Automation</a></span><br />
+<span>(5) <a href="#/section-4">Analysis by Machine Learning</a></span><br />
+<span>(6) <a href="#/section-5">LAB 2.2: Clustering Videos</a></span><br />
+<span style="color:darkgreen"><strong>(7) Summary</strong></span></p>
+</hgroup></section>
+<section id="what-did-we-cover" class="title-slide slide level1"><h1><lo-theory/> What did we cover?</h1><ul>
+<li>In <strong>LAB 2.2</strong> you browsed some sentiment data visualizations in an ad hoc website on <em>GitHub Pages</em>.</li>
+</ul></section>
+<section><section id="where-to-go-next" class="title-slide slide level1"><h1><lo-summary/> Where to Go Next</h1><p>In a research project, one question leads to <em>multiple</em> new questions.</p>
+<ul>
+<li>Can the sentiment analysis detect sarcasm or other uses of <blue><em>figurative language</em></blue> (<em>tēlainās izteiksmes līdzekļi</em>).</li>
+<li>How to extract and analyze YouTube video data as still images, etc.? (This would involve <em>deep machine learning</em>).</li>
+<li>Is there a dependency between the sentiment and user-involvement?</li>
+</ul>
+<p>TODO: Add References that cover various details.</p></section><section id="references" class="slide level2">
 <h2><lo-summary/> References</h2>
 <ul>
 <li><a href="https://github.com/sharan1/youtube-data-sentimental-analysis">YouTube Sentiment Analysis</a></li>
 <li><a href="https://youtu.be/AJVP96tAWxw">Sentiment Analysis with ML</a></li>
 </ul>
 </section></section>
-<section><section id="the-last-things" class="title-slide slide level1"><h1><lo-summary/> The Last Things</h1></section></section>
-<section><section id="notes-for-instructors" class="title-slide slide level1"><h1><lo-theory/> Notes for Instructors</h1></section></section>
+<section id="the-last-things" class="title-slide slide level1"><h1><lo-summary/> The Last Things</h1><ul>
+<li>Please go to a page (indicated by the instructor) and fill in the feedback.</li>
+<li>The contact information: Email <code>kalvis.apsitis</code> at the domain <code>gmail.com</code>.</li>
+</ul>
+<p><blue>Please send your comments and suggestions!</blue></p></section>
+<section id="notes-for-instructors" class="title-slide slide level1"><h1><lo-theory/> Notes for Instructors</h1><ol type="1">
+<li>Check, if you have Python 3.7, Pip3 package manager and Selenum installed. You will need them when running the crawler automation task. See <a href="https://www.analyticsvidhya.com/blog/2019/05/scraping-classifying-youtube-video-data-python-selenium/">Scraping YouTube</a> for details.</li>
+<li>You will also need to share your mobile device screen on your desktop (so that your mobile phone can be shown on the big screen). Either <strong>Vysor</strong> or <strong>scrcpy</strong> could be used. See e.g. <a href="https://www.omgubuntu.co.uk/2019/07/scrcpy-mirror-android-to-ubuntu-linux">Scrcpy description</a>.</li>
+<li>Before the screen sharing works, you will also need to enable USB debugging on the mobile device and connect your phone with the laptop with a USB cable.</li>
+</ol></section>
     </div>
   </div>
 

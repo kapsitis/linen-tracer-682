@@ -80,6 +80,15 @@ What makes some social media content successful?
 </div>
 
 
+::: notes 
+
+https://www.db.lv/zinas/ptac-uzraudzis-instagram-un-youtube-influencerus-492378
+
+::: 
+
+
+
+
 
 ## <lo-summary> What are Influencers (ietekmeļi, iespaidotāji)
 

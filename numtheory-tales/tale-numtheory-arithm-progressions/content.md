@@ -790,7 +790,7 @@ kvadrātiska funkcija.
 
 
 
-## <lo-sample/> LV.NO.2002.8.3 
+## <lo-sample/> LV.NO.2002.8.3/EE.PK.1998.7.3
 
 Burtnīcā ir $100$ lapas; tās lappuses sanumurētas dabīgā kārtībā ar numuriem 
 no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek izrautas  
@@ -801,7 +801,7 @@ no $1$ līdz $200$. Vai izrauto lappušu numuru summa var būt $1000$, ja tiek i
 
 
 
-## <lo-reading/> LV.NO.2002.8.3 
+## <lo-reading/> LV.NO.2002.8.3/EE.PK.1998.7.3
 
 <hgroup class="reading">
 
@@ -821,7 +821,7 @@ Turklāt autori pasvītrojuši, ka $100$ lapām atbilst $200$ lappušu numuri.
 </hgroup>
 
 
-## <lo-reading/> LV.NO.2002.8.3 
+## <lo-reading/> LV.NO.2002.8.3/EE.PK.1998.7.3
 
 <hgroup class="reading">
 
@@ -842,7 +842,7 @@ TODO: Bilde, kur skaita pa pāriem lappušu numurus (liek 1 lappuses numurus iek
 </hgroup>
 
 
-## <lo-hints/> LV.NO.2002.8.3 
+## <lo-hints/> LV.NO.2002.8.3/EE.PK.1998.7.3
 
 * Vai ir ekstrēma (lielākā/mazākā) vērtība, ko gribētu pārbaudīt?
 * Izraujot $1$ lapu, summai pievienojas divi lappušu numuri. Kādas var

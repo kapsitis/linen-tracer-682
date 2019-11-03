@@ -103,32 +103,46 @@ $$d_1(x_1, x_2, \ldots, x_n) = 0, \ldots, d_{\ell}(x_1, x_2, \ldots, x_n) = 0.$$
 
 ## <lo-summary/> Piemērs: Kvadrātiskā programmēšana
 
-Ja ievieš nosacījumus attiecībā uz funkciju $f$, 
-tad iegūst šādus optimizācijas uzdevumu paveidus:
+<div style="font-size:80%">
+
+Ieviešot nosacījumus attiecībā uz funkciju $f$, 
+iegūst šādus optimizācijas uzdevumu paveidus:
 
 **Kvadrātiskā programmēšana:** Minimizēt
 ${\displaystyle \sum\limits_{i,j=1}^{n} a_{ij}x_ix_j +  \sum\limits_{i=1}^{n} b_ix_i }$
 pie nosacījumiem
-$$c_{11} x_1 + c_{12} x_1 + \ldots + c_{1n} x_n \leq d_1,$$
-$$\ldots,$$
-$$c_{m1} x_1 + c_{m2} x_1 + \ldots + c_{mn} x_n \leq dm$$,
+$$\left\{ 
+\begin{array}{l} 
+c_{11} x_1 + c_{12} x_1 + \ldots + c_{1n} x_n \leq d_1,\\
+\ldots,\\
+c_{m1} x_1 + c_{m2} x_1 + \ldots + c_{mn} x_n \leq d_m,
+\end{array} \right.$$
 
 Šajā gadījumā minimizējamā funkcija ir kvadrātiska, bet nosacījumi ir lineāri. 
 
+</div>
 
 
 
 
 ## <lo-summary/> Piemērs: Lineārā programmēšana
 
-**Lineārā programmēšana:** Minimizēt ${\displaystyle \sum\limits_{i=1}^{n} b_ix_i }$  pie nosacījumiem
-$$c_{11} x_1 + c_{12} x_2 + \ldots + c_{1n} x_n \leq d_1,$$
-$$\ldots,$$
-$$c_{m1} x_1 + c_{m2} x_2 + \ldots + c_{mn} x_n \leq d_m,$$
+<div style="font-size:80%">
+
+**Lineārā programmēšana:** Minimizēt 
+${\displaystyle \sum\limits_{i=1}^{n} b_ix_i }$  pie nosacījumiem
+$$\left\{ \begin{array}{l}
+c_{11} x_1 + c_{12} x_2 + \ldots + c_{1n} x_n \leq d_1,\\
+\ldots,\\
+c_{m1} x_1 + c_{m2} x_2 + \ldots + c_{mn} x_n \leq d_m,
+\end{array} \right.$$
 
 *Piezīme:* Vārds "programmēšana" lietots nozīmē "plānošana". 
 Dažus optimizācijas uzdevumu veidus sauc par programmēšanu jau 
 kopš 1920.-tajiem gadiem. 
+
+</div>
+
 
 
 ## <lo-summary/> Piemērs: Lineārā programmēšana
@@ -138,18 +152,20 @@ Jeb lineārā programmēšana veselos skaitļos (*Integer Linear Programming* je
 *Integer Programming*): uzdevums tāds pats kā lineārā programmēšanā, 
 tikai klāt nāk nosacījums, ka visi $x_1, x_2, \ldots, x_n$ visiem jābūt veseliem skaitļiem.
 
-
-## <lo-summary/> Veseli vai reāli skaitļi?
-
 Ar lineārajām programmām veselos skaitļos 
 var aprakstīt daudzus interesantus un praktiski svarīgus uzdevumus, 
 bet tām nav zināms algoritms, kas ātri (polinomiālā laikā) atrisina 
 patvaļīgu veselo skaitļu programmu. 
 
-**Apgalvojujums:** Veselo skaitļu programmēšanas uzdevums ir $NP$-pilns: 
+
+## <lo-summary/> NP-pilni uzdevumi
+
+**Apgalvojums:** Veselo skaitļu programmēšanas uzdevums ir $NP$-pilns: 
 tas pieder labi pazīstamai uzdevumu saimei, kurus var visus citu uz citu reducēt.  
-(Efektīvs algoritms nav zināms, bet, ja tāds būtu, tad varētu efektīvi atrisināt uzreiz
-$21$ slavenus uzdevumus un vēl daudzus simtus citu.)
+(Efektīvs algoritms nav zināms. Ja tādu veselo skaitļu programmēšanai atrastu, 
+tad varētu efektīvi atrisināt arī pārējos $20$ uzdevumus no slavenā 
+[Ričarda Karpa saraksta](https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems) un vēl simtiem citu uzdevumu, kas arī ir $NP$-pilni - algoritmiski 
+ekvivalenti katrs ar katru.)
 
 Lineārām programmām reālos skaitļos efektīvi polinomiāli algoritmi ir. 
 Tāpēc šajā kursā mēs tālāk apskatīsim tikai lineāras programmas, 
@@ -174,25 +190,30 @@ ražošanas plānošanu, it īpaši situācijās, kurās nav brīvā tirgus.
 
 ## <lo-summary/> Pārtikas iepirkšanas lineārais modelis 
 
+<div style="font-size:80%">
+
 Ar $x_i$ apzīmējam $i$-tā produkta daudzumu, 
 ko iegādāsimies. Tad jāminimizē kopējās izmaksas
-$$p_1 x_1 + p_2 x_2 + \ldots + p_n x_n$$
+$\color{#00F}{p_1 x_1 + p_2 x_2 + \ldots + p_n x_n}$
 pie nosacījumiem
-$$x_1 \geq 0,\;\; x_2 \geq 0,\;\; \ldots,\;\; x_n \geq 0,$$
-$$a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n \geq c1,$$
-$$\ldots,$$
-$$a_{k1} x_1 + a_{k2} x_2 + \ldots + a_{kn} x_n \geq ck,$$
-kur aij apzīmē $i$-tās uzturvielas daudzumu produktā $j$.
+$$\left\{ 
+\begin{array}{l}
+x_1 \geq 0,\;\; x_2 \geq 0,\;\; \ldots,\;\; x_n \geq 0,\\
+a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n \geq c_1,\\
+\ldots,\\
+a_{k1} x_1 + a_{k2} x_2 + \ldots + a_{kn} x_n \geq c_k,
+\end{array} \right.$$
+kur $a_{ij}$ apzīmē $i$-tās uzturvielas daudzumu produktā $j$.
 
 Ja produktu daudzumi ir mērāmi veselos skaitļos 
-(piemēram, veselā skaitā 1L paku), 
+(piemēram, veselā skaitā $1L$ paku), 
 tad iegūstam lineāro programmēšanu veselos skaitļos. 
 Ja dažiem mainīgajiem jābūt veseliem, 
 bet citi drīkst būt patvaļīgi reāli skaitļi, 
 tad tā ir jauktā veselo skaitļu programmēšana 
 (*mixed integer programming*).
 
-
+</div>
 
 
 # &nbsp;
@@ -217,16 +238,14 @@ tad tā ir jauktā veselo skaitļu programmēšana
 
 
 
-# <lo-theory/> Vispārīgais un 2-dimensiju LP uzdevums
+# <lo-theory/> Vispārīgais LP uzdevums
 
-Daudzas reālās pasaules problēmas ir risināmas, 
-izmantojot lineāro programmēšanu un eksistē efektīvs 
-algoritms, kurš atrisina jebkuru LP uzdevumu.
-Meklējam maksimumu funkcijai, ievērojot dotos ierobežojumus. 
+Lineārā programmēšana apraksta daudzas praktiskas problēmas.
+LP uzdevumiem eksistē efektīvi algoritmi.
 
-Vispārīgā veidā maksimizēšanas uzdevums ir šāds:  
-Atrast $\max(c_1x_1 + \ldots + c_nx_n)$  
-ar nosacījumiem:
+Vispārīgais LP uzdevums:  
+Atrast $\color{#00F}{\max\left(c_1x_1 + \ldots + c_nx_n\right)}$, 
+ja izpildās nosacījumi:
 $$\left\{
 \begin{array}{l}
 a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1\\
@@ -235,9 +254,11 @@ a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m
 \end{array} \right.$$
 
 
-## <lo-summary/> Mazs 2D piemērs
+## <lo-summary/> 2-dimensiju piemērs
 
-Atrast $\max(2x_1 + 3x_2)$.
+<div style="font-size:80%">
+
+Atrast $\color{#00F}{\max(2x_1 + 3x_2)}$, kur
 $$\left\{ \begin{array}{l}
 x_1 - 2x_2 \leq 4,\\
 x_1 + x_2 \leq 18,\\
@@ -250,26 +271,46 @@ minimizācijas uzdevumam (un otrādi). Piemēram:
 $$\max(2x_1 + 3x_2) = -\min(-2x_1 - 3x_2).$$ 
 Turpmāk apskatīsim tikai maksimizācijas uzdevumus.
 
+</div>
 
 
-# <lo-theory/> Grafiskā reprezentācija
+# <lo-theory/> Grafiskā interpretācija
 
-Lineārās programmēšanas uzdevumu var reprezentēt grafiski. 
-Iepriekšējā piemērā doto uzdevumu var attēlot sekojoši:
+<hgroup style="font-size:70%">
+
+Atrast $\color{#00F}{\max(2x_1 + 3x_2)}$, kur
+$$\left\{ \begin{array}{l}
+x_1 - 2x_2 \leq 4,\\
+x_1 + x_2 \leq 18,\\
+x_2 \leq 10,\\
+x_1,x_2 \geq 0.
+\end{array} \right.$$
 
 ![Grafiska interpretācija](graphical-interpretation.png)
 
-No grafika viegli nolasīt uzdevuma atrisinājumu – tas ir punkts 
-$(8,10)$.  Vairāku dimensiju gadījumā, var rasties grūtības 
-uzkonstruēt attēlu. Ērtības labad pieņemam, ka pieļaujamais apgabals 
-ir galīgs. Pretējā gadījumā izteiksme var pieņemt patvaļīgi 
-lielas vērtības. Strikti runājot, jāliek pārbaudes, ka apgabals ir galīgs.
+</hgroup>
+<hgroup style="font-size:70%">
 
+Attēlā viegli redzēt uzdevuma atrisinājumu – tas ir punkts 
+$(8,10)$.  Lielākam dimensiju skaitam var būt grūti
+veidot šādu attēlu. Tipiskos LP uzdevumos <blue>*pieļaujamais apgabals*</blue>
+(*feasible region*) ir galīgs. Citādi var gadīties, ka maksimuma nemaz nav - 
+izteiksme var pieņemt patvaļīgi 
+lielas vērtības. Pirms LP risināšanas jāpārbauda, ka apgabals ir galīgs.
+
+</hgroup>
 
 
 ## <lo-summary/> Optimuma atrašanās
 
-No attēla var pamanīt divus nozīmīgus faktus:
+<hgroup>
+
+![Grafiska interpretācija](graphical-interpretation.png)
+
+</hgroup>
+<hgroup style="font-size:80%">
+
+Attēlos var pamanīt divus nozīmīgus faktus:
 
 **Fakts 1:** Mērķfunkcija savu maksimumu sasniedz pieļaujamā apgabala stūrī.  
 **Fakts 2:** Ja kādā stūri $a_1x_1 + \ldots + a_nx_n$ 
@@ -279,11 +320,19 @@ $a_1x_1 + \ldots + a_nx_n$ ir lielāka vērtība.
 Divu dimensiju gadījumā, piemēram, par 2.faktu var pārliecināties, 
 lietojot ģeometrisko interpretāciju. 
 
-![Locate maximum](locate-maximum.png)
+</hgroup>
 
 
 
 ## <lo-summary/> Kur atrodas maksimums
+
+
+<hgroup>
+
+![Locate maximum](locate-maximum.png)
+
+</hgroup>
+<hgroup style="font-size:80%">
 
 1.gadījumā iegūstam vienu no diviem rezultātiem:  
 **(a)** $c_1x_1 + c_2x_2 \leq c$ visā pieļaujamajā apgabalā – stūris ir maksimums.  
@@ -293,7 +342,7 @@ lietojot ģeometrisko interpretāciju.
 ka ir gan blakus stūris ar lielāku $c_1x_1+c_2x_2$ vērtību, gan blakus 
 stūris ar mazāku vērtību.
 
-
+</hgroup>
 
 
 # &nbsp;
@@ -321,11 +370,11 @@ stūris ar mazāku vērtību.
 
 Simpleksalgoritma pamatideja:
 
-1. $v$ - patvaļīgs stūris
-2. Kamēr $v$ ir blakus stūris $u$, kurā 
-$c_{11}x_1+\ldots+c_nx_n$ lielāka, $v=u$.
- 
-Atkārtojam otro soli tik ilgi, kamēr nevar atrast blakus stūri, 
+1. Sāk ar $v$ - patvaļīgu stūri pieļaujamajā apgabalā.
+2. Kamēr stūrim $v$ blakus atrodas stūris $u$, kurā
+$c_{11}x_1+\ldots+c_nx_n$ vērtība ir lielāka, aizstāj $v$ ar $u$.
+
+Atkārto otro soli tik ilgi, kamēr nevar atrast blakus stūri, 
 kurā mērķa funkcijai ir lielāka vērtība. 
  
 Otrā fakta dēļ, ja tāda blakus stūra nav, tad mērķa funkcija 
@@ -335,14 +384,15 @@ sasniedz maksimālo vērtību visā pieļaujamajā apgabalā.
 
 ## <lo-summary/> Pārveidojuma piemērs
 
-<hgroup>
+<hgroup style="font-size:70%">
 
 Par uzdevuma standartformu sauc uzdevumu tādā formā, 
-ka nosacījumi ir nevienādības formā $x_i \geq 0$ vai vienādības. 
+ka nosacījumi ir nevienādības formā $x_i \geq 0$ vai arī vienādības. 
 
 Piemēram, lai nosacījumu $x_1 - 2x_2 \leq 4$ pārvērstu standartformā, 
 ievieš papildus mainīgo $x_3 \geq 0$. Tātad:
-$$x_1-2x_2 \leq 4\;\; \Leftrightarrow \;\; x_1-2x_2+x_3=4,\;x_3 \geq 0$$
+$$x_1-2x_2 \leq 4\;\; \Leftrightarrow$$
+$$x_1-2x_2+x_3=4,\;x_3 \geq 0$$
 Tādā veidā var iegūt ekvivalentu uzdevumu, kurā vienīgās nevienādības ir formā 
 $x_i \geq 0$.
 
@@ -350,8 +400,7 @@ $x_i \geq 0$.
 
 <hgroup style="font-size:70%">
 
-Piemēram: 
-$$\max 2x_1 + 3x_2,\;\;\text{kur}$$
+Piemēram: $\color{#00F}{\max \left( 2x_1 + 3x_2 \right)}$, kur
 $$\left\{ \begin{array}{l} 
 x_1-2x_2 \leq 4,\\
 x_1+x_2 \leq 18,\\
@@ -360,13 +409,13 @@ x_1,x_2 \geq 0.
 \end{array} \right.$$
  
 Pārveidojot iegūst:
-$$\max 2x_1 + 3x_2,\;\;\text{kur}$$
+$\color{#00F}{\max \left( 2x_1 + 3x_2 \right)}$, kur
 $$\left\{ \begin{array}{l}
 x_1-2x_2+x_3=4,\\
 x_1+x_2+x_4=18,\\
 x_2+x_5=10,\\
 x_1,x_2,x_3,x_4,x_5 \geq 0.
-\end{array}$$
+\end{array} \right.$$
 
 </hgroup>
 
@@ -389,8 +438,10 @@ Plaknes gadījumā stūri var aprakstīt, pasakot kuri
 divi mainīgie ir vienādi ar $0$. Vairāku dimensiju gadījumā ir līdzīgi. 
 Trīs dimensiju gadījumā stūris ir punkts, kurā $3$ mainīgie ir $0$.
 
-Ja ir $k$ dimensijas $(\max a_1x_1 + \ldots + a_kx_k)$ stūris ir punkts, 
-kur sastopas $k$ plaknes, t.i. $k$ mainīgie ir vienādi ar $0$.
+Ja ir $k$ dimensijas (meklē 
+$\color{#00F}{\max \left(a_1x_1 + \ldots + a_kx_k\right)}$), tad stūris ir punkts, 
+kurā sastopas $k$ plaknes $n$-dimensiju telpā, 
+t.i. $k$ mainīgie ir vienādi ar $0$.
 
 
 
@@ -421,10 +472,9 @@ kur sastopas $k$ plaknes, t.i. $k$ mainīgie ir vienādi ar $0$.
 
 # <lo-theory/> Simpleksalgoritms
 
-Simpleksalgoritms tiks vispirms apskatīts ar piemēra palīdzību. 
-Tiek apskatīts iepriekšējais piemērs:
+Simpleksalgoritma parādīšanai turpinām agrāko piemēru:
 
-$$\max 2x_1+3x_2$$
+$$\color{#00F}{\max \left( 2x_1+3x_2 \right)}$$
 $$\left\{ \begin{array}{l}
 x_1-2x_2+x_3=4\\
 x_1+x_2+x_4=18\\
@@ -434,7 +484,9 @@ x_1,x_2,x_3,x_4,x_5 \geq 0
 
 
 
-## <lo-summary/> Simpleksalgoritma tabulas
+## <lo-summary/> Simpleksalgoritma tabula
+
+<div style="font-size:70%">
 
 Simpleksalgoritma soļus ērti pierakstīt ar tabulas palīdzību. 
 Sākotnējo tabulu sastāda tabulas rindiņās ierakstot uzdevuma ierobežojumus. 
@@ -483,7 +535,7 @@ Tabulas pēdējā rindiņa raksta funkciju, kuru maksimizēt.
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>&nbsp;</td>
+<td>0</td>
 <td>$\max\left(2x_1+3x_2\right)$</td>
 </tr>
 <tr>
@@ -498,60 +550,176 @@ $x_i \neq 0$ - pamatmainīgie.
 
 
 
+</div>
 
 
 
-## <lo-sample/> Tabula vispārīgā gadījumā
+
+## <lo-sample/> LP vispārīgajā formā
+
+<div style="font-size:70%">
+
+**LP uzdevums:** Atrast $\color{#00F}{\max(c_1x_1 + \ldots + c_nx_n)}$, ja izpildās 
+$k+n$ nosacījumi:
+$$\left\{
+\begin{array}{l}
+a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n = b_1\\
+\ldots\\
+a_{k1}x_1 + a_{m2}x_2 + \ldots + a_{kn}x_n = b_k\\
+x_1,x_2,\ldots,x_n \geq 0
+\end{array} \right.$$
 
 
 <table>
 <tr>
+<th>$x_1$</th>
+<th>$\ldots$</th>
+<th>$x_{n-k}$</th>
+<th>$x_{n-k+1}$</th>
 <th>&nbsp;</th>
-<th>&nbsp;</th>
-<th>&nbsp;</th>
-<th>&nbsp;</th>
-<th>&nbsp;</th>
-<th>&nbsp;</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>$\ldots$</th>
+<th>$x_{n}$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
 </tr>
 <tr> 
-<td>&nbsp;</td>
-<td>$1$</td>
-<td>$0$</td>
+<td>$a_{1,1}$</td>
 <td>$\ldots$</td>
-<td>$0$</td>
+<td>$a_{1,n-k}$</td>
+<td>$a_{1,n-k+1}$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$a_{1,n}$</td>
+<td>$b_1$</td>
+<td>$a_{1,1}x_1+\ldots+a_{1,n}x_n=b_1$</td>
+</tr>
+<tr>
+<td>$a_{2,1}$</td>
+<td>$\ldots$</td>
+<td>$a_{2,n-k}$</td>
+<td>$a_{2,n-k+1}$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$a_{2,n}$</td>
+<td>$b_2$</td>
+<td>$a_{2,1}x_1+\ldots+a_{2,n}x_n=b_2$</td>
+</tr>
+<tr>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+</tr>
+<tr>
+<td>$a_{k,1}$</td>
+<td>$\ldots$</td>
+<td>$a_{k,n-k}$</td>
+<td>$a_{k,n-k+1}$</td>
+<td>$\ldots$</td>
+<td>$\ldots$</td>
+<td>$a_{k,n}$</td>
+<td>$b_k$</td>
+<td>$a_{k,1}x_1+\ldots+a_{k,n}x_n=b_k$</td>
+</tr>
+<tr style="color:blue;">
+<td>$c_1$</td>
+<td>$\ldots$</th>
+<td>$c_{n-k}$</td>
+<td>$c_{n-k+1}$</td>
+<td>$c_{n-k+2}$</td>
+<td>$\ldots$</td>
+<td>$c_n$</td>
+<td>&nbsp;</td>
+<td>$\max(c_1x_1 + \ldots + c_nx_n)$</td>
+</tr>
+<tr>
+<td colspan="3" style="background-color:#DAEEF3;">$x_1 = 0, \ldots, x_{n-k} = 0$</td>
+<td colspan="4" style="background-color:#E5DFEC;">$x_i \neq 0$</td>
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+
+Ar šo <blue>*simpleksalgoritma tabulu*</blue> (*simplex tableau*), 
+kas ir taisnstūrveida $(k+1) \times (n+1)$ matrica,
+veiksim rindu un kolonnu pārveidojumus. 
+
+</div>
+
+
+## <lo-sample/> Pārveidošana standartformā
+
+<div style="font-size:70%">
+
+**Tāpat kā agrāk:** Mainīgie $x_1,\ldots,x_n \geq 0$ apmierina $k$
+lineāras vienādības ($k < n$).   
+**Papildus zināms:** Simpleksalgoritms atrodas stūrī: $x_1,\ldots,x_{n-k} = 0$. 
+
+
+<table>
+<tr>
+<th>$x_1$</th>
+<th>$\ldots$</th>
+<th>$x_{n-k}$</th>
+<th>$x_{n-k+1}$</th>
+<th>&nbsp;</th>
+<th>$\ldots$</th>
+<th>$x_{n}$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
+</tr>
+<tr> 
+<td>$a_{1,1}$</td>
+<td>$\ldots$</td>
+<td>$a_{1,n-k}$</td>
+<td style="background-color:#ffffbb">$1$</td>
+<td style="background-color:#ffffbb">$0$</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
+<td style="background-color:#ffffbb">$0$</td>
 <td>$b_1$</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$\ldots$</td>
-<td>$0$</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td style="background-color:#ffffbb">$0$</td>
+<td style="background-color:#ffffbb">$1$</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
+<td style="background-color:#ffffbb">$0$</td>
 <td>$b_2$</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>$\ldots$</td>
-<td>$\ldots$</td>
-<td>$\ldots$</td>
-<td>$\ldots$</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
 <td>$\ldots$</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$\ldots$</td>
-<td>$1$</td>
-<td>$b_m$</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td style="background-color:#ffffbb">$0$</td>
+<td style="background-color:#ffffbb">$0$</td>
+<td style="background-color:#ffffbb">$\ldots$</td>
+<td style="background-color:#ffffbb">$1$</td>
+<td>$b_k$</td>
 <td>&nbsp;</td>
 </tr>
 <tr style="color:blue;">
-<td>$y_1\ldots{}y_k$</td>
+<td>$c_1$</td>
+<td>$\ldots$</th>
+<td>$c_{n-k}$</td>
 <td>$0$</td>
 <td>$0$</td>
 <td>$\ldots$</td>
@@ -560,17 +728,74 @@ $x_i \neq 0$ - pamatmainīgie.
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td colspan="2" style="background-color:#DAEEF3;">$x_i = 0$</td>
-<td colspan="3" style="background-color:#E5DFEC;">$x_i \neq 0$</td>
+<td colspan="3" style="background-color:#DAEEF3;">$x_1 = 0, \ldots, x_{n-k} = 0$</td>
+<td colspan="4" style="background-color:#E5DFEC;">$x_i \neq 0$</td>
 <td colspan="2">&nbsp;</td>
 </tr>
 </table>
 
-Iepriekšējā piemērā tabula jau ir standartformā.
+Iepriekšējā piemērā $n=5$, $k=3$ un tabula jau ir standartformā:
 
+<table>
+<tr>
+<th>$x_1$</th>
+<th>$x_2$</th>
+<th>$x_3$</th>
+<th>$x_4$</th>
+<th>$x_5$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
+</tr>
+<tr> 
+<td>1</td>
+<td>-2</td>
+<td style="background-color:#ffffbb">1</td>
+<td style="background-color:#ffffbb">0</td>
+<td style="background-color:#ffffbb">0</td>
+<td>4</td>
+<td>$x_1-2x_2+x_3=4$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td style="background-color:#ffffbb">0</td>
+<td style="background-color:#ffffbb">1</td>
+<td style="background-color:#ffffbb">0</td>
+<td>18</td>
+<td>$x_1+x_2+x_4=18$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td style="background-color:#ffffbb">0</td>
+<td style="background-color:#ffffbb">0</td>
+<td style="background-color:#ffffbb">1</td>
+<td>10</td>
+<td>$x_2+x_5=10$</td>
+</tr>
+<tr style="color:blue;">
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>$\max\left(2x_1+3x_2\right)$</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie</td>
+<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie</td>
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+
+
+</div>
 
 
 ## <lo-sample/> Simpleksalgoritma solis
+
+<div style="font-size:70%">
 
 Esam stūrī, kuru apraksta iepriekšējā tabula. 
 Pārbauda, vai blakus stūrī vērtība nav lielāka
@@ -588,6 +813,8 @@ $x_1-2x_2+x_3$ samazinās par $2d$. Pēc nosacījumiem izteiksmei
 jābūt vienādai ar $4$. Lai to panāktu $x_3$ palielina par $2d$.  
 $x_1+x_2+x_4$ pieaug par $d$. Lai saglabātu vienādību, 
 $x_4$ samazina par $d$; $x_2+x_5$ pieaug par $d$. Jāsamazina $x_5$ par $d$.
+
+</div>
 
 # <lo-summary/> Piemēra turpinājums
 

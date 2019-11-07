@@ -818,12 +818,14 @@ $x_4$ samazina par $d$; $x_2+x_5$ pieaug par $d$. Jāsamazina $x_5$ par $d$.
 
 # <lo-summary/> Piemēra turpinājums
 
+<div style="font-size:70%">
+
 Cik daudz var palielināt $x_2$, nepadarot citu mainīgo negatīvu?  
 $x_3=4$, $x_4=18$, $x_5=10$.
 
-Palielinot $x_2$:  
-$x_3= 4 + 2d$
-$x_4=18 - d$
+Palielinot $x_2$ par $d$:  
+$x_3= 4 + 2d$;
+$x_4=18 - d$; 
 $x_5=10 - d$.  
 Ja $d = 10$, tad $x_5 = 0$. Ja $d > 10$, $x_5 < 0$. 
 Tātad maksimālais palielinājums ir $10$.
@@ -874,7 +876,68 @@ kurā $x_1 = x_2 = 0$ uz stūri, kurā $x_1 = x_5 = 0$.
 <td>0</td>
 <td>0</td>
 <td>3</td>
-<td>&nbsp;</td>
+<td>0</td>
+<td>$\max\left(2x_1+3x_2\right)$</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie</td>
+<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie</td>
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+
+## <lo-summary/> 2.solis
+
+<div style="font-size:70%">
+
+
+<table>
+<tr>
+<th>$x_1$</th>
+<th>$x_5$</th>
+<th>$x_3$</th>
+<th>$x_4$</th>
+<th>$x_2$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
+</tr>
+<tr> 
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>-2</td>
+<td>4</td>
+<td>$x_1-2x_2+x_3=4$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>18</td>
+<td>$x_1+x_2+x_4=18$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+<td>$x_2+x_5=10$</td>
+</tr>
+<tr style="color:blue;">
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
 <td>$\max\left(2x_1+3x_2\right)$</td>
 </tr>
 <tr>
@@ -885,18 +948,70 @@ kurā $x_1 = x_2 = 0$ uz stūri, kurā $x_1 = x_5 = 0$.
 </table>
 
 
-
-## <lo-summary/> 2.solis
-
 Lai izdarītu nākamo soli, tabula jāpārveido par ekvivalentu tabulu standartformā: 
 
-1. Pareizina 3.rindu ar $2$, pieskaita 1.rindai
+1. Pareizina 3.rindu ar $2$, pieskaita 1.rindai:  $(x_1+x_3-2x_2)+2(x_5+x_2)=4 + 2 \cdot 10$
 2. Atņem 3.rindu no 2.rindas
 
-1.rinda: $x_1-2x_2+x_3=4$.  
-3.rinda: $x_2+x_5=10$.
- 
-Jaunā 1.rinda $(x_1+x_3-2x_2)+2(x_5+x_2)=4 + 2 \cdot 10$. 
+<table>
+<tr>
+<th>$x_1$</th>
+<th>$x_5$</th>
+<th>$x_3$</th>
+<th>$x_4$</th>
+<th>$x_2$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
+</tr>
+<tr> 
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>24</td>
+<td>$x_1+2x_5+x_3=24$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>8</td>
+<td>$x_1-x_5+x_4=8$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+<td>$x_2+x_5=10$</td>
+</tr>
+<tr style="color:blue;">
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>$\max\left(2x_1+3x_2\right)$</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie</td>
+<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie</td>
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+
+</div>
+
+
+## <lo-summary/> 3.solis
+
+<div style="font-size:70%">
 
 
 <table>
@@ -942,7 +1057,7 @@ Jaunā 1.rinda $(x_1+x_3-2x_2)+2(x_5+x_2)=4 + 2 \cdot 10$.
 <td>0</td>
 <td>0</td>
 <td>3</td>
-<td>&nbsp;</td>
+<td>0</td>
 <td>$\max\left(2x_1+3x_2\right)$</td>
 </tr>
 <tr>
@@ -952,8 +1067,6 @@ Jaunā 1.rinda $(x_1+x_3-2x_2)+2(x_5+x_2)=4 + 2 \cdot 10$.
 </tr>
 </table>
 
-
-## <lo-summary/> 3.solis
 
 Jātiek vaļā arī no nenulles koeficienta pēdējā rindā:
 
@@ -999,7 +1112,7 @@ Jātiek vaļā arī no nenulles koeficienta pēdējā rindā:
 <td>-3</td>
 <td>0</td>
 <td>0</td>
-<td>3</td>
+<td><red>0</red></td>
 <td>-30</td>
 <td>$\max\left(2x_1-3x_5\right)$</td>
 </tr>
@@ -1010,19 +1123,71 @@ Jātiek vaļā arī no nenulles koeficienta pēdējā rindā:
 </tr>
 </table>
 
-
+</div>
 
 
 ## <lo-summary/> 4.solis
 
-Iegūta tabula standartformā. 
+<div style="font-size:70%">
+
+
+<table>
+<tr>
+<th>$x_1$</th>
+<th>$x_5$</th>
+<th>$x_3$</th>
+<th>$x_4$</th>
+<th>$x_2$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
+</tr>
+<tr> 
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>24</td>
+<td>$x_1+2x_5+x_3=24$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>8</td>
+<td>$x_1-x_5+x_4=8$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+<td>$x_2+x_5=10$</td>
+</tr>
+<tr style="color:blue;">
+<td>2</td>
+<td>-3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>-30</td>
+<td>$\max\left(2x_1-3x_5\right)$</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie</td>
+<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie</td>
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+
+Iegūta tabula standartformā.  
 Tā kā palielinot $x_5$ mērķa funkcija samazinātos, atliek palielināt $x_1$.
 
-$x_1 = x_1 + d$,  
-$x_3 = x_3 - d$,  
-$x_3 = 24 - d$,  
-$x_4 = x_4 - d$,   
-$x_4 = 8 - d$,   
+$x_1 = x_1 + d$; $x_3 = x_3 - d$; $x_3 = 24 - d$, $x_4 = x_4 - d$, $x_4 = 8 - d$.   
 Ja $d=8$, tad $x_4=0$.
 
 
@@ -1080,12 +1245,67 @@ Ja $d=8$, tad $x_4=0$.
 </tr>
 </table>
 
-
+</div>
 
 ## <lo-summary/> 5.solis
 
-Pārveidojam standartformā. 
+<div style="font-size:70%">
 
+
+<table>
+<tr>
+<th>$x_4$</th>
+<th>$x_5$</th>
+<th>$x_3$</th>
+<th>$x_1$</th>
+<th>$x_2$</th>
+<th>$b_i$</th>
+<th>Atbilstošā izteiksme</th>
+</tr>
+<tr> 
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>24</td>
+<td>$x_1+2x_5+x_3=24$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>8</td>
+<td>$x_1-x_5+x_4=8$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+<td>$x_2+x_5=10$</td>
+</tr>
+<tr style="color:blue;">
+<td>0</td>
+<td>-3</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>-30</td>
+<td>$\max\left(2x_1-3x_5\right)$</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie</td>
+<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie</td>
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+
+Pārveidojam standartformā. 
 
 <table>
 <tr>
@@ -1134,8 +1354,8 @@ Pārveidojam standartformā.
 <td>$\max\left(-2x_4-x_5\right)$</td>
 </tr>
 <tr>
-<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie, $x_i = 0$</td>
-<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie, $x_i \neq 0$</td>
+<td colspan="2" style="background-color:#DAEEF3;">brīvie mainīgie,<br/> $x_i = 0$</td>
+<td colspan="3" style="background-color:#E5DFEC;">pamatmainīgie,<br/> $x_i \neq 0$</td>
 <td colspan="2">&nbsp;</td>
 </tr>
 </table>
@@ -1144,7 +1364,7 @@ Pārveidojam standartformā.
 Brīvos mainīgos nevar palielināt tā, lai izteiksmes 
 vērtība palielinātos. Sasniegts maksimums.
 
-
+</div>
 
 
 

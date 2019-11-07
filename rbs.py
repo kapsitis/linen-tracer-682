@@ -27,6 +27,11 @@ class RbsHandler(webapp2.RequestHandler):
     
     other_tales = [
         {
+            'id':'RBS.AboutBITL',
+            'dir':'about-bitl',
+            'title': 'First Year of BITL'
+        },
+        {
             'id':'RBS.YouTube1',
             'dir':'youtube-data-part1',
             'title': 'YouTube Data for (Prospective) Authors - 1'

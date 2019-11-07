@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style>
+  <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,322 +32,35 @@
     <div class="slides">
 
 
-<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Apmācību projektēšana un digitālie mācību līdzekļi<br />
-<em>Instructional Systems Design and Courseware Development</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span style="color:darkgreen"><strong>(1) E-apmācību projektēšana</strong></span><br />
-<span>(2) <a href="#/section-1">IT drošība</a></span><br />
-<span>(3) <a href="#/section-2">Lielo datu pārvaldība</a></span><br />
-<span>(4) <a href="#/section-3">Pārskati un vizualizācijas</a></span><br />
-<span>(5) <a href="#/section-4">Lietišķie algoritmi</a></span><br />
-<span>(6) <a href="#/section-5">Diskrētās struktūras (BITL)</a></span><br />
-<span>(7) <a href="#/section-6">Skaitļu teorija olimpiādēs (NMS)</a></span></p>
-</hgroup></section>
-<section id="kas-ir-isd" class="title-slide slide level1"><h1><lo-summary/> Kas ir ISD</h1><p><strong>Definīcija:</strong> Apmācību projektēšana (<em>Instructional Systems Design</em>, ISD) ir nozare, kas māca sistemātiski projektēt, veidot un <em>prognozējami</em> pasniegt apmācību produktus dažādās vidēs. Apmācība neaizstāj citus efektīva darba faktorus - personāla atlasi, motivāciju, sadarbību, uzziņu informāciju, u.c.</p>
-<ul>
-<li>RTU Tālmācības studiju centrs (Atis Kapenieks u.c.).</li>
-<li>Skola2030 projekta vadītāji (Zane Oliņa, Dace Namsone, Jānis Vilciņš).</li>
-</ul></section>
-<section id="idejas-lu-mikromoduļa-gatavošana" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Mikromoduļa gatavošana</h1><p>Arī tiem, kuri ar apmācību parasti nenodarbojas, var būt jāgatavo apmācība par konkrētu jautājumu.</p>
-<ul>
-<li>20-30 minūšu “nedalāms” mācību gabals</li>
-<li>Skaidrs apmācību mērķis</li>
-<li>Praktiski vingrinājumi</li>
-<li>Vairāki pasniegšanas veidi (multimodalitāte)</li>
-<li>Atgriezeniskā saite un <em>follow-up</em></li>
-<li>Māca kursabiedram “beta versiju” un labo kļūdas</li>
-</ul>
-<p>Var arī sākt ar eksistējošu LU kursu un pārtaisīt to par MOOC.</p></section>
-<section id="apmācību-projektēšanas-process" class="title-slide slide level1"><h1><lo-summary/> Apmācību projektēšanas process</h1><hgroup>
-<figure>
-<img data-src="isd-process.svg" alt="ISD process" /><figcaption>ISD process</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<ul>
-<li>Apmācāmo/auditorijas analīze, prasmju analīze</li>
-<li>“Test-driven development” - testi pirms projektējuma un satura</li>
-<li>Projektējums pirms satura veidošanas (reizēm arī <em>storyboarding</em>, precīzs aktivitāšu plāns ar minūtēm)</li>
-<li>Beta-produkcija un kļūdu labošana</li>
-</ul>
-</hgroup></section>
-<section id="saprātīga-ppt-lietošana" class="title-slide slide level1"><h1><lo-summary/> Saprātīga PPT lietošana</h1><hgroup>
-<ul>
-<li>Sāk un beidz ar mērķiem, dažiem “kāpēc” jautājumiem</li>
-<li>Stāstījuma loks: ekspozīcija, kulminācija, atrisinājums</li>
-<li>Ritms starp informāciju un praktiskiem vingrinājumiem</li>
-<li>Ritms starp attēlu un paskaidrojumiem</li>
-<li>Nodalīti informācijas tipi: jēdzieni, fakti un principi, procesi un struktūras, procedūras, u.c.</li>
-</ul>
-</hgroup>
-<hgroup>
-<p><em>Information mapping:</em></p>
-<ul>
-<li>Dalīšana gabalos (Chunking)</li>
-<li>Hierarhiska sakārtošana</li>
-<li>Apzīmēšana ar virsrakstiem (Labeling)</li>
-<li>Katram informācijas tipam konsekvents vizuālais attēlojums</li>
-<li>Iespēja detalizēt</li>
-<li>Teksts integrēts ar vizualizācijām</li>
-</ul>
-</hgroup></section>
-<section id="kursa-mācīšanas-konteksts" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1><p>Līdzīgi kursi:</p>
-<ul>
-<li>DatZ2028: Dators mācību procesā (Māris Vītiņš). Kurss apskata līdzīgu, bet citu jautājumu - dažāda veida datortehnikas izmantošanu mācību procesā).</li>
-<li>DatZP000: Biroja lietotņu mācību metodika (Māris Vītiņš). Ir daži līdzīgi mērķi (prot adaptēt gatavu mācību priekšmeta programmas paraugu un patstāvīgi izveidot jaunu; Spēj patstāvīgi izstrādāt mācību stundas konspektu un realizēt to).</li>
-</ul>
-<p>M.Vītiņa kursi (īpaši DatZP000) ir vairāk pedagoģijas/informātikas skolotāju sagatavošanai. Mūsu gadījumā vairāk projektēšanas, citi konteksti.</p></section>
-<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Datu drošības principi un risinājumi:<br />
-<em>InfoSec: Principles and Solutions</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">E-apmācību projektēšana</a></span><br />
-<span style="color:darkgreen"><strong>(2) IT drošība</strong></span><br />
-<span>(3) <a href="#/section-2">Lielo datu pārvaldība</a></span><br />
-<span>(4) <a href="#/section-3">Pārskati un vizualizācijas</a></span><br />
-<span>(5) <a href="#/section-4">Lietišķie algoritmi</a></span><br />
-<span>(6) <a href="#/section-5">Diskrētās struktūras (BITL)</a></span><br />
-<span>(7) <a href="#/section-6">Skaitļu teorija olimpiādēs (NMS)</a></span></p>
-</hgroup></section>
-<section id="it-drošības-principi" class="title-slide slide level1"><h1><lo-summary/> IT drošības principi</h1><p>Students dotajā virtuālu mašīnu vidē konfigurē kaut kādu tīklu drošības risinājumu vai apdraudējumu. (vienkāršu ugunsmūri, Web/Epasta vārteju, autentifikācijas mehānismu, PKI hierarhiju, klienta puses SSH sertifikātu, Linux rootkit-u, mākslīgi izraisītu masveida kredītkaršu datu noplūdi u.c.), pēc tam darbina Wireshark vai citus diagnostikas rīkus, atbild uz jautājumiem (teiksim, vai autentifikāciju var uzlauzt ar “replay attack”, kas jādara, lai varētu pamanīt interesantās datu noplūdes, atfiltrējot “troksni”, u.c.) Kursa laikā ir kādi 3 praktiskie darbi.</p></section>
-<section id="kursa-mācīšanas-konteksts-1" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1><p>Līdzīgi kursi:</p>
-<ul>
-<li>DatZ3037: Informācijas sistēmu drošība (Leo Trukšāns)</li>
-<li>DatZ1172: Datoru tīkli I, II, III, IV (Guntis Bārzdiņš)</li>
-</ul>
-<p>DatZ3037 iedvesmojies no CISA (Computer Security Handbook, Seymour Bosworth, u.c.) - IS drošība un audita procedūras.</p>
-<ul>
-<li>InfoSec uzmanības centrā - organizāciju vajadzības un darbinieku uzvedība</li>
-<li>Perimetra aizsardzība vs. mākoņdatu aizsardzība</li>
-<li>Datu redzamība organizācijas tīklā, integrēšanās ar datu apstrādes procesiem</li>
-</ul></section>
-<section id="infosec-praktisko-darbu-idejas" class="title-slide slide level1"><h1><lo-summary/> InfoSec praktisko darbu idejas</h1><ol type="1">
-<li>Datortīklu elementi un to drošības “politikas” (ugunsmūri, Web proxies - tīmekļa starpniekserveri, epasta vārtejas, ICAP servisi, HTTPS pārtveršana).</li>
-<li>Datu noplūdes (klasifikatori, kas atšķir “interesantus” datus - teksta izvilkšana, vārdnīcas, pattern-matching, kredītkaršu u.c. privātas informācijas pazīšana, strukturēti/nestrukturēti “fingerprint” dati, mašīnmācīšanās (SVM, Bayes, u.c.)</li>
-<li>Lietotāju direktorijas un autentifikācija (SAML 2.0, deleģētā autentifikācija, u.c.)</li>
-<li>Žurnālfailu u.c. lielo datu analīze.</li>
-</ol>
-</hgroup></section>
-<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Datu pārvaldības un analīzes ietvari<br />
-<em>Data Management and Analysis Frameworks</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">E-apmācību projektēšana</a></span><br />
-<span>(2) <a href="section-1">IT drošība</a></span><br />
-<span style="color:darkgreen"><strong>(3) Lielo datu pārvaldība</strong></span><br />
-<span>(4) <a href="#/section-3">Pārskati un vizualizācijas</a></span><br />
-<span>(5) <a href="#/section-4">Lietišķie algoritmi</a></span><br />
-<span>(6) <a href="#/section-5">Diskrētās struktūras (BITL)</a></span><br />
-<span>(7) <a href="#/section-6">Skaitļu teorija olimpiādēs (NMS)</a></span></p>
-</hgroup></section>
-<section id="datu-analīzes-ietvarssteks" class="title-slide slide level1"><h1><lo-summary/> Datu analīzes ietvars/steks</h1><ol type="1">
-<li>Standartizēta konfigurācijas pārvaldība (Docker, Ansible, Jenkins) un servisi (Jenkins, Elastic, Lucene, NiFi, Kafka, RabbitMQ, Graphite/Grafana).</li>
-<li>Integrācija ar RESTful API.</li>
-<li>Domēnspecifiskas vaicājumu valodas.</li>
-<li>Dažādi lietojumi: sociālie tīkli, sensori un laikrindas, uzvedības analīze (UEBA), lieli grafi, mašīnmācīšanās.</li>
-</ol></section>
-<section id="idejas-lu-platformu-attīstība" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Platformu attīstība</h1><ol type="1">
-<li>Ap 1995.g. students lieto failu serveri, taisa mājaslapu, lieto epastu.</li>
-<li>Ap 2000.g. tam pievieno CSS, JavaScript, Web 1.0.</li>
-<li>Ap 2005.g. LAMP steks (Linux, Apache, MySQL, PHP).</li>
-<li>Ap 2010.g. saturpārvaldības platformas WordPress, Moodle, MediaWiki, Web 2.0.</li>
-<li>Ap 2015.g. sociālo tīklu API, “mobile first”, Android lietotnes.</li>
-<li>Ap 2019.g. reālā laikā integrē “lielus” strukturētus un nestrukturētus (teksta) datus.</li>
-</ol></section>
-<section id="kursa-mācīšanas-konteksts-2" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1><ul>
-<li>Accenture u.c. “sistēmu integrētāji” - viņu intereses, vajadzības, iespējas palīdzēt ar tehnisko nodrošinājumu.</li>
-<li>Esošie kursi:
-<ul>
-<li>Datorlingvistika (G.Bārzdiņš, N.Grūzītis, Tildes grupa u.c.)</li>
-<li>Semantiskais tīmeklis (U.Bojārs)</li>
-<li>Statistika (J.Valeinis)</li>
-<li>Datu noliktavas (K.Podnieks)</li>
-</ul></li>
-</ul></section>
-<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Pārskati un datu vizualizācijas<br />
-<em>Reporting and Data Visualizations</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">E-apmācību projektēšana</a></span><br />
-<span>(2) <a href="section-1">IT drošība</a></span><br />
-<span>(3) <a href="#/section-2">Lielo datu pārvaldība</a></span><br />
-<span style="color:darkgreen"><strong>(4) Pārskati un vizualizācijas</strong></span><br />
-<span>(5) <a href="#/section-4">Lietišķie algoritmi</a></span><br />
-<span>(6) <a href="#/section-5">Diskrētās struktūras (BITL)</a></span><br />
-<span>(7) <a href="#/section-6">Skaitļu teorija olimpiādēs (NMS)</a></span></p>
-</hgroup></section>
-<section id="datu-vizualizācijas" class="title-slide slide level1"><h1><lo-summary/> Datu vizualizācijas</h1><ul>
-<li>Ģeogrāfiskās informācijas sistēmas, Shapefile dati</li>
-<li>Gapminder.org, epidemiologs Hanss Roslings (burbuļu diagrammas).</li>
-<li>“Infogr.am”, easyBI (Raimonds Simanovskis), “Datu skola”, u.c.</li>
-<li>Leland Wilkinson. The Grammar of Graphics (ggplot2, valoda R).</li>
-<li>NumPy, Pandas, matplotlib (Python)</li>
-</ul></section>
-<section id="idejas-lu-komunicēšana" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Komunicēšana</h1><p>Taustāmais rezultāts: datu žurnālistika, “hakatoni”, pārskatu un infografiku integrēšana ar datu avotiem, CSV vai JSON ielasīšana R vai Python datu struktūrās, manipulācijas, attēlojums ar <code>ggplot2</code> vai <code>D3</code>.</p>
-<figure>
-<img data-src="visualization-samples.png" alt="Datu vizualizācija" /><figcaption>Datu vizualizācija</figcaption>
-</figure></section>
-<section id="kursa-mācīšanas-konteksts-3" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1><p>Daži līdzīgi priekšmeti:</p>
-<ul>
-<li>DatZ1109: Lietotāja saskarnes grafiskais dizains (Jurģis Šķilters, u.c. Viena no apakštēmām - “Infografiku un elektronisko reklāmu dizains.” u.c.). Ir līdzīgas iezīmes, tomēr tur primāri ikonu dizains, zīmolu identitāte, programmatūras lietojamību.</li>
-<li>DatZ1031 Tīmekļa tehnoloģijas I un II (Audris Kalniņš u.c. HTML un JavaScript, DOM manipulācijas ar jQuery u.c.). Aplūkoti rīki, lai veidotu daļu no vizualizācijām.</li>
-</ul></section>
-<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Lietišķie algoritmi<br />
-<em>Algorithms in the Real World</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">E-apmācību projektēšana</a></span><br />
-<span>(2) <a href="section-1">IT drošība</a></span><br />
-<span>(3) <a href="#/section-2">Lielo datu pārvaldība</a></span><br />
-<span>(4) <a href="#/section-3">Pārskati un vizualizācijas</a></span><br />
-<span style="color:darkgreen"><strong>(5) Lietišķie algoritmi</strong></span><br />
-<span>(6) <a href="#/section-5">Diskrētās struktūras (BITL)</a></span><br />
-<span>(7) <a href="#/section-6">Skaitļu teorija olimpiādēs (NMS)</a></span></p>
-</hgroup></section>
-<section id="eksistējošs-kurss" class="title-slide slide level1"><h1><lo-summary/> Eksistējošs kurss</h1><ul>
-<li><a href="https://www.lu.lv/lv/nc/studijas/studiju-celvedis/programmu-un-kursu-katalogi/kursu-katalogs/?tx_lustudycatalogue_pi1%5Bcourse%5D=DatZ4020&amp;tx_lustudycatalogue_pi1%5Baction%5D=detail&amp;tx_lustudycatalogue_pi1%5Bcontroller%5D=Course&amp;cHash=c3ba047ba1e7775b94f0d291e49368ef">Kurss LU kursu katalogā</a></li>
-<li><a href="http://www-2.cs.cmu.edu/~guyb/rwc/">Guy Blelloch Algorithms in real world</a></li>
-</ul></section>
-<section id="idejas-lu-daži-jauni-lietojumi" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Daži jauni lietojumi</h1><hgroup>
-<ul>
-<li>Saspiešanas algoritmi (GIF, JPEG, MP3 u.c.), kļūdu korekcija
-<ul>
-<li>algoritmu patentēšana</li>
-<li>saistība ar ES Autortiesību direktīvu (Article 13, augšupielādes filtri)</li>
-<li>saistība ar steganogrāfiju</li>
-</ul></li>
-<li>Kriptogrāfija
-<ul>
-<li>MD5 vs. SHA256</li>
-<li>TLS vs. SSL v3</li>
-<li>“Fully Homomorphic Encryption”</li>
-<li>Blockchain</li>
-</ul></li>
-</ul>
-</hgroup>
-<hgroup>
-<ul>
-<li>Indeksācija un meklēšana
-<ul>
-<li>Pilnā teksta un jauktā meklēšana (Lucene, Elastic)</li>
-</ul></li>
-<li>Lineārā programmēšana, Google “Page Rank”
-<ul>
-<li>Rezultātu kārtošana pēc “interesantuma”</li>
-</ul></li>
-</ul>
-</hgroup></section>
-<section id="kursa-mācīšanas-konteksts-4" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1><p>Radniecīgi kursi</p>
-<ul>
-<li>DatZ3168: Datu struktūras un algoritmi</li>
-<li>DatZ3150: Lietišķā kriptogrāfija</li>
-</ul></section>
-<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Diskrētās struktūras<br />
-<em>Discrete Structures</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">E-apmācību projektēšana</a></span><br />
-<span>(2) <a href="section-1">IT drošība</a></span><br />
-<span>(3) <a href="#/section-2">Lielo datu pārvaldība</a></span><br />
-<span>(4) <a href="#/section-3">Pārskati un vizualizācijas</a></span><br />
-<span>(5) <a href="#/section-4">Lietišķie algoritmi</a></span><br />
-<span style="color:darkgreen"><strong>(6) Diskrētās struktūras (BITL)</strong></span><br />
-<span>(7) <a href="#/section-6">Skaitļu teorija olimpiādēs (NMS)</a></span></p>
-</hgroup></section>
-<section id="par-bitl-programmu" class="title-slide slide level1"><h1><lo-summary/> Par BITL programmu</h1><ul>
-<li><a href="https://www.bitl.lv/par-programmu/">bitl.lv - Par programmu</a></li>
-<li><a href="https://cse.buffalo.edu/~rapaport/191/">SUNY: Buffalo - CSE 191</a> - Katru gadu kursam var mainīties pasniedzējs un materiāli</li>
-<li>Parastās “Diskrētās matemātikas” sadaļas
-<ul>
-<li>Izteikumu un predikātu loģika</li>
-<li>Kopas, relācijas, funkcijas</li>
-<li>Vienkāršu apgalvojumu pierādīšana</li>
-<li>Modulārā aritmētika</li>
-<li>Kombinatorika - variantu skaitīšana</li>
-<li>Grafu teorija</li>
-</ul></li>
-</ul></section>
-<section id="idejas-lu-pirms-grūtākiem-kursiem" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Pirms grūtākiem kursiem…</h1><ul>
-<li>Augstskolās nonāk studenti ar ļoti atšķirīgu sagatavotību un priekšzināšanām.</li>
-<li>Diskrētā matemātika (līdzīgi “obligātajām klavierēm” mūzikas skolās) rada vienojošu profesionālo kultūru.</li>
-<li>1.gada 2.semestris - vēl nav par vēlu novērst studentu masveida atbirumu.</li>
-<li>Diskrētā matemātika iespējami agri jāparāda studētgribētājiem.</li>
-</ul></section>
-<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-LU kursu piedāvājums
-</h1>
-<p><blue>Skaitļu teorija olimpiādēs<br />
-<em>Number Theory in Competition Mathematics</em></blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">E-apmācību projektēšana</a></span><br />
-<span>(2) <a href="section-1">IT drošība</a></span><br />
-<span>(3) <a href="#/section-2">Lielo datu pārvaldība</a></span><br />
-<span>(4) <a href="#/section-3">Pārskati un vizualizācijas</a></span><br />
-<span>(5) <a href="#/section-4">Lietišķie algoritmi</a></span><br />
-<span>(6) <a href="#/section-5">Diskrētās struktūras (BITL)</a></span><br />
-<span style="color:darkgreen"><strong>(7) Skaitļu teorija olimpiādēs (NMS)</strong></span></p>
-</hgroup></section>
-<section id="modernā-elementārā-matemātika" class="title-slide slide level1"><h1><lo-summary/> Modernā elementārā matemātika</h1><hgroup>
-<figure>
-<img data-src="number-theory-topics.svg" alt="Skaitļu teorijas moduļi" /><figcaption>Skaitļu teorijas moduļi</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<ol type="1">
-<li>Skaitļu teorija kā akadēmiska disciplīna
-<ul>
-<li>Grupu un lauku teorija</li>
-<li>Skaitļu teorijas algoritmi</li>
-<li>Kriptogrāfija un kriptovalūtas</li>
-<li>Dažādi CPU-intensīvi uzdevumi</li>
-</ul></li>
-<li>Skaitļu teorija olimpiāžu uzdevumos (vienkāršāka teorija, bet grūtāki uzdevumi)</li>
-</ol>
-</hgroup></section>
-<section id="idejas-lu-skolotāji-un-abiturenti" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Skolotāji un abiturenti</h1><hgroup>
-<figure>
-<img data-src="first-10-digit-prime.jpg" alt="10-digit-prime on a billboard" /><figcaption>10-digit-prime on a billboard</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<ul>
-<li>Skolotāji, kuri var gatavot matemātikas un informātikas olimpiādēm<br />
-(kombinatorikas un skaitļu teorijas uzdevumi).</li>
-<li>Priekšnoteikums diskrētajai matemātikai, algoritmu analīzei “Datu Struktūru” kursā.</li>
-</ul>
-</hgroup></section>
-<section id="esošie-materiāli" class="title-slide slide level1"><h1>Esošie materiāli</h1><ul>
-<li><a href="http://85.254.250.28/training/">Olimpiāžu uzdevumi ar prasmju analīzi</a></li>
-<li><a href="http://www.dudajevagatve.lv/nt/index.html">NMS izlases nodarbību materiāli</a></li>
-<li><a href="http://nms.lu.lv/izlases-nodarbibas/">Kurss NMSa mājaslapā</a></li>
-</ul></section>
+<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="kas-ir-isd" class="title-slide slide level1"><h1><lo-summary/> Kas ir ISD</h1></section></section>
+<section><section id="idejas-lu-mikromoduļa-gatavošana" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Mikromoduļa gatavošana</h1></section></section>
+<section><section id="apmācību-projektēšanas-process" class="title-slide slide level1"><h1><lo-summary/> Apmācību projektēšanas process</h1></section></section>
+<section><section id="saprātīga-ppt-lietošana" class="title-slide slide level1"><h1><lo-summary/> Saprātīga PPT lietošana</h1></section></section>
+<section><section id="kursa-mācīšanas-konteksts" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1></section></section>
+<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="it-drošības-principi" class="title-slide slide level1"><h1><lo-summary/> IT drošības principi</h1></section></section>
+<section><section id="kursa-mācīšanas-konteksts-1" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1></section></section>
+<section><section id="infosec-praktisko-darbu-idejas" class="title-slide slide level1"><h1><lo-summary/> InfoSec praktisko darbu idejas</h1></section></section>
+<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="datu-analīzes-ietvarssteks" class="title-slide slide level1"><h1><lo-summary/> Datu analīzes ietvars/steks</h1></section></section>
+<section><section id="idejas-lu-platformu-attīstība" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Platformu attīstība</h1></section></section>
+<section><section id="kursa-mācīšanas-konteksts-2" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1></section></section>
+<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="datu-vizualizācijas" class="title-slide slide level1"><h1><lo-summary/> Datu vizualizācijas</h1></section></section>
+<section><section id="idejas-lu-komunicēšana" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Komunicēšana</h1></section></section>
+<section><section id="kursa-mācīšanas-konteksts-3" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1></section></section>
+<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="eksistējošs-kurss" class="title-slide slide level1"><h1><lo-summary/> Eksistējošs kurss</h1></section></section>
+<section><section id="idejas-lu-daži-jauni-lietojumi" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Daži jauni lietojumi</h1></section></section>
+<section><section id="kursa-mācīšanas-konteksts-4" class="title-slide slide level1"><h1><lo-summary/> Kursa mācīšanas konteksts</h1></section></section>
+<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="par-bitl-programmu" class="title-slide slide level1"><h1><lo-summary/> Par BITL programmu</h1></section></section>
+<section><section id="idejas-lu-pirms-grūtākiem-kursiem" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Pirms grūtākiem kursiem…</h1></section></section>
+<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="modernā-elementārā-matemātika" class="title-slide slide level1"><h1><lo-summary/> Modernā elementārā matemātika</h1></section></section>
+<section><section id="idejas-lu-skolotāji-un-abiturenti" class="title-slide slide level1"><h1><lo-summary/> Idejas LU: Skolotāji un abiturenti</h1></section></section>
+<section><section id="esošie-materiāli" class="title-slide slide level1"><h1>Esošie materiāli</h1></section></section>
     </div>
   </div>
 

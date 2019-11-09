@@ -101,13 +101,13 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('algorithms/tales.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'exams.html'):     
+        elif (my_id == 'skills.html'):     
             template_context = {
                 'my_id': my_id, 
                 'course': 'algorithms',
                 'nav_items': nav_items                
             }
-            template = jinja_env.get_template('algorithms/exams.html')
+            template = jinja_env.get_template('algorithms/skills.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'problems.html'):     

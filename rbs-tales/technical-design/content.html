@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,8 +32,40 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section><section id="reminder-hackathon" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Introduction</strong></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup>
+<!--
+
+Validate - Your TODO lists
+Your plans to learn new skills
+
+--></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>How do the course deliverables (timetable, grading guidelines) align with the goals of your project?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Why the implementation of an idea leads you to other/deeper ideas?</li>
+<li>Why does the focus of your activities shift as you develop a solution?</li>
+</ul>
+</div>
+<aside class="notes">
+<p>The devil is in the details. Every successful human endeavor is based on loads of technical expertise in a range of topics.</p>
+</aside></section><section id="reminder-hackathon" class="slide level2">
 <h2><lo-summary/> Reminder: Hackathon</h2>
 <p><strong>Can ask your colleagues, who is going there:</strong></p>
 <ul>
@@ -73,8 +105,29 @@
 <li>Minimum Viable Product (MVP)</li>
 </ul>
 </section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="items-in-your-syllabus" class="title-slide slide level1"><h1><lo-theory/> Items in your Syllabus</h1></section><section id="what-is-prototype" class="slide level2">
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span style="color:darkgreen"><strong>(2) Grading Activities</strong></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="items-in-your-syllabus" class="title-slide slide level1"><h1><lo-theory/> Items in your Syllabus</h1><ul>
+<li>Prototype: 300 points (The product and its technical implementation; mostly Kalvis)</li>
+<li>Class contribution: 200 points (various assignments and evaluations: mostly Claudio and Kalvis)</li>
+<li>Team Progress Reports (4 x 50): 200 points (Business Development perspective: mostly Viesturs)</li>
+<li>Final presentation 300 points (Delivering the product including progress reports: All 3 instructors)</li>
+</ul>
+<p>Most items are graded for the team; some individual grades.</p></section><section id="what-is-prototype" class="slide level2">
 <h2><lo-summary/> What is “Prototype”</h2>
 <div style="font-size:70%">
 <ol type="1">
@@ -119,8 +172,28 @@
 </ol>
 </div>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="requirements-a.k.a.-functional-design" class="title-slide slide level1"><h1><lo-sample/> Requirements a.k.a. Functional Design</h1></section><section id="major-parts" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span style="color:darkgreen"><strong>(3) Technical Design and POC</strong></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="requirements-a.k.a.-functional-design" class="title-slide slide level1"><h1><lo-sample/> Requirements a.k.a. Functional Design</h1><ul>
+<li>Functional requirements answer the question: What the product or solution should do.</li>
+<li>Large projects may have a separate list of requirements (traceable to the customer communication) and the Functional Design.</li>
+<li>You can start right with the Functional Design (and list all your requirements there).</li>
+</ul>
+<p><a href="https://uit.stanford.edu/sites/default/files/2017/08/30/Functional%20Specification%20Document%20Template.docx">Functional Design template</a></p></section><section id="major-parts" class="slide level2">
 <h2><lo-summary/> Major parts</h2>
 <hgroup>
 <ul>
@@ -143,7 +216,10 @@
 </ul>
 </hgroup>
 </section></section>
-<section><section id="technical-design" class="title-slide slide level1"><h1><lo-sample/> Technical Design</h1></section><section id="tech.design-for-a-web-resource-1-3" class="slide level2">
+<section><section id="technical-design" class="title-slide slide level1"><h1><lo-sample/> Technical Design</h1><ul>
+<li>Describe your implementation/architecture - what systems and components you will need and support.</li>
+<li>How the users will interact with your system.</li>
+</ul></section><section id="tech.design-for-a-web-resource-1-3" class="slide level2">
 <h2><lo-summary/> Tech.Design for a Web Resource (1-3)</h2>
 <ol type="1">
 <li>Which client devices are typically used? HTML friendly for small screens?</li>
@@ -159,11 +235,53 @@
 <li>Host it on a social networking platform such as Instagram of Facebook as well? Who updates the content there? How do you receive user feedback and measure their activity on your page?</li>
 </ol>
 </section></section>
-<section><section id="proof-of-concept" class="title-slide slide level1"><h1><lo-theory/> Proof of Concept</h1></section></section>
-<section><section id="proof-of-concept-examples" class="title-slide slide level1"><h1><lo-theory/> Proof of Concept: Examples</h1></section></section>
-<section><section id="poc-check-for-insufficient-skills" class="title-slide slide level1"><h1><lo-theory/> POC: Check for Insufficient Skills</h1></section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="development-and-proudction-environments" class="title-slide slide level1"><h1><lo-theory/> Development and Proudction Environments</h1></section><section id="each-team-will-have-development-environment" class="slide level2">
+<section id="proof-of-concept" class="title-slide slide level1"><h1><lo-theory/> Proof of Concept</h1><ul>
+<li>“Proof of Concept” - verify early that the stuff you want to display works as you want.</li>
+<li>Try doing one core thing first.</li>
+<li>Test, if it really works as you want.</li>
+</ul>
+<p><strong>Goal:</strong> Address highest risks (show-stoppers) early. If you cannot get the Proof-of-Concept (POC) done, then you may need to reconsider your whole project.</p></section>
+<section id="proof-of-concept-examples" class="title-slide slide level1"><h1><lo-theory/> Proof of Concept: Examples</h1><p><strong>Example 1:</strong> If you plan to use a video, check if you can record (at least something very short and simple) and publish it in the media you wanted. See the resolution and other qualities.</p>
+<p><strong>Example 2:</strong> If you plan to support a voting system, check that you can deploy a simple system (on somebody’s laptop) that counts votes - even without proper authentication.</p>
+<p><strong>Example 3:</strong> If you plan to integrate with some existing Webpage (for example, use your solution in a school), ask, if the owners of the Website can give you the right privileges.</p></section>
+<section id="poc-check-for-insufficient-skills" class="title-slide slide level1"><h1><lo-theory/> POC: Check for Insufficient Skills</h1><ul>
+<li>The skills to carry something to the completion is also a part of the POC.</li>
+<li>Check, if you have the right skills at a very specific level.</li>
+</ul></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span style="color:darkgreen"><strong>(4) Development Environments</strong></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="development-and-proudction-environments" class="title-slide slide level1"><h1><lo-theory/> Development and Proudction Environments</h1><hgroup>
+<p><strong>Development Environment</strong></p>
+<ul>
+<li>Can be checked out from Git.</li>
+<li>Can be updated very often:<br />
+<code>git clone repository-name</code><br />
+<code>git pull origin master</code></li>
+<li>Experienced by developers.</li>
+</ul>
+</hgroup>
+<hgroup>
+<p><strong>Production Environment</strong></p>
+<ul>
+<li>Updated in a controlled manner (product releases)</li>
+<li>Experienced by end users</li>
+</ul>
+<p>Moving stuff from the development environment to the production environment is called <strong>deployment</strong> (similar to how armies or emergency services <strong>deploy</strong> their forces to a new location).</p>
+</hgroup></section><section id="each-team-will-have-development-environment" class="slide level2">
 <h2><lo-summary/> Each team will have development environment</h2>
 <ul>
 <li>Majority of files needed for your product should go there</li>
@@ -171,8 +289,26 @@
 </ul>
 <p>Sensitive files do not change often - you can copy them around with other means.</p>
 </section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="the-v-model-vs.agile-loop" class="title-slide slide level1"><h1><lo-theory/> The V-Model vs. Agile Loop</h1></section><section id="suggested-schedule" class="slide level2">
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span style="color:darkgreen"><strong>(5) Iterations</strong></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section><section id="the-v-model-vs.-agile-loop" class="title-slide slide level1"><h1><lo-theory/> The V-Model vs. Agile Loop</h1><ul>
+<li><a href="https://www.360logica.com/blog/enhancing-waterfall-process-through-v-model-software-development-methodology/">V Model</a></li>
+<li><a href="https://www.visual-paradigm.com/scrum/what-are-scrum-ceremonies/">Agile Software Engineering</a></li>
+</ul></section><section id="suggested-schedule" class="slide level2">
 <h2><lo-summary/> Suggested Schedule</h2>
 <table>
 <tr>
@@ -212,9 +348,46 @@ Iteration 0. Proof of Concept is done. Development Environment exists for all de
 <h2><lo-summary/> Iterations for your Project</h2>
 <p>If your project has unusual release schedule, you can declare your intention to have different iterations - but you have to decide <strong>before</strong> October 18, 2019. Please inform all instructors (Claudio, Viesturs, Kalvis) that your project will benefit from different planning. And send in your iterations (and approximate descriptions of the work done by each iteration).</p>
 </section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="what-is-the-mvp" class="title-slide slide level1"><h1><lo-theory/> What is the MVP</h1></section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section><section id="assignment-present-your-technical-design" class="slide level2">
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span style="color:darkgreen"><strong>(6) Minimum Viable Product (MVP)</strong></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section>
+<section id="what-is-the-mvp" class="title-slide slide level1"><h1><lo-theory/> What is the MVP</h1><p><strong>Definition</strong> (by Eric Ries - a consultant on startups):</p>
+<p>A minimum viable product (MVP) is the the most limited version of a product that can still be released. An MVP has three key characteristics:</p>
+<ul>
+<li>It has enough value that people are willing to use it or buy it.</li>
+<li>It demonstrates enough future benefit to retain early adopters.</li>
+<li>It provides a feedback loop to guide future development.</li>
+</ul>
+<p>The MVP technique assumes that early adopters can see the vision or promise of the final product and provide their feedback. Feedback is essential to move ahead.</p></section>
+<section><section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span style="color:darkgreen"><strong>(7) Team Presentations</strong></span><br />
+<span>(8) <a href="#/section-7">Summary</a></span></p>
+</hgroup></section><section id="assignment-present-your-technical-design" class="slide level2">
 <h2><lo-sample/> Assignment: Present your Technical Design</h2>
 <ol type="1">
 <li><strong>What IT platform(s)</strong> your solution depends on?<br />
@@ -306,7 +479,22 @@ Meistertask, Google drive.</p>
 <li>Video editing</li>
 </ul>
 </section></section>
-<section><section id="section-7" class="title-slide slide level1"><h1> </h1></section><section id="some-important-reminders" class="slide level2">
+<section><section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Week 6: Functional and Technical Design
+</h1>
+<p><blue>Designing your Solution; POC; Development Environment; Iterations and MVP</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Introduction</a></span><br />
+<span>(2) <a href="#/section-1">Grading Activities</a></span><br />
+<span>(3) <a href="#/section-2">Technical Design and POC</a></span><br />
+<span>(4) <a href="#/section-3">Development Environments</a></span><br />
+<span>(5) <a href="#/section-4">Iterations</a></span><br />
+<span>(6) <a href="#/section-5">Minimum Viable Product (MVP)</a></span><br />
+<span>(7) <a href="#/section-6">Team Presentations</a></span><br />
+<span style="color:darkgreen"><strong>(8) Summary</strong></span></p>
+</hgroup></section><section id="some-important-reminders" class="slide level2">
 <h2><lo-theory/> Some Important Reminders</h2>
 <ul>
 <li>Submit the Functional Design (with all the Requirements) - <strong>October 18</strong></li>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Periodiskas virknes</title>
+  <title>"Periodiskas virknes"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,9 +32,107 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="ceļa-karte" class="title-slide slide level1"><h1><lo-default/> Ceļa karte</h1></section></section>
-<section><section id="rekurentu-virkņu-jautājumi" class="title-slide slide level1"><h1><lo-default/> Rekurentu virkņu jautājumi</h1></section><section id="rekurentu-virkņu-lietojumi" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#11: Rekurentas virknes
+</h1>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section_4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section_5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="ceļa-karte" class="title-slide slide level1"><h1><lo-default/> Ceļa karte</h1><hgroup style="width: 48%">
+<table>
+<tr>
+<td style="text-align:left !important;">
+#1: Eksperimenti un piemēru veidošana
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#2: Mainīgo izteiksmes un pārveidojumi
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#3: Algebriskas struktūras
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#4: Dalāmība un pirmreizinātāji
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#5: LKD, MKD un valuācijas
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#6: Kongruence pēc noteikta moduļa
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#7: Pretrunas moduļa izvēle
+</td>
+</tr>
+</table>
+</hgroup>
+<hgroup style="margin-left: 4%; width: 45%">
+<table>
+<tr>
+<td style="text-align:left !important;">
+#8: Decimālpieraksts
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#9: Aritmētiskas progresijas
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#10: Ģeometriskas progresijas
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+<red><strong>#11: Rekurentas virknes </strong></red>
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#12: Ekstrēmie elementi un Dirihlē princips
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#13: Invarianti un indukcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#14: Nevienādības
+</td>
+</tr>
+<tr>
+<td style="text-align:left !important;">
+#15: Kombinatoriskas metodes
+</td>
+</tr>
+</table>
+</hgroup></section>
+<section><section id="rekurentu-virkņu-jautājumi" class="title-slide slide level1"><h1><lo-default/> Rekurentu virkņu jautājumi</h1><ul>
+<li>Kā atpazīt jau zināmas progresijas iekš rekurentas virknes?</li>
+<li>Kāpēc rodas periodi lineārās rekurencēs, dalot ar skaitli?</li>
+<li>Kā atrast izteiksmi vispārīgam loceklim vienkāršos gadījumos?</li>
+</ul></section><section id="rekurentu-virkņu-lietojumi" class="slide level2">
 <h2>Rekurentu virkņu lietojumi</h2>
 <ul>
 <li>Lineāri vienādojumi veselos skaitļos.</li>
@@ -43,43 +141,105 @@
 <li>Skaitļu teorijas uzdevumi.</li>
 </ul>
 </section></section>
-<section><section id="sasniedzamie-rezultāti" class="title-slide slide level1"><h1><lo-default/> Sasniedzamie rezultāti</h1></section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="lineāra-rekurenta-virkne" class="title-slide slide level1"><h1><lo-default/> Lineāra rekurenta virkne</h1></section></section>
-<section><section id="fibonači-virkne" class="title-slide slide level1"><h1><lo-default/> Fibonači virkne</h1></section></section>
-<section><section id="aritmētiskās-progresijas-atpazīšana" class="title-slide slide level1"><h1><lo-default/> Aritmētiskās progresijas atpazīšana</h1></section></section>
-<section><section id="ģeometriskās-progresijas-atpazīšana" class="title-slide slide level1"><h1><lo-default/> Ģeometriskās progresijas atpazīšana</h1></section></section>
-<section><section id="rekurence-kombinatorikā" class="title-slide slide level1"><h1><lo-default/> Rekurence kombinatorikā</h1></section></section>
-<section><section id="taisnstūra-sagriešana" class="title-slide slide level1"><h1><lo-sample/> Taisnstūra sagriešana</h1></section></section>
-<section><section id="rekurentu-virkņu-viennozīmība" class="title-slide slide level1"><h1><lo-default/> Rekurentu virkņu viennozīmība</h1></section></section>
-<section><section id="periods-un-priekšperiods" class="title-slide slide level1"><h1><lo-default/> Periods un priekšperiods</h1></section></section>
-<section><section id="lv.vo.2013.10.4" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2013.10.4</h1></section></section>
-<section><section id="fibonači-virknes-atlikumi" class="title-slide slide level1"><h1><lo-sample/> Fibonači virknes atlikumi</h1></section></section>
-<section><section id="raksturīgais-vienādojums" class="title-slide slide level1"><h1><lo-default/> Raksturīgais vienādojums</h1></section></section>
-<section><section id="otrās-kārtas-raksturīgais-vienādojums" class="title-slide slide level1"><h1><lo-default/> Otrās kārtas raksturīgais vienādojums</h1></section></section>
-<section><section id="vispārīgais-loceklis" class="title-slide slide level1"><h1><lo-sample/> Vispārīgais loceklis</h1></section></section>
-<section><section id="rekurentas-virknes-iegūšana" class="title-slide slide level1"><h1><lo-default/> Rekurentas virknes iegūšana</h1></section></section>
-<section><section id="atlikuma-noteikšana" class="title-slide slide level1"><h1><lo-sample/> Atlikuma noteikšana</h1></section><section id="ieteikumi" class="slide level2">
+<section id="sasniedzamie-rezultāti" class="title-slide slide level1"><h1><lo-default/> Sasniedzamie rezultāti</h1><ul>
+<li>Izprast rekurentu virkņu definīciju</li>
+<li>Atrast rekurentu virkni, kas raksturo kombinatorikas uzdevumu.</li>
+<li>Izteikt lineāras rekurentas virknes vispārējo locekli.</li>
+<li>Noteikt periodu un priekšperiodu periodiskās virknēs.</li>
+<li>Spēt izveidot rekurences attiecību no eksponenciālām funkcijām.</li>
+</ul></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#11: Rekurentas virknes
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Pamatfakti</strong></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section_4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section_5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="lineāra-rekurenta-virkne" class="title-slide slide level1"><h1><lo-default/> Lineāra rekurenta virkne</h1><p><strong>Definīcija:</strong> Virkni <span class="math inline">\(u_1,u_2,\ldots,u_n,\ldots\)</span> sauc par <em>lineāru rekurentu virkni</em>, ja eksistē tādi skaitļi <span class="math inline">\(a_1,a_2,\ldots a_k,b\)</span>, ka <span class="math inline">\(u_{n} = a_1u_{n-1} + a_2u_{n-2} + \cdots + a_ku_{n-k} + b\)</span>, ja <span class="math inline">\(n \geq k\)</span>.<br />
+(Nākamo locekli iegūst no <span class="math inline">\(k\)</span> iepriekšējo lineāras summas. Tas nozīmē, ka pirmajiem <span class="math inline">\(k\)</span> virknes locekļiem jābūt dotiem)</p>
+<p><strong>Piezīme:</strong> Vispārīgā gadījumā katrs nākošais elements var būt patvaļīga funkcija no iepriekšējiem elementiem, lai viennozīmīgi noteiktu to. Pārsvarā tomēr dzīvē sastopamies ar lineārām virknēm.</p></section>
+<section id="fibonači-virkne" class="title-slide slide level1"><h1><lo-default/> Fibonači virkne</h1><p>Apskatām rekurentu virkni, kas uzdota sekojoši:</p>
+<p><span class="math display">\[F_n = F_{n-1} + F_{n-2.}\]</span> Tā kā virkne atsaucas uz diviem iepriekšējiem, tad nepieciešams uzdot <span class="math inline">\(F_0 = 0\)</span> un <span class="math inline">\(F_1 = 1\)</span>. Pielietojot rekursīvo definīciju, iegūstam dažus virknes locekļus: <span class="math display">\[
+0, \; 1, \; 1, \; 2, \; 3, \; 5, \;8, \;13, \;21, \; \ldots
+\]</span></p></section>
+<section id="aritmētiskās-progresijas-atpazīšana" class="title-slide slide level1"><h1><lo-default/> Aritmētiskās progresijas atpazīšana</h1><p>Aritmētisku virkni parasti uzrakstām formā <span class="math inline">\(a_n = d(n-1) + a_1\)</span>. Diferenci viegli varam noteikt, skatoties starpības, tāpēc arī rekurentās virknēs to varam darīt.</p>
+<p>Apskatām rekurentu virkni: <span class="math inline">\(a_0 = 7,\; a_1=15,\; a_n = a_{\lfloor n/2 \rfloor} + a_{\lceil n/2 \rceil}-7.\)</span></p>
+<p>Pirmie virknes elementi ir <span class="math inline">\(7,15,23,31,39.\)</span> Skatoties uz diferencēm, viegli saskatīt, ka iet runa par virkni formā <span class="math inline">\(a_n = 8n + 7.\)</span></p></section>
+<section id="ģeometriskās-progresijas-atpazīšana" class="title-slide slide level1"><h1><lo-default/> Ģeometriskās progresijas atpazīšana</h1><p>Tāpat kā aritmētiskās progresijas atpazīst pēc diferencēm, tad ģeometriskās progresijas var atpazīt pēc kvocientiem.</p>
+<p>Apskatām rekurentu virkni: <span class="math inline">\(g_0 = 2,\; g_1 = 6,\; g_n = g_{n-1} + 6g_{n-2},\)</span> ja <span class="math inline">\(n \geq 2.\)</span></p>
+<p>Apskatot pirmos locekļus - <span class="math inline">\(2, 6, 18, 54, 162,\)</span> saskatām, ka to attiecība ir <span class="math inline">\(3\)</span>. Šajā brīdī labs minējums būtu, ka <span class="math inline">\(g_n = 2\cdot3^n\)</span>.</p></section>
+<section id="rekurence-kombinatorikā" class="title-slide slide level1"><h1><lo-default/> Rekurence kombinatorikā</h1><p>Ir uzdevumi, kurus iespējams atrisināt, ja izdodas parādīt, ka uzdevuma atbilde ir rekurentas virknes loceklis. Bieži vien tie ir uzdevumi, kuros tiek prasīts noteikt kādu objektu skaitu, kas atkarīgi no paremetra <span class="math inline">\(n\)</span>.</p></section>
+<section id="taisnstūra-sagriešana" class="title-slide slide level1"><h1><lo-sample/> Taisnstūra sagriešana</h1><p>Cik dažādos veidos taisnstūri <span class="math inline">\(2 \times 12\)</span> var sagriezt taisnstūros <span class="math inline">\(1 \times 2?\)</span> (Griezumi, kas iegūstami viens no otra ar simetriju vai pagriezienu, tiek uzskatīti par dažādiem.)</p></section>
+<section id="rekurentu-virkņu-viennozīmība" class="title-slide slide level1"><h1><lo-default/> Rekurentu virkņu viennozīmība</h1><ul>
+<li><p>Rekurences sakarība ir pilnībā noteikta no iepriekšējiem locekļiem, tāpēc, ja uzdota lineāra rekurenta virkne <span class="math inline">\(X_{n} = a_1X_{n-1} + a_2X_{n-2} + \cdots + a_kX_{n-k} + a_0\)</span>, ja <span class="math inline">\(n \geq k\)</span> ar <span class="math inline">\(k\)</span> sākuma nosacījumiem, lai noteiktu virknes locekli <span class="math inline">\(X_i\)</span>, nepieciešams zināt <span class="math inline">\(X_{i-1},X_{i-2},\dots,X_{i-k}\)</span>.</p></li>
+<li><p>Tas pats arī ir patiess, ja gribam uzzināt <span class="math inline">\(X_i \; (\text{mod} \; m)\)</span>, kur <span class="math inline">\(m\)</span> ir kāds naturāls skaitlis.</p></li>
+</ul></section>
+<section id="periods-un-priekšperiods" class="title-slide slide level1"><h1><lo-default/> Periods un priekšperiods</h1><ul>
+<li><p>Tā kā lineārā rekurentā virknē katrs nākošais loceklis ir nosakāms ar <span class="math inline">\(k\)</span> iepriekšējiem un dalot ar <span class="math inline">\(m\)</span> ir <span class="math inline">\(m\)</span> iespējami atlikumi, tad kopā var būt <span class="math inline">\(m^k\)</span> stāvokļi, kādos var atrasties <span class="math inline">\(k\)</span> iepriekšējie locekļi pēc moduļa <span class="math inline">\(m\)</span>.</p></li>
+<li><p>Šis ir galīgs skaits, tas nozīmē, ka vienā brīdī šie <span class="math inline">\(k\)</span> atlikumi atkārtosies jeb pastāvēs tādi naturāli skaitļi <span class="math inline">\(q\)</span> un <span class="math inline">\(p\)</span>, lai <span class="math display">\[
+X_i \equiv X_{i+p} \; (\text{mod } m) \; \; \; \;\text{visiem } i &gt; q.
+\]</span></p></li>
+<li><p>Mazākos naturālos skaitļus <span class="math inline">\(q\)</span> un <span class="math inline">\(p\)</span>, kuriem izpildāš šī īpašība sauc attiecīgi par <em>priekšperiodu</em> un <em>periodu</em>.</p></li>
+</ul></section>
+<section id="lv.vo.2013.10.4" class="title-slide slide level1"><h1><lo-sample/> LV.VO.2013.10.4</h1><p>Pierādīt, ka Fibonači virknē ir bezgalīgi daudz skaitļu, kas nav naturāla skaitļa kvadrāti.</p></section>
+<section id="fibonači-virknes-atlikumi" class="title-slide slide level1"><h1><lo-sample/> Fibonači virknes atlikumi</h1><p>Vai starp pirmajiem <span class="math inline">\(10^8 +1\)</span> Fibonači skaitļiem eksistē skaitlis, kuram beigās ir četras nulles?</p></section>
+<section id="raksturīgais-vienādojums" class="title-slide slide level1"><h1><lo-default/> Raksturīgais vienādojums</h1><p>Par lineāras rekurences sakarības <span class="math display">\[
+u_n = a_1u_{n-1} + a_2u_{n-2} + \ldots + a_ku_{n-k}
+\]</span> ar konstantiem koeficientiem <span class="math inline">\(a_1,\dots a_k\)</span> <em>raksturīgo vienādojumu</em> sauc vienādojoumu <span class="math display">\[
+t^k - a_1t^{k-1} - a_2t^{k-2} - \ldots - a_k = 0.
+\]</span></p></section>
+<section id="otrās-kārtas-raksturīgais-vienādojums" class="title-slide slide level1"><h1><lo-default/> Otrās kārtas raksturīgais vienādojums</h1><p>Apskatīsim gadījumu, kad <span class="math inline">\(k=2\)</span>, t.i., rekurences sakarība ir formā</p>
+<p><span class="math display">\[
+u_n = a_1u_{n-1} +a_2u_{n-2}.
+\]</span> Tad raksturīgais vienādojums ir <span class="math inline">\(t^2 - a_1t - a_2 = 0.\)</span> Ir iespējami divi gadījumi:</p>
+<ul>
+<li>Vienādojumam ir divas vienādas saknes <span class="math inline">\(t_1\)</span> un <span class="math inline">\(t_2\)</span>. Vispārīgais loceklis tad izsakāms formā <span class="math inline">\(u_n = C_1t_1^n +C_2t_2^n\)</span>.</li>
+<li>Vienādojumam ir divkārša sakne <span class="math inline">\(t_1\)</span>. Vispārīgais loceklis tad izsakāms formā <span class="math inline">\(u_n = C_1t_1^n +C_2\cdot nt_1^n\)</span>.</li>
+</ul>
+<p>Skaitļus <span class="math inline">\(C_1\)</span> un <span class="math inline">\(C_2\)</span> nosaka pēc sākuma nosacījumiem.</p></section>
+<section id="vispārīgais-loceklis" class="title-slide slide level1"><h1><lo-sample/> Vispārīgais loceklis</h1><p>Atrast izteiksmi vispārīgajam loceklim Fibonači virknei.</p></section>
+<section id="rekurentas-virknes-iegūšana" class="title-slide slide level1"><h1><lo-default/> Rekurentas virknes iegūšana</h1><p>Dažreiz no vispārīgās formulas ir izdevīgāk iegūt rekurences formulu, lai spētu pielietot faktus par atlikumu periodiskumu. Saprotot, kur vienādojumā atrodas saknes, un no tām izveidojot raksturīgo vienādojumu, varam iegūt rekurences sakarību.</p></section>
+<section><section id="atlikuma-noteikšana" class="title-slide slide level1"><h1><lo-sample/> Atlikuma noteikšana</h1><p>Kādu atlikumu dod skaitlis <span class="math inline">\((3+\sqrt{2})^{2019} + (3-\sqrt{2})^{2019}\)</span>, dalot ar 5?</p></section><section id="ieteikumi" class="slide level2">
 <h2>Ieteikumi</h2>
 <p>Varam saskatīt, ka <span class="math inline">\(t_1 = 3+\sqrt{2}\)</span> un <span class="math inline">\(t_1 = 3 -\sqrt{2}\)</span>. Izmantojot Vjeta teorēmu, redzam, ka raksturīgais vienādojums izskatītos formā <span class="math inline">\(t^2 -6t +7=0\)</span>. No šī iegūstam rekurento sakarībo <span class="math inline">\(u_n = 6u_{n-1} - 7u_{n-2}\)</span>. Ar sākuma nosacījumiem <span class="math inline">\(u_1=6\)</span> un <span class="math inline">\(u_2=22\)</span>.</p>
 <p>Tagad skatamies uz virkni pēc moduļa <span class="math inline">\(5\)</span> un meklējam periodu. Kopā ir iespējami <span class="math inline">\(25\)</span> atlikumu pāri, tāpēc periodu nebūs grūti atrast. Lai iegūtu atbildi, jāatrod 2019. atlikums.</p>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="jautājums-nr.1" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.1</h1></section><section id="ieteikumi-1" class="slide level2">
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#11: Rekurentas virknes
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span style="color:darkgreen"><strong>(3) Aptauja</strong></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section_4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section_5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="jautājums-nr.1" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.1</h1><p>Dota rekurenta virkne <span class="math inline">\(L_{n} = L_{n-1} + L_{n-2}\)</span> ar sākuma nosacījumiem <span class="math inline">\(L_1=1,L_2=3\)</span>. Atrast nākošos <span class="math inline">\(5\)</span> virknes locekļus.</p></section><section id="ieteikumi-1" class="slide level2">
 <h2>Ieteikumi</h2>
 <p>Jāizprot rekurentas virknes definīcija.</p>
 </section></section>
-<section><section id="jautājums-nr.2" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.2</h1></section><section id="ieteikumi-2" class="slide level2">
+<section><section id="jautājums-nr.2" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.2</h1><p>Virkne <span class="math inline">\(1,1,7,13,55,133,\ldots\)</span> ir piemērs rekurentai virknei, kura apmierina rekurences attiecību <span class="math display">\[
+a_n=a_{n-1} + 6a_{n-2}.
+\]</span> Atrast ģeometrisku progresiju, kas apmierina šo rekurenci un pirmais virknes loceklis ir 1.</p></section><section id="ieteikumi-2" class="slide level2">
 <h2>Ieteikumi</h2>
 <p>Jāatrod kvocients, jo pirmais virknes loceklis jau ir dots. Var eksperimentēt ar mazām vērtībām, lai saskatītu, ka atbilst rekurences sakarībai.</p>
 </section></section>
-<section><section id="jautājums-nr.3" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.3</h1></section><section id="ieteikumi-3" class="slide level2">
+<section><section id="jautājums-nr.3" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.3</h1><p>Pamatot, ka ka katram naturālam skaitlim <span class="math inline">\(k\)</span>, pastāv bezgalīgi daudz Fibonači skaitļi, kas dalās ar <span class="math inline">\(k\)</span>.</p></section><section id="ieteikumi-3" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li>Vai vari atrast vismaz vienu locekli, kas vienmēr dalīsies ar <span class="math inline">\(k\)</span>? (Šeit noder Fibonāci virknes definīcija, kas izmantota šajā materiālā)</li>
 </ul>
 </section></section>
-<section><section id="jautājums-nr.4" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.4</h1></section><section id="ieteikumi-4" class="slide level2">
+<section><section id="jautājums-nr.4" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.4</h1><p>Atrast izteiksmi vispārīgajam loceklim, kura apmierina rekurences sakarību <span class="math inline">\(u_n = 2u_{n-1} - u_{n-2}\)</span> un kuras sākuma nosacījumi ir <span class="math inline">\(u_1=4,u_2=1\)</span>.</p></section><section id="ieteikumi-4" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li>Vispirms jāsastāda raksturīgais vienādojums.</li>
@@ -87,36 +247,62 @@
 <li>Lai noteiktu brīvos locekļus, jāizmanto sākuma nosacījumi.</li>
 </ul>
 </section></section>
-<section><section id="jautājums-nr.5" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.5</h1></section><section id="ieteikumi-5" class="slide level2">
+<section><section id="jautājums-nr.5" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.5</h1><p>Atrast rekurences attiecību, kura apmierina <span class="math inline">\(f(n) = 3^n + 4^{n+1}\)</span>.</p></section><section id="ieteikumi-5" class="slide level2">
 <h2>Ieteikumi</h2>
 <p>Nepieciešams atpazīt saknes, lai izveidotu raksturīgo vienādojumu.</p>
 </section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="us.mmo.1999.4" class="title-slide slide level1"><h1><lo-sample/> US.MMO.1999.4</h1></section><section id="ieteikumi-6" class="slide level2">
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#11: Rekurentas virknes
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span style="color:darkgreen"><strong>(4) Tipisks piemērs</strong></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="us.mmo.1999.4" class="title-slide slide level1"><h1><lo-sample/> US.MMO.1999.4</h1><p>Virknē <span class="math display">\[
+1,1,2,3,7,22,155,3411, \ldots
+\]</span> katrs nākošais loceklis ir vienāds ar divu iepriekšējo reiznājumu, kuram pieskaitīts <span class="math inline">\(1\)</span>. Pierādīt, ka nav tāda virknes locekļa, kas dalītos ar <span class="math inline">\(4\)</span>.</p></section><section id="ieteikumi-6" class="slide level2">
 <h2>Ieteikumi</h2>
 <p>Vai var kaut ko saskatīt atlikumu virknē?</p>
 </section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="klasisks-uzdevums" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1></section><section id="ieteikumi-7" class="slide level2">
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#11: Rekurentas virknes
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span style="color:darkgreen"><strong>(5) Patstāvīgie uzdevumi</strong></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="klasisks-uzdevums" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1><p>No mājām līdz ieejai dzīvoklī ir <span class="math inline">\(12\)</span> pakāpieni. Ar vienu soli var pārkāpt <span class="math inline">\(1,2\)</span> vai <span class="math inline">\(3\)</span> pakāpienus. Cik dienas var kāpt atšķirīgos veidos? (Veidus uzskata par atšķirīgiem, ja atšķiras izdarīto soļu secība, piemēram, kāpt <span class="math inline">\(2; 3; 1\)</span> pakāpienus un kāpt <span class="math inline">\(1; 2; 3\)</span> pakāpienus ir divi atšķirīgi veidi.)</p></section><section id="ieteikumi-7" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li>Vai var kaut kā sastādīt rekurences attiecību?</li>
 </ul>
 </section></section>
-<section><section id="klasisks-uzdevums-1" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1></section><section id="ieteikumi-8" class="slide level2">
+<section><section id="klasisks-uzdevums-1" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1><p>Cik šķēlēs var sagriezt picu ar <span class="math inline">\(n\)</span> taisniem griezumiem? (Mūsu pica ir divdimensionāla un izliekta. Šķēles nedrīkst bīdīt apkārt starp griezieniem.)</p></section><section id="ieteikumi-8" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li>Kāds ir lielākais šķēļu skaits, ko papildus var iegūt, ja iepriekšējā solī esi perfekti visu izdarījis?</li>
 </ul>
 </section></section>
-<section><section id="klasisks-uzdevums-2" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1></section><section id="ieteikumi-9" class="slide level2">
+<section><section id="klasisks-uzdevums-2" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1><p>Virkne <span class="math inline">\(G_0, G_1, G_2, \ldots\)</span> sastāv no katra otrā Fibonači virknes skaitļa. Pamatot, ka šī virkne ir lineāra rekurences virkne, t. i., pastāv skaitļi <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, lai <span class="math inline">\(G_n = aG_{n-1} +bG_{n-2}\)</span>.</p></section><section id="ieteikumi-9" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li><p>Tā kā ir prasīta tikai eksistence, īsākais atrisnājums pat nedotu konkrētus <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, bet tikai garantētu, ka tādi ir.</p></li>
 <li><p>Vai ir konkrēta formula, lai noteiktu katru otro Fibonači skaitli? Kā to pārveidot jaunā rekurentā virknē?</p></li>
 </ul>
 </section></section>
-<section><section id="klasisks-uzdevums-3" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1></section><section id="ieteikumi-10" class="slide level2">
+<section><section id="klasisks-uzdevums-3" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1><p>Pierādīt, ka katram naturālam <span class="math inline">\(n\)</span> skaitlis <span class="math inline">\(\left \lceil (3 + \sqrt{5})^n \right \rceil\)</span> dalās ar <span class="math inline">\(2^n\)</span>.</p></section><section id="ieteikumi-10" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li><p>Neskatoties uz griestu funkciju, izteiksme izskatās līdzīga kaut kam, ar ko esam strādājuši iepriekš. Ko var pieskaitīt, lai iegūtu vienmēr veselu skaitli?</p></li>
@@ -124,7 +310,7 @@
 <li><p>Būs nepieciešams indukcijas arguments, lai formāli pierādītu.</p></li>
 </ul>
 </section></section>
-<section><section id="klasisks-uzdevums-4" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1></section><section id="ieteikumi-11" class="slide level2">
+<section><section id="klasisks-uzdevums-4" class="title-slide slide level1"><h1><lo-sample/> Klasisks uzdevums</h1><p>Kādi cipari ir tieši pa labi un kreisi komatam decimālizvirzījumā skaitlim <span class="math inline">\((\sqrt{2} + \sqrt{3})^{2018}\)</span>?</p></section><section id="ieteikumi-11" class="slide level2">
 <h2>Ieteikumi</h2>
 <ul>
 <li><p>Noteikti gribam nonākt situācijā, ka skaitlis vienmēr būs naturāls.</p></li>
@@ -142,8 +328,26 @@
 <li>Cipars pa labi no komata būs <span class="math inline">\(9\)</span>.</li>
 </ul>
 </section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-default/> Ko darījām šajā nodarbībā?</h1></section></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:32pt">
+#11: Rekurentas virknes
+</h1>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti</a></span><br />
+<span>(3) <a href="#/section-2">Aptauja</a></span><br />
+<span>(4) <a href="#/section-3">Tipisks piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Patstāvīgie uzdevumi</a></span><br />
+<span style="color:darkgreen"><strong>(6) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-default/> Ko darījām šajā nodarbībā?</h1><ul>
+<li>Iepazināmies ar rekurentām virknēm kā aritmētiskās un ģeometriskās progresijas vispārinājumu.</li>
+<li>Izmantojām rekurentas virknes, lai atrisinātu kombinatorikas uzdevumus.</li>
+<li>Noteicām vispārīgo locekli rekurentās virknēs.</li>
+<li>Izmantojām rekurentas virknes, lai atrisinātu skaitļu teorijas uzdevumus.</li>
+<li>Darbojāmies ar rekurentu virkņu atlikumiem un to periodiem.</li>
+</ul></section>
     </div>
   </div>
 

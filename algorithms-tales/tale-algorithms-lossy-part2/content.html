@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,7 +32,33 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section><section id="mērķi" class="slide level2">
+<section><section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Redzes un dzirdes sajūtas</a></span><br />
+<span>(3) <a href="#/section-2">Konteineri un kodeki</a></span><br />
+<span>(4) <a href="#/section-3">MPEG4 saspiešana</a></span><br />
+<span>(5) <a href="#/section-4">MP3 saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">(P) DRM un ūdenszīmes</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup>
+<!-- 
+
+Watermarking overview
+http://www.rroij.com/open-access/a-review-of-watermarking-algorithms-fordigital-image.php?aid=46871
+
+
+
+
+HVS model) 
+
+
+--></section><section id="mērķi" class="slide level2">
 <h2><lo-theory/> Mērķi</h2>
 <ul>
 <li>Aprakstīt cilvēka redzes modeli zudumradošajā saspiešanā.</li>
@@ -43,8 +69,29 @@
 <li>Apspriest steganogrāfijas un ūdenszīmju ievietošanu mediju failos.</li>
 </ul>
 </section></section>
-<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="hvs-modelis" class="title-slide slide level1"><h1><lo-theory/> HVS modelis</h1></section><section id="flicker-frequency---mirgošanas-frekvence" class="slide level2">
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Redzes un dzirdes sajūtas</strong></span><br />
+<span>(3) <a href="#/section-2">Konteineri un kodeki</a></span><br />
+<span>(4) <a href="#/section-3">MPEG4 saspiešana</a></span><br />
+<span>(5) <a href="#/section-4">MP3 saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">(P) DRM un ūdenszīmes</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="hvs-modelis" class="title-slide slide level1"><h1><lo-theory/> HVS modelis</h1><ul>
+<li><p><em>Human Visual System</em> (HVS) Model - attēlu un audio apstrādei izveidots “vidējots” cilvēka redzes modelis.</p></li>
+<li><p>Nūjiņas un konusiņi; pieņēmums, ka nūjiņu izšķirtspēja ir aptuveni divreiz labāka.</p></li>
+</ul>
+<blockquote>
+<p>Krāsu TV teiciens:<br />
+“Chrominance is at half resolution of luminance”.</p>
+</blockquote></section><section id="flicker-frequency---mirgošanas-frekvence" class="slide level2">
 <h2><lo-summary/> Flicker frequency - mirgošanas frekvence</h2>
 <ul>
 <li>Filmu ieraksts: 24 kadri sekundē; atskaņošanas laikā kadrus atkārto (parasti bez izmaiņām), lai mirgotu 48 vai 72 reizes sekundē.</li>
@@ -52,7 +99,21 @@
 <li>Katodstaru lampas mirgoja zemā frekvencē (teiksim, 60 Hz - varēja pamanīt).</li>
 </ul>
 </section></section>
-<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section><section id="konteineri-ko-atbalsta-youtube" class="slide level2">
+<section><section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Redzes un dzirdes sajūtas</a></span><br />
+<span style="color:darkgreen"><strong>(3) Konteineri un kodeki</strong></span><br />
+<span>(4) <a href="#/section-3">MPEG4 saspiešana</a></span><br />
+<span>(5) <a href="#/section-4">MP3 saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">(P) DRM un ūdenszīmes</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section><section id="konteineri-ko-atbalsta-youtube" class="slide level2">
 <h2><lo-summary/> Konteineri, ko atbalsta YouTube</h2>
 <div style="font-size:80%">
 <ul>
@@ -81,8 +142,26 @@
 <li>MPEG (MP4 konteinerā) is used in many other applications/hardware and has gained great popularity. Most CD/DVD players, Smartphones, SmartTVs and media players support the Xvid codec. So it will be one of the best video codecs for most users. The Xvid codec is faster than MPEG-1 (Xvid uses lower CPU usage than MPEG-1).</li>
 </ul>
 </section></section>
-<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="saistītas-bildes" class="title-slide slide level1"><h1><lo-theory/> Saistītas bildes</h1></section><section id="mpeg-freimu-tipi" class="slide level2">
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Redzes un dzirdes sajūtas</a></span><br />
+<span>(3) <a href="#/section-2">Konteineri un kodeki</a></span><br />
+<span style="color:darkgreen"><strong>(4) MPEG4 saspiešana</strong></span><br />
+<span>(5) <a href="#/section-4">MP3 saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">(P) DRM un ūdenszīmes</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="saistītas-bildes" class="title-slide slide level1"><h1><lo-theory/> Saistītas bildes</h1><ul>
+<li>Video visvienkāršākajā izpratnē ir daudzu rastra attēlu secība.</li>
+<li>Pat iekodējot ar JPEG (katru attēlu atsevišķi) radīsies milzīgi lieli faili.</li>
+<li>Secīgi attēli stipri korelē (ja vien tieši attiecīgajā vietā netika samontēti divi gabali vai krasi mainīts kameras stāvoklis).</li>
+</ul></section><section id="mpeg-freimu-tipi" class="slide level2">
 <h2><lo-theory/> MPEG freimu tipi</h2>
 <p>MPEG piemērots gan statiski saspiestiem, gan straumētiem datiem; katru attēlu iekodē vienā no šiem 3 veidiem:</p>
 <ul>
@@ -180,9 +259,34 @@ Vidēji
 <li>On-demand televīzija ar desmitiem tūkstošu lejupielādējamu (vai straumējamu) filmu.</li>
 </ul>
 </section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="mp3-mērķi" class="title-slide slide level1"><h1><lo-theory/> MP3 mērķi</h1></section></section>
-<section><section id="parauga-ātrums-sample-rate" class="title-slide slide level1"><h1><lo-theory/> Parauga ātrums (sample rate)</h1></section><section id="bitu-pārraide-bitrate" class="slide level2">
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Redzes un dzirdes sajūtas</a></span><br />
+<span>(3) <a href="#/section-2">Konteineri un kodeki</a></span><br />
+<span>(4) <a href="#/section-3">MPEG4 saspiešana</a></span><br />
+<span style="color:darkgreen"><strong>(5) MP3 saspiešana</strong></span><br />
+<span>(6) <a href="#/section-5">(P) DRM un ūdenszīmes</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="mp3-mērķi" class="title-slide slide level1"><h1><lo-theory/> MP3 mērķi</h1><ul>
+<li><p>Saspiest mūziku u.c. audiofailus, lai tos varētu pārraidīt datortīklos un glabāt mūzikas atskaņotājos.</p></li>
+<li><p>Publiska programmatūra parādījās ap 1994.g.</p></li>
+<li><p>Līdz pat 2017.g. Fraunhofer Institute for Integrated Circuits (svarīgāko patentu turētāji) uzlika tam ierobežojošas licences; ievāca maksu no softa ražotājiem.</p></li>
+<li><p>Mūsdienās MP3 ir “mantots” (<em>legacy</em>) jeb “miris” formāts, bet tam joprojām plašs rīku atbalsts.</p></li>
+<li><p>Radio un video straumēšana izmanto ISO-MPEG kodekus; piemēram, AAC (Advanced Audio Coding) vai MPEG-H.</p></li>
+<li><p><a href="https://www.cnbc.com/2017/05/15/mp3-dead-say-creators-after-terminating-licensing.html">The MP3 is dead, say creators after terminating licensing</a></p></li>
+</ul></section>
+<section><section id="parauga-ātrums-sample-rate" class="title-slide slide level1"><h1><lo-theory/> Parauga ātrums (sample rate)</h1><ul>
+<li><em>Sample rate</em> mēra hercos (1 Hz = 1 s^{-1}) - cik reizes sekundē kaut kas notiek.</li>
+<li>CD-ROM kvalitātes ierakstam parasti vajag ap 44.1 kHz (CD). (Ir arī standarti, kas izmanto 48 kHz, 88.2 kHz, vai 96 kHz.)</li>
+</ul>
+<p><strong>Naikvista-Šenona teorēma:</strong> (<em>Nyquist-Shannon Sampling theorem</em>) Ja funkcijai <span class="math inline">\(x(t)\)</span> (pēc Furjē transformācijas pielietošanas) nav frekvenču, kas pārsniegtu <span class="math inline">\(B\)</span> hercus, tad to var pilnībā (bez zudumiem) atjaunot, ja zināmas tās vērtības ik pēc laika intervāliem <span class="math inline">\(\Delta t = 1/(2B)\)</span>.</p></section><section id="bitu-pārraide-bitrate" class="slide level2">
 <h2><lo-theory/> Bitu pārraide? (bitrate)</h2>
 <ul>
 <li>Svarīgākais saspiešanas parametrs.</li>
@@ -241,16 +345,46 @@ Vidēji
 </ul>
 </hgroup>
 </section></section>
-<section><section id="stereo-mūzikas-dati" class="title-slide slide level1"><h1><lo-theory/> Stereo-mūzikas dati</h1></section></section>
-<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="steganogrāfija" class="title-slide slide level1"><h1><lo-theory/> Steganogrāfija</h1></section><section id="aizsardzība-pret-steganogrāfiju" class="slide level2">
+<section id="stereo-mūzikas-dati" class="title-slide slide level1"><h1><lo-theory/> Stereo-mūzikas dati</h1><ul>
+<li><strong>Joint Stereo</strong> pārraida kreisās un labās auss skaņu divos kanālos: Vienā kanālā summu, otrā kanālā - starpību.</li>
+<li>Tā kā abām ausīm ir ļoti līdzīga skaņa, tad summa ir vidējota skaņa, bet starpība ir neliela un to var labi saspiest.</li>
+<li>Cilvēka telpiskā skaņas uztvere (<em>immersive sound</em>) ir ļoti niansēta: skaņas virzienu/azimutu var sadzirdēt ar 1 grāda precizitāti; augstumu virs horizonta - ar apmēram 10 grādu precizitāti.</li>
+<li>Joprojām grūti risināms jautājums, kā novietot skaļruņus un mainīt austiņās dzirdamās lietas, ja cilvēks pārvietojas telpā. Bet MP3 šo nerisina.</li>
+</ul></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Redzes un dzirdes sajūtas</a></span><br />
+<span>(3) <a href="#/section-2">Konteineri un kodeki</a></span><br />
+<span>(4) <a href="#/section-3">MPEG4 saspiešana</a></span><br />
+<span>(5) <a href="#/section-4">MP3 saspiešana</a></span><br />
+<span style="color:darkgreen"><strong>(6) (P) DRM un ūdenszīmes</strong></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="steganogrāfija" class="title-slide slide level1"><h1><lo-theory/> Steganogrāfija</h1><ul>
+<li>Teksta noslēpšana citos teksta failos (vārdu pirmie burti), bet arī atstarpes, sinonīmu izvēle u.c.</li>
+<li>Teksta noslēpšana audio failos.</li>
+<li>Teksta noslēpšana attēlu failos.</li>
+</ul>
+<p>Jāņem vērā gan mediju faila “payload” (redzamie pikseļi, skaņas u.c.), gan metainformācija.<br />
+Ekstrēmāki datu zādzības piemēri - informācijas slēpšana DNS pieprasījumu hederos.</p>
+<p><a href="http://www.czasopisma.pan.pl/Content/101654/PDF/47.pdf?handler=pdf">Michal Drzymala, et al. Network Steganography in the DNS Protocol</a></p></section><section id="aizsardzība-pret-steganogrāfiju" class="slide level2">
 <h2><lo-theory/> Aizsardzība pret steganogrāfiju</h2>
 <ul>
 <li>Steganalīze (<em>steganalysis</em>) reizēm var atrast modificētā materiāla oriģinālu (kurā vēl nav slepenā ziņojuma) un salīdzināt ar to.</li>
 <li>Ne visa steganogrāfija ir robusta/noturīga pret faila izmaiņām. Zudumradošie algoritmi var (pašiem nemanot) steganogrāfisko ziņojumu sabojāt.</li>
 </ul>
 </section></section>
-<section><section id="ūdenszīmju-tehnoloģijas" class="title-slide slide level1"><h1><lo-theory/> Ūdenszīmju tehnoloģijas</h1></section><section id="ūdenszīmjusteganogrāfijas-ievietošana" class="slide level2">
+<section><section id="ūdenszīmju-tehnoloģijas" class="title-slide slide level1"><h1><lo-theory/> Ūdenszīmju tehnoloģijas</h1><ul>
+<li>Anekdote par spaini, uz kura uzraksts: “Zagts Tirzas krogā”.</li>
+<li><blue><em>Ūdenszīmju tehnoloģijas</em></blue> (<em>Watermark techniques</em>) - mediju failu izmaiņas, kas var palīdzēt atklāt licencei neatbilstošu satura izmantošanu. Dažreiz arī, kurš medija eksemplārs noplūdis.</li>
+<li>Ūdenszīmju ievietošana radniecīga <blue><em>steganogrāfijai</em></blue> (papildus slepena ziņojuma ievietošana failā, kura redzamais saturs ir par kaut ko citu).</li>
+</ul></section><section id="ūdenszīmjusteganogrāfijas-ievietošana" class="slide level2">
 <h2><lo-summary/> Ūdenszīmju/Steganogrāfijas ievietošana</h2>
 <figure>
 <img data-src="embedding-watermark.png" alt="Embedding watermark" /><figcaption>Embedding watermark</figcaption>
@@ -304,8 +438,29 @@ Var PDF faila lappusēm uzkrāsot virsū kaut kādu musturi; visu grāmatu 17.lp
 <li>Mediju satura aizsargāšana pret izmainīšanu.</li>
 </ul>
 </section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām šajā nodarbībā?</h1></section></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 2</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Redzes un dzirdes sajūtas</a></span><br />
+<span>(3) <a href="#/section-2">Konteineri un kodeki</a></span><br />
+<span>(4) <a href="#/section-3">MPEG4 saspiešana</a></span><br />
+<span>(5) <a href="#/section-4">MP3 saspiešana</a></span><br />
+<span>(6) <a href="#/section-5">(P) DRM un ūdenszīmes</a></span><br />
+<span style="color:darkgreen"><strong>(7) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām šajā nodarbībā?</h1><ul>
+<li>Apskatījām cilvēka redzes un dzirdes matematizētu modeli, kas nosaka zudumradošās saspiešanas algoritmus.</li>
+<li>Raksturojām video konteineru formātus (MP4 jeb MPEG-4 Part 14, AVI, WebM)</li>
+<li>Uzskaitījām dažus populārākos kodekus.</li>
+<li>Aprakstījām MPEG-4 video saspiešanas pamatalgoritmu.</li>
+<li>Aprakstījām MP3 audio saspiešanu.</li>
+<li>Ieviesām steganogrāfijas un ūdenszīmju jēdzienu, to ievietošanu mediju failos.</li>
+</ul></section>
     </div>
   </div>
 

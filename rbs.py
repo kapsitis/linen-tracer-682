@@ -15,12 +15,17 @@ class RbsHandler(webapp2.RequestHandler):
         {
             'id':'RBS.ProjectProcesses', 
             'dir':'project-processes',
-            'title': u'Project Processes'
+            'title': u'(Week03, 2019-09-20) Project Processes'
         },
         {
-            'id':'RBS.ProjectProcesses', 
+            'id':'RBS.DesignDocuments', 
             'dir':'technical-design',
-            'title': u'Technical Design'
+            'title': u'(Week06, 2019-10-11) Design Documents'
+        },
+        {
+            'id':'RBS.PlanningIterations', 
+            'dir':'planning-iterations',
+            'title': u'(Week10, 2019-11-08) Planning Iterations'
         }
 
     ]
@@ -29,7 +34,7 @@ class RbsHandler(webapp2.RequestHandler):
         {
             'id':'RBS.AboutBITL',
             'dir':'about-bitl',
-            'title': 'First Year of BITL'
+            'title': 'About BITL Program (in Latvian; for Junior Achievement Teachers, 2019-11-07)'
         },
         {
             'id':'RBS.YouTube1',

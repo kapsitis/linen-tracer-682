@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>Datu meklēšana: Norādes</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tasks.html">Problēmtēmas</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Prezentācijas</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="labs.html">Prakt.Darbi</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>Norādes</b></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<b>SW konferences:</b>
+
+<ul>
+<li><a href="https://2019.semantics.cc/programme">2019 Semantics (Karlsruhe)</a></li>
+</ul>
+
+
+<b>Par Linked Saeima</b>
+
+<ul>
+<li><a href="http://dati.saeima.korpuss.lv/">http://dati.saeima.korpuss.lv/</a></li>
+</ul>
+
+<b>Par Wikidata:</b>
+
+<ul>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:Introduction">Wikidata:Introduction</a></li>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples">SPARQL piemēri 
+Wikidata datiem</a></li>
+</ul>
+
+
+<b>SPARQL un RDF datu noliktavas:</b>
+
+<ul>
+<li><a href="https://twitter.com/Gezim_Sejdiu/status/1182665771702460416">Par SANSA Stack</a></li>
+</ul>
+
+
+
+<b>Linki par vispārīgām zināšanu tehnoloģiju tēmām:</b>
+
+<ul>
+<li><a href="https://medium.com/code-for-america/ai-deserts-fc210fc2fd41">Jennifer Pahlka. AI Deserts.
+Code for America. 2019-10-08.</a></li>
+</ul> 
+
+
+</body>
+</html>
+

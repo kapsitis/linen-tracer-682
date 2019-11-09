@@ -66,6 +66,25 @@ handlers:
 - url: /rbs-tales
   static_dir: rbs-tales
 
+- url: /datasearch/.*
+  script: datasearch.app
+  
+- url: /datasearch-bin
+  static_dir: datasearch-bin
+
+- url: /datasearch-tales
+  static_dir: datasearch-tales
+
+- url: /discrete/.*
+  script: discrete.app
+  
+- url: /discrete-bin
+  static_dir: discrete-bin
+
+- url: /discrete-tales
+  static_dir: discrete-tales
+
+
 
 - url: /style
   static_dir: style

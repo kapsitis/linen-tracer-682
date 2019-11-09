@@ -5,15 +5,23 @@
     },
     {
         "subdir": "algorithms",
-        "title": "4020: Lietišķie algoritmi"
+        "title": "Lietišķie algoritmi"
     },
     {
         "subdir": "visualizations",
         "title": "Vizualizāciju seminārs"
     },
     {
+        "subdir": "datasearch",
+        "title": "Datu meklēšana"
+    },    
+    {
+        "subdir": "discrete",
+        "title": "Discrete Structures"
+    },
+    {
         "subdir": "rbs",
-        "title": "RBS Courses"
+        "title": "RBS Seminars"
     },
     {
         "subdir": "problembase",

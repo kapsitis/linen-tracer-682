@@ -32,6 +32,11 @@ class RbsHandler(webapp2.RequestHandler):
     
     other_tales = [
         {
+            'id':'RBS.SearchingInternet',
+            'dir':'searching-internet',
+            'title': 'Searching the Internet (2019-11-13)'
+        },
+        {
             'id':'RBS.AboutBITL',
             'dir':'about-bitl',
             'title': 'About BITL Program (in Latvian; for Junior Achievement Teachers, 2019-11-07)'

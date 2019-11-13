@@ -56,7 +56,18 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'id':'Algorithms.LinearOptimization1',
             'dir':'tale-linear-optimization-part1',
             'title': u'Lineārā optimizācija - 1'
+        },
+        {
+            'id':'Algorithms.LinearOptimization2',
+            'dir':'tale-linear-optimization-part2',
+            'title': u'Lineārā optimizācija - 2'
+        },           
+        {
+            'id':'Algorithms.LinearOptimization3',
+            'dir':'tale-linear-optimization-part3',
+            'title': u'Lineārā optimizācija - 3'
         }           
+           
     ]       
 
     total_grades = { '40200A': '24.1', 

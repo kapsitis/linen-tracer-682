@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Vispārīgais simpleksalgoritms</a></span><br />
+<span>(3) <a href="#/section-2">Duālā lineārā programma</a></span><br />
+<span>(4) <a href="#/section-3">Sākotnējā stūra izvēle</a></span><br />
+<span>(5) <a href="#/section-4">Elipsoīda algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plūsmu uzdevumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc ar simpleksalgoritmu nepietiek?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Simpleksalgoritma varianti (sākotnējā un duālā problēma, pirmā stūra izvēle, pārejas izvēle un randomizācija).</li>
+<li>Var būt slikta sarežģītība (īpaši uzkonstruētem piemēriem).</li>
+<li>Polinomiāla laika algoritms ir standarts visam, ko lieto praksē.</li>
+</ul>
+</div></section><section id="sasniedzamie-rezultāti" class="slide level2">
+<h2><lo-theory/> Sasniedzamie rezultāti</h2>
+<ol type="1">
+<li>Definēt duālo uzdevumu.</li>
+<li>Formulēt dualitātes teorēmu.</li>
+<li>Noskaidrot simpleksalgoritma izvēles.</li>
+<li>Formulēt Elipsoīda algoritmu (Khachiyan).</li>
+<li>LP lietojumi plūsmu maksimizēšanā un “operāciju pētīšanā”.</li>
+</ol>
+</section></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Vispārīgais simpleksalgoritms</strong></span><br />
+<span>(3) <a href="#/section-2">Duālā lineārā programma</a></span><br />
+<span>(4) <a href="#/section-3">Sākotnējā stūra izvēle</a></span><br />
+<span>(5) <a href="#/section-4">Elipsoīda algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plūsmu uzdevumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="kāpēc-lp-ir-svarīgas" class="title-slide slide level1"><h1><lo-theory/> Kāpēc LP ir svarīgas?</h1><ul>
+<li>(Reālo skaitļu) LP ir pirmais solis, lai risinātu veselo skaitļu problēmas (<em>Integer Programming, IP</em>) un jauktās LP problēmas (<em>Mixed Integer Linear Programs, MIP</em>).</li>
+<li>Kā optimāli izvēlēties komplektu (izejvielas, akciju portfeļus), kā vislabāk sadalīt kādu resursu.</li>
+<li>Plūsmas maksimizēšana grafā (skatīsimies šajā lekcijā).</li>
+</ul>
+<p>Veselie skaitļi kā nezināmie (<em>Integer Programming</em>) labāk modelē Yes/No lēmumu pieņemšanu (0 un 1 vērtības), bet šādus uzdevumus ir grūtāk risināt.</p></section><section id="lp-algoritmi" class="slide level2">
+<h2><lo-summary/> LP algoritmi</h2>
+<ul>
+<li>Simpleksalgoritmi (Kantorovičs, 1939; Dantzig, 1947).</li>
+<li>Elipsoīda algoritms (Khachian, 1979)</li>
+<li>Iekšējo punktu metodes (<em>Interior Point methods</em>).
+<ul>
+<li>Projektīvā metode (Karmarkar, 1984).</li>
+<li>Afīnā metode (Dikin, 1967).</li>
+<li>Log Barrier Method.</li>
+</ul></li>
+</ul>
+<p>Simpleksalgoritms parasti ir ļoti ātrs, bet īpaši uzkonstruēti piemēri var būt sarežģīti.<br />
+Matricām var būt ap 100 tūkstošiem rindiņu/kolonnu; ap miljons skaitļu šajās matricās nav nulles.</p>
+</section><section id="hamiltona-cikli" class="slide level2">
+<h2><lo-summary/> Hamiltona cikli</h2>
+<hgroup style="font-size:70%">
+<figure>
+<img data-src="hamiltonian_path_3d.png" alt="Hamiltonian path" /><figcaption>Hamiltonian path</figcaption>
+</figure>
+<p><strong>Definīcija:</strong> Par Hamiltona ciklu neorientētā grafā sauc virsotņu virknīti <span class="math inline">\(A_0,A_1,\ldots,A_n\)</span>, kur katra grafa virsotne piedalās tieši vienreiz (izņemot <span class="math inline">\(A_0=A_n\)</span> - pirmā visotne sakrīt ar pēdējo) un katras divas blakusesošas virsotnes savieno šķautne.</p>
+</hgroup>
+<hgroup>
+<p><strong>Jautājums:</strong> Dots neorientēts grafs. Kā uzrakstīt lineāru vienādību vai nevienādību sistēmu, kuru atrisinot (vai pamatojot, ka atrisinājuma nav), var atrast Hamiltona ciklu grafā (vai pierādīt, ka šāda cikla nav)?</p>
+</hgroup>
+</section></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Vispārīgais simpleksalgoritms</a></span><br />
+<span style="color:darkgreen"><strong>(3) Duālā lineārā programma</strong></span><br />
+<span>(4) <a href="#/section-3">Sākotnējā stūra izvēle</a></span><br />
+<span>(5) <a href="#/section-4">Elipsoīda algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plūsmu uzdevumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="primārā-lineārā-programma" class="title-slide slide level1"><h1><lo-theory/> Primārā lineārā programma</h1><div style="font-size:70%">
+<p>Pieņemsim, ka ir lineāra programma (sauksim par <blue><em>primāro LP</em></blue>):</p>
+<p>Maksimizēt <span class="math inline">\(c_1 x_1 + c_2 x_2 + \ldots + c_n x_n\)</span> pie šādiem nosacījumiem: <span class="math display">\[ \left\{ \begin{array}{l}
+a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n  \geq b_1,\\
+\ldots
+a_{k1} x_1 + a_{k2} x_2 + \ldots + a_{kn} x_n = b_k,\\
+x_1 \geq 0,\; x2 \geq 0,\;\ldots 
+\end{array} \right.\]</span></p>
+<p>LP var nebūt standartformā:</p>
+<ul>
+<li>Nosacījumiem <span class="math inline">\(a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n ? b_i\)</span>,<br />
+jautājuma zīmes vietā var būt jebkura zīme (<span class="math inline">\(\geq\)</span>, <span class="math inline">\(\leq\)</span>, <span class="math inline">\(=\)</span>).</li>
+<li>Attiecībā uz mainīgajiem <span class="math inline">\(x_i\)</span> var būt nosacījumi <span class="math inline">\(xi \geq 0\)</span>, <span class="math inline">\(x_i \leq 0\)</span>, vai vispār nebūt nosacījuma attiecībā uz <span class="math inline">\(x_i\)</span>.</li>
+</ul>
+</div></section>
+<section id="duālā-lineārā-programma" class="title-slide slide level1"><h1><lo-theory/> Duālā lineārā programma</h1><div style="font-size:70%">
+<p>Par <blue><em>duālo programmu</em></blue> sauc tādu lineāro programmu, kur jāminimizē izteiksme: <span class="math display">\[b_1 y_1 + b_2 y_2 + \ldots + b_k y_k,\]</span> pie nosacījumiem $<span class="math inline">\(a_{11} y_1 + a_{21} y_2 + \ldots + a_{k1} y_k ? c_k,\)</span> kur simbols jautājuma zīmes vietā tiek noteikts šādi:</p>
+<ul>
+<li>Ja primārajā LP bija nosacījums <span class="math inline">\(x_i \geq 0\)</span>, tad jautājuma zīmes vietā ir <span class="math inline">\(\geq\)</span>.</li>
+<li>Ja primārajā LP bija nosacījums <span class="math inline">\(x_i \leq 0\)</span>, tad jautājuma zīmes vietā ir <span class="math inline">\(\leq\)</span>.</li>
+<li>Ja primārajā LP nebija nosacījuma attiecībā uz <span class="math inline">\(x_i\)</span>, tad jautājuma zīmes vietā ir <span class="math inline">\(=\)</span>.</li>
+</ul>
+<p>Attiecībā uz mainīgajiem y1, y2, …, yk, nosacījumi ir atkarīgi no tā, kāda zīme bija primārās LP nosacījumā ai1 x1 + ai2 x2 + … + ain xn ? bi:</p>
+<ul>
+<li>Ja <span class="math inline">\(?\)</span> vietā bija <span class="math inline">\(\geq\)</span>, tad mums tagad ir nosacījums <span class="math inline">\(y_i \leq 0\)</span>.</li>
+<li>Ja <span class="math inline">\(?\)</span> vietā bija <span class="math inline">\(\leq\)</span>, tad mums tagad ir nosacījums <span class="math inline">\(y_i \geq 0\)</span>.</li>
+<li>Ja <span class="math inline">\(?\)</span> vietā bija <span class="math inline">\(=\)</span>, tad mums tagad nav nosacījuma attiecībā uz <span class="math inline">\(y_i\)</span>.</li>
+</ul>
+</div></section>
+<section><section id="lp-piemērs" class="title-slide slide level1"><h1><lo-sample/> LP Piemērs</h1><p>Primārā lineārā programma ir šāda:<br />
+Maksimizēt <span class="math inline">\(\color{#00F}{5x_1 + 16x_2}\)</span> pie nosacījumiem <span class="math display">\[ \left\{ \begin{array}{l}
+x_1 + x_2 \leq 1,\\
+2x_1 + 7x_2 \leq 9,\\
+x_1 \geq 0,\;\; x_2 \geq 0,
+\end{array} \right.\]</span> Tad duālā programma ir:<br />
+Minimizēt <span class="math inline">\(\color{#00F}{y_1+ 9y_2}\)</span> pie nosacījumiem: <span class="math display">\[ \left\{ \begin{array}{l}
+y_1 + 2y_2 \geq 5,\\
+y_1 + 7y_2 \geq 16,\\
+y_1 \geq 0,\;\; y_2 \geq 0.
+\end{array} \right.\]</span></p></section><section id="duālās-programmas-nozīme" class="slide level2">
+<h2><lo-sample/> Duālās programmas nozīme</h2>
+<div style="font-size:70%">
+<p>Duālo programmu var interpretēt šādi: katrs duālās programmas atrisinājums dod novērtējumu no augšas priekš primārās programmas atrisinājuma. Piemēram, ja mums ir duālās programmas atrisinājums <span class="math inline">\(y_1 = y_2 = 2\)</span>, tad no duālās programmas nosacījumiem seko, ka <span class="math display">\[5x_1 + 16x_2 \leq  2(x_1 + x_2) + 2(2x_1 + 7x_2).\]</span> Apvienojot to ar primārās programmas nosacījumiem, mēs iegūstam, ka <span class="math display">\[5x_1 + 16x_2  \leq  2 \cdot 1 + 2 \cdot 9 = 20,\]</span> tas ir, primārās LP mērķfunkcija jebkurā punktā ir mazāka par duālās programmas mērķfunkciju (arī jebkurā punktā, jo augstāk minētajā spriedumā <span class="math inline">\(y_1 = y_2 = 2\)</span> var aizstāt ar jebkuru citu punktu, kur izpildās visi duālās programmas nosacījumi).</p>
+</div>
+</section></section>
+<section><section id="dualitātes-teorēma" class="title-slide slide level1"><h1><lo-theory/> Dualitātes teorēma</h1><ol type="1">
+<li>Ja primārajai LP eksistē maksimums, tad duālajai LP arī eksistē atrisinājums un primārās LP maksimums sakrīt ar duālās LP minimumu.</li>
+<li>Ja primārajai LP neeksistē atrisinājums (nosacījumi ir pretrunīgi), tad duālajai LP mērķfunkcija var sasniegt patvaļīgi mazas vērtības.</li>
+<li>Ja primārajai LP mērķfunkcija var sasniegt patvaļīgi lielas vērtības, tad duālajai LP atrisinājums neeksistē (nosacījumi ir pretrunīgi).</li>
+</ol></section><section id="primārās-un-duālās-lp-apvienošana" class="slide level2">
+<h2><lo-theory/> Primārās un duālās LP apvienošana</h2>
+<p>Ja dotas primārā LP un duālā LP, varam uzrakstīt jaunu LP, kas satur visus mainīgos (gan <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span>, gan <span class="math inline">\(y_1, y_2, \ldots, y_k\)</span>), gan visus nosacījumus no abām programmām un pievienot tai vēl vienu nosacījumu: <span class="math display">\[c_1 x_1 + c_2 x_2 + \ldots + c_n x_n = b_1 y_1 + b_2 y_2 + \ldots + b_k y_k.\]</span></p>
+<p>Tad vienīgais gadījums, kad izpildās visi nosacījumi ir, ja <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span> sasniedz primārās LP maksimums, bet <span class="math inline">\(y_1, y_2, \ldots, y_k\)</span> sasniedz duālās LP minimumu.</p>
+<p><strong>Secinājums:</strong> Ja mums ir algoritms, kas prot patvaļīgai LP atrast vienu punktu, kas apmierina visus nosacījumus, tad šo algoritmu var izmantot arī maksimuma atrašanai.</p>
+</section></section>
+<section id="matricu-pieraksts-primārā-lp" class="title-slide slide level1"><h1><lo-theory/> Matricu pieraksts: Primārā LP</h1><hgroup>
+<p><strong>Primārā LP:</strong> <blue>Maksimizēt:</blue> <span class="math inline">\(4x_1 + 2x_2 - x_3,\)</span> kur <span class="math display">\[\left\{
+\begin{array}{l}
+x_1 + x_2 + x_3 = 20\\
+2x_1 - x_2 \geq 6\\
+3x_1 + 2x_2 + x_3 \leq 40\\
+x_1,x_2 \geq 0
+\end{array} \right.\]</span></p>
+</hgroup>
+<hgroup style="font-size:70%">
+<span class="math display">\[x = \left(
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3
+\end{array} \right), \;\; b = \left(
+\begin{array}{c}
+20\\
+6\\
+40
+\end{array} \right),\]</span> <span class="math display">\[c = \left(
+\begin{array}{ccc}
+4 &amp; 2 &amp; -1
+\end{array} \right),\]</span> <span class="math display">\[A = \left(
+\begin{array}{ccc}
+1 &amp; 1 &amp; 1\\
+2 &amp; -1 &amp; 0\\
+3 &amp; 2 &amp; 1
+\end{array} \right).\]</span>
+</hgroup></section>
+<section id="matricu-pieraksts-duālā-lp" class="title-slide slide level1"><h1><lo-theory/> Matricu pieraksts: Duālā LP</h1><hgroup>
+<p>Duālā LP:<br />
+<red>Minimizēt:</red> <span class="math inline">\(4x_1 + 2x_2 - x_3,\)</span> kur <span class="math display">\[ \left\{
+\begin{array}{l}
+y_1 + 2y_2 + 3y_3 \geq 4\\
+y_1 - y_2 + 2y_3 \geq 2\\
+y_1 + y_3 = -1\\
+y_2 \leq 0,\; y_3 \geq 0 
+\end{array} \right. \]</span></p>
+</hgroup>
+<hgroup>
+<ul>
+<li>Koeficientus iegūst, transponējot <span class="math inline">\(A\)</span>.</li>
+<li>Vienādību un nevienādību tipus nosaka atbilstoši augšminētajiem noteikumiem: Piemēram, ja <span class="math inline">\(x_1 \geq 0\)</span> primārajā problēmā, tad <span class="math inline">\(x_1\)</span> mainīgajam atbilstošais duālais vienādojums <span class="math inline">\(y_1 + 2y_2 + 3y_3 \geq 4\)</span>.</li>
+</ul>
+</hgroup>
+<!--
+
+## <lo-soln/> Dualitātes teorēma matricu veidā
+
+<hgroup>
+
+Maksimizēt $z = \mathbb{c} \cdot \mathbb{x}$, kur $A\mathbb{x} 
+
+--></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Vispārīgais simpleksalgoritms</a></span><br />
+<span>(3) <a href="#/section-2">Duālā lineārā programma</a></span><br />
+<span style="color:darkgreen"><strong>(4) Sākotnējā stūra izvēle</strong></span><br />
+<span>(5) <a href="#/section-4">Elipsoīda algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plūsmu uzdevumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Vispārīgais simpleksalgoritms</a></span><br />
+<span>(3) <a href="#/section-2">Duālā lineārā programma</a></span><br />
+<span>(4) <a href="#/section-3">Sākotnējā stūra izvēle</a></span><br />
+<span style="color:darkgreen"><strong>(5) Elipsoīda algoritms</strong></span><br />
+<span>(6) <a href="#/section-5">(P) Plūsmu uzdevumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="elipsoīda-algoritma-ievads" class="title-slide slide level1"><h1><lo-summary/> Elipsoīda algoritma ievads</h1><p>Šo algoritmu izgudroja Hačijans (Khachiyan) 1979. gadā. Elipsoīda algoritms pazīstams kā pirmais lineārās programmēšanas algoritms, kuram tika pierādīts, ka tas atrod atrisinājumu polinomiālā laikā (<span class="math inline">\(O(n^4L)\)</span>, kur <span class="math inline">\(n\)</span> - dimensiju skaits, <span class="math inline">\(L\)</span> – ar cik bitu precizitāti jāatrod atrisinājums).</p>
+<p>Lai gan teorētiski darbības laiks ir polinomiāls, praksē algoritms ir lēns un netiek lietots. Tāpēc šajā kursā mēs ierobežosimies ar īsu šī algoritma aprakstu.</p></section><section id="elipsoīda-algoritma-pārskats" class="slide level2">
+<h2><lo-summary/> Elipsoīda algoritma pārskats</h2>
+<p>Dualitātes teorēmas (un redukcijas uz primāro+duālo) dēļ pietiek ar algoritmu, kas atrod punktu, kur izpildās visi nosacījumi. To meklē šādi:</p>
+<p>Sāk ar elipsoīdu <span class="math inline">\(E_0\)</span>, kas noteikti ietver LP pieļaujamo apgabalu.<br />
+Pilda sekojošus soļus līdzkamēr sasniegta vajadzīgā precizitāte:</p>
+<ol type="1">
+<li>Ņem iepriekšējā elipsoīda <span class="math inline">\(E_i\)</span> centru <span class="math inline">\(c_i\)</span>.</li>
+<li>Ja <span class="math inline">\(c_i\)</span> neapmierina visus LP nosacījumus, tad atrod nosacījumu <span class="math inline">\(a_k\)</span>, kas tiek pārkāpts visvairāk.</li>
+<li>Ar plakni, kas sastāv no visiem punktiem, kur nosacījuma <span class="math inline">\(a_k\)</span> izteiksmei ir vienāda vērtība <span class="math inline">\(c\)</span> (kur <span class="math inline">\(c\)</span> ir pa vidu starp vērtību punktā <span class="math inline">\(c_i\)</span> un pieļaujamajām izteiksmes vērtībām) pārdala telpu divās daļās. Ar <span class="math inline">\(R_1\)</span> apzīmējam daļu, kur nonāk <span class="math inline">\(c_i\)</span> un ar <span class="math inline">\(R_2\)</span> apzīmējam daļu, kur nonāk pieļaujamais apgabals.</li>
+<li>Uzkonstruē jaunu elipsoīdu <span class="math inline">\(E_{i+1}\)</span>, tā lai izpildītos <span class="math display">\[E_i \cap R_2 \subseteq E_{i+1}.\]</span></li>
+</ol>
+</section><section id="apgalvojums-par-elipsoīdu" class="slide level2">
+<h2><lo-summary/> Apgalvojums par elipsoīdu</h2>
+<hgroup>
+<figure>
+<img data-src="elipsoid-algorithm.png" alt="Elipsoid Algorithm" /><figcaption>Elipsoid Algorithm</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p>Hačjana konstrukcijā (<em>barycentric coordinate descent</em>) elipsoīdi ir tādi, ka <span class="math display">\[\frac{\text{Volume}(E_{k+1})}{\text{Volume}(E_{k})} = \frac{1}{2^{\frac{1}{2n+1}}\]</span> veido konstantu attiecību, kas atkarīga no dimensiju skaita <span class="math inline">\(n\)</span>.</p>
+</hgroup>
+</section></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Vispārīgais simpleksalgoritms</a></span><br />
+<span>(3) <a href="#/section-2">Duālā lineārā programma</a></span><br />
+<span>(4) <a href="#/section-3">Sākotnējā stūra izvēle</a></span><br />
+<span>(5) <a href="#/section-4">Elipsoīda algoritms</a></span><br />
+<span style="color:darkgreen"><strong>(6) (P) Plūsmu uzdevumi</strong></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="maksimālās-plūsmas-atrašana-grafā" class="title-slide slide level1"><h1><lo-sample/> Maksimālās plūsmas atrašana grafā</h1><figure>
+<img data-src="max-flow-graph.png" alt="Max Flow Graph" /><figcaption>Max Flow Graph</figcaption>
+</figure>
+<p>Aplūkotajā grafā katrai šķautnei ir pierakstīta skaitliska vērtība - maksimālā atļautā plūsma, kuru pa šo šķautni var sūtīt (vai nu vienā, vai otrā virzienā). Var sūtīt arī mazāku plūsmu.<br />
+<strong>Uzdevums:</strong> Atrast lielāko plūsmu no virsotnes “IN” uz virsotni “OUT”.</p>
+<p>Šim uzdevumam 1956.g. tika izveidots <a href="https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm">Forda-Falkersona algoritms</a> (<em>Ford-Fulkerson algorithm</em>), ko kursā neaplūkojam. Uzdevumu var arī reducēt uz Lineāro programmēšanu.</p></section>
+<section id="lineārā-programma" class="title-slide slide level1"><h1><lo-soln/> Lineārā programma</h1><div style="font-size:70%">
+
+<figure>
+<img data-src="flow-preservation.png" alt="Flow Preservation" /><figcaption>Flow Preservation</figcaption>
+</figure>
+<p>Katrai (neorientētai) šķautnei ieviešam divus mainīgos, piemēram, <span class="math inline">\(x_1\)</span> un <span class="math inline">\(x&#39;_1\)</span> (nenegatīvas plūsmas katrā no iespējamajiem virzieniem).</p>
+<ol type="1">
+<li>Katrai virsotnei grafā rakstām “plūsmas saglabāšanās” (“flow preservation”) vienādojumus. Piemēram, <span class="math display">\[x_1 + x_2 + x&#39;_3 = x&#39;_1 + x&#39;_2 + x_3.\]</span></li>
+<li>Katrai šķautnei grafā rakstām divas nevienādības caurlaidībai (“edge capacity”). Piemēram, <span class="math display">\[x_1 \leq 3,\;\;x&#39;_1 \leq 3.\]</span> (Ja šķautne, kas atbilst <span class="math inline">\(x_1\)</span> un <span class="math inline">\(x&#39;_1\)</span> ir ar caurlaidību <span class="math inline">\(3\)</span>.)</li>
+<li>Visas plūsmas ir nenegatīvas. Piemēram, <span class="math display">\[x_1 \geq 0,\;\;x&#39;_1 \geq 0.\]</span></li>
+</ol></section>
+<section id="maksimizējamā-funkcija" class="title-slide slide level1"><h1><lo-soln/> Maksimizējamā funkcija</h1><hgroup>
+<figure>
+<img data-src="max-flow-graph.png" alt="Max Flow Graph" /><figcaption>Max Flow Graph</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<ol type="1">
+<li>Var maksimizēt plūsmu summu visām no “IN” izejošajām virsotnēm.</li>
+<li>Biežāk izmanto triku: pievieno fiktīvu šķautni no “OUT” atpakaļ uz “IN” - un maksimizē plūsmu uz šīs vienas šķautnes.</li>
+</ol>
+</hgroup></section>
+<section id="dualitātes-lietošana-max-plūsmai" class="title-slide slide level1"><h1><lo-theory/> Dualitātes lietošana max plūsmai</h1><p>Sk. <a href="http://www.cs.cmu.edu/~odonnell/toolkit13/lecture14.pdf">Max Flow to Linear Programming</a></p>
+<p><strong>Tipiska ideja:</strong> No reālās dzīves nākušam Lineārās Programmēšanas uzdevumam formulējam duālo uzdevumu un mēģinām atrast šī uzdevuma interpretāciju.</p></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 2</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Vispārīgais simpleksalgoritms</a></span><br />
+<span>(3) <a href="#/section-2">Duālā lineārā programma</a></span><br />
+<span>(4) <a href="#/section-3">Sākotnējā stūra izvēle</a></span><br />
+<span>(5) <a href="#/section-4">Elipsoīda algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plūsmu uzdevumi</a></span><br />
+<span style="color:darkgreen"><strong>(7) Kopsavilkums</strong></span></p>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

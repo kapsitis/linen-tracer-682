@@ -48,7 +48,7 @@ Piemērs: melnbalti attēli.
 * Attēlā skaitlis $0-255$ apzı̄mē krāsu (no melnas līdz baltai).
 * Visus $256$ toņus acs neatšķir, tāpēc var attēlot $256$ krāsas uz mazāku skaitu.
 * Vienkāršākais attēlojums, piemēram
-$f(x) = \left\lfloor\frac{x}{4}$. Tad $f\,:\,\{0,\ldots,255\} \rightarrow \{0,\ldots,63\}$. 
+$f(x) = \left\lfloor\frac{x}{4} \right\rfloor$. Tad $f\,:\,\{0,\ldots,255\} \rightarrow \{0,\ldots,63\}$. 
 * Praksē lieto sarežǧı̄tāku funkciju, kas kopā sagrupē krāsas, kuras acs sliktāk atšķir.
 
 ## <lo-theory/> Vektoru kvantizācija (melnbalti attēli)

@@ -156,38 +156,39 @@ Pieņemsim, ka ir lineāra programma (sauksim par <blue>*primāro LP*</blue>):
 
 Maksimizēt $c_1 x_1 + c_2 x_2 + \ldots + c_n x_n$ pie šādiem nosacījumiem:
 $$ \left\{ \begin{array}{l}
-a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n  \geq b_1,\\
-\ldots
-a_{k1} x_1 + a_{k2} x_2 + \ldots + a_{kn} x_n = b_k,\\
-x_1 \geq 0,\; x2 \geq 0,\;\ldots 
+a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n  \;\;\color{#F00}{?}\;\; b_1,\\
+\ldots\\
+a_{k1} x_1 + a_{k2} x_2 + \ldots + a_{kn} x_n \;\;\color{#F00}{?}\;\; b_k,\\
+x_1 \geq 0,\; x_2 \geq 0,\;\ldots 
 \end{array} \right.$$
 
 LP var nebūt standartformā: 
 
-* Nosacījumiem $a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n ? b_i$,  
+* Nosacījumiem $a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n \;\;\color{#F00}{?}\;\; b_i$,  
 jautājuma zīmes vietā var būt jebkura zīme ($\geq$, $\leq$, $=$). 
-* Attiecībā uz mainīgajiem $x_i$ var būt nosacījumi $xi \geq 0$, $x_i \leq 0$, 
+* Attiecībā uz mainīgajiem $x_i$ var būt nosacījumi $x_i \geq 0$, $x_i \leq 0$, 
 vai vispār nebūt nosacījuma attiecībā uz $x_i$.
 
 </div>
 
 
 
-# <lo-theory/> Duālā lineārā programma
+# <lo-theory/> Duālā LP uzdevuma definīcija
 
 <div style="font-size:70%">
 
 Par <blue>*duālo programmu*</blue> sauc tādu lineāro programmu, kur jāminimizē izteiksme:
 $$b_1 y_1 + b_2 y_2 + \ldots + b_k y_k,$$
 pie nosacījumiem
-$$a_{11} y_1 + a_{21} y_2 + \ldots + a_{k1} y_k ? c_k,$
+$a_{11} y_1 + a_{21} y_2 + \ldots + a_{k1} y_k \;\;\color{#F00}{?}\;\; c_k,$
 kur simbols jautājuma zīmes vietā tiek noteikts šādi:
 
 * Ja primārajā LP bija nosacījums $x_i \geq 0$, tad jautājuma zīmes vietā ir $\geq$.
 * Ja primārajā LP bija nosacījums $x_i \leq 0$, tad jautājuma zīmes vietā ir $\leq$.
 * Ja primārajā LP nebija nosacījuma attiecībā uz $x_i$, tad jautājuma zīmes vietā ir $=$.
 
-Attiecībā uz mainīgajiem y1, y2, ..., yk, nosacījumi ir atkarīgi no tā, kāda zīme bija primārās LP nosacījumā ai1 x1 + ai2 x2 + ... + ain xn  ? bi:
+Attiecībā uz mainīgajiem $y_1, y_2, \ldots, y_k$, nosacījumi ir atkarīgi no tā, 
+kāda zīme bija primārās LP nosacījumā $a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n \;\;\color{#F00}{?}\;\; b_i$:
 
 * Ja $?$ vietā bija $\geq$, tad mums tagad ir nosacījums $y_i \leq 0$.
 * Ja $?$ vietā bija $\leq$, tad mums tagad ir nosacījums $y_i \geq 0$.
@@ -197,22 +198,31 @@ Attiecībā uz mainīgajiem y1, y2, ..., yk, nosacījumi ir atkarīgi no tā, k�
 
 
 
-# <lo-sample/> LP Piemērs
 
-Primārā lineārā programma ir šāda:  
-Maksimizēt $\color{#00F}{5x_1 + 16x_2}$ pie nosacījumiem
+# <lo-sample/> LP Piemērs #1
+
+<hgroup style="font-size:70%">
+
+**Primārais LP uzdevums:**  
+<blue>Maksimizēt</blue> $\color{#00F}{5x_1 + 16x_2}$ pie nosacījumiem
 $$ \left\{ \begin{array}{l}
 x_1 + x_2 \leq 1,\\
 2x_1 + 7x_2 \leq 9,\\
 x_1 \geq 0,\;\; x_2 \geq 0,
 \end{array} \right.$$
-Tad duālā programma ir:  
-Minimizēt $\color{#00F}{y_1+ 9y_2}$ pie nosacījumiem:
+
+</hgroup>
+<hgroup style="font-size:70%">
+
+**Duālais LP uzdevums:**  
+<red>Minimizēt</red> $\color{#F00}{y_1+ 9y_2}$ pie nosacījumiem:
 $$ \left\{ \begin{array}{l}
 y_1 + 2y_2 \geq 5,\\
 y_1 + 7y_2 \geq 16,\\
 y_1 \geq 0,\;\; y_2 \geq 0.
 \end{array} \right.$$
+
+</hgroup>
 
 
 ## <lo-sample/> Duālās programmas nozīme
@@ -262,11 +272,11 @@ var izmantot arī maksimuma atrašanai.
 
 
 
-# <lo-theory/> Matricu pieraksts: Primārā LP
+# <lo-sample/> LP Piemērs #2
 
-<hgroup>
+<hgroup style="width:40%; font-size:70%;">
 
-**Primārā LP:** <blue>Maksimizēt:</blue> $4x_1 + 2x_2 - x_3,$ kur 
+**Primārais LP uzdevums:** <blue>Maksimizēt:</blue> $\color{#00F}{4x_1 + 2x_2 - x_3}$, kur 
 $$\left\{
 \begin{array}{l}
 x_1 + x_2 + x_3 = 20\\
@@ -276,48 +286,109 @@ x_1,x_2 \geq 0
 \end{array} \right.$$
 
 </hgroup>
+<hgroup style="width:10%; font-size:70%;">
+&nbsp;
+</hgroup>
 <hgroup style="font-size:70%">
 
-$$x = \left(
-\begin{array}{c}
-x_1\\
-x_2\\
-x_3
-\end{array} \right), \;\; b = \left(
-\begin{array}{c}
-20\\
-6\\
-40
-\end{array} \right),$$
-$$c = \left(
-\begin{array}{ccc}
-4 & 2 & -1
-\end{array} \right),$$
+**Matricu pieraksts**
+
+<blue>Maksimizēt skalāro reizinājumu:</blue>
+$\color{#00F}{(4, 2, -1) \cdot (x_1,x_2,x_3)}$, kur 
 $$A = \left(
 \begin{array}{ccc}
 1 & 1 & 1\\
 2 & -1 & 0\\
 3 & 2 & 1
+\end{array} \right) \left(
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3 \end{array} \right) 
+\begin{array}{c}
+=\\
+\geq \\
+\leq
+\end{array}
+\left(
+\begin{array}{c}
+20\\
+6 \\
+40
 \end{array} \right).$$
-</hgroup>
-
-
-# <lo-theory/> Matricu pieraksts: Duālā LP
-
-<hgroup>
-
-Duālā LP:  
-<red>Minimizēt:</red> $4x_1 + 2x_2 - x_3,$ kur 
-$$ \left\{
-\begin{array}{l}
-y_1 + 2y_2 + 3y_3 \geq 4\\
-y_1 - y_2 + 2y_3 \geq 2\\
-y_1 + y_3 = -1\\
-y_2 \leq 0,\; y_3 \geq 0 
-\end{array} \right. $$
+un 
+$$x_1 \geq 0,\;\;x_2 \geq 0,\;\;x_3\;\text{bez nosac.}.$$
 
 </hgroup>
-<hgroup>
+
+
+## <lo-sample/> LP Piemērs #2
+
+<hgroup style="width:50%; font-size:65%;">
+
+**Primārais LP uzdevums:**
+
+<blue>Maksimizēt skalāro reizinājumu:</blue>
+$\color{#00F}{(4, 2, -1) \cdot (x_1,x_2,x_3)}$, kur 
+$$\left(
+\begin{array}{ccc}
+1 & 1 & 1\\
+2 & -1 & 0\\
+3 & 2 & 1
+\end{array} \right) \left(
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3 \end{array} \right) 
+\begin{array}{c}
+=^{\color{#080}{(a)}}\\
+\geq^{\color{#080}{(b)}} \\
+\leq^{\color{#080}{(c)}}
+\end{array}
+\left(
+\begin{array}{c}
+20\\
+6 \\
+40
+\end{array} \right).$$
+un  
+$x_1 \geq^{\color{#080}{(d)}} 0$, $x_2 \geq^{\color{#080}{(e)}} 0$, $x_3\;\text{bez nosac.}^{\color{#080}{(f)}}$
+
+</hgroup>
+<hgroup style="width:50%; font-size:65%;">
+
+**Duālais LP uzdevums:**  
+
+<red>Minimizēt skalāro reizinājumu:</red> $\color{#F00}{(20,6,-40) \cdot \left( y_1, y_2, y_3 \right)}$, kur 
+$$\left(
+\begin{array}{ccc}
+1 & 2 & 3\\
+1 & -1 & 2\\
+1 & 0 & 1
+\end{array} \right) \left(
+\begin{array}{c}
+y_1\\
+y_2\\
+y_3 \end{array} \right) 
+\begin{array}{c}
+\geq^{\color{#080}{(d)}}\\
+\geq^{\color{#080}{(e)}} \\
+=^{\color{#080}{(f)}}
+\end{array}
+\left(
+\begin{array}{c}
+4\\
+2 \\
+-1
+\end{array} \right).$$
+un   
+$$y_1\;\text{bez nosac.}^{\color{#080}{(a)}},\;y_2 \leq^{\color{#080}{(b)}} 0,\;\;y_3 \geq^{\color{#080}{(c)}} 0.$$
+
+
+
+</hgroup>
+
+::: notes
 
 * Koeficientus iegūst, transponējot $A$. 
 * Vienādību un nevienādību tipus nosaka atbilstoši 
@@ -325,19 +396,61 @@ augšminētajiem noteikumiem: Piemēram, ja $x_1 \geq 0$ primārajā
 problēmā, tad $x_1$ mainīgajam atbilstošais duālais vienādojums 
 $y_1 + 2y_2 + 3y_3 \geq 4$. 
 
-</hgroup>
+:::
 
 
 
-<!--
+# <lo-summary/> Duālais uzdevums (tikai nevienādības)
 
-## <lo-soln/> Dualitātes teorēma matricu veidā
+Dualitāte izsakāma īpaši vienkārši, ja visi nosacījumi ir nevienādības.
 
 <hgroup>
 
-Maksimizēt $z = \mathbb{c} \cdot \mathbb{x}$, kur $A\mathbb{x} 
+**Primārais LP uzdevums:**  
+Maksimizēt skalāro reizinājumu $z = \mathbb{c} \cdot \mathbb{x}$, kur 
+$$\left\{ \begin{array}{l}
+A\mathbb{x} \leq \mathbb{b}\\
+\mathbb{x} \geq \mathbb{0} 
+\end{array} \right.$$
 
--->
+</hgroup>
+<hgroup>
+
+**Duālais LP uzdevums:**  
+Minimizēt skalāro reizinājumu $Z = \mathbb{y} \cdot \mathbb{b}$, kur
+$$\left\{ \begin{array}{l}
+A^{T}\mathbb{y} \geq \mathbb{c}\\
+\mathbb{y} \geq \mathbb{0} 
+\end{array} \right.$$
+
+</hgroup>
+
+## <lo-summary/> Dualitātes teorēma - 1
+
+**Dualitātes teorēma:** 
+(1) Ja $\mathbb{x}^{\ast}$ ir pieļaujams vektors primārajai problēmai 
+(apmierina nevienādības $A\mathbb{x}^{\ast} \leq \mathbb{b}$ un 
+$\mathbb{x}^{\ast} \geq \mathbb{0}$),  
+(2) Un ja $\mathbb{y}^{\ast}$ ir 
+pieļaujams risinājums duālajai problēmai 
+(apmierina nevienādības 
+$A^{T}\mathbb{y} \geq \mathbb{c}$ un $\mathbb{y} \geq \mathbb{0}$,  
+TAD  
+$\mathbb{c}\cdot \mathbb{x}^{\ast} \leq \mathbb{b} \cdot \mathbb{y}^{\ast}$.  
+
+# <lo-summary/> Dualitātes teorēma - 2
+
+**Dualitātes teorēma (turpinājums):** 
+Ja turklāt $\mathbb{x}^{\ast}$ un $\mathbb{y}^{\ast}$ ir optimālie 
+atrisinājumi attiecīgi primārajai un duālajai lineārajām programmām, tad 
+$$\mathbb{c}\cdot \mathbb{x}^{\ast} = \mathbb{b} \cdot \mathbb{y}^{\ast}$$
+
+**Definīcija:** Atšķirību $\mathbb{b} \cdot \mathbb{y}^{\ast} - \mathbb{c} \cdot \mathbb{x}^{\ast}$
+sauc par <blue>*dualitātes atstarpi*</blue> 
+(*duality gap*). Šīs atstarpes lielums palīdz noteikt, cik tālu 
+pašreizējais atrisinājums (neoptimāls, bet pieļaujams vektors $\mathbb{x}$ 
+vai attiecīgi $\mathbb{y}$) ir no optimālā.
+
 
 
 # &nbsp;
@@ -362,6 +475,51 @@ Maksimizēt $z = \mathbb{c} \cdot \mathbb{x}$, kur $A\mathbb{x}
 
 
 
+# <lo-theory/> Mākslīgu mainīgo pievienošana - 1
+
+**Gadījums Nr.1:** Dots LP uzdevums šādā formā:
+$$A\mathbb{x} \color{#F00}{\leq} \mathbb{b},\;\;x \geq 0,\;\; \mathbb{b} \geq 0.$$
+
+Var pievienot <blue>*nokares mainīgos*</blue> (*slack variables*), 
+kas nosaka sākumstāvokli: visi vektora $\mathbb{x}$ mainīgie ir $0$, 
+bet visi nokares mainīgie $\mathbb{y}$ vienādi ar attiecīgajām 
+vērtībām $\mathbb{b}$. 
+
+
+## <lo-summary/> Mākslīgu mainīgo pievienošana - 2
+
+<div style="font-size:70%">
+
+**Gadījums Nr.2:** Dots LP uzdevums, kur nevienādības vietā ir vienādība:
+$$A\mathbb{x} \color{#F00}{\leq} \mathbb{b},\;\;x \geq 0,\;\; \mathbb{b} \geq 0,$$
+tad pirmo tuvinājumu vispirms ir jāatrod. 
+
+Viens no veidiem - sākt risināt nedaudz izmainītu uzdevumu. 
+
+![Adding Artificial Variables](adding-artificial-variables.png)
+
+Katram mākslīgajam mainīgajam piekārtojam ļoti negatīvu $c_i$, 
+lai noteikti nebūtu izdevīgi tam piešķirt nekādu pozitīvu vērtību.
+
+</div>
+
+
+## <lo-summary/> Mākslīgu mainīgo pievienošana - 3
+
+
+Sākotnēji visi mākslīgie mainīgie ir "pamata mainīgie" (ja izmaksu 
+vektora vērtības $c_i$ zem tiem var pataisīt par 0, izmantojot 
+Gausa izslēgšanas metodi). 
+
+Pēc tam simpleksa algoritms tos citu pēc cita padara par brīvajiem 
+mainīgajiem.
+
+1. Ja visi mākslīgie mainīgie kļūst brīvi, tad tiem atbilstošās kolonnas 
+var turpmāk ignorēt (aprēķini šajās kolonnās vairs neiespaidos LP atrisinājumu), 
+jo neviens no tiem nebūs pozitīvs.
+2. Ja mākslīgie mainīgie saglabājas pie pamatmainīgajiem un tos izslēgt 
+gājienu skaitā, kas sakristu ar šo mainīgo skaitu, neizdodas, tad nosacījumi ir 
+pretrunīgi.
 
 
 
@@ -388,16 +546,18 @@ Maksimizēt $z = \mathbb{c} \cdot \mathbb{x}$, kur $A\mathbb{x}
 
 # <lo-summary/> Elipsoīda algoritma ievads
 
-Šo algoritmu izgudroja Hačijans (Khachiyan) 1979. gadā. 
+Šo algoritmu izgudroja Hačijans (Khachiyan) 1979. gadā.  
 Elipsoīda algoritms pazīstams kā pirmais lineārās programmēšanas algoritms, 
-kuram tika pierādīts, ka tas atrod atrisinājumu polinomiālā laikā 
-($O(n^4L)$, kur $n$ - dimensiju skaits, $L$ – ar cik bitu precizitāti jāatrod atrisinājums). 
+kuram tika pierādīts, ka tas atrod atrisinājumu polinomiālā laikā ($O(n^4L)$),
+kur $n$ - dimensiju skaits, $L$ – ar cik bitu precizitāti jāatrod atrisinājums. 
 
 Lai gan teorētiski darbības laiks ir polinomiāls, praksē algoritms ir 
 lēns un netiek lietots. Tāpēc šajā kursā mēs ierobežosimies ar īsu šī algoritma aprakstu.
 
 
 ## <lo-summary/> Elipsoīda algoritma pārskats
+
+<div style="font-size:70%">
 
 Dualitātes teorēmas (un redukcijas uz primāro+duālo) dēļ 
 pietiek ar algoritmu, kas atrod punktu, kur izpildās visi nosacījumi. To meklē šādi:
@@ -416,6 +576,9 @@ kur nonāk pieļaujamais apgabals.
 4. Uzkonstruē jaunu elipsoīdu $E_{i+1}$, tā lai izpildītos
 $$E_i \cap R_2 \subseteq E_{i+1}.$$
 
+</div>
+
+
 
 ## <lo-summary/> Apgalvojums par elipsoīdu
 
@@ -427,7 +590,7 @@ $$E_i \cap R_2 \subseteq E_{i+1}.$$
 <hgroup>
 
 Hačjana konstrukcijā (*barycentric coordinate descent*) elipsoīdi ir tādi, ka 
-$$\frac{\text{Volume}(E_{k+1})}{\text{Volume}(E_{k})} = \frac{1}{2^{\frac{1}{2n+1}}$$
+$$\frac{\text{Volume}(E_{k+1})}{\text{Volume}(E_{k})} = \frac{1}{2^{\frac{1}{2n+1}}}$$
 veido konstantu attiecību, kas atkarīga no dimensiju skaita $n$. 
 
 
@@ -460,6 +623,8 @@ veido konstantu attiecību, kas atkarīga no dimensiju skaita $n$.
 
 # <lo-sample/> Maksimālās plūsmas atrašana grafā
 
+<div style="font-size:90%">
+
 ![Max Flow Graph](max-flow-graph.png)
 
 Aplūkotajā grafā katrai šķautnei ir pierakstīta skaitliska vērtība - maksimālā 
@@ -470,16 +635,20 @@ Var sūtīt arī mazāku plūsmu.
 Šim uzdevumam 1956.g. tika izveidots [Forda-Falkersona algoritms](https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm) (*Ford-Fulkerson algorithm*), ko kursā neaplūkojam. 
 Uzdevumu var arī reducēt uz Lineāro programmēšanu. 
 
+</div>
 
 
 # <lo-soln/> Lineārā programma
 
-<div style="font-size:70%">
+<hgroup style="font-size:70%">
 
 ![Flow Preservation](flow-preservation.png)
 
 Katrai (neorientētai) šķautnei ieviešam divus mainīgos, piemēram, $x_1$ un 
 $x'_1$ (nenegatīvas plūsmas katrā no iespējamajiem virzieniem). 
+
+</hgroup>
+<hgroup style="font-size:70%">
 
 1. Katrai virsotnei grafā rakstām "plūsmas saglabāšanās" ("flow preservation") 
 vienādojumus. Piemēram, 
@@ -491,6 +660,7 @@ $$x_1 \leq 3,\;\;x'_1 \leq 3.$$
 3. Visas plūsmas ir nenegatīvas. Piemēram, 
 $$x_1 \geq 0,\;\;x'_1 \geq 0.$$
 
+</hgroup>
 
 # <lo-soln/> Maksimizējamā funkcija
 
@@ -536,5 +706,20 @@ uzdevumam formulējam duālo uzdevumu un mēģinām atrast šī uzdevuma interpr
 <span style="color:darkgreen">**(7) Kopsavilkums**</span>
 
 </hgroup>
+
+
+
+# <lo-theory/> Ko darījām šajā nodarbībā
+
+1. Aplūkojām Hamiltona ciklus kā piemēru, kur veselo skaitļu programmēšana
+atšķiras no lineārās programmēšanas.
+2. Aprakstījām vispārīgo simpleksa algoritma iteratīvo soli.
+3. Veidojām dotajam LP uzdevumam duālo. 
+4. Formulējām dualitātes teorēmu. 
+5. Minējām metodi sākotnējā tuvinājuma atrašanai (un pārbaudei, vai LP uzdevums
+ir atrisināms un nav pretrunīgs). 
+6. Aprakstījām elipsoīda algoritmu. 
+7. Aprakstījām, kā maksimālo plūsumu grafā var formulēt kā LP uzdevumu.
+
 
 

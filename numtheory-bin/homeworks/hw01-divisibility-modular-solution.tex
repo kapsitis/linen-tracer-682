@@ -1,0 +1,225 @@
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{amsthm}
+\usepackage{thmtools}
+
+
+\usepackage{fontspec} % loaded by polyglossia, but included here for transparency 
+\usepackage{polyglossia}
+
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\setmainlanguage{russian} 
+\setotherlanguage{english}
+
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}
+\newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial}
+\newfontfamily\cyrillicfonttt[Script=Cyrillic]{Courier New}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin 0.0in
+\headheight 0.0in
+\headsep 0.0in
+%\textheight 9.69in
+\textheight 9.00in
+ 
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+%\newenvironment{uzdevums}[1][\unskip]{%
+%\vspace{3mm}
+%\noindent
+%\textbf{#1:}
+%\noindent}
+%{}
+
+% (4;10;12;17)
+% (p1.19;5;15;20)
+
+% http://tex.stackexchange.com/questions/196961/thmtools-declaration-for-theorem-and-proof
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+%\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\def\changemargin#1#2{\list{}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\newcommand{\subf}[2]{%
+  {\small\begin{tabular}[t]{@{}c@{}}
+  #1\\#2
+  \end{tabular}}%
+}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+\newenvironment{zhtext}{\fontfamily{MS PGothic}\selectfont}{\par}
+
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+\newenvironment{tulkojums}[1][\unskip]{%
+\begin{changemargin}{8mm}{8mm}
+\fontsize{9}{11}
+\selectfont
+\textbf{#1:}
+}
+{ 
+\fontsize{12}{14}
+\selectfont
+\end{changemargin}
+}
+
+\setcounter{section}{1}
+
+
+\begin{document}
+
+\begin{center}
+{\Large \bf NMS Izlase junioriem: 1.nodarbība skaitļu teorijā}
+\end{center}
+
+\vspace{10pt}
+{\bf \large 1.nodaļa: Pirmskaitļi un dalāmība}
+
+\vspace{10pt}
+{\footnotesize
+{\bf 1.uzdevums.} Dota kopa $S = \{ 105,106,\ldots,210 \}$. Noteikt mazāko 
+naturālo $n$ vērtību, ka, izvēloties jebkuru $n$ skaitļu 
+apakškopu $T$ no kopas $S$, tajā būs vismaz divi skaitļi, kuri nav 
+savstarpēji pirmskaitļi. 
+}
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+\vspace{10pt}
+{\footnotesize
+{\bf 2.uzdevums.}
+Visiem veseliem pozitīviem skaitļiem $m > n$ pierādīt, ka 
+$$\mbox{MKD}(m,n) + \mbox{MKD}(m+1,n+1) > \frac{2mn}{\sqrt{m-n}}.$$
+}
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+
+\vspace{10pt}
+{\footnotesize
+{\bf 3.uzdevums.}
+Vai eksistē bezgalīga 
+stingri augoša naturālu skaitļu virkne $a_1 < a_2 < a_3 <\ldots$, 
+ka jebkuram fiksētam naturālam skaitlim $a$ virknē $a_1+a < a_2+a < a_3 + a,\ldots$ 
+ir tikai galīgs skaits pirmskaitļu? 
+}
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+\vspace{10pt}
+{\footnotesize
+{\bf 4.uzdevums.}
+Pierādīt, ka virkne $1,11,111,\ldots$ satur bezgalīgu apakšvirkni, 
+kuras katri divi locekļi ir savstarpēji pirmskaitļi.
+}
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+
+
+\vspace{30pt}
+{\bf \large 2.nodaļa: Modulārā aritmētika}
+
+% (p1.19;5;15;20)
+
+\vspace{10pt}
+{\footnotesize
+{\bf 5.uzdevums.}
+Atrast visus pirmskaitļus $p$, ka skaitlim $p^2 + 11$ ir tieši 
+seši dažādi dalītāji (ieskaitot $1$ un pašu skaitli).
+}
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+
+\vspace{10pt}
+{\footnotesize
+{\bf 6.uzdevums.}
+Uz tāfeles sākumā uzrakstīts viens skaitlis: 
+$$\underbrace{99\ldots{}99}_{1997\;\text{deviņnieki}}.$$
+Vienā gājienā atļauts kādu uz tāfeles esošo skaitli sadalīt 
+divos reizinātājos; tad katru no reizinātājiem (neatkarīgi vienu no otra) 
+palielināt vai samazināt par $2$ un uzrakstīt šos rezultātus uz tāfeles.\\
+Vai pēc kāda no gājieniem uz tāfeles var būt skaitļi, kas visi vienādi ar $9$?
+}
+
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+
+\vspace{10pt}
+{\footnotesize
+{\bf 7.uzdevums.}
+Trijstūra malu garumi ir $k$, $m$ un $n$. Pieņemsim, ka $k > m > n$ un 
+$$\left\{ \frac{3^k}{10^4} \right\} = \left\{ \frac{3^m}{10^4} \right\} = \left\{ \frac{3^n}{10^4} \right\}.$$
+Noteikt trijstūra perimetra mazāko iespējamo vērtību.\\ 
+{\em Piezīme.} Ar $\{ x \} = x - \lfloor x \rfloor$ apzīmē skaitļa $x$ daļveida daļu - 
+starpību starp skaitli $x$ un tā veselo daļu (lielāko veselo 
+skaitli, kas nepārsniedz $x$).
+}
+
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+
+\vspace{10pt}
+{\footnotesize
+{\bf 8.uzdevums.}
+\begin{enumerate}[(a)]
+\item Pierādīt, ka no $39$ pēc kārtas sekojošiem naturāliem skaitļiem atradīsies skaitlis, 
+kura ciparu summa dalās ar $11$.
+\item Atrast mazākos $38$ pēc kārtas sekojošus naturālus skaitļus, kuriem nevienam 
+ciparu summa nedalās ar $11$.
+\end{enumerate}
+}
+
+
+\vspace{6pt}
+{\bf Atrisinājums.} 
+
+\end{document}
+
+

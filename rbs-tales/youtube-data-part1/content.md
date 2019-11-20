@@ -33,6 +33,13 @@
 
 Visit https://socialblade.com/ to see YouTube listings (including top 250 channels in Latvia).
 
+
+https://polsy.org.uk/stuff/ytrestrict.cgi
+Enter this:
+https://www.youtube.com/watch?v=MZvVvEAPScU&feature=youtu.be 
+(or any other video)
+
+
 (1) Slaidu tekstam jābūt minimālam; tam tikai jādod neliels rāmītis skolēnu pašu darbam.
 (2) Slaidu idejai jābūt vienkārši izstāstāmai, nav jāizmanto grūti un mulsinoši termini.
 (3) Jautājumiem jāizskatās dabiskiem, jārada interesi uzzināt vairāk, atnākt uz vēl kādu darbnīcu.

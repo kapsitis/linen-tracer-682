@@ -42,11 +42,15 @@
 <b>Esc</b> - pārskats; <b>Home</b> - uz sākumu; <b>End</b> - uz beigām; 
 bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
 
-<ul>
+<table class="schedule">
+<tr><th>Tēma</th><th>Datums</th></tr>
 {% for tale in tales %}
-<li><a href="../algorithms-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li></li>
+<tr><td>
+<a href="../algorithms-tales/{{tale.dir}}/content.html">{{tale.title}}</a>
+</td>
+<td>{{tale.date}}</td></tr>
 {% endfor %}
-</ul>
+</table>
 
 
 

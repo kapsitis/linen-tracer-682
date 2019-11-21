@@ -56,6 +56,19 @@ dt {
     font-weight: bold;
 }
 
+table.schedule {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.schedule td, table.schedule th {
+    padding: 2px 5px 2px 5px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
 button.nav {
     margin-bottom: 2px;
     color: white;

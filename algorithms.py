@@ -15,57 +15,69 @@ class AlgorithmsHandler(webapp2.RequestHandler):
         {
             'id':'Algorithms.Lossless1', 
             'dir':'tale-algorithms-lossless-part1',
-            'title': u'Bezzudumu saspiešana - 1'
+            'title': u'Bezzudumu saspiešana - 1',
+            'date': '2019-09-03'
         },
         {
             'id':'Algorithms.Lossless2', 
             'dir':'tale-algorithms-lossless-part2',
-            'title': u'Bezzudumu saspiešana - 2'
+            'title': u'Bezzudumu saspiešana - 2',
+            'date': '2019-09-10'
+
         },
         {
             'id':'Algorithms.Lossless3', 
             'dir':'tale-algorithms-lossless-part3',
-            'title': u'Bezzudumu saspiešana - 3'
+            'title': u'Bezzudumu saspiešana - 3',
+            'date': '2019-09-17'
         },
         {
             'id':'Algorithms.Lossy1',
             'dir':'tale-algorithms-lossy-part1',
-            'title': u'Zudumradošā saspiešana - 1'
+            'title': u'Zudumradošā saspiešana - 1',
+            'date': '2019-09-24'            
         },
         {
             'id':'Algorithms.Lossy2',
             'dir':'tale-algorithms-lossy-part2',
-            'title': u'Zudumradošā saspiešana - 2'
+            'title': u'Zudumradošā saspiešana - 2',
+            'date': '2019-10-01'            
         },
         {
             'id':'Algorithms.ErrorCorrection1',
             'dir':'tale-error-correction-part1',
-            'title': u'Kļūdu labošanas algoritmi - 1'
+            'title': u'Kļūdu labošanas algoritmi - 1',
+            'date': '2019-10-08'                        
         },
         {
             'id':'Algorithms.ErrorCorrection2',
             'dir':'tale-error-correction-part2',
-            'title': u'Kļūdu labošanas algoritmi - 2'
+            'title': u'Kļūdu labošanas algoritmi - 2',
+            'date': '2019-10-15'                        
         },
         {
             'id':'Algorithms.AsymmetricCryptography',
             'dir':'tale-asymmetric-cryptography-part1',
-            'title': u'Asimetriskā kriptogrāfija - 1'
+            'title': u'Asimetriskā kriptogrāfija - 1',
+            'date': '2019-10-22'                        
         },
         {
             'id':'Algorithms.LinearOptimization1',
             'dir':'tale-linear-optimization-part1',
-            'title': u'Lineārā optimizācija - 1'
+            'title': u'Lineārā optimizācija - 1',
+            'date': '2019-11-05'                        
         },
         {
             'id':'Algorithms.LinearOptimization2',
             'dir':'tale-linear-optimization-part2',
-            'title': u'Lineārā optimizācija - 2'
+            'title': u'Lineārā optimizācija - 2',
+            'date': '2019-11-12'             
         },           
         {
             'id':'Algorithms.LinearOptimization3',
             'dir':'tale-linear-optimization-part3',
-            'title': u'Lineārā optimizācija - 3'
+            'title': u'Lineārā optimizācija - 3',
+            'date': '2019-10-19'             
         }           
            
     ]       

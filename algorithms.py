@@ -77,9 +77,16 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'id':'Algorithms.LinearOptimization3',
             'dir':'tale-linear-optimization-part3',
             'title': u'Lineārā optimizācija - 3',
-            'date': '2019-10-19'             
-        }           
-           
+            'date': '2019-11-19',
+            'attachment': u'../algorithms-bin/liet2008-11-v2.doc',
+            'attachmentTitle': u'Vēst.lekcija: Lineārā programmēšana IV'
+        },
+        {
+            'id':'Algorithms.StringSearching1',
+            'dir':'tale-string-searching-part1',
+            'title': u'Virkņu meklēšana - 1',
+            'date': '2019-11-26'                        
+        }
     ]       
 
     total_grades = { '40200A': '24.1', 

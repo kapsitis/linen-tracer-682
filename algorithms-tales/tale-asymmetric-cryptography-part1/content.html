@@ -50,11 +50,13 @@ Lietišķie algoritmi
 <span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
 </hgroup></section>
 <section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
-<p>Kāpēc epastu pasaulē šifrēšana noved pie skaitļu teorijas algoritmiem?</p>
+<p>Kāpēc dažādi drošas komunikācijas uzdevumi noved pie līdzīgām veselu skaitļu manipulācijām?</p>
 </div>
 <div class="smallWhy">
 <ul>
-<li>Kāpēc ir tikai galīgs (neliels) skaits asimetrisko atslēgu algoritmu?</li>
+<li>Simetrisku atslēgu apmaiņa ar asimetriskām atslēgām.</li>
+<li>Digitāli paraksti, to nenoliedzamība.</li>
+<li>Digitālu sertifikātu apstiprināšana (Certificate Authorities)</li>
 </ul>
 </div></section>
 <section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
@@ -83,8 +85,9 @@ Lietišķie algoritmi
 <h2><lo-summary/> Vienreiz lietojamās atslēgas</h2>
 <div style="font-size:70%">
 <ul>
-<li>“One-time pad” - ļoti ātrs un (pat teorētiski) neatšifrējams.</li>
+<li>“One-time pad” - ļoti ātrs un neatšifrējams, bet tajā ir garas atslēgas.</li>
 <li>Vajadzīgs nejaušo skaitļu ģenerators; garas atslēgas grūti pārraidīt.</li>
+<li>Pseidonejaušu skaitļu ģeneratori bieži ir apšaubāmi.</li>
 </ul>
 <p><span class="math display">\[ \left\{ \begin{array}{l}
 s_0 = 12345\\
@@ -95,6 +98,11 @@ s_{i+1} = 1103515245s_i + 12345\;(\text{mod}\,2^{31})
 <small>(c) <a href="https://dilbert.com/strip/2001-10-25">Dilbert.com</a></small></p>
 </div>
 </section></section>
+<section id="aes-pazīstamākais-simetriskais-šifrs" class="title-slide slide level1"><h1><lo-summary/> AES: Pazīstamākais simetriskais šifrs</h1><ul>
+<li>AES (<em>Advanced Encryption Standard</em>) ap 2002.g. tika izraudzīts kā standarts ASV valdības dokumentu (tostarp konfidenciālo) drošai pārraidei. To ieviesa US National Institute of Standards and Technology (NIST).</li>
+<li>AES ir bloku šifrs - visi šifrējamie bloki ir 128 bitus gari;</li>
+<li>AES atslēgas var būt 128, 192, 256 bitus garas.</li>
+</ul></section>
 <section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Lietišķie algoritmi
@@ -129,6 +137,37 @@ Lietišķie algoritmi
 <span>(8) <a href="#/section-7">(P) Epastu drošība</a></span><br />
 <span>(9) <a href="#/section-8">Kopsavilkums</a></span></p>
 </hgroup></section>
+<section><section id="rsa-pamatideja" class="title-slide slide level1"><h1><lo-summary/> RSA pamatideja</h1><ul>
+<li>Eksistē efektīvi algoritmi (polinomiālā laikā no skaitļa pieraksta garuma), kas noskaidro, vai skaitlis ir pirmskaitlis.</li>
+<li>Pirmskaitļu blīvums (to skaits pietiekami garos intervālos, dalot ar intervāla garumu) dilst ļoti lēni - kā funkcija <span class="math inline">\(\frac{1}{\ln x}\)</span>.<br />
+Ir, teiksim, 0.43% varbūtība, ka nejauši izraudzīts 100-ciparu skaitlis izrādīsies pirmskaitlis.</li>
+<li>BET neeksistē efektīvs algoritms lielu skaitļu faktorizācijai.</li>
+</ul></section><section id="rsa-atslēgu-izveidošana" class="slide level2">
+<h2><lo-summary/> RSA atslēgu izveidošana</h2>
+<hgroup>
+<p><strong>Publiskā informācija:</strong></p>
+<ul>
+<li>Bobs vēlas no Alises (un arī daudziem citiem) saņemt šifrētas ziņas. Viņš veido “publisko sertifikātu”:
+<ul>
+<li>Izziņo divu ļoti lielu pirmskaitļu reizinājumu <span class="math inline">\(n = p \cdot q\)</span> (bet ne pašus pirmskaitļus).</li>
+<li>Izziņo “publisko kāpinātāju” <span class="math inline">\(e\)</span>, kurš nedalās ne ar <span class="math inline">\(p\)</span>, ne ar <span class="math inline">\(q\)</span>.</li>
+</ul></li>
+</ul>
+</hgroup>
+<hgroup>
+<p><strong>Privātā informācija:</strong></p>
+<ul>
+<li>Bobam, lai atšifrētu, ir arī “privātais sertifikāts”:
+<ul>
+<li>Atrod <span class="math inline">\(\varphi(n) = (p-1)(q-1)\)</span> - skaitļu skaits no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(n-1\)</span>, kas ir savstarpēji pirmskaitļi ar <span class="math inline">\(n\)</span> (kas nedalās ne ar <span class="math inline">\(p\)</span>, ne ar <span class="math inline">\(q\)</span>).</li>
+<li>Atrod "privāto kāpinātāju <span class="math inline">\(d\)</span>, kuram ir spēkā: <span class="math display">\[e \cdot d \equiv 1\;(\text{mod}\,\varphi(n)).\]</span></li>
+</ul></li>
+</ul>
+</hgroup>
+</section></section>
+<section id="protokols" class="title-slide slide level1"><h1><lo-summary/> Protokols</h1><ol type="1">
+<li></li>
+</ol></section>
 <section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Lietišķie algoritmi

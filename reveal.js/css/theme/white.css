@@ -216,10 +216,19 @@ from the 3Blue1Brown channel "windmill" video
 
 
 /* KAP added */
-hgroup {
+h1 + hgroup, h2 + hgroup {
   float: left;
-  width: 50%;
+  width: 47%;
+  margin: 0% 2.5% 0% 0%;
 }
+
+
+hgroup ~ hgroup {
+  float: left;
+  width: 47%;
+  margin: 0% 0% 0% 2.5%;
+}
+
 
 
 .reveal h1 {
@@ -474,6 +483,67 @@ div.smallWhy {
 table.optable td {
   text-align: left;
 }
+
+
+.reveal div.pseudocode {
+  background-color: #ffffcc; 
+  padding: 5px 20px 5px 20px; 
+  font-family:serif; 
+  font-size:70%;
+  border: 1px solid #cccccc;
+}
+
+.reveal div.pseudocode p.title {
+  line-height: 1.5;
+}
+
+
+.reveal table.pseudocode {
+  background-color: #e5e3e1; 
+  font-family:serif; 
+  font-size:70%;
+  border: 1px solid #cccccc;
+  width: 100%;
+}
+
+.reveal table.pseudocode tr th {
+  background-color: #e5e3e1;
+  font-weight: normal;
+  text-align: left;
+  line-height: 1.5;
+  border: none;
+}
+
+.reveal table.pseudocode tt {
+  font-variant: small-caps;
+  font-family:serif; 
+}
+
+.reveal table.pseudocode tr td:nth-child(1) {
+  font-size:70%;
+  padding: 0px 30px 0px 0px;
+  color: #666666;
+  border: none;
+}
+
+.reveal table.pseudocode tr td:nth-child(2) {
+  text-align: left;
+  padding: 0px 0px 0px 0px;
+  border: none;
+}
+
+.reveal table.pseudocode td.ind1 {
+  padding-left:2em !important;
+}
+
+.reveal table.pseudocode td.ind2 {
+  padding-left:4em !important;
+}
+
+.reveal table.pseudocode td.ind3 {
+  padding-left:6em !important;
+}
+
 
 
 

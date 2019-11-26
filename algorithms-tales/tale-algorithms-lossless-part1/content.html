@@ -245,20 +245,89 @@ Lietišķie algoritmi
 </figure>
 <p>Hafmana algoritms atbilst <blue><em>rijīgo</em></blue> (<em>greedy</em>) algoritmu paradigmai - “lokāla” optimizēšana šoreiz noved pie globāli optimāla risinājuma.</p></section><section id="algoritma-pseidokods" class="slide level2">
 <h2><lo-theory/> Algoritma pseidokods</h2>
-<pre><code>Huffman(S)
-1. n = |S|  // elementu skaits
-2. Q = S    // Q - min-prioritāšu kaudze
-3. for i=1 to n-1
-4.     allocate a new node z
-5.     z.left = x = ExtractMin(Q)
-6.     z.right = y = ExtractMin(Q)
-7.     z.freq = x.freq + y.freq
-8.     Insert(Q,z)
-9. return ExtractMin(Q)</code></pre>
+<table class="pseudocode">
+<tr>
+<th colspan="2">
+Huffman(<span class="math inline">\(S\)</span>)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(n = |S|\)</span>  <green>// elementu skaits</green>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+<span class="math inline">\(Q = S\)</span>  <green>// Q - min-prioritāšu kaudze</green>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<b>for</b> <span class="math inline">\(i=1\)</span> to <span class="math inline">\(n-1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td class="ind1">
+radām jaunu koka virsotni <span class="math inline">\(z\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td class="ind1">
+<span class="math inline">\(z.\mathit{left}=x=\)</span><span class="smallcaps">ExtractMin(<span class="math inline">\(Q\)</span>)</span>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td class="ind1">
+<span class="math inline">\(z.\mathit{right}=y=\)</span><span class="smallcaps">ExtractMin(<span class="math inline">\(Q\)</span>)</span>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind1">
+<span class="math inline">\(z.\mathit{freq} = x.\mathit{freq} + y.\mathit{freq}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<span class="smallcaps">Insert(<span class="math inline">\(Q\)</span>,<span class="math inline">\(z\)</span>)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+<b>return</b> <span class="smallcaps">ExtractMin(<span class="math inline">\(Q\)</span>)</span>
+</td>
+</tr>
+</table>
 <ul>
-<li><code>ExtractMin(Q)</code> minimuma prioritāšu kaudzē prasa <span class="math inline">\(O(\log n)\)</span> laiku</li>
-<li><code>Insert(Q,z)</code> arī prasa <span class="math inline">\(O(\log n)\)</span> laiku</li>
-<li><code>Huffman(S)</code> prasa <span class="math inline">\(O(n \log n)\)</span> laiku</li>
+<li><span class="smallcaps">ExtractMin(<span class="math inline">\(Q\)</span>)</span> minimuma prioritāšu kaudzē vajag <span class="math inline">\(O(\log n)\)</span>.</li>
+<li><span class="smallcaps">Insert(<span class="math inline">\(Q\)</span>,<span class="math inline">\(z\)</span>)</span> laiks arī ir <span class="math inline">\(O(\log n)\)</span>.</li>
+<li><span class="smallcaps">Huffman(<span class="math inline">\(S\)</span>)</span> laiks ir <span class="math inline">\(O(n \log n)\)</span>.</li>
 </ul>
 </section><section id="kā-atspiest-hafmana-kodējumu" class="slide level2">
 <h2><lo-theory/> Kā atspiest Hafmana kodējumu</h2>

@@ -52,6 +52,8 @@ Typing in long, exact questions often does not work
 
 * [Google Live Trainings](https://www.google.com/insidesearch/searcheducation/training.html)
 
+http://www.powersearchingwithgoogle.com/course/ps/course.html
+
 -->
 
 

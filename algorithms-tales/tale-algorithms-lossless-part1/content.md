@@ -352,22 +352,51 @@ risinājuma.
 
 ## <lo-theory/> Algoritma pseidokods
 
-```
-Huffman(S)
-1. n = |S|  // elementu skaits
-2. Q = S    // Q - min-prioritāšu kaudze
-3. for i=1 to n-1
-4.     allocate a new node z
-5.     z.left = x = ExtractMin(Q)
-6.     z.right = y = ExtractMin(Q)
-7.     z.freq = x.freq + y.freq
-8.     Insert(Q,z)
-9. return ExtractMin(Q)
-```
+<table class="pseudocode">
+<tr><th colspan="2">Huffman($S$)</th></tr>
+<tr>
+<td>1</td>
+<td>$n = |S|$&nbsp;&nbsp;<green>// elementu skaits</green></td>
+</tr>
+<tr>
+<td>2</td>
+<td>$Q = S$&nbsp;&nbsp;<green>// Q - min-prioritāšu kaudze</green></td>
+</tr>
+<tr>
+<td>3</td>
+<td><b>for</b> $i=1$ to $n-1$</td>
+</tr>
+<tr>
+<td>4</td>
+<td class="ind1">radām jaunu koka virsotni $z$</td>
+</tr>
+<tr>
+<td>5</td>
+<td class="ind1">$z.\mathit{left}=x=$<span style="font-variant: small-caps;">ExtractMin($Q$)</span></td>
+</tr>
+<tr>
+<td>6</td>
+<td class="ind1">$z.\mathit{right}=y=$<span style="font-variant: small-caps;">ExtractMin($Q$)</span></td>
+</tr>
+<tr>
+<td>7</td>
+<td class="ind1">$z.\mathit{freq} = x.\mathit{freq} + y.\mathit{freq}$</td>
+</tr>
+<tr>
+<td>8</td>
+<td class="ind1"><span style="font-variant: small-caps;">Insert($Q$,$z$)</span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><b>return</b> <span style="font-variant: small-caps;">ExtractMin($Q$)</span></td>
+</tr>
+</table>
 
-* `ExtractMin(Q)` minimuma prioritāšu kaudzē prasa $O(\log n)$ laiku
-* `Insert(Q,z)` arī prasa $O(\log n)$ laiku
-* `Huffman(S)` prasa $O(n \log n)$ laiku
+* <span style="font-variant: small-caps;">ExtractMin($Q$)</span> 
+minimuma prioritāšu kaudzē vajag $O(\log n)$.
+* <span style="font-variant: small-caps;">Insert($Q$,$z$)</span> laiks arī ir $O(\log n)$.
+* <span style="font-variant: small-caps;">Huffman($S$)</span> laiks ir $O(n \log n)$.
+
 
 ## <lo-theory/> Kā atspiest Hafmana kodējumu
 

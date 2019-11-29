@@ -297,27 +297,29 @@ kas skaitliski vienādas ar $P$.
 ko veido skaitīšanas bāzē-$d$ (*radix*-$d$) cipari: 
 $T[s],T[s+1],\ldots,T[s+m-1]$, kur nobīde
 $s$ var būt $0,1,\ldots,n-m$.
-3. Ja izrēķināts $t_s$, tad nākamo skaitli $t_{s+1}$ var iegūt 
+3. Ja zināms $t_s$, tad $t_{s+1}$ var iegūt 
 ar algebrisku triku:
-$$t_{s+1} = d \cdot (t_s - d^{m-1}T[s]) + T[s+m].$$
-Citiem vārdiem, viskreisākā (vecākā) cipara vērtību $d^{m-1}T[s]$ atņem, 
-tad pabīda citus ciparus vienu pozīciju uz augšu (piereizina ar $d$) un visbeidzot
-pieskaita jaunāko ciparu $T[s+m]$. 
+$$t_{s+1} = \left( t_s - d^{m-1}T[s] \right) \cdot d + T[s+m].$$
+    - No $t_s$ atņem kreisā/vecākā cipara vērtību $d^{m-1}T[s]$, 
+    - Pabīda citus ciparus vienu pozīciju uz augšu (piereizina ar $d$),
+    - Visbeidzot pieskaita jaunāko ciparu $T[s+m]$. 
 
 
 
 ## <lo-summary/> Pamatidejas piemērs
 
-* Apskatām decimālo sistēmu. Tajā dots "teksts" $T=\mathtt{31415926}$ 
-(ar garumu $n=8$) un paraugs $P = \mathtt{14159}$ (ar garumu $m=5$).
-* Tekstam $T$ aplūkosim $n-m+1 = 8-5+1=4$ apakšstringus garumā $m=5$, 
-ko apzīmēsim ar $t_0 = 31415$, $t_1 = 14159$, $\ldots$, $t_3 = 15926$. 
-* Pirmo skaitli $t_0$ var iegūt ar <blue>*Hornera shēmu*</blue>:
-$$t_0 = 10 \cdot (10 \cdot (10 \cdot (10 \cdot T[0] + T[1]) + T[2]) + T[3]) + T[4]=$$
-$$= 10 \cdot (10 \cdot (10 \cdot (10 \cdot 3 + 1) + 4) + 1) + 5 = 31415.$$
-Tālāk $t_1$ vairs nav jārēķina tukšā vietā, to var iegūt no $t_0$: 
-$$t_1 = (t_0 - 10^4 \cdot T[0]) + T[5] = (31415 - 10000 \cdot 3) + 9 = 14159.$$
+<div style="font-size:80%">
 
+* Dots "teksts" 10-ciparu alfabētā: $T=\mathtt{31415926}$ 
+(garums $n=8$); paraugs $P = \mathtt{14159}$ (garums $m=5$).
+* Aplūkojam visus $T$ apakšstringus garumā $m=5$:
+$$t_0 = 31415,\;t_1 = 14159,\,t_2=41592,\;t_3 = 15926.$$
+* Pirmo skaitli $t_0 = \color{#F00}{\mathtt{31415}}$ iegūst ar <blue>*Hornera shēmu*</blue>:
+$$t_0 = 10 \cdot (10 \cdot (10 \cdot (10 \cdot \color{#F00}{\mathtt{3}} + \color{#F00}{\mathtt{1}}) + \color{#F00}{\mathtt{4}}) + \color{#F00}{\mathtt{1}}) + \color{#F00}{\mathtt{5}} = 31415.$$
+* $t_1$ iegūst no $t_0$ konstantā laikā (tāpat $t_2$ no $t_1$ utt.):
+$$t_1 = (t_0 - 10^4 \cdot T[0])\cdot 10 + T[5] = (\color{#F00}{\mathtt{3}}\color{#0C0}{\mathtt{1415}} - 10000 \cdot \color{#F00}{\mathtt{3}}) \cdot 10 + \color{#F00}{\mathtt{9}} = \color{#0C0}{\mathtt{1415}}\color{#F00}{\mathtt{9}}.$$
+
+</div>
 
 
 ## <lo-summary/> Ko dara ar ļoti lieliem skaitļiem
@@ -358,7 +360,7 @@ kur $q$ izvēlas pietiekami lielu, lai bieži neparādītos
 </tr>
 <tr>
 <td>6</td>
-<td><b>for</b> $i = 0$ <b>to</b> $m-1$</td>
+<td><b>for</b> $i = 0$ <b>to</b> $m-1$&nbsp;&nbsp;<green>// saskaita pēc Hornera shēmas</green></td> 
 </tr>
 <tr>
 <td>7</td>
@@ -394,6 +396,14 @@ kur $q$ izvēlas pietiekami lielu, lai bieži neparādītos
 </tr>
 </table>
 
+
+
+## <lo-summary/> Cik liela ir q vērtība
+
+* Ja $q$ ir pārāk mazs, tad aritmētika pēc $q$ moduļa ir ļoti ātra, 
+bet bieži rodas viltus trāpījumi. 
+* Ja $q$ ir pārāk liels, tad reizināšanas tabulas uzbūvēšana modulārajai 
+aritmētikai iznāk laikietilpīga.
 
 
 
@@ -526,9 +536,12 @@ katram iespējamajam ievades simbolam $s \in S$.
 2. Parauga $P$ priekšapstrāde notiks laikā $O(m)$, nevis $O(m\cdot|S|)$, kā pilnīgi izveidotam automātam.
 
 
-## <lo-summary/> Prefiksu funkcija paraugam P
+# <lo-summary/> Prefiksu funkcija
 
-<div style="font-size:70%">
+<div style="font-size:80%">
+
+Prefiksu funkcija ir atkarīga no meklējamā parauga. 
+Turpmāk pieņemsim, ka ir dots $P$ - 
 
 **Definīcija:** Katram $j$ ($j = 1,\ldots,m$) atrod maksimālo $k$, 
 kam $k < j$ un izpildās šādi nosacījumi:
@@ -542,14 +555,55 @@ P[k - 1] = P[j - 1]
 Atrasto $k$ ieraksta $\pi$ vērtību tabulā: $\pi[j]=k$.  
 Ja nosacījumi neizpildās nevienam $k<j$, tad $\pi[j]=0$.
 
-**Alternatīva Definīcija:** Dota meklējamā virkne jeb paraugs $P$ 
+</div>
+
+
+
+## <lo-summary/> Prefiksu funkcija (alternatīva definīcija)
+
+**Apzīmējums:** Ja parauga $P$ garums ir $m$ simboli, tad ar 
+$P_k$ apzīmējam vārda $P$ prefiksu garumā $k$:
+$$P_0 = \mathtt{""},\;P_1=P[0],\;\ldots,\;P_m = P[0]\ldots{}P[m-1].$$
+
+
+**Alternatīva $\pi(j)$ definīcija:** Dota meklējamā virkne jeb paraugs $P$ 
 (tā garums ir $m$ simboli). Par paraugam atbilstošo 
 prefiksu funkciju sauc funkciju $\pi(j)=k$, kas 
 katram $j$ ($1 \leq j \leq m$) atrod to $k$ ($0 \leq k \leq m-1$), 
 kur $k$ ir parauga $P$ $j$-tā 
 prefiksa visgarākā sufiksa garums.
 
-</div>
+$\pi(j) = \max \left\{ k\,:\,k<j\;\text{un}\;P_k\;\text{ir vārda}\;P_j\;\text{sufikss} \right\}$
+
+
+## <lo-sample/> Piemērs Nr.1
+
+**Uzdevums:** Atrast prefiksu funkciju, kas atbilst 
+meklējamajam paraugam $P = \mathtt{abab}$. 
+
+**Risinājums ar sabīdīšanu:**
+
+![Prefix functions1](prefix-functions1.png)
+
+
+## <lo-sample/> Piemērs Nr.2
+
+**Uzdevums:** Atrast prefiksu funkciju, kas atbilst 
+meklējamajam paraugam $P = \mathtt{aabaab}$. 
+
+**Risinājums ar sabīdīšanu:**
+
+![Prefix functions2](prefix-functions2.png)
+
+
+## <lo-sample/> Piemērs Nr.3
+
+**Uzdevums:** Atrast prefiksu funkciju, kas atbilst
+meklējamajam paraugam $P = \mathtt{ababaca}$.
+
+
+
+
 
 ## <lo-summary/> pi(j) sniegtā informācija
 
@@ -786,7 +840,7 @@ konfidenciālu dokumentu noplūdes (pat ja dokumentu saturs ir izmainīts).
 2. Apskatījām Rabina-Karpa algoritmu. 
 3. Apskatījām naivā algoritma uzlabojumu - meklēšanas automātu.
 4. Veidojām KMP algoritmam vajadzīgo prefiksu funkciju.
-5. 
+
 
 
 

@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -80,19 +81,19 @@ Lietišķie algoritmi
 </ul>
 </section></section>
 <section><section id="citi-krāsu-kvantizācijas-veidi" class="title-slide slide level1"><h1><lo-summary/> Citi krāsu kvantizācijas veidi</h1><figure>
-<img data-src="quantization-illustration.png" alt="Quantization illustration" /><figcaption>Quantization illustration</figcaption>
+<img data-src="quantization-illustration.png" alt="" /><figcaption>Quantization illustration</figcaption>
 </figure>
 <p>Voronoja diagrammas - ap dotajiem punktiem izveidojas (bieži vien sešstūra formas) šūnas ar koda punktu centrā.</p></section><section id="proporcionālās-vēlēšanu-sistēmas" class="slide level2">
 <h2><lo-yellow/> Proporcionālās vēlēšanu sistēmas</h2>
 <p>Donta (D’Hondt) sistēmas piemērs <span class="math inline">\(5\)</span> krēsliem.</p>
 <figure>
-<img data-src="hondt-allocation.png" alt="Hondt method" /><figcaption>Hondt method</figcaption>
+<img data-src="hondt-allocation.png" alt="" /><figcaption>Hondt method</figcaption>
 </figure>
 <p>Sk. <a href="https://en.wikipedia.org/wiki/2018_Hungarian_parliamentary_election">Ungārijas 2018.g. vēlēšanas</a></p>
 </section><section id="senlaga-sistēma" class="slide level2">
 <h2><lo-yellow/> Senlaga sistēma</h2>
 <figure>
-<img data-src="sainte-lague.png" alt="Sainte Lague method" /><figcaption>Sainte Lague method</figcaption>
+<img data-src="sainte-lague.png" alt="" /><figcaption>Sainte Lague method</figcaption>
 </figure>
 </section></section>
 <section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
@@ -142,19 +143,19 @@ Lietišķie algoritmi
 <h2><lo-summary/> YIQ krāsu telpa</h2>
 <hgroup>
 <figure>
-<img data-src="picture-YIQ_components1.jpg" alt="YIQ1" /><figcaption>YIQ1</figcaption>
+<img data-src="picture-YIQ_components1.jpg" alt="" /><figcaption>YIQ1</figcaption>
 </figure>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="picture-YIQ_components2.jpg" alt="YIQ2" /><figcaption>YIQ2</figcaption>
+<img data-src="picture-YIQ_components2.jpg" alt="" /><figcaption>YIQ2</figcaption>
 </figure>
 </hgroup>
 </section><section id="kas-ir-yiq" class="slide level2">
 <h2><lo-summary/> Kas ir YIQ?</h2>
 <hgroup width="60%">
 <figure>
-<img data-src="YIQ_IQ_plane.svg.png" alt="YIQ - IQ plakne" /><figcaption>YIQ - IQ plakne</figcaption>
+<img data-src="YIQ_IQ_plane.svg.png" alt="" /><figcaption>YIQ - IQ plakne</figcaption>
 </figure>
 </hgroup>
 <hgroup width="40%">
@@ -186,7 +187,7 @@ Lietišķie algoritmi
 </section></section>
 <section id="jpeg-2.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 2.solis</h1><hgroup>
 <figure>
-<img data-src="sparser-grid.png" alt="Skipping grid" /><figcaption>Skipping grid</figcaption>
+<img data-src="sparser-grid.png" alt="" /><figcaption>Skipping grid</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -195,7 +196,7 @@ Lietišķie algoritmi
 <section id="jpeg-3.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 3.solis</h1><p>YIQ vērtības sadala <span class="math inline">\(8 \times 8\)</span> blokos. Tā kā tika atstāta tikai katra otrā “I” un “Q” vērtība, tad šo bloku izmērs sākotnējā attēlā ir <span class="math inline">\(16 \times 16\)</span>. Katrs bloks tiek apstrādāts atsevišķi.</p></section>
 <section id="jpeg-4.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 4.solis</h1><p>Katram blokam pielieto diskrēto kosinusu transformāciju - turklāt divas reizes.</p>
 <figure>
-<img data-src="dct-formulae.png" alt="DCT" /><figcaption>DCT</figcaption>
+<img data-src="dct-formulae.png" alt="" /><figcaption>DCT</figcaption>
 </figure>
 <p>Vispirms diskrēto kosinusu transformāciju pielieto katrai matricas kolonnai, domās sadalot matricu astoņās mazākās matricās (pa vienai kolonnai katrā).</p>
 <p>Pēc tam to pašu izdara katrai iegūtās matricas rindai.</p></section>
@@ -236,7 +237,6 @@ Lietišķie algoritmi
     </div>
   </div>
 
-  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

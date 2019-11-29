@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -15,9 +16,9 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style>
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -27,14 +28,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -43,9 +46,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -248,7 +251,7 @@ Marķēšana ar <code>Markdown</code> (arī Pandoc, Github, Reveal.JS izmantots 
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="download-r-installer.png" alt="Savāc R valodu" /><figcaption>Savāc R valodu</figcaption>
+<img data-src="download-r-installer.png" alt="" /><figcaption>Savāc R valodu</figcaption>
 </figure>
 </hgroup>
 </section><section id="solis-uzstāda-rstudio" class="slide level2">
@@ -263,50 +266,50 @@ Marķēšana ar <code>Markdown</code> (arī Pandoc, Github, Reveal.JS izmantots 
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="download-rstudio.png" alt="RStudio lejupielāde" /><figcaption>RStudio lejupielāde</figcaption>
+<img data-src="download-rstudio.png" alt="" /><figcaption>RStudio lejupielāde</figcaption>
 </figure>
 </hgroup>
 </section><section id="solis-pārbauda-rstudio-1" class="slide level2">
 <h2><lo-soln/> 3.solis: Pārbauda RStudio (1)</h2>
 <p>Kreisajā panelī, lodziņā <strong>Console</strong> ieraksta šādu kodu:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">24</span>), <span class="dt">col=</span><span class="kw">rainbow</span>(<span class="dv">24</span>))</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># Var pārbaudīt arī pa daļām:</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co"># (1) Izvada 24 vieniniekus:</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">24</span>)</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co"># (2) Izvada 24 piesātinātas &quot;varavīksnes&quot; krāsas</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="kw">raibow</span>(<span class="dv">24</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">24</span>), <span class="dt">col=</span><span class="kw">rainbow</span>(<span class="dv">24</span>))</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Var pārbaudīt arī pa daļām:</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># (1) Izvada 24 vieniniekus:</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">24</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># (2) Izvada 24 piesātinātas &quot;varavīksnes&quot; krāsas</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">raibow</span>(<span class="dv">24</span>)</span></code></pre></div>
 </section><section id="solis-pārbauda-rstudio-2" class="slide level2">
 <h2><lo-soln/> 3.solis: Pārbauda RStudio (2)</h2>
 <figure>
-<img data-src="testing-rstudio.png" alt="Pārbauda RStudio ar sektoru diagrammu" /><figcaption>Pārbauda RStudio ar sektoru diagrammu</figcaption>
+<img data-src="testing-rstudio.png" alt="" /><figcaption>Pārbauda RStudio ar sektoru diagrammu</figcaption>
 </figure>
 </section><section id="solis-uzstāda-dažas-pakotnes" class="slide level2">
 <h2><lo-soln/> 4.solis: Uzstāda dažas pakotnes</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">install.packages</span>(<span class="st">&quot;gmp&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">install.packages</span>(<span class="st">&quot;gmp&quot;</span>)</span></code></pre></div>
 <p><em>Piezīme 1:</em> Ja pirmo reizi lieto kādu pakotni, tā jāinstalē (jāsavāc no Interneta).<br />
 <strong>KnitR</strong> - pārskatu ģenerēšanas bibliotēka. <strong>GGPlot2</strong> - diagrammu zīmēšana. <strong>GMP</strong> - Ļoti lielu skaitļu aritmētika.</p>
 <p><em>Piezīme 2:</em> Uz 32 bitu datoriem iet vecāka RStudio versija (v1.1 nevis v1.2).</p>
 </section><section id="solis-pārbauda-pakotni-gmp" class="slide level2">
 <h2><lo-soln/> 5.solis: Pārbauda pakotni GMP</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">require</span>(gmp)</a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3">xx &lt;-<span class="st"> </span><span class="kw">as.bigz</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">99</span>) {</a>
-<a class="sourceLine" id="cb3-5" title="5">  <span class="co"># Pielipina masīvam elementu, </span></a>
-<a class="sourceLine" id="cb3-6" title="6">  <span class="co"># kas par 1 lielāks par iepriekšējo</span></a>
-<a class="sourceLine" id="cb3-7" title="7">  xx &lt;-<span class="st"> </span><span class="kw">c</span>(xx,xx[i]<span class="op">+</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb3-8" title="8">}</a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co"># Atrod reizinājumu 1*2*...*100 = 100!</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="kw">prod</span>(xx)</a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co"># Atlikums, dalot 100! ar 101</span></a>
-<a class="sourceLine" id="cb3-12" title="12">xx <span class="op">%%</span><span class="st"> </span><span class="dv">101</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">require</span>(gmp)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>xx &lt;-<span class="st"> </span><span class="kw">as.bigz</span>(<span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">99</span>) {</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="co"># Pielipina masīvam elementu, </span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="co"># kas par 1 lielāks par iepriekšējo</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  xx &lt;-<span class="st"> </span><span class="kw">c</span>(xx,xx[i]<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>}</span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># Atrod reizinājumu 1*2*...*100 = 100!</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="kw">prod</span>(xx)</span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># Atlikums, dalot 100! ar 101</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>xx <span class="op">%%</span><span class="st"> </span><span class="dv">101</span></span></code></pre></div>
 <p><em>Piezīme:</em> Ir spēkā Vilsona teorēma: Katram pirmskaitlim <span class="math inline">\(p\)</span>, skaitlis <span class="math inline">\((p-1)!\)</span> dod atlikumu <span class="math inline">\(p-1\)</span>, dalot ar <span class="math inline">\(p\)</span>.</p>
 </section><section id="solis-apskata-iebūvētās-pamācības" class="slide level2">
 <h2><lo-soln/> 6.solis: Apskata iebūvētās pamācības</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">?ggplot2<span class="op">::</span>geom_point</a>
-<a class="sourceLine" id="cb4-2" title="2">?plot</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>?ggplot2<span class="op">::</span>geom_point</span>
+<span id="cb4-2"><a href="#cb4-2"></a>?plot</span></code></pre></div>
 <p>To pašu var arī meklēt internetā. Piemēram, Google meklētājā ierakstīt<br />
 <code>r package gmp filetype:pdf</code></p>
 <ul>
@@ -337,18 +340,18 @@ Valodas R ievads
 </ul></section><section id="vektora-summa-un-garums" class="slide level2">
 <h2><lo-summary/> Vektora summa un garums</h2>
 <hgroup>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co">## Vektors ar 5 elementiem</span></a>
-<a class="sourceLine" id="cb5-2" title="2">xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">36</span>,<span class="dv">41</span>,<span class="dv">34</span>)</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="co">## Garums (jābūt 5)</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="kw">length</span>(xx)</a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co">## Summa (jābūt 175)</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="kw">sum</span>(xx)</a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co">## Aritm. vidējais (būs 35)</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="kw">sum</span>(xx)<span class="op">/</span><span class="kw">length</span>(xx)</a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="co">## Tikai 5. elements (būs 34)</span></a>
-<a class="sourceLine" id="cb5-10" title="10">xx[<span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="co">## No 3. līdz 5. elementam</span></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="kw">sum</span>(xx[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">## Vektors ar 5 elementiem</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">36</span>,<span class="dv">41</span>,<span class="dv">34</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">## Garums (jābūt 5)</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">length</span>(xx)</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">## Summa (jābūt 175)</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="kw">sum</span>(xx)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">## Aritm. vidējais (būs 35)</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">sum</span>(xx)<span class="op">/</span><span class="kw">length</span>(xx)</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">## Tikai 5. elements (būs 34)</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>xx[<span class="dv">5</span>]</span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co">## No 3. līdz 5. elementam</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="kw">sum</span>(xx[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>])</span></code></pre></div>
 </hgroup>
 <hgroup>
 <ul>
@@ -363,11 +366,11 @@ Valodas R ievads
 <p><strong>Definīcija:</strong> Ja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> ir <span class="math inline">\(n\)</span> skaitliski novērojumi, tad par šo lielumu <em>vidējo vērtību</em> sauc aritmētisko vidējo: <span class="math display">\[\mu = \frac{\sum_{i=1}^n x_i}{n}.\]</span></p>
 <p><em>Piezīme:</em> Vārds “mean” nozīmē gan “nejauks”, gan “vidējais”. <blue><em>Aritmētiskais vidējais</em></blue> (<em>arithmetic mean</em>).</p>
 </hgroup>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb6-2" title="2">a &lt;-<span class="st"> </span><span class="kw">mean</span>(xx)</a>
-<a class="sourceLine" id="cb6-3" title="3">a</a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co"># Vai uzreiz vienā izteiksmē:</span></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>a &lt;-<span class="st"> </span><span class="kw">mean</span>(xx)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>a</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Vai uzreiz vienā izteiksmē:</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>))</span></code></pre></div>
 </hgroup>
 </section><section id="dispersija-un-standartnovirze" class="slide level2">
 <h2><lo-summary/> Dispersija un standartnovirze</h2>
@@ -384,19 +387,19 @@ Valodas R ievads
 <p>Šādu standartnovirzi (kur dala ar <span class="math inline">\(n-1\)</span>) rēķina R funkcija <code>sd(...)</code>.<br />
 Visas populācijas standartnovirzei <span class="math inline">\(\sigma\)</span> var uzrakstīt savu funkciju <code>fullSD(...)</code>.</p>
 </hgroup>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">36</span>,<span class="dv">41</span>,<span class="dv">34</span>)</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="co"># Dala ar 4, sanāk 3.807887</span></a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="kw">sd</span>(xx)</a>
-<a class="sourceLine" id="cb7-4" title="4"></a>
-<a class="sourceLine" id="cb7-5" title="5">fullSD &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb7-6" title="6">  n &lt;-<span class="st"> </span><span class="kw">length</span>(x)</a>
-<a class="sourceLine" id="cb7-7" title="7">  <span class="kw">return</span>(<span class="kw">sqrt</span>( </a>
-<a class="sourceLine" id="cb7-8" title="8">    <span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>n</a>
-<a class="sourceLine" id="cb7-9" title="9">  ))</a>
-<a class="sourceLine" id="cb7-10" title="10">}</a>
-<a class="sourceLine" id="cb7-11" title="11"></a>
-<a class="sourceLine" id="cb7-12" title="12"><span class="co"># Dala ar 5, sanāk 3.405877</span></a>
-<a class="sourceLine" id="cb7-13" title="13"><span class="kw">fullSD</span>(xx)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">31</span>,<span class="dv">33</span>,<span class="dv">36</span>,<span class="dv">41</span>,<span class="dv">34</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># Dala ar 4, sanāk 3.807887</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">sd</span>(xx)</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>fullSD &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  n &lt;-<span class="st"> </span><span class="kw">length</span>(x)</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="kw">return</span>(<span class="kw">sqrt</span>( </span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>n</span>
+<span id="cb7-9"><a href="#cb7-9"></a>  ))</span>
+<span id="cb7-10"><a href="#cb7-10"></a>}</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co"># Dala ar 5, sanāk 3.405877</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="kw">fullSD</span>(xx)</span></code></pre></div>
 <hgroup>
 </hgroup>
 </section></section>
@@ -417,7 +420,7 @@ Visas populācijas standartnovirzei <span class="math inline">\(\sigma\)</span> 
 </section><section id="solis-atlasīt-testus-par-statistiku" class="slide level2">
 <h2><lo-soln/> 2.solis: Atlasīt testus par statistiku</h2>
 <figure>
-<img data-src="khanacademy-test-selection.png" alt="KhanAcademy tests" /><figcaption>KhanAcademy tests</figcaption>
+<img data-src="khanacademy-test-selection.png" alt="" /><figcaption>KhanAcademy tests</figcaption>
 </figure>
 <ul>
 <li>Ritināt līdz sadaļai <strong>Summarizing quantitative data</strong>.</li>
@@ -427,30 +430,30 @@ Visas populācijas standartnovirzei <span class="math inline">\(\sigma\)</span> 
 </section><section id="solis-atvērt-testa-uzdevumu" class="slide level2">
 <h2><lo-soln/> 3.solis: Atvērt testa uzdevumu</h2>
 <figure>
-<img data-src="population-sd.png" alt="Populācijas standartnovirze" /><figcaption>Populācijas standartnovirze</figcaption>
+<img data-src="population-sd.png" alt="" /><figcaption>Populācijas standartnovirze</figcaption>
 </figure>
 </section><section id="aprēķināt-vid.vērtību-un-standartnovirzi" class="slide level2">
 <h2><lo-soln/> Aprēķināt vid.vērtību un standartnovirzi</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">13</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">mean</span>(xx)</a>
-<a class="sourceLine" id="cb8-3" title="3">[<span class="dv">1</span>] <span class="dv">5</span></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="kw">sqrt</span>(<span class="kw">sum</span>((xx <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(xx))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb8-5" title="5">[<span class="dv">1</span>] <span class="fl">4.123106</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">13</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">7</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">mean</span>(xx)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="kw">sqrt</span>(<span class="kw">sum</span>((xx <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(xx))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">6</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>[<span class="dv">1</span>] <span class="fl">4.123106</span></span></code></pre></div>
 <p>Ierakstīt lodziņos noapaļotas vērtības <span class="math inline">\(5\)</span> un <span class="math inline">\(4.1\)</span>, nospiest <strong>Check</strong>.</p>
 </section><section id="solis-atvērt-citu-testa-uzdevumu" class="slide level2">
 <h2><lo-soln/> 3.solis: Atvērt citu testa uzdevumu</h2>
 <figure>
-<img data-src="sample-sd.png" alt="Iztvēruma standartnovirze" /><figcaption>Iztvēruma standartnovirze</figcaption>
+<img data-src="sample-sd.png" alt="" /><figcaption>Iztvēruma standartnovirze</figcaption>
 </figure>
 </section><section id="aprēķināt-vid.vērtību-un-standartnovirzi-1" class="slide level2">
 <h2><lo-soln/> Aprēķināt vid.vērtību un standartnovirzi</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="op">&gt;</span><span class="st"> </span>xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(xx)</a>
-<a class="sourceLine" id="cb9-3" title="3">[<span class="dv">1</span>] <span class="dv">2</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="op">&gt;</span><span class="st"> </span><span class="kw">sd</span>(xx)</a>
-<a class="sourceLine" id="cb9-5" title="5">[<span class="dv">1</span>] <span class="fl">0.8944272</span></a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="op">&gt;</span><span class="st"> </span><span class="kw">round</span>(<span class="kw">sd</span>(xx), <span class="dt">digits=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb9-7" title="7">[<span class="dv">1</span>] <span class="fl">0.9</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">&gt;</span><span class="st"> </span>xx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(xx)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>[<span class="dv">1</span>] <span class="dv">2</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sd</span>(xx)</span>
+<span id="cb9-5"><a href="#cb9-5"></a>[<span class="dv">1</span>] <span class="fl">0.8944272</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">round</span>(<span class="kw">sd</span>(xx), <span class="dt">digits=</span><span class="dv">1</span>)</span>
+<span id="cb9-7"><a href="#cb9-7"></a>[<span class="dv">1</span>] <span class="fl">0.9</span></span></code></pre></div>
 <p>Šoreiz mums bija slinkums noapaļot, to dara funkcija <code>round()</code></p>
 </section></section>
 <section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
@@ -476,28 +479,28 @@ Valodas R ievads
 </ul>
 </hgroup>
 <hgroup>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">class</span>(cars)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">head</span>(cars)</a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="kw">nrow</span>(cars)</a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="kw">colnames</span>(cars)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">class</span>(cars)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">head</span>(cars)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">nrow</span>(cars)</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="kw">colnames</span>(cars)</span></code></pre></div>
 <p><em>Piezīme:</em> <code>cars</code> ir R “iebūvēta” datu tabuliņa.</p>
 </hgroup></section><section id="datu-tabulas-no-kolonnām" class="slide level2">
 <h2><lo-summary/> Datu tabulas no kolonnām</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="op">&gt;</span><span class="st"> </span>city.names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Tallinn&quot;</span>, <span class="st">&quot;Riga&quot;</span>, <span class="st">&quot;Vilnius&quot;</span>)</a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="op">&gt;</span><span class="st"> </span>city.pop &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">435000</span>,<span class="dv">615000</span>, <span class="dv">571000</span>)</a>
-<a class="sourceLine" id="cb11-3" title="3"><span class="op">&gt;</span><span class="st"> </span>cities &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">names=</span>city.names,<span class="dt">population=</span>city.pop)</a>
-<a class="sourceLine" id="cb11-4" title="4"><span class="op">&gt;</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-5" title="5"><span class="er">&gt;</span><span class="st"> </span>cities</a>
-<a class="sourceLine" id="cb11-6" title="6">    names population</a>
-<a class="sourceLine" id="cb11-7" title="7"><span class="dv">1</span> Tallinn     <span class="dv">435000</span></a>
-<a class="sourceLine" id="cb11-8" title="8"><span class="dv">2</span>    Riga     <span class="dv">615000</span></a>
-<a class="sourceLine" id="cb11-9" title="9"><span class="dv">3</span> Vilnius     <span class="dv">571000</span></a>
-<a class="sourceLine" id="cb11-10" title="10"><span class="op">&gt;</span><span class="st"> </span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">&gt;</span><span class="st"> </span>city.names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Tallinn&quot;</span>, <span class="st">&quot;Riga&quot;</span>, <span class="st">&quot;Vilnius&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="op">&gt;</span><span class="st"> </span>city.pop &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">435000</span>,<span class="dv">615000</span>, <span class="dv">571000</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="op">&gt;</span><span class="st"> </span>cities &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">names=</span>city.names,<span class="dt">population=</span>city.pop)</span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="op">&gt;</span><span class="st"> </span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="er">&gt;</span><span class="st"> </span>cities</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    names population</span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="dv">1</span> Tallinn     <span class="dv">435000</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="dv">2</span>    Riga     <span class="dv">615000</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="dv">3</span> Vilnius     <span class="dv">571000</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="op">&gt;</span><span class="st"> </span></span></code></pre></div>
 </section><section id="ielasīšana-no-csv-faila" class="slide level2">
 <h2><lo-summary/> Ielasīšana no CSV faila</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">setwd</span>(<span class="kw">dirname</span>(rstudioapi<span class="op">::</span><span class="kw">getActiveDocumentContext</span>()<span class="op">$</span>path))</a>
-<a class="sourceLine" id="cb12-2" title="2">df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;matematikas-centralizetais.csv&quot;</span>, </a>
-<a class="sourceLine" id="cb12-3" title="3">                 <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">setwd</span>(<span class="kw">dirname</span>(rstudioapi<span class="op">::</span><span class="kw">getActiveDocumentContext</span>()<span class="op">$</span>path))</span>
+<span id="cb12-2"><a href="#cb12-2"></a>df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;matematikas-centralizetais.csv&quot;</span>, </span>
+<span id="cb12-3"><a href="#cb12-3"></a>                 <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span></code></pre></div>
 <p>Komanda <code>setwd(...)</code> uzstāda tekošo direktoriju. Mūsu gadījumā <code>rstudioapi</code> (pakotne, kuru vajag pirms lietošanas instalēt) parāda RStudio tekošo direktoriju, kurā dzīvo izpildāmais scenārijs.</p>
 <p>Var rakstīt arī: <code>setwd("c:/temp/")</code> utml.</p>
 </section></section>
@@ -512,7 +515,7 @@ Valodas R ievads
 <p>Sk. ZIP apakšdirektoriju: <strong>data-analysis-course/chapters/LD-data-frames</strong></p></section><section id="solis-saprast-eksāmena-datus" class="slide level2">
 <h2><lo-soln/> 1.solis: Saprast eksāmena datus</h2>
 <figure>
-<img data-src="excel-data-set.png" alt="Excel datu kopa" /><figcaption>Excel datu kopa</figcaption>
+<img data-src="excel-data-set.png" alt="" /><figcaption>Excel datu kopa</figcaption>
 </figure>
 <ul>
 <li>Eksāmenam 3 daļas (1.daļā 25 jautājumi (kopā 25 punkti); 2.daļā ir 10 jautājumi (kopā 40 punkti); 3.daļā ir 3 jautājumi (kopā 15 punkti)).</li>
@@ -520,40 +523,40 @@ Valodas R ievads
 </ul>
 </section><section id="solis-ielasa-datus-pievieno-kolonnu" class="slide level2">
 <h2><lo-soln/> 2./3.solis: Ielasa datus, pievieno kolonnu</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">setwd</span>(<span class="kw">dirname</span>(rstudioapi<span class="op">::</span><span class="kw">getActiveDocumentContext</span>()<span class="op">$</span>path))</a>
-<a class="sourceLine" id="cb13-2" title="2">df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;matematikas-centralizetais.csv&quot;</span>, </a>
-<a class="sourceLine" id="cb13-3" title="3">                 <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb13-4" title="4">df<span class="op">$</span>Part23 &lt;-<span class="st"> </span>(<span class="fl">0.50</span><span class="op">*</span>df<span class="op">$</span>Part2<span class="op">+</span>(<span class="fl">0.1875</span>)<span class="op">*</span>df<span class="op">$</span>Part3)<span class="op">/</span>(<span class="fl">0.50+0.1875</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">setwd</span>(<span class="kw">dirname</span>(rstudioapi<span class="op">::</span><span class="kw">getActiveDocumentContext</span>()<span class="op">$</span>path))</span>
+<span id="cb13-2"><a href="#cb13-2"></a>df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;matematikas-centralizetais.csv&quot;</span>, </span>
+<span id="cb13-3"><a href="#cb13-3"></a>                 <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb13-4"><a href="#cb13-4"></a>df<span class="op">$</span>Part23 &lt;-<span class="st"> </span>(<span class="fl">0.50</span><span class="op">*</span>df<span class="op">$</span>Part2<span class="op">+</span>(<span class="fl">0.1875</span>)<span class="op">*</span>df<span class="op">$</span>Part3)<span class="op">/</span>(<span class="fl">0.50+0.1875</span>)</span></code></pre></div>
 <p>Tad ieraksta konsolē šādas komandas:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># Cik kāda veida gada atzīmes</span></a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="kw">table</span>(df<span class="op">$</span>Annual)</a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="co"># Cik pavisam skolēnu</span></a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="kw">nrow</span>(df)</a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="co"># Cik skolēnu katrā klasē</span></a>
-<a class="sourceLine" id="cb14-6" title="6"><span class="kw">table</span>(df<span class="op">$</span>Class)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Cik kāda veida gada atzīmes</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">table</span>(df<span class="op">$</span>Annual)</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># Cik pavisam skolēnu</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="kw">nrow</span>(df)</span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="co"># Cik skolēnu katrā klasē</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">table</span>(df<span class="op">$</span>Class)</span></code></pre></div>
 </section><section id="solis-pīrsona-korelācija" class="slide level2">
 <h2><lo-soln/> 4.solis: Pīrsona korelācija</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">res &lt;-<span class="st"> </span><span class="kw">cor.test</span>(df<span class="op">$</span>Part1, df<span class="op">$</span>Part23, <span class="dt">method =</span> <span class="st">&quot;pearson&quot;</span>)</a>
-<a class="sourceLine" id="cb15-2" title="2">res</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>res &lt;-<span class="st"> </span><span class="kw">cor.test</span>(df<span class="op">$</span>Part1, df<span class="op">$</span>Part23, <span class="dt">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>res</span></code></pre></div>
 <figure>
-<img data-src="correlation-report.png" alt="Korelācijas pārskats" /><figcaption>Korelācijas pārskats</figcaption>
+<img data-src="correlation-report.png" alt="" /><figcaption>Korelācijas pārskats</figcaption>
 </figure>
 </section><section id="solis-datu-filtrēšana" class="slide level2">
 <h2><lo-soln/> 4.solis: Datu filtrēšana</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="co"># Vidējais VISC eksāmena vērtējums</span></a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>Total)</a>
-<a class="sourceLine" id="cb16-3" title="3"><span class="co"># Vidējā atzīme klasē Nr.4</span></a>
-<a class="sourceLine" id="cb16-4" title="4"><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>Annual[df<span class="op">$</span>Class<span class="op">==</span><span class="st">&#39;4&#39;</span>])</a>
-<a class="sourceLine" id="cb16-5" title="5"><span class="co"># Vidējie procenti par testa 3.daļu klasē Nr.1</span></a>
-<a class="sourceLine" id="cb16-6" title="6"><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>Part3[df<span class="op">$</span>Class<span class="op">==</span><span class="st">&#39;1&#39;</span>])</a>
-<a class="sourceLine" id="cb16-7" title="7"><span class="co"># Dažādi vidējie pa klasēm</span></a>
-<a class="sourceLine" id="cb16-8" title="8"><span class="op">&gt;</span><span class="st"> </span><span class="kw">aggregate</span>(<span class="kw">cbind</span>(Annual,Total) <span class="op">~</span><span class="st"> </span>Class, <span class="dt">data =</span> df, mean)</a>
-<a class="sourceLine" id="cb16-9" title="9">  Class Annual  Total</a>
-<a class="sourceLine" id="cb16-10" title="10"><span class="dv">1</span>     <span class="dv">1</span> <span class="fl">6.4500</span> <span class="fl">54.050</span></a>
-<a class="sourceLine" id="cb16-11" title="11"><span class="dv">2</span>     <span class="dv">2</span> <span class="fl">7.1600</span> <span class="fl">62.960</span></a>
-<a class="sourceLine" id="cb16-12" title="12"><span class="dv">3</span>     <span class="dv">3</span> <span class="fl">5.6875</span> <span class="fl">39.875</span></a>
-<a class="sourceLine" id="cb16-13" title="13"><span class="dv">4</span>     <span class="dv">4</span> <span class="fl">5.0000</span> <span class="fl">31.360</span></a>
-<a class="sourceLine" id="cb16-14" title="14"><span class="op">&gt;</span><span class="st"> </span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Vidējais VISC eksāmena vērtējums</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>Total)</span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co"># Vidējā atzīme klasē Nr.4</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>Annual[df<span class="op">$</span>Class<span class="op">==</span><span class="st">&#39;4&#39;</span>])</span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="co"># Vidējie procenti par testa 3.daļu klasē Nr.1</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>Part3[df<span class="op">$</span>Class<span class="op">==</span><span class="st">&#39;1&#39;</span>])</span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="co"># Dažādi vidējie pa klasēm</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">aggregate</span>(<span class="kw">cbind</span>(Annual,Total) <span class="op">~</span><span class="st"> </span>Class, <span class="dt">data =</span> df, mean)</span>
+<span id="cb16-9"><a href="#cb16-9"></a>  Class Annual  Total</span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="dv">1</span>     <span class="dv">1</span> <span class="fl">6.4500</span> <span class="fl">54.050</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a><span class="dv">2</span>     <span class="dv">2</span> <span class="fl">7.1600</span> <span class="fl">62.960</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="dv">3</span>     <span class="dv">3</span> <span class="fl">5.6875</span> <span class="fl">39.875</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a><span class="dv">4</span>     <span class="dv">4</span> <span class="fl">5.0000</span> <span class="fl">31.360</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="op">&gt;</span><span class="st"> </span></span></code></pre></div>
 </section></section>
 <section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
@@ -578,14 +581,14 @@ Valodas R ievads
 <p>Sk. <a href="http://www.cfm.brown.edu/people/dobrush/am33/R/discount.html">Plotting discontinuous functions</a></p></section><section id="tangensa-funkcijas-grafiks" class="slide level2">
 <h2><lo-summary/> Tangensa funkcijas grafiks</h2>
 <hgroup>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb17-2" title="2">yy &lt;-<span class="st"> </span><span class="kw">tan</span>(xx)</a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="kw">plot</span>(xx,yy,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>xx &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb17-2"><a href="#cb17-2"></a>yy &lt;-<span class="st"> </span><span class="kw">tan</span>(xx)</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="kw">plot</span>(xx,yy,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p>Funkcija pieņem ļoti lielas vērtības, iziet ārpus saprātīgiem mērogiem.</p>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="bad-tan-graph.png" alt="Slikts tangenss" /><figcaption>Slikts tangenss</figcaption>
+<img data-src="bad-tan-graph.png" alt="" /><figcaption>Slikts tangenss</figcaption>
 </figure>
 </hgroup>
 </section><section id="citas-pārtrauktas-funkcijas" class="slide level2">
@@ -597,38 +600,38 @@ x^2 - 1,\;\text{ja}\;x&lt;1\\
 x^3 - 5,\;\text{ja}\;1 &lt; x &lt;2\\
 5-2x,\;\text{ja}\;x&gt;2.1
 \end{array} \right.\]</span></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(x) { </a>
-<a class="sourceLine" id="cb18-2" title="2">  <span class="kw">ifelse</span>((x<span class="op">&lt;</span><span class="dv">1</span>),x<span class="op">^</span><span class="dv">2-1</span>,</a>
-<a class="sourceLine" id="cb18-3" title="3">    <span class="kw">ifelse</span>((<span class="dv">1</span><span class="op">&lt;</span>x <span class="op">&amp;</span><span class="st"> </span>x<span class="op">&lt;</span><span class="dv">2</span>),x<span class="op">^</span><span class="dv">3-5</span>, </a>
-<a class="sourceLine" id="cb18-4" title="4">     <span class="kw">ifelse</span>((x<span class="op">&gt;</span><span class="fl">2.1</span>),<span class="dv">5-2</span><span class="op">*</span>x,<span class="ot">NA</span>)</a>
-<a class="sourceLine" id="cb18-5" title="5">    )</a>
-<a class="sourceLine" id="cb18-6" title="6">  ) </a>
-<a class="sourceLine" id="cb18-7" title="7">} </a>
-<a class="sourceLine" id="cb18-8" title="8"><span class="kw">plot</span>(f,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>),</a>
-<a class="sourceLine" id="cb18-9" title="9">    <span class="dt">ylim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">7</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) </a>
-<a class="sourceLine" id="cb18-10" title="10"><span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">0</span>, <span class="dt">h=</span><span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x) { </span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="kw">ifelse</span>((x<span class="op">&lt;</span><span class="dv">1</span>),x<span class="op">^</span><span class="dv">2-1</span>,</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="kw">ifelse</span>((<span class="dv">1</span><span class="op">&lt;</span>x <span class="op">&amp;</span><span class="st"> </span>x<span class="op">&lt;</span><span class="dv">2</span>),x<span class="op">^</span><span class="dv">3-5</span>, </span>
+<span id="cb18-4"><a href="#cb18-4"></a>     <span class="kw">ifelse</span>((x<span class="op">&gt;</span><span class="fl">2.1</span>),<span class="dv">5-2</span><span class="op">*</span>x,<span class="ot">NA</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a>    )</span>
+<span id="cb18-6"><a href="#cb18-6"></a>  ) </span>
+<span id="cb18-7"><a href="#cb18-7"></a>} </span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="kw">plot</span>(f,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>),</span>
+<span id="cb18-9"><a href="#cb18-9"></a>    <span class="dt">ylim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">7</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) </span>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">0</span>, <span class="dt">h=</span><span class="dv">0</span>)</span></code></pre></div>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="discontinuous-graph.png" alt="Pārtraukts grafiks" /><figcaption>Pārtraukts grafiks</figcaption>
+<img data-src="discontinuous-graph.png" alt="" /><figcaption>Pārtraukts grafiks</figcaption>
 </figure>
 </hgroup>
 </section><section id="izlabots-tangenss" class="slide level2">
 <h2><lo-summary/> Izlabots tangenss</h2>
 <p><em>Ideja:</em> Izmetam no vektoriem xx un yy tās vērtības, kurām tangenss ir pārāk liels (aizstājam ar <code>NA</code> - Not a number).</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">xx &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb19-2" title="2">yy &lt;-<span class="st"> </span><span class="kw">tan</span>(xx)</a>
-<a class="sourceLine" id="cb19-3" title="3">xx[<span class="kw">which</span>(yy <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>)] =<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb19-4" title="4">yy[<span class="kw">which</span>(yy <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>)] =<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb19-5" title="5"><span class="kw">plot</span>(xx,yy,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb19-6" title="6"><span class="co"># asimptotas</span></a>
-<a class="sourceLine" id="cb19-7" title="7"><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>,pi<span class="op">/</span><span class="dv">2</span>), <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb19-8" title="8"><span class="kw">grid</span>()</a>
-<a class="sourceLine" id="cb19-9" title="9"><span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">0</span>, <span class="dt">h=</span><span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>xx &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb19-2"><a href="#cb19-2"></a>yy &lt;-<span class="st"> </span><span class="kw">tan</span>(xx)</span>
+<span id="cb19-3"><a href="#cb19-3"></a>xx[<span class="kw">which</span>(yy <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>)] =<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>yy[<span class="kw">which</span>(yy <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>)] =<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="kw">plot</span>(xx,yy,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="co"># asimptotas</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>,pi<span class="op">/</span><span class="dv">2</span>), <span class="dt">lty=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="kw">grid</span>()</span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">0</span>, <span class="dt">h=</span><span class="dv">0</span>)</span></code></pre></div>
 </section><section id="tangensa-grafiks" class="slide level2">
 <h2><lo-summary/> Tangensa grafiks</h2>
 <figure>
-<img data-src="correct-tangent.png" alt="Grafiks ar asimptotām" /><figcaption>Grafiks ar asimptotām</figcaption>
+<img data-src="correct-tangent.png" alt="" /><figcaption>Grafiks ar asimptotām</figcaption>
 </figure>
 </section></section>
 <section><section id="vienkāršu-animāciju-veidošana" class="title-slide slide level1"><h1><lo-theory/> Vienkāršu animāciju veidošana</h1><ul>
@@ -648,13 +651,13 @@ x^3 - 5,\;\text{ja}\;1 &lt; x &lt;2\\
 <li>Animēto GIF veidojam no kadriem, kam norāda, cik bieži tie mainīsies.</li>
 <li>To var izdarīt, izsaucot <code>convert</code> programmu.</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="cf">if</span> (<span class="kw">Sys.info</span>()[<span class="st">&#39;sysname&#39;</span>] <span class="op">==</span><span class="st"> &quot;Windows&quot;</span>) {</a>
-<a class="sourceLine" id="cb20-2" title="2">  cmdPrefix &lt;-<span class="st"> &quot;cmd /c &quot;</span></a>
-<a class="sourceLine" id="cb20-3" title="3">} <span class="cf">else</span> { cmdPrefix &lt;-<span class="st"> &quot;&quot;</span> } </a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="kw">system</span>(<span class="kw">paste0</span>(</a>
-<a class="sourceLine" id="cb20-5" title="5">  cmdPrefix,</a>
-<a class="sourceLine" id="cb20-6" title="6">  <span class="st">&quot;convert -delay 75 -loop 0 sin*.png animation.gif&quot;</span></a>
-<a class="sourceLine" id="cb20-7" title="7">))</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="cf">if</span> (<span class="kw">Sys.info</span>()[<span class="st">&#39;sysname&#39;</span>] <span class="op">==</span><span class="st"> &quot;Windows&quot;</span>) {</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  cmdPrefix &lt;-<span class="st"> &quot;cmd /c &quot;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>} <span class="cf">else</span> { cmdPrefix &lt;-<span class="st"> &quot;&quot;</span> } </span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="kw">system</span>(<span class="kw">paste0</span>(</span>
+<span id="cb20-5"><a href="#cb20-5"></a>  cmdPrefix,</span>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="st">&quot;convert -delay 75 -loop 0 sin*.png animation.gif&quot;</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a>))</span></code></pre></div>
 </section></section>
 <section id="izveidot-animētu-teilora-rindu" class="title-slide slide level1"><h1><lo-sample/> Izveidot animētu Teilora rindu</h1><p><strong>Soļi:</strong></p>
 <ol type="1">
@@ -801,43 +804,43 @@ Puasona
 <code>from:mbendiks rozīnes since:2018-01-01 until:2018-12-31</code></li>
 </ul>
 <figure>
-<img data-src="saldejumu-standarts.png" alt="Par rozīnēm" /><figcaption>Par rozīnēm</figcaption>
+<img data-src="saldejumu-standarts.png" alt="" /><figcaption>Par rozīnēm</figcaption>
 </figure>
 </section><section id="solis-varbūtisks-eksperiments" class="slide level2">
 <h2><lo-soln/> 2.solis: Varbūtisks eksperiments</h2>
 <hgroup>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co"># Apskata rpois dokumentāciju</span></a>
-<a class="sourceLine" id="cb21-2" title="2">?rpois</a>
-<a class="sourceLine" id="cb21-3" title="3"><span class="co"># Izsauc ar parametriem</span></a>
-<a class="sourceLine" id="cb21-4" title="4">xx &lt;-<span class="st"> </span><span class="kw">rpois</span>(<span class="dt">n=</span><span class="dv">1000</span>,<span class="dt">lambda=</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb21-5" title="5"><span class="co"># Saskaita TRUE (rozīņu &lt; 5)</span></a>
-<a class="sourceLine" id="cb21-6" title="6"><span class="kw">sum</span>(xx <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb21-7" title="7"><span class="co"># Saskaita TRUE (rozīņu nav)</span></a>
-<a class="sourceLine" id="cb21-8" title="8"><span class="kw">sum</span>(xx <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb21-9" title="9"><span class="co"># Tabula pa rozīņu skaitiem</span></a>
-<a class="sourceLine" id="cb21-10" title="10"><span class="kw">table</span>(xx)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Apskata rpois dokumentāciju</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>?rpois</span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># Izsauc ar parametriem</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>xx &lt;-<span class="st"> </span><span class="kw">rpois</span>(<span class="dt">n=</span><span class="dv">1000</span>,<span class="dt">lambda=</span><span class="dv">10</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="co"># Saskaita TRUE (rozīņu &lt; 5)</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a><span class="kw">sum</span>(xx <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>)</span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="co"># Saskaita TRUE (rozīņu nav)</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="kw">sum</span>(xx <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb21-9"><a href="#cb21-9"></a><span class="co"># Tabula pa rozīņu skaitiem</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a><span class="kw">table</span>(xx)</span></code></pre></div>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="puasona-labd.png" alt="Puasona lab.d." /><figcaption>Puasona lab.d.</figcaption>
+<img data-src="puasona-labd.png" alt="" /><figcaption>Puasona lab.d.</figcaption>
 </figure>
 </hgroup>
 </section><section id="solis-joslu-diagramma" class="slide level2">
 <h2><lo-soln/> 3.solis: Joslu diagramma</h2>
 <hgroup>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="co"># Citi Puasona nejaušie skaitļi</span></a>
-<a class="sourceLine" id="cb22-2" title="2">xx &lt;-<span class="st"> </span><span class="kw">rpois</span>(<span class="dt">n=</span><span class="dv">1000</span>,<span class="dt">lambda=</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="co"># Tabula ar kopsavilkumu</span></a>
-<a class="sourceLine" id="cb22-4" title="4">tt &lt;-<span class="st"> </span><span class="kw">table</span>(xx)</a>
-<a class="sourceLine" id="cb22-5" title="5"><span class="co"># Joslu diagramma</span></a>
-<a class="sourceLine" id="cb22-6" title="6"><span class="kw">barplot</span>(<span class="dt">height=</span><span class="kw">as.vector</span>(tt),</a>
-<a class="sourceLine" id="cb22-7" title="7">  <span class="dt">names.arg=</span><span class="kw">names</span>(tt))</a>
-<a class="sourceLine" id="cb22-8" title="8"><span class="kw">grid</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Citi Puasona nejaušie skaitļi</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>xx &lt;-<span class="st"> </span><span class="kw">rpois</span>(<span class="dt">n=</span><span class="dv">1000</span>,<span class="dt">lambda=</span><span class="dv">10</span>)</span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="co"># Tabula ar kopsavilkumu</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>tt &lt;-<span class="st"> </span><span class="kw">table</span>(xx)</span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="co"># Joslu diagramma</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="kw">barplot</span>(<span class="dt">height=</span><span class="kw">as.vector</span>(tt),</span>
+<span id="cb22-7"><a href="#cb22-7"></a>  <span class="dt">names.arg=</span><span class="kw">names</span>(tt))</span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="kw">grid</span>()</span></code></pre></div>
 <p><em>Piezīme.</em> Nepārtrauktiem sadalījumiem atbilst histogrammas, diskrētiem - joslu diagrammas (stabiņiem ir atstarpes).</p>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="poisson-barchart.png" alt="Joslu diagramma" /><figcaption>Joslu diagramma</figcaption>
+<img data-src="poisson-barchart.png" alt="" /><figcaption>Joslu diagramma</figcaption>
 </figure>
 </hgroup>
 </section></section>
@@ -887,20 +890,20 @@ Valodas R ievads
 <li>Ar scenārija komandu noglabāt diagrammu PNG failā</li>
 </ol></section><section id="pilns-atrisinājums" class="slide level2">
 <h2><lo-soln/> Pilns atrisinājums</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">require</span>(ggplot2)</a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="kw">require</span>(RColorBrewer)</a>
-<a class="sourceLine" id="cb23-3" title="3"><span class="kw">setwd</span>(<span class="kw">dirname</span>(rstudioapi<span class="op">::</span><span class="kw">getActiveDocumentContext</span>()<span class="op">$</span>path))</a>
-<a class="sourceLine" id="cb23-4" title="4">df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;matematikas-centralizetais.csv&quot;</span>, </a>
-<a class="sourceLine" id="cb23-5" title="5">                 <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb23-6" title="6">df<span class="op">$</span>Part23 =<span class="st"> </span><span class="fl">0.50</span><span class="op">*</span>df<span class="op">$</span>Part2 <span class="op">+</span><span class="st"> </span>(<span class="fl">0.1875</span>)<span class="op">*</span>df<span class="op">$</span>Part3</a>
-<a class="sourceLine" id="cb23-7" title="7"><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x=</span>Part1, <span class="dt">y=</span>Part23, <span class="dt">color=</span><span class="kw">as.factor</span>(Class))) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb23-8" title="8"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb23-9" title="9"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span><span class="kw">brewer.pal</span>(<span class="dv">4</span>,<span class="st">&quot;Set1&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb23-10" title="10"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">require</span>(ggplot2)</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">require</span>(RColorBrewer)</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="kw">setwd</span>(<span class="kw">dirname</span>(rstudioapi<span class="op">::</span><span class="kw">getActiveDocumentContext</span>()<span class="op">$</span>path))</span>
+<span id="cb23-4"><a href="#cb23-4"></a>df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;matematikas-centralizetais.csv&quot;</span>, </span>
+<span id="cb23-5"><a href="#cb23-5"></a>                 <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb23-6"><a href="#cb23-6"></a>df<span class="op">$</span>Part23 =<span class="st"> </span><span class="fl">0.50</span><span class="op">*</span>df<span class="op">$</span>Part2 <span class="op">+</span><span class="st"> </span>(<span class="fl">0.1875</span>)<span class="op">*</span>df<span class="op">$</span>Part3</span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x=</span>Part1, <span class="dt">y=</span>Part23, <span class="dt">color=</span><span class="kw">as.factor</span>(Class))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span><span class="kw">brewer.pal</span>(<span class="dv">4</span>,<span class="st">&quot;Set1&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </section><section id="attēls-izkliedes-diagramma" class="slide level2">
 <h2><lo-soln/> Attēls (Izkliedes diagramma)</h2>
 <figure>
-<img data-src="scatterplot.png" alt="Scatterplot" /><figcaption>Scatterplot</figcaption>
+<img data-src="scatterplot.png" alt="" /><figcaption>Scatterplot</figcaption>
 </figure>
 </section></section>
 <section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
@@ -925,11 +928,11 @@ Valodas R ievads
 </ol>
 <p>Sk. ZIP apakšdirektoriju: <strong>data-analysis-course/chapters/LD-kartes</strong></p></section><section id="solis-instalēt-trūkstošās-pakotnes" class="slide level2">
 <h2><lo-soln/> 1.solis: Instalēt trūkstošās pakotnes</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;rgeos&quot;</span>)</a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;maptools&quot;</span>)</a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="kw">install.packages</span>(<span class="st">&quot;sp&quot;</span>)</a>
-<a class="sourceLine" id="cb24-4" title="4"><span class="kw">install.packages</span>(<span class="st">&quot;classInt&quot;</span>)</a>
-<a class="sourceLine" id="cb24-5" title="5"><span class="kw">install.packages</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rgeos&quot;</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;maptools&quot;</span>)</span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">install.packages</span>(<span class="st">&quot;sp&quot;</span>)</span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="kw">install.packages</span>(<span class="st">&quot;classInt&quot;</span>)</span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="kw">install.packages</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</span></code></pre></div>
 </section><section id="solis-darbināt-scenāriju" class="slide level2">
 <h2><lo-soln/> 2.solis: Darbināt scenāriju</h2>
 <ul>
@@ -967,7 +970,6 @@ Valodas R ievads
     </div>
   </div>
 
-  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -172,7 +173,7 @@ Lietišķie algoritmi
 </section><section id="b-freimus-atliek-nosūtītajos-datos" class="slide level2">
 <h2><lo-theory/> B-freimus atliek nosūtītajos datos</h2>
 <figure>
-<img data-src="b-frames-postponed.png" alt="B frames postponed" /><figcaption>B frames postponed</figcaption>
+<img data-src="b-frames-postponed.png" alt="" /><figcaption>B frames postponed</figcaption>
 </figure>
 <p>Ja filmas scēna strauji mainās, ir izdevīgi biežāk lietot I-freimus, ja tā ir relatīvi statiska, tad - sajauktus P-freimus un B-freimus. Kodeki parasti ir optimizēti kaut kādam “caurmēra” ritmam.</p>
 </section><section id="kustības-vektors" class="slide level2">
@@ -186,7 +187,7 @@ Lietišķie algoritmi
 <h2><lo-theory/> P-freimu kodēšana</h2>
 <p><a href="https://en.wikipedia.org/wiki/YCbCr">YCbCr krāsu plakne</a> - nav tas pats kas YIQ.</p>
 <figure>
-<img data-src="p-frame-encoding.png" alt="P-freimu kodēšana" /><figcaption>P-freimu kodēšana</figcaption>
+<img data-src="p-frame-encoding.png" alt="" /><figcaption>P-freimu kodēšana</figcaption>
 </figure>
 </section><section id="saspiešanas-piemērs" class="slide level2">
 <h2><lo-theory/> Saspiešanas piemērs</h2>
@@ -316,26 +317,26 @@ Lietišķie algoritmi
 <h2><lo-theory/> Analizējošās filtrubankas (filterbanks)</h2>
 <p>Atdarina cilvēka ausī esošās struktūras, no kurām katra uztver skaņas kaut kādā šaurā frekvenču diapazonā. Šo diapazonu ir ap <span class="math inline">\(24\)</span>.</p>
 <figure>
-<img data-src="critical-bands.png" alt="Critical bands" /><figcaption>Critical bands</figcaption>
+<img data-src="critical-bands.png" alt="" /><figcaption>Critical bands</figcaption>
 </figure>
 <p>Skaņu plūsmā ir dažas situācijas, kad viens tonis nomaskē otru (MP3 paredz, ka otru toni nevarēs dzirdēt; tāpēc tas tiek nomaskēts). Divi gadījumi - tuva frekvence, laika sakritība.</p>
 </section><section id="skaņas-maskēšana" class="slide level2">
 <h2><lo-theory/> Skaņas maskēšana</h2>
 <hgroup>
 <figure>
-<img data-src="masking-by-freq.png" alt="Simultaneous Masking" /><figcaption>Simultaneous Masking</figcaption>
+<img data-src="masking-by-freq.png" alt="" /><figcaption>Simultaneous Masking</figcaption>
 </figure>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="temporal-masking.png" alt="Temporal Masking" /><figcaption>Temporal Masking</figcaption>
+<img data-src="temporal-masking.png" alt="" /><figcaption>Temporal Masking</figcaption>
 </figure>
 </hgroup>
 </section><section id="fft-ātrā-furjē-transformācija" class="slide level2">
 <h2><lo-theory/> FFT (ātrā Furjē transformācija)</h2>
 <hgroup style="width:60%">
 <figure>
-<img data-src="full-mp3-model.png" alt="Full MP3 model" /><figcaption>Full MP3 model</figcaption>
+<img data-src="full-mp3-model.png" alt="" /><figcaption>Full MP3 model</figcaption>
 </figure>
 </hgroup>
 <hgroup style="width:40%">
@@ -387,7 +388,7 @@ Ekstrēmāki datu zādzības piemēri - informācijas slēpšana DNS pieprasīju
 </ul></section><section id="ūdenszīmjusteganogrāfijas-ievietošana" class="slide level2">
 <h2><lo-summary/> Ūdenszīmju/Steganogrāfijas ievietošana</h2>
 <figure>
-<img data-src="embedding-watermark.png" alt="Embedding watermark" /><figcaption>Embedding watermark</figcaption>
+<img data-src="embedding-watermark.png" alt="" /><figcaption>Embedding watermark</figcaption>
 </figure>
 <ul>
 <li>Gan ūdenszīmes, gan stenogrāfiju (gan digitālos parakstus, piemēram DKIM) ievieto jau gatavā mediju failā.</li>
@@ -464,7 +465,6 @@ Lietišķie algoritmi
     </div>
   </div>
 
-  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

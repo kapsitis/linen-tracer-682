@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -108,10 +109,10 @@ Simetrija spēlēs
 </hgroup></section>
 <section><section id="kāpēc-kombinatoriskas-spēles" class="title-slide slide level1"><h1><lo-theory/> Kāpēc kombinatoriskas spēles?</h1><hgroup>
 <figure>
-<img data-src="tic-tac-toe.png" alt="tic-tac-toe" /><figcaption>tic-tac-toe</figcaption>
+<img data-src="tic-tac-toe.png" alt="" /><figcaption>tic-tac-toe</figcaption>
 </figure>
 <figure>
-<img data-src="robocup.png" alt="robocup" /><figcaption>robocup</figcaption>
+<img data-src="robocup.png" alt="" /><figcaption>robocup</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -124,7 +125,7 @@ Simetrija spēlēs
 <h2><lo-summary/> Šahs kā kombinatoriska spēle</h2>
 <hgroup>
 <figure>
-<img data-src="chess.png" alt="chess" /><figcaption>chess</figcaption>
+<img data-src="chess.png" alt="" /><figcaption>chess</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -136,7 +137,7 @@ Simetrija spēlēs
 </hgroup>
 </section></section>
 <section id="citi-ierobežojumi" class="title-slide slide level1"><h1><lo-theory/> Citi ierobežojumi</h1><hgroup>
-<img data-src="two-player-game.png" alt="chess" />
+<img data-src="two-player-game.png" title="fig:" alt="chess" />
 </hgroup>
 <hgroup>
 <ul>
@@ -158,14 +159,14 @@ Simetrija spēlēs
 <p>Uzvarētājam jāvar atbildēt <strong>visiem</strong> pretinieka gājieniem.<br />
 Risinājumā nedrīkst pieņemt, ka zaudētājs rīkosies noteiktā veidā.</p></section>
 <section id="milzīgs-variantu-skaits" class="title-slide slide level1"><h1><lo-theory/> Milzīgs variantu skaits</h1><figure>
-<img data-src="exponential-by-four.png" alt="Eksponenciālais sprādziens" /><figcaption>Eksponenciālais sprādziens</figcaption>
+<img data-src="exponential-by-four.png" alt="" /><figcaption>Eksponenciālais sprādziens</figcaption>
 </figure>
 <p><strong>Būtiska grūtība:</strong> Kombinatoriskās spēlēs mēdz būt ārkārtīgi daudz spēles scenāriju. Parasti nevar atsevišķi pierakstīt, ko darīt katrā pozīcijā, atbildot uz katru pretinieka gājienu.</p>
 <p><strong>Kā meklēt atrisinājumu?</strong><br />
 Var aplūkot <em>invariantus</em> - spēles pozīciju īpašības, kas gājienu veikšanas laikā nemainās.</p></section>
 <section><section id="piemērs-noņemšanas-spēle" class="title-slide slide level1"><h1><lo-sample/> Piemērs: Noņemšanas spēle</h1><hgroup>
 <figure>
-<img data-src="the-takeaway-game.png" alt="Noņemšanas spēle" /><figcaption>Noņemšanas spēle</figcaption>
+<img data-src="the-takeaway-game.png" alt="" /><figcaption>Noņemšanas spēle</figcaption>
 </figure>
 <p>(<em>Attēls no Paul Zeitz, “The Art and Craft of Mathematical Problem Solving”. 2010.</em>)</p>
 </hgroup>
@@ -175,7 +176,7 @@ Var aplūkot <em>invariantus</em> - spēles pozīciju īpašības, kas gājienu 
 </hgroup></section><section id="spēles-analīze-no-beigām" class="slide level2">
 <h2><lo-soln/> Spēles analīze no beigām</h2>
 <figure>
-<img data-src="take-away-game-states.png" alt="Noņemšanas spēles stāvokļi" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
+<img data-src="take-away-game-states.png" alt="" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
 </figure>
 <ol type="1">
 <li>Beigu pozīciju (<span class="math inline">\(0\)</span>) krāso <blue>zilu</blue>.</li>
@@ -188,7 +189,7 @@ Var aplūkot <em>invariantus</em> - spēles pozīciju īpašības, kas gājienu 
 <h2><lo-soln/> Invariants: Monētu skaita dalāmība ar 5</h2>
 <hgroup>
 <figure>
-<img data-src="take-away-macrostates.png" alt="Noņemšanas spēles stāvokļi" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
+<img data-src="take-away-macrostates.png" alt="" /><figcaption>Noņemšanas spēles stāvokļi</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -208,12 +209,12 @@ Turpmāk 2.spēlētājs ikreiz dalāmību ar <span class="math inline">\(5\)</sp
 <li>Pēc <span class="math inline">\(i\)</span> gājieniem pretinieks no jebkuras <span class="math inline">\(n_i\)</span> vērtības var atņemt <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vai <span class="math inline">\(4\)</span>. Uzvarētājs tad atņem “pretējo skaitli”.</li>
 </ol>
 <figure>
-<img data-src="take-away-game-responses.png" alt="Noņemšanas spēles atbildes" /><figcaption>Noņemšanas spēles atbildes</figcaption>
+<img data-src="take-away-game-responses.png" alt="" /><figcaption>Noņemšanas spēles atbildes</figcaption>
 </figure>
 </section></section>
 <section><section id="kas-jāraksta-atrisinājumā---1" class="title-slide slide level1"><h1><lo-theory/> Kas jāraksta atrisinājumā - 1</h1><hgroup>
 <figure>
-<img data-src="solution-structure-01.png" alt="Atrisinājuma struktūra - 1" /><figcaption>Atrisinājuma struktūra - 1</figcaption>
+<img data-src="solution-structure-01.png" alt="" /><figcaption>Atrisinājuma struktūra - 1</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -225,7 +226,7 @@ Jāuzraksta, kā ar pirmo gājienu nonākt stāvoklī, kas atbilst invariantam.<
 <h2><lo-theory/> Kas jāraksta atrisinājumā - 2</h2>
 <hgroup>
 <figure>
-<img data-src="solution-structure-02.png" alt="Atrisinājuma struktūra - 2" /><figcaption>Atrisinājuma struktūra - 2</figcaption>
+<img data-src="solution-structure-02.png" alt="" /><figcaption>Atrisinājuma struktūra - 2</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -238,7 +239,7 @@ Jāuzraksta, kā ar pirmo gājienu nonākt stāvoklī, kas atbilst invariantam.<
 <h2><lo-theory/> Kas jāraksta atrisinājumā - 3</h2>
 <hgroup>
 <figure>
-<img data-src="solution-structure-03.png" alt="Atrisinājuma struktūra - 3" /><figcaption>Atrisinājuma struktūra - 3</figcaption>
+<img data-src="solution-structure-03.png" alt="" /><figcaption>Atrisinājuma struktūra - 3</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -249,7 +250,7 @@ Jāuzraksta, kā ar pirmo gājienu nonākt stāvoklī, kas atbilst invariantam.<
 <h2><lo-theory/> Ja uzvar otrais…</h2>
 <hgroup>
 <figure>
-<img data-src="solution-structure-04.png" alt="Atrisinājuma struktūra - 4" /><figcaption>Atrisinājuma struktūra - 4</figcaption>
+<img data-src="solution-structure-04.png" alt="" /><figcaption>Atrisinājuma struktūra - 4</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -261,7 +262,7 @@ tad līdzīga atrisinājuma struktūra kā iepriekš. Nav pirmā soļa, nav jār
 <section><section id="kāpēc-visas-pozīcijas-dala-2-grupās" class="title-slide slide level1"><h1><lo-theory/> Kāpēc visas pozīcijas dala 2 grupās?</h1><p>Uzvaroša stratēģija nozīmē spēju kontrolēt invariantu - pēc katra gājiena nokļūstot “aukstā pozīcijā”.</p>
 <p>(<em>Spēļu analīzē par <a href="https://en.wikipedia.org/wiki/Hot_game">Hot game</a> sauc pozīcijas, kur ar kārtējo gājienu var uzlabot savas izredzes. “Cold game” ir otrādi - spēlētājs ar savu gājienu izredzes pasliktina.</em>)</p>
 <figure>
-<img data-src="state-transitions.png" alt="Stāvokļu pārejas" /><figcaption>Stāvokļu pārejas</figcaption>
+<img data-src="state-transitions.png" alt="" /><figcaption>Stāvokļu pārejas</figcaption>
 </figure></section><section id="dalītāju-noņemšanas-spēle" class="slide level2">
 <h2><lo-sample/> Dalītāju noņemšanas spēle</h2>
 <p>Sākumā uz galda ir <span class="math inline">\(100\)</span> monētas. Divi spēlētāji <span class="math inline">\(A\)</span> un <span class="math inline">\(B\)</span> pārmaiņus izdara gājienus. Ja uz galda ir <span class="math inline">\(N\)</span> monētas, tad ar kārtējo gājienu var paņemt tādu monētu skaitu, kas ir kāds no skaitļa <span class="math inline">\(N\)</span> dalītājiem, izņemot pašu <span class="math inline">\(N\)</span>. (Piemēram, pirmajā gājienā <span class="math inline">\(A\)</span> var paņemt <span class="math inline">\(1,2,4,5,10,20,25\)</span> vai <span class="math inline">\(50\)</span> monētas, bet ne <span class="math inline">\(100\)</span> monētas.)<br />
@@ -271,7 +272,7 @@ Kurš uzvar, pareizi spēlējot?</p>
 <h2><lo-soln/> Kuras pozīcijas būs aukstas?</h2>
 <hgroup>
 <figure>
-<img data-src="divisor-game-states.png" alt="Dalītāju atņemšana" /><figcaption>Dalītāju atņemšana</figcaption>
+<img data-src="divisor-game-states.png" alt="" /><figcaption>Dalītāju atņemšana</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -305,14 +306,14 @@ Tad 1.spēlētājs sāk ar “1” (un turpmāk ikreiz atgriežas aukstā pozīc
 <li>Atlikušos skaitļus sadala pāros: <span class="math inline">\((3,4)\)</span>, <span class="math inline">\((5,7)\)</span>, <span class="math inline">\((6,8)\)</span>.</li>
 </ul>
 <figure>
-<img data-src="divisibility-game.png" alt="Uzvarošā stratēģija" /><figcaption>Uzvarošā stratēģija</figcaption>
+<img data-src="divisibility-game.png" alt="" /><figcaption>Uzvarošā stratēģija</figcaption>
 </figure>
 </hgroup>
 </section></section>
 <section><section id="piemērs-no-nms-lapas" class="title-slide slide level1"><h1><lo-sample/> 1.piemērs no NMS lapas</h1><p>Vienā horizontālā rindā savilktas <strong>(a)</strong> <span class="math inline">\(9\)</span>; <strong>(b)</strong> <span class="math inline">\(10\)</span> svītriņas.<br />
 Divi spēlētāji pamīšus izdara gājienus. Vienā gājienā var par krustiņu pārvērst vai nu vienu svītriņu, vai arī divas blakus esošas svītriņas. Zaudē tas spēlētājs, kurš nevar izdarīt gājienu, tas ir, nevar atbilstoši noteikumiem, svītriņu pārvērst par krustiņu. Kurš spēlētājs – pirmais vai otrais – vienmēr var uzvarēt?</p>
 <figure>
-<img data-src="matchstick-picture-01.png" alt="Sērkociņu virknes" /><figcaption>Sērkociņu virknes</figcaption>
+<img data-src="matchstick-picture-01.png" alt="" /><figcaption>Sērkociņu virknes</figcaption>
 </figure></section><section id="piemērs-no-nms-lapas-1" class="slide level2">
 <h2><lo-hints/> 1.piemērs no NMS lapas</h2>
 <ol type="1">
@@ -323,7 +324,7 @@ Divi spēlētāji pamīšus izdara gājienus. Vienā gājienā var par krustiņu
 </section><section id="pirmais-gājiens-vidū" class="slide level2">
 <h2><lo-soln/> Pirmais gājiens vidū</h2>
 <figure>
-<img data-src="matchstick-picture-02.png" alt="Sērkociņu virknes" /><figcaption>Sērkociņu virknes</figcaption>
+<img data-src="matchstick-picture-02.png" alt="" /><figcaption>Sērkociņu virknes</figcaption>
 </figure>
 <ul>
 <li>Uzvar 1.spēlētājs. <blue><strong>Invariants:</strong></blue> Pēc katra 1.spēlētāja gājiena konfigurācija simetriska pret vertikālo taisni.</li>
@@ -332,7 +333,7 @@ Divi spēlētāji pamīšus izdara gājienus. Vienā gājienā var par krustiņu
 <li>Tā kā 1.spēlētājs vienmēr var atbildēt uz pretinieka gājienu, izsvītrojamo sērkociņu pietrūks 2.spēlētājam.</li>
 </ul>
 <figure>
-<img data-src="matchstick-picture-03.png" alt="Sērkociņu virknes" /><figcaption>Sērkociņu virknes</figcaption>
+<img data-src="matchstick-picture-03.png" alt="" /><figcaption>Sērkociņu virknes</figcaption>
 </figure>
 </section></section>
 <section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
@@ -363,12 +364,12 @@ Simetrija spēlēs
 <li>Konfekšu ēšana no 1.kaudzes (virzība pa kreisi) ir simetriska ēšanai no 2.kaudzes (virzība uz leju).</li>
 </ul>
 <figure>
-<img data-src="candy-problem-01.png" alt="Konfektes Dekarta koordinātēs" /><figcaption>Konfektes Dekarta koordinātēs</figcaption>
+<img data-src="candy-problem-01.png" alt="" /><figcaption>Konfektes Dekarta koordinātēs</figcaption>
 </figure>
 </section><section id="no-beigām---no-kreisā-apakšējā-stūra" class="slide level2">
 <h2><lo-soln/> “No beigām” - no kreisā apakšējā stūra</h2>
 <figure>
-<img data-src="candy-problem-02.png" alt="Konfektes Dekarta koordinātēs" /><figcaption>Konfektes Dekarta koordinātēs</figcaption>
+<img data-src="candy-problem-02.png" alt="" /><figcaption>Konfektes Dekarta koordinātēs</figcaption>
 </figure>
 <p>Analizējam šo spēli “no beigām”:</p>
 <ul>
@@ -407,7 +408,6 @@ Var tomēr būt grūti noskaidrot, kura ir “auksta pozīcija”. Arī - kurš,
     </div>
   </div>
 
-  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

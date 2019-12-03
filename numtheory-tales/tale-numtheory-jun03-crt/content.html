@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -16,9 +15,9 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style>
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -28,16 +27,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -46,9 +43,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -186,7 +183,7 @@ Saki: “Visiem <span class="math inline">\(a\)</span> no veselo skaitļu kopas:
 <h2><lo-summary/> Dalāmības režģis</h2>
 <hgroup>
 <figure>
-<img data-src="lattice-of-divisors.png" alt="" /><figcaption>Lattice of divisors</figcaption>
+<img data-src="lattice-of-divisors.png" alt="Lattice of divisors" /><figcaption>Lattice of divisors</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -812,18 +809,18 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
 </aside></section>
 <section><section id="dalītāju-virknes-simetrija" class="title-slide slide level1"><h1><lo-summary/> Dalītāju virknes simetrija</h1><hgroup>
 <figure>
-<img data-src="divisors-of-60-seq.png" alt="" /><figcaption>Divisors of 60</figcaption>
+<img data-src="divisors-of-60-seq.png" alt="Divisors of 60" /><figcaption>Divisors of 60</figcaption>
 </figure>
 <figure>
-<img data-src="divisors-of-60-hasse.png" alt="" /><figcaption>Divisors of 60 (Hasse)</figcaption>
+<img data-src="divisors-of-60-hasse.png" alt="Divisors of 60 (Hasse)" /><figcaption>Divisors of 60 (Hasse)</figcaption>
 </figure>
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="divisors-of-36-seq.png" alt="" /><figcaption>Divisors of 60</figcaption>
+<img data-src="divisors-of-36-seq.png" alt="Divisors of 60" /><figcaption>Divisors of 60</figcaption>
 </figure>
 <figure>
-<img data-src="divisors-of-36-hasse.png" alt="" /><figcaption>Divisors of 60 (Hasse)</figcaption>
+<img data-src="divisors-of-36-hasse.png" alt="Divisors of 60 (Hasse)" /><figcaption>Divisors of 60 (Hasse)</figcaption>
 </figure>
 </hgroup>
 <aside class="notes">
@@ -842,12 +839,12 @@ Ja <span class="math inline">\(a \mid b\)</span> un <span class="math inline">\(
 <li>Pēc tam izdzēš tās svītriņas, ko var izsecināt no citām, izmantojot transitivitāti.</li>
 </ul>
 <figure>
-<img data-src="hasse-1-to-15.png" alt="" /><figcaption>Hasse 1 to 15</figcaption>
+<img data-src="hasse-1-to-15.png" alt="Hasse 1 to 15" /><figcaption>Hasse 1 to 15</figcaption>
 </figure>
 </section><section id="veidotājelementi-235" class="slide level2">
 <h2><lo-summary/> Veidotājelementi: 2,3,5</h2>
 <figure>
-<img data-src="hasse-larger.png" alt="" /><figcaption>Hasse larger</figcaption>
+<img data-src="hasse-larger.png" alt="Hasse larger" /><figcaption>Hasse larger</figcaption>
 </figure>
 <aside class="notes">
 <p>https://www.pinterest.com/pin/411586853439524717/?lp=true</p>
@@ -870,7 +867,7 @@ Ja <span class="math inline">\(a \mid b\)</span> un <span class="math inline">\(
 <h2><lo-summary/> Dalītāji skaitlim 60</h2>
 <hgroup>
 <figure>
-<img data-src="divisors-of-60.png" alt="" /><figcaption>Divisors of 60</figcaption>
+<img data-src="divisors-of-60.png" alt="Divisors of 60" /><figcaption>Divisors of 60</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -916,7 +913,7 @@ Meklējam visus veidus, kā <span class="math inline">\(16\)</span> var izteikt 
 <h2><lo-soln/> NT.JUN01.2 (1 pirmskaitlis)</h2>
 <hgroup>
 <figure>
-<img data-src="16-divisors-var1.png" alt="" /><figcaption>16 divisors - Variant1</figcaption>
+<img data-src="16-divisors-var1.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -931,7 +928,7 @@ Meklējam visus veidus, kā <span class="math inline">\(16\)</span> var izteikt 
 <h2><lo-soln/> NT.JUN01.2 (2 pirmskaitļi - A)</h2>
 <hgroup>
 <figure>
-<img data-src="16-divisors-var2.png" alt="" /><figcaption>16 divisors - Variant1</figcaption>
+<img data-src="16-divisors-var2.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -945,7 +942,7 @@ Meklējam visus veidus, kā <span class="math inline">\(16\)</span> var izteikt 
 <h2><lo-soln/> NT.JUN01.2 (2 pirmskaitļi - B)</h2>
 <hgroup>
 <figure>
-<img data-src="16-divisors-var3.png" alt="" /><figcaption>16 divisors - Variant1</figcaption>
+<img data-src="16-divisors-var3.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -959,7 +956,7 @@ Meklējam visus veidus, kā <span class="math inline">\(16\)</span> var izteikt 
 <h2><lo-soln/> NT.JUN01.2 (3 pirmskaitļi)</h2>
 <hgroup>
 <figure>
-<img data-src="16-divisors-var4.png" alt="" /><figcaption>16 divisors - Variant1</figcaption>
+<img data-src="16-divisors-var4.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -973,7 +970,7 @@ Meklējam visus veidus, kā <span class="math inline">\(16\)</span> var izteikt 
 <h2><lo-soln/> NT.JUN01.2 (4 pirmskaitļi)</h2>
 <hgroup>
 <figure>
-<img data-src="16-divisors-var5.png" alt="" /><figcaption>16 divisors - Variant1</figcaption>
+<img data-src="16-divisors-var5.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -1134,7 +1131,7 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
 <h2><lo-summary/> Eratostena režģis</h2>
 <hgroup>
 <figure>
-<img data-src="eratosthenes.png" alt="" /><figcaption>Eratosthenes</figcaption>
+<img data-src="eratosthenes.png" alt="Eratosthenes" /><figcaption>Eratosthenes</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -1172,18 +1169,18 @@ pirmoreiz.
 <p><span class="math inline">\(P\)</span> nedalās ne ar vienu no pirmskaitļiem, kuri ir galīgajā sarakstā: vienmēr atlikums <span class="math inline">\(1\)</span>. Vai nu <span class="math inline">\(P\)</span> pats ir pirmskaitlis vai kādu (sarakstā neesošu) pirmskaitļu reizinājums. Pretruna. <span class="math inline">\(\blacksquare\)</span></p></section><section id="pārlase-līdz-kvadrātsaknei" class="slide level2">
 <h2><lo-sample/> Pārlase līdz kvadrātsaknei</h2>
 <hgroup>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> math </span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">def</span> isPrime(n):</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    result <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>    ROOT <span class="op">=</span> <span class="bu">int</span>(math.sqrt(n))</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="cf">for</span> d <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,ROOT<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb2-7"><a href="#cb2-7"></a>        <span class="cf">if</span> n <span class="op">%</span> d <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb2-8"><a href="#cb2-8"></a>            result <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>            <span class="cf">break</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="cf">return</span> result</span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="bu">print</span>(isPrime(<span class="dv">10000000019</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> math </a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">def</span> isPrime(n):</a>
+<a class="sourceLine" id="cb2-4" title="4">    result <span class="op">=</span> <span class="va">True</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    ROOT <span class="op">=</span> <span class="bu">int</span>(math.sqrt(n))</a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="cf">for</span> d <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,ROOT<span class="op">+</span><span class="dv">1</span>):</a>
+<a class="sourceLine" id="cb2-7" title="7">        <span class="cf">if</span> n <span class="op">%</span> d <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb2-8" title="8">            result <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb2-9" title="9">            <span class="cf">break</span></a>
+<a class="sourceLine" id="cb2-10" title="10">    <span class="cf">return</span> result</a>
+<a class="sourceLine" id="cb2-11" title="11"></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="bu">print</span>(isPrime(<span class="dv">10000000019</span>))</a></code></pre></div>
 </hgroup>
 <hgroup>
 <p>Pilnā pārlase ir ļoti neefektīva (slikti strādā jau pie <span class="math inline">\(n = 10^{30}\)</span>).</p>
@@ -1222,7 +1219,7 @@ Dalāmības pazīme ar <span class="math inline">\(11\)</span>?<br />
 </section></section>
 <section><section id="ulama-spirāle" class="title-slide slide level1"><h1><lo-yellow/> Ulama spirāle</h1><hgroup>
 <figure>
-<img data-src="ulam-spiral.png" alt="" /><figcaption>Ulam spiral</figcaption>
+<img data-src="ulam-spiral.png" alt="Ulam spiral" /><figcaption>Ulam spiral</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -1242,7 +1239,7 @@ Dalāmības pazīme ar <span class="math inline">\(11\)</span>?<br />
 </section></section>
 <section><section id="pirmskaitļu-skaitīšanas-funkcija" class="title-slide slide level1"><h1><lo-theory/> Pirmskaitļu skaitīšanas funkcija</h1><hgroup>
 <figure>
-<img data-src="pi-counting-function.png" alt="" /><figcaption>Prime counting function</figcaption>
+<img data-src="pi-counting-function.png" alt="Prime counting function" /><figcaption>Prime counting function</figcaption>
 </figure>
 </hgroup>
 <hgroup style="font-size:70%">
@@ -1260,7 +1257,7 @@ Dalāmības pazīme ar <span class="math inline">\(11\)</span>?<br />
 <h2><lo-theory/> Naturālais logaritms</h2>
 <hgroup>
 <figure>
-<img data-src="natural-logarithm.png" alt="" /><figcaption>Graph of natural logarithm</figcaption>
+<img data-src="natural-logarithm.png" alt="Graph of natural logarithm" /><figcaption>Graph of natural logarithm</figcaption>
 </figure>
 </hgroup>
 <hgroup>
@@ -1272,7 +1269,7 @@ Naturālais logaritms ir īpašs ar to, ka tā grafiks <span class="math inline"
 <h2><lo-summary/> Mazākie 101-ciparu pirmskaitļi</h2>
 <div style="font-size:70%">
 <figure>
-<img data-src="marcis-bendiks.png" alt="" /><figcaption>Marcis Bendiks</figcaption>
+<img data-src="marcis-bendiks.png" alt="Marcis Bendiks" /><figcaption>Marcis Bendiks</figcaption>
 </figure>
 <p>Ja saldējumu ar rozīnēm (vidēji <span class="math inline">\(5\)</span> rozīnes uz vienu saldējuma masas vienību) vienmērīgi izmaisa, tad rozīņu skaits saldējuma vienībā pakļaujas <blue><em>Puasona sadalījumam</em></blue> (<em>Poisson distribution</em>) ar parametru <span class="math inline">\(\lambda=5\)</span>).</p>
 <p>Ja aplūkojam skaitļu porcijas pa <span class="math inline">\(100\)</span>, tad pie <span class="math inline">\(N=e^{20} \approx 485\,165\,195\)</span> šim skaitlim <span class="math inline">\(N\)</span> tuvajos <span class="math inline">\(100\)</span> skaitļu komplektos būs vidēji <span class="math inline">\(5\)</span> pirmskaitļi (bet mēdz būt arī vairāk vai mazāk).</p>
@@ -1604,7 +1601,7 @@ Ja <span class="math inline">\(n\)</span> ir pirmskaitlis, tad tas jau ir šādi
 <h2><lo-summary/> Sadalīšanas piemēri</h2>
 <hgroup>
 <figure>
-<img data-src="factoring-12.png" alt="" /><figcaption>Factoring 12</figcaption>
+<img data-src="factoring-12.png" alt="Factoring 12" /><figcaption>Factoring 12</figcaption>
 </figure>
 <p>Kāpēc neatkarīgi no <blue><em>factorizēšanas</em></blue> secības, vienmēr sanāk tas pats?<br />
 (Par faktorizēšanu sauc dalīšanu reizinātājos.)</p>
@@ -1620,7 +1617,7 @@ Ja <span class="math inline">\(n\)</span> ir pirmskaitlis, tad tas jau ir šādi
 </section><section id="skaitļa-90-faktorizācija" class="slide level2">
 <h2><lo-summary/> Skaitļa 90 faktorizācija</h2>
 <figure>
-<img data-src="factoring-90.png" alt="" /><figcaption>Factoring 90</figcaption>
+<img data-src="factoring-90.png" alt="Factoring 90" /><figcaption>Factoring 90</figcaption>
 </figure>
 <p>Ļoti dažādi veidi, kā nonākt līdz pirmskaitļu reizinājumam.</p>
 <aside class="notes">
@@ -1704,7 +1701,7 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
 </hgroup></section><section id="intuīcija-par-mkd" class="slide level2">
 <h2><lo-summary/> Intuīcija par MKD</h2>
 <figure>
-<img data-src="venn-for-divisors.png" alt="" /><figcaption>Venn Diagram for Divisors</figcaption>
+<img data-src="venn-for-divisors.png" alt="Venn Diagram for Divisors" /><figcaption>Venn Diagram for Divisors</figcaption>
 </figure>
 <p>Aplūkojot visus divu skaitļu kopīgos dalītājus (vai dalāmos), izrādās, ka starp tiem vienmēr ir noteiktas sakarības, ko var ļoti kompakti aprakstīt, atrodot lielāko kopīgo dalītāju (attiecīgi mazāko kopīgo dalāmo).</p>
 </section></section>
@@ -1794,10 +1791,10 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
 <p>Faktiski ir ļoti grūti dalīt lielus skaitļus pirmreizinātājos. Kā atrast, teiksim,</p>
 <p><span class="math display">\[\text{LKD}(73786976294838206463, 295147905179352825855)?\]</span></p></section><section id="eiklīda-algoritms-python" class="slide level2">
 <h2><lo-summary/> Eiklīda algoritms (Python)</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> gcd(a, b):</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">while</span> b:</span>
-<span id="cb3-3"><a href="#cb3-3"></a>        a, b <span class="op">=</span> b, a <span class="op">%</span> b</span>
-<span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">return</span> a</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">def</span> gcd(a, b):</a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="cf">while</span> b:</a>
+<a class="sourceLine" id="cb3-3" title="3">        a, b <span class="op">=</span> b, a <span class="op">%</span> b</a>
+<a class="sourceLine" id="cb3-4" title="4">    <span class="cf">return</span> a</a></code></pre></div>
 <p><strong>Pseidokods:</strong> <span><span class="math inline">\(\text{LKD}(a,b)\)</span>:</span><br />
 <span>1. Kamēr <span class="math inline">\(b \neq 0\)</span> atkārto:</span><br />
 <span>2.     Vienlaikus aizstāj:</span><br />
@@ -1898,7 +1895,7 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
 <h2><lo-summary/> LKD un MKD ir savstarpēji izsakāmi</h2>
 <hgroup style="width:40%">
 <figure>
-<img data-src="lattice-10-14.png" alt="" /><figcaption>Lattice of 10 and 14</figcaption>
+<img data-src="lattice-10-14.png" alt="Lattice of 10 and 14" /><figcaption>Lattice of 10 and 14</figcaption>
 </figure>
 <p>Zaļo un sarkano skaitļu reizinājumi sakrīt: <span class="math inline">\(2 \cdot 70 = 10 \cdot 14\)</span>.</p>
 </hgroup>
@@ -1912,7 +1909,7 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
 </section><section id="lkd-un-mkd-dalāmības-režģī" class="slide level2">
 <h2><lo-summary/> LKD un MKD dalāmības režģī</h2>
 <figure>
-<img data-src="meet-and-join.png" alt="" /><figcaption>Meet and Join</figcaption>
+<img data-src="meet-and-join.png" alt="Meet and Join" /><figcaption>Meet and Join</figcaption>
 </figure>
 <aside class="notes">
 <p>Vidusskolas aritmētikā bieži jānoskaidro gan LKD (lai noīsinātu daļskaitļus), gan arī – MKD (lai atrastu mazāko kopsaucēju). Tomēr nereti skolu kursā koncentrējas vienīgi uz prasmi atrast šos lielumus nelieliem skaitļiem, risinot aritmētikas piemērus, bet maz pievēršas abu lielumu vispārīgajām īpašībām.</p>
@@ -2172,6 +2169,7 @@ Skaitļu teorija:<br/> NMS Juniori 2019-09-28
     </div>
   </div>
 
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

@@ -86,7 +86,14 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'dir':'tale-string-searching-part1',
             'title': u'Virkņu meklēšana - 1',
             'date': '2019-11-26'                        
+        },
+        {
+            'id':'Algorithms.StringSearching2',
+            'dir':'tale-string-searching-part2',
+            'title': u'Virkņu meklēšana - 2',
+            'date': '2019-12-03'                        
         }
+ 
     ]       
 
     total_grades = { '40200A': '24.1', 

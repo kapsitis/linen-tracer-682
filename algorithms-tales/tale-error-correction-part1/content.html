@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -79,11 +78,11 @@ Lietišķie algoritmi
 </hgroup></section>
 <section><section id="kļūdu-detekcija-un-korekcija" class="title-slide slide level1"><h1><lo-theory/> Kļūdu detekcija un korekcija</h1><p>Kļūdu detekcija:</p>
 <figure>
-<img data-src="error-detection.png" alt="" /><figcaption>Error detection</figcaption>
+<img data-src="error-detection.png" alt="Error detection" /><figcaption>Error detection</figcaption>
 </figure>
 <p>Kļūdu korekcija:</p>
 <figure>
-<img data-src="error-correction.png" alt="" /><figcaption>Error detection</figcaption>
+<img data-src="error-correction.png" alt="Error detection" /><figcaption>Error detection</figcaption>
 </figure></section><section id="bitu-paritātes-metode" class="slide level2">
 <h2><lo-summary/> Bitu paritātes metode</h2>
 <p><strong>Situācija:</strong> Pārraida <span class="math inline">\(n\)</span> bitu virkni <span class="math inline">\(x_1,x_2,\ldots,x_n \in \{ 0; 1\}\)</span>. Lai konstatētu iespējamu kļūdu <span class="math inline">\(1\)</span> bitā (kas var gan iestāties, gan neiestāties), pārraida <span class="math inline">\(n+1\)</span> bitus:<br />
@@ -92,7 +91,7 @@ Visus <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> un arī pēdējo b
 </section><section id="crc-kontrolsumma" class="slide level2">
 <h2><lo-summary/> CRC kontrolsumma</h2>
 <figure>
-<img data-src="ethernet-frame.png" alt="" /><figcaption>Ethernet frame</figcaption>
+<img data-src="ethernet-frame.png" alt="Ethernet frame" /><figcaption>Ethernet frame</figcaption>
 </figure>
 <p>“Frame Check Sequence” (FCS) izmanto 32-bitu CRC (cyclical redundancy check). Tajā veic bitveida “XOR-ošanu stabiņā” ar maģisko skaitli <code>0xC704DD7B</code>.</p>
 <p>FCS 4 baitos ieraksta CRC doto atlikumu. Viena bita pārbaudīšana nav pietiekami droša; CRC32 ir noturīgāks pret pārraides kļūdām, kas var pārmainīt vairākus blakusesošus bitus.</p>
@@ -101,17 +100,17 @@ Visus <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> un arī pēdējo b
 <h2><lo-summary/> MD5 hešfunkcija</h2>
 <p>Garākiem failiem (kuri varbūt tikuši bojāti apzināti) var izmantot hešfunkcijas. Piemēram MD5 izveido 128 bitu virknīti (pieraksta kā 32 hex ciparus).</p>
 <figure>
-<img data-src="hashtools-1.png" alt="" /><figcaption>Hešfunkcijas</figcaption>
+<img data-src="hashtools-1.png" alt="Hešfunkcijas" /><figcaption>Hešfunkcijas</figcaption>
 </figure>
 <p>MD5 hešfunkcijas kolīzijas…</p>
 </section></section>
 <section><section id="kļūdu-korekcija" class="title-slide slide level1"><h1><lo-theory/> Kļūdu korekcija</h1><figure>
-<img data-src="error-correction.png" alt="" /><figcaption>Error correction</figcaption>
+<img data-src="error-correction.png" alt="Error correction" /><figcaption>Error correction</figcaption>
 </figure>
 <p>Ideja visās metodēs - papildināt pārraidāmos datus ar papildinformāciju, cerot, ka papildinformācija ļaus pamanīt kļūdas.</p></section><section id="triviāls-kods-3x-atkārtošana" class="slide level2">
 <h2><lo-summary/> Triviāls kods: 3x atkārtošana</h2>
 <figure>
-<img data-src="repetition-code.png" alt="" /><figcaption>Repetition code</figcaption>
+<img data-src="repetition-code.png" alt="Repetition code" /><figcaption>Repetition code</figcaption>
 </figure>
 <p>Katru pārraidāmo bitu atkārto trīs reizes. Saņēmējs atrod, kādu bitu ir vairāk – nuļļu vai vieninieku. Šāds kods var izlabot kļūdu vienā bitā.</p>
 </section></section>
@@ -446,6 +445,7 @@ Lietišķie algoritmi
     </div>
   </div>
 
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

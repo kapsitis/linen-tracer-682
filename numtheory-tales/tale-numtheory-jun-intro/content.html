@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -16,9 +15,9 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style>
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -28,16 +27,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -46,9 +43,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -177,12 +174,12 @@ Kāda ir naturālo skaitļu nozīme?</p>
 </section><section id="datora-atmiņā-glabājas-veseli-skaitļi" class="slide level2">
 <h2><lo-theory/> Datora atmiņā glabājas veseli skaitļi</h2>
 <div style="70%">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="va">True</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="op">&gt;&gt;&gt;</span> <span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">==</span> <span class="fl">0.3</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="va">False</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="op">&gt;&gt;&gt;</span> <span class="fl">1.1</span> <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fl">0.10000000000000009</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">3</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="va">True</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="op">&gt;&gt;&gt;</span> <span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">==</span> <span class="fl">0.3</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="va">False</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="op">&gt;&gt;&gt;</span> <span class="fl">1.1</span> <span class="op">-</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="fl">0.10000000000000009</span></a></code></pre></div>
 <p>Ja datorprogrammā raksta <code>x = 0.1</code>, atmiņā rodas cits skaitlis, kura decimālpieraksts:</p>
 <pre><code>&gt;&gt;&gt; 0.1
 0.1000000000000000055511151231257827021181583404541015625</code></pre>
@@ -238,7 +235,7 @@ Kādus skaitļus Z iedomājies? (Visi sarunā izdarītie apgalvojumi ir patiesi.
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="induction-deduction.png" alt="" /><figcaption>Indukcija un dedukcija</figcaption>
+<img data-src="induction-deduction.png" alt="Indukcija un dedukcija" /><figcaption>Indukcija un dedukcija</figcaption>
 </figure>
 </hgroup>
 </section><section id="kvadrātu-summas-līdz-142-142" class="slide level2">
@@ -968,19 +965,19 @@ Kādus skaitļus Z iedomājies? (Visi sarunā izdarītie apgalvojumi ir patiesi.
 </section><section id="ģeometriskā-interpretācija" class="slide level2">
 <h2><lo-soln/> Ģeometriskā interpretācija</h2>
 <figure>
-<img data-src="vo_1985_9_5_01.png" alt="" /><figcaption>Interpretācija ar apļiem</figcaption>
+<img data-src="vo_1985_9_5_01.png" alt="Interpretācija ar apļiem" /><figcaption>Interpretācija ar apļiem</figcaption>
 </figure>
 </section><section id="tabula-ar-sakritībām" class="slide level2">
 <h2><lo-summary/> Tabula ar sakritībām</h2>
 <figure>
-<img data-src="white-table.png" alt="" /><figcaption>Tabula balta</figcaption>
+<img data-src="white-table.png" alt="Tabula balta" /><figcaption>Tabula balta</figcaption>
 </figure>
 <p>No tabulas jau izdzēstas tās summas <span class="math inline">\(x^2 + y^2\)</span>, kuras ir pa vienai attiecīgajā rindiņā. (Šīm summām spēlētājs <span class="math inline">\(B\)</span> jau pirmajā solī zinās atbildi.)</p>
 </section><section id="attēlojums-2-krāsu-grafā" class="slide level2">
 <h2><lo-summary/> Attēlojums 2-krāsu grafā</h2>
 <div style="font-size:70%">
 <figure>
-<img data-src="color-table.png" alt="" /><figcaption>Tabula krāsās</figcaption>
+<img data-src="color-table.png" alt="Tabula krāsās" /><figcaption>Tabula krāsās</figcaption>
 </figure>
 <p>1.solī nokrāso sarkanas tās šūnas, kas paliek vienīgās savā <strong>kolonnā</strong>. Izsvītrojam tās.<br />
 2.solī nokrāsojam oranžas tās šūnas, kas paliek vienīgās savā <strong>rindiņā</strong>. Izsvītrojam tās.<br />
@@ -1012,7 +1009,7 @@ Skaitļu teorija:<br/> NMS Junioru ievadlekcija 2019-09-14
 <h2><lo-theory/> Skaitļu teorija un kombinatorika</h2>
 <hgroup style="font-size:70%">
 <figure>
-<img data-src="necklace-proof.png" alt="" /><figcaption>Necklace</figcaption>
+<img data-src="necklace-proof.png" alt="Necklace" /><figcaption>Necklace</figcaption>
 </figure>
 <p><span class="math inline">\(3^7 - 3 = 3(3^6 - 1)\)</span> dalās ar <span class="math inline">\(7\)</span>, jo krellītes var pagriezt <span class="math inline">\(7\)</span> dažādos veidos un iegūt <span class="math inline">\(7\)</span> dažādus izkārtojumus.</p>
 </hgroup>
@@ -1031,6 +1028,7 @@ Skaitļu teorija:<br/> NMS Junioru ievadlekcija 2019-09-14
     </div>
   </div>
 
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

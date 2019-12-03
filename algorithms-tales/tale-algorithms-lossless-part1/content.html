@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../reveal.js/css/reset.css">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -141,7 +140,7 @@ Lietišķie algoritmi
 <p>Kodējums <span class="math inline">\(C\)</span> ziņojumu kopai <span class="math inline">\(S\)</span> ir attēlojums, kas katru ziņojumu pārvērš par bitu virkni. Katru bitu virkni sauc par kodavārdu (<em>codeword</em>) un apzīmēsim visus kodējumā ietilpstošos attēlojumus šādi: <span class="math display">\[C = \{ (s_1,w_1),(s_2,w_2),\ldots,(s_m,w_m)\}.\]</span></p>
 </section></section>
 <section><section id="saspiešanas-veidi" class="title-slide slide level1"><h1><lo-theory/> 2 saspiešanas veidi</h1><figure>
-<img data-src="compression-decompression.png" alt="" /><figcaption>Compression,decompression</figcaption>
+<img data-src="compression-decompression.png" alt="Compression,decompression" /><figcaption>Compression,decompression</figcaption>
 </figure>
 <ul>
 <li><strong>Bezzudumu saspiešana:</strong> Atspiestais ziņojums precīzi sakrīt ar sākotnējo.<br />
@@ -186,7 +185,7 @@ Lietišķie algoritmi
 <h2><lo-theory/> Prefiksu kodējuma jēdziens</h2>
 <hgroup>
 <figure>
-<img data-src="prefix-tree.png" alt="" /><figcaption>Prefiksu koks</figcaption>
+<img data-src="prefix-tree.png" alt="Prefiksu koks" /><figcaption>Prefiksu koks</figcaption>
 </figure>
 <p><blue><em>Prefiksu kodējumā</em></blue> (<em>prefix code</em>) neviens kodavārds nav cita kodavārda prefikss.<br />
 (Faktiski “bezprefiksu” kodējums.)</p>
@@ -204,7 +203,7 @@ Lietišķie algoritmi
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="prefix-tree.png" alt="" /><figcaption>Prefiksu koks</figcaption>
+<img data-src="prefix-tree.png" alt="Prefiksu koks" /><figcaption>Prefiksu koks</figcaption>
 </figure>
 </hgroup>
 </section></section>
@@ -219,7 +218,7 @@ Lietišķie algoritmi
 <li>Attiecībā uz svītriņām un punktiņiem tas <strong>nav</strong> prefiksu kods. Atkodēšanas viennozīmību nodrošina atšķirīgās pauzes.</li>
 </ul>
 <figure>
-<img data-src="morse-sample.png" alt="" /><figcaption>Morse sample</figcaption>
+<img data-src="morse-sample.png" alt="Morse sample" /><figcaption>Morse sample</figcaption>
 </figure>
 <p>Sk. <a href="http://www.nu-ware.com/NuCode%20Help/index.html?morse_code_structure_and_timing_.htm">Morse structure and timing</a></p>
 </section></section>
@@ -242,7 +241,7 @@ Lietišķie algoritmi
 <section><section id="hafmana-algoritms" class="title-slide slide level1"><h1><lo-theory/> Hafmana algoritms</h1><p><strong>Ievade:</strong> Burti (ziņojumi) ar dotām varbūtībām.<br />
 <strong>Izvade:</strong> Prefiksu koks šo burtu/ziņojumu attēlošanai ar prefiksu kodējumu.</p>
 <figure>
-<img data-src="huffman-algorithm.png" alt="" /><figcaption>Huffman algorithm</figcaption>
+<img data-src="huffman-algorithm.png" alt="Huffman algorithm" /><figcaption>Huffman algorithm</figcaption>
 </figure>
 <p>Hafmana algoritms atbilst <blue><em>rijīgo</em></blue> (<em>greedy</em>) algoritmu paradigmai - “lokāla” optimizēšana šoreiz noved pie globāli optimāla risinājuma.</p></section><section id="algoritma-pseidokods" class="slide level2">
 <h2><lo-theory/> Algoritma pseidokods</h2>
@@ -333,7 +332,7 @@ radām jaunu koka virsotni <span class="math inline">\(z\)</span>
 </section><section id="kā-atspiest-hafmana-kodējumu" class="slide level2">
 <h2><lo-theory/> Kā atspiest Hafmana kodējumu</h2>
 <figure>
-<img data-src="https://en.wikipedia.org/wiki/Canonical_Huffman_code" alt="" /><figcaption>Kanoniskais Hafmana kodējums</figcaption>
+<img data-src="https://en.wikipedia.org/wiki/Canonical_Huffman_code" alt="Kanoniskais Hafmana kodējums" /><figcaption>Kanoniskais Hafmana kodējums</figcaption>
 </figure>
 <ul>
 <li><strong>A1</strong> Vispirms sakārto pēc kodavārda garuma; ja vienādi kodavārdi, tad pēc alfabēta.</li>
@@ -385,7 +384,7 @@ Tagad dots alfabēts <span class="math inline">\(S\)</span> ar <span class="math
 </hgroup>
 <hgroup>
 <figure>
-<img data-src="switching-x-y.png" alt="" /><figcaption>Maina x,y</figcaption>
+<img data-src="switching-x-y.png" alt="Maina x,y" /><figcaption>Maina x,y</figcaption>
 </figure>
 </hgroup>
 </section></section>
@@ -477,7 +476,7 @@ Lietišķie algoritmi
 <h2><lo-quiz/> Jautājums Nr.3: Atrisinājums</h2>
 <hgroup>
 <figure>
-<img data-src="mississippi.png" alt="" /><figcaption>Mississippi tree</figcaption>
+<img data-src="mississippi.png" alt="Mississippi tree" /><figcaption>Mississippi tree</figcaption>
 </figure>
 <table>
 <tr>
@@ -630,6 +629,7 @@ Lietišķie algoritmi
     </div>
   </div>
 
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
   <script src="../../reveal.js/js/reveal.js"></script>
 
   <script>

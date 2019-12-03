@@ -544,6 +544,9 @@ table.optable td {
   padding-left:6em !important;
 }
 
+.reveal table.pseudocode td.ind4 {
+  padding-left:8em !important;
+}
 
 
 

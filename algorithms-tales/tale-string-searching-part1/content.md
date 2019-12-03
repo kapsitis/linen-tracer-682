@@ -532,7 +532,7 @@ nevajadzīgām nobīdēm naivajā meklēšanas algoritmā.
     - Nav jāveido automāta stāvokļu diagramma ar atsevišķu bultiņu 
 katram iespējamajam ievades simbolam $s \in S$. 
 
-1. Ievade tiek lasīta tikai vienreiz: $O(n)$, nevis $O(n \cdot m)$, kā naivajam algoritmam.
+1. Ievades tekstu lasa tikai vienreiz: $O(n)$, nevis $O(n \cdot m)$, kā naivajam algoritmam.
 2. Parauga $P$ priekšapstrāde notiks laikā $O(m)$, nevis $O(m\cdot|S|)$, kā pilnīgi izveidotam automātam.
 
 
@@ -540,40 +540,23 @@ katram iespējamajam ievades simbolam $s \in S$.
 
 <div style="font-size:80%">
 
-Prefiksu funkcija ir atkarīga no meklējamā parauga. 
-Turpmāk pieņemsim, ka ir dots $P$ - 
+Prefiksu funkcija atkarīga no meklējamā parauga $P=P[0]\ldots{}P[m-1]$.
 
-**Definīcija:** Katram $j$ ($j = 1,\ldots,m$) atrod maksimālo $k$, 
-kam $k < j$ un izpildās šādi nosacījumi:
+**Definīcija:** Katram $j = 1,\ldots,m$ atrod maksimālo $k$ ($k<j$), kam izpildās:
 $$\left\{ \begin{array}{l}
 P[0] = P[j - k]\\
 P[1] = P[j - k + 1]\\
 \ldots\\
 P[k - 1] = P[j - 1]
 \end{array} \right.$$
+Prefiksu funkcijas vērtība: $\pi[j]=k$. Ja tāda $k$ ($k<j$) nav, tad $\pi[j]=0$.
 
-Atrasto $k$ ieraksta $\pi$ vērtību tabulā: $\pi[j]=k$.  
-Ja nosacījumi neizpildās nevienam $k<j$, tad $\pi[j]=0$.
+**Cita definīcija:**
+Ar $P_k$ apzīmē virknes $P$ prefiksu garumā $k$. Tad 
+$\pi(j)=k$ ir $P$ $j$-tā prefiksa ($P_j$) visgarākā sufiksa garums, kas īsāks par pašu $j$:
+$$\pi(j) = \max \left\{ k\,:\,k<j\;\text{un}\;P_k\;\text{ir virknes}\;P_j\;\text{sufikss} \right\}$$
 
 </div>
-
-
-
-## <lo-summary/> Prefiksu funkcija (alternatīva definīcija)
-
-**Apzīmējums:** Ja parauga $P$ garums ir $m$ simboli, tad ar 
-$P_k$ apzīmējam vārda $P$ prefiksu garumā $k$:
-$$P_0 = \mathtt{""},\;P_1=P[0],\;\ldots,\;P_m = P[0]\ldots{}P[m-1].$$
-
-
-**Alternatīva $\pi(j)$ definīcija:** Dota meklējamā virkne jeb paraugs $P$ 
-(tā garums ir $m$ simboli). Par paraugam atbilstošo 
-prefiksu funkciju sauc funkciju $\pi(j)=k$, kas 
-katram $j$ ($1 \leq j \leq m$) atrod to $k$ ($0 \leq k \leq m-1$), 
-kur $k$ ir parauga $P$ $j$-tā 
-prefiksa visgarākā sufiksa garums.
-
-$\pi(j) = \max \left\{ k\,:\,k<j\;\text{un}\;P_k\;\text{ir vārda}\;P_j\;\text{sufikss} \right\}$
 
 
 ## <lo-sample/> Piemērs Nr.1
@@ -581,39 +564,115 @@ $\pi(j) = \max \left\{ k\,:\,k<j\;\text{un}\;P_k\;\text{ir vārda}\;P_j\;\text{s
 **Uzdevums:** Atrast prefiksu funkciju, kas atbilst 
 meklējamajam paraugam $P = \mathtt{abab}$. 
 
-**Risinājums ar sabīdīšanu:**
+**Maksimālā teleskopiskā sabīdīšana:**
 
 ![Prefix functions1](prefix-functions1.png)
 
+
+<table style="margin-right:auto;margin-left:0px;">
+<tr><th>$j$</th>
+<td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td>
+</tr>
+<tr>
+<th>$\pi(j)$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td>
+</tr>
+</table>
 
 ## <lo-sample/> Piemērs Nr.2
 
 **Uzdevums:** Atrast prefiksu funkciju, kas atbilst 
 meklējamajam paraugam $P = \mathtt{aabaab}$. 
 
-**Risinājums ar sabīdīšanu:**
+**Maksimālā teleskopiskā sabīdīšana:**
 
 ![Prefix functions2](prefix-functions2.png)
 
 
-## <lo-sample/> Piemērs Nr.3
+<table style="margin-right:auto;margin-left:0px;">
+<tr><th>$j$</th>
+<td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td>
+</tr>
+<tr>
+<th>$\pi(j)$</th>
+<td>$0$</td><td>$1$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td>
+</tr>
+</table>
 
-**Uzdevums:** Atrast prefiksu funkciju, kas atbilst
-meklējamajam paraugam $P = \mathtt{ababaca}$.
 
 
 
 
 
-## <lo-summary/> pi(j) sniegtā informācija
+
+
+
+
+# <lo-summary/> KMP pseidokods
+
+<table class="pseudocode">
+<tr><th colspan="2"><span style="font-variant: small-caps;">KMP_Matcher</span>($T$, $P$)</th></tr>
+<tr>
+<td>1</td>
+<td>$n = T.\mathit{length}$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$m = P.\mathit{length}$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$\pi =$<span style="font-variant: small-caps;">Compute_Prefix_Function</span>($P$)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$k=0$</td>
+</tr>
+<tr>
+<td>5</td>
+<td><b>for</b> $i=0$ <b>to</b> $n-1$&nbsp;&nbsp;<green>// lasa T no kreisās uz labo</green></td>
+</tr>
+<tr>
+<td>6</td>
+<td class="ind1"><b>while</b> $k>0$ <b>and</b> $P[k] \neq T[i]$</td>
+</tr>
+<tr>
+<td>7</td>
+<td class="ind2">$k = \pi(k)$&nbsp;&nbsp;<green>// hipotēze bija aplama, paraugu pārceļ uz priekšu</green></td>
+</tr>
+<tr>
+<td>8</td>
+<td class="ind1"><b>if</b> $P[k] == T[i]$</td>
+</tr>
+<tr>
+<td>9</td>
+<td class="ind2">$k = k+1$&nbsp;&nbsp;<green>// hipotēze pagaidām apstiprinās, salīdzina tālāk</green></td>
+</tr>
+<tr>
+<td>10</td>
+<td class="ind1"><b>if</b> $k == m$&nbsp;&nbsp;<green>// viss paraugs P jau nolasīts?</green></td>
+</tr>
+<tr>
+<td>11</td>
+<td class="ind2">print <tt style="font-family:'Courier New'">"Paraugs parādās ar nobīdi"</tt> $i-m$</td>
+</tr>
+<tr>
+<td>12</td>
+<td class="ind2">$k = \pi(k)$&nbsp;&nbsp;<green>// nākamā tuvākā vieta, uz kuru pārcelt paraugu</green></td>
+</tr>
+</table>
+
+
+
+## <lo-summary/> Kāpēc KMP strādā pareizi
 
 <div style="font-size:70%">
 
-**Apzīmējums:** $i \in \{ 0,\ldots,n-m\}$ ir tekošā nobīde/*shift* 
-tekstā $T$: pašreiz ceram, ka paraugs $P$ atradīsies tekstā $T$, sākot ar $i$-to pozīciju. 
+Pieņemsim, ka tekošā nobīde (*shift*) ir $i \in \{ 0,\ldots,n-m\}$: 
+Ceram, ka paraugs $P$ atradīsies tekstā $T$, sākot ar $i$-to pozīciju.
 
-Ja kārtējais $T$ simbols nesakrīt ar $P[j]$ 
-(kādam $j \in \{ 0,\ldots,m-1\}$), tad ir spēkā:
+Bet izrādās, ka kārtējais $T$ simbols ($T[i+j]$) nesakrīt ar $P[j]$ 
+(kur $j \in \{ 0,\ldots,m-1\}$). Tad ir spēkā vienādības:
 
 $$\left\{ \begin{array}{lll}
 T[i] & =P[j-k] & =P[0]\\
@@ -622,20 +681,82 @@ T[i+1] & =P[j-k+1] & =P[1]\\
 T[i+k+1] & =P[j-1] & =P[k-1]
 \end{array} \right.$$
 
-Tad mēs zināsim, ka nākošā pozīcija tekstā $T$, 
-kur var parādīties apakšvirkne $P$, ir, sākot ar pēdējiem $k$ 
-burtiem no jau nolasītā $T$ gabala. 
-
-
+Nākamā pozīcija tekstā $T$, no kuras var sākties apakšstrings $P$, ir, 
+sākot ar pēdējiem $k$ burtiem no jau nolasītā $T$ gabala.
 
 </div>
 
 
+## <lo-sample/> KMP Piemērs
 
-# <lo-summary/> KMP pseidokods
+Meklējam paraugu $P=\mathtt{ababaca}$ tekstā $T = \mathtt{ababaababaca}$. 
 
-<table class="pseudocode">
-<tr><th colspan="2">KMP_Matcher($T$, $P$)</th></tr>
+<table>
+<tr style="font-size:70%">
+<th>$i$</th>
+<th>0</th><th>1</th><th>2</th><th>3</th><th>4</th>
+<th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+<th>10</th><th>11</th><th>&nbsp;</th>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{a}$</th>
+<th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{a}$</th>
+<th>$\mathtt{c}$</th><th>$\mathtt{a}$</th><th>$k=0$</th>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td>
+<td>$\color{#CCC}{\mathtt{c}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td><td>&nbsp;</td><td><green>$k=1,2,3,4,5$</green></td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td>
+<td>$\color{#F00}{\mathtt{c}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td><td>&nbsp;</td><td><green>$k=\pi(5)=3$</green></td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>&nbsp;</td><td>&nbsp;</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td>
+<td>$\color{#F00}{\mathtt{b}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#CCC}{\mathtt{c}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>&nbsp;</td>
+<td>&nbsp;</td><td>&nbsp;</td><td><green>$k=\pi(3)=1$</green></td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>$\mathtt{a}$</td>
+<td>$\color{#F00}{\mathtt{b}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#CCC}{\mathtt{b}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#CCC}{\mathtt{c}}$</td>
+<td>$\color{#CCC}{\mathtt{a}}$</td><td>&nbsp;</td><td><green>$k=\pi(1)=0$</green></td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{a}$</td>
+<td>$\mathtt{c}$</td><td>$\mathtt{a}$</td><td><green>$k=1,2,3,4,5,6,7$</green></td>
+</tr>
+</table>
+
+
+Prefiksu funkcija paraugam $P=\mathtt{ababaca}$:
+
+<table style="margin-right:auto;margin-left:0px;">
+<tr><th>$j$</th>
+<td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td><td>$7$</td>
+</tr>
+<tr>
+<th>$\pi(j)$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$0$</td><td>$1$</td>
+</tr>
+</table>
+
+
+## <lo-summary/> KMP_Matcher ātrdarbības novērtējums
+
+
+<hgroup>
+
+<table class="pseudocode" style="font-size:50%">
+<tr><th colspan="2"><span style="font-variant: small-caps;">KMP_Matcher</span>($T$, $P$)</th></tr>
 <tr>
 <td>1</td>
 <td>$n = T.\mathit{length}$</td>
@@ -658,7 +779,7 @@ burtiem no jau nolasītā $T$ gabala.
 </tr>
 <tr>
 <td>6</td>
-<td class="ind1"><b>while</b> $k>0$ <b>and</b> $P[k+1] \neq T[i]$</td>
+<td class="ind1"><b>while</b> $k>0$ <b>and</b> $\color{#F00}{P[k] \neq T[i]}$</td>
 </tr>
 <tr>
 <td>7</td>
@@ -666,7 +787,7 @@ burtiem no jau nolasītā $T$ gabala.
 </tr>
 <tr>
 <td>8</td>
-<td class="ind1"><b>if</b> $P[k+1] == T[i]$</td>
+<td class="ind1"><b>if</b> $\color{#F00}{P[k] == T[i]}$</td>
 </tr>
 <tr>
 <td>9</td>
@@ -678,7 +799,7 @@ burtiem no jau nolasītā $T$ gabala.
 </tr>
 <tr>
 <td>11</td>
-<td class="ind2">print <tt style="font-family:'Courier New'">"Paraugs parādās ar nobīdi"</tt> $i-m$</td>
+<td class="ind2">print <tt style="font-family:'Courier New'">"Atrasts ar nobīdi"</tt> $i-m$</td>
 </tr>
 <tr>
 <td>12</td>
@@ -687,11 +808,28 @@ burtiem no jau nolasītā $T$ gabala.
 </table>
 
 
+</hgroup>
+
+
+<hgroup style="font-size:70%">
+
+Pieņemsim, ka $\pi(j)$ jau izrēķināta.   
+Ievērojam, ka jebkurā parauga $P$ un teksta $T$ salīdzināšanā
+izpildās viena no divām lietām:
+
+* ja $P[k] == T[i]$, tad palielinās $i$, bet $i-k$ nemainās.
+* ja $P[k] \neq T[i]$, tad palielinās $i-k$, bet $i$ nemainās. 
+
+Tā kā $i$ un $i-k$ ir veseli skaitļi, kas sākumā ir $0$ un 
+nevar pārsniegt $n$, tad algoritmā ir ne vairāk kā $2n$ salīdzināšanas.
+Tātad KMP ātrdarbība ir $O(n)$.
+
+</hgroup>
 
 
 
 
-# <lo-summary/> Prefiksu funkcijas veidošana
+# <lo-summary/> Prefiksu funkcijas pseidokods
 
 <table class="pseudocode">
 <tr><th colspan="2"><span style="font-variant: small-caps;">Compute_Prefix_Function($P$)</span></th></tr>
@@ -701,11 +839,11 @@ burtiem no jau nolasītā $T$ gabala.
 </tr>
 <tr>
 <td>2</td>
-<td>Rezervē tukšu tabulu $(\pi[0],\ldots,\pi[m-1])$</td>
+<td>Rezervē tabulu $\pi(1)\ldots{}\pi(m)$</td>
 </tr>
 <tr>
 <td>3</td>
-<td>$\pi[0]=-1$</td>
+<td>$\pi(1)=0$</td>
 </tr>
 <tr>
 <td>4</td>
@@ -713,19 +851,19 @@ burtiem no jau nolasītā $T$ gabala.
 </tr>
 <tr>
 <td>5</td>
-<td><b>for</b> $q=1$ <b>to</b> $m-1$</td>
+<td><b>for</b> $q=2$ <b>to</b> $m$</td>
 </tr>
 <tr>
 <td>6</td>
-<td class="ind1"><b>while</b> $k>0$ <b>and</b> $P[k]\neq{}P[q]$</td>
+<td class="ind1"><b>while</b> $k>0$ <b>and</b> $P[k]\neq{}P[q-1]$</td>
 </tr>
 <tr>
 <td>7</td>
-<td class="ind2">$k=\pi[k]$</td>
+<td class="ind2">$k=\pi(k)$</td>
 </tr>
 <tr>
 <td>8</td>
-<td class="ind1"><b>if</b> $P[k]==P[q]$</td>
+<td class="ind1"><b>if</b> $P[k]==P[q-1]$</td>
 </tr>
 <tr>
 <td>9</td>
@@ -733,7 +871,7 @@ burtiem no jau nolasītā $T$ gabala.
 </tr>
 <tr>
 <td>10</td>
-<td class="ind1">$\pi[q]=k$</td>
+<td class="ind1">$\pi(q)=k$</td>
 </tr>
 <tr>
 <td>11</td>
@@ -742,30 +880,204 @@ burtiem no jau nolasītā $T$ gabala.
 </table>
 
 
-<!--
-k[0] = -1;
-i = 0;
-while (i < m) {
-	k[i + 1] = k[i] + 1;
-	while (k[i + 1] > 0 && P[i] != P[k[i + 1] - 1])
-		k[i + 1] = k[k[i + 1] - 1] + 1;
-	i = i + 1;
-}
 
--->
+## <lo-sample/> Piemērs 
+
+**Uzdevums:** Atrast prefiksu funkciju, kas atbilst
+meklējamajam paraugam $P = \mathtt{ababaca}$.
+
+![Prefix functions 3](prefix-functions3.png)
+
+<table style="margin-right:auto;margin-left:0px;">
+<tr><th>$j$</th>
+<td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td><td>$7$</td>
+</tr>
+<tr>
+<th>$\pi(j)$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$0$</td><td>$1$</td>
+</tr>
+</table>
+
+
+
+## <lo-sample/> Piemērs 
+
+<hgroup>
+
+<table class="pseudocode" style="font-size:55%">
+<tr><th colspan="2"><span style="font-variant: small-caps;">Compute_Prefix_Function($P$)</span></th></tr>
+<tr>
+<td>1</td>
+<td>$m = P.\mathit{length}$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Rezervē tabulu $\pi(1)\ldots{}\pi(m)$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$\pi(1)=0$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$k=0$</td>
+</tr>
+<tr>
+<td>5</td>
+<td><b>for</b> $q=2$ <b>to</b> $m$</td>
+</tr>
+<tr>
+<td>6</td>
+<td class="ind1"><b>while</b> $k>0$ <b>and</b> $P[k]\neq{}P[q-1]$</td>
+</tr>
+<tr>
+<td>7</td>
+<td class="ind2">$k=\pi(k)$</td>
+</tr>
+<tr>
+<td>8</td>
+<td class="ind1"><b>if</b> $P[k]==P[q-1]$</td>
+</tr>
+<tr>
+<td>9</td>
+<td class="ind2">$k=k+1$</td>
+</tr>
+<tr>
+<td>10</td>
+<td class="ind1">$\pi(q)=k$</td>
+</tr>
+<tr>
+<td>11</td>
+<td><b>return</b> $\pi$</td>
+</tr>
+</table>
+
+</hgroup>
+<hgroup style="font-size:90%">
+
+
+<table>
+<tr>
+<th>&nbsp;</td>
+<th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
+<th>$\mathtt{a}$</th><th>$\mathtt{c}$</th><th>$\mathtt{a}$</th>
+</tr>
+<tr>
+<th>$i$</th>
+<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+</tr>
+<tr>
+<th>$q=1$</th>
+<td>$\color{#00F}{0}$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=2$</th>
+<td>$0$</td><td>$\color{#00F}{0}$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=3$</th>
+<td>$0$</td><td>$0$</td><td>$\color{#00F}{1}$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=4$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$\color{#00F}{2}$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=5$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$\color{#00F}{3}$</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=6$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td style="font-size:70%">$\color{#F00}{3\downarrow}$<br/>$1$</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=6$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td style="font-size:70%">$\color{#F00}{1\downarrow}$<br/>$0$</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=6$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$\color{#00F}{0}$</td><td>&nbsp;</td>
+</tr>
+<tr>
+<th>$q=7$</th>
+<td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$0$</td><td>$\color{#00F}{1}$</td>
+</tr>
+</table>
+
+</hgroup>
 
 
 
 
-## <lo-summary/> Prefiksu funkcijas veidošanas laiks
 
-1. Ārējais cikls izpildās $m$ reizes. 
+
+## <lo-summary/> Prefiksu funkcijas iegūšanas ātrums
+
+<hgroup>
+
+<table class="pseudocode" style="font-size:55%">
+<tr><th colspan="2"><span style="font-variant: small-caps;">Compute_Prefix_Function($P$)</span></th></tr>
+<tr>
+<td>1</td>
+<td>$m = P.\mathit{length}$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Rezervē tabulu $\pi(1)\ldots{}\pi(m)$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$\pi(1)=0$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$k=0$</td>
+</tr>
+<tr>
+<td>5</td>
+<td><b>for</b> $q=2$ <b>to</b> $m$</td>
+</tr>
+<tr>
+<td>6</td>
+<td class="ind1"><b>while</b> $k>0$ <b>and</b> $P[k]\neq{}P[q-1]$</td>
+</tr>
+<tr>
+<td>7</td>
+<td class="ind2">$k=\pi(k)$</td>
+</tr>
+<tr>
+<td>8</td>
+<td class="ind1"><b>if</b> $P[k]==P[q-1]$</td>
+</tr>
+<tr>
+<td>9</td>
+<td class="ind2">$k=k+1$</td>
+</tr>
+<tr>
+<td>10</td>
+<td class="ind1">$\pi(q)=k$</td>
+</tr>
+<tr>
+<td>11</td>
+<td><b>return</b> $\pi$</td>
+</tr>
+</table>
+
+</hgroup>
+<hgroup style="font-size:70%">
+
+1. Ārējais cikls izpildās $m-1$ reizes. 
 2. Katrā iekšējā cikla iterācijā $\pi[i+1]$ vērtība tiek samazināta. 
 3. Tā kā šī vērtība tiek palielināta tikai katrā ārējā cikla iterācijā par $1$, 
 tad tā var sasniegt ne vairāk kā $m$. Tā kā tā nevar būt negatīva, tad samazināties
 var ne vairāk kā $m$ reizes, tātad iekšējais cikls kopumā izpildās ne vairāk kā $m$ reizes.
 
 Tātad prefiksu funkcijas veidošanas laiks ir $O(m)$.
+
+</hgroup>
+
+
+
 
 
 

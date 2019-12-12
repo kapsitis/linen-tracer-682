@@ -524,7 +524,7 @@ Lietišķie algoritmi
 <span>(7) <a href="#/section-6">(P) Regulāru izteiksmju meklēšana</a></span><br />
 <span>(8) <a href="#/section7">Kopsavilkums</a></span></p>
 </hgroup></section>
-<section><section id="bm-algoritma-piemērs---1" class="title-slide slide level1"><h1><lo-sample/> BM algoritma piemērs - 1</h1><hgroup style="font-size:80%">
+<section id="bm-algoritma-piemērs---1" class="title-slide slide level1"><h1><lo-sample/> BM algoritma piemērs - 1</h1><hgroup style="font-size:80%">
 <table>
 <tr>
 <th>
@@ -569,104 +569,13 @@ Lietišķie algoritmi
 </tr>
 <tr>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{b}}\)</span>
 </td>
 <td>
-<span class="math inline">\(\color{#F00}{\mathtt{x}}\)</span>
-</td>
-<td>
-<span class="math inline">\(\mathtt{a}\)</span>
-</td>
-<td>
-<span class="math inline">\(\mathtt{b}\)</span>
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-</tr>
-</table>
-</hgroup>
-<hgroup style="font-size:90%">
-<p>Apskatīsim <span class="math inline">\(T = \mathtt{daababcabaab}\)</span> un <span class="math inline">\(P = \mathtt{abcab}\)</span>.<br />
-Tabulas šim <span class="math inline">\(P\)</span> jau esam uzkonstruējuši. Meklējam no labās puses uz kreiso: Katra rindiņa attēlo vienu mēģinājumu atrast sakrītošu apakšvirkni un <span class="math inline">\(\mathtt{x}\)</span> apzīmē burtu, kurā simbols no <span class="math inline">\(P\)</span> nav sakritis ar atbilstošo simbolu no <span class="math inline">\(T\)</span>.</p>
-</hgroup></section><section id="bm-algoritma-piemērs---2" class="slide level2">
-<h2><lo-sample/> BM algoritma piemērs - 2</h2>
-<hgroup style="font-size:80%">
-<table>
-<tr>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{d}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{c}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-<span class="math inline">\(\color{#F00}{\mathtt{x}}\)</span>
+<span class="math inline">\(\color{#F00}{\mathtt{c}}\)</span>
 </td>
 <td>
 <span class="math inline">\(\mathtt{a}\)</span>
@@ -710,151 +619,19 @@ Tabulas šim <span class="math inline">\(P\)</span> jau esam uzkonstruējuši. M
  
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{b}}\)</span>
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{c}}\)</span>
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
 </td>
 <td>
-<span class="math inline">\(\color{#F00}{\mathtt{x}}\)</span>
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-</tr>
-</table>
-</hgroup>
-<hgroup style="font-size:90%">
-<p>Pirmajā mēģinājumā sakrita <span class="math inline">\(P[4]\)</span> un <span class="math inline">\(P[3]\)</span>, bet ne <span class="math inline">\(P[2]\)</span>. Tad pavirzāmies <span class="math inline">\(3\)</span> simbolus uz priekšu (saskaņā ar „labā sufiksa tabulu”) un skatāmies vai <span class="math inline">\(P[0]\ldots{}P[4]\)</span> sakrīt ar <span class="math inline">\(T[3]\ldots{}[7]\)</span>. Nesakritība ir jau <span class="math inline">\(P[4]\)</span> un tad saskaņā ar „sliktā simbola tabulu” pavirzāmies pa <span class="math inline">\(2\)</span> simboliem, lai atrastais “c” sakristu ar pirmo iespējamo “c”, kas ir apakšvirknē <span class="math inline">\(P\)</span> (pirmo – no beigām).</p>
-</hgroup>
-</section><section id="bm-algoritma-piemērs---3" class="slide level2">
-<h2><lo-sample/> BM algoritma piemērs - 3</h2>
-<hgroup style="font-size:80%">
-<table>
-<tr>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{d}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{c}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{a}\)</span>
-</th>
-<th>
-<span class="math inline">\(\mathtt{b}\)</span>
-</th>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-<span class="math inline">\(\color{#F00}{\mathtt{x}}\)</span>
-</td>
-<td>
-<span class="math inline">\(\mathtt{a}\)</span>
-</td>
-<td>
-<span class="math inline">\(\mathtt{b}\)</span>
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-<span class="math inline">\(\color{#F00}{\mathtt{x}}\)</span>
+<span class="math inline">\(\color{#F00}{\mathtt{b}}\)</span>
 </td>
 <td>
  
@@ -939,13 +716,13 @@ Tabulas šim <span class="math inline">\(P\)</span> jau esam uzkonstruējuši. M
  
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
 </td>
 <td>
- 
+<span class="math inline">\(\color{#CCC}{\mathtt{b}}\)</span>
 </td>
 <td>
-<span class="math inline">\(\color{#F00}{\mathtt{x}}\)</span>
+<span class="math inline">\(\color{#F00}{\mathtt{c}}\)</span>
 </td>
 <td>
 <span class="math inline">\(\mathtt{a}\)</span>
@@ -955,11 +732,17 @@ Tabulas šim <span class="math inline">\(P\)</span> jau esam uzkonstruējuši. M
 </td>
 </tr>
 </table>
+<p>Apskatīsim <span class="math inline">\(T = \mathtt{daababcabaab}\)</span> un <span class="math inline">\(P = \mathtt{abcab}\)</span>.<br />
+Meklējam no labās puses uz kreiso: Katra rindiņa attēlo vienu mēģinājumu atrast apakšstringu. Ar <red>sarkanu</red> apzīmē burtu, kurā simbols no <span class="math inline">\(P\)</span> nav sakritis ar atbilstošo simbolu no <span class="math inline">\(T\)</span>.</p>
 </hgroup>
-<hgroup style="font-size:90%">
-<p>Trešajā mēģinājumā sakrīt visa apakšvirkne. Ja nepieciešams atrast visas vietas tekstā <span class="math inline">\(T\)</span>, kur ir apakšvirkne <span class="math inline">\(P\)</span>, tad saskaņā ar <span class="math inline">\(\gamma[0]\)</span> pārvietojamies <span class="math inline">\(3\)</span> simbolus uz priekšu un mēģinām vēl. (Šis mēģinājums ir neveiksmīgs un tad mēs esam sasnieguši teksta beigas.)</p>
-</hgroup>
-</section></section>
+<hgroup style="font-size:70%">
+<ol type="1">
+<li>Pirmajā mēģinājumā sakrita <span class="math inline">\(P[4]\)</span> un <span class="math inline">\(P[3]\)</span>, bet ne <span class="math inline">\(P[2]\)</span>. Tad pavirzāmies <span class="math inline">\(3\)</span> simbolus uz priekšu (saskaņā ar „labā sufiksa tabulu”).</li>
+<li>skatāmies vai <span class="math inline">\(P[0]\ldots{}P[4]\)</span> sakrīt ar <span class="math inline">\(T[3]\ldots{}[7]\)</span>. Nesakritība ir jau <span class="math inline">\(P[4]\)</span> un tad saskaņā ar „sliktā simbola tabulu” pavirzāmies pa <span class="math inline">\(2\)</span> simboliem, lai atrastais “c” sakristu ar pirmo iespējamo “c”, kas ir apakšvirknē <span class="math inline">\(P\)</span> (pirmo – no beigām).</li>
+<li>Trešajā mēģinājumā sakrīt viss apakšstrings. Ja nepieciešams atrast visas vietas tekstā <span class="math inline">\(T\)</span>, kur ir apakšvirkne <span class="math inline">\(P\)</span>, tad saskaņā ar <span class="math inline">\(\gamma[0]\)</span> pārvietojamies <span class="math inline">\(3\)</span> simbolus uz priekšu un mēģinām vēl.</li>
+<li>Pēdējais mēģinājums ir neveiksmīgs un tad esam sasnieguši teksta beigas.</li>
+</ol>
+</hgroup></section>
 <section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Lietišķie algoritmi

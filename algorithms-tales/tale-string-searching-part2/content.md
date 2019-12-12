@@ -354,79 +354,14 @@ Knuta-Morisa Prata algoritma prefiksu funkciju $\pi[j]$ un atgriež šo masīvu.
 <th>$\mathtt{a}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
 </tr>
 <tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>$\color{#F00}{\mathtt{x}}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-</tr>
-</table>
-
-</hgroup>
-<hgroup style="font-size:90%">
-
-Apskatīsim $T = \mathtt{daababcabaab}$ un $P = \mathtt{abcab}$.   
-Tabulas šim $P$ jau esam uzkonstruējuši. Meklējam
-no labās puses uz kreiso: 
-Katra rindiņa attēlo vienu mēģinājumu atrast sakrītošu apakšvirkni un 
-$\mathtt{x}$ apzīmē burtu, kurā simbols no $P$ nav sakritis ar 
-atbilstošo simbolu no $T$. 
-
-</hgroup>
-
-
-
-
-## <lo-sample/> BM algoritma piemērs - 2
-
-<hgroup style="font-size:80%">
-
-<table>
-<tr>
-<th>$\mathtt{a}$</th><th>$\mathtt{d}$</th><th>$\mathtt{a}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
-<th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{c}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
-<th>$\mathtt{a}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
-</tr>
-<tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>$\color{#F00}{\mathtt{x}}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td>
+<td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#CCC}{\mathtt{b}}$</td>
+<td>$\color{#F00}{\mathtt{c}}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td>
 <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
 <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>$\color{#F00}{\mathtt{x}}$</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-</tr>
-</table>
-
-</hgroup>
-<hgroup style="font-size:90%">
-
-Pirmajā mēģinājumā sakrita $P[4]$ un $P[3]$, bet ne $P[2]$. 
-Tad pavirzāmies $3$ simbolus uz priekšu (saskaņā ar „labā sufiksa tabulu”) 
-un skatāmies vai $P[0]\ldots{}P[4]$ sakrīt ar $T[3]\ldots{}[7]$. 
-Nesakritība ir jau $P[4]$ un tad saskaņā ar „sliktā simbola tabulu” pavirzāmies pa $2$ simboliem, 
-lai atrastais "c" sakristu ar pirmo iespējamo "c", kas ir apakšvirknē $P$ (pirmo – no beigām).
-
-</hgroup>
-
-
-## <lo-sample/> BM algoritma piemērs - 3
-
-<hgroup style="font-size:80%">
-
-<table>
-<tr>
-<th>$\mathtt{a}$</th><th>$\mathtt{d}$</th><th>$\mathtt{a}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
-<th>$\mathtt{a}$</th><th>$\mathtt{b}$</th><th>$\mathtt{c}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
-<th>$\mathtt{a}$</th><th>$\mathtt{a}$</th><th>$\mathtt{b}$</th>
-</tr>
-<tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>$\color{#F00}{\mathtt{x}}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-</tr>
-<tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>$\color{#F00}{\mathtt{x}}$</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#CCC}{\mathtt{b}}$</td>
+<td>$\color{#CCC}{\mathtt{c}}$</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#F00}{\mathtt{b}}$</td><td>&nbsp;</td><td>&nbsp;</td>
 <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
 </tr>
 <tr>
@@ -436,21 +371,37 @@ lai atrastais "c" sakristu ar pirmo iespējamo "c", kas ir apakšvirknē $P$ (pi
 </tr>
 <tr>
 <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-<td>$\color{#F00}{\mathtt{x}}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>$\color{#CCC}{\mathtt{a}}$</td><td>$\color{#CCC}{\mathtt{b}}$</td>
+<td>$\color{#F00}{\mathtt{c}}$</td><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td>
 </tr>
 </table>
 
+Apskatīsim $T = \mathtt{daababcabaab}$ un $P = \mathtt{abcab}$.   
+Meklējam no labās puses uz kreiso: 
+Katra rindiņa attēlo vienu mēģinājumu atrast apakšstringu. 
+Ar <red>sarkanu</red> apzīmē burtu, kurā simbols no $P$ nav sakritis ar 
+atbilstošo simbolu no $T$. 
+
 </hgroup>
+<hgroup style="font-size:70%">
 
-<hgroup style="font-size:90%">
-
-Trešajā mēģinājumā sakrīt visa apakšvirkne. Ja nepieciešams atrast visas 
+1. Pirmajā mēģinājumā sakrita $P[4]$ un $P[3]$, bet ne $P[2]$. 
+Tad pavirzāmies $3$ simbolus uz priekšu (saskaņā ar „labā sufiksa tabulu”). 
+2. skatāmies vai $P[0]\ldots{}P[4]$ sakrīt ar $T[3]\ldots{}[7]$. 
+Nesakritība ir jau $P[4]$ un tad saskaņā ar „sliktā simbola tabulu” pavirzāmies pa $2$ simboliem, 
+lai atrastais "c" sakristu ar pirmo iespējamo "c", kas ir apakšvirknē $P$ (pirmo – no beigām).
+3. Trešajā mēģinājumā sakrīt viss apakšstrings. Ja nepieciešams atrast visas 
 vietas tekstā $T$, kur ir apakšvirkne $P$, tad saskaņā ar $\gamma[0]$ 
 pārvietojamies $3$ simbolus uz priekšu un mēģinām vēl. 
-(Šis mēģinājums ir neveiksmīgs un tad mēs esam sasnieguši teksta beigas.)
+4. Pēdējais mēģinājums ir neveiksmīgs un tad esam sasnieguši teksta beigas.
+
 
 </hgroup>
+
+
+
+
+
 
 
 

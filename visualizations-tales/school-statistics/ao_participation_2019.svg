@@ -497,7 +497,7 @@
         </g>
         <g id="plot_01.toplevel.vp::plot_01..1"/>
       </g>
-      <script type="application/ecmascript" id="GRID.script.grob.1180" xlink:href="/visualizations-tales/school-statistics/tooltip.js"/>
+      <script type="application/ecmascript" id="GRID.script.grob.1180" xlink:href="tooltip.js"/>
     </g>
   </g>
 </svg>

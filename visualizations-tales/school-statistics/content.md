@@ -725,12 +725,11 @@ activity
 
 ## <lo-summary/> Skolas urbanizācijas tips
 
-Arī zēnu/meiteņu proporcijas.
+Demo: Sk. attēlus, kas parāda aktivitātes izmaiņu.
 
 ## <lo-summary/> Kurā brīdī iestājas pagurums?
 
-Z-indeksi bērnu rezultātiem atkarībā no klases un arī no skolas 
-"urbanizācijas tipa".
+Z-indeksi bērnu rezultātiem atkarībā no klases un reģiona.
 
 ## <lo-summary/> Aktivitāte pa reģioniem
 

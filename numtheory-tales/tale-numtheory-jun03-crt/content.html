@@ -14,69 +14,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style>
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
   <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
@@ -97,11 +34,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-12-07
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
 <p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
 <span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
 <span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
@@ -109,10 +46,9 @@ Skaitļu teorija:<br/> NMS Juniori 2019-12-07
 <span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
 <span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
 <span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
-<span>(8) <a href="#/section-7">Fibonači virknes atlikumu periodi</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p>
 </hgroup>
 <aside class="notes">
 <p>Šajā nodaļā aplūkojam vairāku periodisku procesu pārklāšanos, ja to periodi ir dažādi. Risinām kongruenču sistēmas pa daļām; ievietojam agrāk atrastus risinājumus nākamajās. Šos periodiskos procesus izskaidro ķīniešu atlikumu teorēma.</p>
@@ -137,2035 +73,887 @@ Skaitļu teorija:<br/> NMS Juniori 2019-12-07
 <li>Aprakstīt tās atrisinājumus, ja moduļi ir savstarpēji pirmskaitļi (un apzināties, kas mainās, ja nav).</li>
 <li>Lietot Ķīniešu atlikumu teorēmu, pamatojot skaitļu eksistenci, kam ir speciālas īpašības.</li>
 <li>Lietot Ķīniešu atlikumu teorēmu saliktu moduļu dekonstrukcijai.</li>
-<li>Aplūkot lietojumus rekurenti definētām virknēm (eksponentfunkcija, Fibonači virkne u.c.)</li>
 </ul>
 </section></section>
 <section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span style="color:darkgreen"><strong>(2) Dalāmība un dalīšana</strong></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-</hgroup>
-<aside class="notes">
-<p><strong>Kādēļ no visām darbībām jāstudē tieši dalāmība:</strong></p>
-<ul>
-<li>Veseli skaitļi ir datora aritmētikas pamats.</li>
-<li>Veselus skaitļus vienmēr var saskaitīt, atņemt, reizināt (arī kāpināt veselās pozitīvās pakāpēs).</li>
-<li>Dalīt ne vienmēr var – dalāmības attiecība ir “interesantāka”.</li>
-</ul>
-</aside></section>
-<section><section id="dalāmība-un-dalīšana" class="title-slide slide level1"><h1><lo-theory/> Dalāmība un dalīšana</h1><p><strong>Definīcija:</strong> Vesels skaitlis <span class="math inline">\(m\)</span> <blue><em>dalās ar</em></blue> (<em>is divisible by</em>) veselu skaitli <span class="math inline">\(d \neq 0\)</span>, ja eksistē tāds vesels <span class="math inline">\(k\)</span>, kuram <span class="math inline">\(m = d \cdot k\)</span>.<br />
-<em>Pieraksts:</em> <span class="math inline">\(d \mid m\)</span> (saki: “<span class="math inline">\(d\)</span> dala <span class="math inline">\(m\)</span>”.)<br />
-Tad <span class="math inline">\(d\)</span> sauc par skaitļa <span class="math inline">\(m\)</span> <blue><em>dalītāju</em></blue> (<em>divisor</em>). Skaitli <span class="math inline">\(m\)</span> sauc par skaitļa <span class="math inline">\(d\)</span> <blue><em>daudzkārtni</em></blue> (<em>multiple</em>).</p>
-<aside class="notes">
-<p>Skaitļu teorijā daudzi rezultāti tieši neatsaucas uz skaitļu dalāmību. Piemēram, J.Lagranža (<em>Joseph-Louis Lagrange</em>) teorēma: Ikvienu naturālu skaitli var izteikt kā četru pilnu kvadrātu summu. Tomēr arī šādu rezultātu pierādīšanai parasti lieto metodes, kuras rodas, pētot skaitļu dalāmību. Interese par skaitļu dalāmību, par pirmskaitļiem tālu pārsniedz tiešo praktisko lietojumu. Šī interese radījusi svarīgus rezultātus, piemēram, par eliptiskajām līknēm un kriptosistēmām.</p>
-<p>Atšķirībā no saskaitīšanas, reizināšanas un (atļaujot negatīvos skaitļus) arī atņemšanas, dalīšanas operāciju ne vienmēr var izpildīt veselos skaitļos. Par dalāmību vingrināsimies pierakstīt arī loģiskus apgalvojumus:</p>
-<ul>
-<li><span class="math inline">\((\forall a \in \mathbb{Z})\;a \neq 0 \Rightarrow a\;\mid\;0\)</span>.<br />
-Saki: “Visiem <span class="math inline">\(a\)</span> no veselo skaitļu kopas: Ja <span class="math inline">\(a\)</span> nav <span class="math inline">\(0\)</span>, tad <span class="math inline">\(a\)</span> dala <span class="math inline">\(0\)</span>.”</li>
-<li><span class="math inline">\((\forall a \in \mathbb{Z})\;0 \nmid a\)</span><br />
-Saki: “Visiem <span class="math inline">\(a\)</span> no veselo skaitļu kopas: <span class="math inline">\(0\)</span> nedala <span class="math inline">\(a\)</span>.”</li>
-</ul>
-</aside></section><section id="dalāmības-režģis" class="slide level2">
-<h2><lo-summary/> Dalāmības režģis</h2>
-<hgroup>
-<figure>
-<img data-src="lattice-of-divisors.png" alt="Lattice of divisors" /><figcaption>Lattice of divisors</figcaption>
-</figure>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
 <hgroup style="font-size:70%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Bezū identitāte kā vienādojums</strong></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p></section>
+<section><section id="bezū-identitāte" class="title-slide slide level1"><h1><lo-theory/> Bezū identitāte</h1><p><strong>Apgalvojums:</strong> Dotiem veseliem skaitļiem <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> lielākais kopīgais dalītājs ir <span class="math inline">\(d\)</span>. Tad eksistē veseli skaitļi <span class="math inline">\(\color{#F00}{x}\)</span> un <span class="math inline">\(\color{#F00}{y}\)</span>, kas ir atrisinājumi vienādojumam: <span class="math display">\[a\color{#F00}{x} + b\color{#F00}{y} = d.\]</span></p>
+<p><strong>Piezīme 1:</strong> Šie atrisinājumi <span class="math inline">\((x,y)\)</span> nav unikāli, vērtību <span class="math inline">\(d\)</span> var iegūt bezgalīgi daudz veidos.<br />
+<strong>Piezīme 2:</strong> Izteiksmes <span class="math inline">\(ax+by\)</span> (pie dažādiem <span class="math inline">\(x,y \in \mathbb{Z}\)</span>) pieņem vērtības, kas ir visi skaitļa <span class="math inline">\(d\)</span> daudzkārtņi: <span class="math display">\[\{ d \cdot z \,\mid\, z \in \mathbb{Z} \}.\]</span></p></section><section id="bezū-identitātes-piemērs" class="slide level2">
+<h2><lo-summary/> Bezū identitātes piemērs</h2>
+<p><strong>Piemērs:</strong> <span class="math inline">\(a = 18\)</span>, <span class="math inline">\(b = 42\)</span>, <span class="math inline">\(\text{LKD}(18,42) = 6\)</span>.<br />
+Der atrisinājumi <span class="math inline">\((x,y) = (\color{#F00}{-2},\color{#F00}{1})\)</span>, <span class="math inline">\((\color{#F00}{5},\color{#F00}{-2}),\;(\color{#F00}{12},\color{#F00}{-5}), \ldots\)</span>. <span class="math display">\[18 \cdot (\color{#F00}{-2}) + 42 \cdot \color{#F00}{1} = 
+18 \cdot \color{#F00}{5} + 42 \cdot (\color{#F00}{-2}) = \]</span> <span class="math display">\[ = 18 \cdot (\color{#F00}{12}) + 42 \cdot (\color{#F00}{-5}) = 6.\]</span> Atrisinājumi <span class="math inline">\((x_1,y_1),(x_2,y_2),\ldots\)</span> veido aritmētiskas progresijas ar diferencēm <span class="math inline">\(d_x = 7\)</span>, <span class="math inline">\(d_y = -3\)</span>.</p>
+</section><section id="bezū-identitātes-pierādījuma-ideja" class="slide level2">
+<h2><lo-summary/> Bezū identitātes pierādījuma ideja</h2>
+<p><strong>Pierādījuma ideja:</strong> Aplūkojam naturālu skaitļu kopu: <span class="math display">\[S=\{ax+by \,\mid\, x,y\in\mathbb{Z} \text{ un } ax+by&gt;0\}.\]</span> Šajā kopā eksistē minimālais elements <span class="math inline">\(d^{\ast} = ax^{\ast} + by^{\ast}\)</span> kaut kādām optimālām vērtībām <span class="math inline">\((x^{\ast},y^{\ast})\)</span>.</p>
+<p>Jāpamato divas lietas:<br />
+<strong>(A)</strong> <span class="math inline">\(d^{\ast}\)</span> ir skaitļu <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> <em>kopīgs dalītājs</em>.<br />
+<strong>(B)</strong> Ja <span class="math inline">\(c\)</span> ir cits <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> kopīgs dalītājs, tad <span class="math inline">\(c &lt; d^{\ast}\)</span>.</p>
+<p>No <strong>(A)</strong> un <strong>(B)</strong> sekotu, ka šādi definētais <span class="math inline">\(d^{\ast}\)</span> ir lielākais no visiem kopīgajiem dalītājiem, tātad vienāds ar <span class="math inline">\(d = \text{LKD}(a,b)\)</span>.</p>
+</section><section id="bezū-identitātes-pierādījums" class="slide level2">
+<h2><lo-summary/> Bezū identitātes pierādījums</h2>
+<div style="font-size:80%">
+<p><strong>(A)</strong> Ja pieņemam, ka <span class="math inline">\(a\)</span> nedalās ar <span class="math inline">\(d^{\ast}\)</span>, tad varētu izdalīt, iegūstot pozitīvu atlikumu: <span class="math inline">\(a = d \cdot q + r\)</span>, kur <span class="math inline">\(q\)</span> ir kāds vesels skaitlis, bet <span class="math inline">\(0 &lt; r &lt; d^{\ast}\)</span>.<br />
+Bet šādā gadījumā arī <span class="math inline">\(r = a - d^{\ast} \cdot q = a - (ax^{\ast}+by^{\ast}) \cdot q\)</span> varētu izteikt formā <span class="math inline">\(ax+by\)</span>, kur <span class="math inline">\(r\)</span> arī ir pozitīvs skaitlis un vēl mazāks par <span class="math inline">\(d^{\ast}\)</span>. Bet mēs bijām pieņēmuši, ka <span class="math inline">\(d^{\ast}\)</span> ir vismazākais. Pretruna. <span class="math inline">\(\blacksquare\)</span></p>
+<p><strong>(B)</strong> Ja <span class="math inline">\(c\)</span> ir dalītājs skaitļiem <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, tad izsakām <span class="math inline">\(a = cu\)</span> un <span class="math inline">\(b = cv\)</span>, un ievietojam tos <span class="math inline">\(d^{\ast}\)</span> izteiksmē: <span class="math display">\[d^{\ast} = ax^{\ast}+by^{\ast} = cux^{\ast} + cvy^{\ast} = c(ux^{\ast} + vy^{\ast}).\]</span> Esam ieguvuši, ka <span class="math inline">\(d^{\ast}\)</span> dalās ar <span class="math inline">\(c\)</span>, t.i. <span class="math inline">\(d^{\ast} \geq c\)</span>. Tātad <span class="math inline">\(d^{\ast}\)</span> ir lielākais no kopīgajiem dalītājiem. <span class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Piezīme:</strong> Ievērojam, ka <span class="math inline">\((x^{\ast},y^{\ast})\)</span>, lai iegūtu mazāko <span class="math inline">\(d^{\ast} = ax^{\ast}+by^{\ast}\)</span> noteikti ir, bet mums nav nekāda algoritma, lai šos nezināmos skaitļus iegūtu. Šis ir <blue><em>nekonstruktīvs eksistences pierādījums</em></blue>.</p>
+</div>
+</section><section id="bezū-identitātes-pierādīšanas-metode" class="slide level2">
+<h2><lo-summary/> Bezū identitātes pierādīšanas metode</h2>
+<div style="font-size:80%">
 <ul>
-<li>Ja ir augšupejošs ceļš no <span class="math inline">\(a\)</span> uz <span class="math inline">\(b\)</span>, tad <span class="math inline">\(b\)</span> dalās ar <span class="math inline">\(a\)</span>.</li>
-<li>Dalāmības attiecībā “minimālais” elements ir <span class="math inline">\(1\)</span> (visi skaitļi dalās ar <span class="math inline">\(1\)</span>). “Maksimālais” elements ir <span class="math inline">\(0\)</span> (dalās ar jebkuru citu skaitli).</li>
+<li>Definētais <span class="math inline">\(d^{\ast}\)</span> bija <blue><em>ekstrēmais elements</em></blue> - vismazākais skaitlis ar kaut kādu īpašību.</li>
+<li>To, ka šādi iegūtais <span class="math inline">\(d^{\ast}\)</span> ir <em>lielākais kopīgais dalītājs</em> pierādījām pa daļām.</li>
+<li>Daži pierādījuma soļi bija no pretējā.</li>
+<li>Pieņēmumos no pretējā pārtulkojām <em>kvalitatīvu</em> apgalvojumu <em>kvantitatīvi</em> (pārrakstījām algebriski).</li>
 </ul>
-<p><strong>Transitivitāte:</strong> Ja <span class="math inline">\(a\)</span> dala <span class="math inline">\(b\)</span> un <span class="math inline">\(b\)</span> dala <span class="math inline">\(c\)</span>, tad <span class="math inline">\(a\)</span> dala <span class="math inline">\(c\)</span>. (Piemēram, no <span class="math inline">\(15 \mid 60\)</span> un <span class="math inline">\(60 \mid 480\)</span> var secināt, ka <span class="math inline">\(15 \mid 480\)</span>.)</p>
-<p>“Transitīvais slēgums” - var zīmējumu saraibināt, savienojot arī izsecināmās attiecības (<span class="math inline">\(1\)</span> ar <span class="math inline">\(4\)</span> vai <span class="math inline">\(8\)</span> utt.). Parasti tā nedara.</p>
-</hgroup>
-<aside class="notes">
-<p>Dalāmības attiecība ievieš daļēju sakārtojuma attiecību veselo skaitļu kopā līdzīgi kā <span class="math inline">\(\leq\)</span>. Pats “mazākais” veselais skaitlis šajā sakārtojumā ir <span class="math inline">\(1\)</span>; visi pirmskaitļi ir līmeni augstāk, jo tie dalās ar <span class="math inline">\(1\)</span>, bet <span class="math inline">\(1\)</span> ar tiem nē. Vēl līmeni augstāk ir visi iespējamie divu pirmskaitļu reizinājumi, ieskaitot pirmskaitļu kvadrātus. Starp šo līmeni un pirmskaitļu līmeni visur nepastāv sakārtojuma attiecība. Piemēram, <span class="math inline">\(2 \times 3\)</span> nav salīdzināms ar <span class="math inline">\(5\)</span> (tie savstarpēji cits ar citu nedalās). Sakārtojuma attiecību var turpināt arī augstākiem slāņiem (trīs, četru, utt. pirmskaitļu reizinājumam). Sakārtojuma attiecības pašā augšā atrodas skaitlis <span class="math inline">\(0\)</span>, jo tas dalās ar jebkuru skaitli.</p>
-<p>Dotajā attēlā <span class="math inline">\(1\)</span> ir savienots ar <span class="math inline">\(2\)</span> un <span class="math inline">\(2\)</span> ir savienots ar <span class="math inline">\(4\)</span>, bet nav novilkta šķautne no <span class="math inline">\(1\)</span> uz <span class="math inline">\(4\)</span> (kaut arī starp tiem pastāv sakārtojuma attiecība). Tas darīts vienīgi tādēļ, lai nesaraibinātu zīmējumu, jo dalāmības <em>transitivitātes</em> dēļ no <span class="math inline">\(1 \mid 2\)</span> un <span class="math inline">\(2 \mid 4\)</span> var secināt, ka <span class="math inline">\(1 \mid 4\)</span>.</p>
-<p>Sk. <a href="http://www.wikiwand.com/en/Partially_ordered_set">Partially ordered sets</a></p>
-</aside>
-</section><section id="dalīšana-nav-dalāmība" class="slide level2">
-<h2><lo-summary/> Dalīšana nav dalāmība</h2>
-<hgroup>
-<p><blue><em>Dalīšana</em></blue> (<em>division</em>) ir aritmētiska operācija. Dalot divus veselus skaitļus, rezultāts ir vesels vai racionāls.</p>
-<p><strong>Piemērs:</strong> Dalīšanas rezultāts <span class="math inline">\(18/6\)</span> ir skaitlis <span class="math inline">\(3\)</span>, bet <span class="math inline">\(17/6\)</span> rezultāts ir <span class="math inline">\(2\frac{5}{6}\)</span>.</p>
-</hgroup>
-<hgroup>
-<p><blue><em>Dalāmība</em></blue> ir loģiska attiecība - tās rezultāts ir patiesuma vērtība (<code>patiess</code> jeb <code>true</code> vai arī <code>aplams</code> jeb <code>false</code>).</p>
-<p><strong>Piemērs:</strong> <span class="math inline">\(18 \mid 6\)</span> rezultāts ir <code>true</code>. Bet <span class="math inline">\(17 \mid 6\)</span> rezultāts ir <code>false</code>.</p>
-</hgroup>
-<aside class="notes">
-<p>Dalīšanai kā aritmētiskai operācijai ir vairāki simboliski apzīmējumi. Pie tam veselu skaitļu dalīšanas rezultāts var parādīties vairākos veidos:</p>
-<ol type="1">
-<li>Dalīšana, iegūstot parasto vai jaukto daļskaitli: <span class="math inline">\(17:3 = \frac{17}{3} = 5\)</span></li>
-<li>Dalīšana, iegūstot noapaļotu decimāldaļu: <span class="math inline">\(17:3 = 5.6666667\)</span></li>
-<li>Dalīšana, iegūstot periodisku decimāldaļu: <span class="math inline">\(17:3 = 5.(6)\)</span> (lasa “pieci komats periodā seši”)</li>
-<li>Dalīšana, iegūstot dalījumu veselos skaitļos un atlikumu: <span class="math inline">\(17:3 = 5\;\;\mbox{atl.}\;\;2\)</span></li>
-</ol>
-<p><strong>Dalāmības īpašības:</strong></p>
-<ol type="1">
-<li>Ja <span class="math inline">\(a \mid b\)</span> un <span class="math inline">\(a \mid c\)</span>, tad <span class="math inline">\(a \mid b+c\)</span> un <span class="math inline">\(a \mid b - c\)</span>;</li>
-<li>Ja <span class="math inline">\(a \mid b\)</span>, tad <span class="math inline">\(a \mid b \cdot k\)</span>;</li>
-<li>Ja <span class="math inline">\(a \mid b_1, a \mid b_2, \ldots, a \mid b_n\)</span>, tad <span class="math inline">\(a \mid (b_1k_1 + b_2k_2 + \ldots + b_nk_n)\)</span>;</li>
-<li>Ja <span class="math inline">\(a \mid b\)</span> un <span class="math inline">\(b \mid c\)</span>, tad <span class="math inline">\(a \mid c\)</span>;</li>
-<li>Ja <span class="math inline">\(a \mid x\)</span> un <span class="math inline">\(b \mid y\)</span>, tad <span class="math inline">\(ab \mid xy\)</span>;</li>
-<li>Ja <span class="math inline">\(a \mid b\)</span> un <span class="math inline">\(b \mid a\)</span>, tad <span class="math inline">\(a = b\)</span>.</li>
-</ol>
-</aside>
-</section><section id="dalīšana-ar-atlikumu" class="slide level2">
-<h2><lo-summary/> Dalīšana ar atlikumu</h2>
-<hgroup>
-<p><strong>Definīcija:</strong> Dalīt veselu skaitli <span class="math inline">\(m\)</span> ar <span class="math inline">\(d\)</span> ar atlikumu nozīmē izteikt <span class="math inline">\(m = q\cdot d + r\)</span>, kur dalījuma veselā daļa <span class="math inline">\(q\)</span> un atlikums <span class="math inline">\(r\)</span> ir veseli skaitļi, turklāt <blue><em>atlikums</em></blue> (<em>remainder</em>) pieņem kādu no vērtībām: <span class="math inline">\(r \in \{ 0, 1, \ldots, n-1 \}\)</span>.</p>
-<p><strong>Piemērs:</strong> Dalot ar <span class="math inline">\(3\)</span> iespējamie atlikumi ir <red><span class="math inline">\(\{ 0,1,2 \}\)</span></red>.</p>
-</hgroup>
-<hgroup>
-<!--
-![Remainders in Python](remainders-in-python.png)
--->
-<pre class="console"><code>Python 3.6.7 (...) 
-&gt;&gt;&gt; 15 % 3
-0
-&gt;&gt;&gt; 17 % 3
-2
-&gt;&gt;&gt; (-17) % 3
-1
-&gt;&gt;&gt; (-17) // 3
--6</code></pre>
-<p><span class="math display">\[\left\{
-\begin{array}{l}
-15 = 5 \cdot 3 + \color{#F00}{0}\\
-17 = 5 \cdot 3 + \color{#F00}{2}\\
--17 = (-6) \cdot 3 + \color{#F00}{1}
-\end{array}
-\right.\]</span></p>
-</hgroup>
-<aside class="notes">
-<p>Arī negatīviem skaitļiem iespējama dalīšana ar atlikumu. Jāņem vērā, ka atlikumi nemēdz būt negatīvi.</p>
-<p>Diemžēl daudzās programmēšanas valodās <em>atlikuma operators</em>, ja to izmanto negatīviem skaitļiem, dod negatīvus atlikumus. Ar to tas var atšķirties no atlikuma matemātiskas definīcijas. Atlikums, dalot ar <span class="math inline">\(n\)</span>, vienmēr ir skaitlis starp <span class="math inline">\(0\)</span> un <span class="math inline">\(n-1\)</span>.</p>
-</aside>
-</section></section>
-<section><section id="uzdevums-nt.jun01.1" class="title-slide slide level1"><h1><lo-sample/> Uzdevums NT.JUN01.1</h1><p>Rindā novietoti <span class="math inline">\(30\)</span> slēdži ar numuriem no <span class="math inline">\(1\)</span> līdz <span class="math inline">\(30\)</span>. Katrs slēdzis var būt ieslēgts vai izslēgts; sākumā tie visi ir izslēgti. Pirmajā solī pārslēdz pretējā stāvoklī visus slēdžus, kuru numuri dalās ar <span class="math inline">\(1\)</span>. Otrajā solī pārslēdz visus tos, kuru numuri dalās ar <span class="math inline">\(2\)</span>. Un tā tālāk - līdz 30.solī pārslēdz pretējā stāvoklī slēdžus, kuru numuri dalās ar <span class="math inline">\(30\)</span>.<br />
-Cik daudzi slēdži kļūst ieslēgti pēc visu soļu pabeigšanas?</p></section><section id="uzdevums-nt.jun01.1-1" class="slide level2">
-<h2><lo-reading/> Uzdevums NT.JUN01.1</h2>
-<hgroup>
-<ul>
-<li>Ko nozīmē “pārslēgt pretējā stāvoklī”?</li>
-<li>Cik daudzi soļi pārslēdz slēdzi ar konkrētu numuru <span class="math inline">\(n\)</span>?</li>
-<li>Vai atbildē jānorāda slēdžu skaits, kas mainīja (vai arī kas nemainīja) savu stāvokli?</li>
-<li>Tas iestājas pēc soļu skaita, kas ir pāra vai nepāra skaitlis?</li>
-</ul>
-</hgroup>
-<hgroup>
-</hgroup>
-</section><section id="uzdevums-nt.jun01.1-2" class="slide level2">
-<h2><lo-soln/> Uzdevums NT.JUN01.1</h2>
 <table>
 <tr>
 <th>
-1
+Kvalitatīvs apgalvojums
 </th>
 <th>
-2
-</th>
-<th>
-3
-</th>
-<th>
-4
-</th>
-<th>
-5
-</th>
-<th>
-6
-</th>
-<th>
-7
-</th>
-<th>
-8
-</th>
-<th>
-9
-</th>
-<th>
-10
-</th>
-<th>
-11
-</th>
-<th>
-12
-</th>
-<th>
-13
-</th>
-<th>
-14
-</th>
-<th>
-15
-</th>
-<th>
-16
-</th>
-<th>
-…
-</th>
-<th>
-30
+Kvantitatīvs apgalvojums
 </th>
 </tr>
 <tr>
 <td>
-1
+<span class="math inline">\(n\)</span> ir nepāru skaitlis
 </td>
 <td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-…
-</td>
-<td>
-1
+Var izteikt <span class="math inline">\(n=2k+1\)</span>
 </td>
 </tr>
 <tr>
 <td>
- 
+<span class="math inline">\(a\)</span> nedalās ar <span class="math inline">\(d\)</span>
 </td>
 <td>
-2
-</td>
-<td>
-3
-</td>
-<td>
-2
-</td>
-<td>
-5
-</td>
-<td>
-2
-</td>
-<td>
-7
-</td>
-<td>
-2
-</td>
-<td>
-3
-</td>
-<td>
-2
-</td>
-<td>
-11
-</td>
-<td>
-2
-</td>
-<td>
-13
-</td>
-<td>
-2
-</td>
-<td>
-3
-</td>
-<td>
-2
-</td>
-<td>
-…
-</td>
-<td>
-2
+Var izteikt <span class="math inline">\(a = dq + r\)</span>, kur <span class="math inline">\(0 &lt; r &lt; d\)</span>
 </td>
 </tr>
 <tr>
 <td>
- 
+<span class="math inline">\(a\)</span> dalās ar <span class="math inline">\(c\)</span>
 </td>
 <td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-4
-</td>
-<td>
- 
-</td>
-<td>
-3
-</td>
-<td>
- 
-</td>
-<td>
-4
-</td>
-<td>
-9
-</td>
-<td>
-5
-</td>
-<td>
- 
-</td>
-<td>
-3
-</td>
-<td>
- 
-</td>
-<td>
-7
-</td>
-<td>
-5
-</td>
-<td>
-4
-</td>
-<td>
-…
-</td>
-<td>
-3
-</td>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-6
-</td>
-<td>
- 
-</td>
-<td>
-8
-</td>
-<td>
- 
-</td>
-<td>
-10
-</td>
-<td>
- 
-</td>
-<td>
-4
-</td>
-<td>
- 
-</td>
-<td>
-14
-</td>
-<td>
-15
-</td>
-<td>
-8
-</td>
-<td>
-…
-</td>
-<td>
-5
-</td>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-6
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-16
-</td>
-<td>
-…
-</td>
-<td>
-6
-</td>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-12
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-…
-</td>
-<td>
-10
-</td>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-…
-</td>
-<td>
-15
-</td>
-</tr>
-<tr>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
- 
-</td>
-<td>
-…
-</td>
-<td>
-30
+Var izteikt <span class="math inline">\(a = cu\)</span>
 </td>
 </tr>
 </table>
-<p>Kuriem no skaitļiem ir nepāru skaits dalītāju?</p>
-<aside class="notes">
-<p>Mēģiniet izvirzīt hipotēzes un tās pamatot.</p>
-</aside>
+<p>Līdzīgi ģeometrijā, kur kvalitatīvus apgalvojumus (ap četrstūri var apvilkt riņķa līniju) pārtaisa par kvantitatīviem (pretējo leņķu summas; ievilktie leņķi u.c.).</p>
+</div>
+</section></section>
+<section id="piemērs" class="title-slide slide level1"><h1><lo-sample/> Piemērs</h1><p><strong>NT.JUN01.04:</strong> Pierādīt, ka virkne <span class="math inline">\(1,11,111,\ldots\)</span> satur bezgalīgu apakšvirkni, kuras katri divi locekļi ir savstarpēji pirmskaitļi.</p>
+<p><strong>Jautājums:</strong> Vai skaitļu <span class="math inline">\(a^m - 1\)</span> un <span class="math inline">\(a^n - 1\)</span> lielākais kopīgais dalītājs ir skaitlis <span class="math inline">\(a^{\text{LKD}(m,n)} - 1\)</span>?</p></section>
+<section id="blankinšipa-algoritms" class="title-slide slide level1"><h1><lo-summary/> Blankinšipa algoritms</h1><p>Sk. <a href="http://mathworld.wolfram.com/BlankinshipAlgorithm.html">Blankinship Algorithm</a></p>
+<p>Izveidojam šādu <blue><em>matricu</em></blue> (taisnstūrveida tabuliņu ar skaitļiem): <span class="math display">\[A = \left(
+\begin{array}{ccc}
+a &amp; 1 &amp; 0 \\
+b &amp; 0 &amp; 1 
+\end{array} \right).\]</span></p>
+<p>Vienā gājienā atļauts no vienas rindiņas skaitļiem atņemt otras rindiņas skaitļus (un arī otrādi). Cenšamies panākt, lai matrica pārveidotos kādā no formām:</p>
+<p><span class="math display">\[\left(
+\begin{array}{ccc}
+d &amp; x &amp; y \\
+0 &amp; x&#39; &amp; y&#39;
+\end{array} \right)\;\;\text{vai}\;\;\left(
+\begin{array}{ccc}
+0 &amp; x&#39; &amp; y&#39; \\
+d &amp; x &amp; y
+\end{array} \right)\]</span></p></section>
+<section><section id="bezū-identitātes-vispārinājums" class="title-slide slide level1"><h1><lo-theory/> Bezū identitātes vispārinājums</h1><p><strong>Apgalvojums:</strong> Ja <span class="math inline">\(a_1,\ldots,a_n\)</span> ir veseli skaitļi (<span class="math inline">\(n \geq 3\)</span>): <span class="math inline">\(\text{LKD}(a_1, a_2, \ldots, a_n) = d,\)</span> tad eksistē veseli skaitļi <span class="math inline">\(x_{1},x_{2},\ldots ,x_{n}\)</span>, kuriem <span class="math display">\[d=a_{1}x_{1}+a_{2}x_{2}+\cdots +a_{n}x_{n}\]</span></p></section><section id="blankinšipa-algoritma-vispārinājums" class="slide level2">
+<h2><lo-summary/> Blankinšipa algoritma vispārinājums</h2>
+<hgroup>
+<figure>
+<img data-src="blankinship3.png" alt="Blankinship 3" /><figcaption>Blankinship 3</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:80%">
+<ul>
+<li>Aplūkojam <span class="math inline">\(a_1 = 187\)</span>, <span class="math inline">\(a_2 = 221\)</span> un <span class="math inline">\(a_3 = 323\)</span>.</li>
+<li>Izveidojam <span class="math inline">\(3 \times 4\)</span> matricu <span class="math inline">\(A\)</span></li>
+<li>Veicam rindu pārveidojumus, lai iegūtu pirmajā kolonnā tikai vienu nenulles skaitli <span class="math inline">\(d\)</span>.</li>
+<li>Izpildās <span class="math inline">\(17 = \text{LKD}(187,221,323)\)</span>.</li>
+</ul>
+<p><blue><em>Gausa izslēgšana</em></blue> (<em>Gaussian elimination</em>) pretējā virzienā.</p>
+</hgroup>
 </section></section>
 <section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span style="color:darkgreen"><strong>(3) Dalītāju skaits</strong></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-</hgroup>
-<aside class="notes">
-<p>Dalītāju izvietojums, skaits, režģis. Izrādās, ka fiksēta skaitļa dalītāji veido interesantu, simetrisku struktūru, kuru var attēlot kā režģi. Režģa aplūkošana ļauj ātri noskaidrot dalītāju skaitu un citas to kopīgās īpašības. Režģa struktūra noderēs arī, lai ģeometriski iztēlotos, teiksim, lielāko kopīgo dalītāju diviem skaitļiem.</p>
-</aside></section>
-<section><section id="dalītāju-virknes-simetrija" class="title-slide slide level1"><h1><lo-summary/> Dalītāju virknes simetrija</h1><hgroup>
-<figure>
-<img data-src="divisors-of-60-seq.png" alt="Divisors of 60" /><figcaption>Divisors of 60</figcaption>
-</figure>
-<figure>
-<img data-src="divisors-of-60-hasse.png" alt="Divisors of 60 (Hasse)" /><figcaption>Divisors of 60 (Hasse)</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<figure>
-<img data-src="divisors-of-36-seq.png" alt="Divisors of 60" /><figcaption>Divisors of 60</figcaption>
-</figure>
-<figure>
-<img data-src="divisors-of-36-hasse.png" alt="Divisors of 60 (Hasse)" /><figcaption>Divisors of 60 (Hasse)</figcaption>
-</figure>
-</hgroup>
-<aside class="notes">
-<ul>
-<li>Dalītāji režģī izvietoti centrālsimetriski attiecībā pret sarkano aplīti.</li>
-<li>Visas dalāmības attiecības nav attēlotas ar svītriņām (bet gan tikai minimāli nepieciešamās).</li>
-<li>Pārējās attiecības ir jāsecina ar “transitīvo slēgumu”, kad savelk visas citas bultiņas, ko var izsecināt:<br />
-Ja <span class="math inline">\(a \mid b\)</span> un <span class="math inline">\(b \mid c\)</span>, tad <span class="math inline">\(a \mid c\)</span>.</li>
-</ul>
-<p>Pilno kvadrātu starp visiem naturālajiem skaitļiem ir salīdzinoši nedaudz. Jebkurā pietiekami garā intervālā to būs krietni mazāk nekā, teiksim, pirmskaitļu. Tādēļ lielajam vairumam naturālo skaitļu ir pāru skaits dalītāju.</p>
-</aside></section><section id="hases-diagrammas" class="slide level2">
-<h2><lo-summary/> Hases diagrammas</h2>
-<p>H.Hase (<em>Helmut Hasse</em>) spriedumos par daļēji sakārtotām kopām ieviesa diagrammas, kas attēlo “transitīvo redukciju”:</p>
-<ul>
-<li>Vispirms savieno ar svītriņu visus aplīšus, kas atrodas attiecībā “mazāks”.</li>
-<li>Pēc tam izdzēš tās svītriņas, ko var izsecināt no citām, izmantojot transitivitāti.</li>
-</ul>
-<figure>
-<img data-src="hasse-1-to-15.png" alt="Hasse 1 to 15" /><figcaption>Hasse 1 to 15</figcaption>
-</figure>
-</section><section id="veidotājelementi-235" class="slide level2">
-<h2><lo-summary/> Veidotājelementi: 2,3,5</h2>
-<figure>
-<img data-src="hasse-larger.png" alt="Hasse larger" /><figcaption>Hasse larger</figcaption>
-</figure>
-<aside class="notes">
-<p>https://www.pinterest.com/pin/411586853439524717/?lp=true</p>
-</aside>
-</section></section>
-<section><section id="dalītāju-apkopojumu-funkcijas" class="title-slide slide level1"><h1><lo-theory/> Dalītāju apkopojumu funkcijas</h1><div style="font-size:70%">
-<p>Skaitļa dalītājus mēdz dažādi apkopot, piemēram, uzzinot to skaitu, summu vai augstāku pakāpju summu.</p>
-<p><strong>Definīcija:</strong> Katram naturālam skaitlim <span class="math inline">\(n\)</span> definējam funkcijas <span class="math inline">\(\sigma_0(n)\)</span>, <span class="math inline">\(\sigma_1(n)\)</span> un <span class="math inline">\(\sigma_2(n)\)</span> ar šādām vienādībām:</p>
-<p><span class="math display">\[\begin{array}{rcl}
-\sigma_0(n) &amp; = &amp; \sum\limits_{d \mid n} 1 = \sum\limits_{d \mid n} d^0,\\
-\sigma_1(n) &amp; = &amp; \sum\limits_{d \mid n} d,\\
-\sigma_2(n) &amp; = &amp; \sum\limits_{d \mid n} d^2,
-\end{array}\]</span></p>
-<p>Apzīmējums <span class="math inline">\(\sum\limits_{d \mid n}\ldots\)</span> summē izteiksmi visiem <span class="math inline">\(d\)</span>, kuri ir <span class="math inline">\(n\)</span> dalītāji.</p>
-<p><span class="math inline">\(\sigma_0(n)\)</span> summē dalītāju <span class="math inline">\(0\)</span>-tās pakāpes jeb vieniniekus - skaitļa <span class="math inline">\(n\)</span> dalītāju skaits.</p>
-</div></section><section id="piemēri-ar-n60" class="slide level2">
-<h2><lo-summamry/> Piemēri ar n=60</h2>
-<p><span class="math display">\[\sigma_0(60) = \left| \{ 1,2,3,4,5,6,10,12,15,20,30,60 \} \right| = 12.\]</span> <span class="math display">\[\sigma_1(60) = 1 + 2 + 3 + 4 + 5 + 6 + 10 + 12 + \]</span> <span class="math display">\[ + 15 + 20 + 30 + 60 = 168.\]</span> <span class="math display">\[\sigma_2(60) = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2 + 10^2 + 12^2\]</span> <span class="math display">\[ + 15^2 + 20^2 + 30^2 + 60^2  = 5460.\]</span></p>
-</section><section id="dalītāji-skaitlim-60" class="slide level2">
-<h2><lo-summary/> Dalītāji skaitlim 60</h2>
-<hgroup>
-<figure>
-<img data-src="divisors-of-60.png" alt="Divisors of 60" /><figcaption>Divisors of 60</figcaption>
-</figure>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
 <hgroup style="font-size:70%">
-<ul>
-<li>Dalītāju skaitu var atrast, izmantojot <em>reizināšanas likumu</em>.</li>
-<li>Zināms, ka <span class="math inline">\(60 = 2^23^15^1\)</span>.</li>
-<li>Katrs skaitļa <span class="math inline">\(60\)</span> dalītājs izsakāms <span class="math inline">\(2^a3^b5^c\)</span>, kur <span class="math inline">\(a \in \{ 0,1,2\}\)</span>, <span class="math inline">\(b \in \{ 0,1 \}\)</span>, <span class="math inline">\(c \in \{ 0,1 \}\)</span>.</li>
-<li>Sareizinām elementu skaitu: <span class="math inline">\(3 \cdot 2 \cdot 2 = 12\)</span>.</li>
-</ul>
-<p><span class="math display">\[\sigma_0 \left( 2^{\color{#F00}{2}}3^{\color{#F00}{1}}5^{\color{#F00}{1}} \right) = \]</span> <span class="math display">\[ = (\color{#F00}{2}+1)\cdot (\color{#F00}{1}+1)(\color{#F00}{1}+1) = 12.\]</span></p>
-</hgroup>
-</section><section id="dalītāju-un-to-kvadrātu-summas" class="slide level2">
-<h2><lo-summary/> Dalītāju un to kvadrātu summas</h2>
-<div style="font-size:70%">
-<p><span class="math inline">\(\sigma_1(60)\)</span> un <span class="math inline">\(\sigma_2(60)\)</span> arī var ātri aprēķināt, izmantojot algebriskas identitātes:</p>
-<p><span class="math display">\[\sigma_1(60) = \left( 2^2 + 2^1 + 2^0 \right)
-\left( 3^1 + 3^0 \right) \left( 5^1 + 5^0 \right) = \]</span> <span class="math display">\[ = (4+2+1)(3+1)(5+1) = 7 \cdot 4 \cdot 6 = 168.\]</span></p>
-<p><span class="math display">\[\sigma_2(60) = \left( 2^4 + 2^2 + 2^0 \right)
-\left( 3^2 + 3^0 \right) \left( 5^2 + 5^0 \right) = \]</span> <span class="math display">\[ = (16+4+1)(9+1)(25+1) = 5460.\]</span></p>
-<p>Visu šo var iegūt no sadalījuma pirmreizinātājos: <span class="math inline">\(60 = 2 \cdot 2 \cdot 3 \cdot 5 = 2^23^15^1\)</span>.</p>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span style="color:darkgreen"><strong>(3) Lineāra kongruence ar 1 mainīgo</strong></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p></section>
+<section id="skaitļu-teorijas-algoritmi" class="title-slide slide level1"><h1><lo-theory/> Skaitļu teorijas algoritmi</h1><div style="font-size:70%">
+<p>Skaitļu teorijā (kas ir ne tikai olimpiāžu, bet arī lietojumu nozare, piemēram, kriptogrāfijā), ir sastopami daži noderīgi algoritmi.</p>
+<dl>
+<dt>
+Pirmskaitļu pārbaude
+</dt>
+<dd>
+Naivais jeb pilnās pārlases algoritms; Rabina-Millera algoritms
+</dd>
+<dt>
+Algoritmi, kas atrod divu skaitļu LKD
+</dt>
+<dd>
+Eiklīda algoritms
+</dd>
+<dt>
+Lineārs kongruenču vienādojums <span class="math inline">\(ax \equiv m\;(\text{mod}\,b)\)</span>
+</dt>
+<dd>
+Pārveidojums uz Bezū identitāti; Blankinšipa algoritms
+</dd>
+<dt>
+Lineāru kongruenču sistēma
+</dt>
+<dd>
+Ķīniešu atlikumu teorēma
+</dd>
+<dt>
+Kvadrātiska kongruence <span class="math inline">\(x^2 = m\;(\text{mod}\,b)\)</span>
+</dt>
+<dd>
+Ležandra simboli un kvadrātiskie atlikumi.
+</dd>
+</dl>
+</div></section>
+<section><section id="lineāras-kongruences" class="title-slide slide level1"><h1><lo-theory/> Lineāras kongruences</h1><div style="font-size:80%">
+<p><strong>Algoritmisks uzdevums:</strong> Atrisināt šādu kongruenču vienādojumu: <span class="math inline">\(ax \equiv m\;(\text{mod}\,b)\)</span>, kur <span class="math inline">\(a,b\)</span> ir veseli skaitļi un <span class="math inline">\(m\)</span> dalās ar <span class="math inline">\(a,b\)</span> lielāko kopīgo dalītāju <span class="math inline">\(d = \text{LKD}(a,b)\)</span>.</p>
+<p><strong>Piezīme 1:</strong> Ja <span class="math inline">\(m\)</span> nedalās ar <span class="math inline">\(d\)</span>, tad kongruenču vienādojumam atrisinājuma nav vispār. Piemēram, <span class="math inline">\(6x \equiv 7\;(\text{mod}\,16)\)</span> nevar atrisināt, jo <span class="math inline">\(6x\)</span> nevar dot nepāru atlikumu, dalot ar <span class="math inline">\(16\)</span>.</p>
+<p><strong>Piezīme 2:</strong> Ja <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> nav savstarpēji pirmskaitļi, tad kongruenču vienādojumam var būt vairāki atrisinājumi. Piemēram, <span class="math inline">\(6x \equiv 2\;(\text{mod}\,16)\)</span> eksistē divi atrisinājumi: <span class="math display">\[\left\{ \begin{array}{l}
+x \equiv 3\;(\text{mod}\,16)\\
+x \equiv 11\;(\text{mod}\,16)
+\end{array} \right.\]</span></p>
+</div></section><section id="kāpēc-eksistē-vairāki-atrisinājumi" class="slide level2">
+<h2><lo-theory/> Kāpēc eksistē vairāki atrisinājumi?</h2>
+<div style="font-size:80%">
+<p>Risinot kongruenču vienādojumus <span class="math inline">\(ax \equiv m\;(\text{mod}\,b)\)</span> ir iespējami vairāki gadījumi:</p>
+<ol type="1">
+<li>Ja <span class="math inline">\(b\)</span> ir pirmskaitlis, tad katram <span class="math inline">\(a \not\equiv 0\;(\text{mod}\,b)\)</span> kongruenču vienādojumam <span class="math inline">\(ax \equiv m\;(\text{mod}\,b)\)</span> eksistē viens noteikts atrisinājums. <span class="math display">\[3x \equiv 4\;(\text{mod}\,7)\;\;\Rightarrow\;\;x \equiv 6\;(\text{mod}\,7).\]</span></li>
+<li>Ja <span class="math inline">\(b\)</span> nav pirmskaitlis, bet <span class="math inline">\(a\)</span>, <span class="math inline">\(m\)</span> ir savstarpēji pirmskaitļi ar <span class="math inline">\(b\)</span>, arī tad kongruenču vienādojumam <span class="math inline">\(a \not\equiv 0\;(\text{mod}\,b)\)</span> eksistē viens vienīgs atrisinājums.</li>
+<li>Situācijas, kad <span class="math inline">\(a\)</span> nav savstarpējs pirmskaitlis ar <span class="math inline">\(b\)</span> (jau redzētais <span class="math inline">\(6x \equiv 2\;(\text{mod}\,16)\)</span> u.c.) <red>pirms risināšanas ir jāpārveido</red>. Piemēram, jānoīsina ar <span class="math inline">\(2\)</span>, lai iegūtu viennozīmīgi risināmu <span class="math display">\[3x \equiv 1\;(\text{mod}\,8).\]</span></li>
+</ol>
 </div>
+</section><section id="lineāra-kongruence" class="slide level2">
+<h2><lo-theory/> Lineāra kongruence</h2>
+<p>Kāpēc lineārai kongruencei <span class="math inline">\(ax \equiv d\;(\text{mod}\,b)\)</span> (kur <span class="math inline">\(a,b\)</span> ir veseli skaitļi un <span class="math inline">\(d = \text{LKD}(a,b)\)</span>) eksistē atrisinājums?</p>
+<p><strong>Pierādījums:</strong> Tās ir sekas no Bezū identitātes. Ja jau <span class="math inline">\(ax+by=d\)</span>, tad <span class="math inline">\(ax - d\)</span> dalās ar <span class="math inline">\(b\)</span> (tātad <span class="math inline">\(ax\)</span> un <span class="math inline">\(d\)</span> ir kongruenti pēc <span class="math inline">\(b\)</span> moduļa).</p>
+</section><section id="atsevišķs-gadījums" class="slide level2">
+<h2><lo-theory/> Atsevišķs gadījums</h2>
+<p><strong>Apgalvojums:</strong> Pieņemsim, ka <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir savstarpēji pirmskaitļi. Tad eksistē atrisinājums kongruenču vienādojumam <span class="math display">\[ax \equiv 1\;(\text{mod}\,b).\]</span> Tā atrisinājumu <span class="math inline">\(x\)</span> apzīmēsim ar <span class="math inline">\(a^{-1}\)</span> (to sauc par <span class="math inline">\(a\)</span> inverso pēc <span class="math inline">\(b\)</span> moduļa).</p>
+<p><strong>Pierādījums:</strong> Var izmantot Bezū identitāti, bet var arī vienkārši atsaukties uz to, ka skaitļu (<span class="math inline">\(x \in 0,\ldots,b-1\)</span>) reizināšana ar <span class="math inline">\(a\)</span> (pēc <span class="math inline">\(b\)</span> moduļa) ir injektīva. Nekādi divi <span class="math inline">\(ax_1\)</span> un <span class="math inline">\(ax_2\)</span> nevar attēloties par to pašu atlikumu.<br />
+<strong>Tātad</strong> kāds no tiem attēlosies par atlikumu <span class="math inline">\(1\)</span>.</p>
 </section></section>
-<section id="jautājums-nr.3" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.3</h1><p>Uz galda ir piecas kartiņas, uz katras uzrakstīts cits pirmskaitlis (attiecīgi <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(5\)</span>, <span class="math inline">\(7\)</span> un <span class="math inline">\(11\)</span>). Cik dažādos veidos var paņemt kaut kādas kartiņas (drīkst ņemt arī visas vai neņemt nevienu)?</p>
-<p><em>Ierakstīt veselu skaitli (variantu skaitu):</em> _____</p></section>
-<section><section id="nt.jun01.2" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.2</h1><p>Atrast mazāko naturālo skaitli, kam ir tieši <span class="math inline">\(16\)</span> dalītāji.</p></section><section id="nt.jun01.2-1" class="slide level2">
-<h2><lo-reading/> NT.JUN01.2</h2>
-<p>Uzdevumā netieši pateikts, ka naturāls skaitlis ar tieši <span class="math inline">\(16\)</span> dalītājiem vispār eksistē. Vienīgi tad ir jēga meklēt mazāko no šādiem skaitļiem.</p>
-<p><strong>Apgalvojums:</strong> Katram naturālam <span class="math inline">\(n\)</span> eksistē bezgalīgi daudzi skaitļi <span class="math inline">\(M\)</span>, kuriem ir tieši <span class="math inline">\(n\)</span> pozitīvi dalītāji.</p>
-<p><em>Ieteikums:</em> Var izvēlēties <span class="math inline">\(M = p^{n-1}\)</span>, kur <span class="math inline">\(p\)</span> ir jebkurš pirmskaitlis.</p>
-<aside class="notes">
-<p>Apgalvojums ir triviāls: Lai atrastu skaitli, kuram ir tieši <span class="math inline">\(n\)</span> pozitīvi dalītāji, izvēlamies skaitli <span class="math inline">\(p^{n-1}\)</span>, kur <span class="math inline">\(p\)</span> ir jebkurš pirmskaitlis. Protams, varētu būt citi atrisinājumi, kuri nav pirmskaitļu pakāpes. Uzdevums ir atrast vismazāko no tiem.</p>
-</aside>
-</section><section id="nt.jun01.2-2" class="slide level2">
-<h2><lo-hints/> NT.JUN01.2</h2>
-<p>Ja <span class="math inline">\(M = p_1^ap_2^bp_3^cp_4^d\)</span>, tam ir <span class="math inline">\((a+1)(b+1)(c+1)(d+1)=16\)</span> reizinātāji. Līdzīgi arī mazākam pirmreizinātāju skaitam.<br />
-(Ja dažādu pirmskaitļu, kas dala <span class="math inline">\(M\)</span>, ir vairāk kā četri, tad <span class="math inline">\(M\)</span> būtu vismaz <span class="math inline">\(2^5 = 32\)</span> dalītāji, jo <span class="math inline">\(M\)</span> dalītājus var veidot, sareizinot jebkuru tā pirmreizinātāju apakškopu - varbūt pat tukšu).</p>
-<p><strong>Stratēģija:</strong> Gadījumu pārlase.<br />
-Meklējam visus veidus, kā <span class="math inline">\(16\)</span> var izteikt ne vairāk kā četru dažādu pirmskaitļu (vai to pakāpju) reizinājumu.</p>
-<aside class="notes">
-<p>Katram veidam, kā pašu dalītāju skaitu (t.i. skaitli <span class="math inline">\(16\)</span>) var izteikt kā reizinājumu, atbilst paraudziņš ar pirmeizinātājiem, kuri nodrošina attiecīgo dalītāju skaitu. Piemēram, ja 16 izsaka kā 4 reiz 4, tad tam atbilst divu pirmskaitļu kubu reizinājums. Šādam skaitlim (mūsu piemērā <span class="math inline">\(216\)</span>, bet tas varētu būt arī <span class="math inline">\(1000\)</span> vai jebkāds cits kubs), būs tieši <span class="math inline">\(16\)</span> dalītāji, jo katrā dalītājā katrs no pirmskaitļiem var tikt kāpināts jebkurā pakāpē (<span class="math inline">\(0,1,2,3\)</span>).</p>
-</aside>
-</section><section id="nt.jun01.2-1-pirmskaitlis" class="slide level2">
-<h2><lo-soln/> NT.JUN01.2 (1 pirmskaitlis)</h2>
+<section><section id="inversie-pēc-16-moduļa" class="title-slide slide level1"><h1><lo-sample/> Inversie pēc 16 moduļa</h1><hgroup>
+<p>Atrast inversos elementus, ja <span class="math inline">\(b=16\)</span>. T.i. atrisināt visas iespējamās kongruences <span class="math inline">\(ax \equiv 1\)</span> (pēc <span class="math inline">\(16\)</span> moduļa).</p>
+</hgroup>
 <hgroup>
-<figure>
-<img data-src="16-divisors-var1.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
-</figure>
+<p><span class="math display">\[\begin{array}
+\mbox{}1^{-1} \equiv ?\;(\text{mod}\,16)\\
+3^{-1} \equiv ?\;(\text{mod}\,16)\\
+5^{-1} \equiv ?\;(\text{mod}\,16)\\
+7^{-1} \equiv ?\;(\text{mod}\,16)\\
+9^{-1} \equiv ?\;(\text{mod}\,16)\\
+11^{-1} \equiv ?\;(\text{mod}\,16)\\
+13^{-1} \equiv ?\;(\text{mod}\,16)\\
+15^{-1} \equiv ?\;(\text{mod}\,16)
+\end{array}\]</span></p>
+</hgroup></section><section id="inversie-pēc-16-moduļa-1" class="slide level2">
+<h2><lo-soln/> Inversie pēc 16 moduļa</h2>
+<hgroup>
+<p><span class="math display">\[\begin{array}
+\mbox{}1^{-1} \equiv 1\\
+3^{-1} \equiv 11\\
+5^{-1} \equiv 13\\
+7^{-1} \equiv 7\\
+9^{-1} \equiv 9\\
+11^{-1} \equiv 3\\
+13^{-1} \equiv 5\\
+15^{-1} \equiv 15
+\end{array}\]</span></p>
 </hgroup>
 <hgroup>
 <ul>
-<li><span class="math inline">\(16 = (15+1)\)</span>.</li>
-<li>Tieši <span class="math inline">\(16\)</span> dalītāji ir skaitlim formā <span class="math inline">\(p^{15}\)</span>, kur <span class="math inline">\(p\)</span> ir jebkurš pirmskaitlis.</li>
-<li>Mazāko <span class="math inline">\(M\)</span> var iegūt mazākajam pirmskaitlim <span class="math inline">\(p=2\)</span>.</li>
-<li>Šajā gadījumā <span class="math inline">\(M = 2^{15} = 32768\)</span>.</li>
+<li>Katru no šīm sakarībām var pārbaudīt. Piemēram <span class="math display">\[3^{-1} \cdot 3 \equiv 11 \cdot 3 \equiv\]</span> <span class="math display">\[\equiv 33 \equiv 1\;(\text{mod}\,16).\]</span></li>
+<li>Nav jēgas jautāt, cik ir <span class="math inline">\(2^{-1}\)</span> pēc <span class="math inline">\(16\)</span> moduļa, jo <span class="math inline">\(2,16\)</span> nav savstarpēji pirmskaitļi; neeksistē tāds <span class="math inline">\(a\)</span>, kuram <span class="math inline">\(a\cdot 2\)</span> dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(16\)</span>.</li>
 </ul>
-</hgroup>
-</section><section id="nt.jun01.2-2-pirmskaitļi---a" class="slide level2">
-<h2><lo-soln/> NT.JUN01.2 (2 pirmskaitļi - A)</h2>
-<hgroup>
-<figure>
-<img data-src="16-divisors-var2.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<ul>
-<li><span class="math inline">\(16 = (7+1)(1+1)\)</span>.</li>
-<li>Tieši <span class="math inline">\(16\)</span> dalītāji ir skaitlim formā <span class="math inline">\(p^7q\)</span>, kur <span class="math inline">\(p,q\)</span> ir pirmskaitļi.</li>
-<li>Mazākais šāds skaitlis ir <span class="math inline">\(2^7\cdot{} 3 = 128 \cdot 3 = 384\)</span>.</li>
-</ul>
-</hgroup>
-</section><section id="nt.jun01.2-2-pirmskaitļi---b" class="slide level2">
-<h2><lo-soln/> NT.JUN01.2 (2 pirmskaitļi - B)</h2>
-<hgroup>
-<figure>
-<img data-src="16-divisors-var3.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<ul>
-<li><span class="math inline">\(16 = (3+1)(3+1)\)</span>.</li>
-<li>Tieši <span class="math inline">\(16\)</span> dalītāji ir skaitlim formā <span class="math inline">\(p^3q^3\)</span>, kur <span class="math inline">\(p,q\)</span> ir pirmskaitļi.</li>
-<li>Mazākais šāds skaitlis ir <span class="math inline">\(2^3\cdot{} 3^3 = 216\)</span>.</li>
-</ul>
-</hgroup>
-</section><section id="nt.jun01.2-3-pirmskaitļi" class="slide level2">
-<h2><lo-soln/> NT.JUN01.2 (3 pirmskaitļi)</h2>
-<hgroup>
-<figure>
-<img data-src="16-divisors-var4.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<p><span class="math inline">\((3+1)(1+1)(1+1)\)</span>.</p>
-<ul>
-<li>Tieši <span class="math inline">\(16\)</span> dalītāji ir skaitlim formā <span class="math inline">\(p^3qr\)</span>, kur <span class="math inline">\(p,q,r\)</span> ir pirmskaitļi.</li>
-<li>Mazākais šāds skaitlis ir <span class="math inline">\(2^3\cdot{} 3 \cdot 5 = 120\)</span>.</li>
-</ul>
-</hgroup>
-</section><section id="nt.jun01.2-4-pirmskaitļi" class="slide level2">
-<h2><lo-soln/> NT.JUN01.2 (4 pirmskaitļi)</h2>
-<hgroup>
-<figure>
-<img data-src="16-divisors-var5.png" alt="16 divisors - Variant1" /><figcaption>16 divisors - Variant1</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<p><span class="math inline">\((1+1)(1+1)(1+1)(1+1)\)</span>.</p>
-<ul>
-<li>Tieši <span class="math inline">\(16\)</span> dalītāji ir skaitlim formā <span class="math inline">\(pqrs\)</span>, kur <span class="math inline">\(pqrs\)</span>.</li>
-<li>Mazākais šāds skaitlis ir <span class="math inline">\(2 \cdot 3 \cdot 5 \cdot 7 = 210\)</span>.</li>
-</ul>
-<p><strong>Atbilde:</strong> Optimāls atrisinājums (mazākais skaitlis) ir <span class="math inline">\(120\)</span> (trīs dažādi pirmreizinātāji, viens no tiem celts trešajā pakāpē).</p>
 </hgroup>
 </section></section>
-<section id="jautājums-nr.1" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.1</h1><p>Naturālam skaitlim <span class="math inline">\(n\)</span> ir tieši <span class="math inline">\(125\)</span> naturāli dalītāji (ieskaitot <span class="math inline">\(1\)</span> un pašu <span class="math inline">\(n\)</span>). Kādu visaugstākās pakāpes sakni noteikti var izvilkt no <span class="math inline">\(n\)</span>, iegūstot naturālu rezultātu?</p>
-<p><em>Ierakstīt naturālu skaitli (saknes pakāpi) vai skaitli <span class="math inline">\(1\)</span>, ja neviena augstākas pakāpes sakne <span class="math inline">\(\sqrt[k]{n}\)</span> (<span class="math inline">\(k&gt;1\)</span>) nav garantēti vesela:</em> _____</p>
-<!--
-
-## <lo-quiz/> Jautājums Nr.1: Atrisinājums
-
-<div style="font-size:100%">
-
-$125$ var izteikt kā reizinājumu 
-vairākiem skaitļiem (kas
-pārsniedz $1$) sekojošos veidos:
-
-* $125 = 124+1$.
-* $125 = 25 \cdot 5 = (24 + 1) \cdot (4+1)$.
-* $125 = 5 \cdot 5 \cdot 5 = (4+1) \cdot (4+1) \cdot (4+1)$.
-
-Tādēļ skaitli $n$ var sadalīt pirmreizinātājos 
-vienā no sekojošiem veidiem: 
-
-$$n = p^{124},\;\;n = p^{24}q^4\;\;\text{vai}\;\;n = p^{4}q^4r^4,$$
-
-kur $p,q,r$ ir pirmskaitļi. Visos gadījumos var izvilkt 4.pakāpes sakni.
-
-</div>
-
---></section>
 <section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span style="color:darkgreen"><strong>(4) Pirmskaitļu izvietojums</strong></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-</hgroup>
-<aside class="notes">
-<p>Šajā tēmā pamatojam, ka pirmskaitļu ir bezgalīgi daudz, apsveram iespējas tos algoritmiski atrast (Eratostena režģis, daži mūsdienu algoritmi). Un arī apskatām dažus sacensību uzdevumus, kuri nepārprotami iedvesmojušies no šīs pirmskaitļu teorijas.</p>
-<p>Pirmskaitļu izvietojums nelielos intervālos var izskatīties juceklīgs. Tomēr garākos intervālos to blīvums labi tuvināms ar varbūtisku modeli. Vienkāršoti sakot, lieliem naturāliem <span class="math inline">\(n\)</span>, varbūtība, ka <span class="math inline">\(n\)</span> ir pirmskaitlis, ir apgriezti proporcionāla skaitļa <span class="math inline">\(n\)</span> naturālajam logaritmam.</p>
-</aside></section>
-<section><section id="pirmskaitļu-jēdziens" class="title-slide slide level1"><h1><lo-theory/> Pirmskaitļu jēdziens</h1><hgroup style="font-size:90%">
-<p><strong>Definīcija:</strong> Naturālu skaitli <span class="math inline">\(p&gt;1\)</span> sauc par <blue><em>pirmskaitli</em></blue> (<em>prime number</em>), ja vienīgie tā dalītāji ir <span class="math inline">\(1\)</span> un <span class="math inline">\(p\)</span>.</p>
-<p>Naturālus skaitļus <span class="math inline">\(n&gt;1\)</span>, kas nav pirmskaitļi, sauc par <blue><em>saliktiem skaitļiem</em></blue> (<em>composite number</em>).</p>
-<p>Skaitlis <span class="math inline">\(1\)</span> nav ne pirmskaitlis, ne salikts skaitlis.</p>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span style="color:darkgreen"><strong>(4) Ķīniešu atlikumu teorēma</strong></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p></section>
+<section><section id="ķīniešu-atlikumu-teorēma" class="title-slide slide level1"><h1><lo-theory/> Ķīniešu atlikumu teorēma</h1><p><strong>Teorēma:</strong> Ja <span class="math inline">\(m_1,m_2,\ldots,m_k\)</span> ir pa pāriem savstarpēji pirmskaitļi, bet <span class="math inline">\(a_1,a_2,\ldots,a_k\)</span> ir jebkādi veseli skaitļi, tad eksistē vesels atrisinājums <span class="math inline">\(x \in \mathbb{Z}\)</span> šādai kongruenču sistēmai <span class="math display">\[\left\{ \begin{array}{l}
+x \equiv a_1\;(\text{mod}\,m_1)\\
+x \equiv a_2\;(\text{mod}\,m_2)\\
+\vdots\\
+x \equiv a_k\;(\text{mod}\,m_k)
+\end{array} \right.\]</span> Turklāt visi šīs sistēmas atrisinājumi ir kongruenti pēc moduļa <span class="math inline">\(M = m_1\cdot m_2 \cdot \ldots \cdot m_k\)</span>.</p></section><section id="piemērs-1" class="slide level2">
+<h2><lo-theory/> Piemērs</h2>
+<hgroup>
+<figure>
+<img data-src="crt-example.png" alt="CRT Example" /><figcaption>CRT Example</figcaption>
+</figure>
 </hgroup>
 <hgroup>
-<p>Intervālā <span class="math inline">\([1;100]\)</span> ir <span class="math inline">\(25\)</span> pirmskaitļi:</p>
+<p><span class="math display">\[\left\{ \begin{array}{l}
+x \equiv 1\;(\text{mod}\,3)\\
+x \equiv 2\;(\text{mod}\,5)\\
+x \equiv 3\;(\text{mod}\,7)
+\end{array} \right.\]</span></p>
+<p>ir ekvivalents ar vienu kongruenci:</p>
+<p><span class="math display">\[x \equiv 52\;(\text{mod}\,105)\]</span></p>
+</hgroup>
+</section><section id="pierādījums-atrisinājuma-unikalitāte" class="slide level2">
+<h2><lo-theory/> Pierādījums (atrisinājuma unikalitāte)</h2>
+<p><strong>Pierādījums:</strong> Ja <span class="math inline">\(x_1\)</span> un <span class="math inline">\(x_2\)</span> ir divi atrisinājumi, tad to starpība <span class="math inline">\(x_1 - x_2\)</span> dalās ar <span class="math inline">\(m_1,\ldots,m_k\)</span>.<br />
+Un tā kā visi <span class="math inline">\(m_i\)</span> ir savstarpēji pirmskaitļi, tad <span class="math inline">\(x_1 - x_2\)</span> dalās arī ar <span class="math inline">\(M\)</span>.</p>
+<p>Tātad, atrisinājums, ja tāds vispār eksistē, ir viens vienīgs (ar precizitāti līdz <span class="math inline">\(M\)</span> daudzkārtņa pieskaitīšanai).</p>
+</section><section id="pierādījums-atrisinājuma-eksistence" class="slide level2">
+<h2><lo-theory/> Pierādījums (atrisinājuma eksistence)</h2>
+<p><strong>Pierādījums:</strong> Katru skaitli <span class="math inline">\(n\)</span> no <span class="math inline">\(0\)</span> līdz <span class="math inline">\(M-1\)</span> dalām ar visiem skaitļiem <span class="math inline">\(m_1,\ldots,m_k\)</span>. Iegūstam sarakstiņu ar k skaitļiem <span class="math inline">\((n_1,n_2,\ldots,n_k)\)</span>.</p>
+<p>Nupat (atrisinājuma unikalitāte) redzējām, ka attēlojums <span class="math inline">\(n \rightarrow (n_1,n_2,\ldots,n_k)\)</span> ir <em>injektīvs</em> (nav iespējams, ka divām dažādām <span class="math inline">\(n\)</span> vērtībām atbilst vienādi sarakstiņi).<br />
+Bet tā kā iespējamo sarakstiņu ir <span class="math inline">\(m_1 \times \ldots \times m_k = M\)</span>, tad to ir tikpat cik <span class="math inline">\(n\)</span> vērtību. Tas nozīmē, ka ikviens sarakstiņš ir iegūstams. Ja kāds nebūtu iegūstams, tad katrai <span class="math inline">\(n\)</span> vērtībai nepietiktu sarakstiņa (Dirihlē princips).</p>
+</section><section id="par-ķīniešu-atlikumu-teorēmu" class="slide level2">
+<h2><lo-theory/> Par ķīniešu atlikumu teorēmu</h2>
+<blockquote>
+<p>The Chinese Remainder Theorem is a “theorem” only in that it is useful and requires proof. When you ask a capable 15-year-old why an arithmetic progression with common difference 7 must contain multiples of 3, they will often say exactly the right thing.<br />
+(Dominic Yeo, “Eventually Almost Everywhere”.)</p>
+</blockquote>
+</section></section>
+<section><section id="skaitlisks-piemērs" class="title-slide slide level1"><h1><lo-sample/> Skaitlisks piemērs</h1><hgroup>
+<p>Atrast atrisinājumu kongruenču sistēmai</p>
+<p><span class="math display">\[\left\{ \begin{array}{l}
+x \equiv 4\;(\text{mod}\,5)\\
+x \equiv 6\;(\text{mod}\,11)
+\end{array} \right.\]</span></p>
+<p>Var risināt ar mēģinājumu/kļūdu metodi:</p>
+</hgroup>
+<hgroup style="font-size:80%">
+<ul>
+<li>Pārbaudīt atlikumus ar <span class="math inline">\(5\)</span> ir vieglāk nekā ar <span class="math inline">\(11\)</span>.<br />
+</li>
+<li>Aprakstām aritmētisko progresiju ar diferenci <span class="math inline">\(11\)</span>: <span class="math display">\[(a_n) = 6,17,28,39,50,61,\ldots\]</span></li>
+<li>Gaidām brīdi, kad tajā ir loceklis, kura pēdējais cipars ir <span class="math inline">\(4\)</span> vai <span class="math inline">\(9\)</span> (t.i. kongruents ar <span class="math inline">\(4\)</span> pēc moduļa <span class="math inline">\(5\)</span>).</li>
+</ul>
+<p>Der loceklis <span class="math inline">\(39\)</span>. Tas arī ir sistēmas atrisinājums.<br />
+Derēs arī visi citi <span class="math inline">\(39 + 55k\)</span> (atrisinājumi veido aritmētisku progresiju ar diferenci <span class="math inline">\(55\)</span>).</p>
+</hgroup></section><section id="pārveidojums-par-bezū-identitāti" class="slide level2">
+<h2><lo-sample/> Pārveidojums par Bezū identitāti</h2>
+<hgroup style="font-size:70%">
+<p><span class="math display">\[\left\{ \begin{array}{l}
+x \equiv 4\;(\text{mod}\,5)\\
+x \equiv 6\;(\text{mod}\,11)
+\end{array} \right.\]</span></p>
+<p>Pārrakstām kongruences kā skaitļu vienādojumus:</p>
+<p><span class="math display">\[\left\{ \begin{array}{l}
+x - 4 = 5k\\
+x - 6 = 11m
+\end{array} \right.\]</span></p>
+<p>Atņemam no pirmā otro:</p>
+<p><span class="math inline">\((-4) - (-6) = 5k - 11m\)</span> jeb<br />
+<span class="math inline">\(5k + (-11)m = 2\)</span>.</p>
+</hgroup>
+<hgroup style="font-size:70%">
+<p><span class="math display">\[\left( \begin{array}{c|cc}
+5 &amp; 1 &amp; 0 \\
+-11 &amp; 0 &amp; 1 
+\end{array} \right)\]</span></p>
+<p><span class="math display">\[\xrightarrow{R_2 := R_2 + 2R_1} \left( \begin{array}{c|cc}
+5 &amp; 1 &amp; 0 \\
+-1 &amp; \color{#F00}{2} &amp; \color{#F00}{1} 
+\end{array} \right)\]</span></p>
+<p>Esam ieguvuši: <span class="math inline">\(\color{#F00}{2} \cdot 5 + \color{#F00}{1} \cdot (-11) = -1\)</span> jeb, piereizinot ar <span class="math inline">\(-2\)</span>: <span class="math display">\[\color{#F00}{-4} \cdot 5 + \color{#F00}{-2} \cdot (-11) = 2.\]</span></p>
+<p><span class="math display">\[x = 5\color{#F00}{k} + 4 = 5\cdot (\color{#F00}{-4}) + 4 = -16.\]</span></p>
+<p>Visbeidzot: <span class="math inline">\(-16 \equiv 39\;(\text{mod}\,55)\)</span>.</p>
+</hgroup>
+</section><section id="ilustrācija-ar-tabulu" class="slide level2">
+<h2><lo-sample/> Ilustrācija ar tabulu</h2>
+<p>Ir pavisam <span class="math inline">\(55\)</span> atlikumi, kas rodas, dalot ar <span class="math inline">\(55\)</span>. Katram no šiem atlikumiem atbilst atlikums dalot ar <span class="math inline">\(11\)</span> (no <span class="math inline">\(0\)</span> līdz $10)<br />
+<blue><strong>UN</strong></blue> atlikums dalot ar <span class="math inline">\(5\)</span> (no <span class="math inline">\(0\)</span> līdz <span class="math inline">\(4\)</span>). Ierakstām skaitļus <span class="math inline">\(0,1,2,\ldots\)</span> pa diagonāli (ar aptīšanos).</p>
 <table>
 <tr>
-<td>
+<th>
+ 
+</th>
+<th>
+0
+</th>
+<th>
+1
+</th>
+<th>
 2
+</th>
+<th>
+3
+</th>
+<th>
+4
+</th>
+<th>
+5
+</th>
+<th>
+6
+</th>
+<th>
+7
+</th>
+<th>
+8
+</th>
+<th>
+9
+</th>
+<th>
+10
+</th>
+</tr>
+<tr>
+<th>
+0
+</th>
+<td>
+0
 </td>
 <td>
-3
+ 
+</td>
+<td>
+35
+</td>
+<td>
+25
+</td>
+<td>
+15
 </td>
 <td>
 5
 </td>
 <td>
-7
+ 
 </td>
+<td>
+ 
+</td>
+<td>
+30
+</td>
+<td>
+20
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<th>
+1
+</th>
 <td>
 11
 </td>
-</tr>
-<tr>
 <td>
-13
+1
 </td>
 <td>
-17
+ 
 </td>
 <td>
-19
+36
 </td>
 <td>
-23
+26
 </td>
 <td>
-29
+16
 </td>
-</tr>
-<tr>
+<td>
+6
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
 <td>
 31
+</td>
+<td>
+21
+</td>
+</tr>
+<tr>
+<th>
+2
+</th>
+<td>
+22
+</td>
+<td>
+12
+</td>
+<td>
+2
+</td>
+<td>
+ 
 </td>
 <td>
 37
 </td>
 <td>
-41
+27
 </td>
 <td>
-43
+17
 </td>
 <td>
-47
-</td>
-</tr>
-<tr>
-<td>
-53
+7
 </td>
 <td>
-59
+ 
 </td>
 <td>
-61
+ 
 </td>
 <td>
-67
-</td>
-<td>
-71
+32
 </td>
 </tr>
 <tr>
+<th>
+3
+</th>
 <td>
-73
+33
 </td>
 <td>
-79
+23
 </td>
 <td>
-83
+13
 </td>
 <td>
-89
+3
 </td>
 <td>
-97
+ 
+</td>
+<td>
+38
+</td>
+<td>
+28
+</td>
+<td>
+18
+</td>
+<td>
+8
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+4
+</th>
+<td>
+ 
+</td>
+<td>
+34
+</td>
+<td>
+24
+</td>
+<td>
+14
+</td>
+<td>
+4
+</td>
+<td>
+ 
+</td>
+<td>
+<red>39</red>
+</td>
+<td>
+29
+</td>
+<td>
+19
+</td>
+<td>
+9
+</td>
+<td>
+ 
 </td>
 </tr>
 </table>
-<aside class="notes">
-<p>Skaitlis <span class="math inline">\(1\)</span> nav ne pirmskaitlis, ne arī salikts skaitlis. Tas ir <em>vienības elements</em> naturālu skaitļu reizināšanā. (Veselo skaitļu pasaulē <span class="math inline">\(-1\)</span> ir otrs vienības elements.)</p>
-</aside></section><section id="eratostena-režģis" class="slide level2">
-<h2><lo-summary/> Eratostena režģis</h2>
-<hgroup>
+</section><section id="tora-topoloģija" class="slide level2">
+<h2><lo-sample/> Tora topoloģija</h2>
+<hgroup style="font-size:80%">
+<p>Tabulas aizpildīšanā “pa diagonāli” izmantojām “tora topoloģiju”. (Tors - barankas formas objekts; topoloģija - definīcija par to, kuri punkti atrodas “blakus”).</p>
 <figure>
-<img data-src="eratosthenes.png" alt="Eratosthenes" /><figcaption>Eratosthenes</figcaption>
+<img data-src="torus-topology.png" alt="Torus topology" /><figcaption>Torus topology</figcaption>
 </figure>
 </hgroup>
-<hgroup style="font-size:70%">
-<p>Eratostena process notiek vairākos soļos.</p>
+<hgroup style="font-size:80%">
+<p>Katram laukumiņam uz tora atbilst šūna kvadrātveida tabulā. Bet topoloģija jeb kaimiņattiecības ir tās pašas:</p>
+<figure>
+<img data-src="square-torus-topology.png" alt="Square torus topology" /><figcaption>Square torus topology</figcaption>
+</figure>
+</hgroup>
+</section></section>
+<section><section id="lt.vumif.2016.10.3" class="title-slide slide level1"><h1><lo-sample/> LT.VUMIF.2016.10.3</h1><p>Atrodiet mazāko naturālo skaitli <span class="math inline">\(n\)</span>, kuram skaitļi <span class="math inline">\(\sqrt[5]{5n}\)</span>, <span class="math inline">\(\sqrt[6]{6n}\)</span>, <span class="math inline">\(\sqrt[7]{7n}\)</span> ir naturāli.</p>
+<p>Sk. <a href="http://mif.vu.lt/matematikos-olimpiados/mif/">Viļņas universitātes Matemātikas un informātikas fakultātes rīkotā olimpiāde skolēniem</a></p></section><section id="lt.vumif.2016.10.3-pirmreizinātāji" class="slide level2">
+<h2><lo-soln/> LT.VUMIF.2016.10.3 (pirmreizinātāji)</h2>
+<p>Apzīmējam <span class="math inline">\(n = 2^a3^b5^c7^d\)</span> ir <span class="math inline">\(n\)</span> sadalījums pirmreizinātājos. Citus pirmreizinātājus neieviešam (aizdomas, ka tie nebūs vajadzīgi - citi kāpinātāji būs <span class="math inline">\(0\)</span>).</p>
 <ul>
-<li>Skaitļu tabuliņā atzīmē mazāko skaitli (<red>pirmskaitli <span class="math inline">\(2\)</span></red>) un visus tā dalāmos/daudzkārtņus izsvītro.</li>
-<li>Atzīmē mazāko neizsvītroto (<green>pirmskaitli <span class="math inline">\(3\)</span></green>) un visus tā daudzkārtņus izsvītro.</li>
-<li>Atzīmē mazāko neizsvītroto (<blue>pirmskaitli <span class="math inline">\(5\)</span></blue>) un visus tā daudzkārtņus izsvītro.</li>
+<li><span class="math inline">\(\sqrt[5]{5n} \in \mathbb{N}\)</span> nozīmē, ka <span class="math inline">\(a, b, c-1, d\)</span> dalās ar <span class="math inline">\(5\)</span></li>
+<li><span class="math inline">\(\sqrt[6]{6n} \in \mathbb{N}\)</span> nozīmē, ka <span class="math inline">\(a-1, b-1, c, d\)</span> dalās ar <span class="math inline">\(6\)</span></li>
+<li><span class="math inline">\(\sqrt[7]{7n} \in \mathbb{N}\)</span> nozīmē, ka <span class="math inline">\(a,b,c,d-1\)</span> dalās ar <span class="math inline">\(7\)</span></li>
 </ul>
-<p><strong>Apgalvojums:</strong> Minētais process nekad nebeigsies; pēc katra soļa paliks neizsvītroti skaitļi.</p>
-</hgroup>
-<aside class="notes">
-<p>Vai Eratostena režģis ir efektīvs algoritms, ja jāatrod visi pirmskaitļi intervālā <span class="math inline">\([1,N]\)</span>?</p>
-<p>Eratostens (276. g. p.m.ē –194. g. p.m.ē) pazīstams arī ar to, ka diezgan precīzi noteicis Zemeslodes apkārtmēru. Viņa eksperiments balstījās uz novērojumu, ka divās Ēģiptes pilsētās, kas abas atrodas uz tā paša meridiāna (mūsdienās tās sauc Asuāna un Aleksandrija), ir atšķirīgs Saules augstums virs horizonta vasaras saulgriežos. Asuāna atrodas uz Ziemeļu tropiskā loka – Saule tur nonāk tieši zenītā, savukārt Aleksandrijā tā pat saulgriežos atrodas noteiktā leņķī no zenīta – un leņķi var izmērīt, piemēram, kā vertikāla staba ēnas garumu. Attālums no Asuānas līdz Aleksandrijai Eratostenam bija zināms; Zemeslodes apkārtmēru tad noteica ar trigonometrisku sakarību</p>
-<p>Eratostena režģis ir dinamiskās programmēšanas piemērs. Šie algoritmi aizpilda apjomīgas datu struktūras (piemēram, masīvus, tabulas). Dinamiskā programmēšana ir efektīva, piemēram, kāpinot skaitļus lielās pakāpēs (atceroties agrāk iegūtus starprezultātus), vai arī, aprēķinot Fibonači skaitļus.</p>
-<p>Lai noskaidrotu, vai konkrēts skaitlis <span class="math inline">\(n\)</span> ir pirmskaitlis, Eratostena režģis nav praktisks algoritms (jo tas meklē visus pirmskaitļus, kas par to mazāki).</p>
-</aside>
-</section></section>
-<section id="jautājums-nr.2" class="title-slide slide level1"><h1><lo-quiz/> Jautājums Nr.2</h1><p>Kādā no Eratostena režģa veidošanas soļiem tiek izsvītroti visi pirmskaitļa <span class="math inline">\(13\)</span> daudzkārtņi. Kurš no šajā solī izsvītrotajiem skaitļiem ir pirmais starp tiem, kuru izsvītro pirmoreiz (kurš nav izsvītrots kādā no agrākiem soļiem).</p>
-<p><em>Ierakstīt naturālu skaitli:</em> _____</p>
-<!--
-
-## <lo-quiz/> Jautājums Nr.2: Atrisinājums
-
-Skaitļa $13$ daudzkārtņi, kas tiek izsvītroti 
-ir $26,39,52,\ldots$. Mazākais no šiem skaitļiem, 
-kas nedalās ar nevienu citu pirmskaitli $p < 13$
-ir $13^2 = 169$. Tam seko arī $13 \cdot 17$ un 
-daudzi citi piemēri, kurus šajā solī izsvītro
-pirmoreiz.
-
---></section>
-<section><section id="pirmskaitļu-ir-bezgalīgi-daudz" class="title-slide slide level1"><h1><lo-theory/> Pirmskaitļu ir bezgalīgi daudz</h1><p><strong>Teorēma:</strong> Pirmskaitļu ir bezgalīgi daudz.</p>
-<p><strong>Pierādījums:</strong> No pretējā. Ja pirmskaitļu būtu galīgs skaits, tad eksistētu lielākais pirmskaitlis <span class="math inline">\(p_K\)</span>. Sareizinām visus pirmskaitļus, pieskaitām <span class="math inline">\(1\)</span>: <span class="math display">\[P = p_1 \cdot p_2 \cdot p_3 \cdot \ldots \cdot p_K + 1.\]</span></p>
-<p><span class="math inline">\(P\)</span> nedalās ne ar vienu no pirmskaitļiem, kuri ir galīgajā sarakstā: vienmēr atlikums <span class="math inline">\(1\)</span>. Vai nu <span class="math inline">\(P\)</span> pats ir pirmskaitlis vai kādu (sarakstā neesošu) pirmskaitļu reizinājums. Pretruna. <span class="math inline">\(\blacksquare\)</span></p></section><section id="pārlase-līdz-kvadrātsaknei" class="slide level2">
-<h2><lo-sample/> Pārlase līdz kvadrātsaknei</h2>
-<hgroup>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> math </a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">def</span> isPrime(n):</a>
-<a class="sourceLine" id="cb2-4" title="4">    result <span class="op">=</span> <span class="va">True</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    ROOT <span class="op">=</span> <span class="bu">int</span>(math.sqrt(n))</a>
-<a class="sourceLine" id="cb2-6" title="6">    <span class="cf">for</span> d <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,ROOT<span class="op">+</span><span class="dv">1</span>):</a>
-<a class="sourceLine" id="cb2-7" title="7">        <span class="cf">if</span> n <span class="op">%</span> d <span class="op">==</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb2-8" title="8">            result <span class="op">=</span> <span class="va">False</span></a>
-<a class="sourceLine" id="cb2-9" title="9">            <span class="cf">break</span></a>
-<a class="sourceLine" id="cb2-10" title="10">    <span class="cf">return</span> result</a>
-<a class="sourceLine" id="cb2-11" title="11"></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="bu">print</span>(isPrime(<span class="dv">10000000019</span>))</a></code></pre></div>
-</hgroup>
-<hgroup>
-<p>Pilnā pārlase ir ļoti neefektīva (slikti strādā jau pie <span class="math inline">\(n = 10^{30}\)</span>).</p>
-<p>Labāki algoritmi:</p>
-<ol type="1">
-<li><a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">Miller-Rabin primality test</a> - ap 1980.g.</li>
-<li><a href="https://en.wikipedia.org/wiki/AKS_primality_test">Agrawal-Kayal-Saxena test</a> - ap 2002.g.</li>
-</ol>
-</hgroup>
-</section></section>
-<section><section id="nt.jun01.3" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.3</h1><p>Vai eksistē <span class="math inline">\(1000\)</span> pēc kārtas sekojoši skaitļi, kuri visi ir salikti?</p>
-<aside class="notes">
-<p>Ja izvēlamies <span class="math inline">\(N = 1000!+2\)</span>, tad iegūsim, ka <span class="math inline">\(1000!+a\)</span> dalās ar <span class="math inline">\(a\)</span> katram <span class="math inline">\(a \in \{2,\ldots 1000 \}\)</span>. Arī <span class="math inline">\(1000! + 1001\)</span> ir salikts skaitlis, jo abi saskaitāmie dalās, teiksim, ar <span class="math inline">\(11\)</span> (dalāmības pazīme ar <span class="math inline">\(11\)</span>).</p>
-<p>Viegli redzēt, ka var izveidot vēl garākus intervālus bez pirmskaitļiem – piemēram, izvēloties ļoti lielu skaitļu faktoriālus. Vienīgi skaitļi šajos intervālos parasti ir ļoti lieli. Pirmskaitļu blīvums, skaitļiem pieaugot, samazinās, bet šis blīvums samazinās ļoti lēnām.</p>
-</aside></section><section id="nt.jun01.3-1" class="slide level2">
-<h2><lo-hints/> NT.JUN01.3</h2>
+</section><section id="lt.vumif.2016.10.3-atrod-atsevišķi-abcd" class="slide level2">
+<h2><lo-soln/> LT.VUMIF.2016.10.3 (atrod atsevišķi a,b,c,d)</h2>
 <ul>
-<li>Jāatrod intervāls <span class="math inline">\([N, N+1, \ldots, N+999]\)</span>, kurā visi skaitļi ir salikti.</li>
-<li>Vai <span class="math inline">\(N\)</span> var izvēlēties tā, lai tas dalītos ar <span class="math inline">\(2,3,\ldots,999\)</span>?</li>
-<li>Varētu izvēlēties <span class="math inline">\(N = 1000!\)</span>, bet neskaidrs par <span class="math inline">\(N+1\)</span>.</li>
+<li><span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> dalās ar <span class="math inline">\(5\)</span> un <span class="math inline">\(7\)</span>, dod atlikumu <span class="math inline">\(5\)</span>, dalot ar <span class="math inline">\(6\)</span>. Mazākais tāds skaitlis ir <span class="math inline">\(a=b=35\)</span>.</li>
+<li><span class="math inline">\(c\)</span> dalās ar <span class="math inline">\(6\)</span> un <span class="math inline">\(7\)</span>, dod atlikumu <span class="math inline">\(4\)</span>, dalot ar <span class="math inline">\(5\)</span>. Mazākais tāds skaitlis ir <span class="math inline">\(c=84\)</span>.</li>
+<li><span class="math inline">\(d\)</span> dalās ar <span class="math inline">\(5\)</span> un <span class="math inline">\(6\)</span>, dod atlikumu <span class="math inline">\(6\)</span>, dalot ar <span class="math inline">\(7\)</span>. Mazākais tāds skaitlis ir <span class="math inline">\(90\)</span>.</li>
 </ul>
-</section><section id="nt.jun01.3-2" class="slide level2">
-<h2><lo-soln/> NT.JUN01.3</h2>
-<p><span class="math inline">\(p=997\)</span> ir lielākais pirmskaitlis, kam <span class="math inline">\(p \leq 1001\)</span> (<span class="math inline">\(999\)</span> un <span class="math inline">\(1001\)</span> nav pirmskaitļi - dalās ar <span class="math inline">\(9\)</span> un <span class="math inline">\(11\)</span>).<br />
-Dalāmības pazīme ar <span class="math inline">\(11\)</span>?<br />
-<span class="math inline">\(1001 = 11 \cdot 91 = 11 \cdot 7 \cdot 13\)</span>.</p>
-<p>Tad der <span class="math inline">\(N = 997! + 2\)</span>. Piemēram: <span class="math display">\[N + 999 = 997! + 2 + 999 = 997! + 1001 = \]</span> <span class="math display">\[ = 1001 \cdot \left\( \frac{1}{7 \cdot 11 \cdot 13} 997! + 1 \right)\]</span></p>
-</section></section>
-<section><section id="nt.jun01.4" class="title-slide slide level1"><h1><lo-sample> NT.JUN01.4</h1><p>Pierādīt, ka ir bezgalīgi daudz nepāru pirmskaitļu, kas izsakāmi formā <span class="math inline">\(4k+3\)</span> (dod atlikumu <span class="math inline">\(3\)</span>, dalot ar <span class="math inline">\(4\)</span>).</p></section><section id="nt.jun01.4-1" class="slide level2">
-<h2><lo-soln/> NT.JUN01.4</h2>
-<p>TODO: Pamatot līdzīgi kā pierādījumā par bezgalīgo pirmskaitļu skaitu.</p>
-</section><section id="dirihlē-teorēma-par-pirmskaitļiem" class="slide level2">
-<h2><lo-theory/> Dirihlē teorēma par pirmskaitļiem</h2>
-<p><strong>Dirihlē teorēma:</strong> Ja <span class="math inline">\(a\)</span> un <span class="math inline">\(d\)</span> ir savstarpēji pirmskaitļi, tad bezgalīgā aritmētiskā progresijā <span class="math display">\[a, a+d, a+2d, a+3d, \ldots\]</span> ir bezgalīgi daudz pirmskaitļu.</p>
-<p>Dažām <span class="math inline">\(a\)</span> un <span class="math inline">\(d\)</span> vērtībām šo teorēmu var pierādīt ar elementārām metodēm (nupat redzējām pie <span class="math inline">\(a=3\)</span> un <span class="math inline">\(d=4\)</span>). Bet vispārīgajā gadījumā ir piemērotākas matemātiskās analīzes metodes, kas izietu ārpus mūsu kursa.</p>
-</section></section>
-<section><section id="ulama-spirāle" class="title-slide slide level1"><h1><lo-yellow/> Ulama spirāle</h1><hgroup>
-<figure>
-<img data-src="ulam-spiral.png" alt="Ulam spiral" /><figcaption>Ulam spiral</figcaption>
-</figure>
+<p><span class="math display">\[n = 2^{35}\cdot{}3^{35}\cdot{}5^{84}\cdot{}7^{90}.\]</span></p>
+</section><section id="lt.vumif.2016.10.3-alternatīvs-pieraksts" class="slide level2">
+<h2><lo-soln/> LT.VUMIF.2016.10.3 (alternatīvs pieraksts)</h2>
+<hgroup>
+<p>Ķīniešu atlikumu teorēma var būt netieši/apslēpti izmantota (kā iepriekšējā slaidā).<br />
+Bet to var arī izcelt, uzrakstot kongruenču sistēmu.</p>
+<blockquote>
+<p><span class="math inline">\(c\)</span> dalās ar <span class="math inline">\(6\)</span> un <span class="math inline">\(7\)</span>, dod atlikumu <span class="math inline">\(4\)</span>, dalot ar <span class="math inline">\(5\)</span>.</p>
+</blockquote>
 </hgroup>
 <hgroup>
-<p>Ulama spirāli veido, uz rūtiņu papīra zīmējot attinošos spirāli, sākot ar skaitli <span class="math inline">\(1\)</span>. Pirmskaitļus, atzīmē ar melniem punktiņiem.</p>
-<p>Pirmskaitļi, kaut arī neveido viegli paredzamas likumsakarības, sablīvējas uz dažām taisnēm.</p>
-</hgroup></section><section id="nenopietns-piemērs" class="slide level2">
-<h2><lo-yellow/> Nenopietns piemērs</h2>
-<p>Polinoms <span class="math inline">\(f(x) = x^2 + x + 41\)</span> visiem argumentiem <span class="math inline">\(x = 0,1,\ldots,39\)</span> pieņem vērtības, kas ir pirmskaitļi.</p>
-<p>Šī polinoma vērtību vidū arī lielākiem <span class="math inline">\(x\)</span> ir neparasti daudz pirmskaitļu. Ar modulāro aritmētiku iespējams pamatot, ka <span class="math inline">\(x^2 + x + 41\)</span> (kur <span class="math inline">\(x \in \mathbb{N}\)</span>) nevar dalīties ne ar vienu pirmskaitli <span class="math inline">\(p &lt; 41\)</span>.</p>
-<aside class="notes">
-<p>Joprojām nepastāv viegli uzrakstāma formula (piemēram, izmantojot elementārās funkcijas, veselās daļas u.c.), kuras vērtību kopa būtu bezgalīga un saturētu tikai pirmskaitļus.</p>
-<p>Protams, nav jēgas meklēt tādas starp polinomiem. Tomēr izrādās, ka daži polinomi starp savām vērtībām satur neparasti daudz pirmskaitļu.</p>
-</aside>
-</section><section id="kvadrātfunkcijas-vērtības" class="slide level2">
-<h2><lo-yellow/> Kvadrātfunkcijas vērtības</h2>
-<p>TODO: Vizualizācija, kur <span class="math inline">\(x^2 + x + 41\)</span> vērtības atliktas uz Ulama spirāles.</p>
+<p><span class="math display">\[\left\{ \begin{array}{l}
+x \equiv 0\;(\text{mod}\,6)\\
+x \equiv 0\;(\text{mod}\,7)\\
+x \equiv 4\;(\text{mod}\,5)
+\end{array} \right.\]</span></p>
+<p>ir ekvivalenta vienai kongruencei:</p>
+<p><span class="math display">\[x \equiv 84\;(\text{mod}\,210),\]</span></p>
+<p>(<em>Šeit <span class="math inline">\(210 = 6 \cdot 7 \cdot 5\)</span>.</em>)</p>
+</hgroup>
 </section></section>
-<section><section id="pirmskaitļu-skaitīšanas-funkcija" class="title-slide slide level1"><h1><lo-theory/> Pirmskaitļu skaitīšanas funkcija</h1><hgroup>
-<figure>
-<img data-src="pi-counting-function.png" alt="Prime counting function" /><figcaption>Prime counting function</figcaption>
-</figure>
-</hgroup>
-<hgroup style="font-size:70%">
-<p><strong>Definīcija:</strong> Ar <span class="math inline">\(\pi(x)\)</span> apzīmējam <blue><em>pirmskaitļu skaitīšanas funkciju</em></blue> (<em>prime-counting function</em>): Katram reālam skaitlim <span class="math inline">\(x \in \mathbb{R}\)</span>, <span class="math inline">\(\pi(x)\)</span> izsaka pirmskaitļu <span class="math inline">\(p_i\)</span> skaitu, kuriem <span class="math inline">\(p_i \leq x\)</span>.</p>
-<p><span class="math inline">\(\pi(x)\)</span> definīcijas apgabals ir <span class="math inline">\(\mathbb{R}\)</span>, vērtību apgabals ir <span class="math inline">\(\mathbb{Z}_{0+}\)</span> - visi veselie nenegatīvie skaitļi.</p>
-<p><span class="math inline">\(\pi(1.99) = 0\)</span>, <span class="math inline">\(\pi(2) = 1\)</span>.<br />
-<span class="math inline">\(\pi(3) = \pi(3.14) = \pi(4.99) = 2\)</span>.<br />
-<span class="math inline">\(\pi(100) = 25\)</span>.</p>
-</hgroup></section><section id="skaitlis-e" class="slide level2">
-<h2><lo-theory/> Skaitlis e</h2>
-<p><strong>Definīcija:</strong> Par <blue><em>naturālo logaritmu bāzi</em></blue> jeb skaitli <span class="math inline">\(e\)</span> sauksim konstanti <span class="math inline">\(e = 2.7182818284\ldots\)</span>, uz kuru tiecas bezgalīgā summa: <span class="math display">\[e = \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} +
-\frac{1}{3!} + \frac{1}{4!} + \ldots = \]</span> <span class="math display">\[= 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + 
-\ldots.\]</span></p>
-</section><section id="naturālais-logaritms" class="slide level2">
-<h2><lo-theory/> Naturālais logaritms</h2>
-<hgroup>
-<figure>
-<img data-src="natural-logarithm.png" alt="Graph of natural logarithm" /><figcaption>Graph of natural logarithm</figcaption>
-</figure>
-</hgroup>
-<hgroup>
-<p><strong>Definīcija:</strong> Par <blue><em>naturālo logaritmu</em></blue> saucam logaritma funkciju ar bāzi <span class="math inline">\(e = 2.7182818284\ldots\)</span>: <span class="math display">\[\ln x = \log_{e} x.\]</span></p>
-<p><span class="math inline">\(y = \ln x\)</span> ir augoša funkcija, definēta visiem <span class="math inline">\(x &gt; 0\)</span>.<br />
-Naturālais logaritms ir īpašs ar to, ka tā grafiks <span class="math inline">\(x\)</span> asi krusto <span class="math inline">\(45^{\circ}\)</span> leņķī.</p>
-</hgroup>
-</section><section id="mazākie-101-ciparu-pirmskaitļi" class="slide level2">
-<h2><lo-summary/> Mazākie 101-ciparu pirmskaitļi</h2>
-<div style="font-size:70%">
-<figure>
-<img data-src="marcis-bendiks.png" alt="Marcis Bendiks" /><figcaption>Marcis Bendiks</figcaption>
-</figure>
-<p>Ja saldējumu ar rozīnēm (vidēji <span class="math inline">\(5\)</span> rozīnes uz vienu saldējuma masas vienību) vienmērīgi izmaisa, tad rozīņu skaits saldējuma vienībā pakļaujas <blue><em>Puasona sadalījumam</em></blue> (<em>Poisson distribution</em>) ar parametru <span class="math inline">\(\lambda=5\)</span>).</p>
-<p>Ja aplūkojam skaitļu porcijas pa <span class="math inline">\(100\)</span>, tad pie <span class="math inline">\(N=e^{20} \approx 485\,165\,195\)</span> šim skaitlim <span class="math inline">\(N\)</span> tuvajos <span class="math inline">\(100\)</span> skaitļu komplektos būs vidēji <span class="math inline">\(5\)</span> pirmskaitļi (bet mēdz būt arī vairāk vai mazāk).</p>
-</div>
-</section><section id="vizualizācija-ar-simtniekiem" class="slide level2">
-<h2><lo-summary/> Vizualizācija ar simtniekiem</h2>
-<p>TODO: Uzzīmēt tabuliņā <span class="math inline">\(5 \times 10\)</span> režģi ar visiem nepāru skaitļiem. Iekrāsot tajā pirmskaitļus.</p>
-</section><section id="mazākie-101-ciparu-pirmskaitļi-1" class="slide level2">
-<h2><lo-yellow/> Mazākie 101-ciparu pirmskaitļi</h2>
-<ul>
-<li><p>“Varbūtība”, ka skaitlis, kas tuvu <span class="math inline">\(10^{100}\)</span> ir pirmskaitlis, apgriezti proporcionāla naturālajam logaritmam: <span class="math inline">\(\frac{1}{\ln 10^{100}}\)</span>.</p></li>
-<li><p>Vidēji <span class="math inline">\(1000\)</span> skaitļu intervālā netālu no <span class="math inline">\(10^{100}\)</span> pirmskaitļu skaits: <span class="math display">\[1000 \cdot \frac{1}{\ln 10^{100}} = 
-1000 \cdot \frac{1}{100 \ln 10} \approx 
-\frac{10}{\ln 10} = 4.34.\]</span></p></li>
-</ul>
-</section><section id="mazākie-101-ciparu-pirmskaitļi-2" class="slide level2">
-<h2><lo-yellow/> Mazākie 101-ciparu pirmskaitļi</h2>
-<p><em>Piemērs:</em> Intervālā <span class="math inline">\({\displaystyle \left[ 10^{100},10^{100} + 1000 \right)}\)</span> ir tikai <span class="math inline">\(2\)</span> pirmskaitļi: <span class="math inline">\(10^{100} + 267\)</span> un <span class="math inline">\(10^{100} + 949\)</span>.</p>
-<p>Garākos intervālos pirmskaitļu īpatsvars maz atšķiras no prognozes ar apgriezto naturālo logaritmu (t.i. vidēji 4.34 pirmskaitļi uz katru tūkstoti):</p>
-<table>
-<tr>
-<th>
-Intervāls
-</th>
-<th>
-Pirmskaitļu skaits
-</th>
-<th>
-Prognoze
-</th>
-</tr>
-<tr>
-<td>
-<span class="math inline">\([10^{100},10^{100} + 10^5)\)</span>
-</td>
-<td>
-407
-</td>
-<td>
-434.2945
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\([10^{100},10^{100} + 10^6)\)</span>
-</td>
-<td>
-4248
-</td>
-<td>
-4342.945
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\([10^{100},10^{100} + 10^7)\)</span>
-</td>
-<td>
-43271
-</td>
-<td>
-43429.45
-</td>
-</tr>
-</table>
-<aside class="notes">
-<p>Intervālā <span class="math inline">\([x,x + \Delta x)\)</span> ir svarīgi, ka intervāla garums <span class="math inline">\(\Delta x\)</span> ir daudz mazāks par <span class="math inline">\(x\)</span> (citādi pirmskaitļu blīvums intervāla iekšienē būtiski mainās). No otras puses, <span class="math inline">\(\Delta x\)</span> jābūt pietiekoši lielam, lai pirmskaitļu skaitu mazāk iespaidotu nejaušības.</p>
-</aside>
-</section></section>
-<section><section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span style="color:darkgreen"><strong>(5) Mersena un Fermā skaitļi</strong></span> <span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-<aside class="notes">
-<p>Meklējot pirmskaitļus formā <span class="math inline">\(2^n \pm 1\)</span> (vai vispārīgāk - <span class="math inline">\(a^n \pm 1\)</span>) saskaramies ar algebriskām likumsakarībām – bieži pastāv identitātes, kas. ļauj izteiksmi sadalīt reizinātājos. Toties situācijas, kad tas nav triviāli izdarāms ir pētītas un novedušas pie Fermā un Mersena pirmskaitļu jēdziena. Tās ļauj atrast ļoti lielus pirmskaitļus.</p>
-</aside>
-</hgroup></section><section id="algebriskas-identitātes" class="slide level2">
-<h2><lo-summary/> Algebriskas identitātes</h2>
-<ul>
-<li>Pakāpju starpības formula (visiem <span class="math inline">\(n \geq 2\)</span>): <span class="math display">\[\color{#F00}{a^n - b^n} = \]</span> <span class="math display">\[=\color{#F00}{(a-b)}\left( a^{n-1}+a^{n-2}b^1 + \ldots + 
-a^1b^{n-2} + b^{n-1} \right).\]</span></li>
-<li>Pakāpju summas formula (visiem <span class="math inline">\(n \geq 1\)</span>): <span class="math display">\[\color{#F00}{a^{2n+1} + b^{2n+1}} = \]</span> <span class="math display">\[=\color{#F00}{(a+b)}\left( a^{2n} - a^{2n-1}b^1 + 
-a^{2n-2}b^2 - \cdots - a^1b^{2n-1} + b^{2n} \right).\]</span></li>
-</ul>
-<p>Var pierādīt, atverot iekavas. (Iekavās ar daudzpunktiem ir galīgu ģeometrisku progresiju summas.)</p>
-</section></section>
-<section><section id="fermā-skaitļu-jēdziens" class="title-slide slide level1"><h1><lo-theory/> Fermā skaitļu jēdziens</h1><p>Bijuši vairāki mēģinājumi uzrakstīt kompaktu formulu (bez <code>for</code> cikliem vai citiem programmēšanas paņēmieniem), kuras visas vērtības ir pirmskaitļi.</p>
-<p><strong>Definīcija:</strong> Par <span class="math inline">\(n\)</span>-to Fermā skaitli (<span class="math inline">\(n \geq 0\)</span>) sauc <span class="math inline">\(F_n = 2^{2^n}+1\)</span>.</p>
-<p>P.Fermā (<em>Pierre de Fermat</em>, 1607-1665) izteica hipotēzi, ka visi <span class="math inline">\(F_n\)</span> ir pirmskaitļi.</p></section><section id="ne-visi-f_n-ir-pirmskaitļi" class="slide level2">
-<h2><lo-theory/> Ne visi F_n ir pirmskaitļi</h2>
-<p><span class="math inline">\(F_0,F_1,F_2,F_3,F_4\)</span> ir vienīgie zināmie pirmskaitļi:</p>
-<ul>
-<li><span class="math inline">\(F_0 = 2^{2^0} + 1 = 2^1 + 1 = 3\)</span>,</li>
-<li><span class="math inline">\(F_1 = 2^{2^1} + 1 = 2^2 + 1 = 5\)</span>,</li>
-<li><span class="math inline">\(F_2 = 2^{2^2} + 1 = 2^4 + 1 = 17\)</span>,</li>
-<li><span class="math inline">\(F_3 = 2^{2^3} + 1 = 2^8 + 1 = 257\)</span>,</li>
-<li><span class="math inline">\(F_4 = 2^{2^4} + 1 = 2^{16} + 1 = 65537\)</span>.</li>
-</ul>
-<p>Jau <span class="math inline">\(F_5 = 2^{2^5} + 1 = 2^{32} + 1 =\)</span> <span class="math inline">\(=4\,294\,967\,297 = 641 \cdot 6\,700\,417\)</span> nav pirmskaitlis.<br />
-(Leonards Eilers (Leonhard Euler), 1707-1783).</p>
-<aside class="notes">
-<p>Izņemot pirmos 5 Fermā skaitļus (no <span class="math inline">\(F_0\)</span> līdz <span class="math inline">\(F_4\)</span>), nav zināms neviens cits pirmskaitlis. Ir pilnībā sadalīti pirmreizinātājos pirmie 12 šādi skaitļi – no <span class="math inline">\(F_0\)</span> līdz <span class="math inline">\(F_11\)</span>. Daudziem citiem ir zināmi daži dalītāji; atklāto/zināmo dalītāju skaits tiek regulāri papildināts.</p>
-</aside>
-</section><section id="kāpēc-kāpinātājā-ir-divnieka-pakāpe" class="slide level2">
-<h2><lo-summary/> Kāpēc kāpinātājā ir divnieka pakāpe?</h2>
-<p>Skaitļi formā <span class="math inline">\(2^N + 1\)</span> nevar būt pirmskaitļi, ja kāpinātājam <span class="math inline">\(N\)</span> ir kāds nepāru dalītājs, kas lielāks par <span class="math inline">\(1\)</span>, jo šajā gadījumā var dalīt reizinātājos, izmantojot algebriskas identitātes <span class="math inline">\(a^3 + 1^3\)</span>, <span class="math inline">\(a^5 + 1^5\)</span> utml.</p>
-<p>Tātad pats kāpinātājs <span class="math inline">\(N\)</span> (lai sanāktu kaut kas interesants, kas nedalās reizinātājos pavisam triviāli) noteikti ir divnieka pakāpe jeb <span class="math inline">\(2^N + 1\)</span> ir faktiski pierakstāms kā <span class="math inline">\(2^{2^k}+1\)</span>.</p>
-<aside class="notes">
-<p>Fermā pirmskaitļi <span class="math inline">\(2^n+1\)</span> ir iespējami vien tad, ja skaitlim <span class="math inline">\(n\)</span> nav nepāru dalītāju (pretējā gadījumā tos var sadalīt reizinātājos, izmantojot kubu summu, piekto pakāpju summu vai līdzīgu identitāti). Tātad Fermā pirmskaitļi patiesībā izskatās šādi: <span class="math inline">\(2^{2^n}+1\)</span>.</p>
-</aside>
-</section></section>
-<section><section id="andreescu2006.1.77" class="title-slide slide level1"><h1><lo-sample/> Andreescu2006.1.77</h1><p>Pierādīt, ka naturāliem skaitļiem <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span>, kam <span class="math inline">\(m &gt; n\)</span>, Fermā skaitlis <span class="math inline">\(F_m - 2\)</span> noteikti dalās ar <span class="math inline">\(F_n\)</span>.</p></section><section id="andreescu2006.1.77-1" class="slide level2">
-<h2><lo-soln/> Andreescu2006.1.77</h2>
-<p>Atkārtoti lietojam kvadrātu starpības formulu dalīšanai reizinātājos: <span class="math display">\[F_m - 2 = 2^{2^m} + 1 - 2 = 2^{2^m} - 1 = \]</span> <span class="math display">\[=\left( 2^{2^{m-1}} - 1 \right) \left( 2^{2^{m-1}} + 1 \right) = 
-\left( F_{m-1} - 2 \right) F_{m-1}.\]</span></p>
-<p>Ja arī <span class="math inline">\(m - 1 &gt; n\)</span>, tad līdzīgu spriedumu atkārto vēlreiz, dalot reizinātājos <span class="math inline">\(F_{m-1} - 2\)</span> utt. Katrā solī redzam, ka uzrodas reizinātāji <span class="math inline">\(F_{m-1}\)</span>, <span class="math inline">\(F_{m-2}\)</span> utt. Kāds no šiem reizinātājiem būs tieši <span class="math inline">\(F_n\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
-</section><section id="andreescu2006.1.78" class="slide level2">
-<h2><lo-sample/> Andreescu2006.1.78</h2>
-<p>Dažādiem naturāliem <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span>, skaitļi <span class="math inline">\(F_m\)</span> un <span class="math inline">\(F_n\)</span> ir savstarpēji pirmskaitļi.<br />
-(Piemēram, <span class="math inline">\(F_5\)</span> dalās ar <span class="math inline">\(641\)</span>. Tātad neviens cits Fermā skaitlis nevar dalīties ar <span class="math inline">\(641\)</span>.)</p>
-</section><section id="andreescu2006.1.78-1" class="slide level2">
-<h2><lo-soln/> Andreescu2006.1.78</h2>
-<p>Pieņemsim, ka <span class="math inline">\(m&gt;n\)</span>. Tad <span class="math inline">\(F_m - 2\)</span> dalās ar <span class="math inline">\(F_n\)</span>. Iegūstam: <span class="math display">\[\text{LKD}(F_m,F_n) = \text{LKD}((F_m -2) + 2,F_n) = \]</span> <span class="math display">\[\text{LKD}(2,F_n) = 1.\]</span></p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
-</section></section>
-<section><section id="mersena-skaitļu-jēdziens" class="title-slide slide level1"><h1><lo-theory/> Mersena skaitļu jēdziens</h1><p><strong>Definīcija:</strong> Skaitli <span class="math inline">\(M_n\)</span> sauc par <blue><em>Mersena skaitli</em></blue> (<em>Mersenne number</em>), ja to var izteikt formā <span class="math inline">\(2^n - 1\)</span>.<br />
-Ja turklāt <span class="math inline">\(M_n\)</span> ir pirmskaitlis, tad to sauc par <blue><em>Mersena pirmskaitli</em></blue> (<em>Mersenne prime</em>).</p>
-<p><strong>Jautājums:</strong> Kāda īpašība noteikti jāizpilda skaitlim <span class="math inline">\(n\)</span>, lai <span class="math inline">\(M_n = 2^n - 1\)</span> būtu izredzes būt pirmskaitlim?</p>
-<aside class="notes">
-<p>Ja <span class="math inline">\(n\)</span> nav pirmskaitlis un to var sadalīt kā <span class="math inline">\(n = ab\)</span>, tad <span class="math inline">\(2^n-1\)</span> dalās reizinātājos kā divu <span class="math inline">\(a\)</span>-to (vai divu <span class="math inline">\(b\)</span>-to) pakāpju starpība un tātad nav pirmskaitlis. Tātad vienīgie Mersena pirmskaitļi var būt formā <span class="math inline">\(2^p - 1\)</span>, kur <span class="math inline">\(p\)</span> ir pirmskaitlis. Šādā formā parasti ir pirmskaitļi-rekordisti (t.i. lielākie starp visiem pirmskaitļiem, kuri ikbrīd zināmi progresīvajai cilvēcei).</p>
-</aside></section><section id="apgalvojums-par-mersena-skaitļiem" class="slide level2">
-<h2><lo-summary/> Apgalvojums par Mersena skaitļiem</h2>
-<p><strong>Teorēma:</strong> Lai Mersena skaitlis <span class="math inline">\(M_n = 2^n - 1\)</span> būtu pirmskaitlis, ir <em>nepieciešami</em>, lai pats <span class="math inline">\(n\)</span> būtu pirmskaitlis.</p>
-<p><strong>Pierādījums:</strong> Ja <span class="math inline">\(n = km\)</span> ir divu naturālu skaitļu reizinājums (turklāt <span class="math inline">\(k&gt;1\)</span> un <span class="math inline">\(m&gt;1\)</span>), tad var sadalīt reizinātājos kā <span class="math inline">\(a^m - b^m\)</span>: <span class="math display">\[M_n = 2^{km} - 1 = \left( 2^k \right)^m - 1^m = \]</span> <span class="math display">\[ = (2^k - 1) \left( (2^k)^{m-1} + \ldots + 1 \right).\]</span> <span class="math inline">\(\blacksquare\)</span></p>
-</section><section id="izņēmumu-vairāk-nekā-pašu-pirmskaitļu" class="slide level2">
-<h2><lo-summary/> Izņēmumu vairāk nekā pašu pirmskaitļu</h2>
-<p>Nosacījums, ka <span class="math inline">\(p\)</span> ir pirmskaitlis ir <em>nepieciešams</em>, bet nav <em>pietiekams</em>, lai <span class="math inline">\(2^p - 1\)</span> būtu pirmskaitlis.</p>
-<p><strong>Piemēri:</strong> <span class="math inline">\(M_{11} = 2^{11} - 1 = 2047 = 23 \cdot 89\)</span>,<br />
-<span class="math inline">\(M_{23} = 2^{23} - 1 = 8388607 = 47 \cdot 178481\)</span>.</p>
-<p>Šādu piemēru ir tik daudz, ka Mersena skaitļi, kuri tiešām ir pirmskaitļi, ir tikai niecīga daļa no visiem <span class="math inline">\(2^p - 1\)</span> (pašlaik zināms tikai 51 Mersena pirmskaitlis; vidēji katru gadu atrod pa vienam jaunam).</p>
-</section><section id="mersena-pirmskaitļu-piemēri" class="slide level2">
-<h2><lo-summary/> Mersena pirmskaitļu piemēri</h2>
-<table>
-<tr>
-<th>
-<span class="math inline">\(n\)</span>
-</th>
-<th>
-<span class="math inline">\(2\)</span>
-</th>
-<th>
-<span class="math inline">\(3\)</span>
-</th>
-<th>
-<span class="math inline">\(5\)</span>
-</th>
-<th>
-<span class="math inline">\(7\)</span>
-</th>
-<th>
-<span class="math inline">\(13\)</span>
-</th>
-<th>
-<span class="math inline">\(17\)</span>
-</th>
-<th>
-<span class="math inline">\(19\)</span>
-</th>
-<th>
-<span class="math inline">\(31\)</span>
-</th>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(M_n = 2^n-1\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
-</td>
-<td>
-<span class="math inline">\(7\)</span>
-</td>
-<td>
-<span class="math inline">\(31\)</span>
-</td>
-<td>
-<span class="math inline">\(127\)</span>
-</td>
-<td>
-<span class="math inline">\(8191\)</span>
-</td>
-<td>
-<span class="math inline">\(131\,071\)</span>
-</td>
-<td>
-<span class="math inline">\(524\,287\)</span>
-</td>
-<td>
-<span class="math inline">\(2\,147\,483\,647\)</span>
-</td>
-</tr>
-</table>
-<p>Lielākais Mersena pirmskaitlis (un vispār - lielākais zināmais pirmskaitlis) ir <span class="math inline">\(2^{82\,589\,933} - 1\)</span>. Tas atrasts 2018.g. decembrī.</p>
-<p>Pavisam zināmi <span class="math inline">\(51\)</span> Mersena pirmskaitļi. Kopš 1996.g. GIMPS (<em>Great Internet Mersenne Prime Search</em>) projekta ietvaros 23 gadu laikā atrasti jau 17 pirmskaitļi.</p>
-<p>Sk. <a href="https://en.wikipedia.org/wiki/Mersenne_prime#List_of_known_Mersenne_primes">List of known Mersenne primes</a></p>
-<aside class="notes">
-<p>Šis GIMPS projekts parādījās kā prototips/iedvesma BitCoin un citu līdzīgu kriptovalūtu rēķināšanai.</p>
-<p>Lielākā zināmā Mersena pirmskaitļa <span class="math inline">\(M_{82,589,933}\)</span> decimālpierakstā ir <span class="math inline">\(24,862,048\)</span> cipari – pilnībā izdrukāts tas aizņemtu vairākus grāmatplauktus.</p>
-</aside>
-</section></section>
-<section><section id="perfektie-skaitļi" class="title-slide slide level1"><h1><lo-theory/> Perfektie skaitļi</h1><p><strong>Definīcija:</strong> Skaitli sauc par <blue><em>perfektu</em></blue>, ja tas vienāds ar visu savu dalītāju summu (izņemot sevi pašu).</p>
-<p><strong>Piemēri:</strong> <span class="math inline">\(6 = 1+2+3\)</span>; <span class="math inline">\(28 = 1 + 2 + 4 + 7 + 14\)</span>.</p>
-<p><strong>Teorēma (Eiklīds):</strong> Ja <span class="math inline">\(2^p - 1\)</span> ir pirmskaitlis, tad <span class="math inline">\(2^{p-1}(2^p - 1)\)</span> ir perfekts.</p>
-<p><strong>Teorēma (Eilers):</strong> Visi pāru perfektie skaitļi izsakāmi formā <span class="math inline">\(2^{p-1}(2^p - 1)\)</span>.</p></section><section id="perfektie-skaitļi---2" class="slide level2">
-<h2><lo-summary/> Perfektie skaitļi - 2</h2>
-<table>
-<tr>
-<th>
-Pirmskaitlis <span class="math inline">\(p\)</span>
-</th>
-<th>
-<span class="math inline">\(2^{p-1}(2^p - 1)\)</span> vērtība
-</th>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(p = 2\)</span>
-</td>
-<td>
-<span class="math inline">\(6_{10} = 110_{2}\)</span>
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(p = 3\)</span>
-</td>
-<td>
-<span class="math inline">\(28_{10} = 11100_{2}\)</span>
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(p = 5\)</span>
-</td>
-<td>
-<span class="math inline">\(496_{10} = 111110000_{2}\)</span>
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(p = 7\)</span>
-</td>
-<td>
-<span class="math inline">\(8128_{10} = 1111111000000_{2}\)</span>
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(p = 13\)</span>
-</td>
-<td>
-<span class="math inline">\(33550336_{10} = 1111111111111000000000000_{2}\)</span>
-</td>
-</tr>
-</table>
-<p>Ar <span class="math inline">\(p=11\)</span> nesanāk, jo <span class="math inline">\(2^{11} - 1 = 2047 = 23 \cdot 89\)</span>.</p>
-</section></section>
-<section><section id="engel.6.e4" class="title-slide slide level1"><h1><lo-sample/> Engel.6.E4</h1><p>Atrast visus pirmskaitļus, kas izsakāmi formā <span class="math inline">\(n^n + 1\)</span> un ir mazāki kā <span class="math inline">\(10^{19}\)</span>.</p></section><section id="engel.6.e4-1" class="slide level2">
-<h2><lo-soln/> Engel.6.E4</h2>
-<p>Ja <span class="math inline">\(n\)</span> dalās ar kādu nepāru skaitli <span class="math inline">\(c&gt;1\)</span> (t.i. <span class="math inline">\(n = cd\)</span>, kur <span class="math inline">\(c = 2k+1 \geq 3\)</span>), tad pirmskaitlis nesanāk, jo <span class="math display">\[n^n + 1 = \left( n^d \right)^c + 1^c = 
-\left( n^d \right)^{2k+1} + 1^{2k+1},\]</span> kas dalās reizinātājos pēc formulas <span class="math inline">\(a^{2k+1} + b^{2k+1} = (a+b)(a^{2k} - \ldots + b^{2k})\)</span>, kur <span class="math inline">\(a = n^d\)</span> un <span class="math inline">\(b = 1\)</span>.</p>
-</section><section id="engel.6.e4-2" class="slide level2">
-<h2><lo-soln/> Engel.6.E4</h2>
-<p>Ja <span class="math inline">\(n\)</span> ir divnieka pakāpe, šķirojam gadījumus:</p>
-<ul>
-<li>Ja <span class="math inline">\(n = 1\)</span>, tad <span class="math inline">\(n^n + 1 = 2\)</span> (der)</li>
-<li>Ja <span class="math inline">\(n = 2\)</span>, tad <span class="math inline">\(n^n + 1 = 5\)</span> (der)</li>
-<li>Ja <span class="math inline">\(n = 4\)</span>, tad <span class="math inline">\(n^n + 1 = 257\)</span> (der)</li>
-</ul>
-<p>Ja <span class="math inline">\(n=8\)</span>, tad <span class="math display">\[8^8 + 1 = \left( 2^8 \right)^3 + 1^3,\]</span> kas dalās reizinātājos pēc formulas <span class="math inline">\(a^3 + b^3 = (a+b)\left( a^2 - ab + b^2 \right)\)</span>:</p>
-<p><span class="math display">\[8^8 + 1 = \left( 2^8 + 1 \right)\left( 2^{16} - 2^8 + 1 \right).\]</span></p>
-</section><section id="engel.6.e4-3" class="slide level2">
-<h2><lo-soln/> Engel.6.E4</h2>
-<p>Pamatosim, ka pie <span class="math inline">\(n = 16\)</span> skaitlis <span class="math inline">\(n^n + 1 &gt; 10^{19}\)</span>, t.i. šāds skaitlis neder (neatkarīgi no tā, vai tas ir pirmskaitlis).</p>
-<p><span class="math display">\[16^{16} + 1 = 2^{64} + 1 = \]</span> <span class="math display">\[2^4 \cdot 2^{60} + 1 = 16 \cdot \left( 2^{10} \right)^6 + 1 = 16 \cdot 1024^6 + 1 &gt; \]</span> <span class="math display">\[ &gt; 16 \cdot 1000^6 = 16 \cdot 10^{18}  = 1.6 \cdot 10^{19} &gt; 10^{19}.\]</span></p>
-</section><section id="engel.6.e4-4" class="slide level2">
-<h2><lo-yellow/> Engel.6.E4</h2>
-<p>Starp citu, <span class="math inline">\(16^{16} = 2^{64} + 1 = 2^{2^6} + 1 = F_6\)</span> ir sestais Fermā skaitlis. Tas nav pirmskaitlis: <span class="math inline">\(F_6 = 18\,446\,744\,073\,709\,551\,617\)</span> dalās ar <span class="math inline">\(274177 = 1071 \cdot 2^8 + 1\)</span>.</p>
-<p>To pamatoja Tomass Klausens (<em>Thomas Clausen</em>, 1855.g. Tartu, tag. Igaunija).</p>
-</section></section>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span style="color:darkgreen"><strong>(5) Algoritms moduļa atrašanai</strong></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p></section>
 <section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span style="color:darkgreen"><strong>(6) Aritmētikas pamatteorēma</strong></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-</hgroup></section>
-<section><section id="aritmētikas-pamatteorēma---1" class="title-slide slide level1"><h1><lo-theory/> Aritmētikas pamatteorēma - 1</h1><p><strong>Teorēma:</strong> Katrs naturāls skaitlis <span class="math inline">\(n &gt; 1\)</span> ir vai nu pirmskaitlis, vai arī ir izsakāms pirmskaitļu reizinājumā, pie tam šis reizinājums ir viens vienīgs (ja neņem vērā reizinātāju secību).</p>
-<p><strong>Eksistence:</strong> Ar indukciju:<br />
-Ja <span class="math inline">\(n=2\)</span>, tad apgalvojums ir spēkā, jo <span class="math inline">\(2\)</span> ir pirmskaitlis.<br />
-Pieņemam, ka apgalvojums ir spēkā visiem <span class="math inline">\(k &lt; n\)</span>. Pamatosim, ka tas izpildās arī skaitlim <span class="math inline">\(n\)</span>.<br />
-Ja <span class="math inline">\(n\)</span> ir pirmskaitlis, tad tas jau ir šādi izteikts. Savukārt, ja <span class="math inline">\(n = ab\)</span> (kur <span class="math inline">\(a,b &gt; 1\)</span>), tad abus <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> jau protam izteikt. <span class="math inline">\(\square\)</span><br />
-(Vai sadalījums ir viens vienīgs - sk. tālāk.)</p></section><section id="sadalīšanas-piemēri" class="slide level2">
-<h2><lo-summary/> Sadalīšanas piemēri</h2>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span style="color:darkgreen"><strong>(6) Skaitļi ar speciālām īpašībām</strong></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p></section>
+<section id="konstruēšanas-uzdevumi" class="title-slide slide level1"><h1><lo-theory/> Konstruēšanas uzdevumi</h1><p><strong>Stratēģija:</strong> Lai pamatotu, ka eksistē skaitļi ar noteikta veida neparastu īpašību, sadalām šo īpašību daudzās lineārās kongruencēs (pēc moduļiem, kuri ir savstarpēji pirmskaitļi) un risinām šo sistēmu.</p></section>
+<section><section id="usamo.2008.1" class="title-slide slide level1"><h1><lo-sample> USAMO.2008.1</h1><p>Pierādīt, ka jebkuram naturālam <span class="math inline">\(n\)</span>, eksistē <span class="math inline">\(n+1\)</span> savstarpēji pirmskaitļi <span class="math inline">\(k_0,k_1,\ldots,k_n\)</span>, kas visi lielāki par <span class="math inline">\(1\)</span>, kuriem <span class="math inline">\(k_0 \cdot k_1 \cdot \ldots \cdot k_n - 1\)</span> ir divu pēc kārtas sekojošu naturālu skaitļu reizinājums.</p></section><section id="usamo.2008.1-1" class="slide level2">
+<h2><lo-hints/> USAMO.2008.1</h2>
 <hgroup>
-<figure>
-<img data-src="factoring-12.png" alt="Factoring 12" /><figcaption>Factoring 12</figcaption>
-</figure>
-<p>Kāpēc neatkarīgi no <blue><em>factorizēšanas</em></blue> secības, vienmēr sanāk tas pats?<br />
-(Par faktorizēšanu sauc dalīšanu reizinātājos.)</p>
+<p>Pierādīt, ka jebkuram naturālam <span class="math inline">\(n\)</span>, eksistē <span class="math inline">\(n+1\)</span> savstarpēji pirmskaitļi <span class="math inline">\(k_0,k_1,\ldots,k_n\)</span>, kas visi lielāki par <span class="math inline">\(1\)</span>, kuriem <span class="math inline">\(k_0 \cdot k_1 \cdot \ldots \cdot k_n - 1\)</span> ir divu pēc kārtas sekojošu naturālu skaitļu reizinājums.</p>
 </hgroup>
 <hgroup>
-<p><span class="math display">\[12 = 2 \cdot 6= 2 \cdot 2 \cdot 3.\]</span> <span class="math display">\[12 = 3 \cdot 4 = 3 \cdot 2 \cdot 2.\]</span> <span class="math display">\[3 \cdot 2 \cdot 2 \cdot \color{#F00}{1} \cdot \color{#F00}{1} \cdot \color{#F00}{1}.\]</span></p>
-<p><span class="math display">\[3 \cdot 2 \cdot 2 \cdot \color{#F00}{(-1)} \cdot \color{#F00}{(-1)}.\]</span></p>
+<blockquote>
+<p>Izsakām ekvivalentu apgalvojumu, sākot no teikuma beigām. Mērķis: samazināt “kustīgo gabalu” skaitu.</p>
+</blockquote>
 </hgroup>
-<aside class="notes">
-<p>Lielu skaitļu (100 un vairāk ciparu) dalīšana reizinātājos ir datoram grūti veicams uzdevums.</p>
-<p>Pirmskaitļi te līdzinās atomiem ķīmijā. Ķīmiski tīra viela (neatkarīgi no sadalīšanas veida un soļiem) dod elementu atomus, kuru skaits attiecas kā nelieli veseli skaitļi. Līdzīgi kā ūdens molekulu veido divi ūdeņraža un viens skābekļa atoms, skaitli <span class="math inline">\(12\)</span> veido divi pirmskaitļa <span class="math inline">\(2\)</span> atomi un viens pirmskaitļa <span class="math inline">\(3\)</span> atoms.</p>
-</aside>
-</section><section id="skaitļa-90-faktorizācija" class="slide level2">
-<h2><lo-summary/> Skaitļa 90 faktorizācija</h2>
-<figure>
-<img data-src="factoring-90.png" alt="Factoring 90" /><figcaption>Factoring 90</figcaption>
-</figure>
-<p>Ļoti dažādi veidi, kā nonākt līdz pirmskaitļu reizinājumam.</p>
-<aside class="notes">
-<p>Fakts, ka ikvienu naturālu skaitli var tieši vienā veidā izteikt kā (viena vai vairāku) pirmskaitļu reizinājumu, nav triviāls vai pašsaprotams. Tas izriet no vairākām naturālu skaitļu aritmētikā esošām īpašībām (kas tieši <strong>neizriet</strong> no reizināšanas vai dalīšanas attiecības). Pierādījums izmanto naturālu skaitļu sakārtojumu (starp skaitļiem var atrast vismazāko), izmanto iespēju dalīt ar atlikumu. Ir iespējamas tādas īpatnēju “skaitļu” kopas, kurās aritmētikas pamatteorēma neizpildās.</p>
-<p>Sk. <a href="http://donsteward.blogspot.dk/2012/04/factor-trees.html">Factor trees</a>.</p>
-</aside>
-</section><section id="aritmētikas-pamatteorēma---2" class="slide level2">
-<h2><lo-theory/> Aritmētikas pamatteorēma - 2</h2>
-<div style="font-size:70%">
-<p><strong>Viennozīmība:</strong> Pieņemsim, ka <span class="math inline">\(s &gt; 1\)</span> izsakāms divos dažādos veidos: <span class="math display">\[s = p_1p_2\cdots{}p_m,\]</span> <span class="math display">\[s = q_1q_2\cdots{}q_n.\]</span> Jāparāda, ka <span class="math inline">\(m=n\)</span> un <span class="math inline">\(q_j\)</span> ir tie paši, kas <span class="math inline">\(p_j\)</span> (iespējams, citā secībā). Pēc <blue><em>Eiklīda lemmas</em></blue> <span class="math inline">\(p_1\)</span> dala vienu no <span class="math inline">\(q_j\)</span>. Pārnumurējam tā, lai <span class="math inline">\(p_1\)</span> dalītu <span class="math inline">\(q_1\)</span>.</p>
-<p>Tā kā <span class="math inline">\(q_1\)</span> arī ir pirmskaitlis, tad <span class="math inline">\(p_1 = q_1\)</span>. Dalām abas vienādības ar <span class="math inline">\(p_1\)</span>. Iegūstam:</p>
-<p><span class="math display">\[s_1 = p_2\cdots{}p_m,\]</span> <span class="math display">\[s_1 = q_2\cdots{}q_n.\]</span></p>
-<p>Tagad tāpat var pamatot, ka <span class="math inline">\(p_2 = q_2\)</span>, utt. <span class="math inline">\(\blacksquare\)</span></p>
-</div>
-</section><section id="eiklīda-lemma" class="slide level2">
-<h2><lo-theory/> Eiklīda lemma</h2>
-<p><strong>Eiklīda lemma:</strong> Ja pirmskaitlis <span class="math inline">\(p\)</span> dala divu veselu skaitļu reizinājumu <span class="math inline">\(ab\)</span>, tad <span class="math inline">\(p\)</span> dala vismaz vienu no skaitļiem <span class="math inline">\(a\)</span> vai <span class="math inline">\(b\)</span>.</p>
-<p><strong>Pierādījums:</strong> Pieņemsim, ka <span class="math inline">\(p\)</span> un <span class="math inline">\(a\)</span> ir savstarpēji pirmskaitļi. (Ja <span class="math inline">\(\text{LKD}(p,a)&gt;1\)</span>, tad <span class="math inline">\(p\)</span> dalītu <span class="math inline">\(a\)</span>). Pēc <blue>Eiklīda algoritma jebkuriem savstarpējiem pirmskaitļiem <span class="math inline">\(p,a\)</span> var atrast tādus veselus <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>, ka<br />
-<span class="math inline">\(px + ay = 1\)</span> (<em>Bezū identitāte</em>).</p>
-<p>Tā kā <span class="math inline">\(pxb\)</span> dalās ar <span class="math inline">\(p\)</span> un <span class="math inline">\(ayb = (ab)y\)</span> dalās ar <span class="math inline">\(p\)</span>, tad arī summa <span class="math inline">\(pxb + ayb = (px+ay)b = 1 \cdot b = b\)</span> dalās ar <span class="math inline">\(p\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
-</section><section id="bezū-identitātes-pierādījums---1" class="slide level2">
-<h2><lo-theory/> Bezū identitātes pierādījums - 1</h2>
-<p><strong>Bezū identitāte:</strong> Dots, ka <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir veseli un <span class="math inline">\(\text{LKD}(a,b)=d\)</span>. Tad eksistē veseli skaitļi <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>, ka <span class="math inline">\(ax + by = d\)</span>.</p>
-<p><strong>Pierādījums:</strong> Aplūkojam kopu no visiem skaitļiem <span class="math inline">\(ax + by &gt; 0\)</span>, kur <span class="math inline">\(x,y \in \mathbb{Z}\)</span>. Apzīmējam vismazāko pozitīvo šīs kopas locekli ar <span class="math inline">\(d^{\ast} = ax^{\ast} + by^{\ast}\)</span>, kur <span class="math inline">\(x^{\ast}\)</span> un <span class="math inline">\(y^{\ast}\)</span> ir tās <span class="math inline">\(x,y\)</span> vērtības, kurām šo minimumu izdevās sasniegt.</p>
-</section><section id="bezū-identitātes-pierādījums---2" class="slide level2">
-<h2><lo-theory/> Bezū identitātes pierādījums - 2</h2>
-<p>Pamatosim, ka minimālais <span class="math inline">\(d = ax^{\ast} + by^{\ast}\)</span> ir skaitļu <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> lielākais kopīgais dalītājs.</p>
-<ul>
-<li><span class="math inline">\(a\)</span> dalās ar <span class="math inline">\(d^{\ast}\)</span> bez atlikuma. Pretējā gadījumā būtu pozitīvs atlikums <span class="math inline">\(a\)</span> dalot ar <span class="math inline">\(r\)</span>:<br />
-<span class="math inline">\(r = a - qd^{\ast}\)</span> (kur <span class="math inline">\(r &lt; d^{\ast}\)</span>). Tas ir pretrunā ar to, ka <span class="math inline">\(d^{\ast}\)</span> bija <em>vismazākais</em> pozitīvais skaitlis formā <span class="math inline">\(ax+by\)</span>. Jo <span class="math inline">\(r\)</span> sanāktu vēl mazāks, ko arī var izteikt šādā formā. (Ar <span class="math inline">\(b\)</span> pamato līdzīgi.)</li>
-<li>Pieņemsim, ka <span class="math inline">\(c\)</span> arī ir skaitļu <span class="math inline">\(a,b\)</span> kopīgs dalītājs: <span class="math inline">\(a = cu\)</span> un <span class="math inline">\(b=cv\)</span>. Tad <span class="math display">\[d^{\ast} = ax^{\ast} + by^{\ast} = cux^{\ast} + cvy^{\ast} = c(ux^{\ast} + vy^{\ast}).\]</span> Redzam, ka <span class="math inline">\(d^{\ast}\)</span> dalās ar <span class="math inline">\(c\)</span>.</li>
-</ul>
-<p>Tātad <span class="math inline">\(d^{\ast}\)</span> ir <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> lielākais kopīgais dalītājs.</p>
-</section><section id="bezū-identitātes-interpretācija" class="slide level2">
-<h2><lo-summary/> Bezū identitātes interpretācija</h2>
-<p><strong>Apgalvojums:</strong> Ja pircējam un pārdevējam pieejams neierobežots daudzums monētu ar vērtībām <span class="math inline">\(n_1,n_2,\ldots,n_k\)</span> eirocenti (kuri visi <span class="math inline">\(n_i\)</span> ir naturāli skaitļi), tad ar tām var nomaksāt <span class="math inline">\(d\)</span>, kas ir visu skaitļu <span class="math inline">\(n_1,n_2,\ldots,n_k\)</span> lielākais kopīgais dalītājs.</p>
-<p><strong>Pierādījums:</strong> Šis apgalvojums diviem skaitļiem <span class="math inline">\(n_1\)</span> un <span class="math inline">\(n_2\)</span> tieši izriet no Bezū identitātes.<br />
-Ja <span class="math inline">\(k&gt;2\)</span>, var pamatot vispārīgāku Bezū identitātes variantu (trim un vairāk skaitļiem), ko pierāda līdzīgi kā gadījumu <span class="math inline">\(k=2\)</span>.</p>
-</section><section id="bezū-identitātes-interpretācija-1" class="slide level2">
-<h2><lo-summary/> Bezū identitātes interpretācija</h2>
-<p><strong>Piemērs:</strong> Ar <red><span class="math inline">\(13\)</span></red> un <red><span class="math inline">\(8\)</span></red> centu monētām var nomaksāt <span class="math inline">\(1\)</span> centu (turklāt dažādos veidos - atkarībā no tā, kādas monētas lieto pircējs un kādas pārdevējs izdod kā atlikumu): <span class="math display">\[\color{#F00}{13}\cdot{}5 - \color{#F00}{8}\cdot{}8 = 
-\color{#F00}{8}\cdot{}5 - \color{#F00}{13}\cdot{}3 = 1.\]</span> Atkārtojot šo operāciju, var nomaksāt arī jebkuru citu summu.</p>
-<p><strong>Piemērs:</strong> Ar <red><span class="math inline">\(9\)</span></red> un <red><span class="math inline">\(15\)</span></red> centu monētām var nomaksāt jebkuru summu <span class="math inline">\(3a\)</span>, kas dalās ar <red><span class="math inline">\(3\)</span></red>, jo <span class="math inline">\(3 = \text{LKD}(9,15)\)</span>.</p>
-</section><section id="kopsavilkums" class="slide level2">
-<h2><lo-theory/> Kopsavilkums</h2>
-<p>Kā nupat redzējām:<br />
-Bezū identitāte <span class="math inline">\(\Rightarrow\)</span><br />
-      Eiklīda lemma <span class="math inline">\(\Rightarrow\)</span><br />
-            Aritmētikas pamatteorēma.</p>
-<p>Aritmētikas pamatteorēma tātad izmanto ne vien pirmskaitļu jēdzienu, bet arī iespēju sakārtot veselus pozitīvus skaitļus (atrast starp bezgalīgi daudzajiem <span class="math inline">\(ax+by = d\)</span> vismazāko pozitīvo), gan arī iespēju dalīt skaitļus ar atlikumu, ka atlikums <span class="math inline">\(r\)</span> ir mazāks par dalītāju <span class="math inline">\(d\)</span>.</p>
+</section><section id="usamo.2008.1-2" class="slide level2">
+<h2><lo-hints/> USAMO.2008.1</h2>
+<p><strong>Lemma 1:</strong> Ja <span class="math inline">\(t_i^2 + t_i+ 1\)</span> dalās ar pirmskaitli <span class="math inline">\(p_i\)</span> (<span class="math inline">\(i = 0,\ldots,n\)</span>), tad eksistēs arī tāds <span class="math inline">\(t^{\ast}\)</span>, kuram <span class="math inline">\((t^{\ast})^2 + t^{\ast} + 1\)</span> dalās ar visu šo pirmskaitļu reizinājumu?</p>
+<p><strong>Lemma 2:</strong> Vai eksistē bezgalīgi daudz pirmskaitļu <span class="math inline">\(p_i\)</span>, kuriem var atrisināt <span class="math inline">\(t^2 + t + 1 \equiv 0\)</span> pēc <span class="math inline">\(p_i\)</span> moduļa? (T.i. polinoma <span class="math inline">\(P(t) = t^2 + t + 1\)</span> vērtība kaut kādam <span class="math inline">\(t\)</span> dalās ar <span class="math inline">\(p_i\)</span>)?</p>
 </section></section>
-<section><section id="patoloģisks-piemērs" class="title-slide slide level1"><h1><lo-yellow/> Patoloģisks piemērs</h1><div style="font-size:70%">
-<p>Ieviešam skaitļu kopu <span class="math inline">\(a + b\sqrt{-5}\)</span>, kur <span class="math inline">\(a,b\)</span> ir veseli skaitļi.<br />
-Divu skaitļu <span class="math inline">\(a_1 + b_1\sqrt{-5}\)</span> un <span class="math inline">\(a_2 + b_2\sqrt{-5}\)</span> reizinājums atkal ir skaitlis no šīs kopas. Tātad arī šajā kopā var dalīt skaitļus reizinātājos; definēt “pirmskaitļus” <span class="math inline">\(p\)</span> (kuriem vienīgie dalītāji ir <span class="math inline">\(1\)</span>,<span class="math inline">\(-1\)</span>,<span class="math inline">\(p\)</span>,<span class="math inline">\(-p\)</span>).</p>
-<p><span class="math display">\[6 = 2 \cdot 3.\]</span> <span class="math display">\[6 = (1 - \sqrt{-5})(1 + \sqrt{-5}) = 1^2 - (\sqrt{5})^2 = 1-(-5)=6.\]</span></p>
-<p>Skaitli <span class="math inline">\(6\)</span> var sadalīt pirmreizinātājos divos dažādos veidos!</p>
-<p><em>Šajā komplekso skaitļu apakškopā var nodarboties ar skaitļu reizināšanu un pat definēt “pirmskaitļus”. Bet tajā nepastāv iespēja skaitļus salīdzināt ar <span class="math inline">\(&lt;\)</span> un <span class="math inline">\(&gt;\)</span>, nevar dalīt ar atlikumu, nepastāv arī Eiklīda lemma.</em></p>
-</div></section><section id="nt.jun01.4-2" class="slide level2">
-<h2><lo-sample/> NT.JUN01.4</h2>
-<p>Pamatot, ka skaitļi <span class="math inline">\(p_1 = 2\)</span>, <span class="math inline">\(p_2 = 3\)</span>, <span class="math inline">\(p_3 = 1 - \sqrt{-5}\)</span> un <span class="math inline">\(p_4 = 1 + \sqrt{-5}\)</span> ir “pirmskaitļi” skaitļu kopā <span class="math display">\[\left\{ a + b\sqrt{-5}\,\mid\,a,b \in \mathbb{Z} \right\}.\]</span></p>
-<p>Citiem vārdiem: Ja kādu no šiem <span class="math inline">\(p_i\)</span> (<span class="math inline">\(i=1,2,3,4\)</span>) var izteikt kā reizinājumu: <span class="math display">\[p_i = (a + b\sqrt{-5})(c + d\sqrt{-5}),\]</span> tad vai nu viens, vai otrs reizinātājs ir <span class="math inline">\(+1\)</span> vai <span class="math inline">\(-1\)</span>.</p>
-</section></section>
-<section><section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span style="color:darkgreen"><strong>(7) LKD un MKD</strong></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-</hgroup></section><section id="intuīcija-par-mkd" class="slide level2">
-<h2><lo-summary/> Intuīcija par MKD</h2>
-<figure>
-<img data-src="venn-for-divisors.png" alt="Venn Diagram for Divisors" /><figcaption>Venn Diagram for Divisors</figcaption>
-</figure>
-<p>Aplūkojot visus divu skaitļu kopīgos dalītājus (vai dalāmos), izrādās, ka starp tiem vienmēr ir noteiktas sakarības, ko var ļoti kompakti aprakstīt, atrodot lielāko kopīgo dalītāju (attiecīgi mazāko kopīgo dalāmo).</p>
-</section></section>
-<section><section id="lkd-jēdziens" class="title-slide slide level1"><h1><lo-theory/> LKD jēdziens</h1><p><strong>Definīcija:</strong> Par veselu skaitļu <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> <blue><em>lielāko kopīgo dalītāju</em></blue> (<em>greatest common divisor</em>, ko reizēm pieraksta arī kā <code>gcd(m,n)</code>) sauc lielāko naturālo skaitli, ar kuru dalās gan <span class="math inline">\(m\)</span>, gan <span class="math inline">\(n\)</span>. To apzīmē ar <span class="math inline">\(\text{LKD}(m,n)\)</span>.<br />
-<em>Piezīme:</em> LKD var definēt arī vairāk nekā diviem skaitļiem, bet tie nedrīkst visi reizē būt <span class="math inline">\(0\)</span>. Pat ja <span class="math inline">\(m,n\)</span> ir negatīvi, <span class="math inline">\(\text{LKD}(m,n)\)</span> vienmēr ir vesels pozitīvs jeb naturāls skaitlis.</p>
-<p><strong>Piemēri:</strong> <span class="math inline">\(\text{LKD}(8,12)=4\)</span>,<br />
-<span class="math inline">\(\text{LKD}(21,34)=1\)</span>,<br />
-<span class="math inline">\(\text{LKD}(0,-17)=17\)</span>.</p></section><section id="savstarpēji-pirmskaitļi" class="slide level2">
-<h2><lo-theory/> Savstarpēji pirmskaitļi</h2>
-<p><strong>Definīcija:</strong> Skaitļus <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> sauc par <blue><em>savstarpējiem pirmskaitļiem</em></blue> (<em>mutual primes</em>, <em>co-primes</em>), ja <span class="math inline">\(\text{LKD}(m,n)=1\)</span>.</p>
-<p><strong>Piemēri:</strong> (1) Naturāli skaitļi <span class="math inline">\(n\)</span> un <span class="math inline">\(n+1\)</span> vienmēr ir savstarpēji pirmskaitļi (piemēram, <span class="math inline">\(\text{LKD}(15,16)=1\)</span>.<br />
-(2) Divi dažādi pirmskaitļi vienmēr ir arī savstarpēji pirmskaitļi (piemēram, <span class="math inline">\(\text{LKD}(13,17)=1\)</span>).</p>
-</section><section id="lkd-un-citi-kopīgie-dalītāji" class="slide level2">
-<h2><lo-summary/> LKD un citi kopīgie dalītāji</h2>
-<p><strong>Apgalvojums:</strong> Ja <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> ir veseli skaitļi, kas nav abi reizē vienādi ar <span class="math inline">\(0\)</span>, tad to lielākais kopīgais dalītājs <span class="math inline">\(d = \text{LKD}(a,b)\)</span> ir tāds, ka jebkuram citam abu skaitļu kopīgam dalītājam <span class="math inline">\(d^{\ast}\)</span> (kur <span class="math inline">\(d^{\ast}|a\)</span> un <span class="math inline">\(d^{\ast}|b\)</span>), šis <span class="math inline">\(d^{\ast}\)</span> būs arī <span class="math inline">\(d\)</span> dalītājs.</p>
-<p>Neformāli sakot, <span class="math inline">\(d = \text{LKD}(a,b)\)</span> ir nevis vienkārši lielākais skaitlis starp dažādiem <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> kopīgajiem dalītājiem, bet tas ir visu šādu dalītāju režģa augšējais punkts.</p>
-</section><section id="lkd-sadalījums-pirmreizinātājos" class="slide level2">
-<h2><lo-summary/> LKD sadalījums pirmreizinātājos</h2>
-<p><span class="math inline">\(\text{LKD}(m,n)\)</span> viegli atrast, ja <span class="math inline">\(m,n\)</span> sadalīti pirmreizinātājos.</p>
-<table>
-<tr>
-<th>
- 
-</th>
-<th>
-<span class="math inline">\(2\)</span>
-</th>
-<th>
-<span class="math inline">\(3\)</span>
-</th>
-<th>
-<span class="math inline">\(5\)</span>
-</th>
-<th>
-<span class="math inline">\(7\)</span>
-</th>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(300\)</span>
-</td>
-<td>
-<span class="math inline">\(2^2\)</span>
-</td>
-<td>
-<blue><span class="math inline">\(3^1\)</span></blue>
-</td>
-<td>
-<span class="math inline">\(5^2\)</span>
-</td>
-<td>
-<blue><span class="math inline">\(7^0\)</span></blue>
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(630\)</span>
-</td>
-<td>
-<blue><span class="math inline">\(2^1\)</span></blue>
-</td>
-<td>
-<span class="math inline">\(3^2\)</span>
-</td>
-<td>
-<blue><span class="math inline">\(5^1\)</span></blue>
-</td>
-<td>
-<span class="math inline">\(7^1\)</span>
-</td>
-</tr>
-</table>
-<p><span class="math inline">\(\text{LKD}(300,630) = \color{#00F}{2^1}\cdot \color{#00F}{3^1}\cdot\color{#00F}{5^1}\cdot\color{#00F}{7^0} = 30\)</span>.</p>
-<p><span class="math inline">\(\text{LKD}(m,n)\)</span> satur tos pašus pirmreizinātājus, ko <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span>, bet katra pirmreizinātāja pakāpe ir minimums no pirmreizinātāja pakāpes skaitlī <span class="math inline">\(m\)</span> un šī paša pirmreizinātāja pakāpes skaitlī <span class="math inline">\(n\)</span>.</p>
-</section><section id="dažādas-lkd-īpašības" class="slide level2">
-<h2><lo-summary/> Dažādas LKD īpašības</h2>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span style="color:darkgreen"><strong>(7) Reducēšana uz p pakāpēm</strong></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p></section>
+<section><section id="us.mpgo.2010.2" class="title-slide slide level1"><h1><lo-sample/> US.MPGO.2010.2</h1><p><strong>Uzdevums:</strong> Pierādīt, ka jebkuram naturālam <span class="math inline">\(n\)</span>, eksistē veseli skaitļi <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span>, kuriem <span class="math inline">\(4a^2 + 9b^2 - 1\)</span> dalās ar <span class="math inline">\(n\)</span>.</p>
+<p><a href="https://artofproblemsolving.com/community/c952032_2010_math_prize_for_girls_olympiad">Math Prize for Girls Olympiad, 2010, P2</a></p></section><section id="us.mpgo.2010.2-destrukcija" class="slide level2">
+<h2><lo-hints/> US.MPGO.2010.2 (destrukcija)</h2>
+<blockquote>
+<p>Izmantojam Ķīniešu atlikumu teorēmu, lai iespējami samazinātu aplūkojamo <span class="math inline">\(n\)</span> vērtību kopumu.</p>
+</blockquote>
 <ul>
-<li>Ja <span class="math inline">\(p\)</span> ir pirmskaitlis, tad <span class="math inline">\(\text{LKD}(p,m)\)</span> ir <span class="math inline">\(p\)</span> vai <span class="math inline">\(1\)</span>.</li>
-<li>Ja <span class="math inline">\(\text{LKD}(m,n) = d\)</span>, tad <span class="math inline">\(m/d\)</span> un <span class="math inline">\(n/d\)</span> ir savstarpēji pirmskaitļi.</li>
-<li>Ja <span class="math inline">\(m/d^{\ast}\)</span> un <span class="math inline">\(n/d^{\ast}\)</span> abi ir veseli un savstarpēji pirmskaitļi, tad <span class="math inline">\(\text{LKD}(m,n) = d^{\ast}\)</span>.</li>
-<li><span class="math inline">\(\text{LKD}(m,n) = \text{LKD}(m-n,n)\)</span>. LKD nemainās, ja no viena skaitļa atņem otru skaitli (vai arī divkāršotu, trīskāršotu utt. otru skaitli).</li>
-<li>Ja <span class="math inline">\(m = nq + r\)</span>, tad <span class="math inline">\(\text{LKD}(m,n) = \text{LKD}(r,n)\)</span> (skaitli <span class="math inline">\(m\)</span> var aizstāt ar tā atlikumu, dalot ar <span class="math inline">\(n\)</span>).</li>
+<li>“Destrukcija” - patvaļīgā <span class="math inline">\(n\)</span> vietā aplūkojam vienīgi pirmskaitļu pakāpes <span class="math inline">\(p^k\)</span>.</li>
 </ul>
+</section><section id="us.mpgo.2010.2-1" class="slide level2">
+<h2><lo-soln/> US.MPGO.2010.2</h2>
+<p>Aplūkosim divus gadījumus, kad <span class="math inline">\(n\)</span> ir pirmskaitļu pakāpe.</p>
+<p><strong>1.gadījums:</strong> Ja <span class="math inline">\(n= 2^k\)</span>, izvēlamies <span class="math inline">\(a \equiv 0\;(\text{mod}\,2^k)\)</span> un <span class="math inline">\(b \equiv 3^{-1}\;(\text{mod}\,2^k)\)</span>.</p>
+</section><section id="us.mpgo.2010.2-2" class="slide level2">
+<h2><lo-soln/> US.MPGO.2010.2</h2>
+<p><strong>2.gadījums:</strong> Ja <span class="math inline">\(n = p^k\)</span> (<span class="math inline">\(p \neq 2\)</span>), tad izvēlamies <span class="math inline">\(a \equiv 2^{-1}\;(\text{mod}\,p^k)\)</span> un <span class="math inline">\(b \equiv 0\;(\text{mod}\,p^k)\)</span>.</p>
 </section></section>
-<section><section id="kā-praktiski-atrast-lkd" class="title-slide slide level1"><h1><lo-theory/> Kā praktiski atrast LKD?</h1><p>Varētu sadalīt pirmreizinātājos un atrast minimumus pa visām pirmskaitļu pakāpēm.</p>
-<p><strong>Piemērs:</strong> Ja <span class="math inline">\(m = 2^{10}3^85^9\)</span> un <span class="math inline">\(n = 2^{17}3^5\)</span>, tad <span class="math inline">\(\text{LKD}(m,n} = 2^{10}3^5\)</span>.</p>
-<p>Faktiski ir ļoti grūti dalīt lielus skaitļus pirmreizinātājos. Kā atrast, teiksim,</p>
-<p><span class="math display">\[\text{LKD}(73786976294838206463, 295147905179352825855)?\]</span></p></section><section id="eiklīda-algoritms-python" class="slide level2">
-<h2><lo-summary/> Eiklīda algoritms (Python)</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">def</span> gcd(a, b):</a>
-<a class="sourceLine" id="cb3-2" title="2">    <span class="cf">while</span> b:</a>
-<a class="sourceLine" id="cb3-3" title="3">        a, b <span class="op">=</span> b, a <span class="op">%</span> b</a>
-<a class="sourceLine" id="cb3-4" title="4">    <span class="cf">return</span> a</a></code></pre></div>
-<p><strong>Pseidokods:</strong> <span><span class="math inline">\(\text{LKD}(a,b)\)</span>:</span><br />
-<span>1. Kamēr <span class="math inline">\(b \neq 0\)</span> atkārto:</span><br />
-<span>2.     Vienlaikus aizstāj:</span><br />
-<span>                <span class="math inline">\(a\)</span> ar <span class="math inline">\(b\)</span></span><br />
-<span>                <span class="math inline">\(b\)</span> ar atlikumu, kur <span class="math inline">\(a\)</span> dala ar <span class="math inline">\(b\)</span></span><br />
-<span>3.     LKD ir skaitlis <span class="math inline">\(a\)</span>.</p>
-</section><section id="eiklīda-algoritma-piemērs" class="slide level2">
-<h2><lo-summary/> Eiklīda algoritma piemērs</h2>
-<hgroup>
-<p><span class="math display">\[\text{LKD}(21,30) = \]</span> <span class="math display">\[=\text{LKD}(30,21) = \]</span> <span class="math display">\[=\text{LKD}(21,9) = \]</span> <span class="math display">\[=\text{LKD}(9,3) = \]</span> <span class="math display">\[=\text{LKD}(3,0) = 3.\]</span></p>
-</hgroup>
-<hgroup>
-<ul>
-<li>Eiklīda algoritmam nepieciešams, lai skaitļi <span class="math inline">\(a,b\)</span> būtu naturāli.</li>
-<li>Lai atrastu <span class="math inline">\(\text{LKD}(a,b)\)</span>, kur <span class="math inline">\(a\)</span> vai <span class="math inline">\(b\)</span> ir negatīvi, algoritmu izpilda absolūtajām vērtībām:<br />
-<span class="math display">\[\text{LKD}(a,b)=\text{LKD}\left( |a|,|b|).\]</span></li>
-</ul>
-</hgroup>
-</section></section>
-<section><section id="bw.tst.2016.16" class="title-slide slide level1"><h1><lo-sample/> BW.TST.2016.16</h1><p>Kāda ir izteiksmes <span class="math display">\[\text{LKD}\left( n^2 + 3, (n+1)^2 + 3 \right)\]</span> lielākā iespējamā vērtība naturāliem <span class="math inline">\(n\)</span>?</p></section><section id="bw.tst.2016.16-1" class="slide level2">
-<h2><lo-soln/> BW.TST.2016.16</h2>
+<section><section id="piemērs---fibonači-virknes-atlikumi" class="title-slide slide level1"><h1><lo-sample/> Piemērs - Fibonači virknes atlikumi</h1><p><strong>Uzdevums:</strong> Vai eksistē bezgalīgi daudzi Fibonači skaitļi, kuri:<br />
+<strong>(a)</strong> Dalās ar <span class="math inline">\(1001\)</span> bez atlikuma (atlikums <span class="math inline">\(0\)</span>),<br />
+<strong>(b)</strong> Dod atlikumu <span class="math inline">\(900\)</span>, dalot ar <span class="math inline">\(1001\)</span>,<br />
+<strong>(c)</strong> Dod atlikumu <span class="math inline">\(1000\)</span>, dalot ar <span class="math inline">\(1001\)</span>.</p>
+<p><strong>Piezīme:</strong> Fibonači virkni (<span class="math inline">\(0,1,1,2,3,5,8,13,21,\ldots\)</span>) definē šādi:<br />
+<span class="math inline">\(F_0 = 0\)</span>, <span class="math inline">\(F_1 = 1\)</span> un <span class="math inline">\(F_{k+1} = F_{k-1}+F_{k}\)</span> visiem <span class="math inline">\(k \geq 1\)</span>. (Katrs nākamais loceklis ir divu iepriekšējo locekļu summa.)</p></section><section id="piemērs---fibonači-virknes-atlikumi-a" class="slide level2">
+<h2><lo-soln/> Piemērs - Fibonači virknes atlikumi (a)</h2>
 <div style="font-size:70%">
-<p><span class="math display">\[\text{LKD}\left( n^2 + 3, (n+1)^2 + 3 \right) = 
-\text{LKD}\left( n^2 + 3, n^2 + 2n + 4 \right) = \]</span> <em>(no otrā argumenta atņem pirmo)</em> <span class="math display">\[ = \text{LKD}\left( n^2 + 3, 2n + 1 \right) = \]</span> <em>(pirmo argumentu var piereizināt ar <span class="math inline">\(2\)</span>, jo otrais ir nepāru)</em> <span class="math display">\[ = \text{LKD}\left( 2n^2 + 6, 2n + 1 \right) = \]</span> <em>(no pirmā argumenta atņem <span class="math inline">\(n\)</span>-kāršotu otro)</em> <span class="math display">\[ = \text{LKD}\left( 2n^2 + 6 - n(2n+1), 2n + 1 \right) =
-\text{LKD}(6-n,2n+1) = \]</span> <em>(otrajam argumentam pieskaita divkāršotu pirmo)</em> <span class="math display">\[=\text{LKD}(6-n,2n+1 + 2(6-n)) = \text{LKD}(n-6,13).\]</span></p>
+<p><strong>(a)</strong> Bezgalīgi daudzi <span class="math inline">\(F_n\)</span> dalās ar <span class="math inline">\(1001\)</span>. Vispārīgs apgalvojums ir šāds:</p>
+<p><strong>Apgalvojums:</strong> Jebkuram <span class="math inline">\(k\)</span>, eksistē bezgalīgi daudzi <span class="math inline">\(F_n\)</span>, kas dalās ar <span class="math inline">\(k\)</span>.</p>
+<p><strong>Pierādījums:</strong> <span class="math inline">\(F_0 = 0\)</span> dalās ar <span class="math inline">\(k\)</span>.<br />
+Ievērosim, ka atlikumi, dalot ar <span class="math inline">\(k\)</span>, pēc kāda laika kļūst periodiski: Katru nākamo atlikumu nosaka iepriekšējie divi atlikumi, un iespējamo atlikumu pārīšu ir ne vairāk kā <span class="math inline">\(k \cdot k\)</span> - galīgs skaits. Tātad virknē pēc kāda laika tas pats blakusesošu atlikumu pārītis parādīsies atkārtoti (un no šīs vietas sāksies cikls).</p>
+<p>Fibonači virknes atlikumi nevar veidot nekādus “priekšperiodus”, tāpēc, ka <span class="math inline">\(F_{k-1} = F_{k+1} - F_{k}\)</span> (no diviem nākamajiem atlikumiem var viennozīmīgi izrēķināt iepriekšējo).</p>
 </div>
-</section><section id="bw.tst.2016.16-2" class="slide level2">
-<h2><lo-soln/> BW.TST.2016.16</h2>
-<p><strong>Secinājums:</strong> <span class="math inline">\(\text{LKD}\left( n^2 + 3, (n+1)^2 + 3 \right) = \text{LKD}(n-6,13)\)</span> var būt vai nu <span class="math inline">\(1\)</span> vai <span class="math inline">\(13\)</span>.</p>
-<p>Vērtību <span class="math inline">\(13\)</span> tas sasniedz, ja <span class="math inline">\(n-6\)</span> dalās ar <span class="math inline">\(13\)</span>, piemēram, ja <span class="math inline">\(n-6 = 0\)</span> jeb <span class="math inline">\(n=6\)</span>.</p>
-<p>Pārbaude: <span class="math display">\[\text{LKD}\left( 6^2 + 3, (6+1)^2 + 3 \right) =
-\text{LKD}(39,52)=13.\]</span></p>
-</section></section>
-<section><section id="mkd-jēdziens" class="title-slide slide level1"><h1><lo-theory/> MKD jēdziens</h1><p><strong>Definīcija:</strong> Par veselu skaitļu <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> <blue><em>mazāko kopīgo dalāmo</em></blue> (<em>least common multiple</em>, ko reizēm pieraksta arī kā <code>lcm(m,n)</code>) sauc mazāko naturālo skaitli, kurš ir daudzkārtnis gan skaitlim <span class="math inline">\(m\)</span>, gan skaitlim <span class="math inline">\(n\)</span>. To apzīmē ar <span class="math inline">\(\text{MKD}(m,n)\)</span>.<br />
-<em>Piezīme:</em> MKD definēts tikai tad, ja abi veselie skaitļi <span class="math inline">\(m,n \neq 0\)</span>.</p></section><section id="mkd-sadalījums-pirmreizinātājos" class="slide level2">
-<h2><lo-summary/> MKD sadalījums pirmreizinātājos</h2>
+</section><section id="piemērs---fibonači-virknes-atlikumi-a-1" class="slide level2">
+<h2><lo-soln/> Piemērs - Fibonači virknes atlikumi (a)</h2>
 <div style="font-size:70%">
-<p>Arī <span class="math inline">\(\text{MKD}(m,n)\)</span> (līdzīgi kā <span class="math inline">\(\text{LKD}(m,n)\)</span>) var tūlīt uzrakstīt, ja <span class="math inline">\(m,n\)</span> jau sadalīti pirmreizinātājos:</p>
-<table>
-<tr>
-<th>
- 
-</th>
-<th>
-<span class="math inline">\(2\)</span>
-</th>
-<th>
-<span class="math inline">\(3\)</span>
-</th>
-<th>
-<span class="math inline">\(5\)</span>
-</th>
-<th>
-<span class="math inline">\(7\)</span>
-</th>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(300\)</span>
-</td>
-<td>
-<red><span class="math inline">\(2^2\)</span></red>
-</td>
-<td>
-<span class="math inline">\(3^1\)</span>
-</td>
-<td>
-<red><span class="math inline">\(5^2\)</span></red>
-</td>
-<td>
-<span class="math inline">\(7^0\)</span>
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(630\)</span>
-</td>
-<td>
-<span class="math inline">\(2^1\)</span>
-</td>
-<td>
-<red><span class="math inline">\(3^2\)</span></red>
-</td>
-<td>
-<span class="math inline">\(5^1\)</span>
-</td>
-<td>
-<red><span class="math inline">\(7^1\)</span></red>
-</td>
-</tr>
-</table>
-<p><span class="math inline">\(\text{MKD}(300,630) = \color{#F00}{2^2}\cdot \color{#F00}{3^2}\cdot\color{#F00}{5^2}\cdot\color{#F00}{7^1} = 6300\)</span>.</p>
-<p><span class="math inline">\(\text{MKD}(m,n)\)</span> satur tos pašus pirmreizinātājus, ko <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span>, bet katra pirmreizinātāja pakāpe ir maksimums no to pakāpēm skaitļos <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span>.</p>
-<p>Tā kā <span class="math inline">\(\text{LKD}(a,b)\)</span> sareizina <span class="math inline">\(a\)</span> un <span class="math inline">\(b\)</span> pirmreizinātāju pakāpju minimumus, bet <span class="math inline">\(\text{MKD}(a,b)\)</span> - maksimumus, tad</p>
-<p><span class="math display">\[ab = \text{LKD}(a,b)\cdot\text{MKD}(a,b).\]</span></p>
-</div>
-</section><section id="lkd-un-mkd-ir-savstarpēji-izsakāmi" class="slide level2">
-<h2><lo-summary/> LKD un MKD ir savstarpēji izsakāmi</h2>
-<hgroup style="width:40%">
-<figure>
-<img data-src="lattice-10-14.png" alt="Lattice of 10 and 14" /><figcaption>Lattice of 10 and 14</figcaption>
-</figure>
-<p>Zaļo un sarkano skaitļu reizinājumi sakrīt: <span class="math inline">\(2 \cdot 70 = 10 \cdot 14\)</span>.</p>
-</hgroup>
-<hgroup style="width:60%">
+<p><span class="math inline">\(1001 = 7 \cdot 11 \cdot 13\)</span>. Tāpēc apskatāmies tikai atlikumus pēc pirmskaitļiem <span class="math inline">\(7, 11, 13\)</span>:</p>
 <ul>
-<li>Dalāmības režģī LCD (skaitlis <span class="math inline">\(2\)</span> zīmējumā) ir augstākā vieta, no kuras var nonākt gan skaitlī <span class="math inline">\(10\)</span>, gan skaitlī <span class="math inline">\(14\)</span>.</li>
-<li>MCD (skaitlis <span class="math inline">\(70\)</span>) ir zemākā vieta, kur satiekas augšupejošie ceļi no <span class="math inline">\(10\)</span> un <span class="math inline">\(14\)</span>.</li>
+<li>Dalot <span class="math inline">\(F_n\)</span> ar <span class="math inline">\(7\)</span>, periodiski atkārtojas <span class="math inline">\(16\)</span> atlikumi: <span class="math inline">\(0, 1, 1, 2, 3, 5, 1, 6, 0, 6, 6, 5, 4, 2, 6, 1\)</span></li>
+<li>Dalot <span class="math inline">\(F_n\)</span> ar <span class="math inline">\(11\)</span>, periodiski atkārtojas <span class="math inline">\(10\)</span> atlikumi: <span class="math inline">\(0, 1, 1, 2, 3, 5, 8, 2, 10, 1\)</span></li>
+<li>Dalot <span class="math inline">\(F_n\)</span> ar <span class="math inline">\(13\)</span>, periodiski atkārtojas <span class="math inline">\(28\)</span> atlikumi: <span class="math display">\[0, 1, 1, 2, 3, 5, 8, 0, 8, 8, 3, 11, 1, 12, 0, 12, 12, 11, 10, 8, 5, 0, 5, 5, 10, 2, 12, 1\]</span></li>
 </ul>
-<p><span class="math display">\[\text{MKD}(10,14) = \frac{10 \cdot 14}{\text{LCD}(10,14)}.\]</span></p>
-</hgroup>
-</section><section id="lkd-un-mkd-dalāmības-režģī" class="slide level2">
-<h2><lo-summary/> LKD un MKD dalāmības režģī</h2>
-<figure>
-<img data-src="meet-and-join.png" alt="Meet and Join" /><figcaption>Meet and Join</figcaption>
-</figure>
-<aside class="notes">
-<p>Vidusskolas aritmētikā bieži jānoskaidro gan LKD (lai noīsinātu daļskaitļus), gan arī – MKD (lai atrastu mazāko kopsaucēju). Tomēr nereti skolu kursā koncentrējas vienīgi uz prasmi atrast šos lielumus nelieliem skaitļiem, risinot aritmētikas piemērus, bet maz pievēršas abu lielumu vispārīgajām īpašībām.</p>
-</aside>
-</section><section id="dalāmības-apgalvojumu-kombinēšana" class="slide level2">
-<h2><lo-summary/> Dalāmības apgalvojumu kombinēšana</h2>
+<p>Aprēķinām kopīgā cikla garumu: <span class="math inline">\(\text{LKD}(16,10,28) = 560\)</span>.<br />
+Tātad periods (atlikumiem pēc <span class="math inline">\(1001\)</span> moduļa) iestāsies pēc <span class="math inline">\(560\)</span> soļiem: <span class="math display">\[F_0 \equiv F_{560} \equiv F_{1120} \equiv \ldots \equiv 0\;(\text{mod}\,1001).\]</span></p>
+</div>
+</section><section id="piemērs---fibonači-virknes-atlikumi-b" class="slide level2">
+<h2><lo-soln/> Piemērs - Fibonači virknes atlikumi (b)</h2>
+<p><strong>(b)</strong> Atlikums <span class="math inline">\(900\)</span> nav iespējams, jo, dalot ar <span class="math inline">\(11\)</span>, nevar panākt, lai <span class="math inline">\(F_n\)</span> dotu atlikumu <span class="math inline">\(9\)</span>. Atlikuma <span class="math inline">\(9\)</span> periodiskajā virknē <span class="math inline">\(0, 1, 1, 2, 3, 5, 8, 2, 10, 1\)</span> vienkārši nav.</p>
+</section><section id="piemērs---fibonači-virknes-atlikumi-c" class="slide level2">
+<h2><lo-soln/> Piemērs - Fibonači virknes atlikumi (c)</h2>
 <div style="font-size:70%">
-<p><strong>Teorēma:</strong> Naturāli skaitļi <span class="math inline">\(m\)</span> un <span class="math inline">\(n\)</span> abi ir naturāla skaitļa <span class="math inline">\(a\)</span> dalītāji tad un tikai tad, ja <span class="math inline">\(d = \text{MKD}(m,n)\)</span> ir skaitļa <span class="math inline">\(a\)</span> dalītājs.</p>
-<p><span class="math display">\[(\forall m,n,a \in \mathbb{N})\left( 
-(m \, \mid \, a) \&amp; (n \,\mid\, a)\;\Leftrightarrow\;
-\text{MKD}(m,n)\,\mid\,a \right).\]</span> <strong>Saki:</strong> Visiem naturā;iem <span class="math inline">\(m,n,a\)</span>, <span class="math inline">\(m\)</span> dala <span class="math inline">\(a\)</span> <strong>UN</strong> <span class="math inline">\(n\)</span> dala <span class="math inline">\(a\)</span> tad un tikai tad (t.t.t.) ja <span class="math inline">\(\text{MKD}(m,n)\)</span> dala <span class="math inline">\(a\)</span>.</p>
-<p><strong>Piemēri:</strong> Skaitlis <span class="math inline">\(a\)</span> dalās ar <red><span class="math inline">\(7\)</span></red> un <red><span class="math inline">\(9\)</span></red> t.t.t. ja <span class="math inline">\(a\)</span> dalās ar <red><span class="math inline">\(63\)</span></red>.<br />
-Skaitlis <span class="math inline">\(a\)</span> dalās ar <red><span class="math inline">\(4\)</span></red> un <red><span class="math inline">\(6\)</span></red> t.t.t. ja <span class="math inline">\(a\)</span> dalās ar <red><span class="math inline">\(12\)</span></red>.</p>
-<p>Apzīmējums <blue>t.t.t.</blue> nozīmē “tad un tikai tad” (<span class="math inline">\(\Leftrightarrow\)</span>). Šajos gadījumos var secināt abos virzienos. (Sal. “Četrstūris ir paralelograms t.t.t. ja tā abas diagonāles krustpunktā dalās uz pusēm.”)</p>
+<p><strong>(c)</strong> Atlikumu <span class="math inline">\(1000\)</span>, dalot ar <span class="math inline">\(1001\)</span> dod tie <span class="math inline">\(x\)</span>, kam izpildās kongruences:</p>
+<p><span class="math display">\[\left\{
+\begin{array}{l}
+x \equiv -1 \equiv 6 \;(\text{mod}\,7)\\
+x \equiv -1 \equiv 10 \;(\text{mod}\,11)\\
+x \equiv -1 \equiv 12 \;(\text{mod}\,13)
+\end{array} \right.\]</span></p>
+<p>Atlikumu <span class="math inline">\(6\)</span>, dalot ar <span class="math inline">\(7\)</span> var panākt, ja Fibonači virknes numurs <span class="math inline">\(n\)</span> ir kongruents ar <span class="math inline">\((-2)\)</span> pēc moduļa <span class="math inline">\(16\)</span>. Jo sešpadsmit periodiski atkārtojošos atlikumu virknē (<span class="math inline">\(0, 1, 1, 2, 3, 5, 1, 6, 0, 6, 6, 5, 4, 2, \color{#F00}{6}, 1\)</span>) skaitlis <span class="math inline">\(6\)</span> ir, piemēram, otrais no beigām.<br />
+Arī, aplūkojot <span class="math inline">\(F_n\)</span> pēc <span class="math inline">\(11\)</span> un <span class="math inline">\(13\)</span> moduļiem, der priekšpēdējie atlikumi.</p>
+<p>Skaitlis <span class="math inline">\(558\)</span> ir kongruents ar <span class="math inline">\((-2)\)</span> gan pēc <span class="math inline">\(16\)</span>, gan pēc <span class="math inline">\(10\)</span>, gan pēc <span class="math inline">\(28\)</span> moduļa. Tātad tas dos vajadzīgos atlikumus dalot ar <span class="math inline">\(7,11,13\)</span> un tādēļ <span class="math display">\[F_{558} \equiv F_{558+560} \equiv F_{558 + 2\cdot 560} \equiv \ldots \equiv 1000\;(\text{mod}\,1001).\]</span></p>
+<p>Skaitli <span class="math inline">\(560\)</span> var pieskaitīt, jo jau agrāk noskaidrojām, ka pēc <span class="math inline">\(1001\)</span> moduļa, atlikumu atkārtošanās periods ir <span class="math inline">\(\text{LKD}(16,10,28) = 560\)</span>.</p>
 </div>
 </section></section>
 <section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span style="color:darkgreen"><strong>(8) Kvantoru pieraksts</strong></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
-</hgroup>
-<!--
-
-Ja viens dalītājs lielāks par sqrt(n), tad citi noteikti ir mazāki par sqrt(n). 
-
-Ģeometriska progresija - galīgas summas formula
-
-Vidējais aritmētiskais/vidējais ģeometriskais
-
-
-
---></section>
-<section><section id="predikāti" class="title-slide slide level1"><h1><lo-theory/> Predikāti</h1><div style="font-size:70%">
-<p>Skaitļu teorijas apgalvojumus var īsi pierakstīt ar predikātu loģikas formulām. Šīs formulas sastāv no divām daļām:<br />
-(1) “predikāta” - izteikuma, kurā ietilpst parametri,<br />
-(2) viena vai vairākiem “kvantoriem” (vai apgalvojums attiecas uz kaut kādu parametra vērtību, vai arī - uz visām parametra iespējamām vērtībām).</p>
-<p><strong>Definīcija:</strong> Par <blue><em>predikātu</em></blue> sauc tādu apgalvojumu, kura patiesums var būt atkarīgs no mainīgo vērtībām.</p>
-<ul>
-<li><span class="math inline">\(a \mid b\)</span> ir predikāts, kas definēts pie <span class="math inline">\(a,b \in \mathbb{N}\)</span> (dažreiz dalās, citreiz nedalās)</li>
-<li><span class="math inline">\(\text{mirstīgs}(x)\)</span> ir predikāts, kas definēts, ja <span class="math inline">\(x\)</span> pieder cilvēku kopai.<br />
-(Tā kā visi cilvēki ir mirstīgi, tad vērtība ir konstante <code>True</code>.)</li>
-</ul>
-</div></section><section id="universālais-kvantors" class="slide level2">
-<h2><lo-theory/> Universālais kvantors</h2>
-<div style="font-size:70%">
-<p><strong>Definīcija:</strong> Pieraksts <span class="math inline">\((\forall a \in A)(P(a))\)</span> apgalvo, ka predikāts <span class="math inline">\(P(a)\)</span> ir spēkā visiem <span class="math inline">\(a \in A\)</span>. Izteiksmes daļu <span class="math inline">\((\forall a \in A)\)</span> sauc par <blue><strong>universālo kvantoru</strong></blue> (<em>universal quantifier</em>) mainīgajam <span class="math inline">\(a\)</span>.</p>
-<p>Ja <span class="math inline">\(P(a,b)\)</span> ir predikāts ar diviem mainīgajiem, tad pieraksts <span class="math inline">\((\forall a \in A)(P(a,b))\)</span> ir apgalvojums, kura patiesums atkarīgs tikai no parametra <span class="math inline">\(b\)</span>. Parametrs <span class="math inline">\(a\)</span> formulā joprojām ietilpst, bet tas ir “saistīts” mainīgais - tas (līdzīgi kā indekss <code>i</code> programmēšanas ciklā) pārskrien visas iespējamās vērtības <span class="math inline">\(a \in A\)</span>.</p>
-<ul>
-<li><span class="math inline">\((\forall c \in C)(\text{mirstīgs}(c))\)</span> ir patiess, ja <span class="math inline">\(C\)</span> ir visu cilvēku kopa.</li>
-<li><span class="math inline">\((\forall n \in \mathbb{N})\left( (2n+1)^2 \equiv 1\,(\text{mod}\;8) \right)\)</span> ir patiess, jo visu nepāru skaitļu kvadrāti <span class="math inline">\((2n+1)^2\)</span> tiešām dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(8\)</span>.</li>
-<li><span class="math inline">\((\forall n \in \mathbb{N})(a\,\mid\,n)\)</span> ir patiess apgalvojums tad, ja <span class="math inline">\(a=1\)</span> (<span class="math inline">\(1\)</span> ir jebkura naturāla skaitļa dalītājs), bet aplams, ja <span class="math inline">\(a=2\)</span>, jo visi <span class="math inline">\(n \in \mathbb{N}\)</span> nav pāra skaitļi.</li>
-</ul>
-</div>
-</section><section id="eksistences-kvantors" class="slide level2">
-<h2><lo-theory/> Eksistences kvantors</h2>
-<p><strong>Definīcija:</strong> Pieraksts <span class="math inline">\((\exists a \in A)(P(a))\)</span> apgalvo, ka predikāts <span class="math inline">\(P(a)\)</span> ir spēkā vismaz vienai vērtībai <span class="math inline">\(a \in A\)</span>. Izteiksmes daļu <span class="math inline">\((\exists a \in A)\)</span> sauc par <blue><strong>eksistences kvantoru</strong></blue> (<em>existential quantifier</em>) mainīgajam <span class="math inline">\(a\)</span>.</p>
-<p><strong>Piemērs:</strong> Naturālu skaitļu virkni <span class="math inline">\(a_1,a_2,\ldots\)</span> sauc par ierobežotu, ja <span class="math display">\[(\exists M \in \mathbb{N})(\forall n \in \mathbb{N})(a_n \leq M).\]</span> Saki: Eksistē naturāls <span class="math inline">\(M\)</span> (virknes augšējā robeža), ka visiem <span class="math inline">\(n\)</span> <span class="math inline">\(a_n\)</span> nepārsniedz <span class="math inline">\(M\)</span>.</p>
-</section><section id="kopu-apzīmējumi" class="slide level2">
-<h2><lo-theory/> Kopu apzīmējumi</h2>
-<div style="font-size:70%">
-<p>Var ieviest arī pierakstu kopām, kas definēta ar predikātu.</p>
-<p><strong>Piemērs:</strong> Skaitlis <span class="math inline">\(p\)</span> ir pirmskaitlis, ja izpildās:</p>
-<p><span class="math display">\[(\forall n \in \mathbb{N})\left( 1 &lt; n &lt; p\,\Rightarrow\, p \not\equiv 0\,(\text{mod}\;n) \right).\]</span> <strong>Saki:</strong> Visiem naturāliem <span class="math inline">\(n\)</span>, ja <span class="math inline">\(n\)</span> ir starp <span class="math inline">\(1\)</span> un <span class="math inline">\(p\)</span>, tad <span class="math inline">\(p\)</span> nedalās ar <span class="math inline">\(n\)</span> bez atlikuma.</p>
-<p>Tālāk definējam <span class="math inline">\(\mathbb{P}\)</span> - visu pirmskaitļu kopu.</p>
-<p><span class="math display">\[\mathbb{P} = \left\{ p \in \mathbb{N}\,\mid\, \color{#F00}{(\forall n \in \mathbb{N})\left( 1 &lt; n &lt; p\,\Rightarrow\, p \not\equiv 0\,(\text{mod}\;n) \right)} \right\}.\]</span> <strong>Saki:</strong> <span class="math inline">\(\mathbb{P}\)</span> ir visu tādu naturālo <span class="math inline">\(p\)</span> kopa, ka - visiem naturāliem <span class="math inline">\(n\)</span>, ja <span class="math inline">\(n\)</span> ir starp <span class="math inline">\(1\)</span> un <span class="math inline">\(p\)</span>, tad <span class="math inline">\(p\)</span> nedalās ar <span class="math inline">\(n\)</span> bez atlikuma.</p>
-</div>
-</section><section id="tēvu-kopa" class="slide level2">
-<h2><lo-summary/> Tēvu kopa</h2>
-<p>Definējam apzīmējumu: <span class="math inline">\(\text{hasFather(x,y)}\)</span> ir predikāts, kas apgalvo, ka <span class="math inline">\(x\)</span>’am ir tēvs <span class="math inline">\(y\)</span>. Šeit <span class="math inline">\(x,y \in C\)</span>, kur <span class="math inline">\(C\)</span> - visu jebkad dzīvojušo cilvēku kopa.</p>
-<p>Pārtulkosim par latviski šādas predikātu loģikas formulas:</p>
-<ul>
-<li><span class="math inline">\((\forall x \in C)(\exists y \in C)(\text{hasFather}(x,y))\)</span>.</li>
-<li><span class="math inline">\((\forall y \in C)(\exists x \in C)(\text{hasFather}(x,y))\)</span>.</li>
-<li><span class="math inline">\((\exists y \in C)(\forall x \in C)(\text{hasFather}(x,y))\)</span>.</li>
-</ul>
-</section></section>
-<section><section id="nt.jun01.5" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.5</h1><div style="font-size:70%">
-<p><strong>Uzdevums:</strong> Nerisinot pašu uzdevumu, pierakstīt uzdevumā meklējamo kopu šādi: <span class="math display">\[\{ a_0 \in \mathbb{N}\,\mid\,\color{#F00}{\ldots\;\ldots\;\ldots} \}.\]</span></p>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span style="color:darkgreen"><strong>(8) Tipisks piemērs</strong></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p>
+<!-- andreescu-andrica-problems-on-number-theory.pdf, p52 --></section>
+<section><section id="bw.2016.2" class="title-slide slide level1"><h1><lo-sample/> BW.2016.2</h1><p>Pierādīt vai apgāzt sekojošus apgalvojumus:<br />
+<strong>(a)</strong> Jebkuram <span class="math inline">\(k \geq 2\)</span>, un jebkuriem <span class="math inline">\(k\)</span> pēc kārtas sekojošiem naturāliem skaitļiem atradīsies skaitlis, kurš nedalās ne ar vienu pirmskaitli, kas mazāks par <span class="math inline">\(k\)</span>.<br />
+<strong>(b)</strong> Jebkuram <span class="math inline">\(k \geq 2\)</span>, un jebkurai <span class="math inline">\(k\)</span> pēc kārtas sekojošu naturālu skaitļu virknei atradīsies skaitlis, kas ir savstarpējs pirmskaitlis ar visiem citiem virknes locekļiem.</p>
+<p><em>Iedomāsimies, ka abi šie apgalvojumi ir patiesi… Kurš no tiem šķiet interesantāks? Vai kāds no apgalvojumiem seko no otra?</em></p></section><section id="bw.2016.2-a" class="slide level2">
+<h2><lo-reading/> BW.2016.2 (a)</h2>
+<div style="font-size:80%">
 <blockquote>
-<p><strong>IMO.2017.1:</strong> Katram veselam skaitlim <span class="math inline">\(a_0 &gt; 1\)</span>, definē virkni <span class="math inline">\(a_0, a_1, a_2, \ldots\)</span> visiem <span class="math inline">\(n \geq 0\)</span> ar šādu vienādību <span class="math display">\[a_{n+1} = 
-\begin{cases}
-\sqrt{a_n} &amp; \text{ja } \sqrt{a_n} \text{ ir vesels,} \\
-a_n + 3 &amp; \text{citos gadījumos.}
-\end{cases}\]</span> Noteikt visas tās <span class="math inline">\(a_0\)</span> vērtības, kurām eksistē skaitlis <span class="math inline">\(A\)</span>, ka <span class="math inline">\(a_n = A\)</span> bezgalīgi daudzām <span class="math inline">\(n\)</span> vērtībām.</p>
+<p><strong>(a)</strong> Jebkuram <span class="math inline">\(k \geq 2\)</span>, un jebkuriem <span class="math inline">\(k\)</span> pēc kārtas sekojošiem naturāliem skaitļiem atradīsies skaitlis, kurš nedalās ne ar vienu pirmskaitli, kas mazāks par <span class="math inline">\(k\)</span>.</p>
 </blockquote>
-<p><em>Piezīme:</em> Virkne <span class="math inline">\(a_n\)</span> jau ir definēta; jāraksta predikātu izteiksme, kurā apzīmējumu <span class="math inline">\(a_n\)</span> drīkst izmantot.</p>
-</div></section><section id="nt.jun01.5-1" class="slide level2">
-<h2><lo-soln/> NT.JUN01.5</h2>
-<p><span class="math display">\[\{ a_0 \in \mathbb{N}\,\mid\,\color{#F00}{ (\exists A \in \mathbb{N} )(\forall M \in \mathbb{N})(\exists m \in \mathbb{N}) }\]</span> <span class="math display">\[\color{#F00}{n &gt; M \;\text{&amp;}\;a_n = A) }\;\}.\]</span> <strong>Saki:</strong> Visu to naturālo <span class="math inline">\(a_0\)</span> kopa, kuriem eksistē tāds naturāls <span class="math inline">\(A\)</span>, ka jebkuram (t.i. cik patīk lielam) naturālam <span class="math inline">\(M\)</span> atradīsies <span class="math inline">\(n\)</span>, ka <span class="math inline">\(n&gt;M\)</span> un <span class="math inline">\(a_n = A\)</span>.</p>
-<p>Ar kvantoriem var pierakstīt izteikumu “eksistē bezgalīgi daudzi <span class="math inline">\(a_n\)</span>, kam …”.<br />
-Virknītes no <span class="math inline">\(3\)</span> vai vairāk kvantoriem, kuri turklāt mijas (<span class="math inline">\(\exists\forall\exists\)</span> - sk. augstāk), parasti norāda uz vajadzību rūpīgāk izlasīt un saprast uzdevuma nosacījumu.</p>
-<aside class="notes">
-<p>Sarežģītību nosaka nevis pats kvantoru skaits, bet tas, cik reizes tie pārslēdzas uz pretējo. Piemēram, kvantoru virknīte (<span class="math inline">\(\exists\forall\exists\)</span>) norāda uz lielāku sarežģītību nekā <span class="math inline">\((\forall\forall\forall)\)</span> vai (<span class="math inline">\(\exists\exists\exists\)</span>).</p>
-</aside>
+<p>Apgalvojums <strong>(a)</strong> izteikts ar kvantoriem:</p>
+<p><span class="math display">\[(\forall k \geq 2)(\forall n \in \mathbb{N})(\exists i \in \{ n,\ldots,n+(k-1) \})\]</span> <span class="math display">\[(\forall p &lt; k)(i\;\text{NEdalās ar}\;p).\]</span></p>
+<p>Apgalvojuma <strong>(a)</strong> noliegums izteikts ar kvantoriem:</p>
+<p><span class="math display">\[(\exists k \geq 2)(\exists n \in \mathbb{N})(\forall i \in \{ n,\ldots,n+(k-1) \})\]</span> <span class="math display">\[(\exists p &lt; k)(i\;\text{dalās ar}\;p).\]</span></p>
+</div>
+</section><section id="bw.2016.2-a-1" class="slide level2">
+<h2><lo-hints/> BW.2016.2 (a)</h2>
+<p>Apgalvojumu <strong>(a)</strong> var sākt apgāzt ar šādu telegrammu/tvītu:</p>
+<blockquote>
+<p>Skaitlis <span class="math inline">\(1\)</span> neder (ne ar ko nedalās). Tādēļ, sākot ar <span class="math inline">\(2\)</span>, izrakstām skaitļus līdz <span class="math inline">\(k+1\)</span>. Vēlamies, lai jebkurš <span class="math inline">\(2,\ldots,k+1\)</span> dalās ar kādu <span class="math inline">\(p&lt;k\)</span>.</p>
+</blockquote>
+</section><section id="bw.2016.2-1" class="slide level2">
+<h2><lo-soln/> BW.2016.2</h2>
+<p>Pietiek izvēlēties <span class="math inline">\(k=8\)</span> un aplūkot <span class="math inline">\(8\)</span> pēc kārtas sekojošus skaitļus: <span class="math display">\[2,3,4,5,6,7,8,9.\]</span> Katrs no tiem dalās ar kādu pirmskaitli <span class="math inline">\(p &lt; 8\)</span>.</p>
+<p>Atliek pierādīt vai apgāzt <strong>(b)</strong></p>
+</section><section id="liriska-atkāpe---pirms-bw.2016.2-b" class="slide level2">
+<h2><lo-summary/> Liriska atkāpe - pirms BW.2016.2 (b)</h2>
+<div style="font-size:70%">
+<p><strong>Apgalvojums 1:</strong> Saskaitām visus apgrieztos pirmskaitļus līdz <span class="math inline">\(n\)</span>-tajam pirmskaitlim: <span class="math display">\[\frac{1}{2} + \frac{1}{3} + \frac{1}{5} + \ldots + \frac{1}{p_n} = \sum\limits_{i=1}^{n} \frac{1}{p_i},\]</span> Šī summa <em>diverģē</em>: tā pārsniedz patvaļīgi lielu dotu skaitli <span class="math inline">\(M\)</span>: <span class="math display">\[(\forall M \in \mathbb{R})(\exists n\in \mathbb{N})
+\left( \frac{1}{p_1} + \frac{1}{p_2} + \ldots + \frac{1}{p_n} &gt; M \right).\]</span></p>
+<p><strong>Apgalvojums 2:</strong> Eratostēna režģis (tiesa, ar daļēju pārklāšanos) izsvītro vispirms pusi, tad trešdaļu, tad piektdaļu no visiem naturālajiem skaitļiem.<br />
+<blue><strong>BET</strong></blue> šo konstrukciju var turpināt neierobežoti ilgi. Izsvītroto skaitļu īpatsvars vienmēr nedaudz mazāks par <span class="math inline">\(1\)</span>.</p>
+<p><strong>BW.2016.2 (b):</strong> Vai iespējams izveidot Eratostena režģim līdzīgu konstrukciju (izsvītrojot katru otro, trešo, piekto, septīto - ar brīvi izraudzītām nobīdēm), lai katra no svītrošanām skartu vismaz divus skaitļus no visu <span class="math inline">\(k\)</span> skaitļu virknes; turklāt būtu izsvītroti visi?</p>
+</div>
+</section><section id="bw.2016.2-b" class="slide level2">
+<h2><lo-reading/> BW.2016.2 (b)</h2>
+<div style="font-size:80%">
+<blockquote>
+<p><strong>(b)</strong> Jebkuram <span class="math inline">\(k \geq 2\)</span>, un jebkurai <span class="math inline">\(k\)</span> pēc kārtas sekojošu naturālu skaitļu virknei atradīsies skaitlis, kas ir savstarpējs pirmskaitlis ar visiem citiem virknes locekļiem.</p>
+</blockquote>
+<p>Apgalvojums <strong>(b)</strong> izteikts ar kvantoriem (var izvēlēties <span class="math inline">\(i\)</span> no pēc kārtas sekojošu skaitļu virknītes tā, lai visiem <span class="math inline">\(j\)</span> no tās pašas virknītes, ja <span class="math inline">\(j\)</span> atšķiras no <span class="math inline">\(i\)</span>, tad tie ir savstarpēji pirmskaitļi):</p>
+<p><span class="math display">\[(\forall k \geq 2)(\forall n \in \mathbb{N})(\exists i \in \{ n,\ldots,n+(k-1) \})\]</span> <span class="math display">\[(\forall  j \in \{ n,\ldots,n+(k-1) \})(i \neq j \Rightarrow \text{LKD}(i,j)=1).\]</span></p>
+<p>Apgalvojuma <strong>(b)</strong> noliegums izteikts ar kvantoriem (katram <span class="math inline">\(i\)</span> no virknītes atradīsies <span class="math inline">\(j\)</span> no tās pašas virknītes, ka <span class="math inline">\(i\)</span> atšķiras no <span class="math inline">\(j\)</span> <strong>un</strong> tie NAV savstarpēji pirmskaitļi):</p>
+<p><span class="math display">\[(\exists k \geq 2)(\exists n \in \mathbb{N})(\forall i \in \{ n,\ldots,n+(k-1) \})\]</span> <span class="math display">\[(\exists  j \in \{ n,\ldots,n+(k-1) \})(i \neq j \;\mathbb{un}\; \text{LKD}(i,j)&gt;1).\]</span></p>
+</div>
+</section><section id="bw.2016.2-b-1" class="slide level2">
+<h2><lo-hints/> BW.2016.2 (b)</h2>
+<hgroup>
+<p>Ieteikums apgalvojuma <strong>(b)</strong> apgāšanai.</p>
+<blockquote>
+<p>Atbilde ir <span class="math inline">\(17\)</span>: Var atrast <span class="math inline">\(17\)</span> intervālu <span class="math inline">\([n;n+16]\)</span>; kuru var pārklāt ar aritmētiskām progresijām ar diferencēm <span class="math inline">\(d = 2,3,5,7,11,13\)</span> (un no katras progresijas virknē ir vismaz divi locekļi).</p>
+</blockquote>
+<p>(<em>Tika iegūts ar mēģinājumu/kļūdu metodi, pamazām pievienojot jaunas progresijas.</em>)</p>
+</section><section id="bw.2016.2-b-2" class="slide level2">
+<h2><lo-soln/> BW.2016.2 (b)</h2>
+<figure>
+<img data-src="sequences.png" alt="Sequences" /><figcaption>Sequences</figcaption>
+</figure>
+<p>Tie ir <span class="math inline">\(17\)</span> pēc kārtas sekojoši naturāli skaitļi, kas visi ir pirmskaitļi. (<em>Starp citu, arī <span class="math inline">\(17!+2,17!+3,\ldots,17!+18\)</span> ir <span class="math inline">\(17\)</span> pēc kārtas sekojoši salikti skaitļi, bet mūsu piemērā tie būs jūtami mazāki.</em>)</p>
+</section><section id="bw.2016.2-b-3" class="slide level2">
+<h2><lo-soln/> BW.2016.2 (b)</h2>
+<hgroup style="font-size:80%">
+<p>Lai iegūtu skaitli <span class="math inline">\(n\)</span>, kurš apmierina iepriekšējā attēlā</p>
 </section></section>
+<section id="piemērs-2" class="title-slide slide level1"><h1><lo-sample> Piemērs</h1><p>Sauksim režģa punktu <span class="math inline">\(X\)</span> rūtiņu plaknē par <em>redzamu</em> no koordinātu sākumpunkta <span class="math inline">\(O\)</span>, ja nogrieznis <span class="math inline">\(OX\)</span> nesatur citus režģa punktus, izņemot <span class="math inline">\(O\)</span> un <span class="math inline">\(X\)</span>. Pierādīt, ka jebkuram naturālam <span class="math inline">\(n\)</span> eksistē kvadrāts ar <span class="math inline">\(n^2\)</span> režģa punktiem (kur kvadrāta malas ir paralēlas koordinātu asīm), ka neviens no kvadrātā ietilpstošajiem režģa punktiem nav redzams no koordinātu sākumpunkta.</p></section>
 <section id="section-8" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span style="color:darkgreen"><strong>(9) Tipisks piemērs</strong></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span>(19) <a href="#/section-9">Kopsavilkums</a></span></p>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span style="color:darkgreen"><strong>(9) Mājasdarba uzdevumi</strong></span><br />
+<span>(10) <a href="#/section-9">Kopsavilkums</a></span></p>
 </hgroup></section>
-<section><section id="bw.tst.2018.14" class="title-slide slide level1"><h1><lo-sample/> BW.TST.2018.14</h1><p>Par naturālu skaitļu virkni <span class="math inline">\(a_1,a_2,\ldots\)</span> zināms, ka <span class="math inline">\(a_1 = 2\)</span> un visiem <span class="math inline">\(n&gt;1\)</span> skaitlis <span class="math inline">\(a_{n+1}\)</span> ir lielākais pirmskaitlis, ar ko dalās skaitlis <span class="math inline">\(a_1\cdot{}a_2\cdot\ldots\cdot{}a_n+1\)</span>. Pierādīt, ka neviens no šīs virknes locekļiem nav vienāds ne ar <span class="math inline">\(5\)</span>, ne ar <span class="math inline">\(11\)</span>.</p></section><section id="bw.tst.2018.14-1" class="slide level2">
-<h2><lo-reading/> BW.TST.2018.14</h2>
-<p>Uzdevums ir variācija par Eiklīda pazīstamo pierādījumu, ka pirmskaitļu ir bezgalīgi daudz: tiek konstruēta bezgalīga pirmskaitļu virkne <span class="math inline">\(a_1,a_2,\ldots\)</span>.</p>
-<p>Ievērojam, ka pirmskaitļi šajā virknē neatkārtojas.<br />
-No pretējā: Ja pie <span class="math inline">\(m &lt; n\)</span> izpildītos <span class="math inline">\(a_n = a_m\)</span>, tad <span class="math inline">\(a_n\)</span> būtu dalītājs gan skaitlim <span class="math inline">\(A_{n-1} = a_1a_2\cdots{}a_{n-1}\)</span> (jo šajā garajā reizinājumā ietilpst <span class="math inline">\(a_m = a_n\)</span>), gan arī skaitlim <span class="math inline">\(A_{n-1}+1\)</span>.<br />
-Tā ir pretruna, jo <span class="math inline">\(A_{n-1}\)</span> un <span class="math inline">\(A_{n-1} + 1\)</span> ir viens otram sekojoši - tātad ir savstarpēji pirmskaitļi.</p>
-</section><section id="bw.tst.2018.14-2" class="slide level2">
-<h2><lo-reading/> BW.TST.2018.14</h2>
-<p>Lai gan virknē <span class="math inline">\(a_1,a_2,\ldots\)</span> ir bezgalīgi daudz pirmskaitļu (kā jau pamatoja Eiklīds), šī virkne tomēr nesatur <strong>visus</strong> pirmskaitļus. Piemēram, tā nesatur pirmskaitli <span class="math inline">\(5\)</span> (un arī <span class="math inline">\(11\)</span>).</p>
-<p>Pierakstām ar kvantoriem pierādāmo apgalvojumu par <span class="math inline">\(5\)</span>: <span class="math display">\[(\forall n \in \mathbb{N})(a_n \neq 5).\]</span> Lasi: Jebkuram naturālam <span class="math inline">\(n\)</span>, <span class="math inline">\(a_n \neq 5\)</span>.</p>
-<p>Ja gribam pierādīt no pretējā, tad pretējais apgalvojums (kas izrādīsies aplams): <span class="math display">\[(\exists n \in \mathbb{N})(a_n = 5).\]</span> Lasi: Eksistē tāds naturāls <span class="math inline">\(n\)</span>, ka <span class="math inline">\(a_n = 5\)</span>.</p>
-</section><section id="bw.tst.2018.14-3" class="slide level2">
-<h2><lo-soln/> BW.TST.2018.14</h2>
-<p><strong>Stratēģija:</strong> Nepilnā indukcija. Izrakstām dažus virknes locekļus.</p>
-<p><span class="math display">\[a_1 = 2,\; a_2 = 3,\; a_3 = 7,\;a_4 = 43,\;a_5 = 139,\ldots\]</span> (jo <span class="math inline">\(a_1a_2a_3a_4 + 1 = 1807 = 139 \cdot 13\)</span>).</p>
-</section><section id="bw.tst.2018.14-4" class="slide level2">
-<h2><lo-soln/> BW.TST.2018.14</h2>
-<p>Pieņemsim no pretējā, ka eksistē virknes loceklis <span class="math inline">\(a_n\)</span>, kurš vienāds ar <span class="math inline">\(5\)</span>.</p>
-<p>Apzīmējam <span class="math inline">\(A_n = a_1\cdot{}a_2\cdot\ldots\cdot{}a_n+1\)</span>.<br />
-Tas nedalās ar <span class="math inline">\(2\)</span> vai <span class="math inline">\(3\)</span> (jo dod atlikumu <span class="math inline">\(1\)</span>). <span class="math inline">\(A_n\)</span> nevar dalīties ar pirmskaitļiem, kas lielāki par <span class="math inline">\(5\)</span>, jo katrā solī par <span class="math inline">\(a_{n+1}\)</span> izvēlamies lielāko <span class="math inline">\(A_n\)</span> dalītāju.</p>
-<p>Tātad, lai virknē <span class="math inline">\((a_n)\)</span> būtu skaitlis <span class="math inline">\(5\)</span>, jāizpildās <span class="math display">\[A_n = a_1a_2\cdots{}a_n + 1 = 5^m.\]</span></p>
-</section><section id="bw.tst.2018.14-5" class="slide level2">
-<h2><lo-soln/> BW.TST.2018.14</h2>
-<p><strong>Apgalvojums:</strong> Skaitlis <span class="math inline">\(5^n\)</span> katram <span class="math inline">\(n\)</span> dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(4\)</span>.</p>
-<p><strong>Pierādījums:</strong> Reizinot divus vai vairāk skaitļus, kuri dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(5\)</span>, rodas rezultāts, kurš arī dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(5\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
-</section><section id="bw.tst.2018.14-6" class="slide level2">
-<h2><lo-soln/> BW.TST.2018.14</h2>
-<p>Pēc mūsu pieņēmuma, eksistē <span class="math inline">\(A_n = 5^m\)</span>. Tas dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(4\)</span> jeb <span class="math display">\[A_n - 1 = a_1a_2\cdots{}a_n\]</span> dalās ar <span class="math inline">\(4\)</span>.</p>
-<p>Tas nav iespējams, jo <span class="math inline">\(a_1 = 2\)</span>, bet visi citi <span class="math inline">\(a_i\)</span> ir pirmskaitļi (tātad nepāru skaitļi). <span class="math inline">\(\blacksquare\)</span></p>
-</section><section id="bw.tst.2018.14-pabeigt-patstāvīgi" class="slide level2">
-<h2><lo-soln/> BW.TST.2018.14 (pabeigt patstāvīgi)</h2>
-<p><strong>Apgalvojums:</strong> Virknē <span class="math inline">\(a_n\)</span> nav locekļa, kas vienāds ar <span class="math inline">\(11\)</span>.</p>
-<p><strong>Ieteikums:</strong> Līdzīgi kā iepriekš - var pamatot, ka rodas pretruna no pieņēmuma, ka <span class="math inline">\(A_n = 5^k\cdot{}11^{\ell}\)</span>.</p>
-<p>Vispirms parāda, ka <span class="math inline">\(\ell = 2\ell_1 + 1\)</span> ir nepāru skaitlis.<br />
-Tad parāda, ka var izteikt arī <span class="math inline">\(k = 2k_1+1\)</span> un arī <span class="math inline">\(k\)</span> ir nepāru.<br />
-Visbeidzot var parādīt, ka neviens skaitlis formā <span class="math display">\[55 \cdot 5^{2k_1} \cdot 11^{2\ell_1} = 55 \cdot 25^{k_1} \cdot 121^{\ell_1}\]</span> nevar dot atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(7\)</span>.</p>
-<p>No otras puses, <span class="math inline">\(A_n = a_1a_2a_3\cdots{}a_n+1\)</span> noteikti dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(7\)</span>, jo <span class="math inline">\(a_3 = 7\)</span>. Iegūta pretruna.</p>
-</section></section>
+<section id="nt.jun02.md1" class="title-slide slide level1"><h1><lo-sample/> NT.JUN02.MD1</h1><p>Pierādīt, ka jebkuram naturālam skaitlim <span class="math inline">\(n\)</span>, ir <span class="math inline">\(n\)</span> pēc kārtas sekojoši naturāli skaitļi, ka jebkurm no tiem ir dalītājs, kas ir pilns kvadrāts, kas lielāks par <span class="math inline">\(1\)</span>.</p></section>
+<section id="nt.jun02.md2" class="title-slide slide level1"><h1><lo-sample/> NT.JUN02.MD2</h1><p>Katram naturālam skaitlim <span class="math inline">\(n\)</span>, ir <span class="math inline">\(n\)</span> pēc kārtas sekojoši naturāli skaitļi, no kuriem neviens nav <em>potents skaitlis</em>.<br />
+<em>Piezīme:</em> Par <em>potentu</em> saucam naturālu skaitli <span class="math inline">\(n\)</span>, ka jebkuram pirmskaitlim <span class="math inline">\(p\)</span>: ja <span class="math inline">\(n\)</span> dalās ar <span class="math inline">\(p\)</span>, tad <span class="math inline">\(n\)</span> dalās arī ar <span class="math inline">\(p^2\)</span>. Sk. <a href="https://en.wikipedia.org/wiki/Powerful%5Fnumber">Powerful number</a>.</p></section>
+<section id="nt.jun02.md3" class="title-slide slide level1"><h1><lo-sample/> NT.JUN02.MD3</h1><p>Dotajam naturālam skaitlim <span class="math inline">\(n\)</span>, ar <span class="math inline">\(f(n)\)</span> apzīmējam mazāko naturālo skaitli, ka <span class="math inline">\({\displaystyle \sum\limits_{k=1}^{f(n)} k}\)</span> dalās ar <span class="math inline">\(n\)</span>. Pierādīt, ka <span class="math inline">\(f(n) = 2n-1\)</span> tad un tikai tad, ja <span class="math inline">\(n\)</span> ir skaitļa <span class="math inline">\(2\)</span> pakāpe.</p></section>
+<section id="nt.jun02.md4" class="title-slide slide level1"><h1><lo-sample/> NT.JUN02.MD4</h1><p>Ar <span class="math inline">\(n\)</span> un <span class="math inline">\(k\)</span> apzīmējam veselus skaitļus, ka <span class="math inline">\(n&gt;0\)</span> un skaitlis <span class="math inline">\(k(n-1)\)</span> ir pāra skaitlis. Pierādīt, ka eksistē skaitļi <span class="math inline">\(x\)</span> un <span class="math inline">\(y\)</span>, ka <span class="math inline">\(\text{LKD}(x,n) = \text{LKD}(y,n) = 1\)</span> un <span class="math inline">\(x + y \equiv k\;(\text{mod}\,n)\)</span>.</p></section>
+<section id="nt.jun02.md5" class="title-slide slide level1"><h1><lo-sample/> NT.JUN02.MD5</h1><p>Dots naturāls skaitlis <span class="math inline">\(x\)</span>. Pierādīt, ka ir <span class="math inline">\(n\)</span> pēc kārtas sekojoši naturāli skaitļi, no kuriem neviens nav pirmskaitļa pakāpe.</p></section>
+<section id="nt.jun02.md6" class="title-slide slide level1"><h1><lo-sample/> NT.JUN02.MD6</h1><p>Ar <span class="math inline">\(m, n\)</span> apzīmēti naturāli skaitļi, kas apmierina šādu īpašību: <span class="math display">\[\text{LKD}(11k-1,m) = \text{LKD}(11k-1,n)\]</span> ir spēkā visiem naturāliem skaitļiem <span class="math inline">\(k\)</span>. Pierādīt, ka <span class="math inline">\(m = 11^r \cdot n\)</span> kādam veselam skaitlim <span class="math inline">\(r\)</span>.</p></section>
 <section id="section-9" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
+Skaitļu teorija:<br/> NMS Juniori 2019-12-14
 </h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
+<p><blue>3.nodaļa: Ķīniešu atlikumu teorēma</blue></p>
 </hgroup>
-<hgroup>
+<hgroup style="font-size:70%">
 <p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span style="color:darkgreen"><strong>(10) Mājasdarba uzdevumi</strong></span><br />
-<span>(11) <a href="#/section-10">Kopsavilkums</a></span></p>
+<span>(2) <a href="#/section-1">Bezū identitāte kā vienādojums</a></span><br />
+<span>(3) <a href="#/section-2">Lineāra kongruence ar 1 mainīgo</a></span><br />
+<span>(4) <a href="#/section-3">Ķīniešu atlikumu teorēma</a></span><br />
+<span>(5) <a href="#/section-4">Algoritms moduļa atrašanai</a></span><br />
+<span>(6) <a href="#/section-5">Skaitļi ar speciālām īpašībām</a></span><br />
+<span>(7) <a href="#/section-6">Reducēšana uz p pakāpēm</a></span><br />
+<span>(8) <a href="#/section-7">Tipisks piemērs</a></span><br />
+<span>(9) <a href="#/section-8">Mājasdarba uzdevumi</a></span><br />
+<span style="color:darkgreen"><strong>(10) Kopsavilkums</strong></span></p>
 </hgroup></section>
-<section><section id="nt.jun01.md1" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.MD1</h1><p>Dota kopa <span class="math inline">\(S = \{ 105,106,\ldots,210 \}\)</span>. Noteikt mazāko naturālo <span class="math inline">\(n\)</span> vērtību, ka, izvēloties jebkuru <span class="math inline">\(n\)</span> skaitļu apakškopu <span class="math inline">\(T\)</span> no kopas <span class="math inline">\(S\)</span>, tajā būs vismaz divi skaitļi, kuri nav savstarpēji pirmskaitļi.</p></section><section id="nt.jun01.md1-1" class="slide level2">
-<h2><lo-reading/> NT.JUN01.MD1</h2>
-<ul>
-<li>Kurā kopā meklējam skaitļus, kuri nav savstarpēji pirmskaitļi?</li>
-<li>Kas notiek, ja izraudzītā kopa satur ļoti nedaudzus skaitļus (divus, trīs, četrus)? Ja tā satur gandrīz visus kopas <span class="math inline">\(S\)</span> elementus?</li>
-<li>Ja <span class="math inline">\(n\)</span> ir mazākā vērtība, kas apmierina uzdevuma nosacījumu, ko var apgalvot par vēl mazāku skaitli: <span class="math inline">\(n-1\)</span>? Kādu īpašību tas apmierina?</li>
-</ul>
-</section><section id="nt.jun01.md1-2" class="slide level2">
-<h2><lo-strategies/> NT.JUN01.MD1</h2>
-<p>TODO: Monotonas funkcijas starp divām vērtībām. Līdz kādai vietai eksistēs arvien lielākas kopas, kurās savstarpēju pirmskaitļu nav.<br />
-Sākot ar noteiktu mazāko <span class="math inline">\(n\)</span> (kurš uzdevumā jāatrod) - savstarpēji pirmskaitļi būs neatkarīgi no <span class="math inline">\(T\)</span> izvēles, ja vien <span class="math inline">\(|T|=n\)</span>.</p>
-</section></section>
-<section><section id="nt.jun01.md2" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.MD2</h1><p>Visiem veseliem pozitīviem skaitļiem <span class="math inline">\(m &gt; n\)</span> pierādīt, ka <span class="math display">\[\mbox{MKD}(m,n) + \mbox{MKD}(m+1,n+1) &gt; \frac{2mn}{\sqrt{m-n}}.\]</span></p></section><section id="nt.jun01.md2-1" class="slide level2">
-<h2><lo-strategies/> NT.JUN01.MD2</h2>
-<ul>
-<li>Vai prasība <span class="math inline">\(m &gt; n\)</span> ir būtiska? Vai bez tās šāda veida nevienādība pārstāj būt spēkā?</li>
-<li>Kas notiek robežgadījumos: Ja viens no skaitļiem ir <span class="math inline">\(1\)</span>? Ja <span class="math inline">\(n, m\)</span> un arī <span class="math inline">\(m+1,n+1\)</span> ir savstarpēji pirmskaitļi? Ja <span class="math inline">\(m = 2n\)</span>?</li>
-<li>Kuras nevienādības mums atgādina nevienādība ar kvadrātsakni?</li>
-</ul>
-</section><section id="nt.jun01.md2-2" class="slide level2">
-<h2><lo-hints/> NT.JUN01.MD2</h2>
-<p>Sākam zīmēt <span class="math inline">\(\text{MKD}(m,n)\)</span> tabuliņā (<span class="math inline">\(m\)</span> ass pa labi, <span class="math inline">\(n\)</span> ass uz leju).<br />
-Mums interesē divu MKD summa pa diagonāli. Var tai vietā skatīties <span class="math display">\[\mbox{MKD}(m,n) + \mbox{MKD}(m,n+1),\]</span> ja <span class="math inline">\(m &gt;&gt; n\)</span>.</p>
-</section></section>
-<section><section id="nt.jun01.md3" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.MD3</h1><p>Vai eksistē bezgalīga stingri augoša naturālu skaitļu virkne <span class="math inline">\(a_1 &lt; a_2 &lt; a_3 &lt;\ldots\)</span>, ka jebkuram fiksētam naturālam skaitlim <span class="math inline">\(a\)</span> virknē <span class="math inline">\(a_1+a &lt; a_2+a &lt; a_3 + a,\ldots\)</span> ir tikai galīgs skaits pirmskaitļu?</p></section><section id="nt.jun01.md3-1" class="slide level2">
-<h2><lo-reading/> NT.JUN01.MD3</h2>
-<p>TODO: Attēlot neregulāru virkni, kuru nobīda pa <span class="math inline">\(a\)</span> (kur <span class="math inline">\(a\)</span> pieņem dažādas vērtības).<br />
-Izskaidrot vārdkopu “ne vairāk kā galīgs skaits” - drīkst būt arī <span class="math inline">\(0\)</span> pirmskaitļu.</p>
-</section><section id="nt.jun01.md3-2" class="slide level2">
-<h2><lo-hints/> NT.JUN01.MD3</h2>
-<ul>
-<li>Vai eksistē bezgalīgi gari gabali bez pirmskaitļiem?</li>
-<li>Vai faktoriālu var lietot tīrā veidā?</li>
-</ul>
-</section></section>
-<section><section id="nt.jun01.md4" class="title-slide slide level1"><h1><lo-sample/> NT.JUN01.MD4</h1><p>Pierādīt, ka virkne <span class="math inline">\(1,11,111,\ldots\)</span> satur bezgalīgu apakšvirkni, kuras katri divi locekļi ir savstarpēji pirmskaitļi.</p></section><section id="par-daudziem-vieniniekiem" class="slide level2">
-<h2><lo-yellow/> Par daudziem vieniniekiem</h2>
-<p>Virkne <span class="math inline">\(1,11,111,\ldots\)</span> jebkuram skaitlim <span class="math inline">\(a\)</span> (kurš nedalās ar <span class="math inline">\(3\)</span>) ļauj atrast īsāko periodu, ja <span class="math inline">\(1/a\)</span> pieraksta kā bezgalīgu decimāldaļu.</p>
-<ul>
-<li><span class="math inline">\(111111\)</span> dalās ar <span class="math inline">\(7\)</span>. Tātad <span class="math inline">\(1/7\)</span> būs <span class="math inline">\(6\)</span>-ciparu periods. <span class="math display">\[1/7 = 0.(142857) = 0.142857142857142857\ldots.\]</span></li>
-<li><span class="math inline">\(111\ldots{}111\)</span> (tieši <span class="math inline">\(40\)</span> vieninieki) dalās ar <span class="math inline">\(41\)</span>. (Tas izriet no Mazās Fermā teorēmas, ko skatīsimies nākamreiz.)<br />
-Bet jau <span class="math inline">\(11111\)</span> dalās ar <span class="math inline">\(41\)</span>. Tātad <span class="math inline">\(1/41\)</span> decimālpierakstā ir daudz īsāks - <span class="math inline">\(5\)</span>-ciparu periodds. <span class="math display">\[1/41 = 0.(02439) = 0.024390243902439\ldots.\]</span></li>
-</ul>
-</section></section>
-<section id="section-10" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:32pt">
-Skaitļu teorija:<br/> NMS Juniori 2019-09-28
-</h1>
-<p><blue>Pirmskaitļi un dalāmība</blue></p>
-</hgroup>
-<hgroup>
-<p><span>(1) <a href="#/section">Ievads</a></span><br />
-<span>(2) <a href="#/section-1">Dalāmība un dalīšana</a></span><br />
-<span>(3) <a href="#/section-2">Dalītāju skaits</a></span><br />
-<span>(4) <a href="#/section-3">Pirmskaitļu izvietojums</a></span><br />
-<span>(5) <a href="#/section-4">Mersena un Fermā skaitļi</a></span><br />
-<span>(6) <a href="#/section-5">Aritmētikas pamatteorēma</a></span><br />
-<span>(7) <a href="#/section-6">LKD un MKD</a></span><br />
-<span>(8) <a href="#/section-7">Kvantoru pieraksts</a></span><br />
-<span>(9) <a href="#/section-8">Tipisks piemērs</a></span><br />
-<span>(10) <a href="#/section-9">Mājasdarba uzdevumi</a></span><br />
-<span style="color:darkgreen"><strong>(11) Kopsavilkums</strong></span></p>
-</hgroup></section>
-<section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-theory/> Ko darījām šajā nodarbībā?</h1><ol type="1">
-<li>Lietojām dalāmības attiecības īpašības un atradām naturālu skaitļu dalītāju skaitu.</li>
-<li>Izmantojām skaitļa viennozīmīgu dalījumu pirmreizinātājos.</li>
-<li>Definējām lielāko kopīgo dalītāju (LKD) un mazāko kopīgo dalāmo (MKD), to īpašības un atrašanas metodes.</li>
-</ol></section>
-<section id="atsauces" class="title-slide slide level1"><h1><lo-theory/> Atsauces</h1><ol type="1">
-<li>T.Andreescu, D.Andrica, Z.Feng. 104 Number Theory Problems. Birkhäuser.</li>
-</ol></section>
+<section id="ko-apguvām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-summary/> Ko apguvām šajā nodarbībā</h1><ul>
+<li>Lietojām ķīniešu atlikumu teorēmu piemēru konstruēšanai</li>
+<li>Lietojām ķīniešu atlikumu teorēmu reducēšanai uz pirmskaitļu pakāpēm</li>
+</ul></section>
     </div>
   </div>
 

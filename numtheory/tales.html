@@ -47,7 +47,11 @@ bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</p>
 
 <ul>
 {% for tale in global_tales %}
-<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a> ({{tale.date}})</li></li>
+{% if tale.nolink is defined %}
+<li><i>{{tale.title}} (TBD)</i> ({{tale.date}})</li>
+{% else %}
+<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a> ({{tale.date}})</li>
+{% endif %}
 {% endfor %}
 </ul>
 

@@ -58,8 +58,15 @@ class AlgorithmsHandler(webapp2.RequestHandler):
         {
             'id':'Algorithms.AsymmetricCryptography',
             'dir':'tale-asymmetric-cryptography-part1',
-            'title': u'Asimetriskā kriptogrāfija - 1',
+            'title': u'Kriptogrāfiskie algoritmi - 1',
             'date': '2019-10-22'                        
+        },
+        {
+            'id':'Algorithms.AsymmetricCryptography',
+            'dir':'tale-asymmetric-cryptography-part2',
+            'title': u'Kriptogrāfiskie algoritmi - 2',
+            'date': '2019-10-29',
+            'nolink': 'True'                        
         },
         {
             'id':'Algorithms.LinearOptimization1',
@@ -77,9 +84,9 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'id':'Algorithms.LinearOptimization3',
             'dir':'tale-linear-optimization-part3',
             'title': u'Lineārā optimizācija - 3',
-            'date': '2019-11-19',
-            'attachment': u'../algorithms-bin/liet2008-11-v2.doc',
-            'attachmentTitle': u'Vēst.lekcija: Lineārā programmēšana IV'
+            'date': '2019-11-19'
+            #'attachment': u'../algorithms-bin/liet2008-11-v2.doc',
+            #'attachmentTitle': u'Vēst.lekcija: Lineārā programmēšana IV' 
         },
         {
             'id':'Algorithms.StringSearching1',
@@ -92,7 +99,14 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             'dir':'tale-string-searching-part2',
             'title': u'Virkņu meklēšana - 2',
             'date': '2019-12-03'                        
-        }
+        },
+        {
+            'id':'Algorithms.StringSearching3',
+            'dir':'tale-string-searching-part3',
+            'title': u'Virkņu meklēšana - 3',
+            'date': '2019-12-10',
+            'nolink' : 'True'
+        }, 
  
     ]       
 

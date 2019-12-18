@@ -46,9 +46,14 @@ bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
 <tr><th>Tēma</th><th>Datums</th></tr>
 {% for tale in tales %}
 <tr><td>
+
+{% if tale.nolink is defined %}
+<i>{{tale.title}}</i></li>
+{% else %}
 <a href="../algorithms-tales/{{tale.dir}}/content.html">{{tale.title}}</a>
 {% if tale.attachment is defined %}
 <br/><a href="{{tale.attachment}}">{{tale.attachmentTitle}}</a>
+{% endif %}
 {% endif %}
 </td>
 <td>{{tale.date}}</td></tr>

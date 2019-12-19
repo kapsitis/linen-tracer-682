@@ -195,7 +195,7 @@ Ja $x$ nav sastopams vārdā, tad $\lambda[x]=-1$.
 Piemēram, ja $P=\mathtt{abcab}$, tad tabula izskatās šādi:
 
 <table>
-<tr><th>$x$</th><td>$\mathtt{a}$</td><td>$\mathtt{a}$</td><td>$\mathtt{a}$</td><td>$\mathtt{*}$</td></tr>
+<tr><th>$x$</th><td>$\mathtt{a}$</td><td>$\mathtt{b}$</td><td>$\mathtt{c}$</td><td>$\mathtt{*}$</td></tr>
 <tr><th>$\lambda(x)$</th><td>$3$</td><td>$4$</td><td>$2$</td><td>$-1$</td></tr>
 </table>
 
@@ -254,11 +254,11 @@ Ja tāds $j$ neeksistē, tad $\gamma[i] = m$;
 
 ## <lo-summary/> Labā sufiksa tabulas piemērs
 
-Vārdam $T = \mathtt{abcab}$ labā sufiksa tabula izskatīsies šādi:
+Meklējamam paraugam $P = \mathtt{abcab}$ labā sufiksa tabula izskatīsies šādi:
 
 <table>
-<tr><th>$j$</th><td>$5$</td><td>$4$</td><td>$3$</td><td>$2$</td><td>$1$</td><td>$0$</td></tr>
-<tr><th>$\gamma[j]$</th><td>$1$</td><td>$3$</td><td>$3$</td><td>$3$</td><td>$3$</td><td>$3$</td></tr>
+<tr><th>$j$</th><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td></tr>
+<tr><th>$\gamma[j]$</th><td>$3$</td><td>$3$</td><td>$3$</td><td>$3$</td><td>$5$</td><td>$1$</td></tr>
 </table>
 
 Saturiski, tas nozīmē, ka ja nav sakritis pēdējais simbols, 
@@ -306,7 +306,7 @@ $P[4]=T[i+4]=\mathtt{b}$, jo $\mathtt{b}$ vārdā $P$ ir tikai $P[4]$ un $P[1]$.
 </tr>
 <tr>
 <td>8</td>
-<td class="ind1">$\gamma[j] = \max(\gamma[j], l - \pi'[l])$</td>
+<td class="ind1">$\gamma[j] = \min(\gamma[j], l - \pi'[l])$</td>
 </tr>
 <tr>
 <td>9</td>
@@ -397,6 +397,96 @@ pārvietojamies $3$ simbolus uz priekšu un mēģinām vēl.
 
 
 </hgroup>
+
+
+# Sliktā simbola tabulas piemērs
+
+<!--
+Misleading video :)
+
+-->
+
+
+# <lo-sample/> Tikai sliktā simbola tabula?
+
+Praktiskai apakšvirkņu meklēšanai lielajā vairumā gadījumu pietiktu 
+ar sliktā simbola tabulu vienu pašu. Varētu rakstīt šādu pseidokodu:
+
+<table class="pseudocode">
+<td>8</td>
+<td class="ind1"><b>if</b> $j=0$ <b>then</b></td>
+</tr>
+<tr>
+<td>9</td>
+<td class="ind2">print <tt style="font-family:'Courier New'">"Paraugs parādās ar nobīdi"</tt> $s$</td>
+</tr>
+<tr>
+<td>10</td>
+<td class="ind2">$s = s+ \gamma[0]$</td>
+</tr>
+<tr>
+<td>11</td>
+<td class="ind1"><b>else</b> $s = s + \max(\color{#F00}{1}, j-1-\lambda[T[s+j-1]])$</td>
+</tr>
+</table>
+
+Tai vietā, lai rakstītu "labā sufiksa likumu" $\gamma[j]$, ievietojam vērtību $1$. 
+Ja $T = \mathtt{BBBBBBBBBB...BBB}$ un 
+paraugs ir $T = \mathtt{ABBBB}$, kļūst par "naivo" algoritmu.
+
+
+
+
+
+
+
+
+<!-- 
+Video par Bojera Mūra algoritmu
+ 
+
+Krāsojumu video (bet bez piemēriem ar stringiem)
+https://www.youtube.com/watch?v=lkL6RkQvpMM
+
+Weak and Strong 
+-->
+
+
+# <lo-sample/> Labā sufiksa tabulas piemērs
+
+Aplūkosim paraugu $P = \mathtt{CTTACTTAC}$. 
+
+Pamatosim, ka labā sufiksa tabula ir šāda:
+
+<table>
+<tr><th>$j$</th>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><th>$\gamma(j)$</th>
+<td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>8</td><td>8</td><td>8</td><td>8</td><td>1</td></tr>
+</table>
+
+
+
+
+# <lo-yellow/> Norādes
+
+BM algoritma aprēķinu piemēri - dažnedažādi piemēri 
+(tostarp dīvainas un pat kļūdainas interpretācijas). 
+
+1. [Lekciju konspekts](../algorithms-bin/liet2008-13-v3.doc) - Noderīgi pseidokodi, bet 
+labā sufiksa tabulas piemēram "abcab" izmanto "vājo" definīciju.
+2. [BM algoritma vispārīgs apraksts](https://www.youtube.com/watch?v=4Xyhb72LCX4) - "Ģenētisks" virkņu meklēšanas piemērs; 
+labi skaidrots, bet arī tur labā sufiksa tabulas rēķināšanai izmanto "vājo" definīciju.
+3. [Sliktā simbola tabula](https://www.youtube.com/watch?v=G-h1Dph9IOE) - Sliktā simbola tabulu 
+definē neparasti ($m - \lambda(j)$ mūsu apzīmējumos) un to pašu rēķina kļūdaini. 
+4. [Labo sufiksu tabulas zīmējums](https://www.youtube.com/watch?v=lkL6RkQvpMM) - tikai 
+grafisks attēlojums bez burtu piemēriem.
+
+
+
+
+
+
 
 
 

@@ -287,10 +287,10 @@ sliktā simbola tabulu <span class="math inline">\(\lambda\)</span> un labā suf
 <span class="math inline">\(\mathtt{a}\)</span>
 </td>
 <td>
-<span class="math inline">\(\mathtt{a}\)</span>
+<span class="math inline">\(\mathtt{b}\)</span>
 </td>
 <td>
-<span class="math inline">\(\mathtt{a}\)</span>
+<span class="math inline">\(\mathtt{c}\)</span>
 </td>
 <td>
 <span class="math inline">\(\mathtt{*}\)</span>
@@ -374,29 +374,29 @@ Bad_Character_Table(<span class="math inline">\(P\)</span>)
 </ul></li>
 </ul></section><section id="labā-sufiksa-tabulas-piemērs" class="slide level2">
 <h2><lo-summary/> Labā sufiksa tabulas piemērs</h2>
-<p>Vārdam <span class="math inline">\(T = \mathtt{abcab}\)</span> labā sufiksa tabula izskatīsies šādi:</p>
+<p>Meklējamam paraugam <span class="math inline">\(P = \mathtt{abcab}\)</span> labā sufiksa tabula izskatīsies šādi:</p>
 <table>
 <tr>
 <th>
 <span class="math inline">\(j\)</span>
 </th>
 <td>
-<span class="math inline">\(5\)</span>
-</td>
-<td>
-<span class="math inline">\(4\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
-</td>
-<td>
-<span class="math inline">\(2\)</span>
+<span class="math inline">\(0\)</span>
 </td>
 <td>
 <span class="math inline">\(1\)</span>
 </td>
 <td>
-<span class="math inline">\(0\)</span>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(4\)</span>
+</td>
+<td>
+<span class="math inline">\(5\)</span>
 </td>
 </tr>
 <tr>
@@ -404,22 +404,22 @@ Bad_Character_Table(<span class="math inline">\(P\)</span>)
 <span class="math inline">\(\gamma[j]\)</span>
 </th>
 <td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(5\)</span>
+</td>
+<td>
 <span class="math inline">\(1\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
-</td>
-<td>
-<span class="math inline">\(3\)</span>
 </td>
 </tr>
 </table>
@@ -494,7 +494,7 @@ Bad_Character_Table(<span class="math inline">\(P\)</span>)
 8
 </td>
 <td class="ind1">
-<span class="math inline">\(\gamma[j] = \max(\gamma[j], l - \pi&#39;[l])\)</span>
+<span class="math inline">\(\gamma[j] = \min(\gamma[j], l - \pi&#39;[l])\)</span>
 </td>
 </tr>
 <tr>
@@ -743,6 +743,135 @@ Meklējam no labās puses uz kreiso: Katra rindiņa attēlo vienu mēģinājumu 
 <li>Pēdējais mēģinājums ir neveiksmīgs un tad esam sasnieguši teksta beigas.</li>
 </ol>
 </hgroup></section>
+<section id="sliktā-simbola-tabulas-piemērs" class="title-slide slide level1"><h1>Sliktā simbola tabulas piemērs</h1><!--
+Misleading video :)
+
+--></section>
+<section id="tikai-sliktā-simbola-tabula" class="title-slide slide level1"><h1><lo-sample/> Tikai sliktā simbola tabula?</h1><p>Praktiskai apakšvirkņu meklēšanai lielajā vairumā gadījumu pietiktu ar sliktā simbola tabulu vienu pašu. Varētu rakstīt šādu pseidokodu:</p>
+<table class="pseudocode">
+<td>
+8
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(j=0\)</span> <b>then</b>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td class="ind2">
+print <tt style="font-family:'Courier New'">“Paraugs parādās ar nobīdi”</tt> <span class="math inline">\(s\)</span>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind2">
+<span class="math inline">\(s = s+ \gamma[0]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td class="ind1">
+<b>else</b> <span class="math inline">\(s = s + \max(\color{#F00}{1}, j-1-\lambda[T[s+j-1]])\)</span>
+</td>
+</tr>
+</table>
+<p>Tai vietā, lai rakstītu “labā sufiksa likumu” <span class="math inline">\(\gamma[j]\)</span>, ievietojam vērtību <span class="math inline">\(1\)</span>. Ja <span class="math inline">\(T = \mathtt{BBBBBBBBBB...BBB}\)</span> un paraugs ir <span class="math inline">\(T = \mathtt{ABBBB}\)</span>, kļūst par “naivo” algoritmu.</p>
+<!-- 
+Video par Bojera Mūra algoritmu
+ 
+
+Krāsojumu video (bet bez piemēriem ar stringiem)
+https://www.youtube.com/watch?v=lkL6RkQvpMM
+
+Weak and Strong 
+--></section>
+<section id="labā-sufiksa-tabulas-piemērs-1" class="title-slide slide level1"><h1><lo-sample/> Labā sufiksa tabulas piemērs</h1><p>Aplūkosim paraugu <span class="math inline">\(P = \mathtt{CTTACTTAC}\)</span>.</p>
+<p>Pamatosim, ka labā sufiksa tabula ir šāda:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(j\)</span>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\gamma(j)\)</span>
+</th>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+8
+</td>
+<td>
+8
+</td>
+<td>
+8
+</td>
+<td>
+8
+</td>
+<td>
+1
+</td>
+</tr>
+</table></section>
+<section id="norādes" class="title-slide slide level1"><h1><lo-yellow/> Norādes</h1><p>BM algoritma aprēķinu piemēri - dažnedažādi piemēri (tostarp dīvainas un pat kļūdainas interpretācijas).</p>
+<ol type="1">
+<li><a href="../algorithms-bin/liet2008-13-v3.doc">Lekciju konspekts</a> - Noderīgi pseidokodi, bet labā sufiksa tabulas piemēram “abcab” izmanto “vājo” definīciju.</li>
+<li><a href="https://www.youtube.com/watch?v=4Xyhb72LCX4">BM algoritma vispārīgs apraksts</a> - “Ģenētisks” virkņu meklēšanas piemērs; labi skaidrots, bet arī tur labā sufiksa tabulas rēķināšanai izmanto “vājo” definīciju.</li>
+<li><a href="https://www.youtube.com/watch?v=G-h1Dph9IOE">Sliktā simbola tabula</a> - Sliktā simbola tabulu definē neparasti (<span class="math inline">\(m - \lambda(j)\)</span> mūsu apzīmējumos) un to pašu rēķina kļūdaini.</li>
+<li><a href="https://www.youtube.com/watch?v=lkL6RkQvpMM">Labo sufiksu tabulas zīmējums</a> - tikai grafisks attēlojums bez burtu piemēriem.</li>
+</ol></section>
 <section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Lietišķie algoritmi

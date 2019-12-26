@@ -11,6 +11,12 @@ jinja_env = jinja2.Environment(
 
 class DiscreteHandler(webapp2.RequestHandler):   
     tales = [
+        {
+            'id':'logic-part1', 
+            'dir':'tale-logic-part1',
+            'title': u'Logic and Proofs - 1',
+            'date': '2020-01-07'
+        },        
     ]
     
     other_tales = [

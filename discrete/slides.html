@@ -30,7 +30,29 @@
 </table>
 
 
-<p>TBD</p>
+<p><small>Keyboard shortcuts in Reveal.JS slidedecks:
+<b>S</b> - Speaker's view; <b>F</b> - Full-screen view; 
+<b>Esc</b> - Overview; <b>Home</b> - To the Start; <b>End</b> - To the End; 
+arrows <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
+
+
+<table class="schedule">
+<tr><th>Topic</th><th>Date</th></tr>
+{% for tale in tales %}
+<tr><td>
+
+{% if tale.nolink is defined %}
+<i>{{tale.title}}</i></li>
+{% else %}
+<a href="../discrete-tales/{{tale.dir}}/content.html">{{tale.title}}</a>
+{% if tale.attachment is defined %}
+<br/><a href="{{tale.attachment}}">{{tale.attachmentTitle}}</a>
+{% endif %}
+{% endif %}
+</td>
+<td>{{tale.date}}</td></tr>
+{% endfor %}
+</table>
 
 
 

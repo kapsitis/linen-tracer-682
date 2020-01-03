@@ -120,8 +120,68 @@ during his/her lifetime? How much is really needed, what is their ROI?
 </hgroup>
 
 
+# <lo-summary/> Main Inspirations
+
+<div style="font-size:70%">
+
+<dl>
+<dt>Theory topics and proofs</dt>
+<dd>Course Textbook: K. Rosen. Discrete Mathematics and its Applications.</dd>
+<dt>Coq proof assistant</dt>
+<dd>[
+<dd>[CSE 191 at SUNY Buffalo](https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html) by M.Knepley.  
+[Nahas Tutorial](https://mdnahas.github.io/doc/nahas_tutorial.html)
+</dd>
+</dl>
 
 
+# <lo-summary/> Inspiration for Tasks
+
+* Course Textbook. K. Rosen. Discrete Mathematics and its Applications. (Homework problems.)
+* [Archive for Latvian Math Olympiads](http://nms.lu.lv/uzdevumu-arhivs/latvijas-olimpiades/). 
+(Proofs that require only high school math knowledge. In particular, problems in 
+Number theory and Counting/Combinatorics.)
+* [Мендельсон, Э. Введение в математическую логику. Москва, Наука, 1971.](http://ikfia.ysn.ru/wp-content/uploads/2018/01/Mendelson1971ru.pdf) (Propositional and Predicate Logic - statements and axioms).
+
+
+</div>
+
+
+
+::: notes
+
+See also https://ikfia.ysn.ru/news/matematicheskaya-logika/
+
+::: 
+
+
+
+# <lo-black/> Stories and Surprises
+
+<hgroup style="font-size:70%">
+
+Management and engineering have opposite view of surprises. 
+Here is what prof. Jānis Bārzdiņš had to say about a related subject:
+
+> *Theory of Algorithms* is **not** about the existence of this or that
+> useful algorithm. (The rest of Computer Science cares about that.) 
+> *Theory of Algorithms* shows that it is impossible to solve certain problems
+> or when any attempt becomes prohibitively slow or otherwise infeasible.
+
+</hgroup>
+<hgroup style="font-size:70%">
+
+* Non-constructive proofs that something exists (*Law of Excluded Middle*)
+* Some infinities are more infinite than others (*Set cardinality*)
+* Naturally defined multiplication, where AB differs from BA (*Matrices, group theory*)
+* Well-defined (and even useful) tasks that are unsolvable by **any** algorithm (*Halting problem*)
+* Easy-to-compute functions where the inverse function is very messy (*Asymmetric cryptography*)
+* Laws defining structures in programming languages leading to misunderstandings (*Ambiguous grammars*)
+
+</hgroup>
+
+
+# <lo-su
 
 
 

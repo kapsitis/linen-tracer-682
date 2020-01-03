@@ -1,0 +1,70 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module coq_evaluations</title>
+<meta name="description" content="Documentation of Coq module coq_evaluations" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module coq_evaluations</h1>
+<div class="coq">
+<br/>
+<span class="kwd">Eval</span> <span class="id">vm_compute</span> <span class="kwd">in</span> <span class="id">Z.divide</span> 3 6.<br/>
+<span class="kwd">Fixpoint</span> <span class="id">fib</span> (<span class="id">n</span>: <span class="id">nat</span>) : <span class="id">Z</span> :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0%<span class="id">nat</span> =&gt; 1 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| 1%<span class="id">nat</span> =&gt; 1 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">S</span> (<span class="id">S</span> <span class="id">n2</span> <span class="kwd">as</span> <span class="id">n1</span>) =&gt; <span class="id">fib</span> <span class="id">n1</span> + <span class="id">fib</span> <span class="id">n2</span> <br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="id">Compute</span> (<span class="id">fib</span> 35%<span class="id">nat</span>).<br/>
+<br/>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">List</span>.<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">t</span> := { <span class="id">n</span>: <span class="id">Z</span> | <span class="id">n</span> &gt; 1 }.<br/>
+<br/>
+<br/>
+<span class="kwd">Program</span> <span class="kwd">Definition</span> <span class="id">two</span> : <span class="id">t</span> := 2.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Next Obligation.</div>
+<div class="proofscript" id="proof1">
+ <span class="tactic">omega</span>. Qed.</div>
+<br/>
+<span class="kwd">Program</span> <span class="kwd">Definition</span> <span class="id">succ</span> (<span class="id">n</span>: <span class="id">t</span>) : <span class="id">t</span> := <span class="id">n</span> + 1.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Next Obligation.</div>
+<div class="proofscript" id="proof2">
+ <span class="tactic">destruct</span> <span class="id">n</span>; <span class="tactic">simpl</span>; <span class="tactic">omega</span>. Qed.</div>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Eqdep_dec</span>.<br/>
+<br/>
+<span class="kwd">Program</span> <span class="kwd">Definition</span> <span class="id">t_eq</span> (<span class="id">x</span> <span class="id">y</span>: <span class="id">t</span>) : {<span class="id">x</span>=<span class="id">y</span>} + {<span class="id">x</span>&lt;&gt;<span class="id">y</span>} :=<br/>
+&nbsp;&nbsp;<span class="kwd">if</span> <span class="id">Z.eq_dec</span> (<span class="id">proj1_sig</span> <span class="id">x</span>) (<span class="id">proj1_sig</span> <span class="id">y</span>) <span class="kwd">then</span> <span class="id">left</span> <span class="id">_</span> <span class="kwd">else</span> <span class="id">right</span> <span class="id">_</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Next Obligation.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">x</span> <span class="kwd">as</span> [<span class="id">x</span> <span class="id">Px</span>], <span class="id">y</span> <span class="kwd">as</span> [<span class="id">y</span> <span class="id">Py</span>]. <span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>; <span class="tactic">subst</span> <span class="id">y</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">f_equal</span>. <span class="tactic">apply</span> <span class="id">UIP_dec</span>. <span class="id">decide</span> <span class="id">equality</span>.<br/>
+Qed.</div>
+<div class="toggleproof" onclick="toggleDisplay('proof4')">Next Obligation.</div>
+<div class="proofscript" id="proof4">
+&nbsp;&nbsp;<span class="tactic">red</span>; <span class="tactic">intros</span>; <span class="tactic">elim</span> <span class="id">H</span>; <span class="tactic">congruence</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Definition</span> <span class="id">t_list_eq</span>: <span class="kwd">forall</span> (<span class="id">x</span> <span class="id">y</span>: <span class="id">list</span> <span class="id">t</span>), {<span class="id">x</span>=<span class="id">y</span>} + {<span class="id">x</span>&lt;&gt;<span class="id">y</span>}.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</div>
+<div class="proofscript" id="proof5">
+ <span class="id">decide</span> <span class="id">equality</span>. <span class="tactic">apply</span> <span class="id">t_eq</span>. Defined.</div>
+<br/>
+<br/>
+<span class="id">Compute</span> (<span class="id">t_eq</span> <span class="id">two</span> <span class="id">two</span>).<br/>
+<span class="id">Compute</span> (<span class="kwd">if</span> <span class="id">t_eq</span> <span class="id">two</span> <span class="id">two</span> <span class="kwd">then</span> 1 <span class="kwd">else</span> 2).<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

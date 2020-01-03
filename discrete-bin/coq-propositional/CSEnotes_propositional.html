@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module CSEnotes_propositional</title>
+<meta name="description" content="Documentation of Coq module CSEnotes_propositional" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module CSEnotes_propositional</h1>
+<div class="coq">
+<div class="doc"><a href="../../discrete/assignments.html">Back to Discrete Assignments</a> </div>
+<br/>
+<div class="doc">Proving Propositional Tautologies
+Date: 2020-01-02. Tested with Coq version 8.8.1.
+<hr/>
+
+The following examples are based on the 
+<a href="http://www.cse.buffalo.edu/~knepley/classes/cse191/ClassNotes.pdf">Class Notes</a>
+from SUNY Buffalo 
+<a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">CSE 191 "Discrete Structures"</a>, Pages 12-20. This document adds different comments to these Coq examples.
+</div>
+<br/>
+<h1> Introduction </h1>
+<div class="doc"><b>Definition:</b> Boolean expressions 
+that always take value <tt>True</tt>
+regardless of the truth values of 
+their variables are called <i>tautologies</i>.
+</div>
+<div class="doc">Tautologies in logic are much like identities
+in algebra (formulas for <tt>(a+b)<sup>2</sup>=a<sup>2</sup>+2ab+b<sup>2</sup></tt> 
+and many others). 
+They can be used to substitute all kinds of subexpressions 
+in order to get results that are always true. 
+</div>
+<div class="doc"><b>Naive Algorithm:</b> Check, if a Boolean Expression 
+is a tautology by computing its truth table.
+If the truth table always shows value "true", then it is a tautology.
+<br/><br/>
+Using this algorithm can be <b>inefficient</b>. If there are <i>n</i> variables
+in a Boolean expression, the truth table
+has <i>2<sup>n</sup></i> rows.
+Once we start proving statements about infinite sets (such as 
+natural or integer numbers), truth tables are <b>impossible</b> to 
+use, since there are infinitely many values that one can substitute in the formulas.
+<br/><br/>
+Therefore logic usually uses other methods of proof, based on 
+symbolic manipulation of languages.
+</div>
+<br/>
+<h2> Proving tautologies in Coq </h2>
+<br/>
+<br/>
+<span class="kwd">Variables</span> <span class="id">P</span> <span class="id">Q</span> <span class="id">R</span> <span class="id">S</span> : <span class="kwd">Prop</span>.<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">id_P</span> : <span class="id">P</span>-&gt;<span class="id">P</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">pTrue</span>.  <span class="comment">(*r&nbsp;stuff&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+Qed.</div>
+<br/>
+<h2> Universal Quantifier </h2>
+<br/>
+<div class="doc">Declaring constant propositions (with "Variables" as we just did)
+is unnecessary, since we handle universal logical truths that 
+should not depend on specific variable notation. 
+In algebra 
+<br/>
+Can we write a Boolean formula (tautology or any other) without
+using specific variable symbols? In the high-school algebra
+the formula for <tt>(a+b)<sup>2</sup></tt> is identical to the formula
+for <tt>(x+y)<sup>2</sup></tt> or even <tt>(a+17)<sup>2</sup></tt>. 
+<br/>
+For this reason we want to "bind" the variables in the formula using
+"universal quantifier". We tell that the variable notation does not 
+matter; the tautology would still hold, if you replace 
+<tt>p,q,r</tt> with different letters of subexpressions.
+</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">id_P_same</span>: <span class="kwd">forall</span> <span class="id">p</span>:<span class="kwd">Prop</span>, <span class="id">p</span> -&gt; <span class="id">p</span>. <br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
+<div class="proofscript" id="proof2">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">pTrue</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">pTrue</span>. <br/>
+Qed.</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">imp_trans</span>: <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>: <span class="kwd">Prop</span>, (<span class="id">p</span>-&gt;<span class="id">q</span>)-&gt;(<span class="id">q</span>-&gt;<span class="id">r</span>)-&gt;<span class="id">p</span>-&gt;<span class="id">r</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">pIMPLq</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">qIMPLr</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">pTrue</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">qIMPLr</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">pIMPLq</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc">For conjunctions there are other tactics 
+used to handle hypotheses and goals. 
+If you have a conjunction in a hypothesis, you can 
+use tactic <tt>destruct</tt> to break the hypothesis
+into two hypotheses.
+</div>
+<div class="doc">If you have a conjunction in the goal, you can 
+use tactic <tt>split</tt> to get two subgoals (need to prove both).
+</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">and_comm</span>: <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span>: <span class="kwd">Prop</span>, (<span class="id">p</span> /\ <span class="id">q</span>) -&gt; (<span class="id">q</span> /\ <span class="id">p</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
+<div class="proofscript" id="proof4">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">q</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="id">pTrue</span> <span class="id">qTrue</span>].<br/>
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">qTrue</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc">This command prints the most recent proof: </div>
+<br/>
+<span class="kwd">Show</span> <span class="id">Script</span>.<br/>
+<br/>
+<div class="doc">For disjunctions in hypothesis you can <tt>destruct</tt> it into 
+two subcases. Unlike conjunctions, you need to use <b>either</b> one 
+of the parts <b>or</b> the other.
+If you have disjunction in the goal, you can use tactics 
+<tt>left</tt> and <tt>right</tt> - to pick, which part of the 
+disjunction you want to prove.
+</div>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">or_comm</span>: <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span>: <span class="kwd">Prop</span>, (<span class="id">p</span> \/ <span class="id">q</span>) -&gt; (<span class="id">q</span> \/ <span class="id">p</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</div>
+<div class="proofscript" id="proof5">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">q</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="id">pTrue</span> | <span class="id">qTrue</span>].<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>; <span class="tactic">exact</span> <span class="id">qTrue</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<div class="doc">The tactic "destruct" can be expressed in more detail
+as explained in 
+<a href="https://coq.inria.fr/tutorial/1-basic-predicate-calculus">Coq documentation</a>.
+</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">or_commutative</span> : <span class="kwd">forall</span> <span class="id">a</span> <span class="id">b</span>: <span class="kwd">Prop</span>, <span class="id">a</span> \/ <span class="id">b</span> -&gt; <span class="id">b</span> \/ <span class="id">a</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof6')">Proof.</div>
+<div class="proofscript" id="proof6">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">HA</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">clear</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">HA</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">HB</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">HB</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc">This is small and trivial example shows that you can 
+combine conjunctions and disjunctions.
+</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">prob3a</span> : <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>: <span class="kwd">Prop</span>, (<span class="id">p</span> /\ <span class="id">q</span>) -&gt; (<span class="id">p</span> \/ <span class="id">r</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof7')">Proof.</div>
+<div class="proofscript" id="proof7">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="id">pTrue</span> <span class="id">qTrue</span>].<br/>
+&nbsp;&nbsp;<span class="id">left</span>; <span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">prob3b</span> : <span class="kwd">forall</span> <span class="id">p</span> <span class="id">r</span>: <span class="kwd">Prop</span>, <span class="id">p</span>-&gt;(<span class="id">r</span>-&gt;<span class="id">p</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof8')">Proof.</div>
+<div class="proofscript" id="proof8">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">r</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H1</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H1</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

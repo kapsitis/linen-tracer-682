@@ -1,0 +1,327 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module CSEnotes_inductive</title>
+<meta name="description" content="Documentation of Coq module CSEnotes_inductive" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module CSEnotes_inductive</h1>
+<div class="coq">
+<div class="doc">These examples are taken from Chapter 4. 
+Discrete Structures (Lecture Notes for CSE 191 by Matthew G. Knepley. 
+</div>
+<br/>
+<div class="doc"><h2>Inductive type with 3 enum values</h2> </div>
+<span class="kwd">Print</span> <span class="id">bool</span>.<br/>
+<br/>
+<span class="kwd">Inductive</span> <span class="id">pdetype</span> : <span class="kwd">Set</span> :=<br/>
+&nbsp;&nbsp;<span class="id">elliptic</span> : <span class="id">pdetype</span> <br/>
+&nbsp;&nbsp;| <span class="id">parabolic</span> : <span class="id">pdetype</span> <br/>
+&nbsp;&nbsp;| <span class="id">hyperbolic</span> : <span class="id">pdetype</span>.<br/>
+<br/>
+<br/>
+<span class="kwd">Check</span> <span class="id">pdetype_ind</span>.<br/>
+<span class="kwd">Check</span> <span class="id">pdetype_rect</span>.<br/>
+<span class="kwd">Check</span> <span class="id">pdetype_rec</span>.<br/>
+<br/>
+<div class="doc">This shows a proof by verifying all the subcases (gadījumu pārlase) </div>
+<span class="kwd">Theorem</span> <span class="id">pde_equal</span> : <span class="kwd">forall</span> <span class="id">p</span> : <span class="id">pdetype</span>, <span class="id">p</span> = <span class="id">parabolic</span> \/ <span class="id">p</span> = <span class="id">elliptic</span> \/ <span class="id">p</span> = <span class="id">hyperbolic</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">induction</span> <span class="id">p</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="id">left</span>. <span class="comment">(*r&nbsp;locate&nbsp;the&nbsp;middle&nbsp;term&nbsp;of&nbsp;the&nbsp;disjunction&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>.  <span class="comment">(*r&nbsp;locate&nbsp;the&nbsp;leftmost&nbsp;term&nbsp;of&nbsp;the&nbsp;disjunction&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="id">right</span>. <span class="comment">(*r&nbsp;locate&nbsp;the&nbsp;rightmost&nbsp;term&nbsp;of&nbsp;the&nbsp;disjunction&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">pde_equal_same</span> : <span class="kwd">forall</span> <span class="id">p</span> : <span class="id">pdetype</span>, <span class="id">p</span> = <span class="id">parabolic</span> \/ <span class="id">p</span> = <span class="id">elliptic</span> \/ <span class="id">p</span> = <span class="id">hyperbolic</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
+<div class="proofscript" id="proof2">
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">p</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">pattern</span> <span class="id">p</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">pdetype_ind</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="id">left</span>. <span class="comment">(*r&nbsp;repeat&nbsp;same&nbsp;proof&nbsp;as&nbsp;above&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="id">right</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<div class="doc">Proving more trivial statements about a 
+function computed from an inductive type. 
+</div>
+<span class="kwd">Definition</span> <span class="id">mg_works</span> (<span class="id">p</span> : <span class="id">pdetype</span>) :=<br/>
+<span class="kwd">match</span> <span class="id">p</span> <span class="kwd">with</span><br/>
+| <span class="id">hyperbolic</span> =&gt; <span class="id">False</span><br/>
+| <span class="id">other</span> =&gt; <span class="id">True</span><br/>
+<span class="kwd">end</span>.<br/>
+<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">mg_works</span> <span class="id">hyperbolic</span>).<br/>
+<br/>
+<br/>
+<div class="doc">Trivial theorem: One value of the predicate "mg_works" is False. </div>
+<span class="kwd">Theorem</span> <span class="id">no_hyp_mg</span> : <span class="id">mg_works</span> <span class="id">hyperbolic</span> = <span class="id">False</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">simpl</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>. <br/>
+Qed.</div>
+<br/>
+<div class="doc">One more trivial theorem: Two constants not equal. </div>
+<span class="kwd">Lemma</span> <span class="id">simple</span> : ~ <span class="id">elliptic</span> = <span class="id">hyperbolic</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
+<div class="proofscript" id="proof4">
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">discriminate</span>. <span class="comment">(*r&nbsp;Conclude&nbsp;that&nbsp;"elliptic"&nbsp;and&nbsp;"hyperbolic"&nbsp;cannot&nbsp;be&nbsp;equal&nbsp;*)</span><br/>
+Qed.</div>
+<br/>
+<div class="doc">One more trivial theorem: Two constants not equal, 
+but this time not using "discriminate". </div>
+<span class="kwd">Lemma</span> <span class="id">simple_same</span> : ~ <span class="id">elliptic</span> = <span class="id">hyperbolic</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</div>
+<div class="proofscript" id="proof5">
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="id">change</span> ((<span class="kwd">fun</span> <span class="id">p</span>:<span class="id">pdetype</span> =&gt; <span class="kwd">match</span> <span class="id">p</span> <span class="kwd">with</span> | <span class="id">elliptic</span> =&gt; <span class="id">True</span> | <span class="id">_</span> =&gt; <span class="id">False</span> <span class="kwd">end</span>) <span class="id">hyperbolic</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">trivial</span>. <br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<div class="doc"><h2>Natural numbers as inductive time</h2> </div>
+<span class="kwd">Print</span> <span class="id">nat</span>.<br/>
+<span class="kwd">Print</span> <span class="id">nat_ind</span>.<br/>
+<span class="kwd">Print</span> <span class="id">nat_rect</span>.<br/>
+<br/>
+<br/>
+<div class="doc">Inductive proof that addition is associative </div>
+<span class="kwd">Theorem</span> <span class="id">plus_assoc</span> : <span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>:<span class="id">nat</span>, (<span class="id">x</span>+<span class="id">y</span>)+<span class="id">z</span> = <span class="id">x</span>+(<span class="id">y</span>+<span class="id">z</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof6')">Proof.</div>
+<div class="proofscript" id="proof6">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">x</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span> <span class="id">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">plus_Sn_m</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">plus_Sn_m</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">plus_Sn_m</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc">Define function "sum_1" - it adds 
+the same number "1" for indices 0 to n. 
+</div>
+<span class="kwd">Fixpoint</span> <span class="id">sum_1</span> (<span class="id">n</span> : <span class="id">nat</span>) := <span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;0 =&gt; 1<br/>
+&nbsp;&nbsp;| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">S</span> (<span class="id">sum_1</span> <span class="id">p</span>)<br/>
+<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_1</span> 10).<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">sum_1_analytic</span> : <span class="kwd">forall</span> <span class="id">n</span> : <span class="id">nat</span>, <span class="id">sum_1</span> <span class="id">n</span> = <span class="id">S</span> <span class="id">n</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof7')">Proof.</div>
+<div class="proofscript" id="proof7">
+&nbsp;&nbsp;<span class="tactic">induction</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<div class="doc">"sum_n n" is a function adding together
+0+1+...+(n-1). 
+</div>
+<br/>
+<span class="kwd">Fixpoint</span> <span class="id">sum_n</span> <span class="id">n</span> :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">p</span> + <span class="id">sum_n</span> <span class="id">p</span><br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_n</span> 1).<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_n</span> 2).<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_n</span> 10).<br/>
+<br/>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Arith</span>.<br/>
+<br/>
+<div class="doc"><tt>sum_n n</tt> is equal to <tt>n(n-1)/2</tt> </div>
+<span class="kwd">Lemma</span> <span class="id">sum_n_p</span> : <span class="kwd">forall</span> <span class="id">n</span>, 2 * <span class="id">sum_n</span> <span class="id">n</span> + <span class="id">n</span> = <span class="id">n</span> * <span class="id">n</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof8')">Proof.</div>
+<div class="proofscript" id="proof8">
+&nbsp;&nbsp;<span class="tactic">induction</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">SnSn</span> : <span class="id">S</span> <span class="id">n</span> * <span class="id">S</span> <span class="id">n</span> = <span class="id">n</span> * <span class="id">n</span> + 2 * <span class="id">n</span> + 1).<br/>
+&nbsp;&nbsp;<span class="tactic">ring</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">SnSn</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">ring</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Print</span> <span class="id">Nat.le_le_add_le</span>.<br/>
+<br/>
+<br/>
+<br/>
+<div class="doc">Simple inequality (not very useful): 
+<tt>0+1+...+(n-1)</tt> is more or equal to <tt>n-1</tt> 
+</div>
+<span class="kwd">Theorem</span> <span class="id">bigger</span> : <span class="kwd">forall</span> <span class="id">n</span> : <span class="id">nat</span>, <span class="id">n</span> &lt;= <span class="id">sum_n</span> <span class="id">n</span> + 1.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof9')">Proof.</div>
+<div class="proofscript" id="proof9">
+&nbsp;&nbsp;<span class="tactic">induction</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">le_S</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">le_n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">le_n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">Nat.add_1_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">Nat.le_le_add_le</span> <span class="kwd">with</span> (<span class="id">n</span> := <span class="id">S</span> <span class="id">n</span>) (<span class="id">m</span> := <span class="id">sum_n</span> (<span class="id">S</span> <span class="id">n</span>) + 1).<br/>
+&nbsp;&nbsp;<span class="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Nat.add_1_r</span> <span class="tactic">at</span> 2.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">Nat.add_1_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">Nat.add_1_r</span> <span class="kwd">with</span> (<span class="id">n</span>:=<span class="id">n</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">Nat.add_1_r</span> <span class="kwd">with</span> (<span class="id">n</span>:=<span class="id">n</span> + (<span class="id">n</span> + <span class="id">sum_n</span> <span class="id">n</span>) + 1 + (<span class="id">n</span> + 1)).<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">plus_le_compat_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">plus_assoc</span> <span class="kwd">with</span> (<span class="id">n</span>:=<span class="id">n</span>) (<span class="id">m</span>:=<span class="id">n</span> + <span class="id">sum_n</span> <span class="id">n</span>) (<span class="id">p</span>:=1).<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">plus_assoc</span> <span class="kwd">with</span> (<span class="id">n</span>:=<span class="id">n</span>) (<span class="id">m</span>:=<span class="id">n</span> + <span class="id">sum_n</span> <span class="id">n</span> + 1) (<span class="id">p</span>:=<span class="id">n</span>+1).<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">plus_comm</span> <span class="kwd">with</span> (<span class="id">n</span>:=<span class="id">n</span> + <span class="id">sum_n</span> <span class="id">n</span> + 1) (<span class="id">m</span>:=<span class="id">n</span>+1).<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">plus_assoc</span> <span class="kwd">with</span> (<span class="id">n</span>:=<span class="id">n</span>) (<span class="id">m</span>:=<span class="id">n</span>+1).<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">plus_le_compat_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">plus_O_n</span> <span class="tactic">at</span> 1.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">plus_le_compat_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">Peano.le_0_n</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Rfunctions</span>.<br/>
+<span class="kwd">Open</span> <span class="kwd">Scope</span> <span class="id">R_scope</span>.<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Reals</span>.<br/>
+<br/>
+<br/>
+<span class="kwd">Fixpoint</span> <span class="id">sum_geom</span> (<span class="id">n</span>:<span class="id">nat</span>) (<span class="id">x</span>:<span class="id">R</span>) : <span class="id">R</span> :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">x</span>^<span class="id">n</span> + <span class="id">sum_geom</span> <span class="id">p</span> <span class="id">x</span><br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_geom</span> 0 17).<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_geom</span> 1 17).<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">sum_geom</span> 2 17).<br/>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">sum_geom_p</span> : <span class="kwd">forall</span> <span class="id">n</span>:<span class="id">nat</span>, <span class="kwd">forall</span> <span class="id">x</span>:<span class="id">R</span>, <span class="id">sum_geom</span> <span class="id">n</span> <span class="id">x</span> * <span class="id">x</span> + 1 = <span class="id">x</span>^(<span class="id">n</span> + 1) + <span class="id">sum_geom</span> <span class="id">n</span> <span class="id">x</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof10')">Proof.</div>
+<div class="proofscript" id="proof10">
+&nbsp;&nbsp;<span class="tactic">induction</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Rmult_1_l</span>. <span class="comment">(*r&nbsp;Multiplying&nbsp;with&nbsp;1&nbsp;from&nbsp;the&nbsp;left-side&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Rmult_1_r</span>. <span class="comment">(*r&nbsp;Multiplying&nbsp;with&nbsp;1&nbsp;from&nbsp;the&nbsp;right-side&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Rmult_plus_distr_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">tech_pow_Rmult</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">tech_pow_Rmult</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Rmult_comm</span> <span class="kwd">with</span> (<span class="id">r1</span>:=<span class="id">x</span> ^ <span class="id">S</span> <span class="id">n</span>) (<span class="id">r2</span>:=<span class="id">x</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">tech_pow_Rmult</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Rplus_assoc</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Nat.add_1_r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Inductive</span> <span class="id">par</span>: <span class="kwd">Set</span> := <span class="id">open</span> | <span class="id">close</span>.<br/>
+<br/>
+<br/>
+<div class="doc"><h2>Lists and Pigeonhole principle</h2>
+Some theorems on lists.
+</div>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">List</span>.<br/>
+<br/>
+<span class="kwd">Inductive</span> <span class="id">wp</span> : <span class="id">list</span> <span class="id">par</span> -&gt; <span class="kwd">Prop</span> :=<br/>
+<span class="id">wp_empty</span> : <span class="id">wp</span> <span class="id">nil</span><br/>
+| <span class="id">wp_paren</span> : <span class="kwd">forall</span> <span class="id">l</span> : <span class="id">list</span> <span class="id">par</span>, <span class="id">wp</span> <span class="id">l</span> -&gt; <span class="id">wp</span> (<span class="id">open</span> :: <span class="id">l</span> ++ <span class="id">close</span> :: <span class="id">nil</span>)<br/>
+| <span class="id">wp_concat</span> : <span class="kwd">forall</span> <span class="id">l</span> <span class="id">m</span> : <span class="id">list</span> <span class="id">par</span>, <span class="id">wp</span> <span class="id">l</span> -&gt; <span class="id">wp</span> <span class="id">m</span> -&gt; <span class="id">wp</span> (<span class="id">l</span> ++ <span class="id">m</span>).<br/>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">wp_o_head_c</span> : <span class="kwd">forall</span> <span class="id">l1</span> <span class="id">l2</span> : <span class="id">list</span> <span class="id">par</span>, <span class="id">wp</span> <span class="id">l1</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id">wp</span> <span class="id">l2</span> -&gt; <span class="id">wp</span> ((<span class="id">open</span> :: <span class="id">l1</span> ++ (<span class="id">close</span> :: <span class="id">nil</span>)) ++ <span class="id">l2</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof11')">Proof.</div>
+<div class="proofscript" id="proof11">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">l1</span> <span class="id">l2</span> <span class="id">H1</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">wp_concat</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">wp_paren</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assumption</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">wp_o_tail_c</span> : <span class="kwd">forall</span> <span class="id">l1</span> <span class="id">l2</span> : <span class="id">list</span> <span class="id">par</span>, <span class="id">wp</span> <span class="id">l1</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id">wp</span> <span class="id">l2</span> -&gt; <span class="id">wp</span> (<span class="id">l1</span> ++ (<span class="id">open</span> :: <span class="id">l2</span> ++ (<span class="id">close</span> :: <span class="id">nil</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof12')">Proof.</div>
+<div class="proofscript" id="proof12">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">l1</span> <span class="id">l2</span> <span class="id">H1</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">wp_concat</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">wp_paren</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assumption</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Inductive</span> <span class="id">bin</span> : <span class="kwd">Set</span> := <br/>
+&nbsp;&nbsp;<span class="id">L</span> : <span class="id">bin</span> <br/>
+&nbsp;&nbsp;| <span class="id">N</span> : <span class="id">bin</span> -&gt; <span class="id">bin</span> -&gt; <span class="id">bin</span>.<br/>
+<br/>
+<span class="kwd">Fixpoint</span> <span class="id">bin_to_string</span> (<span class="id">t</span>:<span class="id">bin</span>) : <span class="id">list</span> <span class="id">par</span> :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">t</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">L</span> =&gt; <span class="id">nil</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">N</span> <span class="id">u</span> <span class="id">v</span> =&gt; <span class="id">cons</span> <span class="id">open</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id">app</span> (<span class="id">app</span> (<span class="id">bin_to_string</span> <span class="id">u</span>) (<span class="id">cons</span> <span class="id">close</span> <span class="id">nil</span>)) (<span class="id">bin_to_string</span> <span class="id">v</span>))<br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

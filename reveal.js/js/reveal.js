@@ -496,6 +496,7 @@
         var i2 = arg.indexOf('algorithms-tales');
         var i3 = arg.indexOf('visualizations-tales');
         var i4 = arg.indexOf('problembase-tales');
+        var i5 = arg.indexOf('discrete-tales');
         if (i1 > 0) {
             return "../../numtheory/tales.html";
         }
@@ -507,6 +508,9 @@
         }
         else if (i4 > 0) {
             return "../../problembase/problems.html";
+        }
+        else if (i5 > 0) {
+            return "../../discrete/slides.html";
         }
         else {
             return "../../default/tales.html";

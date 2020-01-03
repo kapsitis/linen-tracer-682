@@ -1,0 +1,94 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module fundamentals_book</title>
+<meta name="description" content="Documentation of Coq module fundamentals_book" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module fundamentals_book</h1>
+<div class="coq">
+<span class="id">Compute</span> (3+4).<br/>
+<span class="id">Compute</span> (3=5).<br/>
+<br/>
+<br/>
+<span class="kwd">Inductive</span> <span class="id">day</span> : <span class="kwd">Type</span> :=<br/>
+&nbsp;&nbsp;| <span class="id">monday</span><br/>
+&nbsp;&nbsp;| <span class="id">tuesday</span><br/>
+&nbsp;&nbsp;| <span class="id">wednesday</span><br/>
+&nbsp;&nbsp;| <span class="id">thursday</span><br/>
+&nbsp;&nbsp;| <span class="id">friday</span><br/>
+&nbsp;&nbsp;| <span class="id">saturday</span><br/>
+&nbsp;&nbsp;| <span class="id">sunday</span>.<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">next_weekday</span> (<span class="id">d</span>:<span class="id">day</span>) : <span class="id">day</span> :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">d</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;| <span class="id">monday</span> =&gt; <span class="id">tuesday</span><br/>
+&nbsp;&nbsp;| <span class="id">tuesday</span> =&gt; <span class="id">wednesday</span><br/>
+&nbsp;&nbsp;| <span class="id">wednesday</span> =&gt; <span class="id">thursday</span><br/>
+&nbsp;&nbsp;| <span class="id">thursday</span> =&gt; <span class="id">friday</span><br/>
+&nbsp;&nbsp;| <span class="id">friday</span> =&gt; <span class="id">monday</span><br/>
+&nbsp;&nbsp;| <span class="id">saturday</span> =&gt; <span class="id">monday</span><br/>
+&nbsp;&nbsp;| <span class="id">sunday</span> =&gt; <span class="id">monday</span><br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="id">Compute</span> (<span class="id">next_weekday</span> <span class="id">friday</span>).<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> (<span class="id">next_weekday</span> <span class="id">friday</span>).<br/>
+<br/>
+<span class="kwd">Example</span> <span class="id">test_next_weekday</span>: (<span class="id">next_weekday</span> (<span class="id">next_weekday</span> <span class="id">saturday</span>)) = <span class="id">tuesday</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>. <br/>
+Qed.</div>
+<br/>
+<span class="kwd">Check</span> 3 = 3.<br/>
+<span class="id">Compute</span> (3 = 3).<br/>
+<span class="kwd">Check</span> (<span class="kwd">forall</span> <span class="id">n</span> <span class="id">m</span>: <span class="id">nat</span>, <span class="id">n</span>+<span class="id">m</span> = <span class="id">m</span>+<span class="id">n</span>).<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">plus_2_2_is_4</span> : 2 + 2 = 4.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
+<div class="proofscript" id="proof2">
+&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
+<br/>
+<span class="kwd">Check</span> @<span class="id">eq</span>.<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">is_three</span> (<span class="id">n</span> : <span class="id">nat</span>) : <span class="kwd">Prop</span> := <span class="id">n</span> = 3.<br/>
+<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">injective</span> {<span class="id">A</span> <span class="id">B</span>} (<span class="id">f</span> : <span class="id">A</span> -&gt; <span class="id">B</span>) :=<br/>
+&nbsp;&nbsp;<span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> : <span class="id">A</span>, <span class="id">f</span> <span class="id">x</span> = <span class="id">f</span> <span class="id">y</span> -&gt; <span class="id">x</span> = <span class="id">y</span>.<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">succ_inj</span> : <span class="id">injective</span> <span class="id">S</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span> <span class="id">m</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">injection</span> <span class="id">H</span> <span class="kwd">as</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H1</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Example</span> <span class="id">and_exercise</span> :<br/>
+&nbsp;&nbsp;<span class="kwd">forall</span> <span class="id">n</span> <span class="id">m</span> : <span class="id">nat</span>, <span class="id">n</span> + <span class="id">m</span> = 0 -&gt; <span class="id">n</span> = 0 /\ <span class="id">m</span> = 0.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
+<div class="proofscript" id="proof4">
+&nbsp;&nbsp;<span class="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+<br/>
+<span class="id">Locate</span> "<span class="id">_</span> + <span class="id">_</span>".<br/>
+<span class="kwd">Print</span> <span class="id">Nat.add</span>.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

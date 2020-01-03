@@ -1551,7 +1551,7 @@ Tie veido virkni $13,12,11,\ldots$.
 * Tieši 11. loceklis sarkanajā progresijā dos atlikumu $3$, dalot ar $21$.
 * Jāievieto $k=10$. Tad $20k+13 = 213$. 
 
-*Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2011.7.3](http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-ao/content.html#/lv.ao.2011.7.3).*  Šis uzdevums ir arī atsevišķs gadījums Ķīniešu atlikumu teorēmai, kuru 7.klase nav vēl mācījusies.
+*Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2011.7.3](http://linen-tracer-682.appspot.com/problembase-tales/numtheory-lv-ao/content.html#/lv.ao.2011.7.3).*  Šis uzdevums ir arī atsevišķs gadījums Ķīniešu atlikumu teorēmai, kuru 7.klase nav vēl mācījusies.
 
 ## <lo-quiz/> Jautājums Nr.4 (alternatīvi risinājumi)
 
@@ -1578,7 +1578,7 @@ skaitu centu). Cik samaksāja Brālītis?
 * Pozitīvs $y$ sanāk tikai tad, ja $x=10$ (un $y=8$).
 * Brālītis samaksāja $x+y = 10+8 = 18$ centus. 
 
-*Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2016.7.2](http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-ao/content.html#/lv.ao.2016.7.2).* 
+*Sal. 7.klases Atklātās olimpiādes uzdevumu: [LV.AO.2016.7.2](http://linen-tracer-682.appspot.com/problembase-tales/numtheory-lv-ao/content.html#/lv.ao.2016.7.2).* 
 
 
 ## <lo-quiz/> Jautājums Nr.5 (arī negatīvas cenas)
@@ -2139,11 +2139,11 @@ sakrītošajiem locekļiem.
 
 <div style="font-size: 70%">
 
-1. [EE.PK.2019.10.3](http://linen-tracer-682.appspot.com/files-prob/numtheory-ee-pk/content.html#/ee.pk.2019.10.3)  
+1. [EE.PK.2019.10.3](http://linen-tracer-682.appspot.com/problembase-tales/numtheory-ee-pk/content.html#/ee.pk.2019.10.3)  
 Cik ir tādu veselu negatīvu skaitļu pāru $(a,b)$, kas apmierina vienādību $22a+15b=2019$?
 
 
-2. [LV.VO.2014.10.3](http://linen-tracer-682.appspot.com/files-prob/numtheory-lv-vo/content.html#/lv.vo.2014.10.3)  
+2. [LV.VO.2014.10.3](http://linen-tracer-682.appspot.com/problembase-tales/numtheory-lv-vo/content.html#/lv.vo.2014.10.3)  
 Ir pieejams neierobežots daudzums $7$ un $13$ centu pastmarku, kuras izmanto 
 pasta sūtījumu apmaksāšanai. Diemžēl dažas summas nav iespējams apmaksāt 
 tikai ar šīm pastmarkām (piemēram, ja sūtījums maksā $6$, $8$ vai $25$ centus). 

@@ -1,0 +1,97 @@
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{thmtools}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+\title{Lab 1: Boolean Expressions}
+
+\author{Kalvis Aps\={\i}tis}
+\affiliation{RBS}
+
+
+\leftheader{Lab 1: Boolean Expressions}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Example}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{2}
+
+\abstract{This document lists the key results from the December 14, 2019 class in 
+Number Theory. This training for competition math is aimed at 16\textendash{}18 year 
+olds (typically, Grades 10\textendash{}12).
+}
+
+\keywords{Chinese remainder theorem, Bezout's identity, Modular arithmetic.}
+
+\begin{document}
+\maketitle
+
+
+\section{Objectives}
+
+\begin{enumerate}
+\item Run Coq command-line from the {\tt coqtop} utility and also {\tt CoqIDE}.
+\item Check types in Coq, including atomic types, tuples, function types.
+\item Use and build truth tables for Boolean operators.
+\item Use precedence and associativity to parse Boolean expressions.
+\item Create (abstract) syntax trees.
+\item Fill in truth tables.
+\item Check, if a Boolean expression is a tautology.
+\item Check, if a Boolean expression is satisfiable.
+\item Find equivalent Boolean expressions.
+\item Rewrite expressions as CNF (conjunctive normal form).
+\item Write your answers into a LaTeX template, compile and submit.
+\end{enumerate}
+
+
+\section{Datatypes}
+
+If you need more information on datatypes, visit this site \url{https://coq.inria.fr/stdlib/Coq.Init.Datatypes.html}. 
+
+Strong datatypes is not always convenient. 
+
+But this attempt to evaluate expression is wrong:
+\begin{verbatim}
+Eval compute in if 1 = 2 then 3 else 4.
+\end{verbatim}
+The reason is displayed by Coq \textendash{} 
+
+Define nandb. 
+
+
+
+\section{Truth Tables}
+
+Boolean expressions can always be computed using truth tables. 
+
+\begin{tabular}{|l|l|l|} \hline
+{\tt A} & {\tt B} & {\tt A \&\& B} \\ \hline
+{\tt false} & {\tt false} & {\tt false} \\ \hline
+{\tt false} & {\tt true} & {\tt false} \\ \hline
+{\tt true} & {\tt false} & {\tt false} \\ \hline
+{\tt true} & {\tt true} & {\tt true} \\ \hline
+\end{tabular} 
+
+
+
+
+
+
+\section{Precedence and Associativity}
+
+
+
+
+
+
+
+\end{document}
+
+

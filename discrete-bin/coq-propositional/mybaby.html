@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module mybaby</title>
+<meta name="description" content="Documentation of Coq module mybaby" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module mybaby</h1>
+<div class="coq">
+<div class="doc"><a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<h2>One Jazz Song</h2>
+Let us analyze one song from 1924 that later became  
+one of the "standard songs", that has been sung by many people 
+at different times. 
+<a href="https://en.wikipedia.org/wiki/Everybody_Loves_My_Baby">Everybody Loves My Baby (But My Baby Don't Love Nobody But Me)</a>;
+music by <i>Spencer Williams</i>, lyric by
+<i>Jack Palmer</i> (see 
+<a href="https://www.youtube.com/watch?v=U2BtteA0k8o">Video</a>). 
+This example is also analyzed in this textbook:
+<a href="https://learning.oreilly.com/library/view/logic-as-a/9781118880005/c04.xhtml">Logic 
+as a Tool by Valentin Goranko, 2016.</a>
+Let us consider the title of the song.
+<i>"Everybody Loves My Baby (But My Baby Don't Love Nobody But Me)"</i>.
+This mentions humans <tt>MyBaby</tt> and <tt>Me</tt> satisfying properties:
+<ol type="A"><li>Every human loves <tt>MyBaby</tt></li>
+<li>On the other hand <tt>MyBaby</tt> does not love anyonee except <tt>Me</tt></li> 
+</ol>
+If <tt>L(x,y)</tt> is the predicate to denote that 
+x loves y, then for every human <tt>x</tt>: <tt>L(x,MyBaby)</tt>. 
+In the meantime: for every human <tt>y</tt>, as long as <tt>y</tt> is
+not equal to <tt>Me</tt>, then <tt>~L(MyBaby,y)</tt> 
+(<tt>MyBaby</tt> does not love <tt>y</tt>).
+Let us prove that in this case <tt>MyBaby</tt> and <tt>Me</tt>
+is the same human being (two names for the same real-life object). 
+An informal outline of the proof is as follows:
+<ul><li>Denote the set of all humans by <tt>HUM</tt>;
+locate elements <tt>MyBaby</tt> and <tt>Me</tt> in this set.</li>
+<li>From the contrary, assume that they differ: <tt>MyBaby&lt;&gt;Me</tt>.</li>
+<li>Substitute in the property (B) <tt>y = MyBaby</tt>
+<li>From the assumption (B) <tt>MyBaby</tt> and <tt>Me</tt> should differ:
+<tt>MyBaby</tt> cannot love itself, since <tt>MyBaby</tt> only loves <tt>Me</tt></li>
+<li>On the other hand, by assumption (A) <b>everybody</b> must love <tt>MyBaby</tt>.
+Certaintly, this includes <tt>MyBaby</tt> who also loves <tt>MyBaby</tt>.</li>
+<li>This is a contradiction. Therefore <tt>MyBaby=Me</tt></li></ul>
+</div>
+<br/>
+<div class="doc">Here the same proof is formalized with Coq. 
+<tt>HUM</tt> is the set of all humans. </div>
+<span class="kwd">Parameter</span> <span class="id">HUM</span> : <span class="kwd">Type</span>.<br/>
+<div class="doc">Me and MyBaby are humans. </div>
+<span class="kwd">Parameter</span> <span class="id">Me</span> : <span class="id">HUM</span>.  <br/>
+<span class="kwd">Parameter</span> <span class="id">MyBaby</span> : <span class="id">HUM</span>.<br/>
+<br/>
+<div class="doc">The predicate <tt>L(x,y)</tt> is true if and only if
+<tt>x</tt> loves <tt>y</tt>. </div>
+<span class="kwd">Parameter</span> <span class="id">L</span> : <span class="id">HUM</span>*<span class="id">HUM</span> -&gt; <span class="kwd">Prop</span>. <br/>
+<br/>
+<div class="doc">We prove that <tt>MyBaby</tt> and <tt>Me</tt> 
+are equal. 
+To see the proof, click on the link <b>Proof.</b> 
+right under the theorem.
+</div>
+<span class="kwd">Theorem</span> <span class="id">who_is_mybaby</span>: (<span class="kwd">forall</span> <span class="id">x</span>: <span class="id">HUM</span>, <span class="id">L</span>(<span class="id">x</span>,<span class="id">MyBaby</span>)) /\ <br/>
+&nbsp;&nbsp;(<span class="kwd">forall</span> <span class="id">y</span>: <span class="id">HUM</span>, ~(<span class="id">y</span>=<span class="id">Me</span>) -&gt; ~(<span class="id">L</span>(<span class="id">MyBaby</span>,<span class="id">y</span>))) -&gt; <span class="id">MyBaby</span>=<span class="id">Me</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">intros</span> [<span class="id">ItemA</span> <span class="id">ItemB</span>].  <span class="comment">(*&nbsp;Both&nbsp;song&nbsp;facts:&nbsp;ItemA&nbsp;and&nbsp;ItemB.&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">MyBaby</span> &lt;&gt; <span class="id">Me</span> -&gt; ~<span class="id">L</span>(<span class="id">MyBaby</span>,<span class="id">MyBaby</span>)).  <span class="comment">(*r&nbsp;Let&nbsp;us&nbsp;prove&nbsp;that&nbsp;MyBaby&nbsp;does&nbsp;not&nbsp;love&nbsp;itself.&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">ItemB</span> <span class="kwd">with</span> (<span class="id">y</span> := <span class="id">MyBaby</span>).  <span class="comment">(*r&nbsp;substitute&nbsp;in&nbsp;(B):&nbsp;y=MyBaby.&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">L</span>(<span class="id">MyBaby</span>,<span class="id">MyBaby</span>)).  <span class="comment">(*&nbsp;On&nbsp;the&nbsp;other&nbsp;hand&nbsp;MyBaby&nbsp;does&nbsp;love&nbsp;itself.&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">ItemA</span> <span class="kwd">with</span> (<span class="id">x</span> := <span class="id">MyBaby</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">clear</span> <span class="id">ItemA</span> <span class="id">ItemB</span>.  <span class="comment">(*&nbsp;Song&nbsp;facts&nbsp;no&nbsp;longer&nbsp;needed.&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> (<span class="id">contrapos</span> (<span class="id">L</span>(<span class="id">MyBaby</span>,<span class="id">MyBaby</span>)) (<span class="id">MyBaby</span> = <span class="id">Me</span>)).<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">clear</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H2</span> <span class="id">H</span>) <span class="kwd">as</span> <span class="id">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H3</span> <span class="id">H0</span>) <span class="kwd">as</span> <span class="id">H4</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H4</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

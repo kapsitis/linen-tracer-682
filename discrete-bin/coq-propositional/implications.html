@@ -1,0 +1,132 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module implications</title>
+<meta name="description" content="Documentation of Coq module implications" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module implications</h1>
+<div class="coq">
+<div class="doc"><a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<h2>Implications</h2> 
+If one proposition logically implies another
+it is called <i>implication</i>. For example:
+<blockquote><u>Direct implication:</u> <b>if</b> x=2,
+<b>then</b> x<sup>2</sup>=4.</blockquote>
+In this example the first proposition (p) is "x=2", 
+the second proposition (q) is "x squared is 4".
+The combined statement is <tt>p -&gt; q</tt> 
+and it is read "<b>if</b> <tt>p</tt> <b>then</b> <tt>q</tt>".
+<br/>
+Note that in implication the order is relevant. For example, 
+"x squared equals 4" does not necessarily imply "x=2", 
+since x can also be negative 2. Nevertheless, there is 
+one way to rewrite implication, and it is always equivalent
+to the original implication. It is named 
+<i>contrapositive</i>. 
+<br/>
+In our above example it would look like this: 
+<blockquote><u>Contrapositive implication:</u>
+<b>if</b> x<sup>2</sup> is <b>not</b> 4,
+<b>then</b> x is <b>not</b> equal to 2.</blockquote>
+</div>
+<br/>
+<br/>
+<div class="doc"><h2>Implication is equivalent to its Contrapositive (Proof in Coq)</h2> 
+Using Coq, we show a Lemma that <tt>p-&gt;q</tt> is
+equivalent to <tt>~q -&gt; ~p</tt>. This means that
+every direct implication always means its contrapositive implication 
+and vice versa. 
+To see the proof in Coq, click on the link
+<b>Proof.</b> right under the theorem.
+</div>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Classical_Prop</span>.  <br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">contrapos</span> : <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span>: <span class="kwd">Prop</span>, (<span class="id">p</span> -&gt; <span class="id">q</span>) &lt;-&gt; (~<span class="id">q</span> -&gt; ~<span class="id">p</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span>. <span class="comment">(*r&nbsp;Part&nbsp;1:&nbsp;(~&nbsp;q&nbsp;-&gt;&nbsp;~&nbsp;p)&nbsp;-&gt;&nbsp;(p&nbsp;-&gt;&nbsp;q)&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">intro</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H0</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <span class="comment">(*r&nbsp;Part&nbsp;2:&nbsp;(~&nbsp;q&nbsp;-&gt;&nbsp;~&nbsp;p)&nbsp;-&gt;&nbsp;(p&nbsp;-&gt;&nbsp;q)&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">q</span> \/ ~<span class="id">q</span>).  <span class="comment">(*r&nbsp;Law&nbsp;of&nbsp;Excluded&nbsp;Middle&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">classic</span> <span class="kwd">with</span> (<span class="id">P</span> := <span class="id">q</span>). <br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H1</span> <span class="kwd">as</span> [<span class="id">H2</span> | <span class="id">H3</span>].<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H</span> <span class="id">H3</span>).<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">f</span> <span class="id">H0</span>).<br/>
+&nbsp;&nbsp;<span class="id">contradiction</span> <span class="id">f0</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">id_p</span> : <span class="kwd">forall</span> <span class="id">p</span>: <span class="kwd">Prop</span>, <span class="id">p</span> -&gt; <span class="id">p</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
+<div class="proofscript" id="proof2">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">imp_trans</span> : <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>: <span class="kwd">Prop</span>, (<span class="id">p</span>-&gt;<span class="id">q</span>)-&gt;(<span class="id">q</span>-&gt;<span class="id">r</span>)-&gt;<span class="id">p</span>-&gt;<span class="id">r</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H3</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H3</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">or_commutative</span> : <span class="kwd">forall</span> <span class="id">a</span> <span class="id">b</span>: <span class="kwd">Prop</span>, <span class="id">a</span> \/ <span class="id">b</span> -&gt; <span class="id">b</span> \/ <span class="id">a</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
+<div class="proofscript" id="proof4">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">HA</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">clear</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">HA</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">HB</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">HB</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Lemma</span> <span class="id">or_commutative1</span> : <span class="kwd">forall</span> <span class="id">a</span> <span class="id">b</span>: <span class="kwd">Prop</span>, <span class="id">a</span> \/ <span class="id">b</span> -&gt; <span class="id">b</span> \/ <span class="id">a</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</div>
+<div class="proofscript" id="proof5">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span> <span class="id">b</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="id">HA</span> | <span class="id">HB</span>].<br/>
+&nbsp;&nbsp;<span class="id">right</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">HA</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">HB</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

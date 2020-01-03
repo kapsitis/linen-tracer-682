@@ -11,6 +11,8 @@ problems-bak/*
 *.aux
 *.log
 *.out
+*.bcf
+*.run.xml
 # Distribution / packaging
 .Python
 build/

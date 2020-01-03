@@ -38,27 +38,28 @@ class DiscreteHandler(webapp2.RequestHandler):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
-                'nav_items': nav_items
+                'nav_items': nav_items,
+                'tales': self.tales
             }
             template = jinja_env.get_template('discrete/slides.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'polls.html'):     
+        elif (my_id == 'proofs.html'):     
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
                 'nav_items': nav_items
             }
-            template = jinja_env.get_template('discrete/polls.html')
+            template = jinja_env.get_template('discrete/proofs.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'tasks.html'):
+        elif (my_id == 'assignments.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
                 'nav_items': nav_items
             }
-            template = jinja_env.get_template('discrete/tasks.html')
+            template = jinja_env.get_template('discrete/assignments.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'references.html'):

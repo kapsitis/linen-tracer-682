@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span style="color:darkgreen"><strong>(1) Course Introduction</strong></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>(The Overal Course): Why you should study discrete mathematics?</p>
+</div>
+<div class="smallWhy" style="font-size:90%">
+<ul>
+<li>Write proofs and communicate accurately.</li>
+<li>Implement various datatypes (“discrete structures”) and algorithms.</li>
+<li>Count, classify and organize sets objects.</li>
+<li>Use them in real-world and computer-based modelling.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=MNSAolUgFYQ">See Simon Sinek in Vegas “Start with Why”</a>.</p>
+</div>
+<aside class="notes">
+<ul>
+<li>Why students should not just try to pass the course, but actually join the instructor learning “Discrete Structures”?</li>
+<li>Many worthwhile subjects could be taught in RBS. How about Ancient Greek literature? <a href="https://www.theatlantic.com/magazine/archive/2006/06/the-management-myth/304883/">The Management Myth</a> - how philosophy and literature is related to management science.</li>
+</ul>
+</aside></section>
+<section><section id="goals-vs.-toolsactivities" class="title-slide slide level1"><h1><lo-summary/> Goals vs. Tools/Activities</h1><hgroup>
+<p><strong>Goals:</strong></p>
+<ul>
+<li>Explain certain important things unambiguously (to humans and computers alike).</li>
+<li>Being part of the community (sometimes called “nerds”).</li>
+<li><strong>WHILE</strong> also having interdisciplinarity. When does the genereal population like and enjoy mathematical culture?</li>
+</ul>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Syllabus balances these <blue><em>goals</em></blue> with certain <blue><em>tools</em></blue> and <blue><em>activities</em></blue>.</p>
+<ul>
+<li>Writing proofs (4 Homeworks + 2 Exams - 20%+30% of the grade).</li>
+<li>Discussing proofs (Reading/Presentation + Participation - 10%+10% of the grade).</li>
+<li>Functional programming, Scala/Coq (Computations and Proof Checking - 20% of the grade).</li>
+<li>Discrete math. techniques (Automated Tests - 10% of the grade).</li>
+</ul>
+<p>Tools include the typesetting system <strong>LaTeX</strong>, proof assistant <strong>Coq</strong>, some coding exercises in <strong>Scala</strong>, <strong>Git</strong> versioning, <strong>Jenkins</strong> (just for grading) as well as online tests.</p>
+</hgroup>
+<aside class="notes">
+<p>Examples how “nerd culture” is being adopted by mainstream people: Wikipedia, some data visualization and other IT systems, computer games.</p>
+</aside></section><section id="know-why-you-do-what-you-do" class="slide level2">
+<h2><lo-summary/> Know WHY you do what you do</h2>
+<hgroup style="font-size:70%">
+<figure>
+<img data-src="broccoli.png" alt="Broccoli" /><figcaption>Broccoli</figcaption>
+</figure>
+<p><a href="https://blog.ncase.me/curse-of-the-chocolate-covered-broccoli-or-emotion-in-learning/">Curse of the Chocolate-Covered Broccoli by Nicky Case</a><br />
+<em>“So earlier this year, I learnt my whole career was based on a lie. As one does.<br />
+…<br />
+I need to season and roast those veggies, to bring out the natural tastiness that’s <em>already</em> in the broccoli.”</em></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<ul>
+<li>Can you eat lunch once per day? Can you eat lunch 20 times per day?</li>
+<li>Math as a set of skills. Math as a communications tool. Math as a source of beauty.</li>
+<li>“ARS” - a polite word in Latin (means <strong>both</strong> science and art).</li>
+</ul>
+<p>Estimate how much time an average “non-mathematical person” spends to learn mathematics during his/her lifetime? How much is really needed, what is their ROI?</p>
+</hgroup>
+</section></section>
+<section id="why-1" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>How combinatorial manipulation with <code>true</code> and <code>false</code> is related with logic and thinking?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Not all the logical operations match our intuition.</li>
+<li>Truth tables are not always efficient.</li>
+<li>Formalized proofs are not same as proofs in regular mathematics.</li>
+<li>May need both - to communicate with rule-based AI systems and also to find out what is true.</li>
+</ul>
+</div></section>
+<section id="objectives-for-this-session" class="title-slide slide level1"><h1><lo-summary/> Objectives for this Session</h1><p><em>Logic and Proofs - 1 (Propositional Logic)</em></p>
+<ol type="1">
+<li>Use LaTeX to create APA compliant papers.</li>
+<li>Identify propositions among English sentences.</li>
+<li>Define basic Boolean operations on propositions.</li>
+<li>Identify some propositional rules and equivalences.</li>
+<li>Build truth tables for Boolean expressions.</li>
+<li>Use contradictions (LNC, EFQ). Identify non-constructive proofs.</li>
+<li>Use Coq to prove statements of propositional logic.</li>
+<li>Write human-readable proofs, identify proof patterns.</li>
+</ol></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span style="color:darkgreen"><strong>(2) APA Style and LaTeX</strong></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span style="color:darkgreen"><strong>(3) Statements and Propositions</strong></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span style="color:darkgreen"><strong>(4) Boolean Operations</strong></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span style="color:darkgreen"><strong>(5) Rules of Reasoning</strong></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span style="color:darkgreen"><strong>(6) Truth Tables</strong></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span style="color:darkgreen"><strong>(7) Some Proof Techniques</strong></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span style="color:darkgreen"><strong>(8) Proposition Handling in Coq</strong></span><br />
+<span>(9) <a href="#/section-8">References</a></span></p>
+</hgroup></section>
+<section id="section-8" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 1<br />
+(Propositional Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span style="color:darkgreen"><strong>(9) References</strong></span></p>
+</hgroup></section>
+<section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1><ol type="1">
+<li>Compiled a document from LaTeX into PDF.</li>
+<li></li>
+</ol></section>
+<section><section id="general-references" class="title-slide slide level1"><h1><lo-summary/> General References</h1><ol type="1">
+<li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">CSE 191, Spring 2019 in Buffalo</a> - inspiration for the current course.</li>
+</ol></section><section id="references-on-latex" class="slide level2">
+<h2><lo-theory/> References on LaTeX</h2>
+</section><section id="references-on-coq" class="slide level2">
+<h2><lo-theory/> References on Coq</h2>
+<ol type="1">
+<li><a href="https://coq.inria.fr/documentation">Coq Documentation Homepage</a></li>
+<li><a href="https://github.com/coq/coq/wiki/The-Logic-of-Coq">The Logic of Coq</a></li>
+<li><a href="https://coq.inria.fr/tutorial-nahas">A tutorial by Nahas</a></li>
+<li><a href="https://cel.archives-ouvertes.fr/inria-00001173v5/document">Coq in a Hurry</a></li>
+<li><a href="http://flint.cs.yale.edu/cs430/lectureNotes/terse/Logic.html">Notes on Logic Operations</a></li>
+<li><a href="https://people.debian.org/~schepler/coqtut.v.html">Coq in Group Theory</a></li>
+<li><a href="https://youtu.be/z861PoZPGqk">Using CoqIDE</a></li>
+<li><a href="https://www.openaccessgovernment.org/the-coq-proof-assistant/69396/">Why do we care about Coq?</a></li>
+<li><a href="http://coq.io/opam/">Coq packages</a></li>
+</ol>
+<aside class="notes">
+<p>More training videos: https://youtu.be/7sk8hPWAMSw https://youtu.be/ngM2N98ppQE</p>
+</aside>
+</section></section>
+<section><section id="logic-in-literature---1" class="title-slide slide level1"><h1><lo-yellow/> Logic in Literature - 1</h1><hgroup style="font-size:70%">
+<p><a href="https://de.wikisource.org/wiki/Faust_-_Der_Trag%C3%B6die_erster_Teil">Goethe. Faust, Der Tragödie. Erster Teil</a></p>
+<p>Gebraucht der Zeit, sie geht so schnell von hinnen,<br />
+Doch Ordnung lehrt euch Zeit gewinnen.<br />
+Mein theurer Freund, ich rath’ euch drum<br />
+Zuerst <em>Collegium Logicum</em>.<br />
+Da wird der Geist euch wohl dressiert,<br />
+In spanische Stiefeln eingeschnürt,<br />
+Daß er bedächtiger so fort an<br />
+Hinschleiche die Gedankenbahn,<br />
+Und nicht etwa, die Kreuz’ und Quer,<br />
+Irlichtelire hin und her.</p>
+</hgroup>
+<hgroup style="font-size:60%">
+<p><a href="https://www.poetryintranslation.com/PITBR/German/FaustIScenesIVtoVI.php">Goethe. Faust. Part 1, Scene 4</a></p>
+<p>My dear friend, I’d advise, in sum,<br />
+First, the <em>Collegium Logicum</em>.<br />
+There your mind will be trained,<br />
+As if in Spanish boots, constrained,<br />
+So that painfully, as it ought,<br />
+It creeps along the way of thought.<br />
+Not flitting about all over,<br />
+Wandering here and there. <a href="https://www.youtube.com/watch?v=OzMejWGirJs&amp;feature=youtu.be&amp;t=5962">Audio</a></p>
+<p><a href="http://www.korpuss.lv/klasika/Senie/Rainis/Fausts/4.html">Gēte. Fausts. 1.daļa, 4.skats.</a></p>
+<p>Mans mīļais draugs, es padomu jums dotu<br />
+<em>Collegium logicum</em> ņemt no sākuma.<br />
+Tur garu nodīda jums stingri<br />
+Un it kā spaidu klučos liek,<br />
+Ka turpmāk tas vairs ne tik vingri<br />
+Pa domu teku tālāk tiek.<br />
+Lai krustām un šķērsām tas nešaudās,<br />
+Kā maldu uguns, kas šur tur parādās.</p>
+</hgroup></section><section id="logic-in-literature---1-1" class="slide level2">
+<h2><lo-yellow/> Logic in Literature - 1</h2>
+<hgroup style="font-size:70%">
+<figure>
+<img data-src="willy-pogany-mephistopheles-and-student.png" alt="Mephistopheles and the Student" /><figcaption>Mephistopheles and the Student</figcaption>
+</figure>
+<p><em>Mephistopheles and the Student, by <a href="https://www.pinterest.com/7marilyn4/willy-pogany-faust-by-johann-wolfgang-von-goethe/">Willy Pogany</a>.</em></p>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Career advisor discussing 4 areas of study typical in ancient universities - Philosophy, Jurisprudence, Theology, Medicine. The advice ultimately comes to this:</p>
+<p><em>Grau, theurer Freund, ist alle Theorie,</em><br />
+<em>Und grün des Lebens goldner Baum.</em><br />
+ <br />
+<em>Grey, dear friend, is all theory,</em><br />
+<em>And green the golden tree of life.</em></p>
+</hgroup>
+<aside class="notes">
+
+</aside>
+</section></section>
+<section id="logic-in-literature---2" class="title-slide slide level1"><h1><lo-yellow/> Logic in Literature - 2</h1><hgroup style="font-size:65%">
+<ul>
+<li><a href="http://www.klassika.ru/read.html?proza/dostoevskij/podpole.txt&amp;page=5">Dostoyevsky, Notes from the Underground, Parts 8 and 9</a></li>
+</ul>
+<p>Good heavens, gentlemen, what sort of free will is left when we come to tabulation and arithmetic, when it will all be a case of twice two make four? Twice two makes four without my will. As if free will meant that! …<br />
+And to go to the root of the matter, why are you so positively convinced that not to act against his real normal interests guaranteed by the conclusions of reason and arithmetic is certainly always advantageous for man and must always be a law for mankind? So far, you know, this is only your supposition. It may be the law of logic, but not the law of humanity.</p>
+</hgroup>
+<hgroup style="font-size:65%">
+<ul>
+<li><a href="http://www.klassika.ru/read.html?proza/dostoevskij/podpole.txt&amp;page=5">Достоевский. Записки из подполья, части 8 и 9</a></li>
+</ul>
+<p>Эх, господа, какая уж тут своя воля будет, когда дело доходит до таблички и до арифметики, когда будет одно только дважды два четыре в ходу? Дважды два и без моей воли четыре будет. Такая ли своя воля бывает! …<br />
+И, если уж все говорить, почему вы так наверно убеждены, что не идти против настоящих, нормальных выгод, гарантированных доводами разума и арифметикой, действительно для человека всегда выгодно и есть закон для всего человечества? Ведь это покамест еще только одно ваше предположение. Положим, что это закон логики, но, может быть, вовсе не человечества.</p>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

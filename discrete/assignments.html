@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>Discrete Structures: Coding Assignments</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Home</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Assignments</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs.html">Proofs</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<h2>Homeworks</h2>
+
+<ul>
+<li><a href="../discrete-bin/homeworks/discrete-structures-hw01.pdf">Homework 1</a>, Due 2020-01-20</li>
+</ul>
+
+<h2>Computations and Proof Checking</h2>
+
+<ul>
+<li><a href="../discrete-bin/coq-propositional/lab01_tasks.html">Lab01 (Boolean Expressions in Coq)</a></li>
+</ul>
+
+
+<h2>Additional Coq Examples</h2>
+
+<p>The following examples just illustrate some additional topics regarding Coq and proofs; 
+they are NOT necessary to understand the course "Discrete Structures". 
+If you want to learn Coq, it is usually better to refer to systematic tutorials - 
+see the Coq-related section under <a href="references.html">References</a>.</p>
+
+<b>Coq Basics</b>
+
+<ul>
+<li><a href="../discrete-bin/coq-basics/fundamentals_part1.html">Intro to Coq language</a></li>
+<li><a href="../discrete-bin/coq-basics/checking_types.html">Checking types of expressions</a></li>
+</ul>
+
+<b>Propositional Logic with Coq</b>
+
+<ul>
+<li><a href="../discrete-bin/coq-propositional/CSEnotes_propositional.html">Proving Tautologies (CSE191 Notes, p.12-20)</a></li>
+<li><a href="../discrete-bin/coq-propositional/more_tautologies.html">More Tautologies</a></li>
+<li><a href="../discrete-bin/coq-propositional/classical_logic.html">Intuitionist and Classical Logic</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_samples.html">Examples to prepare for Lab01</a></li>
+<li><a href="../discrete-bin/coq-propositional/exercises_propositional.html">Small Proof Exercises (K.Rosen's book, Chapter 1.3)</a></li>
+</ul>
+
+<b>Predicate Logic</b>
+
+<ul>
+<li><a href="../discrete-bin/coq-predicate/mybaby.html">MyBaby Example</a></li>
+</ul>
+
+<b>Sets</b>
+
+
+<b>Number Theory</b>
+
+<ul>
+<li><a href="../discrete-bin/coq-predicate/mybaby.html">Integer Arithmetic (CSE191 Notes, p.110-114,
+p.117-125,p.133-137</a></li>
+</ul>
+
+
+
+<b>Inductive Proofs</b>
+
+
+
+</body>
+</html>
+

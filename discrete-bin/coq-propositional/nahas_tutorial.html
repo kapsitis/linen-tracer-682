@@ -1,0 +1,953 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module nahas_tutorial</title>
+<meta name="description" content="Documentation of Coq module nahas_tutorial" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module nahas_tutorial</h1>
+<div class="coq">
+<br/>
+<br/>
+<h1> Introduction </h1>
+<br/>
+<br/>
+<h2> Prerequisites </h2>
+<br/>
+<br/>
+<h2> Installing Coq </h2>
+<br/>
+<br/>
+<h2> Loading this file </h2>
+<br/>
+<h1> Comments </h1>
+<br/>
+<br/>
+<h1> Your First Proof! </h1>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">my_first_proof</span> : (<span class="kwd">forall</span> <span class="id">A</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<h2> Dissection of your first proof </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">my_first_proof__again</span> : (<span class="kwd">forall</span> <span class="id">A</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
+<div class="proofscript" id="proof2">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<h2> Seeing where you are in a proof </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">my_first_proof__again__again</span> : (<span class="kwd">forall</span> <span class="id">A</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<h2> Your first Tactic! </h2>
+<br/>
+<br/>
+<h1> Proofs with -&gt; </h1>
+<h2> Proof going forward </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">forward_small</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>) -&gt; <span class="id">B</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
+<div class="proofscript" id="proof4">
+&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">B</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">A_implies_B</span>.<br/>
+&nbsp;<span class="id">pose</span> (<span class="id">proof_of_B</span> := <span class="id">A_implies_B</span> <span class="id">proof_of_A</span>).<br/>
+&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h2> Proof going backward </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">backward_small</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>)-&gt;<span class="id">B</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</div>
+<div class="proofscript" id="proof5">
+&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">A_implies_B</span>.<br/>
+&nbsp;<span class="tactic">refine</span> (<span class="id">A_implies_B</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h2> Proof going backward (large) </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">backward_large</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> <span class="id">C</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>) -&gt; (<span class="id">B</span>-&gt;<span class="id">C</span>) -&gt; <span class="id">C</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof6')">Proof.</div>
+<div class="proofscript" id="proof6">
+&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span> <span class="id">C</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">A_implies_B</span> <span class="id">B_implies_C</span>.<br/>
+&nbsp;<span class="tactic">refine</span> (<span class="id">B_implies_C</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">A_implies_B</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h2> Proof going backward (huge) </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">backward_huge</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> <span class="id">C</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>) -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>-&gt;<span class="id">C</span>) -&gt; <span class="id">C</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof7')">Proof.</div>
+<div class="proofscript" id="proof7">
+&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span> <span class="id">C</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">A_implies_B</span> <span class="id">A_imp_B_imp_C</span>.<br/>
+&nbsp;<span class="tactic">refine</span> (<span class="id">A_imp_B_imp_C</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">A_implies_B</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h2> Proof going forward (huge) </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">forward_huge</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> <span class="id">C</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>) -&gt; (<span class="id">A</span>-&gt;<span class="id">B</span>-&gt;<span class="id">C</span>) -&gt; <span class="id">C</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof8')">Proof.</div>
+<div class="proofscript" id="proof8">
+&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span> <span class="id">C</span>.<br/>
+&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">A_implies_B</span> <span class="id">A_imp_B_imp_C</span>.<br/>
+&nbsp;<span class="id">pose</span> (<span class="id">proof_of_B</span> := <span class="id">A_implies_B</span> <span class="id">proof_of_A</span>).<br/>
+&nbsp;<span class="id">pose</span> (<span class="id">proof_of_C</span> := <span class="id">A_imp_B_imp_C</span> <span class="id">proof_of_A</span> <span class="id">proof_of_B</span>).<br/>
+&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_C</span>.<br/>
+<span class="kwd">Show</span> <span class="kwd">Proof</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1> true and false vs. True and False </h1>
+<br/>
+<h2> Capital-T True and Capital-F False </h2>
+<h3> True is provable </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">True_can_be_proven</span> : <span class="id">True</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<h3> Unprovability </h3>
+<br/>
+<h3> False is unprovable </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">False_cannot_be_proven</span> : ~<span class="id">False</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof9')">Proof.</div>
+<div class="proofscript" id="proof9">
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_False</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_False</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">False_cannot_be_proven__again</span> : ~<span class="id">False</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof10')">Proof.</div>
+<div class="proofscript" id="proof10">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_False</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">proof_of_False</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> -&gt; Examples </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_true_imp_true</span> : <span class="id">True</span> -&gt; <span class="id">True</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof11')">Proof.</div>
+<div class="proofscript" id="proof11">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_True</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.  <span class="comment">(**&nbsp;"exact&nbsp;proof_of_True."&nbsp;also&nbsp;works.&nbsp;*)</span><br/>
+Qed.</div>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_false_imp_true</span> : <span class="id">False</span> -&gt; <span class="id">True</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof12')">Proof.</div>
+<div class="proofscript" id="proof12">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_False</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.  <span class="comment">(**&nbsp;"case&nbsp;proof_of_False."&nbsp;also&nbsp;works.&nbsp;*)</span><br/>
+Qed.</div>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_false_imp_false</span> : <span class="id">False</span> -&gt; <span class="id">False</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof13')">Proof.</div>
+<div class="proofscript" id="proof13">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_False</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">proof_of_False</span>.  <span class="comment">(**&nbsp;"exact&nbsp;proof_of_False."&nbsp;works,&nbsp;but&nbsp;is&nbsp;not&nbsp;recommended.&nbsp;*)</span><br/>
+Qed.</div>
+<br/>
+<div class="doc">True-&gt;False can never be proven.  We demonstrate that by
+proving ~(True-&gt;False). </div>
+<span class="kwd">Theorem</span> <span class="id">thm_true_imp_false</span> : ~(<span class="id">True</span> -&gt; <span class="id">False</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof14')">Proof.</div>
+<div class="proofscript" id="proof14">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">T_implies_F</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">T_implies_F</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<h3> Reducto ad absurdium </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">absurd2</span> : <span class="kwd">forall</span> <span class="id">A</span> <span class="id">C</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; ~ <span class="id">A</span> -&gt; <span class="id">C</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof15')">Proof.</div>
+<div class="proofscript" id="proof15">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">C</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">proof_that_A_cannot_be_proven</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span> <span class="kwd">in</span> <span class="id">proof_that_A_cannot_be_proven</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">proof_of_False</span> := <span class="id">proof_that_A_cannot_be_proven</span> <span class="id">proof_of_A</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">proof_of_False</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<h2> The return of lower-case true and lower-case false </h2>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Bool</span>.<br/>
+<br/>
+<br/>
+<h3> Is_true true is True </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">true_is_True</span>: <span class="id">Is_true</span> <span class="id">true</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof16')">Proof.</div>
+<div class="proofscript" id="proof16">
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Is_true called with a complex constant. </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">not_eqb_true_false</span>: ~(<span class="id">Is_true</span> (<span class="id">eqb</span> <span class="id">true</span> <span class="id">false</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof17')">Proof.</div>
+<div class="proofscript" id="proof17">
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">False_cannot_be_proven</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> case with bools </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">eqb_a_a</span> : (<span class="kwd">forall</span> <span class="id">a</span> : <span class="id">bool</span>, <span class="id">Is_true</span> (<span class="id">eqb</span> <span class="id">a</span> <span class="id">a</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof18')">Proof.</div>
+<div class="proofscript" id="proof18">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>.<br/>
+<div class="doc">suppose a is true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a is false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_eqb_a_t</span>: (<span class="kwd">forall</span> <span class="id">a</span>:<span class="id">bool</span>, (<span class="id">Is_true</span> (<span class="id">eqb</span> <span class="id">a</span> <span class="id">true</span>)) -&gt; (<span class="id">Is_true</span> <span class="id">a</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof19')">Proof.</div>
+<div class="proofscript" id="proof19">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>.<br/>
+<div class="doc">suppose a is true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_True</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a is false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_False</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">proof_of_False</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h1> And, Or </h1>
+<h2> Or </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">left_or</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; <span class="id">A</span> \/ <span class="id">B</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof20')">Proof.</div>
+<div class="proofscript" id="proof20">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">proof_of_A_or_B</span> := <span class="id">or_introl</span> <span class="id">proof_of_A</span> : <span class="id">A</span> \/ <span class="id">B</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A_or_B</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">right_or</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> : <span class="kwd">Prop</span>, <span class="id">B</span> -&gt; <span class="id">A</span> \/ <span class="id">B</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof21')">Proof.</div>
+<div class="proofscript" id="proof21">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">or_intror</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Or commutes </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">or_commutes</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span>, <span class="id">A</span> \/ <span class="id">B</span> -&gt; <span class="id">B</span> \/ <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof22')">Proof.</div>
+<div class="proofscript" id="proof22">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A_or_B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">A_or_B</span>.<br/>
+<div class="doc">suppose A_or_B is (or_introl proof_of_A) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">or_intror</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+<br/>
+<div class="doc">suppose A_or_B is (or_intror proof_of_B) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_B</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">or_introl</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h2> And </h2>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">both_and</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span> : <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; <span class="id">B</span> -&gt; <span class="id">A</span> /\ <span class="id">B</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof23')">Proof.</div>
+<div class="proofscript" id="proof23">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">proof_of_B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+Qed.</div>
+<br/>
+<h3> And commutes </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">and_commutes</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span>, <span class="id">A</span> /\ <span class="id">B</span> -&gt; <span class="id">B</span> /\ <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof24')">Proof.</div>
+<div class="proofscript" id="proof24">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A_and_B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">A_and_B</span>.<br/>
+<div class="doc">suppose A_and_B is (conj proof_of_A proof_of_B) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_A</span> <span class="id">proof_of_B</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> destruct tactic </h3>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">and_commutes__again</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span>, <span class="id">A</span> /\ <span class="id">B</span> -&gt; <span class="id">B</span> /\ <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof25')">Proof.</div>
+<div class="proofscript" id="proof25">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A_and_B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">A_and_B</span> <span class="kwd">as</span> [<span class="comment">(**conj*)</span> <span class="id">proof_of_A</span> <span class="id">proof_of_B</span>].<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> functions and inductive types </h3>
+<span class="kwd">Theorem</span> <span class="id">orb_is_or</span> : (<span class="kwd">forall</span> <span class="id">a</span> <span class="id">b</span>, <span class="id">Is_true</span> (<span class="id">orb</span> <span class="id">a</span> <span class="id">b</span>) &lt;-&gt; <span class="id">Is_true</span> <span class="id">a</span> \/ <span class="id">Is_true</span> <span class="id">b</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof26')">Proof.</div>
+<div class="proofscript" id="proof26">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span> <span class="id">b</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">iff</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+<div class="doc">orb -&gt; \/ </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>, <span class="id">b</span>.<br/>
+<div class="doc">suppose a,b is true, true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">or_introl</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is true, false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">or_introl</span> <span class="id">I</span>).<br/>
+<br/>
+<div class="doc">suppose a,b is false, true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">or_intror</span> <span class="id">I</span>).<br/>
+<br/>
+<div class="doc">suppose a,b is false, false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">H</span>.<br/>
+<br/>
+<div class="doc">\/ -&gt; orb </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>, <span class="id">b</span>.<br/>
+<div class="doc">suppose a,b is true, true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is true, false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is false, true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is false, false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">H</span>.<br/>
+<div class="doc">suppose H is (or_introl A) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">A</span>.<br/>
+<br/>
+<div class="doc">suppose H is (or_intror B) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">B</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">andb_is_and</span> : (<span class="kwd">forall</span> <span class="id">a</span> <span class="id">b</span>, <span class="id">Is_true</span> (<span class="id">andb</span> <span class="id">a</span> <span class="id">b</span>) &lt;-&gt; <span class="id">Is_true</span> <span class="id">a</span> /\ <span class="id">Is_true</span> <span class="id">b</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof27')">Proof.</div>
+<div class="proofscript" id="proof27">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span> <span class="id">b</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">iff</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+<div class="doc">andb -&gt; /\ </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>, <span class="id">b</span>.<br/>
+<div class="doc">suppose a,b is true,true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">conj</span> <span class="id">I</span> <span class="id">I</span>).<br/>
+<br/>
+<div class="doc">suppose a,b is true,false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">H</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is false,true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">H</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is false,false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">H</span>.<br/>
+<br/>
+<div class="doc">/\ -&gt; andb </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>,<span class="id">b</span>.<br/>
+<div class="doc">suppose a,b is true,true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is true,false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="comment">(**conj*)</span> <span class="id">A</span> <span class="id">B</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">B</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is false,true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="comment">(**conj*)</span> <span class="id">A</span> <span class="id">B</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">A</span>.<br/>
+<br/>
+<div class="doc">suppose a,b is false,false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="comment">(**conj*)</span> <span class="id">A</span> <span class="id">B</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">A</span>.<br/>
+Qed.</div>
+<br/>
+<h3> admit tactic </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">negb_is_not</span> : (<span class="kwd">forall</span> <span class="id">a</span>, <span class="id">Is_true</span> (<span class="id">negb</span> <span class="id">a</span>) &lt;-&gt; (~(<span class="id">Is_true</span> <span class="id">a</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof28')">Proof.</div>
+<div class="proofscript" id="proof28">
+&nbsp;&nbsp;<span class="id">admit</span>.  <span class="comment">(**&nbsp;delete&nbsp;"admit"&nbsp;and&nbsp;put&nbsp;your&nbsp;proof&nbsp;here.&nbsp;*)</span><br/>
+Admitted.</div>
+ <br/>
+<br/>
+<br/>
+<h1> Existence and Equality </h1>
+<br/>
+<h2> Existence </h2>
+<br/>
+<span class="kwd">Definition</span> <span class="id">basic_predicate</span><br/>
+:=<br/>
+&nbsp;&nbsp;(<span class="kwd">fun</span> <span class="id">a</span> =&gt; <span class="id">Is_true</span> (<span class="id">andb</span> <span class="id">a</span> <span class="id">true</span>))<br/>
+.<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_exists_basics</span> : (<span class="id">ex</span> <span class="id">basic_predicate</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof29')">Proof.</div>
+<div class="proofscript" id="proof29">
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">witness</span> := <span class="id">true</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">ex_intro</span> <span class="id">basic_predicate</span> <span class="id">witness</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_exists_basics__again</span> : (<span class="id">exists</span> <span class="id">a</span>, <span class="id">Is_true</span> (<span class="id">andb</span> <span class="id">a</span> <span class="id">true</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof30')">Proof.</div>
+<div class="proofscript" id="proof30">
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">witness</span> := <span class="id">true</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">ex_intro</span> <span class="id">_</span> <span class="id">witness</span> <span class="id">_</span>).<br/>
+<div class="doc">Coq automatically determines the predicate! </div>
+<div class="doc">We're left to prove that the witness satisfies the function. </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> More existence </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_forall_exists</span> : (<span class="kwd">forall</span> <span class="id">b</span>, (<span class="id">exists</span> <span class="id">a</span>, <span class="id">Is_true</span>(<span class="id">eqb</span> <span class="id">a</span> <span class="id">b</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof31')">Proof.</div>
+<div class="proofscript" id="proof31">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">b</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">b</span>.<br/>
+<div class="doc">b is true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">witness</span> := <span class="id">true</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">ex_intro</span> <span class="id">_</span> <span class="id">witness</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+<br/>
+<div class="doc">b is false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">witness</span> := <span class="id">false</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">ex_intro</span> <span class="id">_</span> <span class="id">witness</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">I</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_forall_exists__again</span> : (<span class="kwd">forall</span> <span class="id">b</span>, (<span class="id">exists</span> <span class="id">a</span>, <span class="id">Is_true</span>(<span class="id">eqb</span> <span class="id">a</span> <span class="id">b</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof32')">Proof.</div>
+<div class="proofscript" id="proof32">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">b</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">ex_intro</span> <span class="id">_</span> <span class="id">b</span> <span class="id">_</span>). <span class="comment">(**&nbsp;witness&nbsp;is&nbsp;b&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eqb_a_a</span> <span class="id">b</span>).<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Exists and Forall </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">forall_exists</span> : (<span class="kwd">forall</span> <span class="id">P</span> : <span class="kwd">Set</span>-&gt;<span class="kwd">Prop</span>,  (<span class="kwd">forall</span> <span class="id">x</span>, ~(<span class="id">P</span> <span class="id">x</span>)) -&gt; ~(<span class="id">exists</span> <span class="id">x</span>, <span class="id">P</span> <span class="id">x</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof33')">Proof.</div>
+<div class="proofscript" id="proof33">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">P</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">forall_x_not_Px</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">exists_x_Px</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">exists_x_Px</span> <span class="kwd">as</span> [<span class="comment">(**ex_intro&nbsp;P*)</span> <span class="id">witness</span> <span class="id">proof_of_Pwitness</span>].<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">not_Pwitness</span> := <span class="id">forall_x_not_Px</span> <span class="id">witness</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span> <span class="kwd">in</span> <span class="id">not_Pwitness</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">proof_of_False</span> := <span class="id">not_Pwitness</span> <span class="id">proof_of_Pwitness</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">proof_of_False</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">exists_forall</span> : (<span class="kwd">forall</span> <span class="id">P</span> : <span class="kwd">Set</span>-&gt;<span class="kwd">Prop</span>,  ~(<span class="id">exists</span> <span class="id">x</span>, <span class="id">P</span> <span class="id">x</span>) -&gt; (<span class="kwd">forall</span> <span class="id">x</span>, ~(<span class="id">P</span> <span class="id">x</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof34')">Proof.</div>
+<div class="proofscript" id="proof34">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">P</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">not_exists_x_Px</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">P_x</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span> <span class="kwd">in</span> <span class="id">not_exists_x_Px</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">not_exists_x_Px</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">ex_intro</span> <span class="id">P</span> <span class="id">x</span> <span class="id">P_x</span>).<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Calculating witnesses </h3>
+<br/>
+<h2> Equality </h2>
+<br/>
+<h3> Equality is symmetric </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_eq_sym</span> : (<span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> : <span class="kwd">Set</span>, <span class="id">x</span> = <span class="id">y</span> -&gt; <span class="id">y</span> = <span class="id">x</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof35')">Proof.</div>
+<div class="proofscript" id="proof35">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">y</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x_y</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">x_y</span> <span class="kwd">as</span> [<span class="comment">(*eq_refl*)</span>].<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">x</span>).<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Equality is transitive </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_eq_trans</span> : (<span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>: <span class="kwd">Set</span>, <span class="id">x</span> = <span class="id">y</span> -&gt; <span class="id">y</span> = <span class="id">z</span> -&gt; <span class="id">x</span> = <span class="id">z</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof36')">Proof.</div>
+<div class="proofscript" id="proof36">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x_y</span> <span class="id">y_z</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">x_y</span> <span class="kwd">as</span> [<span class="comment">(*eq_refl*)</span>].<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">y_z</span> <span class="kwd">as</span> [<span class="comment">(*eq_refl*)</span>].<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">x</span>).<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">thm_eq_trans__again</span> : (<span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>: <span class="kwd">Set</span>, <span class="id">x</span> = <span class="id">y</span> -&gt; <span class="id">y</span> = <span class="id">z</span> -&gt; <span class="id">x</span> = <span class="id">z</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof37')">Proof.</div>
+<div class="proofscript" id="proof37">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x_y</span> <span class="id">y_z</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">x_y</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">y_z</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">y</span>).<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">andb_sym</span> : (<span class="kwd">forall</span> <span class="id">a</span> <span class="id">b</span>, <span class="id">a</span> &amp;&amp; <span class="id">b</span> = <span class="id">b</span> &amp;&amp; <span class="id">a</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof38')">Proof.</div>
+<div class="proofscript" id="proof38">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span> <span class="id">b</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>, <span class="id">b</span>.<br/>
+<div class="doc">suppose a,b is true,true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">true</span>).<br/>
+<br/>
+<div class="doc">suppose a,b is true,false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">false</span>).<br/>
+<br/>
+<div class="doc">suppose a,b is false,true </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">false</span>).<br/>
+<br/>
+<div class="doc">suppose a,b is false,false </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">false</span>).<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Inequality with discriminate </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">neq_nega</span>: (<span class="kwd">forall</span> <span class="id">a</span>, <span class="id">a</span> &lt;&gt; (<span class="id">negb</span> <span class="id">a</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof39')">Proof.</div>
+<div class="proofscript" id="proof39">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">case</span> <span class="id">a</span>.<br/>
+*suppose&nbsp;a&nbsp;is&nbsp;true*)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a_eq_neg_a</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">a_eq_neg_a</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">discriminate</span> <span class="id">a_eq_neg_a</span>.<br/>
+<br/>
+*suppose&nbsp;a&nbsp;is&nbsp;false*)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">a_eq_neg_a</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">a_eq_neg_a</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">discriminate</span> <span class="id">a_eq_neg_a</span>.<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1> Natural Numbers and Induction </h1>
+<h2> Peano Arithmetic </h2>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">plus_2_3</span> : (<span class="id">S</span> (<span class="id">S</span> <span class="id">O</span>)) + (<span class="id">S</span> (<span class="id">S</span> (<span class="id">S</span> <span class="id">O</span>))) = (<span class="id">S</span> (<span class="id">S</span> (<span class="id">S</span> (<span class="id">S</span> (<span class="id">S</span> <span class="id">O</span>))))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof40')">Proof.</div>
+<div class="proofscript" id="proof40">
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> 5).<br/>
+Qed.</div>
+<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">plus_O_n</span> : (<span class="kwd">forall</span> <span class="id">n</span>, <span class="id">O</span> + <span class="id">n</span> = <span class="id">n</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof41')">Proof.</div>
+<div class="proofscript" id="proof41">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">n</span>).<br/>
+Qed.</div>
+<br/>
+<h2> Induction </h2>
+<span class="kwd">Check</span> <span class="id">nat_ind</span>.<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">plus_n_O</span> : (<span class="kwd">forall</span> <span class="id">n</span>, <span class="id">n</span> + <span class="id">O</span> = <span class="id">n</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof42')">Proof.</div>
+<div class="proofscript" id="proof42">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">n</span>.<br/>
+<div class="doc">base case </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">O</span>).<br/>
+<br/>
+<div class="doc">inductive case </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span>'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">inductive_hypothesis</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">inductive_hypothesis</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">S</span> <span class="id">n</span>')).<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<h3> Induction tactic </h3>
+<span class="kwd">Theorem</span> <span class="id">plus_n_O__again</span> : (<span class="kwd">forall</span> <span class="id">n</span>, <span class="id">n</span> + <span class="id">O</span> = <span class="id">n</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof43')">Proof.</div>
+<div class="proofscript" id="proof43">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">induction</span> <span class="id">n</span> <span class="kwd">as</span> [|<span class="id">n</span>' <span class="id">inductive_hypothesis</span>].<br/>
+<div class="doc">base case </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">O</span>).<br/>
+<br/>
+<div class="doc">inductive case </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">inductive_hypothesis</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">S</span> <span class="id">n</span>')).<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">or_commutes__again</span> : (<span class="kwd">forall</span> <span class="id">A</span> <span class="id">B</span>, <span class="id">A</span> \/ <span class="id">B</span> -&gt; <span class="id">B</span> \/ <span class="id">A</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof44')">Proof.</div>
+<div class="proofscript" id="proof44">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A_or_B</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">A_or_B</span> <span class="kwd">as</span> [<span class="id">proof_of_A</span> | <span class="id">proof_of_B</span>].<br/>
+<div class="doc">suppose A_or_B is (or_introl proof_of_A) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">or_intror</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_A</span>.<br/>
+<br/>
+<div class="doc">suppose A_or_B is (or_intror proof_of_B) </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">or_introl</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">proof_of_B</span>.<br/>
+Qed.</div>
+<br/>
+<span class="kwd">Print</span> <span class="id">or</span>.<br/>
+<span class="kwd">Print</span> <span class="id">nat_ind</span>.<br/>
+<h3> Addition is Symmetric </h3>
+<span class="kwd">Theorem</span> <span class="id">plus_sym</span>: (<span class="kwd">forall</span> <span class="id">n</span> <span class="id">m</span>, <span class="id">n</span> + <span class="id">m</span> = <span class="id">m</span> + <span class="id">n</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof45')">Proof.</div>
+<div class="proofscript" id="proof45">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span> <span class="id">m</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">n</span>.<br/>
+<div class="doc">base case for n </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">m</span>.<br/>
+<div class="doc">base case for m </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">O</span> + <span class="id">O</span>)).<br/>
+<br/>
+<div class="doc">inductive case for m </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">m</span>'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">inductive_hyp_m</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">rewrite</span> &lt;- <span class="id">inductive_hyp_m</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">S</span> <span class="id">m</span>')).<br/>
+<br/>
+<div class="doc">inductive case for n </div>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">n</span>'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">inductive_hyp_n</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">inductive_hyp_n</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">elim</span> <span class="id">m</span>.<br/>
+<div class="doc">base case for m </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">S</span> <span class="id">n</span>')).<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">m</span>'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">inductive_hyp_m</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">inductive_hyp_m</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">S</span> (<span class="id">m</span>' + <span class="id">S</span> <span class="id">n</span>'))).<br/>
+Qed.</div>
+<br/>
+<br/>
+<h3> Common nat operators </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">minus_is_funny</span> : (0 - 1) = (0 - 2).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof46')">Proof.</div>
+<div class="proofscript" id="proof46">
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> 0).<br/>
+Qed.</div>
+<br/>
+<br/>
+<br/>
+<h1> Data types</h1>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">List</span>.<br/>
+<br/>
+<h2> Lists and Option </h2>
+<span class="kwd">Theorem</span> <span class="id">cons_adds_one_to_length</span> :<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>,<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> (<span class="id">x</span> : <span class="id">A</span>) (<span class="id">lst</span> : <span class="id">list</span> <span class="id">A</span>),<br/>
+&nbsp;&nbsp;&nbsp;<span class="id">length</span> (<span class="id">x</span> :: <span class="id">lst</span>) = (<span class="id">S</span> (<span class="id">length</span> <span class="id">lst</span>)))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof47')">Proof.</div>
+<div class="proofscript" id="proof47">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">lst</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">S</span> (<span class="id">length</span> <span class="id">lst</span>))).<br/>
+Qed.</div>
+<br/>
+<h3> The three forms of hd </h3>
+<h3> hd with additional parameter </h3>
+<br/>
+<span class="kwd">Definition</span> <span class="id">hd</span> (<span class="id">A</span> : <span class="kwd">Type</span>) (<span class="id">default</span> : <span class="id">A</span>) (<span class="id">l</span> : <span class="id">list</span> <span class="id">A</span>)<br/>
+:=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">l</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">nil</span> =&gt; <span class="id">default</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">x</span> :: <span class="id">_</span> =&gt; <span class="id">x</span><br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">my_hd_for_nat_lists</span><br/>
+:=<br/>
+&nbsp;&nbsp;<span class="id">hd</span> <span class="id">nat</span> 0.<br/>
+<span class="id">Compute</span> <span class="id">my_hd_for_nat_lists</span> <span class="id">nil</span>.<br/>
+<span class="id">Compute</span> <span class="id">my_hd_for_nat_lists</span> (5 :: 4 :: <span class="id">nil</span>).<br/>
+<span class="kwd">Theorem</span> <span class="id">correctness_of_hd</span> :<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>,<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> (<span class="id">default</span> : <span class="id">A</span>) (<span class="id">x</span> : <span class="id">A</span>) (<span class="id">lst</span> : <span class="id">list</span> <span class="id">A</span>),<br/>
+&nbsp;&nbsp;&nbsp;(<span class="id">hd</span> <span class="id">A</span> <span class="id">default</span> <span class="id">nil</span>) = <span class="id">default</span> /\ (<span class="id">hd</span> <span class="id">A</span> <span class="id">default</span> (<span class="id">x</span> :: <span class="id">lst</span>)) = <span class="id">x</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof48')">Proof.</div>
+<div class="proofscript" id="proof48">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">default</span> <span class="id">x</span> <span class="id">lst</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">default</span>).<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">x</span>).<br/>
+Qed.</div>
+<br/>
+<h3> hd returns option </h3>
+<span class="kwd">Definition</span> <span class="id">hd_error</span> (<span class="id">A</span> : <span class="kwd">Type</span>) (<span class="id">l</span> : <span class="id">list</span> <span class="id">A</span>)<br/>
+:=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">l</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">nil</span> =&gt; <span class="id">None</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">x</span> :: <span class="id">_</span> =&gt; <span class="id">Some</span> <span class="id">x</span><br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<span class="id">Compute</span> <span class="id">hd_error</span> <span class="id">nat</span> <span class="id">nil</span>.<br/>
+<span class="id">Compute</span> <span class="id">hd_error</span> <span class="id">nat</span> (5 :: 4 :: <span class="id">nil</span>).<br/>
+<span class="kwd">Theorem</span> <span class="id">correctness_of_hd_error</span> :<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>,<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> (<span class="id">x</span> : <span class="id">A</span>) (<span class="id">lst</span> : <span class="id">list</span> <span class="id">A</span>),<br/>
+&nbsp;&nbsp;&nbsp;(<span class="id">hd_error</span> <span class="id">A</span> <span class="id">nil</span>) = <span class="id">None</span> /\ (<span class="id">hd_error</span> <span class="id">A</span> (<span class="id">x</span> :: <span class="id">lst</span>)) = <span class="id">Some</span> <span class="id">x</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof49')">Proof.</div>
+<div class="proofscript" id="proof49">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">lst</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">conj</span> <span class="id">_</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">None</span>).<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">Some</span> <span class="id">x</span>)).<br/>
+Qed.</div>
+<br/>
+<h3> hd with a proof that the list is non-empty </h3>
+<span class="kwd">Definition</span> <span class="id">hd_never_fail</span> (<span class="id">A</span> : <span class="kwd">Type</span>) (<span class="id">lst</span> : <span class="id">list</span> <span class="id">A</span>) (<span class="id">safety_proof</span> : <span class="id">lst</span> &lt;&gt; <span class="id">nil</span>)<br/>
+&nbsp;&nbsp;: <span class="id">A</span><br/>
+:=<br/>
+&nbsp;&nbsp;(<span class="kwd">match</span> <span class="id">lst</span> <span class="kwd">as</span> <span class="id">b</span> <span class="kwd">return</span> (<span class="id">lst</span> = <span class="id">b</span> -&gt; <span class="id">A</span>) <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">nil</span> =&gt;    (<span class="kwd">fun</span> <span class="id">foo</span> : <span class="id">lst</span> = <span class="id">nil</span> =&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kwd">match</span> (<span class="id">safety_proof</span> <span class="id">foo</span>) <span class="kwd">return</span> <span class="id">A</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kwd">end</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">x</span> :: <span class="id">_</span> =&gt; (<span class="kwd">fun</span> <span class="id">foo</span> : <span class="id">lst</span> = <span class="id">x</span> :: <span class="id">_</span> =&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">x</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;<span class="kwd">end</span>) <span class="id">eq_refl</span>.<br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">correctness_of_hd_never_fail</span> :<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>,<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> (<span class="id">x</span> : <span class="id">A</span>) (<span class="id">rest</span> : <span class="id">list</span> <span class="id">A</span>),<br/>
+&nbsp;&nbsp;&nbsp;(<span class="id">exists</span> <span class="id">safety_proof</span> : ((<span class="id">x</span> :: <span class="id">rest</span>) &lt;&gt; <span class="id">nil</span>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id">hd_never_fail</span>  <span class="id">A</span> (<span class="id">x</span> :: <span class="id">rest</span>) <span class="id">safety_proof</span>) = <span class="id">x</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof50')">Proof.</div>
+<div class="proofscript" id="proof50">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">rest</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">witness</span> : ((<span class="id">x</span> :: <span class="id">rest</span>) &lt;&gt; <span class="id">nil</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">cons_eq_nil</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">discriminate</span> <span class="id">cons_eq_nil</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">refine</span> (<span class="id">ex_intro</span> <span class="id">_</span> <span class="id">witness</span> <span class="id">_</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> <span class="id">x</span>).<br/>
+Qed.</div>
+<br/>
+<h3> Tail of lists </h3>
+<span class="kwd">Definition</span> <span class="id">tl</span> (<span class="id">A</span> : <span class="kwd">Type</span>) (<span class="id">l</span>:<span class="id">list</span> <span class="id">A</span>) :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">l</span> <span class="kwd">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">nil</span> =&gt; <span class="id">nil</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">a</span> :: <span class="id">m</span> =&gt; <span class="id">m</span><br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<span class="kwd">Theorem</span> <span class="id">hd_tl</span> :<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>,<br/>
+&nbsp;&nbsp;&nbsp;(<span class="kwd">forall</span> (<span class="id">default</span> : <span class="id">A</span>) (<span class="id">x</span> : <span class="id">A</span>) (<span class="id">lst</span> : <span class="id">list</span> <span class="id">A</span>),<br/>
+&nbsp;&nbsp;&nbsp;(<span class="id">hd</span> <span class="id">A</span> <span class="id">default</span> (<span class="id">x</span>::<span class="id">lst</span>)) :: (<span class="id">tl</span> <span class="id">A</span> (<span class="id">x</span>::<span class="id">lst</span>)) = (<span class="id">x</span> :: <span class="id">lst</span>))).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof51')">Proof.</div>
+<div class="proofscript" id="proof51">
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">default</span> <span class="id">x</span> <span class="id">lst</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> (<span class="id">eq_refl</span> (<span class="id">x</span>::<span class="id">lst</span>)).<br/>
+Qed.</div>
+<br/>
+<h3> Appending lists </h3>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">app_nil_l</span> : (<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>, (<span class="kwd">forall</span> <span class="id">l</span>:<span class="id">list</span> <span class="id">A</span>, <span class="id">nil</span> ++ <span class="id">l</span> = <span class="id">l</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof52')">Proof.</div>
+<div class="proofscript" id="proof52">
+&nbsp;&nbsp;<span class="id">admit</span>.  <span class="comment">(**&nbsp;delete&nbsp;"admit"&nbsp;and&nbsp;put&nbsp;your&nbsp;proof&nbsp;here.&nbsp;*)</span><br/>
+Admitted.</div>
+ <br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">app_nil_r</span> : (<span class="kwd">forall</span> <span class="id">A</span>:<span class="kwd">Type</span>, (<span class="kwd">forall</span> <span class="id">l</span>:<span class="id">list</span> <span class="id">A</span>, <span class="kwd">forall</span> <span class="id">l</span>:<span class="id">list</span> <span class="id">A</span>, <span class="id">l</span> ++ <span class="id">nil</span> = <span class="id">l</span>)).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof53')">Proof.</div>
+<div class="proofscript" id="proof53">
+&nbsp;&nbsp;<span class="id">admit</span>.  <span class="comment">(**&nbsp;delete&nbsp;"admit"&nbsp;and&nbsp;put&nbsp;your&nbsp;proof&nbsp;here.&nbsp;*)</span><br/>
+Admitted.</div>
+ <br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">app_comm_cons</span> : <span class="kwd">forall</span> <span class="id">A</span> (<span class="id">x</span> <span class="id">y</span>:<span class="id">list</span> <span class="id">A</span>) (<span class="id">a</span>:<span class="id">A</span>), <span class="id">a</span> :: (<span class="id">x</span> ++ <span class="id">y</span>) = (<span class="id">a</span> :: <span class="id">x</span>) ++ <span class="id">y</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof54')">Proof.</div>
+<div class="proofscript" id="proof54">
+&nbsp;&nbsp;<span class="id">admit</span>.  <span class="comment">(**&nbsp;delete&nbsp;"admit"&nbsp;and&nbsp;put&nbsp;your&nbsp;proof&nbsp;here.&nbsp;*)</span><br/>
+Admitted.</div>
+ <br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">app_assoc</span> : <span class="kwd">forall</span> <span class="id">A</span> (<span class="id">l</span> <span class="id">m</span> <span class="id">n</span>:<span class="id">list</span> <span class="id">A</span>), <span class="id">l</span> ++ <span class="id">m</span> ++ <span class="id">n</span> = (<span class="id">l</span> ++ <span class="id">m</span>) ++ <span class="id">n</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof55')">Proof.</div>
+<div class="proofscript" id="proof55">
+&nbsp;&nbsp;<span class="id">admit</span>.  <span class="comment">(**&nbsp;delete&nbsp;"admit"&nbsp;and&nbsp;put&nbsp;your&nbsp;proof&nbsp;here.&nbsp;*)</span><br/>
+Admitted.</div>
+ <br/>
+<br/>
+<span class="kwd">Theorem</span> <span class="id">app_cons_not_nil</span> : <span class="kwd">forall</span> <span class="id">A</span> (<span class="id">x</span> <span class="id">y</span>:<span class="id">list</span> <span class="id">A</span>) (<span class="id">a</span>:<span class="id">A</span>), <span class="id">nil</span> &lt;&gt; <span class="id">x</span> ++ <span class="id">a</span> :: <span class="id">y</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof56')">Proof.</div>
+<div class="proofscript" id="proof56">
+&nbsp;&nbsp;<span class="id">admit</span>.  <span class="comment">(**&nbsp;delete&nbsp;"admit"&nbsp;and&nbsp;put&nbsp;your&nbsp;proof&nbsp;here.&nbsp;*)</span><br/>
+Admitted.</div>
+ <br/>
+<br/>
+<br/>
+<h1> Conclusion </h1>
+<br/>
+<br/>
+<h1> Postscripts </h1>
+<br/>
+<h2> Contact </h2>
+<br/>
+<h2> Further Reading </h2>
+<br/>
+<br/>
+<h2> Vernacular commands </h2>
+<br/>
+<h2> The tactic guide </h2>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

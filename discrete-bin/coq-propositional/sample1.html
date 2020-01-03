@@ -1,0 +1,99 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module sample1</title>
+<meta name="description" content="Documentation of Coq module sample1" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module sample1</h1>
+<div class="coq">
+<span class="kwd">Check</span> <span class="id">True</span>.<br/>
+<span class="kwd">Check</span> <span class="id">False</span>.<br/>
+<span class="kwd">Check</span> (3+4).<br/>
+<span class="kwd">Check</span> (3=5).<br/>
+<span class="kwd">Check</span> (3,4).<br/>
+<span class="kwd">Check</span> ((3=5) /\ <span class="id">True</span>).<br/>
+<span class="kwd">Check</span> <span class="id">nat</span> -&gt; <span class="kwd">Prop</span>.<br/>
+<span class="kwd">Check</span> (3 &lt;= 6).<br/>
+<span class="kwd">Check</span> (3,3=5).<br/>
+<br/>
+<span class="kwd">Check</span> (<span class="kwd">fun</span> <span class="id">x</span>:<span class="id">nat</span> =&gt; <span class="id">x</span> = 3).<br/>
+<span class="kwd">Check</span> (<span class="kwd">forall</span> <span class="id">x</span>:<span class="id">nat</span>, <span class="id">x</span> &lt; 3 \/ (<span class="id">exists</span> <span class="id">y</span>:<span class="id">nat</span>, <span class="id">x</span> = <span class="id">y</span>+3)).<br/>
+<span class="kwd">Check</span> (<span class="kwd">let</span> <span class="id">f</span> := <span class="kwd">fun</span> <span class="id">x</span> =&gt; (<span class="id">x</span> * 3, <span class="id">x</span>) <span class="kwd">in</span> <span class="id">f</span> 3).<br/>
+<span class="id">Locate</span> "<span class="id">_</span> &lt;= <span class="id">_</span>".<br/>
+<span class="id">Locate</span> "<span class="id">_</span> * <span class="id">_</span>".<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> ((3=5) /\ <span class="id">True</span>).<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">example1</span> := <span class="kwd">fun</span> <span class="id">x</span> : <span class="id">nat</span> =&gt; <span class="id">x</span>*<span class="id">x</span>+2*<span class="id">x</span>+1.<br/>
+<span class="kwd">Check</span> <span class="id">example1</span>.<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">example1</span> 4.<br/>
+<span class="kwd">Print</span> <span class="id">example1</span>.<br/>
+<br/>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Bool</span>.<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="kwd">if</span> <span class="id">true</span> <span class="kwd">then</span> 3 <span class="kwd">else</span> 5.<br/>
+<br/>
+<span class="id">Search</span> <span class="id">bool</span>.<br/>
+<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">is_zero</span> (<span class="id">n</span>:<span class="id">nat</span>) :=<br/>
+<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span><br/>
+0 =&gt; <span class="id">true</span><br/>
+| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">false</span><br/>
+<span class="kwd">end</span>.<br/>
+<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">is_zero</span> 0.<br/>
+<span class="kwd">Print</span> <span class="id">pred</span>.<br/>
+<span class="kwd">Print</span> <span class="id">Nat.pred</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">Nat.pred</span> 17.<br/>
+<br/>
+<br/>
+<span class="kwd">Fixpoint</span> <span class="id">sum_n</span> <span class="id">n</span> :=<br/>
+<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span><br/>
+0 =&gt; 0<br/>
+| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">p</span> + <span class="id">sum_n</span> <span class="id">p</span><br/>
+<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">sum_n</span> 1.<br/>
+<br/>
+<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">List</span>.<br/>
+<br/>
+<span class="kwd">Check</span> 1::2::3::<span class="id">nil</span>.<br/>
+<br/>
+<span class="kwd">Check</span> (<span class="id">nil</span> : <span class="id">list</span> <span class="id">nat</span>).<br/>
+<br/>
+<br/>
+<span class="kwd">Fixpoint</span> <span class="id">rangefun</span> <span class="id">n</span> :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; (<span class="id">nil</span>: <span class="id">list</span> <span class="id">nat</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">p</span> :: (<span class="id">rangefun</span> <span class="id">p</span>)<br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">rangefun</span> 4.<br/>
+<br/>
+<br/>
+<span class="kwd">Fixpoint</span> <span class="id">first_n_aux</span> (<span class="id">n</span>:<span class="id">nat</span>)(<span class="id">m</span>:<span class="id">nat</span>) :=<br/>
+&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; <span class="id">nil</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">S</span> <span class="id">p</span> =&gt; <span class="id">m</span> :: <span class="id">first_n_aux</span> <span class="id">p</span> (<span class="id">m</span>+1) <br/>
+&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">first_n_aux</span> 2 0.<br/>
+<br/>
+<span class="kwd">Definition</span> <span class="id">first_n</span> (<span class="id">n</span>:<span class="id">nat</span>) := <span class="id">first_n_aux</span> <span class="id">n</span> 0.<br/>
+<br/>
+<span class="kwd">Eval</span> <span class="tactic">compute</span> <span class="kwd">in</span> <span class="id">first_n</span> 4.<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

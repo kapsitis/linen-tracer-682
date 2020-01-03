@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 2<br />
+(Predicate Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span style="color:darkgreen"><strong>(1) 1st Order Logic Intro</strong></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-7">References</a></span></p>
+</hgroup></section>
+<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Why use symbols <span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li></li>
+</ul>
+</div></section>
+<section id="objectives" class="title-slide slide level1"><h1><lo-summary/> Objectives</h1><ol type="1">
+<li>Mention examples where logic differs from general intuition.</li>
+<li>Define predicates and quantifiers.</li>
+<li>Define terms, atomic formulas, full formulas.</li>
+<li>Translate English into formulas, draw the formula syntax.</li>
+<li>Introduce some logical arguments and syllogisms.</li>
+</ol></section>
+<section><section id="predikāti" class="title-slide slide level1"><h1><lo-theory/> Predikāti</h1><div style="font-size:70%">
+<p>Skaitļu teorijas apgalvojumus var īsi pierakstīt ar predikātu loģikas formulām. Šīs formulas sastāv no divām daļām:<br />
+(1) “predikāta” - izteikuma, kurā ietilpst parametri,<br />
+(2) viena vai vairākiem “kvantoriem” (vai apgalvojums attiecas uz kaut kādu parametra vērtību, vai arī - uz visām parametra iespējamām vērtībām).</p>
+<p><strong>Definīcija:</strong> Par <blue><em>predikātu</em></blue> sauc tādu apgalvojumu, kura patiesums var būt atkarīgs no mainīgo vērtībām.</p>
+<ul>
+<li><span class="math inline">\(a \mid b\)</span> ir predikāts, kas definēts pie <span class="math inline">\(a,b \in \mathbb{N}\)</span> (dažreiz dalās, citreiz nedalās)</li>
+<li><span class="math inline">\(\text{mirstīgs}(x)\)</span> ir predikāts, kas definēts, ja <span class="math inline">\(x\)</span> pieder cilvēku kopai.<br />
+(Tā kā visi cilvēki ir mirstīgi, tad vērtība ir konstante <code>True</code>.)</li>
+</ul>
+</div></section><section id="universālais-kvantors" class="slide level2">
+<h2><lo-theory/> Universālais kvantors</h2>
+<div style="font-size:70%">
+<p><strong>Definīcija:</strong> Pieraksts <span class="math inline">\((\forall a \in A)(P(a))\)</span> apgalvo, ka predikāts <span class="math inline">\(P(a)\)</span> ir spēkā visiem <span class="math inline">\(a \in A\)</span>. Izteiksmes daļu <span class="math inline">\((\forall a \in A)\)</span> sauc par <blue><strong>universālo kvantoru</strong></blue> (<em>universal quantifier</em>) mainīgajam <span class="math inline">\(a\)</span>.</p>
+<p>Ja <span class="math inline">\(P(a,b)\)</span> ir predikāts ar diviem mainīgajiem, tad pieraksts <span class="math inline">\((\forall a \in A)(P(a,b))\)</span> ir apgalvojums, kura patiesums atkarīgs tikai no parametra <span class="math inline">\(b\)</span>. Parametrs <span class="math inline">\(a\)</span> formulā joprojām ietilpst, bet tas ir “saistīts” mainīgais - tas (līdzīgi kā indekss <code>i</code> programmēšanas ciklā) pārskrien visas iespējamās vērtības <span class="math inline">\(a \in A\)</span>.</p>
+<ul>
+<li><span class="math inline">\((\forall c \in C)(\text{mirstīgs}(c))\)</span> ir patiess, ja <span class="math inline">\(C\)</span> ir visu cilvēku kopa.</li>
+<li><span class="math inline">\((\forall n \in \mathbb{N})\left( (2n+1)^2 \equiv 1\,(\text{mod}\;8) \right)\)</span> ir patiess, jo visu nepāru skaitļu kvadrāti <span class="math inline">\((2n+1)^2\)</span> tiešām dod atlikumu <span class="math inline">\(1\)</span>, dalot ar <span class="math inline">\(8\)</span>.</li>
+<li><span class="math inline">\((\forall n \in \mathbb{N})(a\,\mid\,n)\)</span> ir patiess apgalvojums tad, ja <span class="math inline">\(a=1\)</span> (<span class="math inline">\(1\)</span> ir jebkura naturāla skaitļa dalītājs), bet aplams, ja <span class="math inline">\(a=2\)</span>, jo visi <span class="math inline">\(n \in \mathbb{N}\)</span> nav pāra skaitļi.</li>
+</ul>
+</div>
+</section><section id="eksistences-kvantors" class="slide level2">
+<h2><lo-theory/> Eksistences kvantors</h2>
+<p><strong>Definīcija:</strong> Pieraksts <span class="math inline">\((\exists a \in A)(P(a))\)</span> apgalvo, ka predikāts <span class="math inline">\(P(a)\)</span> ir spēkā vismaz vienai vērtībai <span class="math inline">\(a \in A\)</span>. Izteiksmes daļu <span class="math inline">\((\exists a \in A)\)</span> sauc par <blue><strong>eksistences kvantoru</strong></blue> (<em>existential quantifier</em>) mainīgajam <span class="math inline">\(a\)</span>.</p>
+<p><strong>Piemērs:</strong> Naturālu skaitļu virkni <span class="math inline">\(a_1,a_2,\ldots\)</span> sauc par ierobežotu, ja <span class="math display">\[(\exists M \in \mathbb{N})(\forall n \in \mathbb{N})(a_n \leq M).\]</span> Saki: Eksistē naturāls <span class="math inline">\(M\)</span> (virknes augšējā robeža), ka visiem <span class="math inline">\(n\)</span> <span class="math inline">\(a_n\)</span> nepārsniedz <span class="math inline">\(M\)</span>.</p>
+</section><section id="kopu-apzīmējumi" class="slide level2">
+<h2><lo-theory/> Kopu apzīmējumi</h2>
+<div style="font-size:70%">
+<p>Var ieviest arī pierakstu kopām, kas definēta ar predikātu.</p>
+<p><strong>Piemērs:</strong> Skaitlis <span class="math inline">\(p\)</span> ir pirmskaitlis, ja izpildās:</p>
+<p><span class="math display">\[(\forall n \in \mathbb{N})\left( 1 &lt; n &lt; p\,\Rightarrow\, p \not\equiv 0\,(\text{mod}\;n) \right).\]</span> <strong>Saki:</strong> Visiem naturāliem <span class="math inline">\(n\)</span>, ja <span class="math inline">\(n\)</span> ir starp <span class="math inline">\(1\)</span> un <span class="math inline">\(p\)</span>, tad <span class="math inline">\(p\)</span> nedalās ar <span class="math inline">\(n\)</span> bez atlikuma.</p>
+<p>Tālāk definējam <span class="math inline">\(\mathbb{P}\)</span> - visu pirmskaitļu kopu.</p>
+<p><span class="math display">\[\mathbb{P} = \left\{ p \in \mathbb{N}\,\mid\, \color{#F00}{(\forall n \in \mathbb{N})\left( 1 &lt; n &lt; p\,\Rightarrow\, p \not\equiv 0\,(\text{mod}\;n) \right)} \right\}.\]</span> <strong>Saki:</strong> <span class="math inline">\(\mathbb{P}\)</span> ir visu tādu naturālo <span class="math inline">\(p\)</span> kopa, ka - visiem naturāliem <span class="math inline">\(n\)</span>, ja <span class="math inline">\(n\)</span> ir starp <span class="math inline">\(1\)</span> un <span class="math inline">\(p\)</span>, tad <span class="math inline">\(p\)</span> nedalās ar <span class="math inline">\(n\)</span> bez atlikuma.</p>
+</div>
+</section><section id="relation-isfatherofxy" class="slide level2">
+<h2><lo-summary/> Relation isFatherOf(x,y)</h2>
+<p><strong>Definition:</strong> Predicate <span class="math inline">\(\mathit{isFatherOf(x,y)}\)</span> is defined for pairs of humans: <span class="math display">\[\mathit{isFatherOf}\,:\,H \times H \rightarrow \{ \mathtt{true}, \mathtt{false} \}.\]</span> It is true, if and only if <span class="math inline">\(x\)</span> is the father of <span class="math inline">\(y\)</span> (otherwise it is false).</p>
+<p>Express the following in a human language:</p>
+<ul>
+<li><span class="math inline">\((\forall y \in H)(\exists x \in H)(\text{isFatherOf}(x,y))\)</span>.</li>
+<li><span class="math inline">\((\exists x \in H)(\forall y \in H)(\text{isFatherOf}(x,y))\)</span>.</li>
+</ul>
+<!--
+https://www.youtube.com/watch?v=U2BtteA0k8o
+
+Everybody Loves My Baby (But My Baby Don't Love Nobody But Me)
+
+foreach x, L(x,MyBaby) /\ foreach y (~ (y = Me) -> ~(L(MyBaby,y))
+
+
+https://learning.oreilly.com/library/view/logic-as-a/9781118880005/c04.xhtml
+
+-->
+</section></section>
+<section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1><ol type="1">
+<li>Aprakstījām ziņojumus un to alfabētus</li>
+<li>Atšķīrām bezzudumu/zudumradošo saspiešanu</li>
+<li>Pamatojām, ka lielo vairumu ziņojumu dotajā alfabētā saspiest nevar</li>
+<li>Aprakstījām prefiksu kokus</li>
+<li>Aprakstījām un analizējām Hafmana algoritmu</li>
+<li>Definējām un lietojām entropiju kā “visvairāk saspiestās” informācijas garumu.</li>
+</ol></section>
+<section id="euclid-online" class="title-slide slide level1"><h1><lo-yellow/> Euclid Online</h1><figure>
+<img data-src="euclid.png" alt="Euclid’s Elements" /><figcaption>Euclid’s Elements</figcaption>
+</figure>
+<p><a href="https://www.c82.net/euclid/"><em>See Byrne’s Euclid</em></a></p></section>
+<section id="thomas-aquinas-summa-theologica" class="title-slide slide level1"><h1><lo-yellow/> Thomas Aquinas: Summa Theologica</h1></section>
+<section id="tangrams" class="title-slide slide level1"><h1><lo-yellow/> Tangrams</h1><hgroup>
+<figure>
+<img data-src="tangram-set.jpg" alt="Set of Tangrams" /><figcaption>Set of Tangrams</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<ul>
+<li>Tangram, 七巧板 (qīqiǎobǎn) = 7-puzle.</li>
+<li><strong>Problem:</strong> Given the outline of some shape, create it with the shapes without any overlaps. Around 6500 “classical” exercises from the 19th century books.</li>
+<li>Known in China since Song dynasty (960–1279). Known in Europe since around 1815 - global trade, cheap printing techniques.</li>
+<li>Convex shapes? Axial symmetries? Central symmetries?</li>
+<li><a href="https://en.wikipedia.org/wiki/Tangram">More on Tangram</a></li>
+</ul>
+</hgroup></section>
+<section id="game-of-15" class="title-slide slide level1"><h1><lo-yellow/> Game of 15</h1><hgroup style="font-size:70%">
+<figure>
+<img data-src="game-of-15.jpg" alt="Game of 15" /><figcaption>Game of 15</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<ul>
+<li>The 15 Puzzle, since 1880.</li>
+<li></li>
+</ul></section>
+<section id="puzzle---8-queen-problem" class="title-slide slide level1"><h1><lo-yellow/> Puzzle - 8 Queen Problem</h1><hgroup style="font-size:70%">
+<ul>
+<li>Place</li>
+</ul>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

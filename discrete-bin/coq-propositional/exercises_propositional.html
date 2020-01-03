@@ -1,0 +1,135 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module exercises_propositional</title>
+<meta name="description" content="Documentation of Coq module exercises_propositional" />
+<link href="coq2html.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="coq2html.js"> </script>
+</head>
+
+<body onload="hideAll('proofscript')">
+<h1 class="title">Module exercises_propositional</h1>
+<div class="coq">
+<div class="doc"><a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<h2>Exercises from the Textbook</h2> 
+<b>EXERCISE 1.3.2 SOLUTION</b>
+</div>
+<span class="kwd">Example</span> <span class="id">ex_1_3_2</span>: <span class="kwd">forall</span> <span class="id">p</span>:<span class="kwd">Prop</span>, ~(~<span class="id">p</span>) &lt;-&gt; <span class="id">p</span>.<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
+<div class="proofscript" id="proof1">
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <span class="comment">(*r&nbsp;1nd&nbsp;part:&nbsp;~~p&nbsp;-&gt;&nbsp;p&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">elim</span> (<span class="id">classic</span> <span class="id">p</span>).<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">PTrue</span>; <span class="tactic">exact</span> <span class="id">PTrue</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">PFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H</span> <span class="id">PFalse</span>) <span class="kwd">as</span> <span class="id">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id">contradiction</span> <span class="id">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>. <span class="comment">(*r&nbsp;2nd&nbsp;part:&nbsp;p&nbsp;-&gt;&nbsp;~~&nbsp;p&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">G</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">G</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc"><b>Note 1:</b> 
+This proof is not intuitionistic. 
+It uses this axiom from Classical_Prop.v:
+Axiom classic : forall (P : Prop), P \/ ~ P.
+The 1st part of this proof repeats the proof of NNPP. 
+(See <a href="https://github.com/coq/coq/blob/master/theories/Logic/Classical_Prop.v">Classical_Prop.v</a>.)
+<br/>
+The 2nd part of this proof unfolds "not" statements and proceeds as in 
+<a href="https://stackoverflow.com/questions/14644086/proving-p-q-q-p-using-coq-proof-assistant">This example</a>.
+<br/>
+<br/>
+<b>Note 2:</b>  Some parts of the proof are very condensed. For example:
+<br/>
+<tt>elim (classic p).</tt>
+<br/>
+can be rewritten as
+<tt>pose (classic p).</tt><br/>
+<tt>elim o.</tt><br/>
+<tt>clear o.</tt><br/>
+</div>
+<br/>
+<div class="doc"><h3>EXERCISE 1.3.4.A SOLUTION</h3> </div>
+<span class="kwd">Example</span> <span class="id">ex_1_3_4_a</span>: <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>:<span class="kwd">Prop</span>, (<span class="id">p</span> \/ <span class="id">q</span>) \/ <span class="id">r</span> &lt;-&gt; <span class="id">p</span> \/ (<span class="id">q</span> \/ <span class="id">r</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
+<div class="proofscript" id="proof2">
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">pqrLeftOR</span>. <span class="comment">(*r&nbsp;1nd&nbsp;part:&nbsp;(p&nbsp;\/&nbsp;q)&nbsp;\/&nbsp;r&nbsp;-&gt;&nbsp;p&nbsp;\/&nbsp;(q&nbsp;\/&nbsp;r)&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">pqrLeftOR</span> <span class="kwd">as</span> [[<span class="id">pTrue</span> | <span class="id">qTrue</span>] | <span class="id">rTrue</span>].<br/>
+&nbsp;&nbsp;<span class="id">left</span>; <span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="id">left</span>; <span class="tactic">exact</span> <span class="id">qTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="id">right</span>; <span class="tactic">exact</span> <span class="id">rTrue</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">pqrRightOR</span>. <span class="comment">(*r&nbsp;2nd&nbsp;part:&nbsp;p&nbsp;\/&nbsp;(q&nbsp;\/&nbsp;r)&nbsp;-&gt;&nbsp;(p&nbsp;\/&nbsp;q)&nbsp;\/&nbsp;r&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">pqrRightOR</span> <span class="kwd">as</span> [<span class="id">pTrue</span> | [<span class="id">qTrue</span> | <span class="id">rTrue</span>]].<br/>
+&nbsp;&nbsp;<span class="id">left</span>; <span class="id">left</span>; <span class="tactic">exact</span> <span class="id">pTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id">left</span>; <span class="id">right</span>; <span class="tactic">exact</span> <span class="id">qTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id">right</span>; <span class="tactic">exact</span> <span class="id">rTrue</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc"><b>Note 1:</b> 
+The tactic "destruct" is a shorthand for other tactics. For example,
+<br/>
+<tt>destruct pqrLeftOR as [[pTrue | qTrue] | rTrue].</tt>
+<br/>
+can be rewritten as follows:
+<tt>elim pqrLeftOR.</tt><br/>
+<tt>intros pqOR.</tt><br/>
+<tt>elim pqOR.</tt><br/>
+<tt>intros pTrue.</tt><br/>
+<tt>...</tt><br/>
+<tt>intros qTrue.</tt><br/>
+<tt>...</tt><br/>
+<tt>intros rTrue.</tt><br/>
+<tt>...</tt>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="doc"><h3>EXERCISE 1.3.4.B SOLUTION</h3> </div>
+<span class="kwd">Example</span> <span class="id">ex_1_3_4_b</span>: <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span> <span class="id">r</span>:<span class="kwd">Prop</span>, (<span class="id">p</span> /\ <span class="id">q</span>) /\ <span class="id">r</span> &lt;-&gt; <span class="id">p</span> /\ (<span class="id">q</span> /\ <span class="id">r</span>).<br/>
+<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
+<div class="proofscript" id="proof3">
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> [[<span class="id">H1</span> <span class="id">H2</span>] <span class="id">H3</span>]. <span class="comment">(*r&nbsp;1nd&nbsp;part:&nbsp;(p&nbsp;/\&nbsp;q)&nbsp;/\&nbsp;r&nbsp;-&gt;&nbsp;p&nbsp;/\&nbsp;(q&nbsp;/\&nbsp;r)&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H3</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">intros</span> [<span class="id">H1</span> [<span class="id">H2</span> <span class="id">H3</span>]]. <span class="comment">(*r&nbsp;2nd&nbsp;part:&nbsp;p&nbsp;/\&nbsp;(q&nbsp;/\&nbsp;r)&nbsp;-&gt;&nbsp;(p&nbsp;/\&nbsp;q)&nbsp;/\&nbsp;r&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H1</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H2</span>.<br/>
+&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H3</span>.<br/>
+Qed.</div>
+<br/>
+<div class="doc"><b>Note 1:</b>  
+Shorthands used here as well:
+<br/>
+<tt>intros [[H1 H2] H3].</tt>
+<br/>
+can be rewritten as follows:
+<br/>
+<tt>intros pqrLeftAND.</tt><br/>
+<tt>destruct pqrLeftAND as [[H1 H2] H3].</tt><br/>
+And "destruct" in turn can be written as a sequence of elim, intros, clear.
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>
+<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+</body>
+</html>

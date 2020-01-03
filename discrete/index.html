@@ -11,9 +11,9 @@
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Home</b></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tasks.html">Tasks</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Slides</a></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="polls.html">Polls</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs.html">Proofs</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
@@ -31,7 +31,201 @@
 </table>
 
 <p><a href="../discrete-bin/discrete-structures-spring-2020.docx">Spring 2020: Syllabus</a></p>
- 
+
+<p>News on the class schedule (which topics are covered when), 
+currently active assignments and in-class polls.</p>
+
+<p>TBD</p>
+
+
+<h2>Readings and Presentations</h2>
+
+
+<p><b>Stories about Algorithms</b></p>
+
+<ul>
+<li>
+<a href="https://www.sciencedirect.com/science/article/pii/0022314X80900840/pdf?md5=6f748cd82fa8efa1a637efab5f632baa&pid=1-s2.0-0022314X80900840-main.pdf">Large 
+Primes and Probabilistic Algorithms</a>
+<div style="font-size:70%">Can include Miller-Rabin primality test, 
+Great Internet Mersenne Prime Search (GIMPS) project, Agrawal–Kayal–Saxena primality test.</div>
+</li>
+<li>
+<a href="https://blog.jscrambler.com/hashing-algorithms/">Secure Hash Functions</a>
+<div style="font-size:70%">Can include MD5 hash collisions, SHA1, SHA2, SHA3. Password hashing
+in Web applications and in data storage.</div>
+</li>
+<li>
+<a href="https://pdfs.semanticscholar.org/aa4b/e5c61d003030b96e7d10340db32ea79c3d77.pdf">Arithmetic Coding</a>
+<div style="font-size:70%">Can discuss Huffman coding and other entropy-based 
+compressions for message sequences.</div>
+</li>
+<li>
+String Searching
+<div style="font-size:70%">Naive, Knuth-Moris-Pratt and Boyer-Moore algorithms.
+<a href="https://stackoverflow.com/questions/16085201/when-would-you-use-kmp-over-boyer-moore">Their comparison</a>.</div>
+</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm">Karatsuba or Toom-Cook Multiplication</a>
+<div style="font-size:70%">Explain one of the fast algorithms to multiply two numbers (can pick 
+something else, but it has to be faster than quadratic.) 
+Apply Master's theorem to solve the recursion and estimate the speed of the algorithm.
+</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/L-system">Lindenmayer systems</a>
+<div style="font-size:70%">Use recursive rules to generate 2D patterns and 
+also recursive plants.</div> 
+</ul>
+
+
+<p><b>Data Protection and Privacy</b></p>
+
+<ul>
+<li>
+Matching Regular Expressions.
+<div style="font-size:70%">Regex pattern uses, their matching with finite state automata
+and performance of these matchers, including catastrophic backtracking.</div>
+</li>
+<li>
+The Anatomy of a Credit Card Number.
+<div style="font-size:70%">
+How to prevent stealing large numbers of credit card numbers.
+Luhn check, IINs/BINs - Predicting issuer bank, first digit. Support terms to avoid
+false positives.
+</div>
+</li>
+<li>
+File Checksums
+<div style="font-size:70%">CRC and other "binary fingerprints" of files to avoid
+file tampering or unintended leaks.</div>
+</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Bloom_filter">Bloom Filters</a>
+<div style="font-size:70%">Storing large hashtables very efficiently in a probabilistic
+data structure.</div>
+</li>
+<li>
+Detecting Plagiarism
+<div style="font-size:70%">Rabin-Carp algorithms of substring matching, N-gram algorithms, 
+Upload filters in EU Copyright Directive and their false positives.</div>
+</li>
+</ul>
+
+<p><b>Proofs, Sets and Relations</b></p>
+
+<ul>
+<li>
+Paradoxes of Self-Reference
+<div style="font-size:70%">Russel's paradox, diagonalization results, Barber's paradox, Halting problem.</div>
+</li>
+<li>
+<a href="https://csiflabs.cs.ucdavis.edu/~gusfield/godelproofrevisedarXiv.pdf">Gödel's Incompleteness
+Theorem</a>
+<div style="font-size:70%">Results about non-provable, 
+but true statements that exist for each formal system.</div>
+</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem">Arrow's Impossibility Theorem</a>
+<div style="font-size:70%">Results how voting among shareholders can lead <b>either</b> to a "dictator" deciding everything <b>or</b>
+to the voting process being easy to manipulate.</div>
+</li>
+<li>
+Creative Strategies in Proofs
+<div style="font-size:70%">George Polya ("Mathematical Discovery: On Understanding, Learning and Teaching Problem Solving", 
+"Mathematical Discovery", "How to Solve It") and Paul Zeitz 
+("The Art and Craft of Problem Solving") on developing mathematical creativity.</div>
+</li>
+<li>
+Approximating irrational numbers (roots etc.) with rational ones.
+<div style="font-size:70%"><a href="https://youtu.be/cyW5z-M2yzw">Examples of well-tempered harmonies</a>; 
+Farey fraction sequences and Stern–Brocot tree, mediant of two rational numbers, continuous fractions and 
+when they are periodic.
+</li>
+<li>
+Cellular Automata
+
+</ul>
+
+
+<p><b>Discrete Probabilities</b></p>
+
+<ul>
+<li>
+Matrix Games
+<div style="font-size:70%">Distinguish zero-sum and non-zero-sum games. Show how to 
+find Nash equilibrium; apply it to some simple number guessing games (Rock paper scissors; 
+some variant of a Prisoner's dilemma; simultaneous guessing of positive integers; 
+and <a href="https://mindyourdecisions.com/blog/2015/08/04/the-high-low-guessing-game-with-a-strategic-twist-game-theory-tuesdays/">High-Low 
+guessing game</a>).</div>
+</li>
+<li>
+Counter-examples in Probabilities
+<div style="font-size:70%">Various surprises in probability theory: 
+<a href="https://math.stackexchange.com/questions/200807/boy-and-girl-paradox">Boy 
+or Girl paradox</a>. Monty Hall problem. Four 6-sided dices that
+have non-transitive order relationship. 
+Three pairwise independent random events are not necessarily
+mutually independent. 
+</li>
+<li>
+Coin Tossing and Random Walks
+<div style="font-size:70%">Explain coin-tossing experiment series; how frequently the change
+of sign happens, how often one player is ahead of another; how far the random walk 
+is expected to get away from the equilibrium.</div>
+</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classifiers</a>
+<div style="font-size:70%">Classification of texts based on models 
+showing conditional probabilities of certain words. Show how spam filters can be implemented 
+based on Naive Bayes.</div>
+</li>
+<li>
+<a href="https://rstudio-pubs-static.s3.amazonaws.com/85215_d5640adef9b644c6b746a906af863af1.html">Proportional 
+Voting Systems</a>
+<div style="font-size:70%">D'Hondt or Sainte-Laguë proportional voting systems, 
+their practical consequences in Latvia, Israel, Hungary and elsewhere.</div>
+</li>
+<li>Discrete random distributions and their properties
+<div style="font-size:70%">Mention "canonical" examples and practical applications
+to Bernoulli distribution, Geometric distribution, Poisson distribution etc.</div>
+</li>
+</ul>
+
+<p><b>Stories about Graph Theory</b></p>
+
+<ul>
+<li>
+Alpha-Beta Pruning in building game playing algorithms.
+<div style="font-size:70%">Build and analyze a game-tree for a pen-and-paper
+that is feasible to analyze on a PC computer. Apply alpha-beta pruning algorithm to 
+have a computer that wins human players.</div>
+</li>
+<li>
+Hamiltonian cycles and NP-complete problems.
+<div style="font-size:70%">Define Hamiltonian cycles. Formulate theorem by 
+Emanuels Grinbergs for Hamiltonian cycles in planar graphs. Define how the 
+NP-complete problems can be reduced to/from Hamiltonian cycles.
+</li>
+<li>
+Computer-based proof of a four-color theorem.
+<div style="font-size:70%">Formulate four-color theorem (and similar theorems
+in Torus topologies, etc.). Show how it can break down to analysis of a large number
+of cases.</div>
+</li>
+<li>
+<a href="https://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm">Google Page Rank Algorithm</a>
+<div style="font-size:70%">Can include other computable rankings of search results.</div>
+</li>
+<li>
+Maximum Flow in a Directed Graph 
+<div style="font-size:70%">
+<a href="https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm">Ford-Fulkerson algorithm</a>
+or Edmonds-Karp algorithm; 
+<a href="https://en.wikipedia.org/wiki/Braess%27s_paradox#Mathematical_approach">Braes's paradox</a>.</div>
+</li>
+</ul>
+
+
 
 </body>
 </html>

@@ -1,70 +1,82 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module coq_evaluations</title>
-<meta name="description" content="Documentation of Coq module coq_evaluations" />
-<link href="coq2html.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="coq2html.js"> </script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>coq_evaluations</title>
 </head>
 
-<body onload="hideAll('proofscript')">
-<h1 class="title">Module coq_evaluations</h1>
-<div class="coq">
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library coq_evaluations</h1>
+
+<div class="code">
+
 <br/>
-<span class="kwd">Eval</span> <span class="id">vm_compute</span> <span class="kwd">in</span> <span class="id">Z.divide</span> 3 6.<br/>
-<span class="kwd">Fixpoint</span> <span class="id">fib</span> (<span class="id">n</span>: <span class="id">nat</span>) : <span class="id">Z</span> :=<br/>
-&nbsp;&nbsp;<span class="kwd">match</span> <span class="id">n</span> <span class="kwd">with</span> <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;0%<span class="id">nat</span> =&gt; 1 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;| 1%<span class="id">nat</span> =&gt; 1 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id">S</span> (<span class="id">S</span> <span class="id">n2</span> <span class="kwd">as</span> <span class="id">n1</span>) =&gt; <span class="id">fib</span> <span class="id">n1</span> + <span class="id">fib</span> <span class="id">n2</span> <br/>
-&nbsp;&nbsp;<span class="kwd">end</span>.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="keyword">vm_compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Z.divide</span> 3 6.<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">fib</span> (<span class="id" title="var">n</span>: <span class="id" title="var">nat</span>) : <span class="id" title="var">Z</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0%<span class="id" title="var">nat</span> =&gt; 1 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| 1%<span class="id" title="var">nat</span> =&gt; 1 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">S</span> (<span class="id" title="var">S</span> <span class="id" title="var">n2</span> <span class="id" title="keyword">as</span> <span class="id" title="var">n1</span>) =&gt; <span class="id" title="var">fib</span> <span class="id" title="var">n1</span> + <span class="id" title="var">fib</span> <span class="id" title="var">n2</span> <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
 <br/>
-<span class="id">Compute</span> (<span class="id">fib</span> 35%<span class="id">nat</span>).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">fib</span> 35%<span class="id" title="var">nat</span>).<br/>
+
 <br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">List</span>.<br/>
+
 <br/>
-<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">List</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">t</span> := { <span class="id" title="var">n</span>: <span class="id" title="var">Z</span> | <span class="id" title="var">n</span> &gt; 1 }.<br/>
+
 <br/>
-<span class="kwd">Definition</span> <span class="id">t</span> := { <span class="id">n</span>: <span class="id">Z</span> | <span class="id">n</span> &gt; 1 }.<br/>
+<span class="id" title="keyword">Program Definition</span> <span class="id" title="var">two</span> : <span class="id" title="var">t</span> := 2.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>. <span class="id" title="tactic">omega</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
+<span class="id" title="keyword">Program Definition</span> <span class="id" title="var">succ</span> (<span class="id" title="var">n</span>: <span class="id" title="var">t</span>) : <span class="id" title="var">t</span> := <span class="id" title="var">n</span> + 1.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>. <span class="id" title="tactic">destruct</span> <span class="id" title="var">n</span>; <span class="id" title="tactic">simpl</span>; <span class="id" title="tactic">omega</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<span class="kwd">Program</span> <span class="kwd">Definition</span> <span class="id">two</span> : <span class="id">t</span> := 2.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof1')">Next Obligation.</div>
-<div class="proofscript" id="proof1">
- <span class="tactic">omega</span>. Qed.</div>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Eqdep_dec</span>.<br/>
+
 <br/>
-<span class="kwd">Program</span> <span class="kwd">Definition</span> <span class="id">succ</span> (<span class="id">n</span>: <span class="id">t</span>) : <span class="id">t</span> := <span class="id">n</span> + 1.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof2')">Next Obligation.</div>
-<div class="proofscript" id="proof2">
- <span class="tactic">destruct</span> <span class="id">n</span>; <span class="tactic">simpl</span>; <span class="tactic">omega</span>. Qed.</div>
+<span class="id" title="keyword">Program Definition</span> <span class="id" title="var">t_eq</span> (<span class="id" title="var">x</span> <span class="id" title="var">y</span>: <span class="id" title="var">t</span>) : {<span class="id" title="var">x</span>=<span class="id" title="var">y</span>} + {<span class="id" title="var">x</span>&lt;&gt;<span class="id" title="var">y</span>} :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">if</span> <span class="id" title="var">Z.eq_dec</span> (<span class="id" title="var">proj1_sig</span> <span class="id" title="var">x</span>) (<span class="id" title="var">proj1_sig</span> <span class="id" title="var">y</span>) <span class="id" title="keyword">then</span> <span class="id" title="tactic">left</span> <span class="id" title="var">_</span> <span class="id" title="keyword">else</span> <span class="id" title="tactic">right</span> <span class="id" title="var">_</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">x</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">x</span> <span class="id" title="var">Px</span>], <span class="id" title="var">y</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">y</span> <span class="id" title="var">Py</span>]. <span class="id" title="tactic">simpl</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>; <span class="id" title="tactic">subst</span> <span class="id" title="var">y</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">f_equal</span>. <span class="id" title="tactic">apply</span> <span class="id" title="var">UIP_dec</span>. <span class="id" title="var">decide</span> <span class="id" title="var">equality</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Next</span> <span class="id" title="keyword">Obligation</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">red</span>; <span class="id" title="tactic">intros</span>; <span class="id" title="tactic">elim</span> <span class="id" title="var">H</span>; <span class="id" title="tactic">congruence</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Eqdep_dec</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">t_list_eq</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">x</span> <span class="id" title="var">y</span>: <span class="id" title="var">list</span> <span class="id" title="var">t</span>), {<span class="id" title="var">x</span>=<span class="id" title="var">y</span>} + {<span class="id" title="var">x</span>&lt;&gt;<span class="id" title="var">y</span>}.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="var">decide</span> <span class="id" title="var">equality</span>. <span class="id" title="tactic">apply</span> <span class="id" title="var">t_eq</span>. <span class="id" title="keyword">Defined</span>.<br/>
+
 <br/>
-<span class="kwd">Program</span> <span class="kwd">Definition</span> <span class="id">t_eq</span> (<span class="id">x</span> <span class="id">y</span>: <span class="id">t</span>) : {<span class="id">x</span>=<span class="id">y</span>} + {<span class="id">x</span>&lt;&gt;<span class="id">y</span>} :=<br/>
-&nbsp;&nbsp;<span class="kwd">if</span> <span class="id">Z.eq_dec</span> (<span class="id">proj1_sig</span> <span class="id">x</span>) (<span class="id">proj1_sig</span> <span class="id">y</span>) <span class="kwd">then</span> <span class="id">left</span> <span class="id">_</span> <span class="kwd">else</span> <span class="id">right</span> <span class="id">_</span>.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof3')">Next Obligation.</div>
-<div class="proofscript" id="proof3">
-&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">x</span> <span class="kwd">as</span> [<span class="id">x</span> <span class="id">Px</span>], <span class="id">y</span> <span class="kwd">as</span> [<span class="id">y</span> <span class="id">Py</span>]. <span class="tactic">simpl</span> <span class="kwd">in</span> <span class="id">H</span>; <span class="tactic">subst</span> <span class="id">y</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">f_equal</span>. <span class="tactic">apply</span> <span class="id">UIP_dec</span>. <span class="id">decide</span> <span class="id">equality</span>.<br/>
-Qed.</div>
-<div class="toggleproof" onclick="toggleDisplay('proof4')">Next Obligation.</div>
-<div class="proofscript" id="proof4">
-&nbsp;&nbsp;<span class="tactic">red</span>; <span class="tactic">intros</span>; <span class="tactic">elim</span> <span class="id">H</span>; <span class="tactic">congruence</span>.<br/>
-Qed.</div>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">t_eq</span> <span class="id" title="var">two</span> <span class="id" title="var">two</span>).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="keyword">if</span> <span class="id" title="var">t_eq</span> <span class="id" title="var">two</span> <span class="id" title="var">two</span> <span class="id" title="keyword">then</span> 1 <span class="id" title="keyword">else</span> 2).<br/>
+
 <br/>
-<span class="kwd">Definition</span> <span class="id">t_list_eq</span>: <span class="kwd">forall</span> (<span class="id">x</span> <span class="id">y</span>: <span class="id">list</span> <span class="id">t</span>), {<span class="id">x</span>=<span class="id">y</span>} + {<span class="id">x</span>&lt;&gt;<span class="id">y</span>}.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</div>
-<div class="proofscript" id="proof5">
- <span class="id">decide</span> <span class="id">equality</span>. <span class="tactic">apply</span> <span class="id">t_eq</span>. Defined.</div>
-<br/>
-<br/>
-<span class="id">Compute</span> (<span class="id">t_eq</span> <span class="id">two</span> <span class="id">two</span>).<br/>
-<span class="id">Compute</span> (<span class="kwd">if</span> <span class="id">t_eq</span> <span class="id">two</span> <span class="id">two</span> <span class="kwd">then</span> 1 <span class="kwd">else</span> 2).<br/>
-<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
 
 </div>
-<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+
 </body>
 </html>

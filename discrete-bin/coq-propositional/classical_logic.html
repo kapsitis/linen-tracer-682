@@ -1,96 +1,142 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module classical_logic</title>
-<meta name="description" content="Documentation of Coq module classical_logic" />
-<link href="coq2html.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="coq2html.js"> </script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>classical_logic</title>
 </head>
 
-<body onload="hideAll('proofscript')">
-<h1 class="title">Module classical_logic</h1>
-<div class="coq">
-<div class="doc"><a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library classical_logic</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+
+<div class="paragraph"> </div>
+
 <h2>What is Intuitionistic logic</h2> 
+
+<div class="paragraph"> </div>
+
 Propositional logic expressions that are 
 straightforward to prove using Coq tactics
 are part of so called Intuitionistic logic 
 (<i>lv:intuicionisma loģika</i>). They 
 do not use the Law of Excluded Middle 
 (<i>lv:trešā izslēgtā likumu</i>, <i>la:Tertium non datur</i>).
+
 </div>
+<div class="code">
+
 <br/>
+
 <br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>, ~ ~ <span class="id" title="var">A</span> /\ ~ <span class="id" title="var">A</span> -&gt; <span class="id" title="var">A</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">A</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H1</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">H3</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">A</span> -&gt; ~~<span class="id" title="var">A</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">A</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<span class="kwd">Lemma</span> <span class="id">sample1</span>: <span class="kwd">forall</span> <span class="id">A</span>, ~ ~ <span class="id">A</span> /\ ~ <span class="id">A</span> -&gt; <span class="id">A</span>.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
-<div class="proofscript" id="proof1">
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H</span> <span class="kwd">as</span> [<span class="id">H1</span> <span class="id">H2</span>].<br/>
-&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H1</span> <span class="id">H2</span>) <span class="kwd">as</span> <span class="id">H3</span>.<br/>
-&nbsp;&nbsp;<span class="id">contradiction</span> <span class="id">H3</span>.<br/>
-Qed.</div>
-<br/>
-<span class="kwd">Lemma</span> <span class="id">sample2</span>: <span class="kwd">forall</span> <span class="id">A</span>: <span class="kwd">Prop</span>, <span class="id">A</span> -&gt; ~~<span class="id">A</span>.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
-<div class="proofscript" id="proof2">
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <br/>
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">A</span> <span class="id">H1</span> <span class="id">H2</span>.<br/>
-&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H2</span> <span class="id">H1</span>) <span class="kwd">as</span> <span class="id">H3</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H3</span>.<br/>
-Qed.</div>
-<br/>
-<div class="doc">This sample is not yet proven in Coq, but
+</div>
+
+<div class="doc">
+This sample is not yet proven in Coq, but
 it could also be part of intuitionist logic, 
 even though it has many negations. If you do not want
 to complete the proof, write <tt>Admitted.</tt>
 instead of full proof ended by <tt>Qed.</tt>. 
+
 </div>
+<div class="code">
+
 <br/>
-<span class="kwd">Lemma</span> <span class="id">sample3</span>: <span class="kwd">forall</span> <span class="id">A</span>, ~ ~ (~ ~ <span class="id">A</span> -&gt; <span class="id">A</span>).<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
-<div class="proofscript" id="proof3">
-&nbsp;&nbsp;Admitted.</div>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>, ~ ~ (~ ~ <span class="id" title="var">A</span> -&gt; <span class="id" title="var">A</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
 <br/>
-<br/>
-<div class="doc"><h2>What is Classical Logic</h2> 
+</div>
+
+<div class="doc">
+<h2>What is Classical Logic</h2> 
+
+<div class="paragraph"> </div>
+
 Classical logic 
 Šis likums nozīmē, ka "A \/ ~A" - tātad vienmēr 
 ir patiess vai nu izteikums "A" vai arī "~A". 
 Lai ar to varētu spēlēties, ir jāimportē Coq 
 interaktīvajā vidē aksiomas un galvenie apgalvojumi, 
 kas saistīti ar klasisko loģiku.
+
 </div>
+<div class="code">
+
 <br/>
-<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Classical_Prop</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Classical_Prop</span>.<br/>
+
 <br/>
-<div class="doc">Svarīgas "Trešā izslēgtā likuma" sekas ir 
+</div>
+
+<div class="doc">
+Svarīgas "Trešā izslēgtā likuma" sekas ir 
 iespēja nomest divkāršas negācijas. 
 Šāds pierādījums no pretējā ļoti stipri atšķiras
 no agrāk iegūtā <tt>sample2</tt>, kurš bija 
 intuicionisma piemērs.
+
 </div>
+<div class="code">
+
 <br/>
-<span class="kwd">Lemma</span> <span class="id">sample4</span>: <span class="kwd">forall</span> <span class="id">p</span>: <span class="kwd">Prop</span>, ~~<span class="id">p</span> -&gt; <span class="id">p</span>. <br/>
-<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
-<div class="proofscript" id="proof4">
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">p</span>. <span class="comment">(*r&nbsp;1nd&nbsp;part:&nbsp;~~p&nbsp;-&gt;&nbsp;p&nbsp;*)</span><br/>
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">elim</span> (<span class="id">classic</span> <span class="id">p</span>).<br/>
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">PTrue</span>; <span class="tactic">exact</span> <span class="id">PTrue</span>. <br/>
-&nbsp;&nbsp;<span class="tactic">intro</span> <span class="id">PFalse</span>.<br/>
-&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H</span> <span class="id">PFalse</span>) <span class="kwd">as</span> <span class="id">CONTRA</span>.<br/>
-&nbsp;&nbsp;<span class="id">contradiction</span> <span class="id">CONTRA</span>.<br/>
-Qed.</div>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">classic</span>.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">classic</span>.<br/>
+
 <br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample4</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">p</span>: <span class="id" title="keyword">Prop</span>, ~~<span class="id" title="var">p</span> -&gt; <span class="id" title="var">p</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">p</span>. &nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<span class="id" title="var">classic</span> <span class="id" title="var">p</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">PTrue</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">PTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">PFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">PFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<div class="doc"><h2>Intuicionisma loģikas priekšrocības</h2>
+</div>
+
+<div class="doc">
+<h2>Intuicionisma loģikas priekšrocības</h2>
+
+<div class="paragraph"> </div>
+
 <b>Apgalvojums:</b> Intuicionisma loģikas 
 pasaulē visas funkcijas no reāliem skaitļiem uz reāliem 
 skaitļiem ir nepārtrauktas. 
@@ -126,10 +172,13 @@ rezultātu galīgā skaitā soļu.
 taisīt lēcienus, jo veselam skaitlim (arī intuicionisma pasaulē) 
 ir pilnīgi skaidrs, vai tas ir mazāks par 0, vai arī vienāds/lielāks
 par 0. 
-</div>
-<br/>
-<br/>
-<div class="doc"><h2>Kura loģika darbojas rīkā Coq?</h2>
+
+<div class="paragraph"> </div>
+
+ <h2>Kura loģika darbojas rīkā Coq?</h2>
+
+<div class="paragraph"> </div>
+
 Rīkam Coq ir vienalga, ar kādām aksiomām lietotājs strādā. 
 Pats rīks uzspiež pierādījuma soļus jeb "taktikas", kuras
 ļauj no aksiomām izvest lemmas un teorēmas, bet 
@@ -137,6 +186,9 @@ sākotnējās aksiomas katrs var definēt pats. To var izmantot, ja
 vajag definēt pavisam jaunus spēles noteikumus,
 piemēram, sākt uzreiz ar polinomu algebru vai "parastu" skaitļu 
 matemātikas vietā izdarīt apgalvojumus par Rubika kuba stāvokļiem.
+
+<div class="paragraph"> </div>
+
 Pamatojot apgalvojumus izteikumu loģikā (<i>propositional logic</i>) 
 klasiskā no intuicioniskās loģikas atšķiras, bet šī atšķirība 
 nav principiāla, jo visi pierādījumi šīs
@@ -149,12 +201,19 @@ uzdevumiem reizēm nevarētu
 izmantot nekonstruktīvus "pierādījumus no pretējā".
 Tiklīdz kā apgalvojumi ir par bezgalīgām kopām (piemēram, 
 naturālo skaitļu kopu), tad atšķirības kļūst pavisam ievērojamas.
-</div>
-<br/>
-<br/>
-<br/>
 
 </div>
-<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+<div class="code">
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
 </body>
 </html>

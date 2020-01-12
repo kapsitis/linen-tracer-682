@@ -112,7 +112,7 @@ natural tastiness that's *already* in the broccoli."*
 * Can you eat lunch once per day? Can you eat lunch 20 times per day?
 * Math as a set of skills. Math as a communications tool.
 Math as a source of beauty.
-* "ARS" - a polite word in Latin (means **both** science and art).
+* "ARS" - a polite word in Latin (science and art).
 
 Estimate how much time an average "non-mathematical person" spends to learn mathematics
 during his/her lifetime? How much is really needed, what is their ROI?
@@ -181,7 +181,7 @@ Here is what prof. Jānis Bārzdiņš had to say about a related subject:
 </hgroup>
 
 
-# <lo-su
+
 
 
 
@@ -249,6 +249,31 @@ and also to find out what is true.
 </hgroup>
 
 
+# <lo-summary/> How to Crete a LaTeX Document?
+
+<div style="font-size:70%">
+
+```
+\documentclass[jou]{apa6}
+%% All the other preamble. 
+%% (Only edit, if you need 
+%% new packages, predefined commands or style parameters)
+
+\title{Your Title}
+\author{Jane Doe}
+% Can leave empty
+\affiliation{}
+\leftheader{}
+\abstract{}
+
+\begin{document}
+
+EDIT EVERYTHING HERE
+
+\end{document}
+```
+
+</div>
 
 
 # &nbsp;
@@ -355,6 +380,73 @@ and also to find out what is true.
 </hgroup>
 
 
+# <lo-summary/> Truth table for a Boolean Expression
+
+<!--
+Expression: $(p \vee \neg(q \wedge ~r)) \rightarrow (\neg \neg r).$
+-->
+Expression $A \rightarrow (B \rightarrow C)$. 
+
+<table>
+<tr>
+<th>$A$</th><th>$B$</th><th>$C$</th><th>$B \rightarrow C$</th><th>A \rightarrow (B \rightarrow C)</th>
+</tr>
+<tr>
+<td>T</td><td>T</td><td>T</td><td>T</td><td>T</td>
+</tr>
+<tr>
+<td>T</td><td>T</td><td>F</td><td>F</td><td>F</td>
+</tr>
+<tr>
+<td>T</td><td>F</td><td>T</td><td>T</td><td>T</td>
+</tr>
+<tr>
+<td>T</td><td>F</td><td>F</td><td>T</td><td>T</td>
+</tr>
+<tr>
+<td>F</td><td>T</td><td>T</td><td>T</td><td>T</td>
+</tr>
+<tr>
+<td>F</td><td>T</td><td>F</td><td>F</td><td>T</td>
+</tr>
+<tr>
+<td>F</td><td>F</td><td>T</td><td>T</td><td>T</td>
+</tr>
+<tr>
+<td>F</td><td>F</td><td>F</td><td>T</td><td>T</td>
+</tr>
+</tr>
+
+
+
+
+# <lo-sample/> At least 2 (out of 4) are true
+
+Write a Boolean expression with $4$ variables
+$p_1, p_2, p_3, p_4$, which is satisfied if and only if at
+least $2$ of these variables have value true.
+
+## <lo-soln/> At least 2 (out of 4) are true
+
+
+
+
+## S
+
+
+Write a Boolean expression with 4 variables,
+which is satisfied if and only if at least 2 of the
+variables are false.
+
+## S
+
+How many vertices, edges and faces has the
+polyhedron shown in Figure 1? Is it regular?
+How many Boolean variables would you need to
+write an expression that is satisfied if and only if
+the polyhedron has a Hamiltonian path?
+
+
 
 
 # &nbsp;
@@ -379,6 +471,91 @@ and also to find out what is true.
 <span>(9) [References](#section-8)</span>
 
 </hgroup>
+
+
+# <lo-sample/> Direct proof of an IF-THEN
+
+**Theorem:** If an integer $k$ is odd, then $k^2$ gives 
+remainder $1$, when divided by $8$.
+
+$$1,9,25,49,81,121,169,225,289,361,\ldots$$
+or
+$$0\cdot{}8+1,\;1\cdot{}8+1,\;3\cdot{}8+1,\;6\cdot{}8+1,\;10\cdot{}8+1,\ldots$$
+
+
+# <lo-sample/> Experiment in Python
+
+*In Python:*
+
+```
+divideSquare = lambda x: (x*x) % 8
+```
+
+## <lo-hints/> Assume condition is true... 
+
+<hgroup>
+
+
+
+**Theorem:** If an integer $k$ is odd, then $k^2$ gives 
+remainder $1$, when divided by $8$.
+
+
+</hgroup>
+<hgroup>
+
+**Hints:** 
+
+1. Assume that $k$ is odd. 
+2. Rewrite "$k$ is odd" as an expression.
+3. Find $k^2$.
+4. See, if the remainder when dividing by $8$ is always $1$.
+
+## <lo-soln/> Squares of Odd Numbers
+
+1. Let's assume that $k$ is odd. 
+2. It can therefore be expressed as $k=2n+1$ for some integer $n$.
+3. $k^2 = (2n+1)^2 = 4n^2 + 4 + 1 = 4(n^2+n)+1$.
+4. We see that $k^2$ gives remainder $1$ when diveded by $4$.   
+How about remainder, when divided by $8$?
+
+
+# <lo-sample/> Constructive Proofs from the Contrary
+
+**Theorem:** The number $\sqrt{2}$ is irrational. 
+
+**Proof:** Assume that it is rational. Express it
+as a fraction in reduced form: 
+$\sqrt{2}=\frac{p}{q}$, where $p$ and $q$ are not divisible by any integer $>1$ 
+(otherwise that fraction can be reduced). 
+
+We get that ${\displaystyle \left( \sqrt{2} \right)^2 =\frac{p^2}{q^2}}$ and 
+$$2q^2 = p^2.$$
+Hence $p$ is an even number: $p = 2k$. Substitute $p$ by $2k$:   
+$2q^2 = (2k)^2$ or $2q^2 = 4k^2$ or $q^2 = 2k^2$. Therefore also $q$ is an 
+even number. This is a contradiction (we assumed that $p/q$ is
+written as an irreducible fraction). $\blacksquare$ 
+
+
+# <lo-sample/> Non-Constructive Proofs
+
+* 
+
+
+
+
+# <lo-sample/> Non-Constructive Proof
+
+Two players take turns - every time a player writes a positive integer from $1$ to $8$ (both endpoints inclusive)
+on a blackboard. 
+It is not allowed to write a number which divides a number already written on the blackboard.
+Whoever cannot make a move loses. 
+Prove that the first player can always win. 
+
+*(Latvian Open Mathematical Olympiad, Study Year 2001/2002, Grade 7, Problem 4).*
+See [NMS Arhīvs](http://nms.lu.lv/uzdevumu-arhivs/latvijas-olimpiades/)
+
+
 
 
 
@@ -444,7 +621,7 @@ and also to find out what is true.
 # <lo-summary/> What we covered in this class
 
 1. Compiled a document from LaTeX into PDF.
-2. 
+
 
 
 
@@ -478,6 +655,8 @@ https://youtu.be/ngM2N98ppQE
 
 :::
 
+
+<!--
 
 
 # <lo-yellow/> Logic in Literature - 1
@@ -591,6 +770,7 @@ of humanity.
 
 </hgroup>
 
+-->
 
 
 

@@ -1,0 +1,82 @@
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Discrete Structures (W2): Sets and Predicates}
+\author{Kalvis}
+\affiliation{RBS}
+
+\leftheader{Discrete Structures (W2)}
+
+\abstract{
+You will compile a sample LaTeX document to create
+math expressions easily and to satisfy the APA v6 style.
+You will also manipulate Boolean expressions on paper and with the Coq.
+}
+
+\keywords{\LaTeX, APA style, Coq, Boolean expressions}
+
+\begin{document}
+\maketitle
+
+
+{\bf (W2.1)} Try Boolean short-circuit evaluation.
+
+{\bf (W2.2)} Compute recursively defined functions; dynamic programming.
+
+{\bf (W2.3)} Verify identities on set operations.
+
+{\bf (W2.4)} Indexed operations $\vee_{i=1}^{k}$, $\wedge_{i=1}^{k}$, 
+$\cup_{i=1}^{k}$, $\cap_{i=1}^{k}$, $\sum_{i=1}^{k}$, 
+$\prod_{i=1}^{k}$.
+
+{\bf (W2.5)} Use precedence and associativity to draw abstract and concrete syntax trees.
+
+{\bf (W2.6)} Run CoqIDE, check types in Coq, including atomic types, 
+tuples, function types.
+
+
+
+\section{(W2.1) Try Boolean short-circuit evaluation}
+
+

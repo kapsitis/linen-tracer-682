@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>unfinished</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library unfinished</h1>
+
+<div class="code">
+#&lt;<span class="id" title="var">h2</span>&gt;<span class="id" title="var">What</span> <span class="id" title="keyword">is</span> <span class="id" title="var">Coq</span>&lt;/<span class="id" title="var">h2</span>&gt;# <br/>
+<br/>
+<span class="id" title="var">Here</span> <span class="id" title="var">we</span> <span class="id" title="var">introduce</span> <span class="id" title="var">the</span><br/>
+#&lt;<span class="id" title="var">a</span> <span class="id" title="var">href</span>="https://coq.inria.fr/"&gt;<span class="id" title="keyword">Proof</span> <span class="id" title="var">assistant</span> <span class="id" title="var">tool</span> <span class="id" title="var">Coq</span>&lt;/<span class="id" title="var">a</span>&gt;# (<span class="id" title="var">it</span> <br/>
+<span class="id" title="var">means</span> "rooster" <span class="id" title="tactic">in</span> <span class="id" title="var">French</span>)<br/>
+<span class="id" title="var">YouTube</span> <span class="id" title="var">has</span> <span class="id" title="var">multiple</span> <span class="id" title="var">tutorials</span> (<span class="id" title="var">see</span> <br/>
+#&lt;<span class="id" title="var">a</span> <span class="id" title="var">href</span>="https://youtu.be/7sk8hPWAMSw"&gt;<span class="id" title="var">typical</span> <span class="id" title="var">example</span>&lt;/<span class="id" title="var">a</span>&gt;#) <br/>
+<span class="id" title="var">showing</span> <span class="id" title="var">how</span> <span class="id" title="var">to</span> <span class="id" title="var">use</span> <span class="id" title="var">Coq</span> <span class="id" title="var">interactively</span>.<br/>
+<span class="id" title="var">In</span> <span class="id" title="var">Coq</span> <span class="id" title="var">user</span> <span class="id" title="var">has</span> <span class="id" title="var">to</span> <span class="id" title="var">write</span> <span class="id" title="var">a</span> <span class="id" title="var">proof</span> <span class="id" title="tactic">in</span> <span class="id" title="var">a</span> <span class="id" title="var">special</span><br/>
+<span class="id" title="var">syntax</span> <span class="id" title="var">that</span> <span class="id" title="var">can</span> <span class="id" title="var">be</span> <span class="id" title="var">verified</span> <span class="id" title="tactic">by</span> <span class="id" title="var">a</span> <span class="id" title="var">computer</span>. <span class="id" title="var">Coq</span> <span class="id" title="var">checks</span>, <br/>
+<span class="id" title="keyword">if</span> <span class="id" title="var">the</span> <span class="id" title="var">proof</span> <span class="id" title="var">has</span> <span class="id" title="var">all</span> <span class="id" title="var">the</span> <span class="id" title="var">steps</span> <span class="id" title="var">covered</span> <span class="id" title="var">and</span> <span class="id" title="keyword">if</span> <span class="id" title="var">they</span> <span class="id" title="var">are</span> <span class="id" title="var">done</span> <span class="id" title="var">correctly</span><br/>
+<span class="id" title="tactic">in</span> <span class="id" title="var">order</span> <span class="id" title="var">to</span> <span class="id" title="var">achieve</span> <span class="id" title="var">the</span> <span class="id" title="keyword">goal</span>.<br/>
+<span class="id" title="var">Coq</span> <span class="id" title="keyword">is</span> <span class="id" title="var">useful</span>, <span class="id" title="var">since</span> <span class="id" title="var">not</span> <span class="id" title="var">all</span> <span class="id" title="var">users</span> <span class="id" title="var">see</span> <span class="id" title="var">their</span> <span class="id" title="var">own</span> <span class="id" title="var">mistakes</span> <span class="id" title="tactic">in</span> <br/>
+<span class="id" title="var">proofs</span>, <span class="id" title="var">and</span> <span class="id" title="var">not</span> <span class="id" title="var">all</span> <span class="id" title="var">proofs</span> <span class="id" title="var">can</span> <span class="id" title="var">be</span> <span class="id" title="var">verified</span> <span class="id" title="tactic">by</span> <span class="id" title="var">humans</span>.<br/>
+<span class="id" title="var">Correct</span> <span class="id" title="var">logical</span> <span class="id" title="var">reasoning</span> <span class="id" title="keyword">is</span> <span class="id" title="var">important</span>, <span class="id" title="keyword">if</span> <span class="id" title="var">we</span> <span class="id" title="var">want</span> <span class="id" title="var">to</span> <span class="id" title="var">build</span> <br/>
+<span class="id" title="var">correct</span> <span class="id" title="var">IT</span> <span class="id" title="var">solutions</span> <span class="id" title="var">or</span> <span class="id" title="var">configure</span><br/>
+<span class="id" title="var">rule</span>-<span class="id" title="var">based</span> <span class="id" title="var">reasoning</span> <span class="id" title="keyword">for</span> <span class="id" title="var">artificial</span> <span class="id" title="var">intelligence</span> <span class="id" title="var">or</span> <span class="id" title="var">similar</span><br/>
+<span class="id" title="var">applications</span>.<br/>
+*)<br/>
+<br/>
+<br/>
+</div>
+
+<div class="doc">
+<h2>Check types in Coq</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Bool</span>.<br/>
+<span class="id" title="keyword">Search</span> <span class="id" title="var">bool</span>.<br/>
+</div>
+
+<div class="doc">
+These are "bool" datatypes - lowercase "true" and
+"false" used just to manipulate Boolean values. 
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">true</span>.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">false</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">andb</span> <span class="id" title="var">true</span> <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">true</span> &amp;&amp; <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">orb</span> <span class="id" title="var">true</span> <span class="id" title="var">false</span>. <span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">true</span> || <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">negb</span> <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="keyword">if</span> <span class="id" title="var">true</span> <span class="id" title="keyword">then</span> 3 <span class="id" title="keyword">else</span> 4.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> (3=4).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Warning!</b> The following expression is 
+wrong, because "if" expression needs "bool" type, 
+but "1=2" evaluates to "Prop" type. 
+In short, "false" and "False" are two very different things.
+<br/>
+<tt>Eval compute in if 1 = 2 then 3 else 4.</tt>
+<br/>
+If you want to write such conditionals, compare two 
+numbers so that it returns "bool".
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Coq.Arith.EqNat</span>.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="keyword">if</span> <span class="id" title="var">beq_nat</span> 1 2 <span class="id" title="keyword">then</span> 3 <span class="id" title="keyword">else</span> 4.<br/>
+</div>
+
+<div class="doc">
+This function takes two natural numbers and returns "bool" 
+</div>
+<div class="code">
+<span class="id" title="keyword">Check</span> <span class="id" title="var">beq_nat</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These are propositions of type "Prop". 
+In this case "True" embodies statement that is always true. 
+And "False" is a statement that is a falsehood.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">True</span>.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">False</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+You can check types of other expressions; 
+and you can also evaluate them.  
+<div class="paragraph"> </div>
+
+ These are simply natural numbers. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> 3.<br/>
+<span class="id" title="keyword">Check</span> (3+4).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This is a pair of natural numbers of type <tt>(nat*nat)</tt>. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> (3,4).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Function <tt>mult</tt> takes two natural arguments.
+<br/>
+Expression <tt>mult 3</tt> has got one argument already it wants one more.
+<br/>
+Finally, expression <tt>mult 3 5</tt> has got both arguments,
+it can be computed.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">mult</span>.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">mult</span> 3.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">mult</span> 3 5.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Unlike "mult" which should precede
+both arguments, some operators are infix operators:
+they are written in the middle.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Locate</span> "*".<br/>
+<span class="id" title="keyword">Locate</span> "/\".<br/>
+<span class="id" title="keyword">Locate</span> "-&gt;".<br/>
+<span class="id" title="keyword">Locate</span> "_ &lt;= _".<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These are propositions (you can ask, if they are True
+or not). They are not "bool" datatype! They are "Prop" datatype.
+Notation <tt>3&lt;&gt;6</tt> stands for "not equal".
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> (3=5).<br/>
+<span class="id" title="keyword">Check</span> ((3=5)/\<span class="id" title="var">True</span>).<br/>
+<span class="id" title="keyword">Check</span> (3 &lt;= 6).<br/>
+<span class="id" title="keyword">Check</span> (3 &lt;&gt; 6).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This is a function type. Not a value, just a 
+type notation. 
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">nat</span> -&gt; <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">g</span> (<span class="id" title="var">x</span>: <span class="id" title="var">nat</span>): (<span class="id" title="var">nat</span>*<span class="id" title="var">nat</span>) :=<br/>
+&nbsp;&nbsp;(<span class="id" title="var">x</span>*<span class="id" title="var">x</span>, <span class="id" title="var">x</span>).<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">g</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">let</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">fun</span> <span class="id" title="var">x</span> =&gt; (<span class="id" title="var">x</span> * <span class="id" title="var">x</span>, <span class="id" title="var">x</span>) <span class="id" title="tactic">in</span> <span class="id" title="var">f</span> 4.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<h2>Use and build truth tables</h2>
+These examples are adopted from this source: 
+<a href="https://softwarefoundations.cis.upenn.edu/lf-current/Basics.html">Software 
+Foundations by Benjamin C. Pierce et al. - Basics</a>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_orb1</span>: (<span class="id" title="var">orb</span> <span class="id" title="var">true</span> <span class="id" title="var">false</span>) = <span class="id" title="var">true</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+
+<div class="paragraph"> </div>
+
+This definition is of Peirce's arrow or 
+the logical NOR operator (see also 
+<a href="">Problem 3 in HW1</a>). 
+It has two Boolean arguments
+and produces a Boolean value.
+It is true when both b1 and b2 are false,
+and it is false otherwise.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">norb</span> (<span class="id" title="var">b1</span>:<span class="id" title="var">bool</span>) (<span class="id" title="var">b2</span>:<span class="id" title="var">bool</span>) : <span class="id" title="var">bool</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">b1</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">true</span> =&gt; <span class="id" title="var">false</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">false</span> =&gt; <span class="id" title="var">negb</span> <span class="id" title="var">b2</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_norb1</span>: (<span class="id" title="var">norb</span> <span class="id" title="var">false</span> <span class="id" title="var">false</span>) = <span class="id" title="var">true</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_norb2</span>: (<span class="id" title="var">norb</span> <span class="id" title="var">false</span> <span class="id" title="var">true</span>) = <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_norb3</span>: (<span class="id" title="var">norb</span> <span class="id" title="var">true</span> <span class="id" title="var">false</span>) = <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_norb4</span>: (<span class="id" title="var">norb</span> <span class="id" title="var">true</span> <span class="id" title="var">true</span>) = <span class="id" title="var">false</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<h2>Use precedence and associativity</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> 3+4.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Nat.add</span> 3 4.<br/>
+
+<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> 3*4.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Nat.mul</span> 3 4.<br/>
+
+<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> 2+3*5.<br/>
+<span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> (<span class="id" title="var">Nat.add</span> 2 (<span class="id" title="var">Nat.mul</span> 3 5)).<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample1_1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>: <span class="id" title="keyword">Prop</span>, ~(~<span class="id" title="var">a</span> /\ <span class="id" title="var">a</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H1</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab1"></a><h2 class="section">Do not modify this line: sample1_2</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample1_2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">a</span> -&gt; ~~<span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H1</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span>  <span class="id" title="var">ClassicalFacts</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Classical_Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">excluded_middle</span>.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">excluded_middle</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">xx</span>: <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Check</span> (<span class="id" title="var">classic</span> <span class="id" title="var">xx</span>).<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">classic</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">NNPeirce</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span>: <span class="id" title="keyword">Prop</span>, ~~(((<span class="id" title="var">A</span> -&gt; <span class="id" title="var">B</span>) -&gt; <span class="id" title="var">A</span>) -&gt; <span class="id" title="var">A</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">tauto</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span>  <span class="id" title="var">ClassicalFacts</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Classical_Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">restricted_excluded_middle</span> : <span class="id" title="keyword">forall</span> (<span class="id" title="var">P</span>:<span class="id" title="keyword">Prop</span>) (<span class="id" title="var">b</span>:<span class="id" title="var">bool</span>),<br/>
+&nbsp;&nbsp;(<span class="id" title="var">P</span> &lt;-&gt; <span class="id" title="var">b</span> = <span class="id" title="var">true</span>) -&gt; <span class="id" title="var">P</span> \/ ~<span class="id" title="var">P</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">P</span> [] <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">left</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">right</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>. <span class="id" title="tactic">intros</span> <span class="id" title="var">contra</span>. <span class="id" title="tactic">discriminate</span> <span class="id" title="var">contra</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Bool</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">restricted_excluded_middle_eq</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">n</span> = <span class="id" title="var">m</span> \/ <span class="id" title="var">n</span> &lt;&gt; <span class="id" title="var">m</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">restricted_excluded_middle</span> (<span class="id" title="var">n</span> = <span class="id" title="var">m</span>) (<span class="id" title="var">beq_nat</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">eqb_eq</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

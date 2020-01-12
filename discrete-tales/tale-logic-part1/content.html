@@ -103,7 +103,7 @@ I need to season and roast those veggies, to bring out the natural tastiness tha
 <ul>
 <li>Can you eat lunch once per day? Can you eat lunch 20 times per day?</li>
 <li>Math as a set of skills. Math as a communications tool. Math as a source of beauty.</li>
-<li>“ARS” - a polite word in Latin (means <strong>both</strong> science and art).</li>
+<li>“ARS” - a polite word in Latin (science and art).</li>
 </ul>
 <p>Estimate how much time an average “non-mathematical person” spends to learn mathematics during his/her lifetime? How much is really needed, what is their ROI?</p>
 </hgroup>
@@ -152,7 +152,6 @@ Coq proof assistant
 <li>Laws defining structures in programming languages leading to misunderstandings (<em>Ambiguous grammars</em>)</li>
 </ul>
 </hgroup></section>
-<section id="lo-su" class="title-slide slide level1"><h1>&lt;lo-su</h1></section>
 <section id="why-1" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
 <p>How combinatorial manipulation with <code>true</code> and <code>false</code> is related with logic and thinking?</p>
 </div>
@@ -193,6 +192,25 @@ Discrete Structures
 <span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
 <span>(9) <a href="#/section-8">References</a></span></p>
 </hgroup></section>
+<section id="how-to-crete-a-latex-document" class="title-slide slide level1"><h1><lo-summary/> How to Crete a LaTeX Document?</h1><div style="font-size:70%">
+<pre><code>\documentclass[jou]{apa6}
+%% All the other preamble. 
+%% (Only edit, if you need 
+%% new packages, predefined commands or style parameters)
+
+\title{Your Title}
+\author{Jane Doe}
+% Can leave empty
+\affiliation{}
+\leftheader{}
+\abstract{}
+
+\begin{document}
+
+EDIT EVERYTHING HERE
+
+\end{document}</code></pre>
+</div></section>
 <section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Discrete Structures
@@ -265,6 +283,174 @@ Discrete Structures
 <span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
 <span>(9) <a href="#/section-8">References</a></span></p>
 </hgroup></section>
+<section id="truth-table-for-a-boolean-expression" class="title-slide slide level1"><h1><lo-summary/> Truth table for a Boolean Expression</h1><!--
+Expression: $(p \vee \neg(q \wedge ~r)) \rightarrow (\neg \neg r).$
+-->
+<p>Expression <span class="math inline">\(A \rightarrow (B \rightarrow C)\)</span>.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(A\)</span>
+</th>
+<th>
+<span class="math inline">\(B\)</span>
+</th>
+<th>
+<span class="math inline">\(C\)</span>
+</th>
+<th>
+<span class="math inline">\(B \rightarrow C\)</span>
+</th>
+<th>
+A (B C)
+</th>
+</tr>
+<tr>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+F
+</td>
+<td>
+F
+</td>
+<td>
+F
+</td>
+</tr>
+<tr>
+<td>
+T
+</td>
+<td>
+F
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+T
+</td>
+<td>
+F
+</td>
+<td>
+F
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td>
+T
+</td>
+<td>
+F
+</td>
+<td>
+F
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td>
+F
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td>
+F
+</td>
+<td>
+F
+</td>
+<td>
+T
+</td>
+<td>
+T
+</td>
+</tr>
+</tr></section>
+<section><section id="at-least-2-out-of-4-are-true" class="title-slide slide level1"><h1><lo-sample/> At least 2 (out of 4) are true</h1><p>Write a Boolean expression with <span class="math inline">\(4\)</span> variables <span class="math inline">\(p_1, p_2, p_3, p_4\)</span>, which is satisfied if and only if at least <span class="math inline">\(2\)</span> of these variables have value true.</p></section><section id="at-least-2-out-of-4-are-true-1" class="slide level2">
+<h2><lo-soln/> At least 2 (out of 4) are true</h2>
+</section><section id="s" class="slide level2">
+<h2>S</h2>
+<p>Write a Boolean expression with 4 variables, which is satisfied if and only if at least 2 of the variables are false.</p>
+</section><section id="s-1" class="slide level2">
+<h2>S</h2>
+<p>How many vertices, edges and faces has the polyhedron shown in Figure 1? Is it regular? How many Boolean variables would you need to write an expression that is satisfied if and only if the polyhedron has a Hamiltonian path?</p>
+</section></section>
 <section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Discrete Structures
@@ -283,6 +469,41 @@ Discrete Structures
 <span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
 <span>(9) <a href="#/section-8">References</a></span></p>
 </hgroup></section>
+<section id="direct-proof-of-an-if-then" class="title-slide slide level1"><h1><lo-sample/> Direct proof of an IF-THEN</h1><p><strong>Theorem:</strong> If an integer <span class="math inline">\(k\)</span> is odd, then <span class="math inline">\(k^2\)</span> gives remainder <span class="math inline">\(1\)</span>, when divided by <span class="math inline">\(8\)</span>.</p>
+<p><span class="math display">\[1,9,25,49,81,121,169,225,289,361,\ldots\]</span> or <span class="math display">\[0\cdot{}8+1,\;1\cdot{}8+1,\;3\cdot{}8+1,\;6\cdot{}8+1,\;10\cdot{}8+1,\ldots\]</span></p></section>
+<section><section id="experiment-in-python" class="title-slide slide level1"><h1><lo-sample/> Experiment in Python</h1><p><em>In Python:</em></p>
+<pre><code>divideSquare = lambda x: (x*x) % 8</code></pre></section><section id="assume-condition-is-true" class="slide level2">
+<h2><lo-hints/> Assume condition is true…</h2>
+<hgroup>
+<p><strong>Theorem:</strong> If an integer <span class="math inline">\(k\)</span> is odd, then <span class="math inline">\(k^2\)</span> gives remainder <span class="math inline">\(1\)</span>, when divided by <span class="math inline">\(8\)</span>.</p>
+</hgroup>
+<hgroup>
+<p><strong>Hints:</strong></p>
+<ol type="1">
+<li>Assume that <span class="math inline">\(k\)</span> is odd.</li>
+<li>Rewrite “<span class="math inline">\(k\)</span> is odd” as an expression.</li>
+<li>Find <span class="math inline">\(k^2\)</span>.</li>
+<li>See, if the remainder when dividing by <span class="math inline">\(8\)</span> is always <span class="math inline">\(1\)</span>.</li>
+</ol>
+</section><section id="squares-of-odd-numbers" class="slide level2">
+<h2><lo-soln/> Squares of Odd Numbers</h2>
+<ol type="1">
+<li>Let’s assume that <span class="math inline">\(k\)</span> is odd.</li>
+<li>It can therefore be expressed as <span class="math inline">\(k=2n+1\)</span> for some integer <span class="math inline">\(n\)</span>.</li>
+<li><span class="math inline">\(k^2 = (2n+1)^2 = 4n^2 + 4 + 1 = 4(n^2+n)+1\)</span>.</li>
+<li>We see that <span class="math inline">\(k^2\)</span> gives remainder <span class="math inline">\(1\)</span> when diveded by <span class="math inline">\(4\)</span>.<br />
+How about remainder, when divided by <span class="math inline">\(8\)</span>?</li>
+</ol>
+</section></section>
+<section id="constructive-proofs-from-the-contrary" class="title-slide slide level1"><h1><lo-sample/> Constructive Proofs from the Contrary</h1><p><strong>Theorem:</strong> The number <span class="math inline">\(\sqrt{2}\)</span> is irrational.</p>
+<p><strong>Proof:</strong> Assume that it is rational. Express it as a fraction in reduced form: <span class="math inline">\(\sqrt{2}=\frac{p}{q}\)</span>, where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are not divisible by any integer <span class="math inline">\(&gt;1\)</span> (otherwise that fraction can be reduced).</p>
+<p>We get that <span class="math inline">\({\displaystyle \left( \sqrt{2} \right)^2 =\frac{p^2}{q^2}}\)</span> and <span class="math display">\[2q^2 = p^2.\]</span> Hence <span class="math inline">\(p\)</span> is an even number: <span class="math inline">\(p = 2k\)</span>. Substitute <span class="math inline">\(p\)</span> by <span class="math inline">\(2k\)</span>:<br />
+<span class="math inline">\(2q^2 = (2k)^2\)</span> or <span class="math inline">\(2q^2 = 4k^2\)</span> or <span class="math inline">\(q^2 = 2k^2\)</span>. Therefore also <span class="math inline">\(q\)</span> is an even number. This is a contradiction (we assumed that <span class="math inline">\(p/q\)</span> is written as an irreducible fraction). <span class="math inline">\(\blacksquare\)</span></p></section>
+<section id="non-constructive-proofs" class="title-slide slide level1"><h1><lo-sample/> Non-Constructive Proofs</h1><ul>
+<li></li>
+</ul></section>
+<section id="non-constructive-proof" class="title-slide slide level1"><h1><lo-sample/> Non-Constructive Proof</h1><p>Two players take turns - every time a player writes a positive integer from <span class="math inline">\(1\)</span> to <span class="math inline">\(8\)</span> (both endpoints inclusive) on a blackboard. It is not allowed to write a number which divides a number already written on the blackboard. Whoever cannot make a move loses. Prove that the first player can always win.</p>
+<p><em>(Latvian Open Mathematical Olympiad, Study Year 2001/2002, Grade 7, Problem 4).</em> See <a href="http://nms.lu.lv/uzdevumu-arhivs/latvijas-olimpiades/">NMS Arhīvs</a></p></section>
 <section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
 <h1 style="font-size:28pt">
 Discrete Structures
@@ -321,7 +542,6 @@ Discrete Structures
 </hgroup></section>
 <section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1><ol type="1">
 <li>Compiled a document from LaTeX into PDF.</li>
-<li></li>
 </ol></section>
 <section><section id="general-references" class="title-slide slide level1"><h1><lo-summary/> General References</h1><ol type="1">
 <li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">CSE 191, Spring 2019 in Buffalo</a> - inspiration for the current course.</li>
@@ -343,73 +563,122 @@ Discrete Structures
 <aside class="notes">
 <p>More training videos: https://youtu.be/7sk8hPWAMSw https://youtu.be/ngM2N98ppQE</p>
 </aside>
-</section></section>
-<section><section id="logic-in-literature---1" class="title-slide slide level1"><h1><lo-yellow/> Logic in Literature - 1</h1><hgroup style="font-size:70%">
-<p><a href="https://de.wikisource.org/wiki/Faust_-_Der_Trag%C3%B6die_erster_Teil">Goethe. Faust, Der Tragödie. Erster Teil</a></p>
-<p>Gebraucht der Zeit, sie geht so schnell von hinnen,<br />
-Doch Ordnung lehrt euch Zeit gewinnen.<br />
-Mein theurer Freund, ich rath’ euch drum<br />
-Zuerst <em>Collegium Logicum</em>.<br />
-Da wird der Geist euch wohl dressiert,<br />
-In spanische Stiefeln eingeschnürt,<br />
-Daß er bedächtiger so fort an<br />
-Hinschleiche die Gedankenbahn,<br />
-Und nicht etwa, die Kreuz’ und Quer,<br />
-Irlichtelire hin und her.</p>
+<!--
+
+
+# <lo-yellow/> Logic in Literature - 1
+
+<hgroup style="font-size:70%">
+
+[Goethe. Faust, Der Tragödie. Erster Teil](https://de.wikisource.org/wiki/Faust_-_Der_Trag%C3%B6die_erster_Teil)
+
+Gebraucht der Zeit, sie geht so schnell von hinnen,  
+Doch Ordnung lehrt euch Zeit gewinnen.  
+Mein theurer Freund, ich rath’ euch drum  
+Zuerst *Collegium Logicum*.  
+Da wird der Geist euch wohl dressiert,  
+In spanische Stiefeln eingeschnürt,  
+Daß er bedächtiger so fort an  
+Hinschleiche die Gedankenbahn,  
+Und nicht etwa, die Kreuz’ und Quer,  
+Irlichtelire hin und her.
+
+
 </hgroup>
 <hgroup style="font-size:60%">
-<p><a href="https://www.poetryintranslation.com/PITBR/German/FaustIScenesIVtoVI.php">Goethe. Faust. Part 1, Scene 4</a></p>
-<p>My dear friend, I’d advise, in sum,<br />
-First, the <em>Collegium Logicum</em>.<br />
-There your mind will be trained,<br />
-As if in Spanish boots, constrained,<br />
-So that painfully, as it ought,<br />
-It creeps along the way of thought.<br />
-Not flitting about all over,<br />
-Wandering here and there. <a href="https://www.youtube.com/watch?v=OzMejWGirJs&amp;feature=youtu.be&amp;t=5962">Audio</a></p>
-<p><a href="http://www.korpuss.lv/klasika/Senie/Rainis/Fausts/4.html">Gēte. Fausts. 1.daļa, 4.skats.</a></p>
-<p>Mans mīļais draugs, es padomu jums dotu<br />
-<em>Collegium logicum</em> ņemt no sākuma.<br />
-Tur garu nodīda jums stingri<br />
-Un it kā spaidu klučos liek,<br />
-Ka turpmāk tas vairs ne tik vingri<br />
-Pa domu teku tālāk tiek.<br />
-Lai krustām un šķērsām tas nešaudās,<br />
-Kā maldu uguns, kas šur tur parādās.</p>
-</hgroup></section><section id="logic-in-literature---1-1" class="slide level2">
-<h2><lo-yellow/> Logic in Literature - 1</h2>
-<hgroup style="font-size:70%">
-<figure>
-<img data-src="willy-pogany-mephistopheles-and-student.png" alt="Mephistopheles and the Student" /><figcaption>Mephistopheles and the Student</figcaption>
-</figure>
-<p><em>Mephistopheles and the Student, by <a href="https://www.pinterest.com/7marilyn4/willy-pogany-faust-by-johann-wolfgang-von-goethe/">Willy Pogany</a>.</em></p>
-</hgroup>
-<hgroup style="font-size:70%">
-<p>Career advisor discussing 4 areas of study typical in ancient universities - Philosophy, Jurisprudence, Theology, Medicine. The advice ultimately comes to this:</p>
-<p><em>Grau, theurer Freund, ist alle Theorie,</em><br />
-<em>Und grün des Lebens goldner Baum.</em><br />
- <br />
-<em>Grey, dear friend, is all theory,</em><br />
-<em>And green the golden tree of life.</em></p>
-</hgroup>
-<aside class="notes">
 
-</aside>
-</section></section>
-<section id="logic-in-literature---2" class="title-slide slide level1"><h1><lo-yellow/> Logic in Literature - 2</h1><hgroup style="font-size:65%">
-<ul>
-<li><a href="http://www.klassika.ru/read.html?proza/dostoevskij/podpole.txt&amp;page=5">Dostoyevsky, Notes from the Underground, Parts 8 and 9</a></li>
-</ul>
-<p>Good heavens, gentlemen, what sort of free will is left when we come to tabulation and arithmetic, when it will all be a case of twice two make four? Twice two makes four without my will. As if free will meant that! …<br />
-And to go to the root of the matter, why are you so positively convinced that not to act against his real normal interests guaranteed by the conclusions of reason and arithmetic is certainly always advantageous for man and must always be a law for mankind? So far, you know, this is only your supposition. It may be the law of logic, but not the law of humanity.</p>
+
+
+[Goethe. Faust. Part 1, Scene 4](https://www.poetryintranslation.com/PITBR/German/FaustIScenesIVtoVI.php)
+
+My dear friend, I’d advise, in sum,  
+First, the *Collegium Logicum*.  
+There your mind will be trained,   
+As if in Spanish boots, constrained,  
+So that painfully, as it ought,  
+It creeps along the way of thought.  
+Not flitting about all over,  
+Wandering here and there. [Audio](https://www.youtube.com/watch?v=OzMejWGirJs&feature=youtu.be&t=5962)
+
+
+[Gēte. Fausts. 1.daļa, 4.skats.](http://www.korpuss.lv/klasika/Senie/Rainis/Fausts/4.html)
+
+Mans mīļais draugs, es padomu jums dotu  
+*Collegium logicum* ņemt no sākuma.  
+Tur garu nodīda jums stingri  
+Un it kā spaidu klučos liek,  
+Ka turpmāk tas vairs ne tik vingri   
+Pa domu teku tālāk tiek.  
+Lai krustām un šķērsām tas nešaudās,  
+Kā maldu uguns, kas šur tur parādās.
+
+</hgroup>
+
+## <lo-yellow/> Logic in Literature - 1
+
+<hgroup style="font-size:70%">
+
+![Mephistopheles and the Student](willy-pogany-mephistopheles-and-student.png)
+
+*Mephistopheles and the Student, by [Willy Pogany](https://www.pinterest.com/7marilyn4/willy-pogany-faust-by-johann-wolfgang-von-goethe/).*
+
+</hgroup>
+<hgroup style="font-size:70%">
+
+Career advisor discussing 4 areas of study typical in ancient
+universities - Philosophy, Jurisprudence, Theology, Medicine.
+The advice ultimately comes to this:
+
+*Grau, theurer Freund, ist alle Theorie,*  
+*Und grün des Lebens goldner Baum.*  
+&nbsp;  
+*Grey, dear friend, is all theory,*  
+*And green the golden tree of life.*
+
+</hgroup>
+
+
+::: notes
+
+:::
+
+
+
+# <lo-yellow/> Logic in Literature - 2
+
+<hgroup style="font-size:65%">
+
+* [Dostoyevsky, Notes from the Underground, Parts 8 and 9](http://www.klassika.ru/read.html?proza/dostoevskij/podpole.txt&page=5)
+
+Good heavens, gentlemen, what sort of free will is left when we come to
+tabulation and arithmetic, when it will all be a case of twice two make
+four?  Twice two makes four without my will.  As if free will meant
+that! ...  
+And to go to the root of the matter, why are you so positively convinced that 
+not to act against his real normal interests guaranteed by the 
+conclusions of reason and arithmetic is certainly always advantageous
+for man and must always be a law for mankind?  So far, you know, this
+is only your supposition.  It may be the law of logic, but not the law
+of humanity.
+
 </hgroup>
 <hgroup style="font-size:65%">
-<ul>
-<li><a href="http://www.klassika.ru/read.html?proza/dostoevskij/podpole.txt&amp;page=5">Достоевский. Записки из подполья, части 8 и 9</a></li>
-</ul>
-<p>Эх, господа, какая уж тут своя воля будет, когда дело доходит до таблички и до арифметики, когда будет одно только дважды два четыре в ходу? Дважды два и без моей воли четыре будет. Такая ли своя воля бывает! …<br />
-И, если уж все говорить, почему вы так наверно убеждены, что не идти против настоящих, нормальных выгод, гарантированных доводами разума и арифметикой, действительно для человека всегда выгодно и есть закон для всего человечества? Ведь это покамест еще только одно ваше предположение. Положим, что это закон логики, но, может быть, вовсе не человечества.</p>
-</hgroup></section>
+
+* [Достоевский. Записки из подполья, части 8 и 9](http://www.klassika.ru/read.html?proza/dostoevskij/podpole.txt&page=5)
+
+Эх, господа, какая уж тут своя воля будет, когда дело доходит до таблички 
+и до арифметики, когда будет одно только дважды два четыре в ходу?
+Дважды два и без моей воли четыре будет. Такая ли своя воля бывает! ...  
+И, если уж все говорить, почему вы так наверно убеждены, что не идти против 
+настоящих, нормальных выгод, гарантированных доводами разума и арифметикой, 
+действительно для человека всегда выгодно и есть закон для всего человечества? 
+Ведь это покамест еще только одно ваше предположение. Положим, что 
+это закон логики, но, может быть, вовсе не человечества.
+
+</hgroup>
+
+-->
+</section></section>
     </div>
   </div>
 

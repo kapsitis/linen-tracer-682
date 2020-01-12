@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>CSEnotes_predicates</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library CSEnotes_predicates</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">Predicates and Quantifiers</h1>
+
+<div class="paragraph"> </div>
+
+
+<div class="paragraph"> </div>
+
+Date: 2020-01-02. Tested with Coq version 8.8.1.
+<hr/>
+
+The following examples are based on the 
+<a href="http://www.cse.buffalo.edu/~knepley/classes/cse191/ClassNotes.pdf">Class Notes</a>
+from SUNY Buffalo 
+<a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">CSE 191 
+"Discrete Structures"</a>, Pages 30-49. 
+
+<div class="paragraph"> </div>
+
+<a name="lab2"></a><h2 class="section">General Predicate Logic</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Section</span> <span class="id" title="var">Pred_Examples</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variables</span> <span class="id" title="var">A</span> : <span class="id" title="keyword">Set</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variables</span> <span class="id" title="var">P</span> <span class="id" title="var">Q</span> : <span class="id" title="var">A</span>-&gt;<span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">ex_dist_or_for</span> : (<span class="id" title="tactic">exists</span> <span class="id" title="var">x</span>:<span class="id" title="var">A</span>, <span class="id" title="var">P</span> <span class="id" title="var">x</span> \/ <span class="id" title="var">Q</span> <span class="id" title="var">x</span>) -&gt; (<span class="id" title="var">ex</span> <span class="id" title="var">P</span>) \/ (<span class="id" title="var">ex</span> <span class="id" title="var">Q</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">demorgan_forall</span> : (<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> : <span class="id" title="var">A</span>, <span class="id" title="var">P</span> <span class="id" title="var">x</span>) -&gt; ~ (<span class="id" title="tactic">exists</span> <span class="id" title="var">y</span> : <span class="id" title="var">A</span>, ~<span class="id" title="var">P</span> <span class="id" title="var">y</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">demorgan_forall_another</span>: (<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> : <span class="id" title="var">A</span>, <span class="id" title="var">P</span> <span class="id" title="var">x</span>) -&gt; ~ (<span class="id" title="tactic">exists</span> <span class="id" title="var">y</span> : <span class="id" title="var">A</span>, ~<span class="id" title="var">P</span> <span class="id" title="var">y</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab3"></a><h2 class="section">Odd and Even Natural Numbers</h2>
+
+<div class="paragraph"> </div>
+
+ Define even natural numbers inductively with two subcases:
+<ul>
+<li>"even0" states that 0 is an even number.</li>
+<li>"evenS" states that a successor to a successor 
+of an even number is even: In regular algebra 
+<tt>(S (S x))</tt> would be written as <tt>(x+1)+1</tt>.</li>
+</ul>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span>.<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">even</span> : <span class="id" title="var">nat</span> -&gt; <span class="id" title="keyword">Prop</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">even0</span> : <span class="id" title="var">even</span> 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">evenS</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<span class="id" title="var">nat</span>, <span class="id" title="var">even</span> <span class="id" title="var">x</span> -&gt; <span class="id" title="var">even</span> (<span class="id" title="var">S</span> (<span class="id" title="var">S</span> <span class="id" title="var">x</span>)).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Prove that 1 is not an even number. 
+Tactic "inversion" tries to find all cases 
+how we could get number "1" (defined as
+<tt>(S 0)</tt>) from the cases defining
+even numbers. No cases match it, so the
+proof is complete.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">not_even_1</span> : ~<span class="id" title="var">even</span> 1.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">even1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">even1</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Prove that 2*n is always even. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">even_double_p</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">even</span>(2*<span class="id" title="var">n</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">even0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Nat.add_succ_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">IHn</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Prove that adding 10 to an even number is also even. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">even_plus10_p</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">even</span> <span class="id" title="var">n</span> -&gt; <span class="id" title="var">even</span> (<span class="id" title="var">n</span> + 10).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> -&gt; <span class="id" title="var">Nat.add_succ_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>; <span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">evenS</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">plus_0_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H0</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Prove that 2*n+1 is never even. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">odd_notdouble_p</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, ~<span class="id" title="var">even</span>(2*<span class="id" title="var">n</span>+1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">H1even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Nat.add_succ_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">plus_0_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">plus_0_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">HSneven</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">HSneven</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">plus_0_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Nat.add_1_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">Nat.add_succ_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H0</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Every even number can be expressed as 2*y. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">even_mult</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>, <span class="id" title="var">even</span> <span class="id" title="var">x</span> -&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">y</span>, <span class="id" title="var">x</span> = 2*<span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> 0.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x0</span> <span class="id" title="var">Hx0even</span> <span class="id" title="var">IHx0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">IHx0</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">y</span> <span class="id" title="var">Heq</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Heq</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">S</span> <span class="id" title="var">y</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Square function that is never even. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">even_cp_p</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">even</span> <span class="id" title="var">n</span> -&gt; ~<span class="id" title="var">even</span>(<span class="id" title="var">n</span>*<span class="id" title="var">n</span> + 2*<span class="id" title="var">n</span> + 7).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H0even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H7even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">H7even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">inversion</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">HSneven</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">even_mult</span> <span class="id" title="tactic">in</span> <span class="id" title="var">HSneven</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">HSneven</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">HOdd</span> : <span class="id" title="tactic">exists</span> <span class="id" title="var">m</span>, 2 * <span class="id" title="var">x</span> * (2 * <span class="id" title="var">x</span>) + 2 * (2 * <span class="id" title="var">x</span>) + 7 = 2*<span class="id" title="var">m</span> + 1).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (2*<span class="id" title="var">x</span>*<span class="id" title="var">x</span> + 2*<span class="id" title="var">x</span> + 3).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">HOdd</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">odd_notdouble_p</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

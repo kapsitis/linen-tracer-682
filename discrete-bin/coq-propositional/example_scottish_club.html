@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>example_scottish_club</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library example_scottish_club</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">Scottish Club Example</h1>
+
+<div class="paragraph"> </div>
+
+ This example is taken from 
+<a href="https://coq.inria.fr/tutorial/1-basic-predicate-calculus&#35;sec11">Basic Predicate Calculus (1.3.4)</a>
+<br/>
+A private club has the following rules:
+<br/>
+<ol>
+<li>Every non-Scottish member wears red socks.</li>
+<li>Every member wears a kilt or does not wear red socks.</li>
+<li>The married members do not go out on Sunday.</li>
+<li>A member goes out on Sunday if and only if he is Scottish.</li>
+<li>Every member who wears a kilt is Scottish and married.</li>
+<li>Every Scottish member wears a kilt.</li>
+</ol>
+
+<div class="paragraph"> </div>
+
+ Now, we show that these rules are so 
+strict that no one can be accepted. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Section</span> <a name="club"><span class="id" title="section">club</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variables</span> <a name="club.Scottish"><span class="id" title="variable">Scottish</span></a> <a name="club.RedSocks"><span class="id" title="variable">RedSocks</span></a> <a name="club.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a name="club.Married"><span class="id" title="variable">Married</span></a> <a name="club.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a> : <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="club.rule1"><span class="id" title="variable">rule1</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#club.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#club.RedSocks"><span class="id" title="variable">RedSocks</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="club.rule2"><span class="id" title="variable">rule2</span></a> : <a class="idref" href="example_scottish_club.html#club.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#7a45dffb109c3069e5c675be68643e60"><span class="id" title="notation">\/</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#club.RedSocks"><span class="id" title="variable">RedSocks</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="club.rule3"><span class="id" title="variable">rule3</span></a> : <a class="idref" href="example_scottish_club.html#club.Married"><span class="id" title="variable">Married</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#club.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="club.rule4"><span class="id" title="variable">rule4</span></a> : <a class="idref" href="example_scottish_club.html#club.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="example_scottish_club.html#club.Scottish"><span class="id" title="variable">Scottish</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="club.rule5"><span class="id" title="variable">rule5</span></a> : <a class="idref" href="example_scottish_club.html#club.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#club.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="example_scottish_club.html#club.Married"><span class="id" title="variable">Married</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="club.rule6"><span class="id" title="variable">rule6</span></a> : <a class="idref" href="example_scottish_club.html#club.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#club.WearKilt"><span class="id" title="variable">WearKilt</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab2"></a><h2 class="section">One-line "proof" of a 5-variable tautology</h2>
+
+<div class="paragraph"> </div>
+
+ In Coq this is effective, but not very informative
+proof that the following thing is a tautology:
+<br/>
+<tt>~(rule1 /\ rule2 /\ rule3 /\ rule4 /\ rule5 /\ rule6)</tt>
+<br/>
+Or, equivalently, this states that all the rules together
+make a contradiction. So, this is also a tautology:
+<br/>
+<tt>(rule1 /\ rule2 /\ rule3 /\ rule4 /\ rule5 /\ rule6) -&gt; False</tt>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a name="NoMember"><span class="id" title="lemma">NoMember</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#False"><span class="id" title="inductive">False</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">tauto</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="example_scottish_club.html#club"><span class="id" title="section">club</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <a class="idref" href="example_scottish_club.html#NoMember"><span class="id" title="lemma">NoMember</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab3"></a><h2 class="section">Explicit proof from the rules</h2>
+
+<div class="paragraph"> </div>
+
+ Using tactic "tauto" checks, if proposition is a tautology 
+in the classical logic. It accepts all tautologies. 
+Unfortunately, this does not show any human-readable way 
+how to prove the propositional statement in a meaningful way.
+Unlike computers, humans cannot easily analyze full truth 
+tables with all 32 combinations of 5 propositions 
+(wheather someone is Scottish, 
+wears red socks, wears a kilt, is married or goes out on Sundays).
+Therefore we apply rules of reasoning inside Coq.
+But first let's convince ourselves that the statement is true.
+We consider two cases:
+<ul>
+<li>Assume a club member wears a kilt.</li>
+<li>Then he is both Scottish and Married (rule5).</li>
+<li>Then he does NOT go out on Sundays (rule3).</li>
+<li>Then he cannot be Scottish (contrapositive from rule4: <tt>~GoOutSunday -&gt; ~Scottish</tt>).</li>
+</ul>
+Contradiction. We established that no member can wear a kilt.
+<ul>
+<li>On the other side, assume a club member does not wear a kilt.</li>
+<li>Then he cannot be Scottish (contrapositive from rule6: <tt>~WearKilt -&gt; ~Scottish</tt>).</li>
+<li>Then he must wear red socks (rule1).</li>
+<li>Then <tt>~(WearKilt \/ ~ RedSocks)</tt> is true (negation of rule2).</li>
+</ul>
+Contradiction once again. We established that no member can avoid wearing a kilt.
+<br/>
+The Law of Excluded Middle shows that this is impossible, since
+each member either wears a kilt or he does not.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Section</span> <a name="clubExplicit"><span class="id" title="section">clubExplicit</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variables</span> <a name="clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a> <a name="clubExplicit.RedSocks"><span class="id" title="variable">RedSocks</span></a> <a name="clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a name="clubExplicit.Married"><span class="id" title="variable">Married</span></a> <a name="clubExplicit.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a> : <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="clubExplicit.rule1"><span class="id" title="variable">rule1</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.RedSocks"><span class="id" title="variable">RedSocks</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="clubExplicit.rule2"><span class="id" title="variable">rule2</span></a> : <a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#7a45dffb109c3069e5c675be68643e60"><span class="id" title="notation">\/</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.RedSocks"><span class="id" title="variable">RedSocks</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="clubExplicit.rule3"><span class="id" title="variable">rule3</span></a> : <a class="idref" href="example_scottish_club.html#clubExplicit.Married"><span class="id" title="variable">Married</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="clubExplicit.rule4"><span class="id" title="variable">rule4</span></a> : <a class="idref" href="example_scottish_club.html#clubExplicit.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="clubExplicit.rule5"><span class="id" title="variable">rule5</span></a> : <a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.Married"><span class="id" title="variable">Married</span></a>.<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="clubExplicit.rule6"><span class="id" title="variable">rule6</span></a> : <a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These two axioms are often needed (and they are not provable 
+in intuitionist mathematics). They are usually imported 
+from Coq libraries:
+<br/>
+<tt>Require Import Classical_Prop.</tt>
+<br/>
+In this brief example we do not import this library with axioms,
+we state these two basic axioms locally.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Axiom</span> <a name="ExcludedMiddle"><span class="id" title="axiom">ExcludedMiddle</span></a>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>:<span class="id" title="keyword">Prop</span>, <a class="idref" href="example_scottish_club.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#7a45dffb109c3069e5c675be68643e60"><span class="id" title="notation">\/</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a> <a class="idref" href="example_scottish_club.html#A"><span class="id" title="variable">A</span></a>.<br/>
+<span class="id" title="keyword">Axiom</span> <a name="ContraPos"><span class="id" title="axiom">ContraPos</span></a> : <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span>: <span class="id" title="keyword">Prop</span>, <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#A"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#B"><span class="id" title="variable">B</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#A"><span class="id" title="variable">A</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">)</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a name="NoMemberExplicit"><span class="id" title="lemma">NoMemberExplicit</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#False"><span class="id" title="inductive">False</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<a class="idref" href="example_scottish_club.html#ExcludedMiddle"><span class="id" title="axiom">ExcludedMiddle</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">KiltHypothesis</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<a class="idref" href="example_scottish_club.html#clubExplicit.rule5"><span class="id" title="variable">rule5</span></a> <span class="id" title="var">KiltHypothesis</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H2</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<a class="idref" href="example_scottish_club.html#clubExplicit.rule3"><span class="id" title="variable">rule3</span></a> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <a class="idref" href="example_scottish_club.html#clubExplicit.rule4"><span class="id" title="variable">rule4</span></a> <span class="id" title="keyword">as</span> [<span class="id" title="var">rule4A</span> <span class="id" title="var">rule4B</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="example_scottish_club.html#ContraPos"><span class="id" title="axiom">ContraPos</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">A</span>:=<a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a>) (<span class="id" title="var">B</span>:=<a class="idref" href="example_scottish_club.html#clubExplicit.GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">rule4B</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H6</span> <span class="id" title="var">H4</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H7</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+</div>
+
+<div class="doc">
+Now assume that there is no kilt 
+</div>
+<div class="code">
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">NoKiltHypothesis</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="example_scottish_club.html#ContraPos"><span class="id" title="axiom">ContraPos</span></a> <span class="id" title="keyword">with</span> (<span class="id" title="var">A</span>:=<a class="idref" href="example_scottish_club.html#clubExplicit.Scottish"><span class="id" title="variable">Scottish</span></a>) (<span class="id" title="var">B</span>:=<a class="idref" href="example_scottish_club.html#clubExplicit.WearKilt"><span class="id" title="variable">WearKilt</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <a class="idref" href="example_scottish_club.html#clubExplicit.rule6"><span class="id" title="variable">rule6</span></a>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">NoKiltHypothesis</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<a class="idref" href="example_scottish_club.html#clubExplicit.rule1"><span class="id" title="variable">rule1</span></a> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <a class="idref" href="example_scottish_club.html#clubExplicit.rule2"><span class="id" title="variable">rule2</span></a> <span class="id" title="keyword">as</span> [<span class="id" title="var">H4</span> | <span class="id" title="var">H5</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">NoKiltHypothesis</span> <span class="id" title="var">H4</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H5</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="example_scottish_club.html#clubExplicit"><span class="id" title="section">clubExplicit</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab4"></a><h2 class="section">Hypotheses can be replaced by conditions</h2>
+
+<div class="paragraph"> </div>
+
+ Creating and closing "sections" and formulating 
+hypotheses locally is not necessary. 
+Scottish club's example can be written as a 
+closed-form Boolean tautology that is true for all 
+possible truth values for 5 propositions.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a name="ScottishClub"><span class="id" title="lemma">ScottishClub</span></a>: <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">Scottish</span> <span class="id" title="var">RedSocks</span> <span class="id" title="var">WearKilt</span> <span class="id" title="var">Married</span> <span class="id" title="var">GoOutSunday</span>: <span class="id" title="keyword">Prop</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a> <a class="idref" href="example_scottish_club.html#Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#RedSocks"><span class="id" title="variable">RedSocks</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#WearKilt"><span class="id" title="variable">WearKilt</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#7a45dffb109c3069e5c675be68643e60"><span class="id" title="notation">\/</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a> <a class="idref" href="example_scottish_club.html#RedSocks"><span class="id" title="variable">RedSocks</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#Married"><span class="id" title="variable">Married</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a> <a class="idref" href="example_scottish_club.html#GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#GoOutSunday"><span class="id" title="variable">GoOutSunday</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#df1ced36fc33ce188051218bca314374"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="example_scottish_club.html#Scottish"><span class="id" title="variable">Scottish</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="example_scottish_club.html#Married"><span class="id" title="variable">Married</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">(</span></a><a class="idref" href="example_scottish_club.html#Scottish"><span class="id" title="variable">Scottish</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_scottish_club.html#WearKilt"><span class="id" title="variable">WearKilt</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">)</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#False"><span class="id" title="inductive">False</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">Scottish</span> <span class="id" title="var">RedSocks</span> <span class="id" title="var">WearKilt</span> <span class="id" title="var">Married</span> <span class="id" title="var">GoOutSunday</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">rule1</span> [ <span class="id" title="var">rule2</span> [<span class="id" title="var">rule3</span> [<span class="id" title="var">rule4</span> [<span class="id" title="var">rule5</span> <span class="id" title="var">rule6</span>]]]]].<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+After the "destruct H" we get the same 
+initial state: Prove "False", if there are 6 hypotheses or
+rules r1, r2, r3, r4, r5, r6.
+
+<div class="paragraph"> </div>
+
+ The statement to prove looks like this:
+<pre>
+1 subgoal
+Scottish, RedSocks, WearKilt, Married, GoOutSunday : Prop
+rule1 : ~ Scottish -&gt; RedSocks
+rule2 : WearKilt \/ ~ RedSocks
+rule3 : Married -&gt; ~ GoOutSunday
+rule4 : GoOutSunday &lt;-&gt; Scottish
+rule5 : Scottish /\ Married
+rule6 : Scottish -&gt; WearKilt
+<i>____________________________________</i>(1/1)
+False
+</pre>
+
+</div>
+<div class="code">
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

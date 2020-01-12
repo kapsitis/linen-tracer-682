@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>example_drinker_theorem</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library example_drinker_theorem</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">Predicate Logic: Drinker's Theorem</h1>
+
+<div class="paragraph"> </div>
+
+ This example included in the official 
+Coq documentation: see
+<a href="https://coq.inria.fr/tutorial/1-basic-predicate-calculus&#35;sec15">Paradoxes
+of classical predicate calculus</a>. 
+<blockquote>"In any nonempty bar there is a person such that,
+if s/he drinks, then everyone else in that bar also drinks."</blockquote>
+See <a href="https://en.wikipedia.org/wiki/Drinker_paradox">Wikipedia: Drinker Paradox</a>
+for a longer discussion.
+
+<div class="paragraph"> </div>
+
+In fact, it is not a paradox, but rather simple theorem. 
+It sounds unusual, because most <b>if</b>-<b>then</b> statements usually 
+mean some causal relationship between the condition and the conclusion. 
+In the drinker theorem there is no such relationship: We do not 
+need any assumptions on how one person's drinking affects what
+other people do. 
+
+<div class="paragraph"> </div>
+
+<a name="lab2"></a><h2 class="section">Human-readable Proof</h2>
+ We consider two cases. 
+<ul><li>If we assume that everyone is drinking,
+then select anybody (note that the bar is nonempty). 
+The conclusion of the theorem will be true.</li>
+<li>If there are non-drinking people in the bar,
+then select anyone among them. In this case the condition
+is wrong: the person we selected does NOT drink.
+Therefore the whole implication will be also true,
+since <tt>false</tt> implies anything.
+</ul>
+
+<div class="paragraph"> </div>
+
+<a name="lab3"></a><h2 class="section">Computer-verified Proof</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Section</span> <span class="id" title="var">drinker_lemma</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Denote <tt>D</tt> - the set of all people in the bar; 
+<tt>P</tt> - drinker predicate (takes value "true" for those
+who drink, takes value "false" otherwise).
+There is at least one person in the bar, denote it by <tt>d</tt>, 
+we do not know, if <tt>d</tt> drinks or not.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">D</span>: <span class="id" title="keyword">Set</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">P</span>:  <span class="id" title="var">D</span> -&gt; <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">d</span>: <span class="id" title="var">D</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Axiom</span> <span class="id" title="var">ExcludedMiddle</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>:<span class="id" title="keyword">Prop</span>, <span class="id" title="var">A</span> \/ ~ <span class="id" title="var">A</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">drinker</span>: <span class="id" title="tactic">exists</span> <span class="id" title="var">x</span>:<span class="id" title="var">D</span>, <span class="id" title="var">P</span> <span class="id" title="var">x</span> -&gt; <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<span class="id" title="var">D</span>, <span class="id" title="var">P</span> <span class="id" title="var">x</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<span class="id" title="var">ExcludedMiddle</span> (<span class="id" title="tactic">exists</span> <span class="id" title="var">x</span>, ~ <span class="id" title="var">P</span> <span class="id" title="var">x</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> (<span class="id" title="var">Tom</span>, <span class="id" title="var">Tom_does_not_drink</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">Tom</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">Tom_drinks</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">No_nondrinker</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">d</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">d_drinks</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">Joe</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<span class="id" title="var">ExcludedMiddle</span> (<span class="id" title="var">P</span> <span class="id" title="var">Joe</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">trivial</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">Joe_does_not_drink</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">absurd</span> (<span class="id" title="tactic">exists</span> <span class="id" title="var">x</span>, ~ <span class="id" title="var">P</span> <span class="id" title="var">x</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">No_nondrinker</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">Joe</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">Joe_does_not_drink</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <span class="id" title="var">drinker_lemma</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

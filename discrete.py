@@ -34,14 +34,14 @@ class DiscreteHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('discrete/index.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'slides.html'):
+        elif (my_id == 'exercises.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
                 'nav_items': nav_items,
                 'tales': self.tales
             }
-            template = jinja_env.get_template('discrete/slides.html')
+            template = jinja_env.get_template('discrete/exercises.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'proofs.html'):     

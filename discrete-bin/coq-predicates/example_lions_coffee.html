@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>example_lions_coffee</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library example_lions_coffee</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">Predicate Logic: Lewis Carrol's Syllogism</h1>
+
+<div class="paragraph"> </div>
+
+ This example is written by L.Carrol (the
+author of "Alice in Wonderland". It is also
+mentioned in K.Rosen's slide:
+ <p><img src='lions_coffee.png' width='90%'/></p>  In this example, there is a set 
+<tt>CRE</tt> containing all creatures, 
+<tt>isLion(x)</tt>, <tt>isFierce(x)</tt>
+and <tt>drinksCoffee(x)</tt> are three predicates.
+The predicates and their interpretations do not 
+matter for this example. 
+In a similar way, you could write another syllogism
+(predicate-logic statement that is true by its construction): 
+"All humans deserve respect. Some humans lie. 
+Therefore some liars deserve respect."
+
+<div class="paragraph"> </div>
+
+<a name="lab2"></a><h2 class="section">Human-readable proof</h2>
+ Since some lions do not drink coffee
+(i.e. there exists a non-drinking lion), let 
+<tt>myLion</tt> be such a lion. 
+Now let us establish that <tt>myLion</tt>
+is a creature that is both fierce and does not drink coffee. 
+<ol>
+<li>Note that <tt>myLion</tt> should be fierce, since all lions are fierce.</li>
+<li>Furthermore <tt>myLion</tt> does not drink coffee because of how it was selected.</li>
+</ol>
+
+<div class="paragraph"> </div>
+
+<a name="lab3"></a><h2 class="section">Computer-verified proof</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Section</span> <a name="lions_coffee"><span class="id" title="section">lions_coffee</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Declare a set <tt>CRE</tt> of all the creatures, 
+including lions and non-lions, fierce and non-fierce, 
+drinking and non-drinking creatures.
+<br/>
+Also declare three predicates (functions that map
+the set <tt>CRE</tt> into true/false propositions.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Variable</span> <a name="lions_coffee.CRE"><span class="id" title="variable">CRE</span></a>: <span class="id" title="keyword">Set</span>.<br/>
+<span class="id" title="keyword">Variables</span> <a name="lions_coffee.isLion"><span class="id" title="variable">isLion</span></a> <a name="lions_coffee.isFierce"><span class="id" title="variable">isFierce</span></a> <a name="lions_coffee.drinksCoffee"><span class="id" title="variable">drinksCoffee</span></a>: <a class="idref" href="example_lions_coffee.html#lions_coffee.CRE"><span class="id" title="variable">CRE</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These are two premises in the syllogism. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="lions_coffee.itemA"><span class="id" title="variable">itemA</span></a>: <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<a class="idref" href="example_lions_coffee.html#lions_coffee.CRE"><span class="id" title="variable">CRE</span></a>, <a class="idref" href="example_lions_coffee.html#lions_coffee.isLion"><span class="id" title="variable">isLion</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_lions_coffee.html#lions_coffee.isFierce"><span class="id" title="variable">isFierce</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <a name="lions_coffee.itemB"><span class="id" title="variable">itemB</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">exists</span></a> <span class="id" title="var">x</span>:<a class="idref" href="example_lions_coffee.html#lions_coffee.CRE"><span class="id" title="variable">CRE</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">,</span></a> <a class="idref" href="example_lions_coffee.html#lions_coffee.isLion"><span class="id" title="variable">isLion</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_lions_coffee.html#lions_coffee.drinksCoffee"><span class="id" title="variable">drinksCoffee</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This is a conclusion from these premises 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a name="carrol"><span class="id" title="lemma">carrol</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">exists</span></a> <span class="id" title="var">x</span>:<a class="idref" href="example_lions_coffee.html#lions_coffee.CRE"><span class="id" title="variable">CRE</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">,</span></a> <a class="idref" href="example_lions_coffee.html#lions_coffee.isFierce"><span class="id" title="variable">isFierce</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_lions_coffee.html#lions_coffee.drinksCoffee"><span class="id" title="variable">drinksCoffee</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <a class="idref" href="example_lions_coffee.html#lions_coffee.itemB"><span class="id" title="variable">itemB</span></a> <span class="id" title="keyword">as</span> [<span class="id" title="var">myLion</span> <span class="id" title="var">H</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H1</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">myLion</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="example_lions_coffee.html#lions_coffee.itemA"><span class="id" title="variable">itemA</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="example_lions_coffee.html#lions_coffee"><span class="id" title="section">lions_coffee</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+We can also write the same Lemma as a big implication, 
+where the premises <tt>itemA</tt> and <tt>itemB</tt> do not
+appear as separate hypotheses, but are built into the 
+lemma itself. We need to declare 
+the set <tt>CRE</tt> and the 3 predicates once again, because 
+they are not visible after the section was closed.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Variable</span> <a name="CRE"><span class="id" title="variable">CRE</span></a>: <span class="id" title="keyword">Set</span>.<br/>
+<span class="id" title="keyword">Variables</span> <a name="isLion"><span class="id" title="variable">isLion</span></a> <a name="isFierce"><span class="id" title="variable">isFierce</span></a> <a name="drinksCoffee"><span class="id" title="variable">drinksCoffee</span></a>: <a class="idref" href="example_lions_coffee.html#CRE"><span class="id" title="axiom">CRE</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a name="lion_lemma"><span class="id" title="lemma">lion_lemma</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<a class="idref" href="example_lions_coffee.html#CRE"><span class="id" title="axiom">CRE</span></a>, <a class="idref" href="example_lions_coffee.html#isLion"><span class="id" title="axiom">isLion</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="example_lions_coffee.html#isFierce"><span class="id" title="axiom">isFierce</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>)<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">exists</span></a> <span class="id" title="var">x</span>:<a class="idref" href="example_lions_coffee.html#CRE"><span class="id" title="axiom">CRE</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">,</span></a> <a class="idref" href="example_lions_coffee.html#isLion"><span class="id" title="axiom">isLion</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_lions_coffee.html#drinksCoffee"><span class="id" title="axiom">drinksCoffee</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>)<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">-&gt;</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">exists</span></a> <span class="id" title="var">x</span>:<a class="idref" href="example_lions_coffee.html#CRE"><span class="id" title="axiom">CRE</span></a><a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#84eb6d2849dbf3581b1c0c05add5f2d8"><span class="id" title="notation">,</span></a> <a class="idref" href="example_lions_coffee.html#isFierce"><span class="id" title="axiom">isFierce</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#611abc97cba304de784fa909dbdea1fa"><span class="id" title="notation">~</span></a><a class="idref" href="example_lions_coffee.html#drinksCoffee"><span class="id" title="axiom">drinksCoffee</span></a>(<a class="idref" href="example_lions_coffee.html#x"><span class="id" title="variable">x</span></a>)<a class="idref" href="http://coq.inria.fr/distrib/8.8.1/stdlib//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287"><span class="id" title="notation">)</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+In this example the keyword <tt>Admitted</tt> 
+indicates that we left this proof unfinished. If you 
+wish, you can edit this and create a proper proof
+that closes by <tt>Qed.</tt>
+
+</div>
+<div class="code">
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

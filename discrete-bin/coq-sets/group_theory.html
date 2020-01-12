@@ -1,58 +1,72 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module group_theory</title>
-<meta name="description" content="Documentation of Coq module group_theory" />
-<link href="coq2html.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="coq2html.js"> </script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>group_theory</title>
 </head>
 
-<body onload="hideAll('proofscript')">
-<h1 class="title">Module group_theory</h1>
-<div class="coq">
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library group_theory</h1>
+
+<div class="code">
+
 <br/>
-<span class="kwd">Parameter</span> <span class="id">G</span> : <span class="kwd">Type</span>.<br/>
-<span class="kwd">Parameter</span> <span class="id">e</span> : <span class="id">G</span>.<br/>
-<span class="kwd">Parameter</span> <span class="id">inv</span> : <span class="id">G</span> -&gt; <span class="id">G</span>.<br/>
-<span class="kwd">Parameter</span> <span class="id">mult</span> : <span class="id">G</span> -&gt; <span class="id">G</span> -&gt; <span class="id">G</span>.<br/>
-<span class="kwd">Infix</span> "*" := <span class="id">mult</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">G</span> : <span class="id" title="keyword">Type</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">e</span> : <span class="id" title="var">G</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">inv</span> : <span class="id" title="var">G</span> -&gt; <span class="id" title="var">G</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">mult</span> : <span class="id" title="var">G</span> -&gt; <span class="id" title="var">G</span> -&gt; <span class="id" title="var">G</span>.<br/>
+<span class="id" title="keyword">Infix</span> &quot;*" := <span class="id" title="var">mult</span>.<br/>
+
 <br/>
-<span class="kwd">Check</span> (<span class="id">inv</span> <span class="id">e</span>).<br/>
-<span class="kwd">Check</span> (<span class="id">mult</span> (<span class="id">inv</span> <span class="id">e</span>) <span class="id">e</span>).<br/>
-<span class="kwd">Check</span> (<span class="id">inv</span> <span class="id">e</span>)*<span class="id">e</span>.<br/>
+<span class="id" title="keyword">Check</span> (<span class="id" title="var">inv</span> <span class="id" title="var">e</span>).<br/>
+<span class="id" title="keyword">Check</span> (<span class="id" title="var">mult</span> (<span class="id" title="var">inv</span> <span class="id" title="var">e</span>) <span class="id" title="var">e</span>).<br/>
+<span class="id" title="keyword">Check</span> (<span class="id" title="var">inv</span> <span class="id" title="var">e</span>)*<span class="id" title="var">e</span>.<br/>
+
 <br/>
-<span class="kwd">Axiom</span> <span class="id">left_id</span> : <span class="kwd">forall</span> <span class="id">x</span>:<span class="id">G</span>, <span class="id">e</span> * <span class="id">x</span> = <span class="id">x</span>.<br/>
+<span class="id" title="keyword">Axiom</span> <span class="id" title="var">left_id</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<span class="id" title="var">G</span>, <span class="id" title="var">e</span> * <span class="id" title="var">x</span> = <span class="id" title="var">x</span>.<br/>
+
 <br/>
-<span class="kwd">Axiom</span> <span class="id">left_inv</span> : <span class="kwd">forall</span> <span class="id">x</span>:<span class="id">G</span>, <span class="id">inv</span> <span class="id">x</span> * <span class="id">x</span> = <span class="id">e</span>.<br/>
-<span class="kwd">Axiom</span> <span class="id">assoc</span> : <span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>:<span class="id">G</span>, <span class="id">x</span> * (<span class="id">y</span> * <span class="id">z</span>) = (<span class="id">x</span> * <span class="id">y</span>) * <span class="id">z</span>.<br/>
+<span class="id" title="keyword">Axiom</span> <span class="id" title="var">left_inv</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<span class="id" title="var">G</span>, <span class="id" title="var">inv</span> <span class="id" title="var">x</span> * <span class="id" title="var">x</span> = <span class="id" title="var">e</span>.<br/>
+<span class="id" title="keyword">Axiom</span> <span class="id" title="var">assoc</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">z</span>:<span class="id" title="var">G</span>, <span class="id" title="var">x</span> * (<span class="id" title="var">y</span> * <span class="id" title="var">z</span>) = (<span class="id" title="var">x</span> * <span class="id" title="var">y</span>) * <span class="id" title="var">z</span>.<br/>
+
 <br/>
-<span class="kwd">Print</span> <span class="id">left_id</span>.<br/>
-<span class="kwd">Check</span> <span class="id">left_id</span>.<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">left_id</span>.<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">left_id</span>.<br/>
+
 <br/>
-<span class="id">Proposition</span> <span class="id">left_cancel</span> : <span class="kwd">forall</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span>:<span class="id">G</span>, <span class="id">x</span> * <span class="id">y</span> = <span class="id">x</span> * <span class="id">z</span> -&gt; <span class="id">y</span> = <span class="id">z</span>.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
-<div class="proofscript" id="proof1">
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">x</span> <span class="id">y</span> <span class="id">z</span> <span class="id">Htocancel</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">inv</span> <span class="id">x</span> * (<span class="id">x</span> * <span class="id">y</span>) = <span class="id">inv</span> <span class="id">x</span> * (<span class="id">x</span> * <span class="id">z</span>)).<br/>
-&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">Htocancel</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">reflexivity</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">assoc</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">assoc</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">left_inv</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">left_id</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">rewrite</span> <span class="id">left_id</span> <span class="kwd">in</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">assumption</span>.<br/>
-Qed.</div>
+<span class="id" title="keyword">Proposition</span> <span class="id" title="var">left_cancel</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">z</span>:<span class="id" title="var">G</span>, <span class="id" title="var">x</span> * <span class="id" title="var">y</span> = <span class="id" title="var">x</span> * <span class="id" title="var">z</span> -&gt; <span class="id" title="var">y</span> = <span class="id" title="var">z</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">z</span> <span class="id" title="var">Htocancel</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">inv</span> <span class="id" title="var">x</span> * (<span class="id" title="var">x</span> * <span class="id" title="var">y</span>) = <span class="id" title="var">inv</span> <span class="id" title="var">x</span> * (<span class="id" title="var">x</span> * <span class="id" title="var">z</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Htocancel</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">assoc</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">assoc</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">left_inv</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">left_id</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">left_id</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
 
 </div>
-<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+
 </body>
 </html>

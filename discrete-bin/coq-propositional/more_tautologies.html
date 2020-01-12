@@ -1,36 +1,54 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module more_tautologies</title>
-<meta name="description" content="Documentation of Coq module more_tautologies" />
-<link href="coq2html.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="coq2html.js"> </script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>more_tautologies</title>
 </head>
 
-<body onload="hideAll('proofscript')">
-<h1 class="title">Module more_tautologies</h1>
-<div class="coq">
-<div class="doc"><a href="../../discrete/assignments.html">Back to Discrete Assignments</a> </div>
-<br/>
-<h1> Negations </h1>
-<br/>
-<div class="doc">Tactic "discriminate" tells that constants "0" and "1" 
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library more_tautologies</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">Negations</h1>
+
+<div class="paragraph"> </div>
+
+ Tactic "discriminate" tells that constants "0" and "1" 
 are already in their final state and 
 cannot be transformed into equal things.
+
 </div>
+<div class="code">
+
 <br/>
-<span class="kwd">Theorem</span> <span class="id">zero_not_one</span> : 0 &lt;&gt; 1.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof1')">Proof.</div>
-<div class="proofscript" id="proof1">
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">contra</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">discriminate</span> <span class="id">contra</span>.<br/>
-Qed.</div>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">zero_not_one</span> : 0 &lt;&gt; 1.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">contra</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span> <span class="id" title="var">contra</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<div class="doc">Principle of Explosion states that,
+</div>
+
+<div class="doc">
+Principle of Explosion states that,
 if you have a false statement among your hypotheses,
 then you can prove anything.
 <i>Ex falso (sequitur) quodlibet (EFQ)</i> - 
@@ -38,29 +56,34 @@ this is a Latin proverb that tells, why contradictions
 are so dangerous in mathematics. Once you prove one such 
 contradiction, there is no longer clear way to distinguish 
 true statements from false.
+
 </div>
+<div class="code">
+
 <br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">False_cannot_be_proven</span> : ~<span class="id" title="var">False</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">proof_of_False</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<span class="kwd">Theorem</span> <span class="id">False_cannot_be_proven</span> : ~<span class="id">False</span>.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</div>
-<div class="proofscript" id="proof2">
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">proof_of_False</span>.<br/>
-&nbsp;&nbsp;<span class="id">contradiction</span>.<br/>
-Qed.</div>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">False_implies_nonsense</span> : <span class="id" title="var">False</span> -&gt; 2 + 2 = 5.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">contra</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
 <br/>
-<span class="kwd">Theorem</span> <span class="id">False_implies_nonsense</span> : <span class="id">False</span> -&gt; 2 + 2 = 5.<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</div>
-<div class="proofscript" id="proof3">
-&nbsp;&nbsp;<span class="tactic">intros</span> <span class="id">contra</span>.<br/>
-&nbsp;&nbsp;<span class="id">contradiction</span>.<br/>
-Qed.</div>
-<br/>
-<br/>
-<br/>
-<h1> Proving Implications </h1>
-<br/>
-<div class="doc">If one proposition logically implies another
+</div>
+
+<div class="doc">
+<a name="lab2"></a><h1 class="section">Proving Implications</h1>
+
+<div class="paragraph"> </div>
+
+ If one proposition logically implies another
 it is called <i>implication</i>. For example:
 <blockquote><u>Direct implication:</u> <b>if</b> x=2,
 <b>then</b> x<sup>2</sup>=4.</blockquote>
@@ -68,15 +91,14 @@ In this example the first proposition (p) is "x=2",
 the second proposition (q) is "x squared is 4".
 The combined statement is <tt>p -&gt; q</tt> 
 and it is read "<b>if</b> <tt>p</tt> <b>then</b> <tt>q</tt>".
-</div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<h2> Contrapositive </h2>
-<br/>
-<div class="doc">Note that in implication the order is relevant. For example, 
+
+<div class="paragraph"> </div>
+
+<a name="lab3"></a><h2 class="section">Contrapositive</h2>
+
+<div class="paragraph"> </div>
+
+ Note that in implication the order is relevant. For example, 
 "x squared equals 4" does not necessarily imply "x=2", 
 since x can also be negative 2. Nevertheless, there is 
 one way to rewrite implication, and it is always equivalent
@@ -87,48 +109,49 @@ In our above example it would look like this:
 <blockquote><u>Contrapositive implication:</u>
 <b>if</b> x<sup>2</sup> is <b>not</b> 4,
 <b>then</b> x is <b>not</b> equal to 2.</blockquote>
-</div>
-<br/>
-<div class="doc">Using Coq, we show a Lemma that <tt>p-&gt;q</tt> is
+
+<div class="paragraph"> </div>
+
+ Using Coq, we show a Lemma that <tt>p-&gt;q</tt> is
 equivalent to <tt>~q -&gt; ~p</tt>. This means that
 every direct implication always means its contrapositive implication 
 and vice versa. 
 To see the proof in Coq, click on the link
 <b>Proof.</b> right under the theorem.
-</div>
-<br/>
-<span class="kwd">Require</span> <span class="kwd">Import</span> <span class="id">Classical_Prop</span>.<br/>
-<br/>
-<span class="kwd">Lemma</span> <span class="id">contrapos</span> : <span class="kwd">forall</span> <span class="id">p</span> <span class="id">q</span>: <span class="kwd">Prop</span>, (<span class="id">p</span> -&gt; <span class="id">q</span>) &lt;-&gt; (~<span class="id">q</span> -&gt; ~<span class="id">p</span>).<br/>
-<div class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</div>
-<div class="proofscript" id="proof4">
-&nbsp;&nbsp;<span class="tactic">split</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">intros</span>. <span class="comment">(*r&nbsp;Part&nbsp;1:&nbsp;(~&nbsp;q&nbsp;-&gt;&nbsp;~&nbsp;p)&nbsp;-&gt;&nbsp;(p&nbsp;-&gt;&nbsp;q)&nbsp;*)</span><br/>
-&nbsp;&nbsp;<span class="tactic">intro</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H0</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">H</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H1</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>. <span class="comment">(*r&nbsp;Part&nbsp;2:&nbsp;(~&nbsp;q&nbsp;-&gt;&nbsp;~&nbsp;p)&nbsp;-&gt;&nbsp;(p&nbsp;-&gt;&nbsp;q)&nbsp;*)</span><br/>
-&nbsp;&nbsp;<span class="tactic">intros</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">assert</span> (<span class="id">q</span> \/ ~<span class="id">q</span>).  <span class="comment">(*r&nbsp;Law&nbsp;of&nbsp;Excluded&nbsp;Middle&nbsp;*)</span><br/>
-&nbsp;&nbsp;<span class="tactic">unfold</span> <span class="id">not</span>.<br/>
-&nbsp;&nbsp;<span class="tactic">apply</span> <span class="id">classic</span> <span class="kwd">with</span> (<span class="id">P</span> := <span class="id">q</span>). <br/>
-&nbsp;&nbsp;<span class="tactic">destruct</span> <span class="id">H1</span> <span class="kwd">as</span> [<span class="id">H2</span> | <span class="id">H3</span>].<br/>
-&nbsp;&nbsp;<span class="tactic">exact</span> <span class="id">H2</span>.<br/>
-&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">H</span> <span class="id">H3</span>).<br/>
-&nbsp;&nbsp;<span class="id">pose</span> (<span class="id">f</span> <span class="id">H0</span>).<br/>
-&nbsp;&nbsp;<span class="id">contradiction</span> <span class="id">f0</span>.<br/>
-Qed.</div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 </div>
-<div class="footer"><hr/>Generated by <a href="https://github.com/xavierleroy/coq2html/">coq2html</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Classical_Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">contrapos</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">p</span> <span class="id" title="var">q</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">p</span> -&gt; <span class="id" title="var">q</span>) &lt;-&gt; (~<span class="id" title="var">q</span> -&gt; ~<span class="id" title="var">p</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. &nbsp;&nbsp;<span class="id" title="tactic">intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>. &nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">q</span> \/ ~<span class="id" title="var">q</span>). &nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">classic</span> <span class="id" title="keyword">with</span> (<span class="id" title="var">P</span> := <span class="id" title="var">q</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H2</span> | <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">H3</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">f</span> <span class="id" title="var">H0</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">f0</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
 </body>
 </html>

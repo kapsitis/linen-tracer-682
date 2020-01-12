@@ -1,0 +1,346 @@
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa6.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa6 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 6th edition
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------
+%% 
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Discrete Structures (W1): Sample Quiz}
+\author{Kalvis}
+\affiliation{RBS}
+
+\leftheader{Discrete Structures (W1)}
+
+\abstract{These are sample questions \textendash{} they are similar, but not identical 
+to the actual quiz planned for January 9, 2020. 
+The actual quiz will have $7$ questions, its time is $15$ minutes; 
+it accounts for 7~\textperthousand{} of your total grade.
+% 7*8 + 11*4
+}
+
+%\keywords{}
+
+\begin{document}
+\maketitle
+
+{\bf Question 1.} Fill in the missing entries in the truth table of this proposition:
+$$E = \neg(r \rightarrow \neg q) \vee (p \wedge \neg r).$$
+
+\begin{tabular}{ c | c | c | c }
+$p$ & $q$ & $r$ & $E$ \\ \hline
+{\tt T} & {\tt T} & {\tt T} & {\tt T} \\ \hline
+{\tt T} & {\tt T} & {\tt F} & $\ldots$ \\ \hline
+{\tt T} & {\tt F} & {\tt T} & {\tt F} \\ \hline
+{\tt T} & {\tt F} & {\tt F} & $\ldots$ \\ \hline
+{\tt F} & {\tt T} & {\tt T} & {\tt T} \\ \hline
+{\tt F} & {\tt T} & {\tt F} & $\ldots$ \\ \hline
+{\tt F} & {\tt F} & {\tt T} & {\tt F} \\ \hline
+{\tt F} & {\tt F} & {\tt F} & $\ldots$ \\ \hline
+\end{tabular}
+
+\vspace{10pt}
+{\bf Question 2.} Find the Boolean expression that has this truth table:
+
+\begin{tabular}{ c | c | c }
+$p$ & $q$ & ? \\ \hline
+{\tt T} & {\tt T} & {\tt F} \\ \hline
+{\tt T} & {\tt F} & {\tt T} \\ \hline
+{\tt F} & {\tt T} & {\tt T} \\ \hline
+{\tt F} & {\tt F} & {\tt F} \\ \hline
+\end{tabular}
+
+\noindent
+\vspace{3pt}
+{\em (Select 1 answer):}\\
+{\bf (A)} $\neg (\neg ( p \wedge \neg p) \wedge \neg (\neg q \wedge q))$,\\
+{\bf (B)} $\neg (\neg ( p \wedge q) \wedge \neg (\neg p \wedge \neg q))$,\\
+{\bf (C)} $\neg (\neg ( p \wedge \neg q) \wedge \neg (\neg p \wedge q))$,\\
+{\bf (D)} $\neg (( \neg p \wedge \neg q) \wedge \neg (p \wedge q))$.
+
+\vspace{10pt}
+{\bf Question 3.} Determine whether the following proposition is {\em satisfiable}:
+$(\neg p \vee \neg q) \wedge (p \rightarrow q)$. If it is satisfiable, what are the 
+truth values for $p$ and $q$ that makes it {\tt true}.\\
+{\em Reminder.} A Boolean expression is called {\em satisfiable}, 
+if you can assign its variables to make it evaluate to {\tt true}. In other words,
+it is not always {\tt false}. 
+
+\vspace{10pt}
+{\bf Question 4.}
+Consider the following proposition: ``Not eating vegetables is sufficient for not getting ice cream.''
+Express it as a Boolean expression, if there are two atomic propositions:\\
+$A$: ``Person $x$ eats vegetables.''\\
+$B$: ``Person $x$ gets ice cream.''
+
+\vspace{10pt}
+{\bf Question 5.} 
+Determine whether the following two propositions are logically equivalent:
+$E_1 = p \rightarrow (\neg q \wedge r)$ and $E_2 = \neg p \vee \neg(r \rightarrow q)$.\\
+If they are not equivalent, find some values $p,q,r$ that makes $E_1$ different 
+from $E_2$.
+
+\vspace{10pt}
+{\bf Question 6.} 
+Translate the given statement into propositional logic using the propositions provided:
+\begin{quote}
+``On certain highways in the Washington, DC metro area you are allowed to travel
+on high occupancy lanes during rush hour only if there are at least three passengers in the vehicle.''
+\end{quote}
+Express your answer in terms of $3$ atomic propositions\\
+$r$: ``You are traveling during rush hour.''\\
+$t$: ``You are riding in a car with at least three passengers.'' and\\
+$h$: ``You can travel on a high occupancy lane.''
+
+\vspace{10pt}
+{\bf Question 7a.} 
+({\em Note:} In this problem ``knights'' always tell the truth and ``knaves'' always lie.)\\
+On the island of knights and knaves you encounter two people, $A$ and $B$ (each of them knows
+everything about himself and the other person).\\
+Person $A$ says ``B is a knave.''\\
+Person $B$ says ``At least one of us is a knight.''\\
+Determine whether each person is a knight or a knave.
+
+\vspace{10pt}
+{\bf Question 7b.} 
+An island has three kinds of people: knights who always
+tell the truth, knaves who always lie, and normals who can either tell the truth or lie. 
+You encounter three people, $A$, $B$, and $C$. 
+You know one of the three people is a knight, one is a knave, and one is a normal. Each of the three
+people knows the type of person each of the other two is.\\
+$A$ says ``I am not a knight,''\\
+$B$ says ``I am not a normal,'' and 
+$C$ says ``I am not a knave.''\\
+Write a possible solution (for example, $(A,B,C)=({\tt knight},{\tt knave},{\tt normal})$ or 
+some other permutation), or state that there are no solutions.
+
+
+\newpage 
+
+\section{Answers}
+
+
+{\bf Question 1:} Answer:
+
+\begin{tabular}{ c | c | c | c }
+$p$ & $q$ & $r$ & ? \\ \hline
+{\tt T} & {\tt T} & {\tt T} & {\tt T} \\ \hline
+{\tt T} & {\tt T} & {\tt F} & $\boxed{\mathtt{T}}$ \\ \hline
+{\tt T} & {\tt F} & {\tt T} & {\tt F} \\ \hline
+{\tt T} & {\tt F} & {\tt F} & $\boxed{\mathtt{T}}$ \\ \hline
+{\tt F} & {\tt T} & {\tt T} & {\tt T} \\ \hline
+{\tt F} & {\tt T} & {\tt F} & $\boxed{\mathtt{F}}$ \\ \hline
+{\tt F} & {\tt F} & {\tt T} & {\tt F} \\ \hline
+{\tt F} & {\tt F} & {\tt F} & $\boxed{\mathtt{F}}$ \\ \hline
+\end{tabular}
+
+\vspace{3pt}
+\noindent
+Note that $r=\mathtt{false}$ in all the unknown slots. 
+We can simplify the Boolean expression:
+\begin{align}
+E & \equiv \neg(r \rightarrow \neg q) \vee (p \wedge \neg r) \equiv \nonumber \\
+  & \equiv \neg(\mathtt{false} \rightarrow \neg q) \vee 
+(p \wedge \mathtt{true}) \equiv  \nonumber \\
+  & \equiv \neg(\mathtt{true}) \vee p \equiv \nonumber \\
+  & \equiv \mathtt{false} \vee p \equiv p. \nonumber
+\end{align}
+Therefore we simply copy the value of $p$ in all four places.
+
+\vspace{10pt}
+{\bf Question 2:} Answer: {\bf (C)}.\\
+The truth table is identical to $p \oplus q$ (exclusive OR). 
+To see that answer {\bf (C)} is correct, apply De Morgan's law multiple times:
+\begin{align}
+\neg (\neg ( p \wedge \neg q) \wedge \neg (\neg p \wedge q)) & \equiv \nonumber \\
+\neg \neg (p \wedge \neg q) \vee \neg \neg (\neg p \wedge q) & \equiv \nonumber \\
+(p \wedge \neg q) \vee (\neg p \wedge q). & \nonumber
+\end{align}
+
+The last expression is exactly the exclusive OR (either $p$ is {\tt true} and
+$q$ is {\tt false} or vice versa).
+
+\vspace{10pt}
+{\bf Question 3:} Answer: Yes,
+$(\neg p \vee \neg q) \wedge (p \rightarrow q)$ is 
+satisfiable.\\
+Subexpression $(\neg p \vee \neg q)$ tells that either $p$ 
+or $q$ (or both) should be {\tt false}. So, you should take
+$p = \mathtt{false}$ to make $p \rightarrow q$ {\tt true} as well. 
+
+
+\vspace{10pt}
+{\bf Question 4.} Answer: $\neg A \rightarrow \neg B$ (or $B \rightarrow A$).\\
+Condition $C$ is called {\em sufficient} for the result $R$, if 
+$R$ is {\tt true} whenever $C$ is {\tt true}. 
+This means that {\bf not} eating vegetables logically implies {\bf not} 
+getting ice cream. It is exactly $\neg A \rightarrow \neg B$.\\
+You can rewrite it as a contrapositive, if you like: $B \rightarrow A$:
+getting ice cream implies having eaten vegetables. Both answers are
+equivalent.
+
+\vspace{10pt}
+{\bf Question 5.} Answer: Yes, $E_1$ and $E_2$ are logically equivalent 
+(they mean the same thing).
+Consequently, there is no way to assign $p,q,r$ to make their truth values different.
+
+\begin{itemize}
+\item $p \rightarrow (\neg q \wedge r)$ means that either condition ($p$) is {\tt false} or 
+the conclusion ($\neg q \wedge r$) is {\tt true}. So, $E_1$ can be rewritten as 
+$\neg p \vee (\neg q \wedge r)$.
+\item In $E_2$ the subexpression 
+$\neg(r \rightarrow q)$ can be rewritten as $(r \wedge \neg q)$
+(for the implication $r \rightarrow q$ to be {\tt false}, you should have
+both $r = \mathtt{true}$ and $q = \mathtt{false}$, so it 
+means $(r \wedge \neg q)$. And that is exactly the same expression we got 
+from $E_1$, since $(r \wedge \neg q) = (\neg q \wedge r)$
+\end{itemize}
+
+
+
+\vspace{10pt}
+{\bf Question 6.} Answer: $(r \wedge h) \rightarrow t$\\
+"Only if" means {\bf necessity}. Namely, $(r \wedge h)$ implies $t$, 
+or $(r \wedge h) \rightarrow t$ (Ability to use a high occupancy road during a rush 
+hour implies at least three people in the car.)\\
+You can rewrite this as a contrapositive (and expand $(r \wedge h)$ 
+with De Morgan's law). Say, "If you do not have three people
+in your car, then it is either not a high occupancy road, or it is not a rush hour."
+This is an equivalent statement $\neg t \rightarrow (\neg r \vee \neg h)$. 
+
+
+\vspace{10pt}
+{\bf Question 7a.} Answer: $A$ is a knave; $B$ is a knight.\\
+We sort cases.\\
+(1) Assume that $A$ is a knight. He says that $B$ is a knave (and that must be true, 
+since $A$ does not lie). 
+But then $B$ should lie, when he says "At least one of us is a knight". 
+The opposite of "At least one" ($\geq 1$) is "less than one" ($<1$); so in this
+case there should be no knights at all. This is a contradiction. Therefore $A$ cannot be a knight.\\
+(2) Assume that $A$ is a knave. Since he says that $B$ is a knave, $B$ should be a knight. 
+And moreover, since $B$ says that "at least one of us is a knight", then 
+it is still consistent, because he is a knight himself. 
+
+\vspace{10pt}
+{\bf Question 7b.} TBD (I can explain this in the class, if you wish.)
+
+
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Brian D. Beitzel.
+%% 
+%% This work consists of the file  apa6.dtx
+%% and the derived files           apa6.ins,
+%%                                 apa6.cls,
+%%                                 apa6.pdf,
+%%                                 README,
+%%                                 APAamerican.txt,
+%%                                 APAbritish.txt,
+%%                                 APAdutch.txt,
+%%                                 APAenglish.txt,
+%%                                 APAgerman.txt,
+%%                                 APAngerman.txt,
+%%                                 APAgreek.txt,
+%%                                 APAczech.txt,
+%%                                 APAturkish.txt,
+%%                                 APAendfloat.cfg,
+%%                                 apa6.ptex,
+%%                                 TeX2WordForapa6.bas,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%% End of file `./samples/shortsample.tex'.

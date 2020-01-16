@@ -222,13 +222,15 @@ $p$ & $q$ & $r$ & $E$ \\ \hline
 {\em Solution.} Only need to compute $E = \neg(r \rightarrow \neg q) \wedge (q \rightarrow r)$
 when $q = \mathtt{false}$ (this equality takes place for all the $4$ interesting values). Also 
 note that the expression does not depend on $p$. We can simplify:
-\begin{array}
+
+\begin{align}
 E \equiv & \neg(r \rightarrow \neg q) \wedge (q \rightarrow r) \equiv \nonumber \\
   \equiv & \neg(r \rightarrow \neg \mathtt{false}) \wedge (q \rightarrow \mathtt{false}) \equiv \nonumber \\
   \equiv & \neg(r \rightarrow \mathtt{true}) \wedge q \equiv \nonumber \\
   \equiv & \neg(\mathtt{true}) \wedge q \equiv \nonumber \\
   \equiv & \mathtt{false} \wedge q \equiv \mathtt{false}.
-\end{array}
+\end{align}
+
 
 This table indicates that $E = \mathtt{false}$ whenever $q = \mathtt{false}$. 
 
@@ -250,12 +252,47 @@ $p \equiv \mathtt{true}$ and $q \equiv \mathtt{false}$ (this is not our case).
 {\bf Question 3.} Answer: Yes, the formula is satisfiable.\\
 To satisfy it, select $p = \mathtt{true}$ (and $q$ can be anything). 
 In this case the Boolean expression:
-\begin{array}
+\begin{align}
 E \equiv & (\neg p \vee \neg q) \wedge (p \rightarrow q) \equiv \nonumber \\
   \equiv & (\neg \mathtt{true} \vee \neg q) \wedge (\mathtt{true} \rightarrow q) \equiv \nonumber
-\end{array}
+\end{align}
 
+\vspace{10pt}
+\noindent
+{\bf Question 4.} Answer: $A \rightarrow B$.\\
+Let us reformulate the sentence: ``You cannot eat vegetables unless you also 
+eat ice cream.''. It becomes this: ``Whenever you have eaten vegetables, you 
+have eaten ice cream.''. Therefore vegetables imply ice cream (on the other hand, 
+eating ice cream alone is fine). Therefore the answer is any of the equivalent expressions:
+$$A \rightarrow B;\;\;\neg{}B \rightarrow \neg{}A;\;\;\neg{}A \vee B.$$
 
+\vspace{10pt}
+\noindent
+{\bf Question 5.} Answer: No, $E_1$ and $E_2$ are not equivalent.\\
+Their values differ when $(p;q;r)=(\mathtt{T},\mathtt{T},\mathtt{T})$ or 
+$(p;q;r)=(\mathtt{F},\mathtt{F},\mathtt{F})$.
+
+\vspace{10pt}
+\noindent
+{\bf Question 6.} Answer: $(A \vee B) \rightarrow C$.\\ 
+The original text of these rules is trickier than that. 
+See \url{https://bit.ly/35N8sIE}, Article 14. 
+One could find some ambiguous cases: What happens, if in the appartment there is 
+one person with disability benefits (slightly under 400) plus some other family members
+having their average income slightly under 320? (But, in the meantime, 
+the overall average monthly income in this family is between 320 and 400?) \\
+And why the low-income status is
+given only to the working age people, but the rule also mentions old-age pension
+(vecuma pensija)? 
+
+\vspace{10pt}
+\noindent
+{\bf Question 7.} Answer: $A$ is knight, $B$ is knave.\\
+We can sort cases depending on $B$:\\
+{\bf Case 1:} If $B$ were a knight, then what he says (that both $A$ and $B$ are knights)
+must be true. But $A$ says that $B$ is a knave. This is a contradiction.\\
+{\bf Case 2:} If $B$ were a knave, then there is no contradiction, plus $A$ tells the truth; 
+so $A$ must be knight.
 
 
 

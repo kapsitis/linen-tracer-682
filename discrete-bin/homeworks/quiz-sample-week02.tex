@@ -1,0 +1,354 @@
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa6.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa6 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 6th edition
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------
+%% 
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Sample Quiz for Week02}
+\author{Discrete Structures, Fall 2020}
+\affiliation{RBS}
+
+\leftheader{Discrete Structures (W2): Sample Quiz}
+
+\abstract{%
+}
+
+%\keywords{}
+
+\begin{document}
+\maketitle
+
+{\bf Question 1.} Let $a,b \in \mathbb{Z}^{+}$ be two positive integers.
+Translate into predicate logic: ``$d$ is the greatest common divisor 
+of $a,b$.'' (That is, 
+the greatest number that divides both $a$ and $b$).\\
+{\em Note 1.} "Translate into predicate logic" means - use
+predicates and quantifiers to express that statement.
+{\em Note 2.} Use ``infix'' notation for common predicates: write 
+$a\,\mid\,b$ whenever $a$ divides $b$; write $x < y$, if $x$ is less than $y$. For example, $3\,|\,6$ \hspace{1ex} 
+($3$ divides $6$) is preferred compared to 
+``$\mathtt{divides}(3,6)$''. Also \hspace{1ex} 
+$10 < 17$ is more readable than
+``$\mathtt{lessThan(10,17)}$''.
+
+\vspace{10pt}
+{\bf Question 2.} Use quantifiers to write a 
+statement to tell that a quadratic
+function $f(x) = ax^2 +bx+c$ 
+has two different integer roots.
+
+
+\vspace{10pt}
+{\bf Question 3.} Assume that for some argument {\tt x}, 
+Python functions {\tt a(x)} and {\tt b(x)}
+return value {\tt True}, but other two functions 
+{\tt c(x)} and {\tt d(x)} return value {\tt False}. 
+Which functions are called and evaluated, if you run the following conditional statement:
+\begin{verbatim}
+if (a(x) or b(x)) and (c(x) & d(x)):
+    ## ... some Python code ...
+\end{verbatim}
+{\em Note.} Note that Boolean operators {\tt and}, {\tt or} 
+use {\em short-circuit
+evaluation}, but operators {\tt \&}, {\tt |} do not. 
+
+
+\vspace{10pt}
+{\bf Question 4.} There is a set $C$ of several children and a 
+set $H$ of several hats. There is a predicate $W(c,h)$ which is {\tt True}
+iff the child $c \in C$ has ever worn the hat $h \in H$.\\
+{\bf (a)} Write the domain set and the range set of the predicate function $W$. \\
+{\bf (b)} Use quantifiers to write a statement: ``Every two 
+children have at least one hat in common (that is, both of 
+them have worn it).''
+
+
+\vspace{10pt}
+{\bf Question 5.}
+Let $\mathcal{H}$ be the set of all humans, and the predicate $F(x,y)$ is
+true iff $x$ is the father of $y$. Express these sentences in plain English:\\
+{\bf (a)} $\forall x \in \mathcal{H}\;\exists y \in \mathcal{H},\;F(x,y)$.\\
+{\bf (b)} $\exists y \in \mathcal{H}\;\forall x \in \mathcal{H},\;F(x,y)$.\\
+{\bf (c)} Which of the two statements {\bf (a)}, {\bf (b)} (if any) 
+is true, if we replace the non-empty domain of all humans $\mathcal{H}$ by an
+empty domain $\mathcal{Z} = \emptyset$ of all zombies?
+
+\vspace{10pt}
+{\bf Question 6.} We define predicates $P(x,y)$, 
+$Q(x,y)$ with two arguments, 
+where $x,y$ can be any of the three letters: 
+$\mathtt{a},\mathtt{b},\mathtt{c}$. 
+(The type for all these predicates is 
+$\{ \mathtt{a},\mathtt{b},\mathtt{c} \}^2 
+\rightarrow \{ \mathtt{T},\mathtt{F} \}$.)
+
+They have these following truth tables:
+\begin{center}
+\begin{tabular}{c|ccc}
+$P$ & $a$ & $b$ & $c$ \\ \hline
+$a$ & $\mathtt{T}$ & $\mathtt{F}$ & $\mathtt{T}$ \\
+$b$ & $\mathtt{F}$ & $\mathtt{F}$ & $\mathtt{F}$ \\
+$c$ & $\mathtt{T}$ & $\mathtt{T}$ & $\mathtt{T}$
+\end{tabular}
+\hspace{2ex}
+\begin{tabular}{c|ccc}
+$Q$ & $a$ & $b$ & $c$ \\ \hline
+$a$ & $\mathtt{F}$ & $\mathtt{T}$ & $\mathtt{F}$ \\
+$b$ & $\mathtt{F}$ & $\mathtt{F}$ & $\mathtt{T}$ \\
+$c$ & $\mathtt{T}$ & $\mathtt{F}$ & $\mathtt{F}$
+\end{tabular}
+\end{center}
+Find the truth values of these statements:\\
+{\bf (a)} $\exists x \forall y, P(y,x)$\\
+{\bf (b)} $\exists x \forall y, P(x,y)$\\
+{\bf (c)} $\exists x \exists y, Q(x,y)$\\
+{\bf (d)} $\forall x \exists y, Q(x,y)$\\
+{\em Note.} In all truth tables the first argument is
+represented by row, the second is represented by column. 
+For example $P(\mathtt{b}, \mathtt{c}) = \mathtt{F}$ (2nd row
+and 3rd column). Meanwhile 
+$P(\mathtt{c}, \mathtt{b}) = \mathtt{T}$ (3rd row and 2nd column). 
+
+
+
+\vspace{10pt}
+{\bf Question 7.} 
+For a real number $x$ we know that $\lfloor x \rfloor \neq 
+\lfloor x + 0.5 \rfloor$. Write this statement in 
+predicate logic without using any $\lfloor \ldots \rfloor$ 
+notation. (Write instead that $x$ and $x+0.5$ have some integer number 
+betwen $x$  and $x+0.5$.)\\
+{\em Note.} By $\lfloor x \rfloor$ we denote the 
+largest integer number that does not exceed $x$. 
+For example $\lfloor 3.14 \rfloor = 3$, $\lfloor 17 \rfloor = 17$, 
+$\lfloor -4.5 \rfloor = -5$. 
+
+
+\newpage 
+
+\section{Answers}
+
+
+{\bf Question 1.} Answer:
+$$\boxed{\forall k \in \mathbb{Z}^{+},\;\left(k\,\mid\,a \wedge 
+k\,\mid\,b\right)\,\rightarrow\,k \leq d.}$$
+{\em Recite:} ``For all positive integers $k$, if $k$ divides 
+both $a$ and $b$, then $k$ does not exceed 
+$d = \operatorname{gcd}(a,b)$.''\\
+This also means that $d$ is the largest number among all
+common divisors of $a,b$ ({\em greatest common divisor}, GCD).\\
+{\em Note:} In the above formula $a,b,d$ are ``free variables''
+(they need to be assigned independently; and if 
+$d \neq \operatorname{gcd}(a,b)$, then the statement is false). 
+On the other hand, $k$ is a ``bound variable''. You can rename
+$k$ into $x$ \textendash{} and nothing will change.
+
+\vspace{10pt}
+{\bf Question 2.} Answer:
+\begin{align}
+ & \exists x_1 \in \mathbb{Z}^{+}\,\exists x_2 \in \mathbb{Z}^{+}\,
+\forall x_3 \in \mathbb{Z}^{+}, \nonumber \\
+ & \left( x_1 \neq x_2 \wedge f(x_1)=0 \wedge f(x_2) = 0 \right) \wedge \nonumber \\
+\wedge & \left( f(x_3) = 0 \rightarrow x_3 = x_1 \vee x_3 = x_2 \right). 
+\nonumber
+\end{align}
+{\em Recite:} ``There exist two positive integers $x_1,x_2$ 
+such that they are different and 
+both of them are roots of $f(x)=0$ and, 
+furthermore, for any other root $x_3$, it 
+equals either $x_1$ or $x_2$.''
+
+\vspace{10pt}
+{\bf Question 3.} Answer:\\
+\underline{The following functions are called: {\tt a(x)}, 
+{\tt c(x)}, {\tt d(x)}.}\\
+Function {\tt b(x)} is not called, because 
+short-circuit operator {\bf or} 
+skips the second argument in ``{\tt a(x) or b(x)}'', 
+if the first argument is {\tt True}.
+
+
+
+
+
+
+
+\vspace{10pt}
+{\bf Question 4.} Answer: {\bf (a)}
+$$\boxed{W\,:\,C \times H \rightarrow \{ \mathtt{T}, \mathtt{F} \}.}$$
+{\em Note.} In Coq the set of ``True'' and ``False'' 
+is denoted by {\tt Prop} or $\{ \mathtt{T}, \mathtt{F} \}$.\\
+{\bf (b)} 
+$$\boxed{\forall c_1 \in C \; \forall c_2 \in C \; \exists h \in H,
+W(c_1,h) \wedge W(c_2,h).}$$
+Every two
+children have at least one hat in common (that is, both
+of them have worn it).
+
+
+
+\vspace{10pt}
+{\bf Question 5.} Answers:\\
+{\bf (a)} \underline{Every human has a father.}\\
+{\bf (b)} \underline{There exists someone, who is the father of everyone.}\\
+{\bf (c)} \underline{Both (a) and (b) are false for empty sets.}\\
+Every time we write $\exists x \in \mathcal{Z}$
+regarding anything (where $\mathcal{Z} = \emptyset$ \textendash{}
+an empty set) it is false. 
+
+On the other hand, this statement is {\tt True}: 
+$$\forall x \in \mathcal{Z} \; \forall y \in \mathcal{Z},\; F(x,y) \equiv \mathtt{True}.$$
+{\em Recite:} ``In the (empty) set $\mathcal{Z}$ of all 
+zombies, any zomby is a father of any other zomby.''\\
+{\em Note.} For empty domains we do not need to know anything 
+about the predicate values, because their truth tables have
+zero rows and zero columns. You can also safely state the negation:
+``No zomby is a father of another zomby.''
+$$\forall x \in \mathcal{Z} \; \forall y \in \mathcal{Z},\; \neg F(x,y) \equiv \mathtt{True}.$$
+
+
+\vspace{10pt}
+{\bf Question 6.} Answers:\\
+{\bf (a)} False. In the truth table of $P$, there is NO 
+column (denoted by $x$) containing $\mathtt{T}$ in 
+every row.\\
+{\bf (b)} True. In the truth table of $P$ there is a row $x$ 
+(it is the last row $x = \mathtt{c}$), containing
+$\mathtt{T}$ in every column.\\
+{\bf (c)} True. We can indeed make $Q(x,y)$ true, if we pick 
+row and column. For example $Q(\mathtt{c},\mathtt{a}) = \mathtt{T}$.\\
+{\bf (d)} True. For any row in the truth table of $Q$, 
+we can find at least one $\mathtt{T}$ in some column. 
+
+
+\vspace{10pt}
+{\bf Question 7.} Answer:\\
+$$\exists k \in \mathbb{Z}, x < k \wedge x+0.5 \geq k.$$
+In this example $\lfloor x \rfloor = k-1$, but
+$\lfloor x+0.5 \rfloor = k$, so they are different.
+
+
+
+
+
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Brian D. Beitzel.
+%% 
+%% This work consists of the file  apa6.dtx
+%% and the derived files           apa6.ins,
+%%                                 apa6.cls,
+%%                                 apa6.pdf,
+%%                                 README,
+%%                                 APAamerican.txt,
+%%                                 APAbritish.txt,
+%%                                 APAdutch.txt,
+%%                                 APAenglish.txt,
+%%                                 APAgerman.txt,
+%%                                 APAngerman.txt,
+%%                                 APAgreek.txt,
+%%                                 APAczech.txt,
+%%                                 APAturkish.txt,
+%%                                 APAendfloat.cfg,
+%%                                 apa6.ptex,
+%%                                 TeX2WordForapa6.bas,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%% End of file `./samples/shortsample.tex'.

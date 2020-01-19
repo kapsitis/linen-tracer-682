@@ -9,15 +9,16 @@
 </head>
 
 <body>
-<h1>Discrete Structures: Patterns of Proofs</h1>
+<h1>Discrete Structures: Proof Strategies</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Home</a></td>
 <td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="agenda.html">Agenda</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq.html">Coq</a></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><b>Proofs</b></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="readings.html">Readings</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
 {% for item in nav_items %}
@@ -35,25 +36,31 @@
 <p>Proofs reflect our creativity, but they mostly follow certain patterns and rules of the genre. 
 Here we list some proof templates used in course assignments with examples.</p>
 
-<h2>Conditional and Biconditional Statements</h2>
-
-<table class="tasks">
+<table class="proofs">
 <colgroup>
 <col class="aaa">
 <col class="bbb">
 <col class="ccc">
 </colgroup><tbody>
-<tr><th>Name of a template</th><th>A typical example</th><th>Details</th></tr>
+<tr><th>Name of a template</th><th>A Typical Example</th><th>Further Examples</th></tr>
 <tr class="odd">
   <td>Direct proof of an IF-THEN statement</td>
-  <td>Prove that for any odd integer 
+  <td class="compact">Prove that for any odd integer 
   <span class="math inline">\(k\)</span>, the square 
   <span class="math inline">\(k^2\)</span> 
-  gives remainder 1, when divided by 8.</td><td>&nbsp;</td>
+  gives remainder 1, when divided by 8.<br/>
+  <strong>
+  (1) Translate: Odd <span class="math inline">\( k \)</span> 
+  means <span class="math inline">\(k = 2n+1\)</span><br/> 
+  (2) Rewrite: <span class="math inline">\( (2n+1)^2 = 4n^2 + 4n + 1 = 4n(n+1)+1 \)</span><br/>
+  (3) Sort cases: <span class="math inline">\( n \)</span> even or odd.
+  </strong>
+  </td>
+  <td>&nbsp;</td>
 </tr>
 <tr class="even">
   <td>Bidirectional proof of an IF-AND-ONLY-IF statement</td>
-  <td>Prove that a positive integer <span class="math inline">\(n\)</span>
+  <td style="font-size:80% !important;">Prove that a positive integer <span class="math inline">\(n\)</span>
   has odd number of positive divisors (including 1 and <span class="math inline">\(n\)</span> 
   itself) if and only if 
   <span class="math inline">\(n\)</span> is a full square - can be expressed

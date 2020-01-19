@@ -2,19 +2,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="../style/style.css"/>
-
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+i { font-size:85%; }
+</style>
 </head>
 
+
 <body>
-<h1>Discrete Structures: Home</h1>
+<h1>Discrete Structures: Agenda</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Home</b></td>
 <td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="agenda.html">Agenda</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq.html">Coq</a></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs.html">Proofs</a></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="readings.html">Readings</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
 {% for item in nav_items %}
@@ -30,200 +38,170 @@
 </tr>
 </table>
 
-<p><a href="../discrete-bin/discrete-structures-spring-2020.docx">Spring 2020: Syllabus</a></p>
+<h2>Course Datasheet</h2>
 
-<p>News on the class schedule (which topics are covered when), 
-currently active assignments and in-class polls.</p>
+<p style="margin-top:5px"><small>
+<b>Semester:</b> Spring 2020<br/>
+<b>Syllabus:</b> <a href="../discrete-bin/discrete-structures-spring-2020.docx">[MS DOCX]</a><br/>
+<b>Course Code:</b> PBM 763 (for Course Search in ORTUS)<br/>
+<b>Creditpoints:</b> TBD<br/>
+<b>Course Home:</b> <a href="https://www.bitl.lv/diskretas_sistemas/">BITL.LV</a>
+</small></p>
 
-<p>TBD</p>
-
-
-<h2>Readings and Presentations</h2>
-
-
-<p><b>Stories about Algorithms</b></p>
-
-<ul>
-<li>
-<a href="https://www.sciencedirect.com/science/article/pii/0022314X80900840/pdf?md5=6f748cd82fa8efa1a637efab5f632baa&pid=1-s2.0-0022314X80900840-main.pdf">Large 
-Primes and Probabilistic Algorithms</a>
-<div style="font-size:70%">Can include Miller-Rabin primality test, 
-Great Internet Mersenne Prime Search (GIMPS) project, Agrawal–Kayal–Saxena primality test.</div>
-</li>
-<li>
-<a href="https://blog.jscrambler.com/hashing-algorithms/">Secure Hash Functions</a>
-<div style="font-size:70%">Can include MD5 hash collisions, SHA1, SHA2, SHA3. Password hashing
-in Web applications and in data storage.</div>
-</li>
-<li>
-<a href="https://pdfs.semanticscholar.org/aa4b/e5c61d003030b96e7d10340db32ea79c3d77.pdf">Arithmetic Coding</a>
-<div style="font-size:70%">Can discuss Huffman coding and other entropy-based 
-compressions for message sequences.</div>
-</li>
-<li>
-String Searching
-<div style="font-size:70%">Naive, Knuth-Moris-Pratt and Boyer-Moore algorithms.
-<a href="https://stackoverflow.com/questions/16085201/when-would-you-use-kmp-over-boyer-moore">Their comparison</a>.</div>
-</li>
-<li>
-<a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm">Karatsuba or Toom-Cook Multiplication</a>
-<div style="font-size:70%">Explain one of the fast algorithms to multiply two numbers (can pick 
-something else, but it has to be faster than quadratic.) 
-Apply Master's theorem to solve the recursion and estimate the speed of the algorithm.
-</li>
-<li>
-<a href="https://en.wikipedia.org/wiki/L-system">Lindenmayer systems</a>
-<div style="font-size:70%">Use recursive rules to generate 2D patterns and 
-also recursive plants.</div> 
-</ul>
+<!--
+<p><small><b>Objectives</b> - The list of tasks and skills covered in this course. 
+Please note that the K.Rosen's textbook contains many other useful topics, 
+you may read or skip them at your discretion.<br/>
+<b>Readings, Videos</b> - Suggested readings and videos, if you want
+this topic explained in more detail. 
+ <br/><b>Examples</b> -  An (incomplete) list, where this skill appears 
+in our class assignments.</small></p> --> 
 
 
-<p><b>Data Protection and Privacy</b></p>
+<!--
+<table class="agenda">
+<tr>
+<th>Objectives</th>
+<th>Readings/Videos</th>
+<th>Examples</th>
+</tr>
+<tbody>
+<tr><th style="background-color:#000080;color:white;text-align:center;" colspan="3">Week 1: 
+2020-01-06 to 2020-01-10.</th></tr>
+<tr class="odd">
+  <td><b></b></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr class="even">
+<br/>
+https://www.youtube.com/embed/h_8smKNoAAw?start=2285&end=2300&autoplay=1
 
-<ul>
-<li>
-Matching Regular Expressions.
-<div style="font-size:70%">Regex pattern uses, their matching with finite state automata
-and performance of these matchers, including catastrophic backtracking.</div>
-</li>
-<li>
-The Anatomy of a Credit Card Number.
-<div style="font-size:70%">
-How to prevent stealing large numbers of credit card numbers.
-Luhn check, IINs/BINs - Predicting issuer bank, first digit. Support terms to avoid
-false positives.
-</div>
-</li>
-<li>
-File Checksums
-<div style="font-size:70%">CRC and other "binary fingerprints" of files to avoid
-file tampering or unintended leaks.</div>
-</li>
-<li>
-<a href="https://en.wikipedia.org/wiki/Bloom_filter">Bloom Filters</a>
-<div style="font-size:70%">Storing large hashtables very efficiently in a probabilistic
-data structure.</div>
-</li>
-<li>
-Detecting Plagiarism
-<div style="font-size:70%">Rabin-Carp algorithms of substring matching, N-gram algorithms, 
-Upload filters in EU Copyright Directive and their false positives.</div>
-</li>
-</ul>
+-->
 
-<p><b>Proofs, Sets and Relations</b></p>
-
-<ul>
-<li>
-Paradoxes of Self-Reference
-<div style="font-size:70%">Russel's paradox, diagonalization results, Barber's paradox, Halting problem.</div>
-</li>
-<li>
-<a href="https://csiflabs.cs.ucdavis.edu/~gusfield/godelproofrevisedarXiv.pdf">Gödel's Incompleteness
-Theorem</a>
-<div style="font-size:70%">Results about non-provable, 
-but true statements that exist for each formal system.</div>
-</li>
-<li>
-<a href="https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem">Arrow's Impossibility Theorem</a>
-<div style="font-size:70%">Results how voting among shareholders can lead <b>either</b> to a "dictator" deciding everything <b>or</b>
-to the voting process being easy to manipulate.</div>
-</li>
-<li>
-Creative Strategies in Proofs
-<div style="font-size:70%">George Polya ("Mathematical Discovery: On Understanding, Learning and Teaching Problem Solving", 
-"Mathematical Discovery", "How to Solve It") and Paul Zeitz 
-("The Art and Craft of Problem Solving") on developing mathematical creativity.</div>
-</li>
-<li>
-Approximating irrational numbers (roots etc.) with rational ones.
-<div style="font-size:70%"><a href="https://youtu.be/cyW5z-M2yzw">Examples of well-tempered harmonies</a>; 
-Farey fraction sequences and Stern–Brocot tree, mediant of two rational numbers, continuous fractions and 
-when they are periodic.
-</li>
-<li>
-Cellular Automata
-
-</ul>
+<p>Subchapters "1.1", "1.2" are numbered just 
+as in the (Rosen2019) textbook.
+Occasional extra topics (NOT from the book) have 
+numbers "1.X", "1.Y", etc.
+<a href="https://www.youtube.com/playlist?list=PLl-gb0E4MII0L5lz8uQ8j5aSFQQHoAzXx">Many 
+videos</a> quoted below are by
+<a href="http://blogs.bellevue.edu/alumni/?p=2361">Kimberly Brehm</a> 
+from Bellevue University, Nebraska.
+</p> 
 
 
-<p><b>Discrete Probabilities</b></p>
 
-<ul>
-<li>
-Matrix Games
-<div style="font-size:70%">Distinguish zero-sum and non-zero-sum games. Show how to 
-find Nash equilibrium; apply it to some simple number guessing games (Rock paper scissors; 
-some variant of a Prisoner's dilemma; simultaneous guessing of positive integers; 
-and <a href="https://mindyourdecisions.com/blog/2015/08/04/the-high-low-guessing-game-with-a-strategic-twist-game-theory-tuesdays/">High-Low 
-guessing game</a>).</div>
-</li>
-<li>
-Counter-examples in Probabilities
-<div style="font-size:70%">Various surprises in probability theory: 
-<a href="https://math.stackexchange.com/questions/200807/boy-and-girl-paradox">Boy 
-or Girl paradox</a>. Monty Hall problem. Four 6-sided dices that
-have non-transitive order relationship. 
-Three pairwise independent random events are not necessarily
-mutually independent. 
-</li>
-<li>
-Coin Tossing and Random Walks
-<div style="font-size:70%">Explain coin-tossing experiment series; how frequently the change
-of sign happens, how often one player is ahead of another; how far the random walk 
-is expected to get away from the equilibrium.</div>
-</li>
-<li>
-<a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classifiers</a>
-<div style="font-size:70%">Classification of texts based on models 
-showing conditional probabilities of certain words. Show how spam filters can be implemented 
-based on Naive Bayes.</div>
-</li>
-<li>
-<a href="https://rstudio-pubs-static.s3.amazonaws.com/85215_d5640adef9b644c6b746a906af863af1.html">Proportional 
-Voting Systems</a>
-<div style="font-size:70%">D'Hondt or Sainte-Laguë proportional voting systems, 
-their practical consequences in Latvia, Israel, Hungary and elsewhere.</div>
-</li>
-<li>Discrete random distributions and their properties
-<div style="font-size:70%">Mention "canonical" examples and practical applications
-to Bernoulli distribution, Geometric distribution, Poisson distribution etc.</div>
-</li>
-</ul>
+<h2>Week 1: 2020-01-13 to 2020-01-17</h2>
 
-<p><b>Stories about Graph Theory</b></p>
+<p><b style="text-decoration:underline;">1. Apply Formal Logic to Math and Computing</b><br/>
+<b>1.1. Analyze Propositions and Boolean Expressions</b><br/>
+<i>(Rosen2019, pp.1-13), <a href="https://youtu.be/OApHaIMKMJE">Video.1.1</a></i><br/>
+1.1.a. Define what is a proposition.<br/>
+1.1.b. Define Boolean operations (<span class="math inline">\(\neg, \wedge, \vee, \rightarrow, 
+\leftrightarrow \)</span>).<br/>
+1.1.c. Restore parentheses using precedence.<br/>
+1.1.d. Create truth tables for expressions.</p>
 
-<ul>
-<li>
-Alpha-Beta Pruning in building game playing algorithms.
-<div style="font-size:70%">Build and analyze a game-tree for a pen-and-paper
-that is feasible to analyze on a PC computer. Apply alpha-beta pruning algorithm to 
-have a computer that wins human players.</div>
-</li>
-<li>
-Hamiltonian cycles and NP-complete problems.
-<div style="font-size:70%">Define Hamiltonian cycles. Formulate theorem by 
-Emanuels Grinbergs for Hamiltonian cycles in planar graphs. Define how the 
-NP-complete problems can be reduced to/from Hamiltonian cycles.
-</li>
-<li>
-Computer-based proof of a four-color theorem.
-<div style="font-size:70%">Formulate four-color theorem (and similar theorems
-in Torus topologies, etc.). Show how it can break down to analysis of a large number
-of cases.</div>
-</li>
-<li>
-<a href="https://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm">Google Page Rank Algorithm</a>
-<div style="font-size:70%">Can include other computable rankings of search results.</div>
-</li>
-<li>
-Maximum Flow in a Directed Graph 
-<div style="font-size:70%">
-<a href="https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm">Ford-Fulkerson algorithm</a>
-or Edmonds-Karp algorithm; 
-<a href="https://en.wikipedia.org/wiki/Braess%27s_paradox#Mathematical_approach">Braes's paradox</a>.</div>
-</li>
-</ul>
+<p><b>1.2. Create propositional statements.</b><br/>
+<i>(Rosen2019, pp.17-22), <a href="https://youtu.be/_RrxqiB_pfE">Video.1.2</a></i><br/>
+1.2.a. Translate English into Propositional logic.<br/>
+1.2.b. Recognize situations when natural language uses<br/> 
+logical connectives in a different sense.<br/>
+1.2.c. Solve Logic Puzzles and Word Problems.</p>
+
+<p><b>1.3. Recognize Boolean tautologies and satisfiability.</b><br/>
+<i>(Rosen2019, pp.26-33), <a href="https://youtu.be/x0ELYvaf21E">Video.1.3</a></i><br/>
+1.3.a. Rewrite propositions using equivalences<br/>
+1.3.a.1. Use double negation<br/>
+1.3.a.2. Use De Morgan's laws<br/>
+1.3.a.3. Write Contrapositive for an Implication<br/>
+1.3.b. Define a tautology if a truth table exists.<br/>
+1.3.c. Create new tautologies using inference rules.<br/>
+1.3.d. Define Satisfiable and Contradictory Boolean Expressions.</p>
+
+<p><b>1.X. Use expressions in programming (optional)</b><br/>
+1.X.a. Apply operation precedence to a Python expression.<br/>
+1.X.b. Apply operation associativity to a Python expression.<br/>
+1.X.c. Apply short-circuit Boolean evaluation.</p>
+
+
+
+<h2>Week 2: 2020-01-13 to 2020-01-17</h2>
+
+<p style="color:darkgreen;"><b>1.7. Use Some Common Proof Strategies</b><br/>
+<i>(Rosen2019, pp.84-93), <a href="https://youtu.be/b-hKQOhxlNA">Video.1.7.1</a>, 
+<a href="https://youtu.be/PNme9Kl3kDo">Video.1.7.2</a>, 
+<a href="https://youtu.be/CCAgvPGOlmE">Video.1.7.3</a></i><br/>
+1.7.a. Explain direct proofs for IF-THEN statements<br/>
+1.7.b. Explain proofs by contraposition for IF-THEN statements<br/>
+1.7.c. Explain (constructive) proofs by contradiction.</p>
+
+<p><b>1.4. Use Predicates and Quantifiers.</b><br/>
+<i>(Rosen2019, pp.40-55), <a href="https://youtu.be/rZH5RFSXsvI">Video.1.4</a></i><br/>
+1.4.a. Define a predicate as a function to booleans.<br/>
+1.4.b. Recognize free and bound variables.<br/>
+1.4.c. Interpret quantifiers over finite domains.<br/>
+1.4.d. Use precedence for quantifier statements.<br/>
+1.4.e. Negate predicates, apply De Morgan's laws.<br/></p>
+
+<p><b style="text-decoration:underline;">2. Manipulate Sets and Functions</b><br/>
+<i>(Rosen2019, pp.121-131), <a href="https://youtu.be/ZMhoRLGNR5Y">Video.2.1.1</a>,
+<a href="https://youtu.be/jXxuwrAbpCU">Video.2.1.2</a></i><br/>
+2.1.a. Define set by listing elements or intervals.<br/>
+2.1.b. Define set by defining a predicate.<br/>
+2.1.c. Define subsets, proper subsets.<br/>
+2.1.d. Define pairs (and other tuples).<br/>
+2.1.e. Define power sets.<br/>
+2.1.f. Reproduce Russel's paradox.</p>
+
+<p><b>2.5. Compare Set Cardinalities</b><br/>
+<i>(Rosen2019, pp.179-186)</i><br/>
+2.5.a. Define injective functions between 2 sets.<br/>
+2.5.b. Define surjective functions between 2 sets.<br/>
+2.5.c. Union a finite set to the positive integers.<br/>
+2.5.d. Union two positive integer sets.<br/>
+2.5.e. Union infinitely many integer sets.</p>
+
+<h2>Week 3: 2020-01-20 to 2020-01-24</h2>
+
+<p><b>1.5. Nested quantifiers</b><br/>
+<i>(Rosen2019, pp.60-68), <a href="https://youtu.be/3bpMrm379v0">Video.1.5.1</a>,
+<a href="https://youtu.be/xDaBIVPyvDQ">Video.1.5.2</a></i><br/>
+1.5.a. Rewrite mathematical statements with nested quantifiers.<br/>
+1.5.b. Interpret quantifier expressions in human language.<br/>
+1.5.c. Negate multiple quantifiers.</p> 
+
+<p style="color:darkgreen;"><b>1.8. Use Some More Proof Strategies</b><br/>
+1.8.a. Explain proofs by analyzing cases.<br/>
+1.8.b. Explain proofs by counterexamples.<br/>
+1.8.c. Introduce "without loss of generality" clauses.<br/>
+1.8.d. Explain nonconstructive proofs of existence.</p>
+
+<p><b>1.6. Use Rules of Inference.</b><br/>
+1.6.a. Recognize hypotheses and goals in a proof.<br/>
+1.6.b. Apply modus ponens: <span class="math inline">\( A \rightarrow B,\, A \;\vdash\; B.\)</span><br/>
+1.6.c. Apply modus tollens: <span class="math inline">\( A \rightarrow B,\, (\neg B) \;\vdash\; (\neg A).\)</span><br/>
+1.6.d. Apply transitivity: <span class="math inline">\( A \rightarrow B,\, B \rightarrow C \;\vdash\; A \rightarrow C.\)</span><br/> 
+1.6.e. Apply disjunctive syllogism: <span class="math inline">\( A \vee B,\, \neg A \;\vdash\; B.\)</span><br/>
+1.6.f. Apply "addition": <span class="math inline">\( A \;\vdash\; A \vee B.\)</span><br/>
+1.6.g. Apply "simplification": <span class="math inline">\( (A \wedge B) \;\vdash\; A.\)</span><br/>
+1.6.h. Apply "conjunction": <span class="math inline">\( A,\, B \;\vdash\; (A \wedge B).\)</span><br/>
+1.6.i. Apply "resolution": <span class="math inline">\( (A \vee B),\, (\neg A \vee C) \;\vdash\; (B \vee C).\)</span></p>
+
+<p><b>2.2. Manipulate sets over some universe.</b><br/>
+2.2.a. Define the union of two or more sets.<br/>
+2.2.b. Define the intersection of two or more sets.<br/>
+2.2.c. Define the complement of a set.<br/>
+2.2.d. Define the difference of two sets.<br/>
+2.2.e. Define the symmetric difference of sets.<br/>
+2.2.f. Draw Venn diagrams for 2, 3, 4 or 5 sets.</p>
+
+<p style="color:darkgreen;"><b>2.X. Use Proof Strategies for Sets and Functions</b><br/>
+2.X.a. Explain proofs for 2 sets being different (conterexample).<br/>
+2.X.b. Explain proofs for a function being bijective.<br/>
+2.X.c. Explain constructions by selecting minimum in a nonempty set.</p>
+
+
 
 
 

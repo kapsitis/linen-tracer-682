@@ -10641,7 +10641,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2008.1",
-        "qtypes": [],
+        "qtypes": [
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10649,7 +10651,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2009.1",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Any",
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10657,7 +10662,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2010.1",
-        "qtypes": [],
+        "qtypes": [
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10665,7 +10672,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2011.4",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Min"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10673,7 +10682,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2011.6",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Count"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10681,7 +10692,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2012.1",
-        "qtypes": [],
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10689,7 +10702,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2012.4",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Any",
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10697,7 +10713,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2012.6",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.Exists",
+            "Prove.NotExists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10705,7 +10724,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2013.2",
-        "qtypes": [],
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10713,7 +10734,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2013.4",
-        "qtypes": [],
+        "qtypes": [
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10721,7 +10744,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2013.6",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Any",
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10729,7 +10755,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2014.2",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Any",
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10737,7 +10766,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2014.4",
-        "qtypes": [],
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10745,7 +10776,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2014.5",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.ForAll",
+            "ProveDisprove.ForAll"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10753,7 +10787,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2015.2",
-        "qtypes": [],
+        "qtypes": [
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10761,7 +10797,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2015.5",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Max"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10769,7 +10807,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2016.2",
-        "qtypes": [],
+        "qtypes": [
+            "Find.All"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10777,7 +10817,9 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2017.2",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Min"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10785,7 +10827,10 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2017.3",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.ForAll",
+            "Find.Min"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10793,23 +10838,35 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2017.4",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.ForAll",
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "special-numbers"
+        ],
         "id": "LT.TST.2018.3",
-        "qtypes": [],
-        "seeAlso": [],
+        "qtypes": [
+            "Prove.NotExists",
+            "Prove.ForAll"
+        ],
+        "seeAlso": [
+            "IMO.SHL.2017.N6"
+        ],
         "tasks": []
     },
     {
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2018.4",
-        "qtypes": [],
+        "qtypes": [
+            "Find.Only"
+        ],
         "seeAlso": [],
         "tasks": []
     },
@@ -10817,15 +10874,22 @@
         "concepts": [],
         "genre": [],
         "id": "LT.TST.2019.1",
-        "qtypes": [],
+        "qtypes": [
+            "ProveDisprove.Exists"
+        ],
         "seeAlso": [],
         "tasks": []
     },
     {
         "concepts": [],
-        "genre": [],
+        "genre": [
+            "special-numbers"
+        ],
         "id": "LT.TST.2019.5",
-        "qtypes": [],
+        "qtypes": [
+            "Prove.ForAll",
+            "ProveDisprove.Other"
+        ],
         "seeAlso": [],
         "tasks": []
     },

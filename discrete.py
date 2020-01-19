@@ -10,21 +10,39 @@ jinja_env = jinja2.Environment(
 
 
 class DiscreteHandler(webapp2.RequestHandler):   
-    tales = [
+    readings = [
         {
-            'id':'logic-part1', 
-            'dir':'tale-logic-part1',
-            'title': u'Logic and Proofs - 1',
-            'date': '2020-01-07'
-        },        
+            'title':'Algorithms for Large Primes', 
+            'name':'TBA',
+            'description': 'It would be highly inefficient to search for ' +
+            'prime numbers with a full search algorithm such as the ' + 
+            'Sieve of Eratosthenes or testing divisibility up to the square root. ' + 
+            'Nevertheless, large primes are important for cryptography and other applications. ' + 
+            'There are several efficient algorithms for primality testing.',
+            'links': [
+                {
+                    'url': 'https://bit.ly/2tx7Iub',
+                    'title': 'The Sieve of Eratosthenes',
+                    'note': 'An ancient algorithm to build a list of primes in a large interval'
+                },
+                {
+                    'url': 'https://bit.ly/2uhos8L',
+                    'title': 'Miller-Rabin primality test',
+                    'note': 'Most practical and widely used algorithm is probabilistic. ' +
+                    'It may falsely claim that a composite number is prime with a small probability. ' +
+                    'The error can be made as small as you want, if you run sufficiently many tests.'
+                }
+            ]
+        }
     ]
-    
-    other_tales = [
-    ]
-    
+
     def get(self,my_id):
         with open('data/global_navigation.json') as f1:
             nav_items = json.load(f1)
+        with open('data/discrete_readings.json') as f2:
+            my_readings = json.load(f2)
+            
+        
         if (my_id == 'index.html'):
             template_context = {
                 'my_id': my_id,
@@ -34,14 +52,23 @@ class DiscreteHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('discrete/index.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'agenda.html'):
+        elif (my_id == 'coq.html'):
+            template_context = {
+                'my_id': my_id,
+                'course': 'discrete',
+                'nav_items': nav_items
+            }
+            template = jinja_env.get_template('discrete/coq.html')
+            output = template.render(template_context)
+            self.response.out.write(output.encode('utf-8'))
+        elif (my_id == 'readings.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
                 'nav_items': nav_items,
-                'tales': self.tales
+                'readings': my_readings
             }
-            template = jinja_env.get_template('discrete/agenda.html')
+            template = jinja_env.get_template('discrete/readings.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'proofs.html'):     
@@ -62,13 +89,13 @@ class DiscreteHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('discrete/assignments.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'references.html'):
+        elif (my_id == 'sources.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
                 'nav_items': nav_items
             }
-            template = jinja_env.get_template('discrete/references.html')
+            template = jinja_env.get_template('discrete/sources.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         else: 

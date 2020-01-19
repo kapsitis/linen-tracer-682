@@ -215,11 +215,78 @@
         ]
     },
     {
+        "desc": "Risināt algebriskus vienādojumus ar piemērotām standartmetodēm",
+        "id": "alg.equ",
+        "levels": [
+            "1",
+            "3"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Ievietot dažas mainīgo vērtības sakņu uzminēšanai",
+        "id": "alg.equ.guess",
+        "levels": [
+            "1",
+            "3",
+            "1"
+        ],
+        "problems": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
+        "desc": "Analizēt un risināt kvadrātvienādojumus",
+        "id": "alg.equ.quadratic",
+        "levels": [
+            "1",
+            "3",
+            "2"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Noteikt kvadrātvienādojuma sakņu skaitu pēc diskriminanta",
+        "id": "alg.equ.quadratic.discriminant",
+        "levels": [
+            "1",
+            "3",
+            "2",
+            "1"
+        ],
+        "problems": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
+        "desc": "Noteikt kvadrātvienādojuma reālās saknes, ja tās ir",
+        "id": "alg.equ.quadratic.roots",
+        "levels": [
+            "1",
+            "3",
+            "2",
+            "2"
+        ],
+        "problems": []
+    },
+    {
+        "desc": "Parametrizēt vairāku mainīgo vienādojumu, pieņemot kādu no mainīgajiem par parametru",
+        "id": "alg.equ.parametrize",
+        "levels": [
+            "1",
+            "3",
+            "3"
+        ],
+        "problems": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
         "desc": "Pārveidot un secināt par garām summām un reizinājumiem",
         "id": "alg.series",
         "levels": [
             "1",
-            "3"
+            "4"
         ],
         "problems": []
     },
@@ -228,7 +295,7 @@
         "id": "alg.series.sum",
         "levels": [
             "1",
-            "3",
+            "4",
             "1"
         ],
         "problems": [
@@ -242,7 +309,7 @@
         "id": "alg.series.mean",
         "levels": [
             "1",
-            "3",
+            "4",
             "2"
         ],
         "problems": [
@@ -255,7 +322,7 @@
         "id": "alg.series.prod",
         "levels": [
             "1",
-            "3",
+            "4",
             "3"
         ],
         "problems": [
@@ -267,7 +334,7 @@
         "id": "alg.ineq",
         "levels": [
             "1",
-            "4"
+            "5"
         ],
         "problems": []
     },
@@ -276,7 +343,7 @@
         "id": "alg.ineq.equations",
         "levels": [
             "1",
-            "4",
+            "5",
             "1"
         ],
         "problems": [
@@ -300,7 +367,7 @@
         "id": "alg.ineq.transitive",
         "levels": [
             "1",
-            "4",
+            "5",
             "2"
         ],
         "problems": [
@@ -313,7 +380,7 @@
         "id": "alg.ineq.monotonicity",
         "levels": [
             "1",
-            "4",
+            "5",
             "3"
         ],
         "problems": [
@@ -331,7 +398,7 @@
         "id": "alg.ineq.square",
         "levels": [
             "1",
-            "4",
+            "5",
             "4"
         ],
         "problems": [
@@ -339,11 +406,23 @@
         ]
     },
     {
+        "desc": "Risināt kvadrātnevienādības",
+        "id": "alg.ineq.quadratic",
+        "levels": [
+            "1",
+            "5",
+            "5"
+        ],
+        "problems": [
+            "LT.LJKMO.2001.7_8.2"
+        ]
+    },
+    {
         "desc": "Izmantot linearitāti veicot pārveidojumus vai kombinējot rezultātus",
         "id": "alg.linear",
         "levels": [
             "1",
-            "5"
+            "6"
         ],
         "problems": []
     },
@@ -352,7 +431,7 @@
         "id": "alg.linear.equations",
         "levels": [
             "1",
-            "5",
+            "6",
             "1"
         ],
         "problems": [
@@ -366,7 +445,7 @@
         "id": "alg.linear.comb",
         "levels": [
             "1",
-            "5",
+            "6",
             "2"
         ],
         "problems": [
@@ -379,7 +458,7 @@
         "id": "alg.poly",
         "levels": [
             "1",
-            "6"
+            "7"
         ],
         "problems": []
     },
@@ -388,7 +467,7 @@
         "id": "alg.poly.division",
         "levels": [
             "1",
-            "6",
+            "7",
             "1"
         ],
         "problems": [
@@ -401,7 +480,7 @@
         "id": "alg.poly.homo",
         "levels": [
             "1",
-            "6",
+            "7",
             "2"
         ],
         "problems": [
@@ -413,7 +492,7 @@
         "id": "alg.poly.prop",
         "levels": [
             "1",
-            "6",
+            "7",
             "3"
         ],
         "problems": []
@@ -423,7 +502,7 @@
         "id": "alg.poly.prop.valdiff",
         "levels": [
             "1",
-            "6",
+            "7",
             "3",
             "1"
         ],
@@ -436,7 +515,7 @@
         "id": "alg.sets",
         "levels": [
             "1",
-            "7"
+            "8"
         ],
         "problems": []
     },
@@ -445,7 +524,7 @@
         "id": "alg.sets.irrat",
         "levels": [
             "1",
-            "7",
+            "8",
             "1"
         ],
         "problems": []
@@ -455,7 +534,7 @@
         "id": "alg.sets.sqrt",
         "levels": [
             "1",
-            "7",
+            "8",
             "2"
         ],
         "problems": []
@@ -465,7 +544,7 @@
         "id": "alg.sets.sqrt.pythagoras",
         "levels": [
             "1",
-            "7",
+            "8",
             "2",
             "1"
         ],

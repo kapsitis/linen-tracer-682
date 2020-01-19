@@ -1,0 +1,86 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>Discrete Structures: Coq and Scala</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Home</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Coq</b></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs.html">Proofs</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="readings.html">Readings</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<h2>Coq Labs</h2>
+
+<ul>
+<li><a href="../discrete-bin/coq-propositional/lab01_template.html">Sample Template for Coq</a></li>
+</ul>
+
+
+
+<h2>Coq Examples and Tutorials</h2>
+
+<p style="margin:2px 0px 2px 0px">Official Tutorials:</p>
+
+<ul style="margin-top:0px">
+<li><a href="https://cel.archives-ouvertes.fr/inria-00001173v5/document">Coq in a Hurry</a></li>
+<li><a href="https://coq.inria.fr/tutorial-nahas">Mike Nahas Tutorial: Propositional Logic Proofs</a></li>
+<li><a href="https://coq.inria.fr/tutorial/1-basic-predicate-calculus">Coq: Predicate Calculus</a></li>
+<li><a href="https://coq.inria.fr/refman/coq-tacindex.html">Coq: The Index of all Proof Tactics</a></li>
+<li><a href="https://github.com/coq/coq/tree/master/theories">Coq Standard Libraries in GitHub
+(proofs of some known facts that you can use)</a></li>
+<li><a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations (4 large textbooks on Coq)</a>
+- beware of some "pretty printed" symbols. They use "∀" instead of "forall", 
+"⇒" instead of "<tt>=&gt;</tt>"</li>
+<li><a href="http://flint.cs.yale.edu/cs428/coq/sf/Logic.html">Tutorial on Coq Proofs</a></li>
+<li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">Some other links in CSE191 syllabus</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px">Specific Examples for "Discrete Structures"</p>
+
+<ul style="margin-top:0px">
+<li><a href="../discrete-bin/coq-propositional/CSEnotes_propositional.html">Proving Tautologies (Buffalo CSE191, p.12-20)</a></li>
+<li><a href="../discrete-bin/coq-propositional/example_scottish_club.html">Example: Scottish Club</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_lions_coffee.html">Example: Lions and Coffee</a></li>
+<li><a href="../discrete-bin/coq-predicates/CSEnotes_predicates.html">Predicates and Quantifiers (Buffalo CSE191, p.30-49)</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_drinker_theorem.html">Example: Smullyan's Drinker Theorem</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_mybaby.html">Example: Everybody Loves My Baby</a></li>
+<li><a href="../discrete-bin/coq-inductive/CSEnotes_inductive.html">Inductively Defined Types (Buffalo CSE191, p.84-106)</a></li>
+<li><a href="../discrete-bin/coq-numbertheory/CSEnotes_numbertheory.html">Integer Arithmetic (Buffalo CSE191, p.110-137)</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px">Classical vs. Intuitionistic Logic</p>
+
+<ul style="margin-top:0px">
+<li><a href="https://stackoverflow.com/questions/23996056/elim-a-double-negation-hypothesis-in-coq-proof-assistant">Elim 
+a double negation hypothesis in Coq Proof Assistant? (Classical Logic)</a></li>
+<li><a href="https://github.com/coq/coq/wiki/CoqAndAxioms">Axioms (on Classical Logic)</a></li>
+<li><a href="https://github.com/coq/coq/wiki/The-Logic-of-Coq">Logic in Coq</a></li>
+<li><a href="https://stackoverflow.com/questions/14644086/proving-p-q-q-p-using-coq-proof-assistant">NNPP and similar proofs</a></li>
+<li><a href="https://youtu.be/zmhd8clDd_Y">Five Stages of Accepting Constructive Mathematics</a></li>
+</ul>
+
+
+</body>
+</html>
+

@@ -134,8 +134,8 @@ them have worn it).''
 {\bf Question 5.}
 Let $\mathcal{H}$ be the set of all humans, and the predicate $F(x,y)$ is
 true iff $x$ is the father of $y$. Express these sentences in plain English:\\
-{\bf (a)} $\forall x \in \mathcal{H}\;\exists y \in \mathcal{H},\;F(x,y)$.\\
-{\bf (b)} $\exists y \in \mathcal{H}\;\forall x \in \mathcal{H},\;F(x,y)$.\\
+{\bf (a)} $\forall y \in \mathcal{H}\;\exists x \in \mathcal{H},\;F(x,y)$.\\
+{\bf (b)} $\exists x \in \mathcal{H}\;\forall y \in \mathcal{H},\;F(x,y)$.\\
 {\bf (c)} Which of the two statements {\bf (a)}, {\bf (b)} (if any) 
 is true, if we replace the non-empty domain of all humans $\mathcal{H}$ by an
 empty domain $\mathcal{Z} = \emptyset$ of all zombies?
@@ -223,7 +223,18 @@ $k$ into $x$ \textendash{} and nothing will change.
 such that they are different and 
 both of them are roots of $f(x)=0$ and, 
 furthermore, for any other root $x_3$, it 
-equals either $x_1$ or $x_2$.''
+equals either $x_1$ or $x_2$.''\\
+{\em Note:} The above statement says that there are {\em exactly}
+two roots $x_1$ and $x_2$. You can easily write a modified statement 
+saying that the equation $f(x)=0$ has {\em at least} two roots \textendash{}
+in this case you can skip the $x_3$ part. For quadratic equations it
+is the same (since no equation has more than $2$ roots), but 
+the idea expressed here is slightly different:
+\begin{align}
+ & \exists x_1 \in \mathbb{Z}^{+}\,\exists x_2 \in \mathbb{Z}^{+} \nonumber \\
+ & \left( x_1 \neq x_2 \wedge f(x_1)=0 \wedge f(x_2) = 0 \right). \nonumber 
+\end{align}
+
 
 \vspace{10pt}
 {\bf Question 3.} Answer:\\

@@ -1,0 +1,218 @@
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa6.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa6 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 6th edition
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------
+%% 
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Sample Quiz for Week02}
+\author{Discrete Structures, Fall 2020}
+\affiliation{RBS}
+
+\leftheader{Discrete Quiz 3 (Just a Sample for Preparation)}
+
+\abstract{%
+}
+
+%\keywords{}
+
+\begin{document}
+\maketitle
+
+
+
+\vspace{10pt}
+{\bf Question 4.} Predicate $S(x, y, z)$ is true iff $x \cdot y = z$. 
+Match six English sentences with six predicate expressions (like in the previous
+exercise).
+
+
+\vspace{10pt}
+{\bf Question 6.} We define three sets in the universe $U$ of ten integer numbers
+between $1$ and $10$ (inclusive):
+$$\left\{ \begin{array}{rcl}
+K_2 & = & \{ x \in U \,\mid\, 2 \mid x \},\\
+K_5 & = & \{ x \in U \,\mid\, 5 \mid x \},\\
+K_7 & = & \{ x \in U \,\mid\, 7 \mid x \},
+\end{array} \right.$$
+
+Find the size of intersections ($A \cap B$ contains elements that are in {\bf both} 
+$A$ and $B$), unions ($A \cup B$ contains elements that are at least in one
+$A$ or $B$), set differences ($A - B$ contains elements that are in $A$, but not in $B$), 
+complements ($\overline{A}$ contains elements that are in $U$, but not in $A$). 
+In the examples below, $|X|$ denotes the number of elements in a set (its cardinality).
+
+
+{\em Fill in your answer:}
+
+\begin{tabular}{ll} \hline
+$\left| K_2 \cup K_5 \right|$ & $\ldots$ \\ \hline
+$\left| K_2 \cap K_7 \right|$ & $\ldots$ \\ \hline
+$\left| \overline{K_7} \right|$ & $\ldots$ \\ \hline
+$\left| \overline{K_2 \cap K_5} \right|$ & $\ldots$ \\ \hline
+\end{tabular}
+
+
+
+
+
+\vspace{10pt}
+{\bf Question 5.}
+Find a counterexample to refute the following predicate expression:
+$$(\exists x \in U\,P(x)) \wedge (\exists x\in U\,Q(x)) \rightarrow \exists x\in U\,(P(x) \wedge Q(x)).$$
+Here $P(x)$ is true iff $P$ is a full square (a square of some integer number), 
+$Q(x)$ is true iff $x$ is divisible by $5$, and $U$ is the set of all integers 
+from the interval $[120;130]$.\\
+Specify, what should be the value $x_1$ in the subexpression $(\exists x \in U\,P(x))$ 
+and the value of $x_2$ in the subexpression $(\exists x \in U\,Q(x))$ to 
+make the whole statement false.\\
+{\em Note.} The three existential quantifiers in the formula may refer to 
+three ``independent'', unrelated values of $x$ (bound variables are considered local to their expressions). 
+If you feel confused by this, you can rewrite like this:
+$$(\exists x \in U\,P(x)) \wedge (\exists y\in U\,Q(y)) \rightarrow \exists z\in U\,(P(z) \wedge Q(z)).$$
+It means exactly the same thing.
+
+{\em Fill in your answer:}
+$$\left\{ \begin{array}{l}
+x_1 = \ldots\\
+x_2 = \ldots
+\end{array} \right.$$
+
+
+
+
+
+\newpage 
+
+\section{Answers}
+
+
+{\bf Question 1.} Answer: 
+
+\vspace{10pt}
+{\bf Question 2.} Answer: {\tt F,B,C,E,A,D}.\\
+Assume that every predicate expression is a translation of some English sentence. 
+
+
+
+
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Brian D. Beitzel.
+%% 
+%% This work consists of the file  apa6.dtx
+%% and the derived files           apa6.ins,
+%%                                 apa6.cls,
+%%                                 apa6.pdf,
+%%                                 README,
+%%                                 APAamerican.txt,
+%%                                 APAbritish.txt,
+%%                                 APAdutch.txt,
+%%                                 APAenglish.txt,
+%%                                 APAgerman.txt,
+%%                                 APAngerman.txt,
+%%                                 APAgreek.txt,
+%%                                 APAczech.txt,
+%%                                 APAturkish.txt,
+%%                                 APAendfloat.cfg,
+%%                                 apa6.ptex,
+%%                                 TeX2WordForapa6.bas,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%% End of file `./samples/shortsample.tex'.

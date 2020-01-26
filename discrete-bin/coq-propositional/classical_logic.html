@@ -22,77 +22,183 @@
 </div>
 
 <div class="doc">
-<a href="../../discrete/assignments.html">Back to Discrete Assignments</a> 
+<a href="../../discrete/coq.html">Back to Discrete Assignments</a> 
+<div class="paragraph"> </div>
+
+ <b>Abstract:</b> Our first Lab Exercise contains
+a few samples, which require so called 'classical axioms'. 
+This document explains, how to use them.
 
 <div class="paragraph"> </div>
 
-<h2>What is Intuitionistic logic</h2> 
+<a name="lab1"></a><h1 class="section">What is Intuitionistic logic</h1>
 
 <div class="paragraph"> </div>
 
-Propositional logic expressions that are 
+ Propositional logic expressions that are 
 straightforward to prove using Coq tactics
-are part of so called Intuitionistic logic 
-(<i>lv:intuicionisma loģika</i>). They 
-do not use the Law of Excluded Middle 
-(<i>lv:trešā izslēgtā likumu</i>, <i>la:Tertium non datur</i>).
-
-</div>
-<div class="code">
-
-<br/>
-
-<br/>
-<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>, ~ ~ <span class="id" title="var">A</span> /\ ~ <span class="id" title="var">A</span> -&gt; <span class="id" title="var">A</span>.<br/>
-<span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">A</span> <span class="id" title="var">H</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H1</span> <span class="id" title="var">H2</span>].<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">H3</span>.<br/>
-<span class="id" title="keyword">Qed</span>.<br/>
-
-<br/>
-<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">A</span> -&gt; ~~<span class="id" title="var">A</span>.<br/>
-<span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">A</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
-<span class="id" title="keyword">Qed</span>.<br/>
-
-<br/>
-</div>
-
-<div class="doc">
-This sample is not yet proven in Coq, but
-it could also be part of intuitionist logic, 
-even though it has many negations. If you do not want
-to complete the proof, write <tt>Admitted.</tt>
-instead of full proof ended by <tt>Qed.</tt>. 
-
-</div>
-<div class="code">
-
-<br/>
-<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">A</span>, ~ ~ (~ ~ <span class="id" title="var">A</span> -&gt; <span class="id" title="var">A</span>).<br/>
-<span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
-
-<br/>
-</div>
-
-<div class="doc">
-<h2>What is Classical Logic</h2> 
+are part of the Intuitionistic (Constructive) logic.
+It does not allow existence proofs 'from the contrary'.
+In such proofs we first assume that some object does not
+exist, get a contradiction and conclude that the
+object therefore must exist.
 
 <div class="paragraph"> </div>
 
-Classical logic 
-Šis likums nozīmē, ka "A \/ ~A" - tātad vienmēr 
-ir patiess vai nu izteikums "A" vai arī "~A". 
-Lai ar to varētu spēlēties, ir jāimportē Coq 
-interaktīvajā vidē aksiomas un galvenie apgalvojumi, 
-kas saistīti ar klasisko loģiku.
+ Such proofs are problematic, because 
+they do not provide even a totally impractical method
+allowing the construct the
+objects that presumably should exist.
+Most contemporary mathematicians do not care about this 
+difference, they simply use classical logic.
+Computer scientists should at least understand the 
+difference, because non-constructive proofs cannot
+yield any algorithms. 
+<div class="paragraph"> </div>
+
+<a name="lab2"></a><h1 class="section">Classical proofs in 'real' mathematics</h1>
+
+<div class="paragraph"> </div>
+
+ Classical (non-constructive) proofs may appear in
+answering various natural-looking questions. 
+For example, 
+<ul><li><a href='https://bit.ly/2Rpbeju'>Can an irrational number raised to 
+an irrational power be a rational number?</a></li>
+<li><a href='https://bit.ly/2Ruu5tL'>Intermediate Value Theorem</a>: 
+If a continuous real-valued function defined on a 
+closed interval <tt>[a;b]</tt> has two different values 
+<tt>f(a)</tt> and <tt>f(b)</tt>, then it also takes all the 
+intermediate values on that segment.</li>
+<li>Consider game 'Chomp' where cookies are laid out in a 
+rectangular grid, and the cookie in the upper left corner is 
+poisoned. Even though there must exist a (constructive) winning strategy 
+for one of the players, it is possible to provide a nonconstructive 
+proof that the 1st player always wins without any deep analysis. 
+(See Example 12, p.102, in Chapter 1.8 of the K.Rosen's textbook).</li></ul>
+Many of these results can be stated and proved in a constructive 
+way as well. Sometimes though, there is a deeper reason, why 
+some math result is not constructive.
+
+<div class="paragraph"> </div>
+
+<a name="lab3"></a><h1 class="section">Classical proofs in Coq</h1>
+
+<div class="paragraph"> </div>
+
+ All the non-constructive things can be imported from 
+Coq library <tt>Classical_Prop</tt>
+Furthermore, if you wish to try non-constructive things in Coq and
+see some proofs, there is a chapter in the Software Foundations
+textbook: 
+<a href='https://bit.ly/38Io0Q7'>Classical vs. Constructive Logic</a>.
+ At the very end of this chapter, it is stated, that there 
+are multiple possible formulations of 'nonconstructive' (i.e. classical) 
+axiom. They are all logically equivalent. Assuming any one 
+of them immediately means that you can prove all the others. 
+Therefore, there is only one 'flavor' of nonconstructive 
+mathematics. The textbook leaves as an exercise to prove
+that from any statement you can prove any other one.
+ Here are the five main nonconstructive statements.
+Any one of them can be picked as an 'Axiom' (something you want to assume
+without any proof), the remaining four can be 'Lemmas' - they 
+can be proven using that axiom and the proof tactics from Coq.
+
+<div class="paragraph"> </div>
+
+<a name="lab4"></a><h2 class="section">Excluded Middle</h2>
+
+<div class="paragraph"> </div>
+
+ In the Coq library <tt>Classical_Prop</tt>
+this is the only axiom, but if you assume another axiom, 
+this can also become Lemma. This is the rule known 
+in the Ancient logic textbooks - either 'P' or 'not P' 
+must be true. (Also known with the Latin name: 'Tertium Non Datur')
+<pre>
+  Axiom excluded_middle: forall P: Prop,
+    P \/ ~P.
+</pre>
+
+<div class="paragraph"> </div>
+
+<a name="lab5"></a><h2 class="section">Pierce Lemma</h2>
+
+<div class="paragraph"> </div>
+
+ Here is another result (written without negations, 
+which surprisingly, also allows you to prove all kinds 
+of nonconstructive proofs 'from the contrary'. 
+It happens to be also <tt>sample1_3</tt> in our lab exercise.
+<pre>
+  Lemma peirce: forall P Q: Prop,
+    ((P -&gt; Q) -&gt; P) -&gt; P.
+</pre>
+
+<div class="paragraph"> </div>
+
+<a name="lab6"></a><h2 class="section">Double Negation Lemma</h2>
+
+<div class="paragraph"> </div>
+
+ This lemma tells that we can always drop two 
+negations, and the proposition will stay valid. 
+<pre>
+  Lemma double_negation_elimination: forall P:Prop,
+    ~~P -&gt; P.
+</pre>
+
+<div class="paragraph"> </div>
+
+<a name="lab7"></a><h2 class="section">De Morgan's Law</h2>
+
+<div class="paragraph"> </div>
+
+ This is just one variant; other De Morgan's 
+laws can be written by switching the order in the implication 
+or changing disjunction to conjunction and vice versa. 
+Some of these laws can be proven constructively, but this 
+one cannot.
+<pre>
+  Lemma de_morgan_not_and_not: forall P Q:Prop,
+    ~(~P /\ ¬Q) -&gt; P \/ Q.
+</pre>
+
+<div class="paragraph"> </div>
+
+<a name="lab8"></a><h2 class="section">Implication expressed as disjunction</h2>
+
+<div class="paragraph"> </div>
+
+
+<div class="paragraph"> </div>
+
+<pre>
+  Lemma implies_to_or: forall P Q:Prop,
+    (P -&gt; Q) -&gt; (~P \/ Q).
+</pre>
+
+<div class="paragraph"> </div>
+
+<a name="lab9"></a><h1 class="section">Sample Proofs</h1>
+
+<div class="paragraph"> </div>
+
+ Any non-constructive proofs start by 
+importing this external library. 
+If you want to see what's inside this library, you can do 
+one of the following: 
+<ul><li>Read HTML documentation: 
+<a href='https://bit.ly/2RP8gnt'>Classical_Prop.html</a></li> 
+<li>Inspect the same source code in GitHub: 
+<a href='https://bit.ly/2vi7DuY'>Classical_Prop.v</a></li> 
+<li>Import and then print the definitions in that library.</li></ul>
+<pre>
+  Require Import Classical_Prop.
+  Print Classical_Prop.
+</pre>
+The above two commands will display all the available
+definitions in a compact, readable format.
 
 </div>
 <div class="code">
@@ -104,28 +210,32 @@ kas saistīti ar klasisko loģiku.
 </div>
 
 <div class="doc">
-Svarīgas "Trešā izslēgtā likuma" sekas ir 
-iespēja nomest divkāršas negācijas. 
-Šāds pierādījums no pretējā ļoti stipri atšķiras
-no agrāk iegūtā <tt>sample2</tt>, kurš bija 
-intuicionisma piemērs.
+<a name="lab10"></a><h2 class="section">Double Negation Proofs</h2>
 
+<div class="paragraph"> </div>
+
+ This can be verified by truth tables: 
+<pre>
+  forall a: Prop, a &lt;-&gt; ~~a.
+</pre>
+It means an obvious thing: Every proposition is 
+equivalent to the double negation of that
+proposition. As it turns out, a half of this
+statement is not constructive.
+ In the Coq library <tt>Classical_Prop</tt>
+this lemma is called <tt>NNPP</tt> 
 </div>
 <div class="code">
 
 <br/>
-<span class="id" title="keyword">Print</span> <span class="id" title="var">classic</span>.<br/>
-<span class="id" title="keyword">Check</span> <span class="id" title="var">classic</span>.<br/>
-
-<br/>
-<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample4</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">p</span>: <span class="id" title="keyword">Prop</span>, ~~<span class="id" title="var">p</span> -&gt; <span class="id" title="var">p</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">double_negation_elimination</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>: <span class="id" title="keyword">Prop</span>, ~~<span class="id" title="var">a</span> -&gt; <span class="id" title="var">a</span>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">p</span>. &nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<span class="id" title="var">classic</span> <span class="id" title="var">p</span>).<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">PTrue</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">PTrue</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">PFalse</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">PFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">aFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
@@ -133,77 +243,264 @@ intuicionisma piemērs.
 </div>
 
 <div class="doc">
-<h2>Intuicionisma loģikas priekšrocības</h2>
+Next, let us consider <tt>'a -> ~~a'</tt> The opposite implication is intuitionist,
+it does not need any classical lemmas:
+<ul class="doclist">
+<li> Peel off the 'forall' variable. Write <tt>'intros a'</tt> to avoid renaming the variable.
+
+</li>
+<li> Rewrite not: <tt>'~~a'</tt> becomes <tt>'a -> ((a -> False) -> False)'</tt>.
+
+</li>
+<li> Assume that <tt>'a'</tt> is true (introduce hypothesis <tt>'a'</tt> 
+
+</li>
+<li> Next assume that <tt>'a'</tt> is false (introduce hypothesis <tt>'a-&gt;False'</tt>.
+
+</li>
+<li> Now both hypotheses are contradictory.
+
+</li>
+<li> Therefore any goal (<tt>False</tt> in our case) is proven: <tt>'a'</tt> 
+
+</li>
+</ul>
+  and <tt>'a-&gt;False'</tt> imply anything.
 
 <div class="paragraph"> </div>
 
-<b>Apgalvojums:</b> Intuicionisma loģikas 
-pasaulē visas funkcijas no reāliem skaitļiem uz reāliem 
-skaitļiem ir nepārtrauktas. 
-<br/>
-Pierādījums iziet ārpus mūsu kursa ietvariem, bet
-skaidrojums ir aptuveni šāds: Klasiskās loģikas ietvaros katrs skaitlis
-ir vai nu mazāks par 0 (<tt>x&lt;0</tt>), vai arī ir 
-lielāks vai vienāds par 0 (<tt>x&gt;=0</tt>). Nekādas 
-trešās iespējas nav, jo neviens nepazīst tādus reālus skaitļus, 
-kuri nebūtu ne mazāki, ne vienādi, ne lielāki par 0. 
-Tiklīdz kā mēs katram <tt>x</tt> varam pateikt, vai tas ir 
-negatīvs vai arī lielāks/vienāds par 0, tad varam uztaisīt
-funkciju ar pārtraukumu: Piemēram, funkciju, kura ir -1 negatīviem 
-argumentiem, bet +1 pozitīviem argumentiem vai 0. 
-<br/>
-Intuicionisma loģikas pasaulē mums skaitlis <tt>x</tt>
-nav iedots uzreiz, bet gan tas atklājas pakāpeniski, 
-darbinot kaut kādu aprēķina procedūru - jo ilgāk rēķina, jo precīzāku 
-vērtību iegūst. Var gadīties, ka ļoti ilgi mēs 
-saņemam vērtības, kuras nav atšķiramas no 0. Tātad skaitlis 
-var būt 0. No otras puses, turpinot šo aprēķinu vēl tālāk, varētu 
-atklāties, ka x patiesībā ir negatīvs. 
-<br/>
-Intuicionisma pasaulē nav grūti definēt izrēķināmas, nepārtrauktas
-funkcijas, teiksim, kāpināt kvadrātā. Ja gribam precīzāku funkcijas vērtību, 
-sagaidām pietiekami precīzu argumenta vērtību. 
-Bet nekādus pārtraukumus/lēcienus izveidot neizdodas
-kaut vai tāpēc, ka reālus skaitļus (ne šajā loģikā, ne 
-arī datoru pasaulē) nevar allaž salīdzināt ar 0, cerot gūt 
-rezultātu galīgā skaitā soļu.
-<br/>
-<b>Piezīme:</b> Veselu skaitļu funkcijas, protams, var 
-taisīt lēcienus, jo veselam skaitlim (arī intuicionisma pasaulē) 
-ir pilnīgi skaidrs, vai tas ir mazāks par 0, vai arī vienāds/lielāks
-par 0. 
-
-<div class="paragraph"> </div>
-
- <h2>Kura loģika darbojas rīkā Coq?</h2>
-
-<div class="paragraph"> </div>
-
-Rīkam Coq ir vienalga, ar kādām aksiomām lietotājs strādā. 
-Pats rīks uzspiež pierādījuma soļus jeb "taktikas", kuras
-ļauj no aksiomām izvest lemmas un teorēmas, bet 
-sākotnējās aksiomas katrs var definēt pats. To var izmantot, ja 
-vajag definēt pavisam jaunus spēles noteikumus,
-piemēram, sākt uzreiz ar polinomu algebru vai "parastu" skaitļu 
-matemātikas vietā izdarīt apgalvojumus par Rubika kuba stāvokļiem.
-
-<div class="paragraph"> </div>
-
-Pamatojot apgalvojumus izteikumu loģikā (<i>propositional logic</i>) 
-klasiskā no intuicioniskās loģikas atšķiras, bet šī atšķirība 
-nav principiāla, jo visi pierādījumi šīs
-loģikas ietvaros nozīmē darbošanos ar (iespējams, ļoti lielām, bet
-tomēr galīgām) patiesuma tabulām (<i>truth tables</i>). 
-Tas nozīmē, ka ikviens pierādījums
-ir konstruktīvs un pārbaudāms ar algoritmu. 
-Tas gan nenozīmē, ka arī galīgiem/kombinatoriskiem
-uzdevumiem reizēm nevarētu 
-izmantot nekonstruktīvus "pierādījumus no pretējā".
-Tiklīdz kā apgalvojumi ir par bezgalīgām kopām (piemēram, 
-naturālo skaitļu kopu), tad atšķirības kļūst pavisam ievērojamas.
+In Coq this proof looks like this:
 
 </div>
 <div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">double_negation_rev</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">a</span> -&gt; ~~<span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Once we have both negation manipulation lemmas, we can 
+prove some variations. In this example we proceed like this:
+<ul class="doclist">
+<li> Peel of the <tt>forall a</tt> variable.
+
+</li>
+<li>.Apply the <tt>double_negation_rev</tt> lemma to get 
+
+</li>
+</ul>
+rid of two negations in the beginning: <tt>~ ~ (~ ~ a -&gt; a)</tt>
+becomes <tt>~ ~ a -&gt; a</tt>.
+<ul class="doclist">
+<li> Next, use the <tt>double_negation_elimination</tt> to get exactly 
+
+</li>
+</ul>
+the same result we have to prove.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">double_negation_variant</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>, ~ ~ (~ ~ <span class="id" title="var">a</span> -&gt; <span class="id" title="var">a</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">double_negation_rev</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">double_negation_elimination</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab11"></a><h2 class="section">Contrapositive lemmas</h2>
+ Same as before: it turns out that contrapositive law
+is 'classical' (non-constructive) in one direction, 
+but is constructive/intuitionist in the opposite direction. 
+
+<div class="paragraph"> </div>
+
+This result uses
+<tt>double_negation_elimination</tt>, which in turn relies on the 
+<tt>classic</tt> axiom.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">hard_contrapos</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="keyword">Prop</span>, (~<span class="id" title="var">b</span> -&gt; ~<span class="id" title="var">a</span>) -&gt; (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">double_negation_elimination</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H1</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+In contrast to the previous example, which 
+used earlier (non-constructive/classical) 
+This does not require to import any external libraries: 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">easy_contrapos</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span>-&gt;<span class="id" title="var">b</span>)-&gt;(~<span class="id" title="var">b</span>-&gt;~<span class="id" title="var">a</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">bFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">bFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab12"></a><h2 class="section">Some proofs of Peirce lemmas</h2>
+ This proof uses <tt>double_negation_elimination</tt>
+also known as <tt>NNPP</tt> lemma to prepend 
+two negations.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Peirce1</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>:<span class="id" title="keyword">Prop</span>, ((<span class="id" title="var">a</span> -&gt; <span class="id" title="var">False</span>) -&gt; <span class="id" title="var">a</span>) -&gt; <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">double_negation_elimination</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">aFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Now the same lemma is proven using the <tt>classic</tt>
+axiom. It is named <tt>Peirce2</tt> since the names of 
+lemmas must not be conflicting.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Peirce2</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>:<span class="id" title="keyword">Prop</span>, ((<span class="id" title="var">a</span> -&gt; <span class="id" title="var">False</span>) -&gt; <span class="id" title="var">a</span>) -&gt; <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">aFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab13"></a><h2 class="section">De Morgan's laws</h2>
+
+<div class="paragraph"> </div>
+
+ As we already saw in other lemmas, 
+one direction of a lemma may be 'classic' (requiring
+the law of excluded middle). 
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">de_morgan_not_and_not</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="keyword">Prop</span>,<br/>
+&nbsp;&nbsp;~(~<span class="id" title="var">a</span> /\ ~<span class="id" title="var">b</span>) -&gt; <span class="id" title="var">a</span> \/ <span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">left</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">bTrue</span> | <span class="id" title="var">bFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">right</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (~<span class="id" title="var">a</span> /\ ~<span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">bFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">CONTRA</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">CONTRA</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+And the other direction does not need any classical things.
+This proof is intuitionist.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">de_morgan_not_rev</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="keyword">Prop</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">a</span> \/ <span class="id" title="var">b</span> -&gt; ~(~<span class="id" title="var">a</span> /\ ~<span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H3</span> <span class="id" title="var">H4</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H5</span> | <span class="id" title="var">H6</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab14"></a><h2 class="section">Rewrite implication as a disjunction</h2>
+ Such manipulations also need the 'classic' axioms.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">implies_to_or</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="keyword">Prop</span>,<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (~<span class="id" title="var">a</span> \/ <span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">right</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">left</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">aFalse</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
 </div>

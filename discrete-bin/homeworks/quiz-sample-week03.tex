@@ -1,0 +1,290 @@
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa6.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa6 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 6th edition
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------
+%% 
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Sample Quiz 3}
+\author{Discrete Structures, Fall 2020}
+\affiliation{RBS}
+
+\leftheader{Discrete Sample Quiz 3}
+
+\abstract{%
+}
+
+%\keywords{}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\twocolumn
+{\Large Discrete Sample Quiz 3}
+
+\vspace{6pt}
+{\bf Question 1.} {\em Definition.} A Boolean formula is a 
+{\em Conjunctive Normal Form (CNF)}, 
+if it is a conjunction of one or more clauses, 
+where a clause is a disjunction of literals. Each literal 
+is either a variable ($u,v,\ldots$) or its negation ($\neg u, \neg v, \ldots$). 
+
+Identify, which is a CNF computing the following truth table for Boolean 
+expression $E(a,b,c)$:\\
+\begin{tabular}{ c | c | c | c }
+$a$ & $b$ & $c$ & $E(a,b,c)$  \\ \hline
+{\tt T} & {\tt T} & {\tt T} & {\tt T} \\ \hline
+{\tt T} & {\tt T} & {\tt F} & {\tt F} \\ \hline
+{\tt T} & {\tt F} & {\tt T} & {\tt F} \\ \hline
+{\tt T} & {\tt F} & {\tt F} & {\tt F} \\ \hline
+{\tt F} & {\tt T} & {\tt T} & {\tt T} \\ \hline
+{\tt F} & {\tt T} & {\tt F} & {\tt F} \\ \hline
+{\tt F} & {\tt F} & {\tt T} & {\tt F} \\ \hline
+{\tt F} & {\tt F} & {\tt F} & {\tt T} \\ \hline
+\end{tabular}
+
+\noindent
+{\bf (A)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c) \wedge (\neg a \vee b \vee c)$\\
+{\bf (B)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c)
+\wedge (\neg a \vee b \vee c) \wedge (\neg a \vee b \vee \neg c) \wedge (\neg a \vee \neg b \vee c)$.\\
+{\bf (C)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c) \wedge (\neg a \vee b \vee c)$\\
+$\wedge (\neg a \vee b \vee \neg c) \wedge (\neg a \vee \neg b \vee c)$.
+{\bf (D)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c) \wedge (\neg a \vee b \vee c)$\\
+$\wedge (\neg a \vee b \vee \neg c) \wedge (\neg a \vee \neg b \vee c)$.
+
+
+
+\vspace{6pt}
+{\bf Question 2.} The following CNF is given:
+$$E = (a \vee \neg c) \wedge (b \vee \neg b).$$
+Find $2$ Boolean expressions equivalent to $E$:\\
+{\bf (A)} $a \rightarrow \neg b$,\\
+{\bf (B)} $a \rightarrow c$,\\
+{\bf (C)} $\neg c \rightarrow \neg a$,\\
+{\bf (D)} $(a \wedge c) \rightarrow b$,\\
+{\bf (E)} $c \rightarrow a$,\\
+{\bf (F)} $a \rightarrow (c \rightarrow b)$,\\
+{\bf (G)} $\neg a \rightarrow \neg c$.
+
+\vspace{6pt}
+{\bf Question 3.} We have six statements about Python programs $p \in \mathcal{P}$
+that convert inputs $i \in \mathbb{Z}^{+}$ into results $r \in \mathbb{Z}^{+}$.  
+A Python program may either loop indefinitely or halt (i.e.\ it eventually stops).
+
+\begin{enumerate}
+\item Some programs return the correct result for all possible inputs and 
+they never loop indefinitely.
+\item For any program one can find another program such that it returns
+the same result for the same inputs as the first one (and also loops indefinitely, 
+if the first program does the same).
+\item There is a program that only loops indefinitely for at most finitely many inputs (or maybe none at all), 
+but for all other inputs it produces the correct result.
+\item There is at least one Python program that always halts, and for sufficiently large inputs it produces
+the correct result, but it may err for some small-size inputs.
+\item For a program to produce a correct result for some input $i$ it is strictly necessary to halt.\\
+\item A Python program always produces exactly one result for the given input provided that it halts.
+\end{enumerate}
+
+We use these $3$ predicates:\\
+$A(p_1,i_2,r_3)$ is true iff
+Python program $p_1 \in \mathcal{P}$ receives input $i_2 \in \mathbb{Z}^{+}$ and outputs 
+result $r_3 \in \mathbb{Z}^{+}$.\\
+$H(p_1,i_2)$ is true iff program $p_1 \in \mathcal{P}$ receives input $i_2$ and halts (i.e.\ does not
+loop indefinitely).\\
+$C(i_1,r_2)$ is true iff for input $i_1$ the correct result is $r_2$. 
+
+Please sort these answers to the five English sentences above.\\
+{\bf Write your answer as a comma-separated list:} For example, 
+{\tt F,E,D,C,B,A} tells that the 1st statement is {\bf (F)}, the 2nd one
+is {\bf (E)}, $\ldots$, the 
+last one is {\bf (A)}.
+
+
+\begin{enumerate}[(A)]
+%For a program to produce a correct result for some input $i$ it is strictly necessary to stop 
+%(it cannot loop indefinitely).
+\item ${\displaystyle \forall p \in \mathcal{P}\; \forall i \in \mathbb{Z}^+\; \forall r \in \mathbb{Z}^+,}$\\
+${\displaystyle \left( A(p,i,r) \wedge C(i,r) \,\rightarrow\, H(p,i) \right) }$.
+%For any program one can find another program such that it returns
+%the same result for the same inputs as the first one (and also loops indefinitely, 
+%if the first program does the same).
+\item ${\displaystyle \forall p_1 \in \mathcal{P}\; \exists p_2 \in \mathcal{P}\;
+\forall i \in \mathbb{Z}^{+}\; \exists r \in \mathbb{Z}^{+},}$\\
+${\displaystyle \left( (\neg H(p_1,i) \wedge \neg H(p_2,i)) \vee 
+(A(p_1,i,r) \leftrightarrow A(p_2,i,r)) \right)}$
+%There is a program that only loops indefinitely for finitely many inputs
+%and for other inputs it always produces the correct result.
+\item ${\displaystyle \exists p \in \mathcal{P}\; \exists N \in \mathbb{Z}^{+}\; 
+\forall i \in \mathbb{Z}^{+}\; \forall r \in \mathbb{Z}^{+},}$\\
+${\displaystyle \left( ( i \leq N \wedge \neg H(p,i) ) \vee (A(p,i,r) \wedge C(i,r)) \right)}$.
+%A Python program always produces exactly one result for the given input provided that it halts.
+\item ${\displaystyle \forall p \in \mathcal{P}\; \forall i \in \mathbb{Z}^{+}\; \forall r_1 \in \mathbb{Z}^{+}\;
+\forall r_2 \in \mathbb{Z}^{+},}$\\ 
+${\displaystyle \left( H(p,i) \wedge A(p,i,r_1) \wedge  A(p,i,r_2) \,\rightarrow\, r_1 = r_2 \right)}$.
+%There is at least one Python program that always halts, and for sufficiently large inputs it produces
+%the correct result, but it may err for some small-size inputs.
+\item ${\displaystyle \exists p \in \mathcal{P}\; \exists N \in \mathbb{Z}^{+}\; \forall i \in \mathbb{Z}^{+},}$\\
+${\displaystyle \left( H(p,i) \,\wedge\, ( A(p,i,r) \wedge i > N \,\rightarrow\, C(i,r) ) \right)}$.
+%Some programs return the correct result for all possible inputs and 
+%they never loop indefinitely.
+\item ${\displaystyle \exists p \in \mathcal{P}\; \forall i \in \mathbb{Z}^{+}\; \forall r \in \mathbb{Z}^{+},}$\\
+${\displaystyle \left( H(p,i) \,\wedge\, (A(p,i,r) \rightarrow C(i,r) \right)}$. 
+\end{enumerate}
+
+
+
+\vspace{10pt}
+{\bf Question 4.} There is a set of $4$ students $S = \{ s_1, s_2, s_3, s_4 \}$ and 
+a set of $2$ chairs $C = \{ c_1, c_2 \}$. 
+Find, how many such functions $f\,:\,S \rightarrow C$ exist, 
+how many of them are injective, surjective and bijective.
+
+{\em Fill in your answer:}
+
+\begin{tabular}{ll} \hline
+All functions $S \rightarrow C$ & $\ldots$ \\ \hline
+Injective functions $S \rightarrow C$ & $\ldots$ \\ \hline
+Surjective functions $S \rightarrow C$ & $\ldots$ \\ \hline
+Bijective functions $S \rightarrow C$ & $\ldots$ \\\hline
+\end{tabular}
+
+
+
+
+
+
+\newpage 
+
+\section{Answers}
+
+
+{\bf Question 1.} Answer: 
+
+\vspace{10pt}
+{\bf Question 2.} Answer: {\tt F,B,C,E,A,D}.\\
+Assume that every predicate expression is a translation of some English sentence. 
+
+
+
+
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% 
+%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Brian D. Beitzel.
+%% 
+%% This work consists of the file  apa6.dtx
+%% and the derived files           apa6.ins,
+%%                                 apa6.cls,
+%%                                 apa6.pdf,
+%%                                 README,
+%%                                 APAamerican.txt,
+%%                                 APAbritish.txt,
+%%                                 APAdutch.txt,
+%%                                 APAenglish.txt,
+%%                                 APAgerman.txt,
+%%                                 APAngerman.txt,
+%%                                 APAgreek.txt,
+%%                                 APAczech.txt,
+%%                                 APAturkish.txt,
+%%                                 APAendfloat.cfg,
+%%                                 apa6.ptex,
+%%                                 TeX2WordForapa6.bas,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%% End of file `./samples/shortsample.tex'.

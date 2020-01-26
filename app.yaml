@@ -80,6 +80,9 @@ handlers:
   
 - url: /discrete-bin
   static_dir: discrete-bin
+  
+- url: /discrete-bin/samples
+  static_dir: discrete-bin/samples
 
 - url: /discrete-tales
   static_dir: discrete-tales

@@ -111,13 +111,8 @@ $a$ & $b$ & $c$ & $E(a,b,c)$  \\ \hline
 \end{tabular}
 
 \noindent
-{\bf (A)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c) \wedge (\neg a \vee b \vee c)$\\
-{\bf (B)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c)
-\wedge (\neg a \vee b \vee c) \wedge (\neg a \vee b \vee \neg c) \wedge (\neg a \vee \neg b \vee c)$.\\
-{\bf (C)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c) \wedge (\neg a \vee b \vee c)$\\
-$\wedge (\neg a \vee b \vee \neg c) \wedge (\neg a \vee \neg b \vee c)$.
-{\bf (D)} $(a \vee b \vee \neg c) \wedge (a \vee \neg b \vee c) \wedge (\neg a \vee b \vee c)$\\
-$\wedge (\neg a \vee b \vee \neg c) \wedge (\neg a \vee \neg b \vee c)$.
+In the test you will have to pick between several long expressions like this one:
+$$(a \vee b \vee c) \wedge (a \vee b \vee \neg c) \wedge \ldots$$
 
 
 
@@ -217,23 +212,75 @@ Bijective functions $S \rightarrow C$ & $\ldots$ \\\hline
 
 
 
-
-
-
-\newpage 
-
-\section{Answers}
-
-
-{\bf Question 1.} Answer: 
-
 \vspace{10pt}
-{\bf Question 2.} Answer: {\tt F,B,C,E,A,D}.\\
-Assume that every predicate expression is a translation of some English sentence. 
+{\bf Question 5.}
+There is a predicate $S(x, y, z)$ defined for triplets
+of positive integers, 
+$S: \mathbb{Z}^{+} \times \mathbb{Z}^{+} \times \mathbb{Z}^{+} \rightarrow \{ \mathtt{T}, \mathtt{F} \}$. 
+$S(x,y,z)$ is true iff $x \cdot y = z$.\\
+Express these statements about positive integers
+using only $S(x,y,z)$, Boolean operations and quantifiers. 
+
+\begin{enumerate}[(a)] 
+\item $x/y = z$,
+\item $x = 1$,
+\item $x = y$, 
+\item $x$ is divisible by $y$ (i.e. $y \,\mid\, x$). 
+\item $x$ has odd number of positive divisors.
+\item $x$ is not a prime. 
+\end{enumerate}
 
 
+\section{Discussion on the Coq Lab}
+
+{\bf Lemma 1:} For all propositions $a$, $\neg \neg a \rightarrow a$. 
+
+{\bf Proof:}
+
+\begin{itemize}
+\item Assume that $\neg \neg a$ is true.
+\item We sort two cases by ``classic'' axiom (Excluded Middle): either $a$ or $\neg a$ must be true. 
+\item If $a$ is true, we are happy. 
+\item Otherwise $\neg a$ is true (along with $\neg \neg a$ obtained before). This is a contradiction. 
+\item Therefore $a$ must be true in all cases (it is either trivial, or a contradiction).
+\end{itemize}
+
+{\bf Lemma 2:} For all propositions $a$ and $b$, $\neg(a \rightarrow b) \rightarrow a$. 
+
+{\bf Proof:}
+
+\begin{itemize}
+\item Assume that $\neg (a \rightarrow b)$ is true. 
+\item We have to prove that $a$ is true. By Lemma 1, we will prove instead that $\neg neg a$ is true, 
+then it will also imply $a$. 
+\item We will assume that $\neg a$ is true, and attempt to get a contradiction (this means that $\neg \neg a$ must
+be true). 
+\item Let's prove now that $a \rightarrow b$ is true - this would be an immediate 
+contradiction with $\neg (a \rightarrow b)$. 
+\item To prove $a \rightarrow b$, assume that $a$ is true and let's prove $b$. But earlier
+we assumed that $\neg a$. 
+\item $a$ and $\neg a$ cannot be simultaneously true. This is a contradiction.
+\end{itemize}
+
+{\bf Peirce Lemma:} For all propositions $a$ and $b$, $((a \rightarrow b) \rightarrow a) \rightarrow a$.
+
+{\bf Hint.} Just use Lemma 1 and 2 for this. And also the ``classic'' axiom: Sort 2 cases when $(a \rightarrow b)$
+or $\neg (a \rightarrow b)$ are true.
 
 
+{\bf Lemma 4:} For all propositions $a$ and $b$, $(\neg b \rightarrow \neg a) \rightarrow (a \rightarrow b)$.\\
+This is the opposite direction from a well-known contrapositive ($\neg b \rightarrow a$ and $a \rightarrow b$
+mean the same thing.)
+
+{\bf Hint.} Use ``classic'' axiom (Excluded middle) on $b$. 
+
+{\bf Lemma 5:} For all propositions $a,b,c,d,e$, 
+$$((((a \rightarrow b) \rightarrow  (\neg c \rightarrow  \neg d)) \rightarrow  c) \rightarrow  e) \rightarrow \neg  a \rightarrow  (d -> e).$$
+
+{\bf Hint.} Indeed, assume that $(((a \rightarrow  b) \rightarrow  \neg c \rightarrow  \neg d)\rightarrow  c) \rightarrow  e$; 
+also assume $\neg a$ and $d$. Then you can prove $(((a \rightarrow b) \rightarrow \neg c \rightarrow \neg d) \rightarrow c)$ which is similar to what you need.
+
+After all this, you can do Sample20 from the Coq lab.
 
 \end{document}
 

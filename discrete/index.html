@@ -1,6 +1,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="../style/style.css"/>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <!--[if lt IE 9]>
@@ -13,15 +19,15 @@ i { font-size:85%; }
 
 
 <body>
-<h1>Discrete Structures: Agenda</h1>
+<h1>Discrete Structures: Topics</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Home</b></td>
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Topics</b></td>
 <td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
 <td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq.html">Coq</a></td>
 <td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs.html">Proofs</a></td>
-<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="readings.html">Readings</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations.html">Presentations</a></td>
 <td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
@@ -49,157 +55,67 @@ i { font-size:85%; }
 </small></p>
 
 <!--
-<p><small><b>Objectives</b> - The list of tasks and skills covered in this course. 
-Please note that the K.Rosen's textbook contains many other useful topics, 
-you may read or skip them at your discretion.<br/>
-<b>Readings, Videos</b> - Suggested readings and videos, if you want
-this topic explained in more detail. 
- <br/><b>Examples</b> -  An (incomplete) list, where this skill appears 
-in our class assignments.</small></p> --> 
-
-
-<!--
-<table class="agenda">
-<tr>
-<th>Objectives</th>
-<th>Readings/Videos</th>
-<th>Examples</th>
-</tr>
-<tbody>
-<tr><th style="background-color:#000080;color:white;text-align:center;" colspan="3">Week 1: 
-2020-01-06 to 2020-01-10.</th></tr>
-<tr class="odd">
-  <td><b></b></td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr class="even">
-<br/>
+YouTube video with start and end params (may be useful later:
 https://www.youtube.com/embed/h_8smKNoAAw?start=2285&end=2300&autoplay=1
-
 -->
 
-<p>Subchapters "1.1", "1.2" are numbered just 
-as in the (Rosen2019) textbook.
-Occasional extra topics (NOT from the book) have 
-numbers "1.X", "1.Y", etc.
+<h2>Topics and Objectives</h2>
+
+
+<p>Open any week. Subchapters "1.1", "1.2" are numbered 
+as in (Rosen2019).
+Occasional extra topics (NOT from that book) have 
+numbers "1.X", "2.Y", etc.
 <a href="https://www.youtube.com/playlist?list=PLl-gb0E4MII0L5lz8uQ8j5aSFQQHoAzXx">Many 
-videos</a> quoted below are by
+videos</a> below are by
 <a href="http://blogs.bellevue.edu/alumni/?p=2361">Kimberly Brehm</a> 
-from Bellevue University, Nebraska.
+from Bellevue, Nebraska.
 </p> 
 
 
+<div class="panel-group" id="accordion">
 
-<h2>Week 1: 2020-01-13 to 2020-01-17</h2>
+{% for item in indexItems %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}: {{item.title}}</a>
+</h4>
+</div>
+<div id="collapse{{item.itemNum}}" class="panel-collapse collapse">
+<div class="panel-body">
+{{item.description}}
+<p>
+{% for link in item.links %}
+<b>{{link.subsection}} {{link.title}}</b><br/>
 
-<p><b style="text-decoration:underline;">1. Apply Formal Logic to Math and Computing</b><br/>
-<b>1.1. Analyze Propositions and Boolean Expressions</b><br/>
-<i>(Rosen2019, pp.1-13), <a href="https://youtu.be/OApHaIMKMJE">Video.1.1</a></i><br/>
-1.1.a. Define what is a proposition.<br/>
-1.1.b. Define Boolean operations (<span class="math inline">\(\neg, \wedge, \vee, \rightarrow, 
-\leftrightarrow \)</span>).<br/>
-1.1.c. Restore parentheses using precedence.<br/>
-1.1.d. Create truth tables for expressions.</p>
+{% if link.reading != 'NA' %}
+<i>({{link.reading}})</i>.
+{% endif %}
+{% if link.video|length == 1 %}
+{% for vid in link.video %}
+{% if vid != 'NA' %}
+<i><a href={{vid}}>Video{{link.subsection}}</a></i>.<br/>
+{% endif %}
+{% endfor %}
+{% else %}
+{% for vid in link.video %}
+<i><a href={{vid}}>Video{{link.subsection}}.{{abc[loop.index]}}</a></i>.
+{% endfor %} <br/>
+{% endif %} 
+{% for task in link.task %}
+{{link.subsection}}.{{abc[loop.index]}}. {{task}}<br/>
+{% endfor %}
+{% endfor %}
+<p>
+</div>
+</div>
+</div>
+{% endfor %}
 
-<p><b>1.2. Create propositional statements.</b><br/>
-<i>(Rosen2019, pp.17-22), <a href="https://youtu.be/_RrxqiB_pfE">Video.1.2</a></i><br/>
-1.2.a. Translate English into Propositional logic.<br/>
-1.2.b. Recognize situations when natural language uses<br/> 
-logical connectives in a different sense.<br/>
-1.2.c. Solve Logic Puzzles and Word Problems.</p>
+</div>
 
-<p><b>1.3. Recognize Boolean tautologies and satisfiability.</b><br/>
-<i>(Rosen2019, pp.26-33), <a href="https://youtu.be/x0ELYvaf21E">Video.1.3</a></i><br/>
-1.3.a. Rewrite propositions using equivalences<br/>
-1.3.a.1. Use double negation<br/>
-1.3.a.2. Use De Morgan's laws<br/>
-1.3.a.3. Write Contrapositive for an Implication<br/>
-1.3.b. Define a tautology if a truth table exists.<br/>
-1.3.c. Create new tautologies using inference rules.<br/>
-1.3.d. Define Satisfiable and Contradictory Boolean Expressions.</p>
-
-<p><b>1.X. Use expressions in programming (optional)</b><br/>
-1.X.a. Apply operation precedence to a Python expression.<br/>
-1.X.b. Apply operation associativity to a Python expression.<br/>
-1.X.c. Apply short-circuit Boolean evaluation.</p>
-
-
-
-<h2>Week 2: 2020-01-13 to 2020-01-17</h2>
-
-<p style="color:darkgreen;"><b>1.7. Use Some Common Proof Strategies</b><br/>
-<i>(Rosen2019, pp.84-93), <a href="https://youtu.be/b-hKQOhxlNA">Video.1.7.1</a>, 
-<a href="https://youtu.be/PNme9Kl3kDo">Video.1.7.2</a>, 
-<a href="https://youtu.be/CCAgvPGOlmE">Video.1.7.3</a></i><br/>
-1.7.a. Explain direct proofs for IF-THEN statements<br/>
-1.7.b. Explain proofs by contraposition for IF-THEN statements<br/>
-1.7.c. Explain (constructive) proofs by contradiction.</p>
-
-<p><b>1.4. Use Predicates and Quantifiers.</b><br/>
-<i>(Rosen2019, pp.40-55), <a href="https://youtu.be/rZH5RFSXsvI">Video.1.4</a></i><br/>
-1.4.a. Define a predicate as a function to booleans.<br/>
-1.4.b. Recognize free and bound variables.<br/>
-1.4.c. Interpret quantifiers over finite domains.<br/>
-1.4.d. Use precedence for quantifier statements.<br/>
-1.4.e. Negate predicates, apply De Morgan's laws.<br/></p>
-
-<p><b style="text-decoration:underline;">2. Manipulate Sets and Functions</b><br/>
-<i>(Rosen2019, pp.121-131), <a href="https://youtu.be/ZMhoRLGNR5Y">Video.2.1.1</a>,
-<a href="https://youtu.be/jXxuwrAbpCU">Video.2.1.2</a></i><br/>
-2.1.a. Define set by listing elements or intervals.<br/>
-2.1.b. Define set by defining a predicate.<br/>
-2.1.c. Define subsets, proper subsets.<br/>
-2.1.d. Define pairs (and other tuples).<br/>
-2.1.e. Define power sets.<br/>
-2.1.f. Reproduce Russel's paradox.</p>
-
-<p><b>2.5. Compare Set Cardinalities</b><br/>
-<i>(Rosen2019, pp.179-186)</i><br/>
-2.5.a. Define injective functions between 2 sets.<br/>
-2.5.b. Define surjective functions between 2 sets.<br/>
-2.5.c. Union a finite set to the positive integers.<br/>
-2.5.d. Union two positive integer sets.<br/>
-2.5.e. Union infinitely many integer sets.</p>
-
-<h2>Week 3: 2020-01-20 to 2020-01-24</h2>
-
-<p><b>1.5. Nested quantifiers</b><br/>
-<i>(Rosen2019, pp.60-68), <a href="https://youtu.be/3bpMrm379v0">Video.1.5.1</a>,
-<a href="https://youtu.be/xDaBIVPyvDQ">Video.1.5.2</a></i><br/>
-1.5.a. Rewrite mathematical statements with nested quantifiers.<br/>
-1.5.b. Interpret quantifier expressions in human language.<br/>
-1.5.c. Negate multiple quantifiers.</p> 
-
-<p style="color:darkgreen;"><b>1.8. Use Some More Proof Strategies</b><br/>
-1.8.a. Explain proofs by analyzing cases.<br/>
-1.8.b. Explain proofs by counterexamples.<br/>
-1.8.c. Introduce "without loss of generality" clauses.<br/>
-1.8.d. Explain nonconstructive proofs of existence.</p>
-
-<p><b>1.6. Use Rules of Inference.</b><br/>
-1.6.a. Recognize hypotheses and goals in a proof.<br/>
-1.6.b. Apply modus ponens: <span class="math inline">\( A \rightarrow B,\, A \;\vdash\; B.\)</span><br/>
-1.6.c. Apply modus tollens: <span class="math inline">\( A \rightarrow B,\, (\neg B) \;\vdash\; (\neg A).\)</span><br/>
-1.6.d. Apply transitivity: <span class="math inline">\( A \rightarrow B,\, B \rightarrow C \;\vdash\; A \rightarrow C.\)</span><br/> 
-1.6.e. Apply disjunctive syllogism: <span class="math inline">\( A \vee B,\, \neg A \;\vdash\; B.\)</span><br/>
-1.6.f. Apply "addition": <span class="math inline">\( A \;\vdash\; A \vee B.\)</span><br/>
-1.6.g. Apply "simplification": <span class="math inline">\( (A \wedge B) \;\vdash\; A.\)</span><br/>
-1.6.h. Apply "conjunction": <span class="math inline">\( A,\, B \;\vdash\; (A \wedge B).\)</span><br/>
-1.6.i. Apply "resolution": <span class="math inline">\( (A \vee B),\, (\neg A \vee C) \;\vdash\; (B \vee C).\)</span></p>
-
-<p><b>2.2. Manipulate sets over some universe.</b><br/>
-2.2.a. Define the union of two or more sets.<br/>
-2.2.b. Define the intersection of two or more sets.<br/>
-2.2.c. Define the complement of a set.<br/>
-2.2.d. Define the difference of two sets.<br/>
-2.2.e. Define the symmetric difference of sets.<br/>
-2.2.f. Draw Venn diagrams for 2, 3, 4 or 5 sets.</p>
-
-<p style="color:darkgreen;"><b>2.X. Use Proof Strategies for Sets and Functions</b><br/>
-2.X.a. Explain proofs for 2 sets being different (conterexample).<br/>
-2.X.b. Explain proofs for a function being bijective.<br/>
-2.X.c. Explain constructions by selecting minimum in a nonempty set.</p>
 
 
 

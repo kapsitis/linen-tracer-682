@@ -41,13 +41,20 @@ class DiscreteHandler(webapp2.RequestHandler):
             nav_items = json.load(f1)
         with open('data/discrete_readings.json') as f2:
             my_readings = json.load(f2)
+        with open('data/discrete_index.json') as f3:
+            indexItems = json.load(f3) 
             
+        abc = ['-','a','b','c','d','e','f','g','h','i','j',
+               'k','l','m','n','o','p','q','r','s','t',
+               'u','v','w','x','y','z']
         
         if (my_id == 'index.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
-                'nav_items': nav_items
+                'nav_items': nav_items,
+                'indexItems': indexItems,
+                'abc': abc 
             }
             template = jinja_env.get_template('discrete/index.html')
             output = template.render(template_context)
@@ -61,14 +68,14 @@ class DiscreteHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('discrete/coq.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'readings.html'):
+        elif (my_id == 'presentations.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
                 'nav_items': nav_items,
                 'readings': my_readings
             }
-            template = jinja_env.get_template('discrete/readings.html')
+            template = jinja_env.get_template('discrete/presentations.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'proofs.html'):     

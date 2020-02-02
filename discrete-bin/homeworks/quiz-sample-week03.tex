@@ -1,32 +1,3 @@
-%%
-%% This is file `./samples/shortsample.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% apa6.dtx  (with options: `shortsample')
-%% ----------------------------------------------------------------------
-%% 
-%% apa6 - A LaTeX class for formatting documents in compliance with the
-%% American Psychological Association's Publication Manual, 6th edition
-%% 
-%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
-%% 
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License (LPPL), either
-%% version 1.3c of this license or (at your option) any later
-%% version.  The latest version of this license is in the file:
-%% 
-%% http://www.latex-project.org/lppl.txt
-%% 
-%% Users may freely modify these files without permission, as long as the
-%% copyright line and this statement are maintained intact.
-%% 
-%% This work is not endorsed by, affiliated with, or probably even known
-%% by, the American Psychological Association.
-%% 
-%% ----------------------------------------------------------------------
-%% 
 \documentclass[jou]{apa6}
 
 \usepackage[american]{babel}
@@ -69,7 +40,7 @@
 \headsep 12pt
 \textheight 9.19in
 
-
+\usepackage{xcolor}
 
 \title{Sample Quiz 3}
 \author{Discrete Structures, Fall 2020}
@@ -96,7 +67,7 @@ if it is a conjunction of one or more clauses,
 where a clause is a disjunction of literals. Each literal 
 is either a variable ($u,v,\ldots$) or its negation ($\neg u, \neg v, \ldots$). 
 
-Identify, which is a CNF computing the following truth table for Boolean 
+Find the CNF computing the following truth table for Boolean 
 expression $E(a,b,c)$:\\
 \begin{tabular}{ c | c | c | c }
 $a$ & $b$ & $c$ & $E(a,b,c)$  \\ \hline
@@ -110,22 +81,19 @@ $a$ & $b$ & $c$ & $E(a,b,c)$  \\ \hline
 {\tt F} & {\tt F} & {\tt F} & {\tt T} \\ \hline
 \end{tabular}
 
-\noindent
-In the test you will have to pick between several long expressions like this one:
-$$(a \vee b \vee c) \wedge (a \vee b \vee \neg c) \wedge \ldots$$
 
 
 
 \vspace{6pt}
 {\bf Question 2.} The following CNF is given:
 $$E = (a \vee \neg c) \wedge (b \vee \neg b).$$
-Find $2$ Boolean expressions equivalent to $E$:\\
-{\bf (A)} $a \rightarrow \neg b$,\\
-{\bf (B)} $a \rightarrow c$,\\
-{\bf (C)} $\neg c \rightarrow \neg a$,\\
-{\bf (D)} $(a \wedge c) \rightarrow b$,\\
-{\bf (E)} $c \rightarrow a$,\\
-{\bf (F)} $a \rightarrow (c \rightarrow b)$,\\
+Find $2$ Boolean expressions equivalent to $E$:\\[3pt]
+{\bf (A)} $a \rightarrow \neg b$,\\[3pt]
+{\bf (B)} $a \rightarrow c$,\\[3pt]
+{\bf (C)} $\neg c \rightarrow \neg a$,\\[3pt]
+{\bf (D)} $(a \wedge c) \rightarrow b$,\\[3pt]
+{\bf (E)} $c \rightarrow a$,\\[3pt]
+{\bf (F)} $a \rightarrow (c \rightarrow b)$,\\[3pt]
 {\bf (G)} $\neg a \rightarrow \neg c$.
 
 \vspace{6pt}
@@ -137,8 +105,8 @@ A Python program may either loop indefinitely or halt (i.e.\ it eventually stops
 \item Some programs return the correct result for all possible inputs and 
 they never loop indefinitely.
 \item For any program one can find another program such that it returns
-the same result for the same inputs as the first one (and also loops indefinitely, 
-if the first program does the same).
+the same result for the same inputs as the first one (or loops indefinitely, 
+{\color{red} \bf iff} the first program does the same).
 \item There is a program that only loops indefinitely for at most finitely many inputs (or maybe none at all), 
 but for all other inputs it produces the correct result.
 \item There is at least one Python program that always halts, and for sufficiently large inputs it produces
@@ -155,40 +123,27 @@ $H(p_1,i_2)$ is true iff program $p_1 \in \mathcal{P}$ receives input $i_2$ and 
 loop indefinitely).\\
 $C(i_1,r_2)$ is true iff for input $i_1$ the correct result is $r_2$. 
 
-Please sort these answers to the five English sentences above.\\
-{\bf Write your answer as a comma-separated list:} For example, 
+{\em Note.} Write your answer as a comma-separated list: For example, 
 {\tt F,E,D,C,B,A} tells that the 1st statement is {\bf (F)}, the 2nd one
-is {\bf (E)}, $\ldots$, the 
-last one is {\bf (A)}.
+is {\bf (E)}, $\ldots$, the last one is {\bf (A)}.
 
 
 \begin{enumerate}[(A)]
-%For a program to produce a correct result for some input $i$ it is strictly necessary to stop 
-%(it cannot loop indefinitely).
 \item ${\displaystyle \forall p \in \mathcal{P}\; \forall i \in \mathbb{Z}^+\; \forall r \in \mathbb{Z}^+,}$\\
 ${\displaystyle \left( A(p,i,r) \wedge C(i,r) \,\rightarrow\, H(p,i) \right) }$.
-%For any program one can find another program such that it returns
-%the same result for the same inputs as the first one (and also loops indefinitely, 
-%if the first program does the same).
 \item ${\displaystyle \forall p_1 \in \mathcal{P}\; \exists p_2 \in \mathcal{P}\;
-\forall i \in \mathbb{Z}^{+}\; \exists r \in \mathbb{Z}^{+},}$\\
+\forall i \in \mathbb{Z}^{+}\; \textcolor{red}{\forall r \in \mathbb{Z}^{+},}}$\\
 ${\displaystyle \left( (\neg H(p_1,i) \wedge \neg H(p_2,i)) \vee 
 (A(p_1,i,r) \leftrightarrow A(p_2,i,r)) \right)}$
-%There is a program that only loops indefinitely for finitely many inputs
-%and for other inputs it always produces the correct result.
 \item ${\displaystyle \exists p \in \mathcal{P}\; \exists N \in \mathbb{Z}^{+}\; 
-\forall i \in \mathbb{Z}^{+}\; \forall r \in \mathbb{Z}^{+},}$\\
+\forall i \in \mathbb{Z}^{+}\; \textcolor{red}{\exists r \in \mathbb{Z}^{+}},}$\\
 ${\displaystyle \left( ( i \leq N \wedge \neg H(p,i) ) \vee (A(p,i,r) \wedge C(i,r)) \right)}$.
-%A Python program always produces exactly one result for the given input provided that it halts.
 \item ${\displaystyle \forall p \in \mathcal{P}\; \forall i \in \mathbb{Z}^{+}\; \forall r_1 \in \mathbb{Z}^{+}\;
 \forall r_2 \in \mathbb{Z}^{+},}$\\ 
 ${\displaystyle \left( H(p,i) \wedge A(p,i,r_1) \wedge  A(p,i,r_2) \,\rightarrow\, r_1 = r_2 \right)}$.
-%There is at least one Python program that always halts, and for sufficiently large inputs it produces
-%the correct result, but it may err for some small-size inputs.
-\item ${\displaystyle \exists p \in \mathcal{P}\; \exists N \in \mathbb{Z}^{+}\; \forall i \in \mathbb{Z}^{+},}$\\
-${\displaystyle \left( H(p,i) \,\wedge\, ( A(p,i,r) \wedge i > N \,\rightarrow\, C(i,r) ) \right)}$.
-%Some programs return the correct result for all possible inputs and 
-%they never loop indefinitely.
+\item ${\displaystyle \exists p \in \mathcal{P}\; \exists N \in \mathbb{Z}^{+}\; \forall i \in \mathbb{Z}^{+}\;
+\textcolor{red}{\forall r \in \mathbb{Z}^{+}},}$\\
+${\displaystyle \left( H(p,i) \,\wedge\, ( A(p,i,r) \wedge (i > N) \,\rightarrow\, C(i,r) ) \right)}$.
 \item ${\displaystyle \exists p \in \mathcal{P}\; \forall i \in \mathbb{Z}^{+}\; \forall r \in \mathbb{Z}^{+},}$\\
 ${\displaystyle \left( H(p,i) \,\wedge\, (A(p,i,r) \rightarrow C(i,r) \right)}$. 
 \end{enumerate}
@@ -199,17 +154,9 @@ ${\displaystyle \left( H(p,i) \,\wedge\, (A(p,i,r) \rightarrow C(i,r) \right)}$.
 {\bf Question 4.} There is a set of $4$ students $S = \{ s_1, s_2, s_3, s_4 \}$ and 
 a set of $2$ chairs $C = \{ c_1, c_2 \}$. 
 Find, how many such functions $f\,:\,S \rightarrow C$ exist, 
-how many of them are injective, surjective and bijective.
-
-{\em Fill in your answer:}
-
-\begin{tabular}{ll} \hline
-All functions $S \rightarrow C$ & $\ldots$ \\ \hline
-Injective functions $S \rightarrow C$ & $\ldots$ \\ \hline
-Surjective functions $S \rightarrow C$ & $\ldots$ \\ \hline
-Bijective functions $S \rightarrow C$ & $\ldots$ \\\hline
-\end{tabular}
-
+how many of them are injective, surjective and bijective.\\
+{\em Note.} Your answer should be a comma-separated list of 
+4 numbers (and 3 commas): {\tt total,injective,surjective,bijective}.
 
 
 \vspace{10pt}
@@ -219,119 +166,138 @@ of positive integers,
 $S: \mathbb{Z}^{+} \times \mathbb{Z}^{+} \times \mathbb{Z}^{+} \rightarrow \{ \mathtt{T}, \mathtt{F} \}$. 
 $S(x,y,z)$ is true iff $x \cdot y = z$.\\
 Express these statements about positive integers
-using only $S(x,y,z)$, Boolean operations and quantifiers. 
+using only $S(x,y,z)$, Boolean operations and quantifiers.\\
+{\em Note.} Please use only the predicate $S(\ldots)$ in your answers, 
+avoid any other predicates or relations (such as equality, divisibility, etc.).
 
-\begin{enumerate}[(a)] 
+\begin{enumerate}[(A)] 
 \item $x/y = z$,
 \item $x = 1$,
 \item $x = y$, 
 \item $x$ is divisible by $y$ (i.e. $y \,\mid\, x$). 
 \item $x$ has odd number of positive divisors.
-\item $x$ is not a prime. 
+\item $x$ is not a prime.
+\item $x$ is a prime.
 \end{enumerate}
 
 
-\section{Discussion on the Coq Lab}
+\section{Answers}
 
-{\bf Lemma 1:} For all propositions $a$, $\neg \neg a \rightarrow a$. 
+\vspace{6pt}
+{\bf Question 1.} Answer: 
+\begin{align}
+ & \textcolor{red}{(\neg a \vee \neg b \vee c)} \wedge 
+\textcolor{blue}{(\neg a \vee b \vee \neg c)} \wedge 
+\textcolor{blue}{(\neg a \vee b \vee c)} \;\wedge \nonumber \\
+\wedge\; & \textcolor{red}{(a \vee \neg b \vee c)} \wedge 
+(a \vee b \vee \neg c) \nonumber
+\end{align}
+Every value {\tt F} in the truth table produces one 
+clause in this expression. For example $E(\mathtt{T},\mathtt{T},\mathtt{F}) = \mathtt{F}$
+is addressed by a disjunction $(\neg a \vee \neg b \vee c)$. 
 
-{\bf Proof:}
+If we combine red and blue clauses, we can rewrite this into a more compact expression, 
+which is also CNF. Note, that this is not the only way to rewrite:
+$$\textcolor{red}{(\neg b \vee c)} \wedge 
+\textcolor{blue}{(\neg a \vee b)} \wedge
+(a \vee b \vee \neg c).$$
 
-\begin{itemize}
-\item Assume that $\neg \neg a$ is true.
-\item We sort two cases by ``classic'' axiom (Excluded Middle): either $a$ or $\neg a$ must be true. 
-\item If $a$ is true, we are happy. 
-\item Otherwise $\neg a$ is true (along with $\neg \neg a$ obtained before). This is a contradiction. 
-\item Therefore $a$ must be true in all cases (it is either trivial, or a contradiction).
-\end{itemize}
+\vspace{6pt}
+{\bf Question 2.} Answer: {\bf (E)}, {\bf (G)}.\\
+$(a \vee \neg c) \wedge (b \vee \neg b) = (a \vee \neg c) \wedge \mathtt{T} = (a \vee \neg c)$. 
+This is same as $c \rightarrow a$ or the contrapositive variant of the same implication:
+$\neg a \rightarrow \neg c$.
 
-{\bf Lemma 2:} For all propositions $a$ and $b$, $\neg(a \rightarrow b) \rightarrow a$. 
+\vspace{6pt}
+{\bf Question 3.} Answer:\\
+\begin{tabular}{|c|c|c|c|c|c|} \hline
+1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+{\bf (F)} & {\bf (B)} & {\bf (C)} & {\bf (E)} & {\bf (A)} & {\bf (D)} \\ \hline
+\end{tabular} 
 
-{\bf Proof:}
+\vspace{3pt}
+In {\bf (B)} we should write: the second program loops indefinitely {\bf iff} 
+the first program does so. If we write {\bf if} instead, it 
+would mean only one-way conditional, which does not mean 
+equivalence between the programs $p_1$ and $p_2$, but something more complicated.
 
-\begin{itemize}
-\item Assume that $\neg (a \rightarrow b)$ is true. 
-\item We have to prove that $a$ is true. By Lemma 1, we will prove instead that $\neg neg a$ is true, 
-then it will also imply $a$. 
-\item We will assume that $\neg a$ is true, and attempt to get a contradiction (this means that $\neg \neg a$ must
-be true). 
-\item Let's prove now that $a \rightarrow b$ is true - this would be an immediate 
-contradiction with $\neg (a \rightarrow b)$. 
-\item To prove $a \rightarrow b$, assume that $a$ is true and let's prove $b$. But earlier
-we assumed that $\neg a$. 
-\item $a$ and $\neg a$ cannot be simultaneously true. This is a contradiction.
-\end{itemize}
+In {\bf (B)} you could write $(H(p_1,i) \leftrightarrow H(p_2,i))$
+instead of $(\neg H(p_1,i) \wedge \neg H(p_2,i))$ or 
+even omit any reference to $H(\ldots)$ predicates. 
+The notation $(H(p_1,i) \leftrightarrow H(p_2,i))$ stresses the fact that $p_1$ and $p_2$ behave in the same way. 
+But in fact the equivalence $(A(p_1,i,r) \leftrightarrow A(p_2,i,r))$ implicitly 
+states the fact that $p_1$ and $p_2$ are defined on the same inputs.
 
-{\bf Peirce Lemma:} For all propositions $a$ and $b$, $((a \rightarrow b) \rightarrow a) \rightarrow a$.
+Please note that {\bf (B)} should {\bf NOT} have quantifier  
+ $\textcolor{red}{\exists r \in \mathbb{Z}^{+}}$ 
+(instead of  $\textcolor{red}{\forall r \in \mathbb{Z}^{+}}$), because we need
+equivalence for all positive integers $r$. If we only care about the
+actual result of $p$ on input $i$, then it is possible to ``cheat'' the logic formula: 
+pick result $r$ which is impossible for both $p_1$ and $p_2$; then $A(p_1,i,r)$ 
+and $A(p_2,i,r)$ would both be false (and thus equivalent).
 
-{\bf Hint.} Just use Lemma 1 and 2 for this. And also the ``classic'' axiom: Sort 2 cases when $(a \rightarrow b)$
-or $\neg (a \rightarrow b)$ are true.
+In {\bf (C)} one cannot replace $\textcolor{red}{\exists r \in \mathbb{Z}^{+}}$
+with $\textcolor{red}{\forall r \in \mathbb{Z}^{+}}$ (as in an earlier draft of this test), 
+because it does not make sense to ask that a program $p$ on input $i$ produces
+{\bf each} positive integer result; and all results turn out to be correct. 
+(Such a formula may have some useful meaning if predicates $A,H,C$ have different
+interpretations, but for Python programs this is technically correct, but 
+has an absurd meaning: that a given program produces any result whatsoever.)
+
+In {\bf (E)} it is absolutely necessary to write a quantifier 
+$\textcolor{red}{\forall r \in \mathbb{Z}^{+}}$, because 
+leaving $r$ as a free variable (without a quantifier) would 
+mean that the Python program always produces the same result
+(the value of $r$). It is not 
 
 
-{\bf Lemma 4:} For all propositions $a$ and $b$, $(\neg b \rightarrow \neg a) \rightarrow (a \rightarrow b)$.\\
-This is the opposite direction from a well-known contrapositive ($\neg b \rightarrow a$ and $a \rightarrow b$
-mean the same thing.)
+\vspace{6pt}
+{\bf Question 4.} Answer: {\tt 16,0,14,0}\\
+Please note that there can be no injections (and therefore also bijections): 
+students will always collide \textendash{} run to the same chair, 
+since there are fewer chairs than students.
 
-{\bf Hint.} Use ``classic'' axiom (Excluded middle) on $b$. 
+The total number of functions is $2^4 = 16$. Each student
+can choose between $2$ chairs, so it is $2 \times 2 \times 2 \times 2 = 16$. 
+Moreover, there are only $2$ ``constant'' functions (where all four
+students go to $c_1$ or to $c_2$). They are not surjective, because
+some chairs stay unoccupied in this case. 
+All the other $16 - 2 = 14$ functions from $S$ (4 elements) to $C$ (2 elements)
+are surjections. 
 
-{\bf Lemma 5:} For all propositions $a,b,c,d,e$, 
-$$((((a \rightarrow b) \rightarrow  (\neg c \rightarrow  \neg d)) \rightarrow  c) \rightarrow  e) \rightarrow \neg  a \rightarrow  (d -> e).$$
+\vspace{6pt}
+{\bf Question 5.} Here we write all $7$ statements with predicate $S(x,y,z)$ and quantifiers. 
 
-{\bf Hint.} Indeed, assume that $(((a \rightarrow  b) \rightarrow  \neg c \rightarrow  \neg d)\rightarrow  c) \rightarrow  e$; 
-also assume $\neg a$ and $d$. Then you can prove $(((a \rightarrow b) \rightarrow \neg c \rightarrow \neg d) \rightarrow c)$ which is similar to what you need.
+\begin{enumerate}[(A)]
+\item $S(z,y,x)$ (or, equivalently, $S(y,z,x)$). 
+\item $\exists y \in \mathbb{Z}^{+},\; S(x,y,y)$.\\
+Use the property: $x = 1$ can multiply with an $y$, and does not increase/decrease. \\
+You could also write simply $S(x,x,x)$. Indeed, $x$ is the only 
+positive integer such that $x \cdot x = x$. (Allowing $x = 0$ would 
+spoil this, because $0^2 = 0$.)
+\item $\exists z \in \mathbb{Z}^{+},\; S(x,z,y) \wedge S(z,z,z)$.\\
+So, $x = y$ iff there is a $z = 1$ such that $x \cdot z = y$.
+\item $\exists d \in \mathbb{Z}^{+},\; S(y,d,x)$.
+\item $\exists y \in \mathbb{Z}^{+},\; S(y,y,x)$.\\ 
+This means that $y^2 = x$ for some $y$; 
+hence $x$ is a full square and should have odd number of divisors.
+\item $\exists y \in \mathbb{Z}^{+}\;\exists z \in \mathbb{Z}^{+},\;(S(y,z,x) \wedge \neg S(y,y,y) \wedge \neg S(z,z,z))$.\\
+This means that a non-prime $x$ can be expressed as a product of two positive integers $y,z$, 
+where neither of them is $1$.)
+\item $\forall y \in \mathbb{Z}^{+}\;\forall z \in \mathbb{Z}^{+},\;(\neg S(y,z,x) \vee S(y,y,y) \vee S(z,z,z))$.\\
+We apply negation to the previous quantifier formula; all $\exists$ quantifiers turn into $\forall$; 
+formulas are changed according to De Morgan's laws.
+\end{enumerate}
 
-After all this, you can do Sample20 from the Coq lab.
+
+
+
+
+
+
+
+
 
 \end{document}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% End of RBS stuff
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%% 
-%% Copyright (C) 2011-2017 by Brian D. Beitzel <brian at beitzel.com>
-%% 
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License (LPPL), either
-%% version 1.3c of this license or (at your option) any later
-%% version.  The latest version of this license is in the file:
-%% 
-%% http://www.latex-project.org/lppl.txt
-%% 
-%% Users may freely modify these files without permission, as long as the
-%% copyright line and this statement are maintained intact.
-%% 
-%% This work is not endorsed by, affiliated with, or probably even known
-%% by, the American Psychological Association.
-%% 
-%% 
-%% This work is "maintained" (as per LPPL maintenance status) by
-%% Brian D. Beitzel.
-%% 
-%% This work consists of the file  apa6.dtx
-%% and the derived files           apa6.ins,
-%%                                 apa6.cls,
-%%                                 apa6.pdf,
-%%                                 README,
-%%                                 APAamerican.txt,
-%%                                 APAbritish.txt,
-%%                                 APAdutch.txt,
-%%                                 APAenglish.txt,
-%%                                 APAgerman.txt,
-%%                                 APAngerman.txt,
-%%                                 APAgreek.txt,
-%%                                 APAczech.txt,
-%%                                 APAturkish.txt,
-%%                                 APAendfloat.cfg,
-%%                                 apa6.ptex,
-%%                                 TeX2WordForapa6.bas,
-%%                                 Figure1.pdf,
-%%                                 shortsample.tex,
-%%                                 longsample.tex, and
-%%                                 bibliography.bib.
-%% 
-%%
-%% End of file `./samples/shortsample.tex'.

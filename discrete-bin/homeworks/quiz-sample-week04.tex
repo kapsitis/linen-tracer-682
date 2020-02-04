@@ -122,9 +122,9 @@ a period of $2020$ digits?
 without any digits "9"?
 \item The set of all irrational $x \in (0;1)$ such that $x^3$ is rational?
 \item Ordered pairs of real numbers $x_1,x_2$ such that $x_1,x_2 \in (0;1)$. 
-\item Finite sequences of real numbers of any length: $x_1,\ldots,x_n$ (where $n$ can 
-take different values from $\mathbb{Z}$)? 
-\item Infinite sequences of real numbers: $\{ x_n \}$: $x_1,x_2,x_3,\ldots$.
+\item Finite sequences of real numbers: $x_1,\ldots,x_n$, and all $x_i \in (0;1)$? (Here $n$ can 
+be any positive integer)? 
+\item Infinite sequences of real numbers from $(0;1)$: $\{ x_n \}$: $x_1,x_2,x_3,\ldots$.
 \end{enumerate}
 
 
@@ -202,12 +202,12 @@ Find these functions by listing their argument/value pairs (or establish that th
 
 \vspace{6pt}
 {\bf Question 10.}
-For the given functions, find an optimal $O(g(x))$; find
-$C$ and $n_0$ (from the definition $|f(x)| < C\cdot |g(x)|$ as long as $x > n_0$). 
+For the given functions, find an optimal $O(g(n))$; find
+$C$ and $n_0$ (from the definition $|f(n)| < C\cdot |g(n)|$ as long as $n > n_0$). 
 \begin{enumerate}[(A)]
-\item ${\displaystyle f(x) = 3x^4 + \log_2 x^8}$. 
-\item ${\displaystyle f(x) = \sum\limits_{k=1}^{n} (k^3 + k)}$.
-\item ${\displaystyle f(n) = (x + 2)\log_2 (x^2 + 1) + \log_2 (x^3 + 1)}$.
+\item ${\displaystyle f(n) = 3n^4 + \log_2 n^8}$. 
+\item ${\displaystyle f(n) = \sum\limits_{k=1}^{n} (k^3 + k)}$.
+\item ${\displaystyle f(n) = (n + 2)\log_2 (n^2 + 1) + \log_2 (n^3 + 1)}$.
 \item ${\displaystyle f(n) = n^3 + \sin n^7}$.
 \end{enumerate}
 
@@ -219,7 +219,6 @@ where an operation is an addition or a multiplication, or raising to the power 2
 Find the slowest growing $g(n)$ so that $f(n)$ is in $O(g(n))$. 
 \begin{verbatim}
 sum = 0
-t = 2
 for i in range(1,n+1):
     for j in range(1,n+1):
         sum += (i*t + j*t + 1)**2

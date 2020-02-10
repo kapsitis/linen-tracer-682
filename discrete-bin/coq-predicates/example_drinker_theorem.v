@@ -1,4 +1,4 @@
-(** #<a href="../../discrete/assignments.html">Back to Discrete Assignments</a># *)
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
 
 (** * Predicate Logic: Drinker's Theorem *)
 

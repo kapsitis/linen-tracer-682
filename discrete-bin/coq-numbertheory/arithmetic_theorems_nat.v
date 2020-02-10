@@ -1,3 +1,5 @@
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
+
 Require Import Arith.
 
 (*

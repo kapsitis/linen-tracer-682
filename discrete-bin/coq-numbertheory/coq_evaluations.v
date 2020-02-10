@@ -1,3 +1,5 @@
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
+
 (*
 Print Z.divide.
 http://gallium.inria.fr/blog/coq-eval/

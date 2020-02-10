@@ -1,5 +1,6 @@
-(** #<a href="../../discrete/assignments.html">Back to Discrete Assignments</a># 
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
 
+(**
 #<h2>Exercises from the Textbook</h2># 
 
 #<b>EXERCISE 1.3.2 SOLUTION</b>#

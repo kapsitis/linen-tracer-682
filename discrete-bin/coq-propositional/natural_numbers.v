@@ -1,4 +1,4 @@
-
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
 
 Definition is_zero (n:nat) :=
 match n with

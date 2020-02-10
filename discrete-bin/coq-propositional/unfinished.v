@@ -1,3 +1,5 @@
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
+
 (*
 #<h2>What is Coq</h2># 
 

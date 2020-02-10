@@ -1,0 +1,359 @@
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Sample Quiz 4}
+\author{Discrete Structures, Fall 2020}
+\affiliation{RBS}
+
+\leftheader{Discrete Sample Quiz 4}
+
+\abstract{%
+}
+
+%\keywords{}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\twocolumn
+{\Large Discrete Quiz 4}
+
+\vspace{10pt}
+{\bf Question 1.} Define the universe $U$ to be all possible remainders 
+when we divide by $360$: $\{ 0, 1, 2, \ldots, 359 \}$. 
+Also define $3$ subsets in this universe: 
+$$\left\{ \begin{array}{rcl}
+K_2 & = & \{ x \in U \,\mid\, x\;\text{divisible by}\;2 \},\\
+K_3 & = & \{ x \in U \,\mid\, x\;\text{divisible by}\;3 \},\\
+K_5 & = & \{ x \in U \,\mid\, x\;\text{divisible by}\;5 \},\\
+\end{array} \right.$$
+
+Denote by $\Phi$ the subset of $U$ containing all numbers
+that are mutually prime with $360$ (no common divisors greater than $1$):
+$\Phi = \{1,7,11,13,\ldots,359\}$.
+Which set equality is valid regarding the subset $\Phi$:
+
+\noindent
+{\bf (A)} $\Phi = \left( K_2 \cup K_3 \cup K_5 \right)$\\
+{\bf (B)} $\Phi = \left( K_2 \cap K_3 \cap K_5 \right)$\\
+{\bf (C)} $\Phi = \left( \overline{K_2} \cup \overline{K_3} \cup \overline{K_5} \right)$\\
+{\bf (D)} $\Phi = \left( \overline{K_2} \cap \overline{K_3} \cap \overline{K_5} \right)$\\
+{\bf (E)} $\Phi = \left( \overline{K_2 \cap K_3} \cup \overline{K_2 \cap K_5} \cup \overline{K_3 \cap K_5} \right)$
+
+
+Pick your answer as a single letter like this: {\tt G}
+
+\vspace{6pt}
+{\bf Question 2.}
+Find the size of the set you constructed in the previous example. 
+
+Write your answer as a single non-negative integer like this: {\tt 17}
+
+
+\vspace{6pt}
+{\bf Question 3.} We have the following sets:\\
+$A$ is the set of all finite sequences of even positive positive numbers (such as $(6,22,10,14,2,6)$, and so on)\\
+$B$ is the set of all infinite nondecreasing lists of even positive numbers (such as $(40 \leq 40 \leq 42 \leq 46 \leq \ldots)$, and so on)\\
+$C$ is the set of all infinite nonincreasing lists of even positive numbers (such as $(64 \geq 58 \geq 58 \geq 54 \geq \ldots)$, and so on).\\
+Clearly, all three sets are infinite. Determine their cardinalities - which list 
+of cardinalities is equal to the list  $(|A|,|B|,|C|)$?
+
+
+\noindent
+{\bf (A)} $\left( \left| \mathbb{N} \right|, \left| \mathbb{N} \right|, \left| \mathbb{N} \right| \right)$. 
+{\bf (B)} $\left( \left| \mathbb{N} \right|, \left| \mathbb{R} \right|, \left| \mathbb{N} \right| \right)$.
+{\bf (C)} $\left( \left| \mathbb{N} \right|, \left| \mathbb{N} \right|, \left| \mathbb{R} \right| \right)$.
+{\bf (D)} $\left( \left| \mathbb{N} \right|, \left| \mathbb{R} \right|, \left| \mathbb{R} \right| \right)$.
+{\bf (E)} $\left( \left| \mathbb{R} \right|, \left| \mathbb{R} \right|, \left| \mathbb{R} \right| \right)$.
+
+
+Pick your answer as a single letter like this: {\tt G}
+
+\vspace{6pt}
+{\bf Question 4.}
+Let ${\displaystyle f(x) = (x^2)\;\mathbf{mod}\;11}$. Find the set $f(S)$ if $S = \{ 0,1,2,3,4,5,6,7,8,9,10 \}$. 
+
+Write the list of elements of $f(S)$ as a sorted list like this: {\tt 1,2,3}
+
+
+
+
+\vspace{6pt}
+{\bf Question 5.}
+How many 2-element sets are there in the powerset $\mathcal{P}\left( \{ \{ \mathtt{A}, \mathtt{B} \}, \mathtt{C}, \mathtt{D}, \mathtt{E} \} \right)$? 
+
+Write your answer as a non-negative integer like this: {\tt 17}
+
+
+\vspace{6pt}
+{\bf Question 6.}
+Given two sets $A = \{ x, y \}$ and $B = \{x, \{x \}\}$, check, if statements are true or false:\\
+{\bf (A)} $x \subseteq B$.\\
+{\bf (B)} $\emptyset \in \mathcal{P}(B)$.\\
+{\bf (C)} $\{x\} \subseteq A - B$.\\
+{\bf (D)} $|\mathcal{P}(A)| = 4$.
+
+Write your answer as a sorted list of letters (which are true) like this: {\tt A,B,C,D}
+
+\vspace{6pt}
+{\bf Question 7.}
+We define functions $g\,:\, A \rightarrow A$ and $f : A \rightarrow A$, where $A \{1, 2, 3, 4\}$ by 
+listing all argument-value pairs: 
+$f = \{(1, 2), (2, 3), (3, 4), (4, 1)\}$, $g = \{(1, 3), (2, 1), (3, 4), (4, 2)\}$.
+Find the value pairs for the function $(f \circ g)^{-1}$. 
+
+Write your answer as a comma-separated list like this: {\tt (1,1),(2,2),(3,3),(4,4)}
+
+
+\vspace{6pt}
+{\bf Question 8.} Find the value of this infinite sum:
+$1 - 1/3 + 1/9 - 1/27 + 1/81 - \ldots$. 
+
+Write your answer as a simple fraction: {\tt P/Q}
+
+
+\vspace{6pt}
+{\bf Question 9.} It is known that the function $f(n) = n^3 +88n^2 +3$ is in $O(n^3)$ \textendash{}
+its asymptotic growth is as fast as the growth of the function $g(n) = n^3$. 
+$\exists C \in \mathbb{Z}^{+}\;\exists n_0 \in \mathbb{Z}^{+}\;\forall n \in \mathbb{Z}^{+},$\\
+$(n > n_0 \rightarrow |f(n)| \leq C\cdot{}|g(n)|)$
+Find the smallest positive integer $C$ that would satisfy the above definition, 
+and for your $C$ find the smallest possible $n_0$.
+
+Write your answer $(C,n_0)$ as a pair of two numbers like this: {\tt 17,17}
+
+
+\vspace{6pt}
+{\bf Question 10.}
+"Big O notation" allows to arrange functions according to the their
+growth rate for large $n$. 
+Identify, which list of functions is such that 
+the first element of this list is in the big-O of the 
+next element of that list and so on. (Intuitively, the first element
+in the list is the slowest growing function, the last element is the
+fastest growing one.)
+
+{\bf (1)} $\log (n^{10})$, {\bf (2)} $(\log n)^2$, {\bf (3)} $\log \log n$,
+{\bf (4)} $n\log n$, {\bf (5)} $\log(n!)$, {\bf (6)} $\log 2^n$.
+
+Write your answer as a comma-separated list like this: {\tt 1,2,3,4,5,6}
+
+
+\vspace{6pt}
+{\bf Question 11.} Digits of all rational numbers $P/Q$ in $(0;1)$
+are eventually periodic: they infinitely repeat some group of digits (the period)
+starting from some place. For example,
+the fraction $11/205 = 0.05(36585)$ has period of 5 digits and a pre-period "05"
+of just two digits.
+Find the predicate logic expression that tells
+that sequence of digits $d(1),d(2),d(3),\ldots$ is eventually periodic (it may have
+pre-period of any length, including length zero).
+
+\noindent
+{\bf (A)} $\exists N \in \mathbb{Z}^{+}\;\exists T \in \mathbb{Z}^{+}\;\forall n \in \mathbb{Z}^{+},$\\
+$\left(n \geq N - 1 \rightarrow d(n) = d(n+T)\right)$.\\
+{\bf (B)} $\exists N \in \mathbb{Z}^{+}\;\forall n \in \mathbb{Z}^{+}\;\exists T \in \mathbb{Z}^{+},$\\
+$\left(n \geq N - 1 \rightarrow d(n) = d(n+T)\right)$.\\
+{\bf (C)} $\forall n \in \mathbb{Z}^{+}\;\exists N \in \mathbb{Z}^{+}\;\exists T \in \mathbb{Z}^{+},$\\
+$\left(n \geq N - 1 \rightarrow d(n) = d(n+T)\right)$.\\
+{\bf (D)} $\forall n \in \mathbb{Z}^{+}\;\forall N \in \mathbb{Z}^{+}\;\exists T \in \mathbb{Z}^{+},$\\
+$\left(n \geq N - 1 \rightarrow d(n) = d(n+T)\right)$. 
+
+Pick your answer as a single letter like this: {\tt G}
+
+
+\newpage
+
+\section{Answers}
+
+\vspace{6pt}
+{\bf Question 1.} Answer {\bf (D)}.\\
+Any number that is mutual prime with $360 = 2^3\cdot{}3^2\cdot{}5$
+is not divisible by any of the primes $2,3,5$. And also vice versa. 
+This set is expressed as intersection of the complements:\\
+$\Phi = \left( \overline{K_2} \cap \overline{K_3} \cap \overline{K_5} \right)$
+
+
+\vspace{6pt}
+{\bf Question 2.} Answer: {\tt 96}.\\
+$${\displaystyle |\Phi| = 360 \cdot \left(1 - \frac{1}{2}\right) \cdot \left(1 - \frac{1}{3}\right) \cdot \left(1 - \frac{1}{5}\right) =}$$
+$${\displaystyle  = 360 \cdot \frac{1}{2} \cdot \frac{2}{3} \cdot \frac{4}{5}  = 96}.$$
+In the above formula we start with all $360$ elements; then we throw
+out one half (all that are divisible by 2); then from the remaining ones 
+we throw out one third (all that are divisible by 3); finally from the remaining numbers we throw
+out one fifth (all that are divisible by 5). Since divisibility by $2$ does not 
+affect divisibility by $3$ and $5$ (they are independent), 
+all the ratios can be multiplied.
+
+Another solution: Since we know the sizes of each 
+set of numbers divisible by $2,3,5$:
+$$|K_2| = 180,\; |K_3| = 120,\; |K_5| = 72.$$
+We can express their union by {\em inclusion-exclusion principle}:
+$$|K_2 \cup K_3 \cup K_5| \;=\; |K_2| \;+\; |K_3| \;+\; |K_5| \;-$$
+$$-\;|K_2 \cap K_3|\;-\;|K_2 \cap K_5|\;-\;|K_3 \cap K_5| \;+\; |K_2 \cap K_3 \cap K_5|  \;=$$
+$$=\; 180 + 120 + 72 - 60 - 36 - 24 +12 = 264.$$
+We then apply De Morgan's law to find the count of all elements that are {\em outside}
+that union of $K_2 \cup K_3 \cup K_5$: 
+$$ \left| \overline{K_2} \cap \overline{K_3} \cap \overline{K_5} \right| = 
+\left| \overline{K_2 \cup K_3 \cup K_5} \right| =360 - 264 =  96.$$ 
+
+\vspace{6pt}
+{\bf Question 3.} Answer: {\tt B}.
+\begin{itemize} 
+\item $A$ (the set of all finite sequences of even natural numbers can be enumerated
+with numbers from $\mathbb{N}$). You can encode 
+every such sequence in a finite alphabet of $13$ symbols, 
+using just digits, commas and parentheses. For example, {\tt (6, 22, 10, 14, 2, 6)}. 
+The shortest encoding is {\tt (1)} \textendash it consists of just three symbols: 
+two parentheses and a digit. There can be only finite number of such lists of 
+length $3$; we sort the all lexicographically (i.e. in some alphabetical order), and
+assign them numbers.\\
+After that we enumerate all lists writeable with 4 symbols (sorted lexicographically) 
+and so on. Eventually all the sequences will be sorted.
+\item $B$ (the set of all infinite nondecreasing sequences of even numbers) 
+has cardinality $\mathbb{R}$. You can repeat the diagonalization argument: 
+Assume from the contrary that the elements from $B$ can be enumerated: we get
+infinitely many infinite sequences $b_1,b_2,\ldots$.  
+Then take the first element from $b_1$ (and pick some even number that is bigger than that); 
+then take the second element from $b_2$ (and pick some even number that is bigger than 
+that; plus it is bigger than all the previously picked numbers), and so on.\\
+You can also encode any subset $A \subseteq \mathbb{N}$ as such sequence (simply arrange all 
+the elements in increasing order and multiply them by $2$ to get even numbers). 
+We get that $B$ has at least as many elements as $\mathcal{P}(\mathbb{N})$. 
+\item $C$ (the set of all nonincreasing infinite sequences can be 
+enumerated). Since the sequence is non-increasing, it can have only finitely many 
+places where it actually decreases; since natural numbers cannot decrease infinitely. 
+We can encode all the ``constant runs'' of the sequence as pairs:\\
+$$(64,58,58,54,50,50,50,50,2,2,\ldots) \rightarrow $$
+$$\rightarrow \mathtt{((64,1),(58,2),(54,1),(50,4),(2,\infty))}.$$
+As we saw before, all the finite sequences that are encoded in an alfabet
+of $14$ symbols (10 digits, 2 parentheses, commas and infinity) can be enumerated.
+\end{itemize}
+
+
+\vspace{6pt}
+{\bf Question 4.} Answer: {\tt 0,1,3,4,5,9}.\\
+We can square each number, compute the remainder and sort the 
+results (and eliminate duplicates).
+
+
+\vspace{6pt}
+{\bf Question 5.} Answer: {\tt 6}.\\
+The set $\{ \{ \mathtt{A}, \mathtt{B} \}, \mathtt{C}, \mathtt{D}, \mathtt{E} \}$
+has $4$ elements ({\tt A}, {\tt B} are always glued together). 
+There are $6$ ways to select two out of four elements. 
+(Can be computed as a binomial coefficient $C_4^2 = \frac{4!}{2!2!}$ or simply 
+by listing all the $6$ pairs. 
+
+
+\vspace{6pt}
+{\bf Question 6.} Answer: {\tt B,D}.\\
+$x$ cannot be a subset of $A$ (since it is not a set itself). 
+$\{ x \}$ is not a subset of $A - B = \{ y \}$.
+
+\vspace{6pt}
+{\bf Question 7.}\\ Answer: {\tt (1,3),(2,2),(3,4),(4,1)}.\\
+We first compute $f \circ g$ (to get $(f \circ g)(x) = f(g(x))$
+we first apply $g$, then $f$): 
+$$f \circ g = \{(1,4),(2,2),(3,1),(4,3)\}.$$
+The inverse happens, if we switch the order in all these pairs
+($4$ maps back to $1$ etc.)\\
+$$(f \circ g)^{-1} = \{(1,3),(2,2),(3,4),(4,1)\}.$$
+
+
+\vspace{6pt}
+{\bf Question 8.} Answer: {\tt 3/4}.\\
+The sum of the infinite geometrical progression is $b_1/(1 - q)$. 
+In our case:
+$$\frac{1}{1 - (-1/3)} = \frac{1}{4/3} = \frac{3}{4}.$$
+
+\vspace{6pt}
+{\bf Question 9.} Answer: {\tt 2,88}. 
+Clearly, $f(n) = |n^3 +88n^2 +3|$ cannot be smaller than $C\cdot{}|n^3|$, 
+if $C=1$, because $88n^2$ is always positive and makes $f(n)$ larger
+than simply $n^3$.\\
+If we take $C = 2$, then the inequality starts to hold for all $n>88$. 
+It is possible to prove that for such $n$: 
+$$n^3 +88n^2 +3 = n^2(n + 88) + 3 =$$
+$$ = n^2(n+n) + n^2(88 -n) + 3  = 2n^3 + n^2(88-n) + 3 \leq 2n^3.$$
+The last inequality is true, since $n^2(88-n) + 3 < 0$ for any 
+$n > 88$.
+
+
+\vspace{6pt}
+{\bf Question 10.} Answer: {\tt 3,1,2,6,4,5} (or {\tt 3,1,2,6,5,4}).\\
+Logarithm of a logarithm is a very slowly growing function; 
+$\log n^{10}$ is just equal to $10$ times $\log n$. 
+$(\log n)^2 = \log^2 n$ is slightly faster than a logarithm.\\
+Finally $\log 2^n$ is simply $n$; but both $\log (n!)$ and
+$n \log n$ grow slightly faster than $n$; they are "Big-O" of each other:
+$$n \log n \;\text{is in}\;O(\log n!);$$
+$$\log n! \;\text{is in}\;O(n \log n).$$
+It does not matter, in which order we list them. 
+
+To verify all these claims, you need to prove various limits: 
+$$\lim_{n \rightarrow \infty} \frac{\log\log n}{\log n} = 0,$$
+$$\lim_{n \rightarrow \infty} \frac{\log n}{(\log n)^2} = 0,$$
+and so on. Most of these limits are easy to find (L'Hospital's Rule and so on). 
+With $\log n!$ you might need to use integrals to estimate 
+the sum of $\log 1 + \log 2 + \ldots + \log n$. 
+
+{\em Note.} Unless noted otherwise, all logarithms in our course are base $2$. 
+
+
+
+\vspace{6pt}
+{\bf Question 11.} Answer: {\tt A}. 
+Clearly the $N$ and $T$ should not depend on $n$; so they are the first quantifiers.\\
+{\bf (B)} describes a sequence of digits where some digit repeats itself infinitely 
+often (which is true for any sequence of digits).\\
+{\bf (C)} describes the set of all sequences; one can always pick $N$ that is larger than $n$, 
+then the condition is trivially true.\\ 
+{\bf (D)} describes a sequence where each digit appears infinitely often. 
+
+
+
+\end{document}
+

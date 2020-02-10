@@ -1,4 +1,4 @@
-(** #<a href="../../discrete/coq.html">Back to Discrete Assignments</a># *)
+(** #<a href="../../discrete/coq.html">Back to Coq Main Page</a>#  *)
 
 (** #<b>Abstract:</b># Our first Lab Exercise contains
 a few samples, which require so called 'classical axioms'. 

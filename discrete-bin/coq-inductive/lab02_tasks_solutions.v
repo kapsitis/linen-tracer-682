@@ -30,7 +30,6 @@ Available imports are listed here:
 #</ul>#
 *)
 
-
 Require Import Nat.
 Require Import PeanoNat.
 
@@ -41,58 +40,143 @@ Require Import BinInt.
 (** * Lemmas 1-5 on Modular Arithmetic *)
 
 (** ** Do not modify this line: sample2_1 *)
-(** See Example1 from (Rosen2019, p.87): #<br/>#
-If $n$ is an odd integer, then $n^2$ is odd. *)
 
 Open Scope Z_scope.
 
 Definition Even a := exists b, a = 2*b.
 Definition Odd a := exists b, a = 2*b+1.
 
-
+(** See Example1 from (Rosen2019, p.87): #<br/>#
+If $n$ is an odd integer, then $n^2$ is odd. *)
 Lemma sample2_1: forall n: Z, (Odd n) -> (Odd (n^2)).
 Proof. 
-  (* FILL IN HERE *) Admitted.
+  intros n H.
+  unfold Odd in H.
+  destruct H as [b H2].
+  unfold Odd.
+  rewrite H2.
+  exists (2*b*b + 2*b).
+  ring.
+Qed.
 
-(** #<b>Alternative exercise:</b>#
-If you wish, you can prove a similar lemma for natural 
+Close Scope Z_scope.
+
+
+(** #<b>Optional exercise:</b># 
+If you wish, you can also prove a similar lemma for natural 
 numbers (non-negative integers 0,1,2,etc.). 
 In PeanoNat the definition of 'odd' is by induction 
 rather than algebraic. So the proof would be different.
 The lemma in the natural set:
 <<
-  Lemma sample2_1_natural: forall n: nat, 
-      (odd n)=true -> (odd (n^2))=true.
+  Lemma sample2_1_natural: forall n: nat, (odd n)=true -> (odd (n^2))=true.
   Proof.
     Admitted.
 >>
-The proof over naturals would likely be more interesting.
+The proof for #<tt>sample2_1_natural</tt># might be more interesting.
 *)
 
-Close Scope Z_scope.
+
+
+
+
 
 (** ** Do not modify this line: sample2_2 *)
 
 (** See Example12 from (Rosen2019, p.91): #<br/>#
 If $3n+2$ is odd, then $n$ is odd. *)
 
+Require Import Classical_Prop.
+
 Open Scope Z_scope.
+
+Check Z.pos.
+Print positive.
+
+Print Nat.Even.
+
+
+
+
+Lemma sample2_2_helper: forall n: Z, ~(Odd n) -> Even n. 
+Proof. 
+  intros n H.
+  unfold Odd in H.
+  unfold Even.
+  unfold not in H.
+Admitted.
+
+
 
 Lemma sample2_2: forall n: Z, (Odd (3*n+2)) -> (Odd n).
 Proof. 
-  (* FILL IN HERE *) Admitted.
+  intros n H.
+  destruct (classic (Odd n)) as [OddN | NotOddN].
+  exact OddN.
+  assert (Even n).
+  unfold Odd in NotOddN.
+Admitted.
 
-(** #<b>Alternative exercise:</b>#
+Close Scope Z_scope.
+
+(**
 A very similar lemma in the natural set:
 <<
-  Lemma sample2_2_natural: forall n: nat, 
-      (odd (3*n+2))=true -> (odd n)=true.
+  Lemma sample2_2_natural: forall n: nat, (odd (3*n+2))=true -> (odd n)=true.
 Proof.
   Admitted.
 >>
 **)
 
-Close Scope Z_scope.
+
+
+Compute (17 mod 3).
+
+(*
+This import breaks sample2_5
+Require Import Even.
+*)
+
+Print odd.
+
+(*
+Inductive even : nat -> Prop :=
+  even0 : even 0 
+  | evenS : forall x : nat, even x -> even (S (S x))
+*)
+
+(** See mutually inductive types
+http://adam.chlipala.net/cpdt/html/InductiveTypes.html
+*)
+
+(*
+Inductive even : nat -> Prop :=
+  even_O : even 0 
+  | even_S : forall n : nat, odd n -> even (S n)
+with odd : nat -> Prop := 
+  odd_S : forall n : nat, even n -> odd (S n)
+*)
+
+(*
+Lemma even_mult : forall x, even x -> exists y, x = 2*y.
+Proof. 
+  intros x H.
+  elim H.
+  exists 0.
+  ring.
+  
+  intros x0 Hx0even IHx0.
+  destruct IHx0 as [y Heq].
+  rewrite Heq.
+  exists (S y).
+  ring.
+Qed.
+*)
+
+
+Print even.
+
+
 
 (** ** Do not modify this line: sample2_3 *)
 
@@ -101,7 +185,9 @@ Show that if $n$ is an integer, then $n^2$ is congruent to 0 or 1 (mod 4).
 *)
 Lemma sample2_3: forall n: nat, (n^2 mod 4 = 0) \/ (n^2 mod 4 = 1).
 Proof.
-  (* FILL IN HERE *) Admitted.
+
+
+
 
 
 (** ** Do not modify this line: sample2_4 *)
@@ -126,22 +212,18 @@ $n^2$ is congruent to 1 (mod 8).
 *)
 Lemma sample2_5: forall n: nat, (odd n) = true -> (n^2 mod 8 = 1).
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros n H.
+  unfold pow.
+  unfold modulo.
+Admitted.
+
+
+
 
 
 
 
 (** * Lemmas 6-10 on Mathematical Induction *)
-
-(** Define divisibility relation between natural numbers; 
-it is a predicate with two arguments, can take values
-True or False. The second line introduces a shorthand
-notation for divisibility using vertical bar (pipe symbol). 
-You can always 'unfold' such notation. *)
-
-Definition divide x y := exists z, y=z*x.
-Notation "( x | y )" := (divide x y) (at level 0) : nat_scope.
-
 
 (** ** Do not modify this line: sample2_6 *)
 
@@ -158,6 +240,23 @@ Prove that for each positive integer 'n' the following equality holds:#<br/>#
 Lemma sample2_6: forall n, SeqA n = n * (n + 1)^2.
 Proof.
   (* FILL IN HERE *) Admitted.
+
+
+
+(*
+Fixpoint log2_iter k p q r :=
+  match k with
+    | O => p
+    | S k' => match r with
+                | O => log2_iter k' (S p) (S q) q
+                | S r' => log2_iter k' p (S q) r'
+              end
+  end.
+
+Definition log2 n := log2_iter (pred n) 0 1 0.
+
+Compute (log2 15).
+*)
 
 
 
@@ -183,10 +282,12 @@ Proof.
   (* FILL IN HERE *) Admitted.
 
 
+
+
 (** ** Do not modify this line: sample2_8 *)
 
-
-
+Definition divide x y := exists z, y=z*x.
+Notation "( x | y )" := (divide x y) (at level 0) : nat_scope.
 
 Definition SeqD (n: nat) := 7^n + 3^(n+1).
 
@@ -257,45 +358,26 @@ Notation "[ ]" := nil.
 
 Notation "[ x ; .. ; y ]" := (cons x .. (cons y nil) ..).
 
-(** The function repeats numbers. For example,
-this should return the list #<tt>[5;5;5;5;5;5;5]</tt>#:
-<<
-  Compute (repeat 5 7).
->>
-*)
+(** The function repeats numbers *)
 Fixpoint repeat (n count : nat) : natlist :=
   match count with
   | O => nil
   | S count' => n :: (repeat n count')
   end.
 
-
-(** The function returns the length of the list. For example, this should return 5:
-<<
-  Compute (length [1;2;4;8;16]).
->> 
-*)
+(** The function returns the length of the list *)
 Fixpoint length (L:natlist) : nat :=
   match L with
   | nil => O
   | h :: t => S (length t)
   end.
 
-
-
-
-(** The function appends one list at the end of another. For example, 
-this should return #<tt>[1;2;4;8;16;3;5]</tt>#:
-<<
-  Compute (app [1;2;4;8;16] [3;5]).
->>
-*)
+(** The function appends one list at the end of another *)
 Fixpoint app (L1 L2 : natlist) : natlist :=
   match L1 with
   | nil => L2
   | h :: t => h :: (app t L2)
   end.
-
 
 (** Appending lists will be expressed as an infix operator #<tt>++</tt># *)
 Notation "x ++ y" := (app x y)
@@ -449,30 +531,15 @@ Proof.
 
 
 
-
-
-
-(** * Lemmas 16-20 are Number Theory in Z *)
-
 (** The remaining 5 proofs are about the integer divisibility.
 See #<a href='../coq-numbertheory/CSEnotes_numbertheory.html'>Integer Arithmetic #
 #(Buffalo CSE191, p.110-137)</a>#
 *)
 
-Require Import Znumtheory.
 
 (** A warm-up example: Prove that (Zis_gcd 6 15 (-3)) is True. This means
 that (-3) satisfies all properties of a GCD. It divides both 6 and 15, and
 any other divisor of 6 and 15 is also a divisor of (-3). *)
-
-(** In the scope of 'nat' (not Z), the GCD always equals 3, not (-3):
-<<
-  Compute (gcd 6%nat 15%nat).
->>
-The above line should return #<tt>3%nat</tt>#, so it cannot be (-3). 
-In the arithmetic of Z (all integers), there are two feasible values
-of GCD. GCD(6,15) can be both '+3' and '-3'. 
-*)
 
 Example gcd_6_15A: (Zis_gcd 6 15 (-3)).
 Proof.
@@ -491,13 +558,30 @@ Proof.
   }
 Qed.
 
+(** In the scope of 'nat' (not Z), the GCD always equals 3, not (-3):
+<<
+Compute (gcd 6%nat 15%nat).
+>>
+The above line should return #<tt>3%nat</tt>#, so it cannot be (-3). 
+In the arithmetic of Z (all integers), there are two feasible values
+of GCD. GCD(6,15) can be both '+3' and '-3'. 
+*)
+
+
+
+
+
+
+
+
+
 
 
 (** ** Do not modify this line: sample2_16 *)
 
 (** See #<a href='https://che.gg/2umW71y'>Properties of GCD</a>.<br/>#
-Note that Item (a) from that list is already solved as #<tt>Lemma div_a_perp_b</tt># in
-#<a href='https://cse.buffalo.edu/~knepley/classes/cse191/ClassNotes.pdf'>(Knepley2019, p.135)</a>.<br/>#
+Note that Item (a) from that page is already solved in
+#<a href='https://cse.buffalo.edu/~knepley/classes/cse191/ClassNotes.pdf'>(Knepley2019, p.133)</a>.<br/>#
 #<b>Lemma:</b> If gcd(a,b)=1 and c divides a, then gcd(b,c)=1.#
 *)
 Lemma sample2_16: forall a b c: Z, (Zis_gcd a b 1) -> (c | a) -> (Zis_gcd b c 1).
@@ -539,6 +623,9 @@ Lemma sample2_20: forall a b: Z,
   (Zis_gcd a b 1) -> (Zis_gcd (a^2) (b^2) 1).
 Proof.
   (* FILL IN HERE *) Admitted.
+
+
+
 
 
 

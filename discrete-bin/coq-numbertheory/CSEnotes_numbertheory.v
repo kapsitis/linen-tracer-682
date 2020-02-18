@@ -54,6 +54,8 @@ Qed.
 
 Require Import Znumtheory.
 Print Zis_gcd.
+Print Zis_gcd_intro.
+
 
 (*
 See 

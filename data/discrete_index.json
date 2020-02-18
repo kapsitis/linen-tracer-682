@@ -282,7 +282,13 @@
                     "https://youtu.be/XnshTUaIpc8",
                     "https://youtu.be/Z-si4GE_n9k"
                 ]
-            },
+            }
+        ],
+        "title": "2020-02-03 to 2020-02-07"
+    },
+    {
+        "itemNum": 6,
+        "links": [
             {
                 "reading": "Rosen2019, pp.260-268",
                 "subsection": "4.2",
@@ -316,13 +322,7 @@
                     "https://youtu.be/Dhpp5yTzNY8",
                     "https://youtu.be/UDrU6Aw_gEY"
                 ]
-            }
-        ],
-        "title": "2020-02-03 to 2020-02-07"
-    },
-    {
-        "itemNum": 6,
-        "links": [
+            },
             {
                 "reading": "Rosen2019, pp.285-293",
                 "subsection": "4.4",
@@ -336,7 +336,13 @@
                     "https://youtu.be/oXRT_TNoBaM",
                     "https://youtu.be/Ag3wFeScdP4"
                 ]
-            },
+            }
+        ],
+        "title": "2020-02-10 to 2020-02-14"
+    },
+    {
+        "itemNum": 7,
+        "links": [
             {
                 "reading": "Rosen2019, pp.331-350",
                 "subsection": "5.1",
@@ -369,13 +375,7 @@
                 "video": [
                     "https://youtu.be/_EVvOzBI05Q"
                 ]
-            }
-        ],
-        "title": "2020-02-10 to 2020-02-14"
-    },
-    {
-        "itemNum": 7,
-        "links": [
+            },
             {
                 "reading": "Rosen2019, pp.381-398",
                 "subsection": "5.4",

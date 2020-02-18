@@ -139,6 +139,9 @@ Proof.
   exact H0.
 Qed.
 
+Print even.
+
+
 (** Every even number can be expressed as 2*y. *)
 Lemma even_mult : forall x, even x -> exists y, x = 2*y.
 Proof. 

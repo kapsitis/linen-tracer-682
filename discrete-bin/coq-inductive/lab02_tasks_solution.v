@@ -1451,19 +1451,35 @@ Qed.
 This lemma tells that list concatenation is associative; 
 one can regroup as long as the order of lists does not change.
 *)
+
 Lemma sample2_13: forall L1 L2 L3 L4 : natlist,
   L1 ++ (L2 ++ (L3 ++ L4)) = ((L1 ++ L2) ++ L3) ++ L4.
 Proof.
   intros L1 L2 L3 L4.
-  pose (concat_assoc L1 L2 L3) as H1.
+  pose concat_assoc as H1.
   rewrite H1.
-  pose (concat_assoc L1 (L2 ++ L3) L4) as H2.
-  rewrite H2.
-  pose (concat_assoc L2 L3 L4) as H3.
-  rewrite H3.
+  rewrite H1.
   reflexivity.
 Qed.
 
+
+(** A longer proof can use associativity with special substitutions, 
+but this is longer. 
+<<
+  Lemma sample2_13: forall L1 L2 L3 L4 : natlist,
+    L1 ++ (L2 ++ (L3 ++ L4)) = ((L1 ++ L2) ++ L3) ++ L4.
+  Proof.
+    intros L1 L2 L3 L4.
+    pose (concat_assoc L1 L2 L3) as H1.
+    rewrite H1.
+    pose (concat_assoc L1 (L2 ++ L3) L4) as H2.
+    rewrite H2.
+    pose (concat_assoc L2 L3 L4) as H3.
+    rewrite H3.
+    reflexivity.
+  Qed.
+>>
+*)
 
 
 

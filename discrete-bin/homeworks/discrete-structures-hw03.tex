@@ -1,0 +1,155 @@
+\documentclass[jou]{apa6}
+%\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.0in
+
+\usepackage{xcolor}
+
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+%16.3-6
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+
+\title{Homework 3}
+\author{Discrete Structures}
+\affiliation{RBS}
+
+\begin{document}
+\maketitle
+\noindent
+Submit a PDF to the "Homework 3" folder by 2020-03-16.
+
+
+
+
+%\begin{document}
+
+%\thispagestyle{empty}
+
+%\twocolumn
+%{\Large Discrete Structures: Homework 3}
+
+%\noindent
+%{\bf Due Date:} March 16, 2020. Submit PDF file to the "Homework 3" folder in ORTUS.
+
+\vspace{4pt}
+{\bf Problem 1 (Rosen2019, \#33, p.444)} \textendash{} {\em After 6.4.}\\
+Prove that if $n$ is a positive integer, then 
+${\displaystyle \sum\limits_{k=1}^n k \cdot{} {n \choose k} = n \cdot{} 2^{n-1}}$. 
+
+\vspace{8pt}
+{\bf Problem 2 (Rosen2019, \#48, p.456)} \textendash{} {\em After 6.5.}\\
+A shelf holds $12$ books in a row. How many ways are there to choose five books so that no two adjacent books 
+are chosen?
+
+\vspace{8pt}
+{\bf Problem 3 (Rosen2019, \#16, p.464)} \textendash{} {\em After Ch.6.}\\
+Show that in any set of $n+1$ positive integers not exceeding $2n$ there must be two 
+that are relatively prime.
+
+\vspace{8pt}
+{\bf Problem 4 (Rosen2019, \#33, p.465)} \textendash{} {\em After Ch.6.}\\
+How many bit strings of length $n$, where $n \geq 4$, contain exactly two 
+occurrences of {\tt 01}.
+
+\vspace{8pt}
+{\bf Problem 5 (Miller2014, Exercise1.18 \url{https://bit.ly/2TfZErQ})} {\em The Theory and Applications of 
+Benford's Law. Steven J. Miller (editor).}\\
+Compute the values of this function $f(x) = \left| x^2 \cdot \tan x \right|$ for 
+all integers $x \in \{ 1,\ldots,100000 \}$. Record the very first digit that appears in every value $f(x)$.\\
+{\bf (A)} What is the ratio of the digit {\tt 1} among these $10^5$ digits (empirical probability)?\\
+{\bf (B)} What is the theoretical ratio of the first digit {\tt 1} predicted by the Benford's law? 
+
+{\em Note.} Benford's Law is routinely checked by people who falsify the results of elections 
+or otherwise fabricate large amounts of data. 
+Generating digits with the uniform random distribution (where each 
+digit has the same chance to appear) would create data sets that look highly artificial
+when statistically examined.
+
+\vspace{8pt}
+{\bf Problem 6 (Rosen2019, \#23, p.503)} \textendash{} {\em After 7.3.}\\
+Suppose that $E_1$ and $E_2$ are the events that an incoming mail message contains the words
+$w_1$ and $w_2$, respectively. 
+Assuming that $E_1$ and $E_2$ are independent events and that $(E_1 \,\mid\, S)$ 
+and $(E_2 \,\mid\, S)$ are independent events, 
+where $S$ is the event that an incoming message is spam, and that we have 
+no prior knowledge regarding whether or not the message is spam, show that
+
+
+$$p\left( S \,\mid\, E_1 \cap E_2 \right) =$$
+$$= \frac{p(E_1 \,\mid\, S) \cdot p(E_2 \,\mid\, S)}{P(E_1 \,\mid\, S) \cdot P(E_2 \,\mid\, S)
++ P(E_1 \,\mid\, \overline{S} ) \cdot P(E_2 \,\mid\, \overline{S} )}.$$
+
+\vspace{8pt}
+{\bf Problem 7 (Rosen2019, \#39, p.519)} \textendash{} {\em After 7.4.}\\
+Suppose that the number of aluminum cans recycled in a day at a recycling center
+is a random variable with an expected value of $50000$ and a variance of $10000$.\\
+{\bf (A)} Use Markov's inequality (Exercise 37) to find an upper bound 
+on the probability that the center will recycle more than $55000$ cans on a particular day.\\
+{\bf (B)} Use Chebyshev's inequality to provide a lower bound on the probability that the center
+will recycle $40000$ to $60000$ cans on a certain day.
+
+\vspace{8pt}
+{\bf Problem 8 (Rosen2019, \#15, p.522)} \textendash{} {\em After Ch.7.}\\
+Suppose that $m$ and $n$ are positive integers. What is the probability that 
+a randomly chosen positive integer less than $n$ is not divisible by either $p$ or $q$? 
+
+\vspace{8pt}
+{\bf Problem 9 (Rosen2019, \#22, p.523)} \textendash{} {\em After Ch.7.}\\
+Suppose that $n$ balls are tossed into $b$ bins so that each 
+ball is equally likely to fall into any of the bins and that the tosses are independent.\\
+{\bf (A)} Find the probability that a particular ball lands in a specified bin.\\
+{\bf (B)} What is the expected number of balls that land in a particular bin.\\
+{\bf (C)} What is the expected number of balls tossed until a particular bin contains a ball?\\
+{\bf (D)} What is the expected number of balls tossed until all bins contain a ball?\\
+{\em Hint:} Let $X_i$ denote the number of tosses required to have a ball land in 
+the $i$th bin once $i-1$ bins contain a ball. Find $E(X_i)$ and use the linearity of 
+expectations.
+
+\vspace{8pt}
+{\bf Problem 10 (Rosen2019, \#30, p.524)} \textendash{} {\em After Ch.7.}\\
+Use Chebyshev's inequality to show that the probability that more than $10$ people get the 
+correct hat back when a hatcheck person returns hats at random does not exceed $1/100$
+no matter how many people check their hats.\\
+{\em Hint.} See Example 6, (Rosen2019, p.507) about the random hat assigning experiment 
+and Exercise 43, (Rosen2019, p.520) about the fixed elements in a random permutation.
+
+
+
+\end{document}
+
+
+

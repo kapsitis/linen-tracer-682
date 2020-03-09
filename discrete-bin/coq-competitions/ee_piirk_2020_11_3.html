@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>ee_piirk_2020_11_3</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library ee_piirk_2020_11_3</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/coq.html">Back to Coq Main Page</a>  
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">EE.PIIRK.2020.11.3</h1>
+
+<div class="paragraph"> </div>
+
+ <b>Problem:</b> Do there exist two 2-digit positive integers
+such that their sum and their product 
+can be obtained from each other by reversing the order of
+their digits?
+
+<div class="paragraph"> </div>
+
+ See <a href='https://bit.ly/32OWgHH'>Piirkonnavoor 2020</a>, 
+page p.10, p.22.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Nat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">PeanoNat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinInt</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinIntDef</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <span class="id" title="var">BinNums</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinPos</span> <span class="id" title="var">BinNat</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Datatypes</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Decimal</span> <span class="id" title="var">DecimalFacts</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">DecimalNat</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Add</span> <span class="id" title="var">LoadPath</span> "/home/kalvis/workspace-osx/coq/theory/Init".<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+https://blog.zhen-zhang.com/2016/09/19/coq-dev.html
+Require Import Decimal.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">a</span>:<span class="id" title="var">nat</span> := 3%<span class="id" title="var">nat</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">b</span>:<span class="id" title="var">uint</span> := (<span class="id" title="var">D8</span> <span class="id" title="var">Nil</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">hd</span> <span class="id" title="var">d</span> :=<br/>
+&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">d</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;| <span class="id" title="var">Nil</span> =&gt; 0<br/>
+&nbsp;| <span class="id" title="var">D0</span> <span class="id" title="var">_</span> =&gt; 0<br/>
+&nbsp;| <span class="id" title="var">D1</span> <span class="id" title="var">_</span> =&gt; 1<br/>
+&nbsp;| <span class="id" title="var">D2</span> <span class="id" title="var">_</span> =&gt; 2<br/>
+&nbsp;| <span class="id" title="var">D3</span> <span class="id" title="var">_</span> =&gt; 3<br/>
+&nbsp;| <span class="id" title="var">D4</span> <span class="id" title="var">_</span> =&gt; 4<br/>
+&nbsp;| <span class="id" title="var">D5</span> <span class="id" title="var">_</span> =&gt; 5<br/>
+&nbsp;| <span class="id" title="var">D6</span> <span class="id" title="var">_</span> =&gt; 6<br/>
+&nbsp;| <span class="id" title="var">D7</span> <span class="id" title="var">_</span> =&gt; 7<br/>
+&nbsp;| <span class="id" title="var">D8</span> <span class="id" title="var">_</span> =&gt; 8<br/>
+&nbsp;| <span class="id" title="var">D9</span> <span class="id" title="var">_</span> =&gt; 9<br/>
+<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">tl</span> <span class="id" title="var">d</span> :=<br/>
+&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">d</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;| <span class="id" title="var">Nil</span> =&gt; <span class="id" title="var">d</span><br/>
+&nbsp;| <span class="id" title="var">D0</span> <span class="id" title="var">d</span> | <span class="id" title="var">D1</span> <span class="id" title="var">d</span> | <span class="id" title="var">D2</span> <span class="id" title="var">d</span> | <span class="id" title="var">D3</span> <span class="id" title="var">d</span> | <span class="id" title="var">D4</span> <span class="id" title="var">d</span> | <span class="id" title="var">D5</span> <span class="id" title="var">d</span> | <span class="id" title="var">D6</span> <span class="id" title="var">d</span> | <span class="id" title="var">D7</span> <span class="id" title="var">d</span> | <span class="id" title="var">D8</span> <span class="id" title="var">d</span> | <span class="id" title="var">D9</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">d</span><br/>
+<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Number of digits 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">usize</span> (<span class="id" title="var">d</span>:<span class="id" title="var">uint</span>) : <span class="id" title="var">nat</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">d</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">Nil</span> =&gt; 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D0</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D1</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D2</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D3</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D4</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D5</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D6</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D7</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D8</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D9</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">usize</span> <span class="id" title="var">d</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">append</span> (<span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">uint</span>) : <span class="id" title="var">uint</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">Nil</span> =&gt; <span class="id" title="var">L2</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">D0</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D0</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D1</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D1</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D2</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D2</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D3</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D3</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D4</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D4</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D5</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D5</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D6</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D6</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D7</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D7</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D8</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D8</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D9</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">D9</span> (<span class="id" title="var">append</span> <span class="id" title="var">d</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">append</span> 200%<span class="id" title="var">uint</span> 2002%<span class="id" title="var">uint</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;x ++ y" := (<span class="id" title="var">append</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60).<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">rev</span> (<span class="id" title="var">d</span>:<span class="id" title="var">uint</span>) : <span class="id" title="var">uint</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">d</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">Nil</span> =&gt; <span class="id" title="var">Nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">D0</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D0</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D1</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D1</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D2</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D2</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D3</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D3</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D4</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D4</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D5</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D5</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D6</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D6</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D7</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D7</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D8</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D8</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">D9</span> <span class="id" title="var">d</span> =&gt; <span class="id" title="var">append</span> (<span class="id" title="var">rev</span> <span class="id" title="var">d</span>) (<span class="id" title="var">D9</span> <span class="id" title="var">Nil</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">rev</span> 1234%<span class="id" title="var">uint</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">usize</span> (<span class="id" title="var">to_uint</span> 2002)).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">of_uint</span> (<span class="id" title="var">D8</span> (<span class="id" title="var">D9</span> <span class="id" title="var">Nil</span>))).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">of_uint</span> (<span class="id" title="var">Nil</span>)).<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">to_uint</span> 2020%<span class="id" title="var">nat</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2</span>: <span class="id" title="tactic">exists</span> <span class="id" title="var">a</span>:<span class="id" title="var">uint</span>, <span class="id" title="var">usize</span> <span class="id" title="var">a</span> = 2 /\ <span class="id" title="var">rev</span> <span class="id" title="var">a</span> = <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> 22%<span class="id" title="var">uint</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">ee_piirk_2020_11_3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>, <br/>
+&nbsp;&nbsp;<span class="id" title="var">usize</span> (<span class="id" title="var">to_uint</span> <span class="id" title="var">a</span>) = 2 -&gt; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">usize</span> (<span class="id" title="var">to_uint</span> <span class="id" title="var">b</span>) = 2 -&gt; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">of_uint</span> (<span class="id" title="var">rev</span> (<span class="id" title="var">to_uint</span> (<span class="id" title="var">a</span> + <span class="id" title="var">b</span>))) &lt;&gt; <span class="id" title="var">a</span>*<span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

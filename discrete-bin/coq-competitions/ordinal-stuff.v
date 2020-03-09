@@ -59,22 +59,6 @@ Require Import Arith Psatz.
 
 Open Scope nat_scope.
 
-(*
-Require Import ssreflect ssrbool ssrfun.
-*)
-
-Require Import ListSet.
-Print ListSet.
-
-Add LoadPath "ssreflect".
-
-Require Import Finset.
-
-
-
-Require Import finset.
-
-
 Record ordinal n := {
     val :> nat;
     _   : val < n;
@@ -82,6 +66,8 @@ Record ordinal n := {
 
 Compute (14 =? 14).
 
+
+Search lt.
 
 (*
 Nat.lt_le_trans: forall n m p : nat, n < m -> m <= p -> n < p
@@ -121,10 +107,6 @@ Admitted.
 (** Add arguments x that satisfy F(x)=k *)
 Definition ii:(ordinal 14).
 
-
-
-Theorem lt_raj_2020_11_3: forall (n:nat) (F: (ordinal 14) -> (ordinal n)),  
-  forall (k:(ordinal n)) : 
 
 
 

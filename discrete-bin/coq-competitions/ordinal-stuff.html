@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>ordinal-stuff</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library ordinal-stuff</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/coq.html">Back to Coq Main Page</a>  
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">LT.RAJ.2020.11-12.3</h1>
+
+<div class="paragraph"> </div>
+
+ <b>Problem:</b> Daina cut a piece of paper into 
+n&gt;1 smaller pieces and wrote numbers 
+1, 2, 3, ..., 14 to those pieces - using 
+every number exactly once. 
+It turned out that the totals of the numbers on all the pieces
+were the same (no piece of paper was left empty; but if a 
+piece contains just one number, then the total equals that number). 
+Find all possible values of n. 
+
+<div class="paragraph"> </div>
+
+ See <a href='https://bit.ly/38i3HIp'>LT.RAJ 
+Užduotys ir Sprendimai</a>, p.24.).
+
+<div class="paragraph"> </div>
+
+ The answer is this: n=3, 5, 7. 
+<div class="paragraph"> </div>
+
+If the sum s = 15, then n = 7. 
+The numbers on the 7 pieces can be the following: 
+(1, 14); (2, 13); (3, 12); (4, 11; (5, 10); (6, 9); (7, 8).
+
+<div class="paragraph"> </div>
+
+If the sum s = 21, then n = 5. 
+The numbers on the 5 pieces can be the following: 
+(1, 7, 13); (2, 5, 14); (3, 6, 12); (10, 11); (4, 8, 9).
+
+<div class="paragraph"> </div>
+
+If the sum s = 35, then n = 3. 
+The numbers on the 3 pieces can be the following: 
+(8, 13, 14); (2, 10, 11, 12); (1, 3, 4, 5, 6, 7, 9).
+
+<div class="paragraph"> </div>
+
+
+<div class="paragraph"> </div>
+
+Coq's standard way to define n-tuples.
+https://coq.inria.fr/library/Coq.Vectors.Fin.htmlt
+Defining a finite set of n elements in Coq.
+https://stackoverflow.com/questions/42871971/how-to-define-finite-set-of-n-elements-in-coq
+Ordinal numbers - constructors
+http://www-sop.inria.fr/marelle/gaia/RR8407.pdf
+
+https://coq.github.io/doc/master/stdlib/Coq.FSets.FSetInterface.html
+https://coq.inria.fr/library/Coq.FSets.FSetEqProperties.html
+
+https://stackoverflow.com/questions/36588263/how-to-define-set-in-coq-without-defining-set-as-a-list-of-elements/36593938
+https://github.com/Barbichu/finmap/blob/master/finmap.v
+https://github.com/math-comp/math-comp/blob/master/mathcomp/ssreflect/finset.v
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Nat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">PeanoNat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Between</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Record</span> <span class="id" title="var">ordinal</span> <span class="id" title="var">n</span> := {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">val</span> :&gt; <span class="id" title="var">nat</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">_</span>   : <span class="id" title="var">val</span> &lt; <span class="id" title="var">n</span>;<br/>
+}.<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> (14 =? 14).<br/>
+
+<br/>
+<span class="id" title="keyword">Search</span> <span class="id" title="var">lt</span>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">ab</span>:<span class="id" title="keyword">Set</span> := (<span class="id" title="var">ordinal</span> 14).<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">abc</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>:<span class="id" title="var">ordinal</span> 14, (<span class="id" title="var">val</span> 14 <span class="id" title="var">x</span>) &lt;=15.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">x</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">x0</span> <span class="id" title="var">H0</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Nat.lt_le_trans</span> <span class="id" title="var">x0</span> 14 15) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (14 &lt;= 15) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>. <span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H0</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">val</span> 14 (<span class="id" title="var">Build_ordinal</span> 14 <span class="id" title="var">x0</span> <span class="id" title="var">H0</span>) = <span class="id" title="var">x0</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H0</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Nat.lt_le_incl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H5</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">stuff</span>: 3 &lt; 14. <span class="id" title="keyword">Proof</span>. <span class="id" title="var">lia</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">apci</span>:(<span class="id" title="var">ordinal</span> 14) := <span class="id" title="var">Build_ordinal</span> 14 3 <span class="id" title="var">stuff</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">easy</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:(<span class="id" title="var">ordinal</span> 14), <span class="id" title="var">n</span>*<span class="id" title="var">n</span> &lt;200.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">n</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Add arguments x that satisfy F(x)=k 
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">ii</span>:(<span class="id" title="var">ordinal</span> 14).<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

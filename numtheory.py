@@ -57,26 +57,26 @@ class NumtheoryHandler(webapp2.RequestHandler):
             'title': u'Jun01: Pirmskaitļi un dalāmība',
             'date': '2019-09-28'
         },
+#        {
+#            'id':'NumTh.Jun03',
+#            'dir':'tale-numtheory-jun02-congruences',
+#            'title': u'Jun02: Modulārā aritmētika',
+#            'date': '2019-09-28',
+#            'nolink' : 'True'
+#        },        
         {
-            'id':'NumTh.Jun03',
-            'dir':'tale-numtheory-jun02-congruences',
-            'title': u'Jun02: Modulārā aritmētika',
-            'date': '2019-09-28',
-            'nolink' : 'True'
-        },        
-        {
-            'id':'NumTh.Jun03',
+            'id':'NumTh.Jun02',
             'dir':'tale-numtheory-jun03-crt',
-            'title': u'Jun03: Ķīniešu atlikumu teorēma',
+            'title': u'Jun02: Ķīniešu atlikumu teorēma',
             'date': '2019-12-14'
         },
-        {
-            'id':'NumTh.Jun04',
-            'dir':'tale-numtheory-jun04-valuations',
-            'title': u'Jun04: Valuācijas',
-            'date': '2019-12-14',
-            'nolink': 'True'
-        }
+#        {
+#            'id':'NumTh.Jun04',
+#            'dir':'tale-numtheory-jun04-valuations',
+#            'title': u'Jun04: Valuācijas',
+#            'date': '2019-12-14',
+#            'nolink': 'True'
+#        }
     ]
 
     exam_lst = [

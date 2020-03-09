@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>ee_piirk_2020_10_3</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library ee_piirk_2020_10_3</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/coq.html">Back to Coq Main Page</a>  
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">EE.PIIRK.2020.10.3</h1>
+
+<div class="paragraph"> </div>
+
+ <b>Problem: (A)</b> Are there different positive numbers 'a', 'b' and 'c', 
+where LCM(GCD(a,b),c) = LCM(GCD(b,c),a) = LCM(GCD(c,a),b)? &lt;br/&gt;
+(B) Do there exist (not necessarily different) positive integers 'a', 'b' and 'c'
+where LCM(GCD(a,b),c) = LCM(GCD(b,c),a) = LCM(GCD(c,a),b)?, 
+where m does not equal LCM(a,b,c).
+
+<div class="paragraph"> </div>
+
+ See <a href='https://bit.ly/32OWgHH'>Piirkonnavoor 2020</a>, 
+page p.10, p.22.
+
+</div>
+<div class="code">
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Nat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">PeanoNat</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinInt</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+
+<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Define only for nonzero nn; for prime p; 
+invalid values return some InvalidArgument value 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab2"></a><h2 class="section">Probably do not need this definition</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">Zis_lcm</span> (<span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">g</span>:<span class="id" title="var">Z</span>) : <span class="id" title="keyword">Prop</span> :=<br/>
+&nbsp;<span class="id" title="var">Zis_lcm_intro</span> :<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> | <span class="id" title="var">g</span>) -&gt;<br/>
+&nbsp;&nbsp;(<span class="id" title="var">b</span> | <span class="id" title="var">g</span>) -&gt;<br/>
+&nbsp;&nbsp;(<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>, (<span class="id" title="var">a</span> | <span class="id" title="var">x</span>) -&gt; (<span class="id" title="var">b</span> | <span class="id" title="var">x</span>) -&gt; (<span class="id" title="var">g</span> | <span class="id" title="var">x</span>)) -&gt;<br/>
+&nbsp;&nbsp;<span class="id" title="var">Zis_lcm</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">g</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">valuation</span> (<span class="id" title="var">p</span>:<span class="id" title="var">Z</span>) (<span class="id" title="var">n</span>:<span class="id" title="var">Z</span>): <span class="id" title="var">Z</span> := 4.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">ee_piirk_2020_10_3A</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">m</span> <span class="id" title="var">p</span>:<span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="var">c</span> = <span class="id" title="var">m</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.gcd</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) <span class="id" title="var">a</span> = <span class="id" title="var">m</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.gcd</span> <span class="id" title="var">c</span> <span class="id" title="var">a</span>) <span class="id" title="var">b</span> = <span class="id" title="var">m</span> -&gt; <br/>
+&nbsp;&nbsp;(<span class="id" title="var">prime</span> <span class="id" title="var">p</span>) -&gt; <br/>
+&nbsp;&nbsp;((<span class="id" title="var">valuation</span> <span class="id" title="var">p</span> <span class="id" title="var">a</span>) &lt; (<span class="id" title="var">valuation</span> <span class="id" title="var">p</span> <span class="id" title="var">b</span>)) -&gt; <br/>
+&nbsp;&nbsp;((<span class="id" title="var">valuation</span> <span class="id" title="var">p</span> <span class="id" title="var">c</span>) = (<span class="id" title="var">valuation</span> <span class="id" title="var">p</span> <span class="id" title="var">b</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">ee_piirk_2020_10_3B</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">m</span>:<span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="var">c</span> = <span class="id" title="var">m</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.gcd</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) <span class="id" title="var">a</span> = <span class="id" title="var">m</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.gcd</span> <span class="id" title="var">c</span> <span class="id" title="var">a</span>) <span class="id" title="var">b</span> = <span class="id" title="var">m</span> -&gt; <br/>
+&nbsp;&nbsp;<span class="id" title="var">Z.lcm</span> (<span class="id" title="var">Z.lcm</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="var">c</span> = <span class="id" title="var">m</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

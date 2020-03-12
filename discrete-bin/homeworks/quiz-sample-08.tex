@@ -88,7 +88,7 @@ $E_4$: If none of the dice rolls equals $n$, then Player $A$ loses 1 euro.\\
 {\bf (A)} Find the probability for each event $E_1,E_2,E_3,E_4$.\\
 {\bf (B)} Find the expected value of the money that Player $A$ wins or loses during a single round of this game. (One round = three 
 dice rolls as described above). Use this formula \textendash{} a weighted sum of the euros multiplied by the respective probabilities:
-$$P(E_1)\cdot 1 + P(E_2)\cdot 2 + P(E_3)\cdot 3 + P(E_4)\cdot (-1).$$
+$$p(E_1)\cdot 1 + p(E_2)\cdot 2 + p(E_3)\cdot 3 + p(E_4)\cdot (-1).$$
 
 
 \vspace{10pt}
@@ -135,6 +135,26 @@ each step can be parallel to either $x$, $y$ or $z$ axes (incrementing the corre
 {\bf (A)} What is the probability that the 
 ant has taken at least one step in the direction of each coordinate axis?\\
 {\bf (B)} What is the probability that the ant has reached the point $(3;3;3)$?
+
+\vspace{10pt}
+{\bf Question 9} There were 5 people who left their hats in a lobby as they entered some building. 
+After that there was an electricity blackout; in the total darkness everybody exited the building and grabbed a random hat.
+All $5!=120$ permutations of hats are considered equally likely. Find the probability that nobody got his/her
+own hat.\\ 
+You may want to define five events: $E_1$ means that the 1st person 
+got his/her hat; $E_2$ \textendash{} the 2nd person got his/her hat, etc. 
+Then you can apply the inclusion/exclusion principle:
+\begin{align}
+ & p(E_1 \cup E_2 \cup E_3 \cup E_3 \cup E_4 \cup E_5) = \nonumber \\
+= & p(E_1) + p(E_2) + p(E_3) + p(E_4) + p(E_5) - \nonumber \\
+- & p(E_1 \cap E_2) - p(E_1 \cap E_3) - \ldots - p(E_4 \cap E_5) + \nonumber \\
++ & p(E_1 \cap E_2 \cap E_3) + \ldots + p(E_3 \cap E_4 \cap E_5) - \nonumber \\
+- & p(E_1 \cap E_2 \cap E_3 \cap E_4) - \ldots - p(E_2 \cap E_3 \cap E_4 \cap E_5) + \nonumber \\
++ & p(E_1 \cap E_2 \cap E_3 \cap E_4 \cap E_5). \nonumber
+\end{align}
+
+
+
 
 \end{document}
 

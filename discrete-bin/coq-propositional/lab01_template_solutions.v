@@ -1,4 +1,4 @@
-(** #<a href="../../discrete/assignments.html">Back to Discrete Assignments</a># *)
+(** #<a href="../../discrete/coq.html">Back to Discrete Assignments</a># *)
 
 (** ** This is a training file to try out some proofs similar to Coq Assignment 1. 
 In this task replace all stubs "tauto" and "Admitted" with meaningful proofs.

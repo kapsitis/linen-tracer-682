@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style>
+h2 {
+  color: #990000;
+}
+</style>
+</head>
+
+<body>
+<h1>Discrete Structures: Assignments</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Assignments</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq.html">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs.html">Proofs</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations.html">Presentations</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<p>Stuff</p>
+
+{{strSearch.pattern}}
+
+<table border="1">
+{% for step in strSearch %}
+<tr>
+<td>ABC</td>
+</tr>
+</table>
+
+
+
+
+</body>
+</html>
+
+
+
+
+

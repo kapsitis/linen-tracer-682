@@ -43,6 +43,9 @@ class DiscreteHandler(webapp2.RequestHandler):
             my_readings = json.load(f2)
         with open('data/discrete_index.json') as f3:
             indexItems = json.load(f3) 
+
+        with open('discrete-lab03/sample01-naive.json') as f3:
+            strSearch = json.load(f3) 
             
         abc = ['-','a','b','c','d','e','f','g','h','i','j',
                'k','l','m','n','o','p','q','r','s','t',
@@ -103,6 +106,16 @@ class DiscreteHandler(webapp2.RequestHandler):
                 'nav_items': nav_items
             }
             template = jinja_env.get_template('discrete/sources.html')
+            output = template.render(template_context)
+            self.response.out.write(output.encode('utf-8'))
+        elif (my_id == 'lab03.html'):
+            template_context = {
+                'my_id': my_id,
+                'course': 'discrete',
+                'nav_items': nav_items,
+                'strSearch': strSearch
+            }
+            template = jinja_env.get_template('discrete/lab03.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         else: 

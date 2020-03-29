@@ -20,7 +20,7 @@ Find all possible values of n.
 (**
 If the sum s = 15, then n = 7. 
 The numbers on the 7 pieces can be the following: 
-(1, 14); (2, 13); (3, 12); (4, 11_; (5, 10); (6, 9); (7, 8).
+(1, 14); (2, 13); (3, 12); (4, 11); (5, 10); (6, 9); (7, 8).
 *)
 (**
 If the sum s = 21, then n = 5. 
@@ -67,12 +67,6 @@ Require Import ListSet.
 Print ListSet.
 
 Add LoadPath "ssreflect".
-
-Require Import Finset.
-
-
-
-Require Import finset.
 
 
 Record ordinal n := {

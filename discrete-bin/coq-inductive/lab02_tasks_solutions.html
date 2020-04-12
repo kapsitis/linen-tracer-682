@@ -1,0 +1,1016 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>lab02_tasks_solutions</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library lab02_tasks_solutions</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/coq.html">Back to Coq Main Page</a>  
+<div class="paragraph"> </div>
+
+<a name="lab1"></a><h1 class="section">Lab02: Proving Number Theory Results in Coq</h1>
+
+<div class="paragraph"> </div>
+
+ In all the exercises replace <b>Admitted.</b> 
+with a proof. Enclose it between <b>Proof.</b> and <b>Qed.</b> 
+<b>Note:</b> Simple, self-sufficient proofs are preferable, but
+whenever necessary, you can import 
+statements from the Coq standard theorem libraries.
+Available imports are listed here:
+&lt;a href='https://coq.inria.fr/library/index.html'&gt;Coq Libraries&lt;/a&gt;.
+
+<div class="paragraph"> </div>
+
+<a name="lab2"></a><h2 class="section">Guidelines for submission</h2>
+ <ul><li>Download this Coq source file
+<a href='lab02_tasks.v'>lab02_tasks.v</a>.</li>
+<li>Replace <tt>'Admitted'</tt> with a meaningful proof.</li>
+<li>Make sure that your proofs do not contain  
+<tt>'Admitted'</tt> or any non-explicit tactics 
+such as <tt>'tauto'</tt>, <tt>'intuition'</tt>, 
+<tt>'firstorder'</tt>, <tt>'auto'</tt>, <tt>'trivial'</tt>.</li>
+<li>Ensure that the separating 
+comments "Do not modify this line ..." are preserved.</li>
+<li>If you cannot solve some example, leave it unchanged,
+but do not change the numeration.</li>
+<li>In case you need any <tt>'Require Import'</tt> command,
+write it right above the lemma where you need it.</li>
+<li>When you are done, upload the resulting
+<tt>lab02_tasks.v</tt> file to ORTUS.</li>
+</ul>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Nat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">PeanoNat</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinInt</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab3"></a><h1 class="section">Lemmas 1-5 on Modular Arithmetic</h1>
+
+<div class="paragraph"> </div>
+
+<a name="lab4"></a><h2 class="section">Do not modify this line: sample2_1</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">f</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) := <span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;0 =&gt; 3<br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k</span> =&gt; (<span class="id" title="var">f</span> <span class="id" title="var">k</span>)*2 + 3 <br/>
+<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">f</span> 0).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">f</span> 1).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">f</span> 2).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">f</span> 3).<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">f</span> 4).<br/>
+
+<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">even</span> : <span class="id" title="var">nat</span> -&gt; <span class="id" title="keyword">Prop</span> :=<br/>
+&nbsp;&nbsp;| <span class="id" title="var">ev_0</span> : <span class="id" title="var">even</span> 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">ev_SS</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">even</span> <span class="id" title="var">n</span> -&gt; <span class="id" title="var">even</span> (<span class="id" title="var">S</span> (<span class="id" title="var">S</span> <span class="id" title="var">n</span>)).<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">even</span>.<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">even_ind</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Even</span> <span class="id" title="var">a</span> := <span class="id" title="tactic">exists</span> <span class="id" title="var">b</span>, <span class="id" title="var">a</span> = 2*<span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Odd</span> <span class="id" title="var">a</span> := <span class="id" title="tactic">exists</span> <span class="id" title="var">b</span>, <span class="id" title="var">a</span> = 2*<span class="id" title="var">b</span>+1.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Example1 from (Rosen2019, p.87): <br/>
+If  is an odd integer, then  is odd. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">Odd</span> <span class="id" title="var">n</span>) -&gt; (<span class="id" title="var">Odd</span> (<span class="id" title="var">n</span>^2)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Odd</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">b</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Odd</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (2*<span class="id" title="var">b</span>*<span class="id" title="var">b</span> + 2*<span class="id" title="var">b</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Optional exercise:</b> 
+If you wish, you can also prove a similar lemma for natural 
+numbers (non-negative integers 0,1,2,etc.). 
+In PeanoNat the definition of 'odd' is by induction 
+rather than algebraic. So the proof would be different.
+The lemma in the natural set:
+<pre>
+  Lemma sample2_1_natural: forall n: nat, (odd n)=true -&gt; (odd (n^2))=true.
+  Proof.
+    Admitted.
+</pre>
+The proof for <tt>sample2_1_natural</tt> might be more interesting.
+
+<div class="paragraph"> </div>
+
+<a name="lab5"></a><h2 class="section">Do not modify this line: sample2_2</h2>
+
+<div class="paragraph"> </div>
+
+ See Example12 from (Rosen2019, p.91): <br/>
+If  is odd, then  is odd. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Classical_Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Check</span> <span class="id" title="var">Z.pos</span>.<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">positive</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">Nat.Even</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_2_helper</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">Z</span>, ~(<span class="id" title="var">Odd</span> <span class="id" title="var">n</span>) -&gt; <span class="id" title="var">Even</span> <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Odd</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">Odd</span> (3*<span class="id" title="var">n</span>+2)) -&gt; (<span class="id" title="var">Odd</span> <span class="id" title="var">n</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">classic</span> (<span class="id" title="var">Odd</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> [<span class="id" title="var">OddN</span> | <span class="id" title="var">NotOddN</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">OddN</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Even</span> <span class="id" title="var">n</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Odd</span> <span class="id" title="tactic">in</span> <span class="id" title="var">NotOddN</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+A very similar lemma in the natural set:
+<pre>
+  Lemma sample2_2_natural: forall n: nat, (odd (3*n+2))=true -&gt; (odd n)=true.
+Proof.
+  Admitted.
+</pre>
+
+</div>
+<div class="code">
+
+<br/>
+
+<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See mutually inductive types
+http://adam.chlipala.net/cpdt/html/InductiveTypes.html
+
+</div>
+<div class="code">
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">L1</span>: (<span class="id" title="var">Odd</span> 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Odd</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> 0.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">L2</span>: (<span class="id" title="var">Even</span> 0).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Even</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> 0.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">L3</span>: ~(<span class="id" title="var">Odd</span> 0).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Odd</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">b</span> <span class="id" title="var">H1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">Z.pos</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Bool</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">even_mult</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>, <span class="id" title="var">even</span> <span class="id" title="var">x</span> -&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">y</span>, <span class="id" title="var">x</span> = 2*<span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> 0.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x0</span> <span class="id" title="var">Hx0even</span> <span class="id" title="var">IHx0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">IHx0</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">y</span> <span class="id" title="var">Heq</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Heq</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">S</span> <span class="id" title="var">y</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab6"></a><h2 class="section">Do not modify this line: sample2_3</h2>
+
+<div class="paragraph"> </div>
+
+ See Problem44 from (Rosen2019, p.259): <br/>
+Show that if  is an integer, then  is congruent to 0 or 1 (mod 4).
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (<span class="id" title="var">n</span>^2 <span class="id" title="var">mod</span> 4 = 0) \/ (<span class="id" title="var">n</span>^2 <span class="id" title="var">mod</span> 4 = 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab7"></a><h2 class="section">Do not modify this line: sample2_4</h2>
+
+<div class="paragraph"> </div>
+
+ See Problem45 from (Rosen2019, p.259): <br/> 
+Show that if  is a positive integer of the form  
+for some nonnegative integer , then  is not 
+the sum of the squares of two integers.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_4</span>: <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">m</span>: <span class="id" title="var">nat</span>, (<span class="id" title="tactic">exists</span> <span class="id" title="var">k</span>:<span class="id" title="var">nat</span>, <span class="id" title="var">m</span> = 4*<span class="id" title="var">k</span>+3) -&gt; (<span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>, <span class="id" title="var">a</span>^2 + <span class="id" title="var">b</span>^2 &lt;&gt; <span class="id" title="var">m</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab8"></a><h2 class="section">Do not modify this line: sample2_5</h2>
+
+<div class="paragraph"> </div>
+
+ See Problem46 from (Rosen2019, p.259): <br/>  
+Prove that if  is an odd positive integer, then 
+ is congruent to 1 (mod 8).
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_5</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (<span class="id" title="var">odd</span> <span class="id" title="var">n</span>) = <span class="id" title="var">true</span> -&gt; (<span class="id" title="var">n</span>^2 <span class="id" title="var">mod</span> 8 = 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">pow</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">modulo</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab9"></a><h1 class="section">Lemmas 6-10 on Mathematical Induction</h1>
+
+<div class="paragraph"> </div>
+
+<a name="lab10"></a><h2 class="section">Do not modify this line: sample2_6</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">SeqA</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) := <span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;0 =&gt; 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k</span> =&gt; (<span class="id" title="var">SeqA</span> <span class="id" title="var">k</span>) + (<span class="id" title="var">k</span> + 1) * (3 * (<span class="id" title="var">k</span> + 1) + 1)<br/>
+<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Problem1 from the Latvian Regional Olympiad study material: 
+<a href='https://bit.ly/2OTn6c7'>(NMS2020)</a>:
+Prove that for each positive integer 'n' the following equality holds:<br/>
+1*4 + 2*7 + 3*10 + ... + n*(3n+1) = n*(n + 1)^2.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_6</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">SeqA</span> <span class="id" title="var">n</span> = <span class="id" title="var">n</span> * (<span class="id" title="var">n</span> + 1)^2.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+
+<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab11"></a><h2 class="section">Do not modify this line: sample2_7</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">SeqB</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) := <span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;0 =&gt; 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k</span> =&gt; (<span class="id" title="var">SeqB</span> <span class="id" title="var">k</span>) + (<span class="id" title="var">k</span>+1)^3<br/>
+<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">SeqC</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) := <span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;0 =&gt; 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k</span> =&gt; (<span class="id" title="var">SeqC</span> <span class="id" title="var">k</span>) + (<span class="id" title="var">k</span>+1)<br/>
+<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Problem2 from the Latvian Regional Olympiad study material: 
+<a href='https://bit.ly/2OTn6c7'>(NMS2020)</a>:
+Prove that for each positive integer  the following equality holds:<br/>
+1^3 + 2^3 + 3^3 + ... + n^3 = (1 + 2 + 3 + ... + n)^2.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_7</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (<span class="id" title="var">SeqB</span> <span class="id" title="var">n</span>)=(<span class="id" title="var">SeqC</span> <span class="id" title="var">n</span>)^2.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab12"></a><h2 class="section">Do not modify this line: sample2_8</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">divide</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> := <span class="id" title="tactic">exists</span> <span class="id" title="var">z</span>, <span class="id" title="var">y</span>=<span class="id" title="var">z</span>*<span class="id" title="var">x</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;( x | y )" := (<span class="id" title="var">divide</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">SeqD</span> (<span class="id" title="var">n</span>: <span class="id" title="var">nat</span>) := 7^<span class="id" title="var">n</span> + 3^(<span class="id" title="var">n</span>+1).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Problem3 from the Latvian Regional Olympiad study material: 
+<a href='https://bit.ly/2OTn6c7'>(NMS2020)</a>:
+Show that for all positive integers 'n', 
+7^n + 3^(n+1) is divisible by 4.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_8</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (4 | (<span class="id" title="var">SeqD</span> <span class="id" title="var">n</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab13"></a><h2 class="section">Do not modify this line: sample2_9</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">SeqE</span> (<span class="id" title="var">n</span>: <span class="id" title="var">nat</span>) := 3*<span class="id" title="var">n</span>^5 + 5*<span class="id" title="var">n</span>^4 - 8*<span class="id" title="var">n</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Problem4 from the Latvian Regional Olympiad study material: 
+<a href='https://bit.ly/2OTn6c7'>(NMS2020)</a>:
+Prove that for any positive integer 'n' the expression
+3n^5 + 5n^4 - 8n is divisible by 10.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_9</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (10 | (<span class="id" title="var">SeqE</span> <span class="id" title="var">n</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab14"></a><h2 class="section">Do not modify this line: sample2_10</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">SeqF</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) := <span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;0 =&gt; 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">n'</span> =&gt; <span class="id" title="keyword">match</span> <span class="id" title="var">n'</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 =&gt; 1 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 =&gt; 5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">n''</span> =&gt; 5*(<span class="id" title="var">SeqF</span> <span class="id" title="var">n'</span>) - 6*(<span class="id" title="var">SeqF</span> <span class="id" title="var">n''</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Problem5 from the Latvian Regional Olympiad study material: 
+<a href='https://bit.ly/2OTn6c7'>(NMS2020)</a>:
+Sequence x(n) is defined recursively as<br/>
+x(n+2) = 5x(n+1) - 6x(n) and x(1) = 1, x(2) = 5.<br/>
+Prove that every member of this sequence satisfies this equality:
+x_n = 3^n - 2^n.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_10</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (<span class="id" title="var">SeqF</span> <span class="id" title="var">n</span>) = 3^<span class="id" title="var">n</span> - 2^<span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab15"></a><h1 class="section">Lemmas 11-15 are Properties of Lists of Non-Negative Integers</h1>
+
+<div class="paragraph"> </div>
+
+ You do not need to modify anything in 
+this intro section. These function definitions and notations
+will be used below in samples 11 to 15. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">natlist</span> : <span class="id" title="keyword">Type</span> :=<br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">cons</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) (<span class="id" title="var">L</span> : <span class="id" title="var">natlist</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;x :: L" := (<span class="id" title="var">cons</span> <span class="id" title="var">x</span> <span class="id" title="var">L</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60, <span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>).<br/>
+<span class="id" title="keyword">Notation</span> &quot;[ ]" := <span class="id" title="var">nil</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;[ x ; .. ; y ]" := (<span class="id" title="var">cons</span> <span class="id" title="var">x</span> .. (<span class="id" title="var">cons</span> <span class="id" title="var">y</span> <span class="id" title="var">nil</span>) ..).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function repeats numbers 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="tactic">repeat</span> (<span class="id" title="var">n</span> <span class="id" title="var">count</span> : <span class="id" title="var">nat</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">count</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">O</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">count'</span> =&gt; <span class="id" title="var">n</span> :: (<span class="id" title="tactic">repeat</span> <span class="id" title="var">n</span> <span class="id" title="var">count'</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function returns the length of the list 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">length</span> (<span class="id" title="var">L</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">nat</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">O</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">length</span> <span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function appends one list at the end of another 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">app</span> (<span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">L2</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">h</span> :: (<span class="id" title="var">app</span> <span class="id" title="var">t</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Appending lists will be expressed as an infix operator <tt>++</tt> 
+</div>
+<div class="code">
+<span class="id" title="keyword">Notation</span> &quot;x ++ y" := (<span class="id" title="var">app</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function to reverse a list. For example, <tt>(rev [1,2,3])</tt> 
+is <tt>[3,2,1]</tt> 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">rev</span> (<span class="id" title="var">L</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">rev</span> <span class="id" title="var">t</span> ++ [<span class="id" title="var">h</span>]<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function returns the list of all natural numbers from 1 to n. 
+It is empty, if n=0 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">rangeTo</span>(<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>): <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| 0 =&gt; []<br/>
+&nbsp;&nbsp;| (<span class="id" title="var">S</span> <span class="id" title="var">n'</span>) =&gt; (<span class="id" title="var">rangeTo</span> <span class="id" title="var">n'</span>) ++ [<span class="id" title="var">n</span>]<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab16"></a><h2 class="section">Do not modify this line: sample2_11</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem <tt>'rev_app_distr'</tt> from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>. 
+This lemma tells how to reverse a concatentation of two lists: 
+<tt>rev([1;2;4]++[7;11]) = [11;7]++[4;2;1].</tt>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_11</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">natlist</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">rev</span> (<span class="id" title="var">L1</span> ++ <span class="id" title="var">L2</span>) = <span class="id" title="var">rev</span> <span class="id" title="var">L2</span> ++ <span class="id" title="var">rev</span> <span class="id" title="var">L1</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab17"></a><h2 class="section">Do not modify this line: sample2_12</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem <tt>'rev_involutive'</tt> from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>. 
+This lemma tells that reversing any list two times returns the
+original list: <tt>rev(rev([1;2;4])) = rev([4;2;1]) = rev([1;2;4])</tt>. 
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_12</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L</span> : <span class="id" title="var">natlist</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">rev</span> (<span class="id" title="var">rev</span> <span class="id" title="var">L</span>) = <span class="id" title="var">L</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab18"></a><h2 class="section">Do not modify this line: sample2_13</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem 'app_assoc4' from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>.
+This lemma tells that list concatenation is associative; 
+one can regroup as long as the order of lists does not change.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_13</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> <span class="id" title="var">L3</span> <span class="id" title="var">L4</span> : <span class="id" title="var">natlist</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">L1</span> ++ (<span class="id" title="var">L2</span> ++ (<span class="id" title="var">L3</span> ++ <span class="id" title="var">L4</span>)) = ((<span class="id" title="var">L1</span> ++ <span class="id" title="var">L2</span>) ++ <span class="id" title="var">L3</span>) ++ <span class="id" title="var">L4</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab19"></a><h2 class="section">Do not modify this line: sample2_14</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem 'rev_injective' from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>.
+This lemma tells that reversing a list is an injection: different lists
+must lead to different reversed lists.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_14</span>:  <span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">natlist</span>, <span class="id" title="var">rev</span> <span class="id" title="var">L1</span> = <span class="id" title="var">rev</span> <span class="id" title="var">L2</span> -&gt; <span class="id" title="var">L1</span> = <span class="id" title="var">L2</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab20"></a><h2 class="section">Do not modify this line: sample2_15</h2>
+
+<div class="paragraph"> </div>
+
+ See <a href='https://bit.ly/2tM6N9C'>Latvian Open Math Olympiad, 2004</a>, 
+Grade 8, Problem 5.<br/>
+In an increasing sequence there are all positive integers from 1 to 2004; 
+every number is written exactly once.
+We remove all numbers that are written in the positions 
+n=1, n=4, n=7, n=10, and so on. 
+From the remaining sequence we again remove all numbers in 
+the positions n=1, n=4, n=7, n=10.<br/>
+We repeat this procedure until there is only one number left. 
+Which one is it? 
+<div class="paragraph"> </div>
+
+ This function should return a new list where 
+1st, 4th, 7th, etc. members are removed 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">sample15_rm_one_third</span> (<span class="id" title="var">L</span>: <span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> := <span class="id" title="var">L</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These are 10 unit tests. Once the function is 
+defined correctly, each proof here can be replaced
+by <tt>'Proof. simpl. reflexivity. Qed'</tt> or similar.
+</div>
+<div class="code">
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test0</span>: <span class="id" title="var">sample15_rm_one_third</span> [] = [].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test1</span>: <span class="id" title="var">sample15_rm_one_third</span> [1] = [].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test2</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2] = [2].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test3</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3] = [2;3].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test4</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4] = [2;3].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test5</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5] = [2;3;5].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test6</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6] = [2;3;5;6].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test7</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6;7] = [2;3;5;6].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test8</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6;7;8] = [2;3;5;6;8].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test9</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6;7;8;9] = [2;3;5;6;8;9].<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This function is supposed to return the last number that
+remains, if we apply <tt>'sample15_rm_one_third'</tt> until  
+the last number remains. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">sample15_rm_until_last</span> (<span class="id" title="var">L</span>: <span class="id" title="var">natlist</span>) : <span class="id" title="var">nat</span> := 42.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These are 6 more unit tests. Once the function 
+sample15_rm_until_last
+has been 
+</div>
+<div class="code">
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test10</span>: <span class="id" title="var">sample15_rm_until_last</span> [] = 0.<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test11</span>: <span class="id" title="var">sample15_rm_until_last</span> [1] = 1.<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test12</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2] = 2.<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test13</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2;3] = 3.<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test14</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2;3;4] = 3.<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test15</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2;3;4;5] = 5.<br/>
+<span class="id" title="keyword">Proof</span>.  <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This result is sufficient to show the original olympiad problem: 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_15</span>: (<span class="id" title="var">sample15_rm_until_last</span> (<span class="id" title="var">rangeTo</span> 2004)) = 1598.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The remaining 5 proofs are about the integer divisibility.
+See <a href='../coq-numbertheory/CSEnotes_numbertheory.html'>Integer Arithmetic 
+(Buffalo CSE191, p.110-137)</a>
+
+<div class="paragraph"> </div>
+
+ A warm-up example: Prove that (Zis_gcd 6 15 (-3)) is True. This means
+that (-3) satisfies all properties of a GCD. It divides both 6 and 15, and
+any other divisor of 6 and 15 is also a divisor of (-3). 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">gcd_6_15A</span>: (<span class="id" title="var">Zis_gcd</span> 6 15 (-3)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>. <span class="id" title="tactic">exists</span> (-2). <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>. <span class="id" title="tactic">exists</span> (-5). <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;- { <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>. <span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">u1</span> <span class="id" title="var">H11</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>. <span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">u2</span> <span class="id" title="var">H22</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">u2</span> - 3*<span class="id" title="var">u1</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Z.mul_sub_distr_r</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H22</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">Z.mul_assoc</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;}<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+In the scope of 'nat' (not Z), the GCD always equals 3, not (-3):
+<pre>
+Compute (gcd 6%nat 15%nat).
+</pre>
+The above line should return <tt>3%nat</tt>, so it cannot be (-3). 
+In the arithmetic of Z (all integers), there are two feasible values
+of GCD. GCD(6,15) can be both '+3' and '-3'. 
+
+<div class="paragraph"> </div>
+
+<a name="lab21"></a><h2 class="section">Do not modify this line: sample2_16</h2>
+
+<div class="paragraph"> </div>
+
+ See <a href='https://che.gg/2umW71y'>Properties of GCD</a>.<br/>
+Note that Item (a) from that page is already solved in
+<a href='https://cse.buffalo.edu/~knepley/classes/cse191/ClassNotes.pdf'>(Knepley2019, p.133)</a>.<br/>
+<b>Lemma:</b> If gcd(a,b)=1 and c divides a, then gcd(b,c)=1.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">Zis_gcd</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">one_divides_anything</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span>: <span class="id" title="var">Z</span>, (1 | <span class="id" title="var">a</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">division_transitive</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">a</span>|<span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">b</span>|<span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span>|<span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">z1</span> <span class="id" title="var">H1B</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">z2</span> <span class="id" title="var">H2B</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">z2</span>*<span class="id" title="var">z1</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2B</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1B</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_16</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">c</span> | <span class="id" title="var">a</span>) -&gt; (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">one_divides_anything</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">one_divides_anything</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">HA</span> <span class="id" title="var">HB</span> <span class="id" title="var">HC</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">HC</span> <span class="id" title="var">x2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">HD</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H3</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">division_transitive</span> <span class="id" title="var">x2</span> <span class="id" title="var">c</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H5</span> <span class="id" title="var">H4</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">HD</span> <span class="id" title="var">H6</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H7</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab22"></a><h2 class="section">Do not modify this line: sample2_17</h2>
+
+<div class="paragraph"> </div>
+
+ <b>Lemma:</b> If gcd(a,b)=1, then then gcd(ac,b)=gcd(c,b). 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_17</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">k</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; ((<span class="id" title="var">Zis_gcd</span> (<span class="id" title="var">a</span>*<span class="id" title="var">c</span>) <span class="id" title="var">b</span> <span class="id" title="var">k</span>) &lt;-&gt; (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">c</span> <span class="id" title="var">b</span> <span class="id" title="var">k</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">HA</span> <span class="id" title="var">HB</span> <span class="id" title="var">HC</span>].<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab23"></a><h2 class="section">Do not modify this line: sample2_18</h2>
+
+<div class="paragraph"> </div>
+
+ <b>Lemma:</b> If gcd(a,b)=1 and c divides (a+b), then gcd(a,c)=gcd(b,c)=1. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_18</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">c</span> | (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>)) -&gt; ((<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span> 1) /\ (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> 1)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab24"></a><h2 class="section">Do not modify this line: sample2_19</h2>
+ <b>Lemma:</b> If gcd(a,b)=1; d divides ac; d divides bc, then d divides c. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_19</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">d</span> | (<span class="id" title="var">a</span>*<span class="id" title="var">c</span>)) -&gt; (<span class="id" title="var">d</span> | (<span class="id" title="var">b</span>*<span class="id" title="var">c</span>)) -&gt; (<span class="id" title="var">d</span> | <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab25"></a><h2 class="section">Do not modify this line: sample2_20</h2>
+ <b>Lemma:</b> If gcd(a,b)=1, then gcd(a^2,b^2)=1. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_20</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">Zis_gcd</span> (<span class="id" title="var">a</span>^2) (<span class="id" title="var">b</span>^2) 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+ <span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

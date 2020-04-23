@@ -12,6 +12,7 @@ problems-bak/*
 *.log
 *.out
 *.bcf
+*.glob
 *.run.xml
 # Distribution / packaging
 .Python

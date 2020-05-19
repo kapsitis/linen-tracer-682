@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Uzdevumi</title>
+  <title>"Uzdevumi"</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,10 +32,50 @@
     <div class="slides">
 
 
-<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
-<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section></section>
-<section><section id="objectives" class="title-slide slide level1"><h1><lo-summary/> Objectives</h1></section></section>
-<section><section id="predikāti" class="title-slide slide level1"><h1><lo-theory/> Predikāti</h1></section><section id="universālais-kvantors" class="slide level2">
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Discrete Structures
+</h1>
+<p><blue>Logic and Proofs - 2<br />
+(Predicate Logic)</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span style="color:darkgreen"><strong>(1) 1st Order Logic Intro</strong></span><br />
+<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
+<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
+<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
+<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
+<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
+<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
+<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
+<span>(9) <a href="#/section-7">References</a></span></p>
+</hgroup></section>
+<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Why use symbols <span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li></li>
+</ul>
+</div></section>
+<section id="objectives" class="title-slide slide level1"><h1><lo-summary/> Objectives</h1><ol type="1">
+<li>Mention examples where logic differs from general intuition.</li>
+<li>Define predicates and quantifiers.</li>
+<li>Define terms, atomic formulas, full formulas.</li>
+<li>Translate English into formulas, draw the formula syntax.</li>
+<li>Introduce some logical arguments and syllogisms.</li>
+</ol></section>
+<section><section id="predikāti" class="title-slide slide level1"><h1><lo-theory/> Predikāti</h1><div style="font-size:70%">
+<p>Skaitļu teorijas apgalvojumus var īsi pierakstīt ar predikātu loģikas formulām. Šīs formulas sastāv no divām daļām:<br />
+(1) “predikāta” - izteikuma, kurā ietilpst parametri,<br />
+(2) viena vai vairākiem “kvantoriem” (vai apgalvojums attiecas uz kaut kādu parametra vērtību, vai arī - uz visām parametra iespējamām vērtībām).</p>
+<p><strong>Definīcija:</strong> Par <blue><em>predikātu</em></blue> sauc tādu apgalvojumu, kura patiesums var būt atkarīgs no mainīgo vērtībām.</p>
+<ul>
+<li><span class="math inline">\(a \mid b\)</span> ir predikāts, kas definēts pie <span class="math inline">\(a,b \in \mathbb{N}\)</span> (dažreiz dalās, citreiz nedalās)</li>
+<li><span class="math inline">\(\text{mirstīgs}(x)\)</span> ir predikāts, kas definēts, ja <span class="math inline">\(x\)</span> pieder cilvēku kopai.<br />
+(Tā kā visi cilvēki ir mirstīgi, tad vērtība ir konstante <code>True</code>.)</li>
+</ul>
+</div></section><section id="universālais-kvantors" class="slide level2">
 <h2><lo-theory/> Universālais kvantors</h2>
 <div style="font-size:70%">
 <p><strong>Definīcija:</strong> Pieraksts <span class="math inline">\((\forall a \in A)(P(a))\)</span> apgalvo, ka predikāts <span class="math inline">\(P(a)\)</span> ir spēkā visiem <span class="math inline">\(a \in A\)</span>. Izteiksmes daļu <span class="math inline">\((\forall a \in A)\)</span> sauc par <blue><strong>universālo kvantoru</strong></blue> (<em>universal quantifier</em>) mainīgajam <span class="math inline">\(a\)</span>.</p>
@@ -79,12 +119,48 @@ https://learning.oreilly.com/library/view/logic-as-a/9781118880005/c04.xhtml
 
 -->
 </section></section>
-<section><section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1></section></section>
-<section><section id="euclid-online" class="title-slide slide level1"><h1><lo-yellow/> Euclid Online</h1></section></section>
-<section><section id="thomas-aquinas-summa-theologica" class="title-slide slide level1"><h1><lo-yellow/> Thomas Aquinas: Summa Theologica</h1></section></section>
-<section><section id="tangrams" class="title-slide slide level1"><h1><lo-yellow/> Tangrams</h1></section></section>
-<section><section id="game-of-15" class="title-slide slide level1"><h1><lo-yellow/> Game of 15</h1></section></section>
-<section><section id="puzzle---8-queen-problem" class="title-slide slide level1"><h1><lo-yellow/> Puzzle - 8 Queen Problem</h1></section></section>
+<section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1><ol type="1">
+<li>Aprakstījām ziņojumus un to alfabētus</li>
+<li>Atšķīrām bezzudumu/zudumradošo saspiešanu</li>
+<li>Pamatojām, ka lielo vairumu ziņojumu dotajā alfabētā saspiest nevar</li>
+<li>Aprakstījām prefiksu kokus</li>
+<li>Aprakstījām un analizējām Hafmana algoritmu</li>
+<li>Definējām un lietojām entropiju kā “visvairāk saspiestās” informācijas garumu.</li>
+</ol></section>
+<section id="euclid-online" class="title-slide slide level1"><h1><lo-yellow/> Euclid Online</h1><figure>
+<img data-src="euclid.png" alt="Euclid’s Elements" /><figcaption>Euclid’s Elements</figcaption>
+</figure>
+<p><a href="https://www.c82.net/euclid/"><em>See Byrne’s Euclid</em></a></p></section>
+<section id="thomas-aquinas-summa-theologica" class="title-slide slide level1"><h1><lo-yellow/> Thomas Aquinas: Summa Theologica</h1></section>
+<section id="tangrams" class="title-slide slide level1"><h1><lo-yellow/> Tangrams</h1><hgroup>
+<figure>
+<img data-src="tangram-set.jpg" alt="Set of Tangrams" /><figcaption>Set of Tangrams</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<ul>
+<li>Tangram, 七巧板 (qīqiǎobǎn) = 7-puzle.</li>
+<li><strong>Problem:</strong> Given the outline of some shape, create it with the shapes without any overlaps. Around 6500 “classical” exercises from the 19th century books.</li>
+<li>Known in China since Song dynasty (960–1279). Known in Europe since around 1815 - global trade, cheap printing techniques.</li>
+<li>Convex shapes? Axial symmetries? Central symmetries?</li>
+<li><a href="https://en.wikipedia.org/wiki/Tangram">More on Tangram</a></li>
+</ul>
+</hgroup></section>
+<section id="game-of-15" class="title-slide slide level1"><h1><lo-yellow/> Game of 15</h1><hgroup style="font-size:70%">
+<figure>
+<img data-src="game-of-15.jpg" alt="Game of 15" /><figcaption>Game of 15</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<ul>
+<li>The 15 Puzzle, since 1880.</li>
+<li></li>
+</ul></section>
+<section id="puzzle---8-queen-problem" class="title-slide slide level1"><h1><lo-yellow/> Puzzle - 8 Queen Problem</h1><hgroup style="font-size:70%">
+<ul>
+<li>Place</li>
+</ul>
+</hgroup></section>
     </div>
   </div>
 

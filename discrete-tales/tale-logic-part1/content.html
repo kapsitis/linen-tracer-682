@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>"Uzdevumi"</title>
+  <title>Uzdevumi</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
-  <style>
+  <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -32,63 +32,9 @@
     <div class="slides">
 
 
-<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span style="color:darkgreen"><strong>(1) Course Introduction</strong></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
-<p>(The Overal Course): Why you should study discrete mathematics?</p>
-</div>
-<div class="smallWhy" style="font-size:90%">
-<ul>
-<li>Write proofs and communicate accurately.</li>
-<li>Implement various datatypes (“discrete structures”) and algorithms.</li>
-<li>Count, classify and organize sets objects.</li>
-<li>Use them in real-world and computer-based modelling.</li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=MNSAolUgFYQ">See Simon Sinek in Vegas “Start with Why”</a>.</p>
-</div>
-<aside class="notes">
-<ul>
-<li>Why students should not just try to pass the course, but actually join the instructor learning “Discrete Structures”?</li>
-<li>Many worthwhile subjects could be taught in RBS. How about Ancient Greek literature? <a href="https://www.theatlantic.com/magazine/archive/2006/06/the-management-myth/304883/">The Management Myth</a> - how philosophy and literature is related to management science.</li>
-</ul>
-</aside></section>
-<section><section id="goals-vs.-toolsactivities" class="title-slide slide level1"><h1><lo-summary/> Goals vs. Tools/Activities</h1><hgroup>
-<p><strong>Goals:</strong></p>
-<ul>
-<li>Explain certain important things unambiguously (to humans and computers alike).</li>
-<li>Being part of the community (sometimes called “nerds”).</li>
-<li><strong>WHILE</strong> also having interdisciplinarity. When does the genereal population like and enjoy mathematical culture?</li>
-</ul>
-</hgroup>
-<hgroup style="font-size:70%">
-<p>Syllabus balances these <blue><em>goals</em></blue> with certain <blue><em>tools</em></blue> and <blue><em>activities</em></blue>.</p>
-<ul>
-<li>Writing proofs (4 Homeworks + 2 Exams - 20%+30% of the grade).</li>
-<li>Discussing proofs (Reading/Presentation + Participation - 10%+10% of the grade).</li>
-<li>Functional programming, Scala/Coq (Computations and Proof Checking - 20% of the grade).</li>
-<li>Discrete math. techniques (Automated Tests - 10% of the grade).</li>
-</ul>
-<p>Tools include the typesetting system <strong>LaTeX</strong>, proof assistant <strong>Coq</strong>, some coding exercises in <strong>Scala</strong>, <strong>Git</strong> versioning, <strong>Jenkins</strong> (just for grading) as well as online tests.</p>
-</hgroup>
-<aside class="notes">
-<p>Examples how “nerd culture” is being adopted by mainstream people: Wikipedia, some data visualization and other IT systems, computer games.</p>
-</aside></section><section id="know-why-you-do-what-you-do" class="slide level2">
+<section><section id="section" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1></section></section>
+<section><section id="goals-vs.toolsactivities" class="title-slide slide level1"><h1><lo-summary/> Goals vs. Tools/Activities</h1></section><section id="know-why-you-do-what-you-do" class="slide level2">
 <h2><lo-summary/> Know WHY you do what you do</h2>
 <hgroup style="font-size:70%">
 <figure>
@@ -108,341 +54,19 @@ I need to season and roast those veggies, to bring out the natural tastiness tha
 <p>Estimate how much time an average “non-mathematical person” spends to learn mathematics during his/her lifetime? How much is really needed, what is their ROI?</p>
 </hgroup>
 </section></section>
-<section id="main-inspirations" class="title-slide slide level1"><h1><lo-summary/> Main Inspirations</h1><div style="font-size:70%">
-
-<dl>
-<dt>
-Theory topics and proofs
-</dt>
-<dd>
-Course Textbook: K. Rosen. Discrete Mathematics and its Applications.
-</dd>
-<dt>
-Coq proof assistant
-</dt>
-<dd>
-[
-<dd>
-<a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">CSE 191 at SUNY Buffalo</a> by M.Knepley.<br />
-<a href="https://mdnahas.github.io/doc/nahas_tutorial.html">Nahas Tutorial</a>
-</dd>
-</dl></section>
-<section id="inspiration-for-tasks" class="title-slide slide level1"><h1><lo-summary/> Inspiration for Tasks</h1><ul>
-<li>Course Textbook. K. Rosen. Discrete Mathematics and its Applications. (Homework problems.)</li>
-<li><a href="http://nms.lu.lv/uzdevumu-arhivs/latvijas-olimpiades/">Archive for Latvian Math Olympiads</a>. (Proofs that require only high school math knowledge. In particular, problems in Number theory and Counting/Combinatorics.)</li>
-<li><a href="http://ikfia.ysn.ru/wp-content/uploads/2018/01/Mendelson1971ru.pdf">Мендельсон, Э. Введение в математическую логику. Москва, Наука, 1971.</a> (Propositional and Predicate Logic - statements and axioms).</li>
-</ul>
-</div>
-<aside class="notes">
-<p>See also https://ikfia.ysn.ru/news/matematicheskaya-logika/</p>
-</aside></section>
-<section id="stories-and-surprises" class="title-slide slide level1"><h1><lo-black/> Stories and Surprises</h1><hgroup style="font-size:70%">
-<p>Management and engineering have opposite view of surprises. Here is what prof. Jānis Bārzdiņš had to say about a related subject:</p>
-<blockquote>
-<p><em>Theory of Algorithms</em> is <strong>not</strong> about the existence of this or that useful algorithm. (The rest of Computer Science cares about that.) <em>Theory of Algorithms</em> shows that it is impossible to solve certain problems or when any attempt becomes prohibitively slow or otherwise infeasible.</p>
-</blockquote>
-</hgroup>
-<hgroup style="font-size:70%">
-<ul>
-<li>Non-constructive proofs that something exists (<em>Law of Excluded Middle</em>)</li>
-<li>Some infinities are more infinite than others (<em>Set cardinality</em>)</li>
-<li>Naturally defined multiplication, where AB differs from BA (<em>Matrices, group theory</em>)</li>
-<li>Well-defined (and even useful) tasks that are unsolvable by <strong>any</strong> algorithm (<em>Halting problem</em>)</li>
-<li>Easy-to-compute functions where the inverse function is very messy (<em>Asymmetric cryptography</em>)</li>
-<li>Laws defining structures in programming languages leading to misunderstandings (<em>Ambiguous grammars</em>)</li>
-</ul>
-</hgroup></section>
-<section id="why-1" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
-<p>How combinatorial manipulation with <code>true</code> and <code>false</code> is related with logic and thinking?</p>
-</div>
-<div class="smallWhy">
-<ul>
-<li>Not all the logical operations match our intuition.</li>
-<li>Truth tables are not always efficient.</li>
-<li>Formalized proofs are not same as proofs in regular mathematics.</li>
-<li>May need both - to communicate with rule-based AI systems and also to find out what is true.</li>
-</ul>
-</div></section>
-<section id="objectives-for-this-session" class="title-slide slide level1"><h1><lo-summary/> Objectives for this Session</h1><p><em>Logic and Proofs - 1 (Propositional Logic)</em></p>
-<ol type="1">
-<li>Use LaTeX to create APA compliant papers.</li>
-<li>Identify propositions among English sentences.</li>
-<li>Define basic Boolean operations on propositions.</li>
-<li>Identify some propositional rules and equivalences.</li>
-<li>Build truth tables for Boolean expressions.</li>
-<li>Use contradictions (LNC, EFQ). Identify non-constructive proofs.</li>
-<li>Use Coq to prove statements of propositional logic.</li>
-<li>Write human-readable proofs, identify proof patterns.</li>
-</ol></section>
-<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span style="color:darkgreen"><strong>(2) APA Style and LaTeX</strong></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="how-to-crete-a-latex-document" class="title-slide slide level1"><h1><lo-summary/> How to Crete a LaTeX Document?</h1><div style="font-size:70%">
-<pre><code>\documentclass[jou]{apa6}
-%% All the other preamble. 
-%% (Only edit, if you need 
-%% new packages, predefined commands or style parameters)
-
-\title{Your Title}
-\author{Jane Doe}
-% Can leave empty
-\affiliation{}
-\leftheader{}
-\abstract{}
-
-\begin{document}
-
-EDIT EVERYTHING HERE
-
-\end{document}</code></pre>
-</div></section>
-<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span style="color:darkgreen"><strong>(3) Statements and Propositions</strong></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span style="color:darkgreen"><strong>(4) Boolean Operations</strong></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span style="color:darkgreen"><strong>(5) Rules of Reasoning</strong></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span style="color:darkgreen"><strong>(6) Truth Tables</strong></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="truth-table-for-a-boolean-expression" class="title-slide slide level1"><h1><lo-summary/> Truth table for a Boolean Expression</h1><!--
-Expression: $(p \vee \neg(q \wedge ~r)) \rightarrow (\neg \neg r).$
--->
-<p>Expression <span class="math inline">\(A \rightarrow (B \rightarrow C)\)</span>.</p>
-<table>
-<tr>
-<th>
-<span class="math inline">\(A\)</span>
-</th>
-<th>
-<span class="math inline">\(B\)</span>
-</th>
-<th>
-<span class="math inline">\(C\)</span>
-</th>
-<th>
-<span class="math inline">\(B \rightarrow C\)</span>
-</th>
-<th>
-A (B C)
-</th>
-</tr>
-<tr>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-</tr>
-<tr>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-F
-</td>
-<td>
-F
-</td>
-<td>
-F
-</td>
-</tr>
-<tr>
-<td>
-T
-</td>
-<td>
-F
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-</tr>
-<tr>
-<td>
-T
-</td>
-<td>
-F
-</td>
-<td>
-F
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-</tr>
-<tr>
-<td>
-F
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-</tr>
-<tr>
-<td>
-F
-</td>
-<td>
-T
-</td>
-<td>
-F
-</td>
-<td>
-F
-</td>
-<td>
-T
-</td>
-</tr>
-<tr>
-<td>
-F
-</td>
-<td>
-F
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-</tr>
-<tr>
-<td>
-F
-</td>
-<td>
-F
-</td>
-<td>
-F
-</td>
-<td>
-T
-</td>
-<td>
-T
-</td>
-</tr>
-</tr></section>
-<section><section id="at-least-2-out-of-4-are-true" class="title-slide slide level1"><h1><lo-sample/> At least 2 (out of 4) are true</h1><p>Write a Boolean expression with <span class="math inline">\(4\)</span> variables <span class="math inline">\(p_1, p_2, p_3, p_4\)</span>, which is satisfied if and only if at least <span class="math inline">\(2\)</span> of these variables have value true.</p></section><section id="at-least-2-out-of-4-are-true-1" class="slide level2">
+<section><section id="main-inspirations" class="title-slide slide level1"><h1><lo-summary/> Main Inspirations</h1></section></section>
+<section><section id="inspiration-for-tasks" class="title-slide slide level1"><h1><lo-summary/> Inspiration for Tasks</h1></section></section>
+<section><section id="stories-and-surprises" class="title-slide slide level1"><h1><lo-black/> Stories and Surprises</h1></section></section>
+<section><section id="why-1" class="title-slide slide level1"><h1><lo-why/> why</h1></section></section>
+<section><section id="objectives-for-this-session" class="title-slide slide level1"><h1><lo-summary/> Objectives for this Session</h1></section></section>
+<section><section id="section-1" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="how-to-crete-a-latex-document" class="title-slide slide level1"><h1><lo-summary/> How to Crete a LaTeX Document?</h1></section></section>
+<section><section id="section-2" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-3" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-4" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-5" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="truth-table-for-a-boolean-expression" class="title-slide slide level1"><h1><lo-summary/> Truth table for a Boolean Expression</h1></section></section>
+<section><section id="at-least-2-out-of-4-are-true" class="title-slide slide level1"><h1><lo-sample/> At least 2 (out of 4) are true</h1></section><section id="at-least-2-out-of-4-are-true-1" class="slide level2">
 <h2><lo-soln/> At least 2 (out of 4) are true</h2>
 </section><section id="s" class="slide level2">
 <h2>S</h2>
@@ -451,28 +75,9 @@ T
 <h2>S</h2>
 <p>How many vertices, edges and faces has the polyhedron shown in Figure 1? Is it regular? How many Boolean variables would you need to write an expression that is satisfied if and only if the polyhedron has a Hamiltonian path?</p>
 </section></section>
-<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span style="color:darkgreen"><strong>(7) Some Proof Techniques</strong></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="direct-proof-of-an-if-then" class="title-slide slide level1"><h1><lo-sample/> Direct proof of an IF-THEN</h1><p><strong>Theorem:</strong> If an integer <span class="math inline">\(k\)</span> is odd, then <span class="math inline">\(k^2\)</span> gives remainder <span class="math inline">\(1\)</span>, when divided by <span class="math inline">\(8\)</span>.</p>
-<p><span class="math display">\[1,9,25,49,81,121,169,225,289,361,\ldots\]</span> or <span class="math display">\[0\cdot{}8+1,\;1\cdot{}8+1,\;3\cdot{}8+1,\;6\cdot{}8+1,\;10\cdot{}8+1,\ldots\]</span></p></section>
-<section><section id="experiment-in-python" class="title-slide slide level1"><h1><lo-sample/> Experiment in Python</h1><p><em>In Python:</em></p>
-<pre><code>divideSquare = lambda x: (x*x) % 8</code></pre></section><section id="assume-condition-is-true" class="slide level2">
+<section><section id="section-6" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="direct-proof-of-an-if-then" class="title-slide slide level1"><h1><lo-sample/> Direct proof of an IF-THEN</h1></section></section>
+<section><section id="experiment-in-python" class="title-slide slide level1"><h1><lo-sample/> Experiment in Python</h1></section><section id="assume-condition-is-true" class="slide level2">
 <h2><lo-hints/> Assume condition is true…</h2>
 <hgroup>
 <p><strong>Theorem:</strong> If an integer <span class="math inline">\(k\)</span> is odd, then <span class="math inline">\(k^2\)</span> gives remainder <span class="math inline">\(1\)</span>, when divided by <span class="math inline">\(8\)</span>.</p>
@@ -495,57 +100,13 @@ Discrete Structures
 How about remainder, when divided by <span class="math inline">\(8\)</span>?</li>
 </ol>
 </section></section>
-<section id="constructive-proofs-from-the-contrary" class="title-slide slide level1"><h1><lo-sample/> Constructive Proofs from the Contrary</h1><p><strong>Theorem:</strong> The number <span class="math inline">\(\sqrt{2}\)</span> is irrational.</p>
-<p><strong>Proof:</strong> Assume that it is rational. Express it as a fraction in reduced form: <span class="math inline">\(\sqrt{2}=\frac{p}{q}\)</span>, where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are not divisible by any integer <span class="math inline">\(&gt;1\)</span> (otherwise that fraction can be reduced).</p>
-<p>We get that <span class="math inline">\({\displaystyle \left( \sqrt{2} \right)^2 =\frac{p^2}{q^2}}\)</span> and <span class="math display">\[2q^2 = p^2.\]</span> Hence <span class="math inline">\(p\)</span> is an even number: <span class="math inline">\(p = 2k\)</span>. Substitute <span class="math inline">\(p\)</span> by <span class="math inline">\(2k\)</span>:<br />
-<span class="math inline">\(2q^2 = (2k)^2\)</span> or <span class="math inline">\(2q^2 = 4k^2\)</span> or <span class="math inline">\(q^2 = 2k^2\)</span>. Therefore also <span class="math inline">\(q\)</span> is an even number. This is a contradiction (we assumed that <span class="math inline">\(p/q\)</span> is written as an irreducible fraction). <span class="math inline">\(\blacksquare\)</span></p></section>
-<section id="non-constructive-proofs" class="title-slide slide level1"><h1><lo-sample/> Non-Constructive Proofs</h1><ul>
-<li></li>
-</ul></section>
-<section id="non-constructive-proof" class="title-slide slide level1"><h1><lo-sample/> Non-Constructive Proof</h1><p>Two players take turns - every time a player writes a positive integer from <span class="math inline">\(1\)</span> to <span class="math inline">\(8\)</span> (both endpoints inclusive) on a blackboard. It is not allowed to write a number which divides a number already written on the blackboard. Whoever cannot make a move loses. Prove that the first player can always win.</p>
-<p><em>(Latvian Open Mathematical Olympiad, Study Year 2001/2002, Grade 7, Problem 4).</em> See <a href="http://nms.lu.lv/uzdevumu-arhivs/latvijas-olimpiades/">NMS Arhīvs</a></p></section>
-<section id="section-7" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span style="color:darkgreen"><strong>(8) Proposition Handling in Coq</strong></span><br />
-<span>(9) <a href="#/section-8">References</a></span></p>
-</hgroup></section>
-<section id="section-8" class="title-slide slide level1"><h1> </h1><hgroup>
-<h1 style="font-size:28pt">
-Discrete Structures
-</h1>
-<p><blue>Logic and Proofs - 1<br />
-(Propositional Logic)</blue></p>
-</hgroup>
-<hgroup style="font-size:90%">
-<p><span>(1) <a href="#/section">Course Introduction</a></span><br />
-<span>(2) <a href="#/section-1">APA Style and LaTeX</a></span><br />
-<span>(3) <a href="#/section-2">Statements and Propositions</a></span><br />
-<span>(4) <a href="#/section-3">Boolean Operations</a></span><br />
-<span>(5) <a href="#/section-4">Rules of Reasoning</a></span><br />
-<span>(6) <a href="#/section-5">Truth Tables</a></span><br />
-<span>(7) <a href="#/section-6">Some Proof Techniques</a></span><br />
-<span>(8) <a href="#/section-7">Proposition Handling in Coq</a></span><br />
-<span style="color:darkgreen"><strong>(9) References</strong></span></p>
-</hgroup></section>
-<section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1><ol type="1">
-<li>Compiled a document from LaTeX into PDF.</li>
-</ol></section>
-<section><section id="general-references" class="title-slide slide level1"><h1><lo-summary/> General References</h1><ol type="1">
-<li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">CSE 191, Spring 2019 in Buffalo</a> - inspiration for the current course.</li>
-</ol></section><section id="references-on-latex" class="slide level2">
+<section><section id="constructive-proofs-from-the-contrary" class="title-slide slide level1"><h1><lo-sample/> Constructive Proofs from the Contrary</h1></section></section>
+<section><section id="non-constructive-proofs" class="title-slide slide level1"><h1><lo-sample/> Non-Constructive Proofs</h1></section></section>
+<section><section id="non-constructive-proof" class="title-slide slide level1"><h1><lo-sample/> Non-Constructive Proof</h1></section></section>
+<section><section id="section-7" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="section-8" class="title-slide slide level1"><h1> </h1></section></section>
+<section><section id="what-we-covered-in-this-class" class="title-slide slide level1"><h1><lo-summary/> What we covered in this class</h1></section></section>
+<section><section id="general-references" class="title-slide slide level1"><h1><lo-summary/> General References</h1></section><section id="references-on-latex" class="slide level2">
 <h2><lo-theory/> References on LaTeX</h2>
 </section><section id="references-on-coq" class="slide level2">
 <h2><lo-theory/> References on Coq</h2>

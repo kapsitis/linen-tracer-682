@@ -21,6 +21,8 @@
 
 
 
+-----
+
 # <lo-why/> why
 
 <div class="bigWhy">
@@ -38,6 +40,8 @@ LP uzdevuma atrisināšanu polinomiālā laikā.
 </div>
 
 
+
+-----
 
 # &nbsp;
 
@@ -60,6 +64,8 @@ LP uzdevuma atrisināšanu polinomiālā laikā.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Pamatidejas - 1
 
 <div style="font-size:70%">
@@ -81,6 +87,9 @@ $\ln x_i$ tiecas uz $-\infty$ un mērķfunkcija arī tieksies uz $-\infty$.
 
 </div>
 
+
+--
+
 ## <lo-theory/> Pamatidejas - 2
 
 **Otrais veids:** Ievieš papildus nosacījumus, 
@@ -92,6 +101,8 @@ mērķfunkcijas maksimālā vērtība. Mērķis ir panākt,
 lai algoritms sākumā atrod optimālo vērtību pieļaujamā 
 apgabala iekšienē un tad nonāk optimālajā stūrī. 
 
+
+--
 
 ## <lo-theory/> Iekšējā punkta metožu varianti
 
@@ -112,7 +123,7 @@ Sīkāk apskatīsim pirmo no šiem variantiem.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -134,6 +145,8 @@ Sīkāk apskatīsim pirmo no šiem variantiem.
 
 </hgroup>
 
+
+-----
 
 # <lo-theory/> Uzdevums
 
@@ -168,6 +181,8 @@ pie nosacījumiem $Ax = b$, $x_1 \geq 0$, $x_2 \geq 0$, $\ldots$, $x_n \geq 0$.
 </div>
 
 
+--
+
 ## <lo-summary/> Afīnās skalēšanas metodes soļi
 
 <div style="font-size:70%">
@@ -195,6 +210,8 @@ Citos kontekstos der arī citas vērtības ${\displaystyle \beta \in \left[ \fra
 </div>
 
 
+-----
+
 # &nbsp;
 
 <hgroup>
@@ -215,6 +232,9 @@ Citos kontekstos der arī citas vērtības ${\displaystyle \beta \in \left[ \fra
 
 </hgroup>
 
+
+
+-----
 
 # <lo-sample/> LP Uzdevums
 
@@ -239,6 +259,9 @@ $$
 
 </hgroup>
 
+
+--
+
 ## <lo-soln/> Pārveidošana standartformā
 
 Pārveido LP formā, kur ir tikai vienādības.
@@ -254,6 +277,8 @@ x_1 \geq 0, x_2 \geq 0, x_3 \geq 0, x_4 \geq 0.
 
 <blue>Sākumpunkts: $x_1=1$, $x_2=1$, $x_3=2$, $x_4=2$.</blue>
 
+
+--
 
 ## <lo-soln/> 1.solis
 
@@ -272,6 +297,7 @@ y_1 \geq -1,\; y_2 \geq -1,\; y_3 \geq -2,\; y_4 \geq -2.
 \end{array} \right.$$
 
 
+--
 
 ## <lo-soln/> 2.solis
 
@@ -289,6 +315,7 @@ z_1 \geq -1, z_2 \geq -1, z_3 \geq -1, z_4 \geq -1.
 Tekošais punkts – vienādā apkārtnē no visiem ierobežojumiem.
 
 
+--
 
 ## <lo-soln/> 3.solis
 
@@ -305,6 +332,9 @@ Sfēra, kas pieskaras visiem ierobežojumiem:
 $$z_1^2 + z_2^2 + z_3^2 + z_4^2 = 1.$$
 
 
+
+--
+
 ## <lo-soln/> 4.solis
 
 **Teorēma:** $a_1z_1 + a_2z_2 +\ldots + a_nz_n$
@@ -318,6 +348,8 @@ ${\displaystyle -\frac{z_1}{3} + z_2}$
 maksimums ir uz tā vektora, kas 
 rāda virzienā $z_{\max} = (z_1,z_2,z_3,z_4) = (-1/3,1,0,0)$. 
 
+
+--
 
 ## <lo-soln/> 5.solis
 
@@ -336,6 +368,9 @@ $$B = \left(
 1 & 1 & 2 & 0 \\ 
 2 & -1 & 0 & 2 
 \end{array} \right)$$
+
+
+--
 
 ## <lo-soln/> 5.solis (turpinājums)
 
@@ -375,6 +410,8 @@ $$B \cdot z_{\max} = B \cdot \left( \begin{array}{c}
 </div>
 
 
+--
+
 ## <lo-soln/> 6.solis 
 
 Risinām sistēmu $B \cdot B^T \cdot w = B \cdot z_{max}$.
@@ -388,6 +425,9 @@ Vienādojumu sistēmas atrisinājums ir
 
 $$w_1 = \frac{23}{159},\;\;w_2 = -\frac{32}{159}.$$
 
+
+
+--
 
 ## <lo-soln/> 7.solis 
 
@@ -416,6 +456,7 @@ $$= \left( \begin{array}{c}
 $$
 
 
+--
 
 ## <lo-soln/> 8.solis 
 
@@ -433,7 +474,7 @@ Tagad jānosaka pirmais krustpunkts starp šo taisni un plaknēm $z_i \geq -1$
 $z_3 \geq -1$. 
 
 
-
+--
 
 ## <lo-soln/> 9.solis 
 
@@ -467,7 +508,7 @@ x_4 = 2 + y_4 = 4.67130
 </div>
 
 
-
+--
 
 ## <lo-summary/> Afīnās mērogošanas galarezultāts
 
@@ -494,7 +535,7 @@ ieguvām $(0.74957;3.17044)$
 </hgroup>
 
 
-
+-----
 
 # &nbsp;
 
@@ -517,6 +558,9 @@ ieguvām $(0.74957;3.17044)$
 </hgroup>
 
 
+
+-----
+
 # <lo-theory/> Potenciāla samazināšanas metode
 
 Minimizējam 
@@ -525,7 +569,7 @@ kur $Ax =b$, $x \geq 0$,
 $yA + s = 0$, $s \geq 0$. 
 
 
-
+-----
 
 # <lo-theory/> Centrālās trajektorijas metode
 
@@ -541,7 +585,7 @@ un $\mu_k$ tuvojas nullei.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -563,6 +607,9 @@ un $\mu_k$ tuvojas nullei.
 
 </hgroup>
 
+
+-----
+
 # <lo-theory/> Divu veidu ieteikumu veidošana
 
 1. Collaborative systems: Iesaka jaunu saturu, balstoties uz to, ko 
@@ -578,6 +625,7 @@ MovieLens dataset  - https://www.youtube.com/watch?v=9gBC9R-msAk
 
 
 
+-----
 
 # &nbsp;
 

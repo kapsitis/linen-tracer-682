@@ -25,15 +25,14 @@ https://en.wikipedia.org/wiki/Asymmetric_numeral_systems
 
 Aplūkot šīs ANS kā iespēju paātrināt saspiešanu "entropijas kodiem"
 
-
 PSEUDO_EOF - Hafmana kods var beigties baita vidū. Parasti pievieno īpašu simbolu (teksta beigu marķieri), 
 lai saprastu, kad atkodēšana jāpārtrauc. 
 https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1172/assn/huffman.html
 
-
 --> 
 
 
+-----
 
 
 # <lo-why/> why
@@ -51,6 +50,7 @@ kļuvuši par industrijas standartu?
 
 </div>
 
+--
 
  
 ## <lo-theory/> Sasniedzamie rezultāti
@@ -62,7 +62,7 @@ kļuvuši par industrijas standartu?
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -86,6 +86,8 @@ kļuvuši par industrijas standartu?
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Šenona informācijas saturs
 
 **Definīcija** (*Shannon information content*): 
@@ -99,6 +101,8 @@ saturu *paredzamā vērtība* (*expected value*):
 
 $$H(S)= \sum\limits_{x_i \in S} p(x = x_i) \log_2 \frac{1}{p(x = x_i)}.$$
 
+
+--
 
 ## <lo-theory/> Negodīga monēta
 
@@ -119,6 +123,8 @@ biti, bet tie ir reāli biti, kamēr entropijā izsaka
 
 </hgroup>
 
+--
+
 ## <lo-theory/> Entropija 2 iznākumiem
 
 <hgroup>
@@ -136,12 +142,16 @@ kas ir tieši $1$ bits.
 
 </hgroup>
 
+--
+
 ## <lo-theory/> Info saturs 2 ziņojumiem
 
 Ja kāds nosūta divus ziņojumus (jeb alfabēta simbolus) $x_1$ un 
 $x_2$, kas ir neatkarīgi kā gadījuma lielumi, tad to 
 secības entropija ir abu viņu entropijas summa $h(x_1x_2) = h(x_1) + h(x_2)$
 
+
+--
 
 ## <lo-theory/> Šenona (neformāls) apgalvojums
 
@@ -155,6 +165,7 @@ $p_i$, tad katrs no tiem aizņem kaut kādu gabalu no
 $1/16$. 
 
 
+--
 
 # <lo-sample/> 12 monētas
 
@@ -163,6 +174,7 @@ izņemot vienu, kura ir vai nu vieglāka, vai nu smagāka nekā citas.
 Ar kādu mazāko svēršanu skaitu var noskaidrot, vai tā ir vieglāka
 vai smagāka kā arī atrast šo monētu?
 
+--
 
 ## <lo-summary/> Uzdevuma sarežģītības analīze
 
@@ -172,6 +184,8 @@ jāpierāda, piemēram, tiesas ekspertīzē?
 * Cik svēršanas nepieciešamas deterministiskam algoritmam? 
 Pamatojums ar variantu saskaitīšanu un Dirihlē principu?
 
+
+--
 
 ## <lo-summary/> Pirmais solis
 
@@ -189,7 +203,7 @@ sagaidāmo Šenona informācijas saturu no 1.svēršanas):
 </table>
 
 
-
+--
 
 ## <lo-summary/> Par entropiju divās situācijās
 
@@ -213,7 +227,7 @@ ${\displaystyle \left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right)}$.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -236,6 +250,9 @@ ${\displaystyle \left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right)}$.
 
 </hgroup>
 
+
+-----
+
 # <lo-theory/> Entropija kā saspiežamības robeža
 
 
@@ -250,7 +267,7 @@ arī Hafmana kodējumam $C^{\ast}$ ir spēkā:
 $$\ell_a(C^{\ast}) \leq H(S) + 1.$$
 
 
-
+--
 
 ## <lo-theory/> Krafta-Makmilana nevienādība
 
@@ -264,6 +281,8 @@ prefiksu koku, kur katram garumam $l_i$ atbilst lapa šajā kokā, kuras
 dziļums ir tieši $l_i$. 
 
 
+--
+
 ## <lo-theory/> Nevar kodēt labāk par entropiju
 
 **Teorēma:** 
@@ -271,6 +290,8 @@ Katrai ziņojumu kopai $S$ ar zināmu varbūtību sadalījumu un
 viennozīmīgi atkodējamu kodējumu $C$ ir spēkā nevienādība:
 $$H(S) \leq l_a(C).$$
 
+
+--
 
 ## <lo-summary/> Pierādījums ar nevienādību ķēdīti
 
@@ -285,6 +306,7 @@ $$= \sum\limits_{s \in S} p(s) \left( \log_2 \frac{1}{p(s)} - \log_2 2^{\ell(s)}
 $$=\sum\limits_{s \in S} p(s) \log_2 \frac{ 2^{-\ell(s)}}{p(s)} \leq $$
 $$ \leq \log_2 \sum_{s \in S} 2^{-\ell(s)} \leq 0.$$
 
+--
 
 ## <lo-yellow/> Jensena nevienādība
 
@@ -300,6 +322,8 @@ svari $p_1,p_2,\ldots,p_n$, kuru summa ir $1$. Tad ir spēkā nevienādība:
 
 $$p_1f(x_1) + p_2f(x_2) + \ldots + p_nf(x_n) \leq f \left( p_1x_1 + \ldots p_nx_n \right).$$
 
+
+-----
 
 # &nbsp;
 
@@ -323,7 +347,7 @@ $$p_1f(x_1) + p_2f(x_2) + \ldots + p_nf(x_n) \leq f \left( p_1x_1 + \ldots p_nx_
 </hgroup>
 
 
-
+-----
 
 # <lo-theory/> Simbolu grupēšana
 
@@ -339,6 +363,8 @@ kodam ir
 $$\ell_a(C_2) = 1 \cdot 0.81 + 2\cdot 0.09 + 3\cdot 0.09 + 3 \cdot 0.01 = 1.29/2 = 0.645.$$
 
 
+--
+
 ## <lo-theory/> Prediktīva kodēšana
 
 * Parasti nevajag aplūkot pilnu Dekarta reizinājumu $S \times S$, ko 
@@ -350,6 +376,7 @@ sadalījums ir $\{ p, 1-p \}$).
 * Pirmais tuvinājums reāliem tekstiem ir *Markova ķēdes* (nākamā 
 simbola varbūtības sadalījumu nosaka iepriekšējais simbols). 
 
+--
 
 ## <lo-theory/>  "Trie" koki
 
@@ -372,7 +399,7 @@ bet šie algoritmi parasti izveido milzīgas datu struktūras.
 
 </hgroup>
 
-
+-----
 
 # &nbsp;
 
@@ -397,7 +424,7 @@ bet šie algoritmi parasti izveido milzīgas datu struktūras.
 
 
 
-
+-----
 
 
 # <lo-theory/> Aritmētiskā saspiešana
@@ -414,6 +441,8 @@ ir daudz mazāks par $1$.
 (un bitos iekodējam tikai pašās beigās).
 
 
+--
+
 ## <lo-theory/> Algoritma apraksts
 
 **Ievade:** Alfabēts un tā varbūtību sadalījums. Ziņojumu virkne šajā alfabētā.   
@@ -425,6 +454,8 @@ ir $\{p(1),\ldots , p(m)\}$, kuru summa ir $1$.
 * Apzīmējam *kumulatīvās varbūtības*: 
 $$f(j) = \sum\limits_{i=1}^{j-1} p(i),\;\;j=1,\ldots,m.$$
 
+
+--
 
 ## <lo-summary/> Pirmais intervāls
 
@@ -441,6 +472,7 @@ s_i = s_{i-1} \cdot p(x_i)
 \end{array} \right.$$
 
 
+--
 
 ## <lo-theory/> Piemērs
 
@@ -467,6 +499,7 @@ entropiju $1.485475$. Kāpēc?
 </hgroup>
 
 
+--
 
 ## <lo-theory/> Intervālu nosūtīšana
 
@@ -491,7 +524,7 @@ Sk arī 21.lpp. no teksta
 - ar veseliem skaitļiem tuvināts aritmētiskās kodēšanas algoritms.
 
 
-
+-----
 
 # &nbsp;
 
@@ -515,6 +548,8 @@ Sk arī 21.lpp. no teksta
 </hgroup>
 
 
+-----
+
 # <lo-sample/> Piemērs labai saspiešanai ar LZ78
 
 
@@ -535,6 +570,8 @@ sample(1:4,size=17, replace=TRUE)
 :::
 
 
+-----
+
 # <lo-theory> LZ78 iekodēšanas pseidokods
 
 Sākumā vārdnīcā jau atrodas visi simboli. Tad tai pievieno 
@@ -543,6 +580,7 @@ garākas virknītes:
 ![LZ78 iekodēšana](LZ78-encode.png)
 
 
+--
 
 ## <lo-sample/> LZ78 iekodēšanas piemērs
 
@@ -572,9 +610,15 @@ Aizstājam virknes ar soļiem, kur tās iesprauda vārdnīcā:
 
 </div>
 
+
+-----
+
 # <lo-theory> LZ78 atkodēšanas pseidokods
 
 ![LZ78 atkodēšana](LZ78-decode.png)
+
+
+--
 
 ## <lo-sample/> LZ78 atkodēšanas piemērs
 
@@ -585,7 +629,7 @@ Ja atkodēšana veikta pareizi, vajadzētu
 sanākt <blue>`A.B.C.AB.CA.BC.D.ABC.AB.A`</blue>.
 
 
-
+-----
 
 # &nbsp;
 
@@ -611,7 +655,7 @@ sanākt <blue>`A.B.C.AB.CA.BC.D.ABC.AB.A`</blue>.
 
 
 
-
+-----
 
 # <lo-yellow/> Pasaka: Kur lieto LZ saimes algoritmus
 
@@ -620,6 +664,8 @@ sanākt <blue>`A.B.C.AB.CA.BC.D.ABC.AB.A`</blue>.
 * *"LZ78 was covered by U.S. Patent 4,464,650 by Lempel, Ziv, Cohn, and Eastman, assigned to Sperry Corporation, later Unisys Corporation, filed on August 10, 1981. Two US patents were issued for the LZW algorithm: U.S. Patent 4,814,746 by Victor S. Miller and Mark N. Wegman and assigned to IBM, originally filed on June 1, 1983, and U.S. Patent 4,558,302 by Welch, assigned to Sperry Corporation, later Unisys Corporation, filed on June 20, 1983."*
 (sk. [LZW Patents](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch#Patents))
 
+--
+
 ## <lo-yellow/> Patenti saistībā ar saspiešanu
 
 * GIF (Unisys patents beidzās ap 2004.g.). Radās aizstājējformāts PNG - tāda
@@ -627,6 +673,8 @@ pati bezzudumu saspiesta rastra grafika (tika pievienota "alpha-transparency").
 * MP3 (patenti ASV beidzās ap 2017.g.). Radās OGG Vorbis formāti skaņai un 
 video. 
 * [MP3 patentu beigas: 23.aprīlis 2017.g.](https://www.audioblog.iis.fraunhofer.com/mp3-software-patents-licenses)
+
+--
 
 ## <lo-yellow/> Praktiskās sekas
 
@@ -637,6 +685,7 @@ samudžinātas (pamatos Technicolor and Fraunhofer).
 * Debian Linux papildu repozitoriji.
 
 
+-----
 
 # &nbsp;
 
@@ -660,7 +709,7 @@ samudžinātas (pamatos Technicolor and Fraunhofer).
 </hgroup>
 
 
-
+-----
 
 # <lo-theory/> Ko darījām šajā nodarbībā?
 
@@ -673,6 +722,7 @@ PPM)
 5. Iesākām apspriest Lempela Ziva algoritmus.
 
 
+-----
 
 # <lo-theory/> Atsauces
 

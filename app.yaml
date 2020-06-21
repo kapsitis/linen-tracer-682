@@ -20,6 +20,9 @@ handlers:
 - url: /reveal.js
   static_dir: reveal.js
   
+- url: /reveal.js.40
+  static_dir: reveal.js.40
+
 - url: /downloads
   static_dir: downloads
 
@@ -66,14 +69,14 @@ handlers:
 - url: /rbs-tales
   static_dir: rbs-tales
 
-- url: /datasearch/.*
-  script: datasearch.app
+- url: /semantic/.*
+  script: semantic.app
   
-- url: /datasearch-bin
-  static_dir: datasearch-bin
+- url: /semantic-bin
+  static_dir: semantic-bin
 
-- url: /datasearch-tales
-  static_dir: datasearch-tales
+- url: /semantic-tales
+  static_dir: semantic-tales
 
 - url: /discrete/.*
   script: discrete.app
@@ -81,11 +84,18 @@ handlers:
 - url: /discrete-bin
   static_dir: discrete-bin
   
-- url: /discrete-bin/samples
-  static_dir: discrete-bin/samples
-
 - url: /discrete-tales
   static_dir: discrete-tales
+
+
+- url: /data-structures/.*
+  script: data_structures.app
+    
+- url: /data-structures-bin
+  static_dir: data-structures-bin
+
+- url: /data-structures-tales
+  static_dir: data-structures-tales
 
 
 

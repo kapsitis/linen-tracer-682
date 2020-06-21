@@ -33,6 +33,9 @@ HVS model)
 --> 
 
 
+--
+
+
 ## <lo-theory/> Mērķi
 
 * Aprakstīt cilvēka redzes modeli zudumradošajā saspiešanā.
@@ -48,7 +51,7 @@ mediju failos.
 
 
 
-
+-----
 
 
 # &nbsp;
@@ -72,6 +75,7 @@ mediju failos.
 </hgroup>
 
 
+-----
 
 # <lo-theory/> HVS modelis
 
@@ -85,7 +89,7 @@ divreiz labāka.
 > "Chrominance is at half resolution of luminance".
 
 
-
+--
 
 ## <lo-summary/> Flicker frequency - mirgošanas frekvence
 
@@ -98,7 +102,7 @@ izmantojot "interlacing".
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -122,6 +126,7 @@ izmantojot "interlacing".
 
 
 
+--
 
 ## <lo-summary/> Konteineri, ko atbalsta YouTube
 
@@ -138,6 +143,8 @@ izmantojot "interlacing".
 </div>
 
 
+--
+
 ## <lo-summary/> WebP un WebM
 
 * Google atbalstīti formāti
@@ -148,6 +155,8 @@ ar pārlūkprogrammās iebūvēto HTML5 video atskaņotāju.
 panāk mazākus attēlu izmērus, salīdzinot attiecīgi ar PNG un JPEG (gan
 tipiskiem failiem Internetā, gan ļoti optimāli saspiestiem ar `pngcrush` u.c.)
 
+
+--
 
 ## <lo-summary/> Kodeki
 
@@ -160,7 +169,7 @@ is used in many other applications/hardware and has gained great popularity. Mos
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -183,6 +192,8 @@ is used in many other applications/hardware and has gained great popularity. Mos
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Saistītas bildes
 
 * Video visvienkāršākajā izpratnē ir daudzu rastra attēlu secība. 
@@ -190,6 +201,9 @@ is used in many other applications/hardware and has gained great popularity. Mos
 lieli faili. 
 * Secīgi attēli stipri korelē (ja vien tieši attiecīgajā vietā 
 netika samontēti divi gabali vai krasi mainīts kameras stāvoklis). 
+
+
+--
 
 ## <lo-theory/> MPEG freimu tipi
 
@@ -202,6 +216,8 @@ katru attēlu iekodē vienā no šiem 3 veidiem:
 gan nākamo freimu, kas var būt gan I-, gan P-freims.
 
 
+--
+
 ## <lo-theory/> B-freimus atliek nosūtītajos datos
 
 ![B frames postponed](b-frames-postponed.png)
@@ -209,6 +225,9 @@ gan nākamo freimu, kas var būt gan I-, gan P-freims.
 Ja filmas scēna strauji mainās, ir izdevīgi biežāk lietot I-freimus, ja tā ir relatīvi
 statiska, tad - sajauktus P-freimus un B-freimus. Kodeki parasti 
 ir optimizēti kaut kādam "caurmēra" ritmam. 
+
+
+--
 
 ## <lo-theory/> Kustības vektors
 
@@ -219,6 +238,9 @@ uz kuriem būvē citus.
 P-freimā (dažreiz tas var būt nobīdīts - ja video attēlota kustība vai 
 kameras iefokusēšanās - *panning*). 
 
+
+--
+
 ## <lo-theory/> P-freimu kodēšana
 
 [YCbCr krāsu plakne](https://en.wikipedia.org/wiki/YCbCr) - nav tas pats kas YIQ.
@@ -226,6 +248,7 @@ kameras iefokusēšanās - *panning*).
 ![P-freimu kodēšana](p-frame-encoding.png)
 
 
+--
 
 ## <lo-theory/> Saspiešanas piemērs
 
@@ -249,6 +272,8 @@ Kopā ar audio tas var būt 1.45 megabiti sekundē, kas aizņem T1 Interneta
 savienojumu (viens vītais pāris; 1.544 Mbps).
 
 
+--
+
 ## <lo-theory/> MPEG lietojumi
 
 * Satelīttelevīzijas pārraides, kas digitālu signālu no 
@@ -259,6 +284,9 @@ būt analogs).
 (vai straumējamu) filmu. 
 
 
+
+
+-----
 
 # &nbsp;
 
@@ -281,6 +309,8 @@ būt analogs).
 </hgroup>
 
 
+--
+
 # <lo-theory/> MP3 mērķi
 
 * Saspiest mūziku u.c. audiofailus, lai tos varētu pārraidīt 
@@ -296,6 +326,7 @@ piemēram, AAC (Advanced Audio Coding) vai MPEG-H.
 * [The MP3 is dead, say creators after terminating licensing](https://www.cnbc.com/2017/05/15/mp3-dead-say-creators-after-terminating-licensing.html)
 
 
+--
 
 # <lo-theory/> Parauga ātrums (sample rate)
 
@@ -311,6 +342,9 @@ nav frekvenču, kas pārsniegtu $B$ hercus, tad to
 var pilnībā (bez zudumiem) atjaunot, ja zināmas tās 
 vērtības ik pēc laika intervāliem $\Delta t = 1/(2B)$.
 
+
+--
+
 ## <lo-theory/> Bitu pārraide? (bitrate)
 
 * Svarīgākais saspiešanas parametrs. 
@@ -325,6 +359,8 @@ Tipiski MP3 faili ir 10-reiz mazāki par audio kompaktdiska failiem.
 [CD-ROM bitrate](https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio#Bit_rate)
 
 
+
+--
 
 ## <lo-theory/> CBR un VBR
 
@@ -342,7 +378,7 @@ atļautais bitu ātrums).
 
 
 
-
+--
 
 ## <lo-theory/> Dzirdamās skaņas frekvences 
 
@@ -359,6 +395,8 @@ ar vienādām blakusesošo pustoņu frekvenču attiecībām.
 attiecība ir $1$ pret $\sqrt[12]{2}$. 
 
 
+--
+
 ## <lo-theory/> Analizējošās filtrubankas (filterbanks)
 
 Atdarina cilvēka ausī esošās struktūras, no kurām katra uztver 
@@ -373,6 +411,7 @@ tāpēc tas tiek nomaskēts). Divi gadījumi -
 tuva frekvence, laika sakritība.
 
 
+--
 
 ## <lo-theory/> Skaņas maskēšana
 
@@ -386,6 +425,9 @@ tuva frekvence, laika sakritība.
 ![Temporal Masking](temporal-masking.png)
 
 </hgroup>
+
+
+--
 
 ## <lo-theory/> FFT (ātrā Furjē transformācija)
 
@@ -406,6 +448,7 @@ ir 1152 datu punkti.
 </hgroup>
 
 
+-----
 
 # <lo-theory/> Stereo-mūzikas dati
 
@@ -421,6 +464,8 @@ austiņās dzirdamās lietas, ja cilvēks pārvietojas telpā.
 Bet MP3 šo nerisina.
 
 
+
+------
 
 # &nbsp;
 
@@ -443,6 +488,8 @@ Bet MP3 šo nerisina.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Steganogrāfija
 
 * Teksta noslēpšana citos teksta failos (vārdu pirmie burti), bet arī atstarpes, 
@@ -458,6 +505,9 @@ slēpšana DNS pieprasījumu hederos.
 [Michal Drzymala, et al. Network Steganography in 
 the DNS Protocol](http://www.czasopisma.pan.pl/Content/101654/PDF/47.pdf?handler=pdf)
 
+
+--
+
 ## <lo-theory/> Aizsardzība pret steganogrāfiju
 
 * Steganalīze (*steganalysis*) reizēm var atrast 
@@ -469,6 +519,7 @@ steganogrāfisko ziņojumu sabojāt.
 
 
 
+-----
 
 # <lo-theory/> Ūdenszīmju tehnoloģijas
 
@@ -481,6 +532,8 @@ satura izmantošanu. Dažreiz arī, kurš medija eksemplārs noplūdis.
 saturs ir par kaut ko citu).
 
 
+--
+
 ## <lo-summary/> Ūdenszīmju/Steganogrāfijas ievietošana
 
 ![Embedding watermark](embedding-watermark.png)
@@ -492,6 +545,7 @@ DKIM) ievieto jau gatavā mediju failā.
 
 
 
+--
 
 
 ## <lo-summary/> Redzamas un neredzamas ūdenszīmes
@@ -506,7 +560,7 @@ saņēmēju. Reizēm arī šīs informācijas
 <blue>*nenoliedzamību*</blue> (*nonrepudiation*).
 
 
-
+--
 
 ## <lo-summary/> Trauslas un noturīgas ūdenszīmes
 
@@ -518,6 +572,8 @@ mediju faila manipulēšanas.
 Bieži vajag gan vienas, gan otras - lai noskaidrotu faila patieso 
 izcelsmi (un pēc tam - vai tas nav ticis mainīts pa ceļam līdz saņēmējam). 
 
+
+--
 
 ## <lo-summary/> Telpiskas un spektrālas ūdenszīmes
 
@@ -532,6 +588,8 @@ grūtāk atšķir.
 
 Spektrālas ūdenszīmes mēdz būt noturīgākas.
 
+
+--
 
 ## <lo-summary/> Labu ūdenszīmju vēlamās īpašības: 
 
@@ -549,6 +607,7 @@ vispārsaprotamā veidā.
 
 
 
+--
 
 ## <lo-summary/> Uzbrukumi ūdenszīmēm
 
@@ -558,6 +617,7 @@ apgriešana (*cropping*), mērogošana (*scaling*),
 ģeometriska deformēšana.
 
 
+--
 
 ## <lo-summary/> Lietojumi
 
@@ -567,6 +627,8 @@ apgriešana (*cropping*), mērogošana (*scaling*),
 * Mediju satura aizsargāšana pret izmainīšanu.
 
 
+
+-----
 
 # &nbsp;
 
@@ -588,6 +650,9 @@ apgriešana (*cropping*), mērogošana (*scaling*),
 
 </hgroup>
 
+
+
+-----
 
 # <lo-theory/> Ko darījām šajā nodarbībā? 
 

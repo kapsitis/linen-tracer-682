@@ -33,6 +33,9 @@ https://www.abacademies.org/articles/an-application-of-linear-programming-in-per
 --> 
 
 
+
+-----
+
 # <lo-why/> why
 
 <div class="bigWhy">
@@ -50,7 +53,8 @@ ir praktiska un intuitīvi saprotama?
 </div>
 
 
- 
+--
+
 ## <lo-theory/> Sasniedzamie rezultāti
 
 1. Definēt dažus optimizācijas uzdevumu veidus (ar vai bez nosacījumiem).
@@ -63,7 +67,7 @@ ir praktiska un intuitīvi saprotama?
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -87,7 +91,7 @@ ir praktiska un intuitīvi saprotama?
 
 
 
-
+-----
 
 # <lo-theory/> Optimizācijas uzdevumu veidi
 
@@ -100,6 +104,7 @@ $$c_1(x_1, x_2, \ldots, x_n) \geq 0, \ldots, c_k(x_1, x_2, \ldots, x_n) \geq 0,$
 $$d_1(x_1, x_2, \ldots, x_n) = 0, \ldots, d_{\ell}(x_1, x_2, \ldots, x_n) = 0.$$
 
 
+--
 
 ## <lo-summary/> Piemērs: Kvadrātiskā programmēšana
 
@@ -123,7 +128,7 @@ c_{m1} x_1 + c_{m2} x_1 + \ldots + c_{mn} x_n \leq d_m,
 </div>
 
 
-
+--
 
 ## <lo-summary/> Piemērs: Lineārā programmēšana
 
@@ -144,6 +149,7 @@ kopš 1920.-tajiem gadiem.
 </div>
 
 
+--
 
 ## <lo-summary/> Piemērs: Lineārā programmēšana
 
@@ -157,6 +163,8 @@ var aprakstīt daudzus interesantus un praktiski svarīgus uzdevumus,
 bet tām nav zināms algoritms, kas ātri (polinomiālā laikā) atrisina 
 patvaļīgu veselo skaitļu programmu. 
 
+
+--
 
 ## <lo-summary/> NP-pilni uzdevumi
 
@@ -173,6 +181,7 @@ kuru mainīgie ir reāli skaitļi.
 
 
 
+-----
 
 # <lo-sample/> LP Piemērs: Pārtikas iepirkšana
 
@@ -187,6 +196,8 @@ Optimāla izejvielu izmantošana finiera
 rūpniecībā (1939.g.). Agrīni optimizācijas uzdevumi bieži saistīti ar
 ražošanas plānošanu, it īpaši situācijās, kurās nav brīvā tirgus.
 
+
+--
 
 ## <lo-summary/> Pārtikas iepirkšanas lineārais modelis 
 
@@ -216,6 +227,8 @@ tad tā ir jauktā veselo skaitļu programmēšana
 </div>
 
 
+-----
+
 # &nbsp;
 
 <hgroup>
@@ -238,6 +251,8 @@ tad tā ir jauktā veselo skaitļu programmēšana
 
 
 
+-----
+
 # <lo-theory/> Vispārīgais LP uzdevums
 
 Lineārā programmēšana apraksta daudzas praktiskas problēmas.
@@ -253,6 +268,8 @@ a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1\\
 a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m
 \end{array} \right.$$
 
+
+--
 
 ## <lo-summary/> 2-dimensiju piemērs
 
@@ -273,6 +290,8 @@ Turpmāk apskatīsim tikai maksimizācijas uzdevumus.
 
 </div>
 
+
+-----
 
 # <lo-theory/> Grafiskā interpretācija
 
@@ -301,6 +320,8 @@ lielas vērtības. Pirms LP risināšanas jāpārbauda, ka apgabals ir galīgs.
 </hgroup>
 
 
+--
+
 ## <lo-summary/> Optimuma atrašanās
 
 <hgroup>
@@ -323,6 +344,7 @@ lietojot ģeometrisko interpretāciju.
 </hgroup>
 
 
+--
 
 ## <lo-summary/> Kur atrodas maksimums
 
@@ -345,6 +367,8 @@ stūris ar mazāku vērtību.
 </hgroup>
 
 
+-----
+
 # &nbsp;
 
 <hgroup>
@@ -365,6 +389,7 @@ stūris ar mazāku vērtību.
 
 </hgroup>
 
+-----
 
 # <lo-theory/> Simpleksa metode
 
@@ -381,6 +406,7 @@ Otrā fakta dēļ, ja tāda blakus stūra nav, tad mērķa funkcija
 sasniedz maksimālo vērtību visā pieļaujamajā apgabalā.
 
 
+--
 
 ## <lo-summary/> Pārveidojuma piemērs
 
@@ -420,6 +446,8 @@ x_1,x_2,x_3,x_4,x_5 \geq 0.
 </hgroup>
 
 
+--
+
 ## <lo-sample/> Nosacījumiem atbilstošais apgabals
 
 ![Feasible region](feasible-region.png)
@@ -429,6 +457,7 @@ ir punkts, kurā divi no $x_1,\ldots,x_n= 0$.
 No iepriekšējā piemēra.
 
 
+--
 
 ## <lo-sample/> Attēls ar stūriem
 
@@ -446,7 +475,7 @@ t.i. $k$ mainīgie ir vienādi ar $0$.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -469,6 +498,7 @@ t.i. $k$ mainīgie ir vienādi ar $0$.
 </hgroup>
 
 
+-----
 
 # <lo-theory/> Simpleksalgoritms
 
@@ -483,6 +513,7 @@ x_1,x_2,x_3,x_4,x_5 \geq 0
 \end{array} \right.$$
 
 
+--
 
 ## <lo-summary/> Simpleksalgoritma tabula
 
@@ -553,7 +584,7 @@ $x_i \neq 0$ - pamatmainīgie.
 </div>
 
 
-
+--
 
 ## <lo-sample/> LP vispārīgajā formā
 
@@ -650,6 +681,8 @@ veiksim rindu un kolonnu pārveidojumus.
 
 </div>
 
+
+--
 
 ## <lo-sample/> Pārveidošana standartformā
 
@@ -793,6 +826,9 @@ Iepriekšējā piemērā $n=5$, $k=3$ un tabula jau ir standartformā:
 </div>
 
 
+
+--
+
 ## <lo-sample/> Simpleksalgoritma solis
 
 <div style="font-size:70%">
@@ -815,6 +851,9 @@ $x_1+x_2+x_4$ pieaug par $d$. Lai saglabātu vienādību,
 $x_4$ samazina par $d$; $x_2+x_5$ pieaug par $d$. Jāsamazina $x_5$ par $d$.
 
 </div>
+
+
+-----
 
 # <lo-summary/> Piemēra turpinājums
 
@@ -888,6 +927,8 @@ kurā $x_1 = x_2 = 0$ uz stūri, kurā $x_1 = x_5 = 0$.
 
 </div>
 
+
+--
 
 ## <lo-summary/> 2.solis
 
@@ -1009,6 +1050,8 @@ Lai izdarītu nākamo soli, tabula jāpārveido par ekvivalentu tabulu standartf
 </div>
 
 
+--
+
 ## <lo-summary/> 3.solis
 
 <div style="font-size:70%">
@@ -1125,6 +1168,9 @@ Jātiek vaļā arī no nenulles koeficienta pēdējā rindā:
 
 </div>
 
+
+
+--
 
 ## <lo-summary/> 4.solis
 
@@ -1247,6 +1293,9 @@ Ja $d=8$, tad $x_4=0$.
 
 </div>
 
+
+--
+
 ## <lo-summary/> 5.solis
 
 <div style="font-size:70%">
@@ -1368,6 +1417,7 @@ vērtība palielinātos. Sasniegts maksimums.
 
 
 
+-----
 
 # &nbsp;
 
@@ -1392,7 +1442,7 @@ vērtība palielinātos. Sasniegts maksimums.
 
 
 
-
+-----
 
 # &nbsp;
 

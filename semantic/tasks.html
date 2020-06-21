@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>Semantic Web: Problems</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Problēmtēmas</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Prezentācijas</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="labs.html">Prakt.Darbi</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Norādes</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<dl>
+<dt>Continuous integration of semantic data?</dt> 
+<dd>Open data (in particular, created by government and municipalities) are 
+often not published on regular basis; their formats may change to reflect
+current priorities.
+In IT industry there is is an orderly mechanism to achieve consistent state 
+in the data applications - it is <i>continuous integration</i>.  
+It uses Maven, Jenkins and similar tools to 
+ensure that the data and software match each other without extra cleanup. 
+Semantic Web and RDF (in addition to the regular mechanisms of <i>continuous integration</i>
+and package managment)  can also incorporate meta-level data regarding 
+the data publishing schedules, format requirements, legal limitations.</dd>
+<dt>"Votes and Quotes" - ability to navigate data related to political decision-making.</dt>
+<dd>Parliament in every country produces lots of information that needs additional digesting
+and added context in order to be easy to consume. 
+One part of the context could be described by ``event and behavior analitics'' - 
+a study of behavioral patterns and outliers regarding the expected trends 
+(for example, people voting against their expected party ideology).   
+Some of these behaviors could be captured by text categorization and
+labelling; to allow the policy experts write domain-specific 
+queries to filter out interesting events - to display the most relevant data.
+(We do not expect people who are not experts in the IT to write
+the general queries as SQL, SPARQL, Elastic).</dd>
+</dl>
+
+
+
+</body>
+</html>
+

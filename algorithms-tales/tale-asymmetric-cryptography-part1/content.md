@@ -22,6 +22,8 @@
 
 
 
+-----
+
 # <lo-why/> why
 
 <div class="bigWhy">
@@ -44,7 +46,7 @@ veselu skaitļu manipulācijām?
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -69,6 +71,7 @@ veselu skaitļu manipulācijām?
 </hgroup>
 
 
+-----
 
 # <lo-theory/> Kriptoloģijas apakštēmas
 
@@ -78,6 +81,7 @@ veselu skaitļu manipulācijām?
 
 
 
+--
 
 ## <lo-summary/> Vienreiz lietojamās atslēgas
 
@@ -99,6 +103,8 @@ $$
 </div>
 
 
+-----
+
 # <lo-summary/> AES: Pazīstamākais simetriskais šifrs
 
 * AES (*Advanced Encryption Standard*) ap 2002.g. tika izraudzīts 
@@ -108,7 +114,7 @@ drošai pārraidei. To ieviesa US National Institute of Standards and Technology
 * AES atslēgas var būt 128, 192, 256 bitus garas.
 
 
-
+-----
 
 # &nbsp;
 
@@ -134,7 +140,7 @@ drošai pārraidei. To ieviesa US National Institute of Standards and Technology
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -159,6 +165,7 @@ drošai pārraidei. To ieviesa US National Institute of Standards and Technology
 </hgroup>
 
 
+-----
 
 # <lo-summary/> RSA pamatideja
 
@@ -171,6 +178,7 @@ izrādīsies pirmskaitlis.
 * BET neeksistē efektīvs algoritms lielu skaitļu faktorizācijai. 
 
 
+--
 
 ## <lo-summary/> RSA atslēgu izveidošana
 
@@ -200,12 +208,16 @@ $$e \cdot d \equiv 1\;(\text{mod}\,\varphi(n)).$$
 </hgroup>
 
 
+-----
+
 # <lo-summary/> Protokols
 
 1. 
 
 
 
+
+-----
 
 # &nbsp;
 
@@ -230,7 +242,7 @@ $$e \cdot d \equiv 1\;(\text{mod}\,\varphi(n)).$$
 </hgroup>
 
 
-
+-----
 
 # &nbsp;
 
@@ -256,7 +268,7 @@ $$e \cdot d \equiv 1\;(\text{mod}\,\varphi(n)).$$
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -281,6 +293,8 @@ $$e \cdot d \equiv 1\;(\text{mod}\,\varphi(n)).$$
 </hgroup>
 
 
+-----
+
 # <lo-theory/> PGP vēsture
 
 * Fils Cimermans (*Phil Zimmermann*), 1991.gads. 
@@ -290,6 +304,8 @@ var izmantot citiem failiem, ko glabā nedrošās vietās -
 uz mobilām ierīcēm vai mākonī.
 
 
+--
+
 ## <lo-theory/> PGP programmatūra
 
 * PGP spraudņi
@@ -297,11 +313,15 @@ uz mobilām ierīcēm vai mākonī.
 PGP šifrēšanu, izmantojot sūtītāja atslēgu.
 
 
+--
+
 ## <lo-theory/> Atslēgu pāra ģenerēšana 
 
 * Kā lietotājs var izveidot privātas/publiskas atslēgas pāri
 * Kā manuāli eksportēt un importēt šādas atslēgas
 
+
+-----
 
 # <lo-theory/> PKI un "Web of trust"
 
@@ -313,7 +333,7 @@ Ja $A$ uzticas $B$ sertifikātiem, tad $A$ uzticas arī
 sertifikātiem, kuriem uzticas $B$. 
 
 
-
+-----
 
 # &nbsp;
 
@@ -338,6 +358,8 @@ sertifikātiem, kuriem uzticas $B$.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Epastu infrastruktūra
 
 <hgroup>
@@ -360,9 +382,9 @@ nekā saņemšanas adrese(s).
 </hgroup>
 
 
-## <lo-theory/> 
 
 
+--
 
 ## <lo-theory/> Epastu vārtejas
 
@@ -384,15 +406,17 @@ virzienam jābūt aizliegtam!)
 </hgroup>
 
 
+--
+
 ## <lo-summary/> SMTP pieprasījumi
 
 TODO: Attēls ar SMTP hederiem un 
 vēstules satura paraugu.
 
 
-# 
 
 
+-----
 
 # &nbsp;
 

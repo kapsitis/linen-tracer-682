@@ -1,0 +1,398 @@
+[
+    {
+        "itemNum": 1,
+        "links": [
+            {
+                "reading": "...",
+                "subsection": "1.1",
+                "task": [
+                    "Define what is a proposition",
+                    "Define Boolean operations (<span class=\"math inline\">\\( \\neg, \\wedge, \\vee, \\rightarrow, \\leftrightarrow \\)</span>)",
+                    "Restore parentheses using precedence",
+                    "Create truth tables for expressions"
+                ],
+                "title": "Analyze Propositions and Boolean Expressions",
+                "video": [
+                    "https://youtu.be/OApHaIMKMJE"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.17-22",
+                "subsection": "1.2",
+                "task": [
+                    "Translate English into Propositional logic.",
+                    "Recognize situations when natural language uses logical connectives in a different sense.",
+                    "Solve Logic Puzzles and Word Problems."
+                ],
+                "title": "Create propositional statements",
+                "video": [
+                    "https://youtu.be/_RrxqiB_pfE"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.26-33",
+                "subsection": "1.3",
+                "task": [
+                    "Rewrite propositions using equivalences (Use double negation; Use De Morgan's laws; Write Contrapositive for an Implication ",
+                    "Define a tautology if a truth table exists.",
+                    "Create new tautologies using inference rules.",
+                    "Define Satisfiable and Contradictory Boolean Expressions."
+                ],
+                "title": "Recognize Boolean tautologies and satisfiability.",
+                "video": [
+                    "https://youtu.be/x0ELYvaf21E"
+                ]
+            },
+            {
+                "reading": "NA",
+                "subsection": "1.X",
+                "task": [
+                    "Apply operation precedence to a Python expression.",
+                    "Apply operation associativity to a Python expression.",
+                    "Apply short-circuit Boolean evaluation."
+                ],
+                "title": "Use expressions in programming (optional)",
+                "video": [
+                    "NA"
+                ]
+            }
+        ],
+        "title": "TBA to TBA"
+    },
+    {
+        "itemNum": 2,
+        "links": [
+            {
+                "reading": "Rosen2019, pp.84-93",
+                "subsection": "1.7",
+                "task": [
+                    "Explain direct proofs for IF-THEN statements",
+                    "Explain proofs by contraposition for IF-THEN statements",
+                    "Explain constructive proofs using contradiction."
+                ],
+                "title": "Use Common Proof Strategies",
+                "video": [
+                    "https://youtu.be/b-hKQOhxlNA",
+                    "https://youtu.be/PNme9Kl3kDo",
+                    "https://youtu.be/CCAgvPGOlmE"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.40-55",
+                "subsection": "1.4",
+                "task": [
+                    "Define a predicate as a function to booleans.",
+                    "Recognize free and bound variables.",
+                    "Interpret quantifiers over finite domains.",
+                    "Use precedence for quantifier statements.",
+                    "Negate predicates, apply De Morgan's laws."
+                ],
+                "title": "Use Predicates and Quantifiers",
+                "video": [
+                    "https://youtu.be/rZH5RFSXsvI"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.121-131",
+                "subsection": "2.1",
+                "task": [
+                    "Define set by listing elements or intervals.",
+                    "Define set by defining a predicate.",
+                    "Define subsets, proper subsets.",
+                    "Define pairs and other n-tuples.",
+                    "Define power sets.",
+                    "Reproduce Russel's paradox."
+                ],
+                "title": "Manipulate Sets and Functions",
+                "video": [
+                    "https://youtu.be/jXxuwrAbpCU"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.179-186",
+                "subsection": "2.5",
+                "task": [
+                    "Define injective functions between 2 sets.",
+                    "Define surjective functions between 2 sets.",
+                    "Prove that adding a finite set to a countable is countable.",
+                    "Union two positive integer sets.",
+                    "Union infinitely many integer sets."
+                ],
+                "title": "Compare Set Cardinalities",
+                "video": [
+                    "https://youtu.be/WQWkG9cQ8NQ"
+                ]
+            }
+        ],
+        "title": "2020-01-13 to 2020-01-17"
+    },
+    {
+        "itemNum": 3,
+        "links": [
+            {
+                "reading": "Rosen2019, pp.60-68",
+                "subsection": "1.5",
+                "task": [
+                    "Rewrite mathematical statements with nested quantifiers.",
+                    "Interpret quantifier expressions in human language.",
+                    "Negate multiple quantifiers."
+                ],
+                "title": "Use Nested Quantifiers",
+                "video": [
+                    "https://youtu.be/xDaBIVPyvDQ"
+                ]
+            },
+            {
+                "reading": "NA",
+                "subsection": "1.8",
+                "task": [
+                    "Explain proofs by analyzing cases.",
+                    "Explain proofs by counterexamples.",
+                    "Introduce \"without loss of generality\" clauses.",
+                    "Explain nonconstructive proofs of existence."
+                ],
+                "title": "Use Some More Proof Strategies",
+                "video": [
+                    "NA"
+                ]
+            },
+            {
+                "reading": "NA",
+                "subsection": "1.6",
+                "task": [
+                    "Recognize hypotheses and goals in a proof.",
+                    "Apply modus ponens: <span class=\"math inline\">\\( A \\rightarrow B,\\, A \\;\\vdash\\; B \\)</span>",
+                    "Apply modus tollens: <span class=\"math inline\">\\( A \\rightarrow B,\\, (\\neg B) \\;\\vdash\\; (\\neg A) \\)</span>",
+                    "Apply transitivity: <span class=\"math inline\">\\( A \\rightarrow B,\\, B \\rightarrow C \\;\\vdash\\; A \\rightarrow C \\)</span>",
+                    "Apply disjunctive syllogism: <span class=\"math inline\">\\( A \\vee B,\\, \\neg A \\;\\vdash\\; B \\)</span>",
+                    "Apply \"addition\": <span class=\"math inline\">\\( A \\;\\vdash\\; A \\vee B \\)</span>",
+                    "Apply \"simplification\": <span class=\"math inline\">\\( (A \\wedge B) \\;\\vdash\\; A \\)</span>",
+                    "Apply \"conjunction\": <span class=\"math inline\">\\( A,\\, B \\;\\vdash\\; (A \\wedge B) \\)</span>",
+                    "Apply \"resolution\": <span class=\"math inline\">\\( (A \\vee B),\\, (\\neg A \\vee C) \\;\\vdash\\; (B \\vee C) \\)</span>"
+                ],
+                "title": "Use Rules of Inference",
+                "video": [
+                    "NA"
+                ]
+            }
+        ],
+        "title": "2020-01-20 to 2020-01-24"
+    },
+    {
+        "itemNum": 4,
+        "links": [
+            {
+                "reading": "NA",
+                "subsection": "2.2",
+                "task": [
+                    "Define the union of two or more sets.",
+                    "Define the intersection of two or more sets.",
+                    "Define the complement of a set.",
+                    "Define the difference of two sets.",
+                    "Define the symmetric difference of sets.",
+                    "Draw Venn diagrams for 2, 3, 4 or 5 sets."
+                ],
+                "title": "Manipulate sets over some universe",
+                "video": [
+                    "NA"
+                ]
+            },
+            {
+                "reading": "NA",
+                "subsection": "2.X",
+                "task": [
+                    "Explain proofs for 2 sets being different (conterexample).",
+                    "Explain proofs for a function being bijective [Define bijections from monotonous continuous functions; Define bijections as variants of 1D Hilbert hotel. Define bijections as variants of 2D Hilbert hotel.]",
+                    "Explain constructions by selecting minimum in a nonempty set.",
+                    "Explain proofs using invariants"
+                ],
+                "title": "Use Proof Strategies for Sets and Functions",
+                "video": [
+                    "NA"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.201-213",
+                "subsection": "3.1",
+                "task": [
+                    "Describe common characteristics of algorithms (mass problem, input, output, strictly defined steps, finite time)",
+                    "Describe an algorithm to find maximum in a list of n with pseudocode.",
+                    "Describe linear search algorithm",
+                    "Describe binary search algorithm",
+                    "Describe the number of steps for binary search in a list of n elements",
+                    "Describe bubble sort algorithm",
+                    "Compute the number of steps for bubble sort",
+                    "Describe the naive string matching algorithm",
+                    "Compute the number of steps for string matching",
+                    "Describe the greedy algorithm to pay the change with minimum coins.",
+                    "Prove that for the eurocent coins (1,2,5,10,20,50,100,200) greedy algorithm is optimal",
+                    "Describe the greedy scheduling algorithm",
+                    "Define the halting problem",
+                    "Prove that the halting problem is algorithmically unsolvable"
+                ],
+                "title": "Describe algorithms for lists/arrays and their paradigms",
+                "video": [
+                    "https://youtu.be/XnshTUaIpc8",
+                    "https://youtu.be/4kVVhSy3kfA",
+                    "https://youtu.be/GNGUziMQ4R4",
+                    "https://youtu.be/kkgTu5kaIXw"
+                ]
+            }
+        ],
+        "title": "2020-01-27 to 2020-01-31"
+    },
+    {
+        "itemNum": 5,
+        "links": [
+            {
+                "reading": "Rosen2019, pp.216-228",
+                "subsection": "3.2",
+                "task": [
+                    "Define the big-O notation",
+                    "Compare various elementary functions by their growth speed",
+                    "Compute the big-O for sums and products of functions.",
+                    "Define big-Omega and big-Theta notations"
+                ],
+                "title": "Define and use the big-O notation and related complexity measures",
+                "video": [
+                    "https://medium.com/@.RT/total-n00bs-guide-to-big-o-big-%CF%89-big-%CE%B8-aa259ae8a1c2"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.231-235",
+                "subsection": "3.3",
+                "task": [
+                    "Define time and space complexity for the given run of a program",
+                    "Define worst-case and average time complexity"
+                ],
+                "title": "Define and determine some algorithm complexity measures",
+                "video": [
+                    "NA"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.251-258",
+                "subsection": "4.1",
+                "task": [
+                    "Add, subtract and multiply congruences (ring operations)",
+                    "Transform congurences equivalently"
+                ],
+                "title": "Use modular arithmetic",
+                "video": [
+                    "https://youtu.be/XnshTUaIpc8",
+                    "https://youtu.be/Z-si4GE_n9k"
+                ]
+            }
+        ],
+        "title": "2020-02-03 to 2020-02-07"
+    },
+    {
+        "itemNum": 6,
+        "links": [
+            {
+                "reading": "Rosen2019, pp.260-268",
+                "subsection": "4.2",
+                "task": [
+                    "Convert a representation of a number into a number by Horner’s scheme",
+                    "Obtain a representation of a number by Horner’s scheme backwards",
+                    "Perform arithmetic operations on number representations",
+                    "Perform modular exponentiation"
+                ],
+                "title": "Manipulate integer representations",
+                "video": [
+                    "https://youtu.be/xtIIUB6QUJ8",
+                    "https://youtu.be/iSTpfqZwb5A",
+                    "https://youtu.be/vAKiTsEKEQM",
+                    "https://youtu.be/5ZbKtsbctf4"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.271-278",
+                "subsection": "4.3",
+                "task": [
+                    "Analyze the full search primality testing algorithm (divide up to <span class=\"math inline\">\\( \\sqrt{n} \\)</span>)",
+                    "Prove that there are infinitely many primes",
+                    "State facts about prime “gaps” and their distribution",
+                    "State properties of LCD and GCD",
+                    "Apply Euclid algorithm to compute LCD"
+                ],
+                "title": "Prove properties of primes, GCD, LCM and related algorithms",
+                "video": [
+                    "https://youtu.be/tJeP8882zZg",
+                    "https://youtu.be/Dhpp5yTzNY8",
+                    "https://youtu.be/UDrU6Aw_gEY"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.285-293",
+                "subsection": "4.4",
+                "task": [
+                    "Use Blankinship algorithm to compute Bezout coefficients",
+                    "Find inverse of a number w.r.t. some module",
+                    "Solve arbitrary linear congruences"
+                ],
+                "title": "Find Bezout coefficients and solve linear congruences",
+                "video": [
+                    "https://youtu.be/oXRT_TNoBaM",
+                    "https://youtu.be/Ag3wFeScdP4"
+                ]
+            }
+        ],
+        "title": "2020-02-10 to 2020-02-14"
+    },
+    {
+        "itemNum": 7,
+        "links": [
+            {
+                "reading": "Rosen2019, pp.331-350",
+                "subsection": "5.1",
+                "task": [
+                    "Prove summation formulas by induction",
+                    "Prove inequalities and various invariants by induction"
+                ],
+                "title": "Prove statements by mathematical induction",
+                "video": [
+                    "https://youtu.be/TqpNDiqsz7k",
+                    "https://youtu.be/pTj6J_kWddM"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.354-362",
+                "subsection": "5.2",
+                "task": [
+                    "Analyze some games with strong induction"
+                ],
+                "title": "Prove statements by variants of mathematical induction",
+                "video": [
+                    "https://youtu.be/mZ8wcxnT9WQ"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.365-378",
+                "subsection": "5.3",
+                "task": [],
+                "title": "Use recursive definitions and structural induction",
+                "video": [
+                    "https://youtu.be/_EVvOzBI05Q"
+                ]
+            },
+            {
+                "reading": "Rosen2019, pp.381-398",
+                "subsection": "5.4",
+                "task": [
+                    "Write and analyze tail-recursive number theory algorithms",
+                    "Write and analyze tail-recursive linear, binary, ternary search algorithms",
+                    "Write Fibonacci and related algorithms using iterations or memoization (storing intermediate results)",
+                    "Write and analyze merge-sort algorithm",
+                    "Use Master’s theorem to analyze complexity of recursive algorithms",
+                    "Write assertions for conditionals and loops for program verification"
+                ],
+                "title": "Use recursive algorithms",
+                "video": [
+                    "NA"
+                ]
+            }
+        ],
+        "title": "2020-02-17 to 2020-02-21"
+    }
+]

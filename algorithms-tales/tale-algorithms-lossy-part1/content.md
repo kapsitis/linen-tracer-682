@@ -19,7 +19,7 @@
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -41,6 +41,8 @@
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Skalārā kvantizācija 
 
 Piemērs: melnbalti attēli.
@@ -50,6 +52,9 @@ Piemērs: melnbalti attēli.
 * Vienkāršākais attēlojums, piemēram
 $f(x) = \left\lfloor\frac{x}{4} \right\rfloor$. Tad $f\,:\,\{0,\ldots,255\} \rightarrow \{0,\ldots,63\}$. 
 * Praksē lieto sarežǧı̄tāku funkciju, kas kopā sagrupē krāsas, kuras acs sliktāk atšķir.
+
+
+--
 
 ## <lo-theory/> Vektoru kvantizācija (melnbalti attēli)
 
@@ -66,6 +71,8 @@ vērtībām.
 * Cik liels ietaupījums sakaru kanālā?
 
 
+-----
+
 # <lo-summary/> Citi krāsu kvantizācijas veidi
 
 ![Quantization illustration](quantization-illustration.png)
@@ -73,6 +80,8 @@ vērtībām.
 Voronoja diagrammas - ap dotajiem punktiem izveidojas (bieži vien sešstūra formas)
 šūnas ar koda punktu centrā.
 
+
+--
 
 ## <lo-yellow/> Proporcionālās vēlēšanu sistēmas
 
@@ -82,6 +91,9 @@ Donta (D'Hondt) sistēmas piemērs $5$ krēsliem.
 
 Sk. [Ungārijas 2018.g. vēlēšanas](https://en.wikipedia.org/wiki/2018_Hungarian_parliamentary_election)
 
+
+--
+
 ## <lo-yellow/> Senlaga sistēma
 
 ![Sainte Lague method](sainte-lague.png)
@@ -89,7 +101,7 @@ Sk. [Ungārijas 2018.g. vēlēšanas](https://en.wikipedia.org/wiki/2018_Hungari
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -111,6 +123,8 @@ Sk. [Ungārijas 2018.g. vēlēšanas](https://en.wikipedia.org/wiki/2018_Hungari
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Kas ir transformācija
 
 $$\left( \begin{array} \text{x'_1} \\ x'_2 \\ \cdots \\ x'_n \end{array} \right)
@@ -124,7 +138,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}
 \left( \begin{array} \text{x_1} \\ x_2 \\ \cdots \\ x_n \end{array} \right)$$
 
 
-
+-----
 
 # &nbsp;
 
@@ -148,7 +162,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}
 
 
 
-
+-----
 
 # <lo-theory/> JPEG algoritma uzdevums
 
@@ -161,12 +175,17 @@ G – zaļā krāsa (green), B – zilā krāsa (blue).
 kas ir līdzīgs sākotnējam. Saspiešana notiek ar zudumiem.
 * Soļi ir saistīti ar to, kā cilvēks uztver krāsu.
 
+
+-----
+
 # <lo-theory/> JPEG 1.solis: RGB-to-YIQ
 
 Y,I,Q vērtības iegūst no R,G,B vērtībām, pareizinot tās ar koeficientu matricu. 
 Šis pārveidojums ir atgriezenisks (bezzudumu), t.i., zinot YIQ 
 vērtības, var atjaunot RGB vērtības.
 
+
+--
 
 ## <lo-summary/> YIQ krāsu telpa
 
@@ -181,6 +200,8 @@ vērtības, var atjaunot RGB vērtības.
 
 </hgroup>
 
+
+--
 
 ## <lo-summary/> Kas ir YIQ?
 
@@ -200,6 +221,7 @@ Redze precīzāk uztver "I" (pāreju no oranžā uz zilo) nevis
 </hgroup>
 
 
+--
 
 ## <lo-summary/> Pārveido YIQ koordinātēs
 
@@ -226,6 +248,8 @@ $$\left( \begin{array} \text{R} \\ G \\ B \end{array} \right)
 \left( \begin{array} \text{Y} \\ I \\ Q \end{array} \right)$$
 
 
+-----
+
 # <lo-theory/> JPEG 2.solis
 
 <hgroup>
@@ -242,6 +266,10 @@ Redze pārmaiņas gaišumā uztver daudz labāk nekā pārmaiņas nokrāsā.
 
 </hgroup>
 
+
+
+-----
+
 # <lo-theory/> JPEG 3.solis
 
 
@@ -249,6 +277,8 @@ YIQ vērtības sadala $8 \times 8$ blokos. Tā kā tika atstāta tikai katra
 otrā "I" un "Q" vērtība, tad šo bloku izmērs sākotnējā attēlā ir 
 $16 \times 16$. Katrs bloks tiek apstrādāts atsevišķi.
 
+
+-----
 
 # <lo-theory/> JPEG 4.solis
 
@@ -264,7 +294,7 @@ Pēc tam to pašu izdara katrai iegūtās matricas rindai.
 
 
 
-
+-----
 
 # <lo-theory/> JPEG 5.solis
 
@@ -276,6 +306,8 @@ Tās komponentes, kuras acs uztver vājāk, tiek noapaļotas ar
 zemāku precizitāti. Mazākā vērtība $a_{13} = 10$, lielākā – $a_{65} = 121$.
 
 
+-----
+
 # <lo-theory/> JPEG 6.solis
 
 * Visu $8 \times 8$ matricu kreisos augšējos elementus saliek 
@@ -285,12 +317,15 @@ katrai no trim krāsu telpas YIQ komponentēm.
 * Raksta starpības $a_1, a_2-a_1, a_3 - a_2,\ldots$. 
 
 
+-----
+
 # <lo-theory/> JPEG 7.solis
 
 Iegūtajai starpību virknei lieto 
 Hofmana vai aritmētisko kodēšanu.
 
 
+-----
 
 # &nbsp;
 
@@ -313,7 +348,7 @@ Hofmana vai aritmētisko kodēšanu.
 
 
 
-
+-----
 
 # &nbsp;
 

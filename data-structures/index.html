@@ -1,0 +1,144 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style>
+h2 {
+  color: #990000;
+}
+</style>
+</head>
+
+<body>
+<h1>Data Structures: Home</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Topics</b></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="algorithms.html">Algorithms</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<p>List of topics and skills.</p>
+
+<ol type="1">
+<li>C++ Introduction (2 Weeks)
+  <ol type="a">
+  <li>C++ syntax review</li>
+  <li>Macros and headerfiles</li>
+  <li>Runtime model of C++</li>
+  <li>Recursion and tail-recursion</li>
+  <li>Input and output streams</li>
+  <li>ASCII, Unicode and encodings</li>
+  <li>4 ways to pass parameters</li>
+  <li>Object orientation: Encapsulation, inheritance, polymorphism</li>
+  <li>Templates</li>
+  <li>Namespaces and libraries</li>
+  <li>Makefiles and linking</li>
+  <li>Testing and debugging</li>
+  </ol>
+</li>
+<li>Complexity of Algorithms
+  <ol type="a">
+  <li>Time and space complexity</li>
+  <li>O-notation, Ω-notation, Θ-notation.</li>
+  <li>Analysis of non-recursive algorithms.</li>
+  <li>Worst-case, expected and amortized complexity</li>
+  <li>STL implementations for lists, stacks, queues, dictionaries</li>
+  <li>Analysis of standard implementations</li>
+  <li>Exercises using just input and output libraries</li>
+  </ol>
+</li>
+<li>Lists and linked lists
+  <ol type="a">
+  <li>Array lists</li>
+  <li>Linked lists</li>
+  <li>Doubly linked lists</li>
+  <li>Abstract operations on lists, stacks, queues</li>
+  <li>Implementation of stacks</li>
+  <li>Implementation of queues</li>
+  <li>Sorting algorithms</li>
+  <li>Design Paradigm: Brute force and exhaustive algorithms</li>
+  <li>Design Paradigm: Divide and conquer</li>
+  </ol>
+</li>
+<li>Trees
+  <ol type="a">
+  <li>Graph-theoretic concepts of trees</li>
+  <li>Path concepts in trees</li>
+  <li>Full trees</li>
+  <li>Search trees and binary search trees</li>
+  <li>BFS tree traversals</li>
+  <li>DFS tree traversals</li>
+  <li>Expression evaluations in a stack</li>
+  <li>Node insertion and deletion</li>
+  <li>Abstract operations on trees</li>
+  <li>Implementing trees as arrays</li>
+  <li>Implementing trees as linked nodes</li>
+  <li>Implementing ordered N-ary trees with binary trees</li>
+  <li>Implementing AVL trees</li>
+  <li>Implementing red-black trees</li>
+  <li>Design Paradigm: Decrease and conquer algorithms</li>
+  <li>Design Paradigm: Transform and conquer algorithms</li>
+  </ol>
+</li>
+<li>Priority queues
+  <ol type="a">
+  <li>Abstract operations on priority queues</li>
+  <li>Binomial heaps</li>
+  <li>Skew binomial heap</li>
+  <li>Leftist binomial heap</li>
+  <li>Design Paradigm: Greedy algorithms</li>
+  </ol>
+</li>
+<li>Hashing
+  <ol type="a">
+  <li>Abstract operations on hashtables</li>
+  <li>Hash functions and collisions</li>
+  <li>Chaining in hash tables</li>
+  <li>Implementing dictionaries with hashtables</li>
+  <li>Bloom filters</li>
+  <li>Design Paradigm: Trading space for time</li>
+  <li>Design Paradigm: Trading accuracy for space</li>
+  </ol>
+</li>
+<li>Some problem types
+  <ol type="a">
+  <li>Sorting</li>
+  <li>Searching</li>
+  <li>String searching</li>
+  <li>Graph problems</li>
+  <li>Combinatorial problems</li>
+  <li>Geometric problems</li>
+  <li>Number theory problems</li>
+  <li>Design Paradigm: Dynamic programming algorithms</li>  
+  <li>Design Paradigm: Iterative improvement</li>
+  </ol>
+</li>
+</ol>
+
+
+
+
+</body>
+</html>
+

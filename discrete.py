@@ -106,15 +106,6 @@ class DiscreteHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('discrete/sources.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'lab03.html'):
-            template_context = {
-                'my_id': my_id,
-                'course': 'discrete',
-                'nav_items': nav_items
-            }
-            template = jinja_env.get_template('discrete/lab03.html')
-            output = template.render(template_context)
-            self.response.out.write(output.encode('utf-8'))
         else: 
             self.response.set_status(404)
 

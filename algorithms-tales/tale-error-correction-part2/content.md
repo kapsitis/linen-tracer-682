@@ -21,6 +21,8 @@
 
 
 
+-----
+
 # <lo-why/> why
 
 <div class="bigWhy">
@@ -39,7 +41,7 @@ atkarīga no situācijas?
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -63,6 +65,8 @@ atkarīga no situācijas?
 </hgroup>
 
 
+
+-----
 
 # <lo-summary/> 7-bitu Heminga kods
 
@@ -105,10 +109,14 @@ Saskaitīšana pēc moduļa $2$ jeb XOR, jeb
 </div>
 
 
+-----
+
 # <lo-sample/> Piemērs #1
 
 Izmantojot Heminga kodu $[7,4,1]$, nokodēt virkni 0110.
 
+
+--
 
 ## <lo-soln/> Piemērs #1
 
@@ -153,11 +161,14 @@ Saskaitīšana pēc mod $2$:
 </hgroup>
 
 
+-----
+
 # <lo-sample/> Piemērs #2
 
 Izmantojot Heminga kodu $[7,4,1]$, atkodēt virkni `0111101`.
 
 
+--
 
 ## <lo-soln/> Piemērs #2
 
@@ -220,10 +231,14 @@ pieļauj iespēju, ka attiecīgajā bitā ir kļūda.
 </hgroup>
 
 
+-----
+
 # <lo-sample/> Piemērs #3
 
 Izmantojot Heminga kodu $[7,4,1]$, atkodēt virkni `1010010`.
 
+
+--
 
 ## <lo-soln/> Piemērs #3
 
@@ -286,11 +301,15 @@ pieļauj iespēju, ka attiecīgajā bitā ir kļūda.
 
 </hgroup>
 
+
+-----
+
 # <lo-sample/> Piemērs #4
 
 Izmantojot Heminga kodu $[7,4,1]$, atkodēt virkni `1101110`.
 
 
+--
 
 ## <lo-soln/> Piemērs #4
 
@@ -358,7 +377,7 @@ pieļauj iespēju, ka attiecīgajā bitā ir kļūda.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -382,6 +401,7 @@ pieļauj iespēju, ka attiecīgajā bitā ir kļūda.
 </hgroup>
 
 
+-----
 
 # <lo-summary/> Rīda-Solomona koda analīze
 
@@ -396,6 +416,9 @@ ir otrās sekas no algebras pamatteorēmas.)
 * Ja nosūta $s$ polinoma vērtības, tad 
 viņi atšķiras pārējās $s - (k-1)$ vietās. 
 
+
+--
+
 ## <lo-summary/> Cik no pārraidītajām drīkst būt kļūdas?
 
 Augstāk redzējām, ka ja divi kodētie ziņojumi atšķiras vismaz 
@@ -409,6 +432,8 @@ $$\Rightarrow\;\;c \leq (s-k)/2$$
 * Ja $\leq 1/4$ no ziņojuma garumā $2k$ saņem nepareizi, tad 
 iespējams atgūt sākotnējo tekstu.
 
+
+--
 
 ## <lo-sample/> Vingrinājums
 
@@ -425,6 +450,10 @@ $s - (k-1)$ vietās.
 Ja mēģinātu labot $3$ kļūdas, tad $2$ kodus, kas atšķiras
 $6$ vietās, nevarētu atšķirt. 
 
+
+
+--
+
 ## <lo-sample/> Piemērs ar polinomiem. 
 
 $$f(x) = x(x-1)(x-2) = x^3 - 3x^2 + 2x + 0.$$
@@ -440,6 +469,7 @@ gan arī pārraidot $g$ (ar kļūdām ziņojumos $f(3),f(4),f(5)$).
 
 
 
+-----
 
 # &nbsp;
 
@@ -463,6 +493,7 @@ gan arī pārraidot $g$ (ar kļūdām ziņojumos $f(3),f(4),f(5)$).
 </hgroup>
 
 
+-----
 
 # <lo-theory/> Galuā lauki un Rīds-Solomons
 
@@ -479,6 +510,7 @@ lai konstruētu $\text{GF}\!\left(2^n\right)$ pakāpēm līdz $2^{32}$.
 
 
 
+--
 
 ## <lo-theory/> Lauka jēdziens
 
@@ -503,6 +535,8 @@ $(a \ast b) \ast c = a \ast (b \ast c)$.
 
 
 
+-----
+
 # <lo-summary/> Bezgalīgi lauki
 
 Lauks ir jebkura skaitļu vai citu objektu kopa, kurā var izpildīt visas četras aritmētiskās darbības
@@ -517,6 +551,9 @@ to komplekso skaitļu kopa $a+bi$, kur $a,b \in \mathbb{Q}$) ir lauks.
 kvadrātsaknes operācija, bet ne augstāku pakāpju saknes). 
 * Visu racionālu daļu $\frac{P(x)}{Q(x)}$ kopa ir lauks.
 
+
+--
+
 ## <lo-summary/> Galīgi lauki
 
 **Apgalvojums:** (1) Galīgs lauks ar elementu skaitu $q$ (šo skaitu sauc arī par <blue>*kārtu*</blue> jeb *order*) eksistē
@@ -527,6 +564,9 @@ operācijām ir vienāda, atšķiras tikai elementu apzīmējumi.
 
 **Definīcija:** Galīgu lauku ar $q = p^k$ elementiem sauc par <blue>*Galuā lauku*</blue> (*Galois field*); apzīmē $\text{GF}(q)$ jeb
 $\text{GF}(p^k)$. 
+
+
+--
 
 ## <lo-summary/> GF pirmskaitļiem
 
@@ -638,6 +678,9 @@ un reizināšana pēc moduļa $3$.
 
 </hgroup>
 
+
+--
+
 ## <lo-sample/> Ja q nav pirmskaitlis
 
 * Aplūkojam $\text{GF}(8)$. Nevar
@@ -657,7 +700,7 @@ $\text{GF}(q)$ jākonstruē ar citu metodi.
 * [Galīgi lauki](https://en.wikipedia.org/wiki/Finite_field)
 
 
-
+--
 
 ## <lo-sample/> Piemērs: GF(8)
 
@@ -672,7 +715,7 @@ $$0,\;1,\;x,\;x+1,\;x^2,\;x^2+1,\;x^2+x,\;x^2+x+1.$$
 
 
 
-
+--
 
 ## <lo-sample/> Saskaitīšana un reizināšana GF(8)
 
@@ -893,7 +936,7 @@ $$0,\;1,\;x,\;x+1,\;x^2,\;x^2+1,\;x^2+x,\;x^2+x+1.$$
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -917,6 +960,9 @@ $$0,\;1,\;x,\;x+1,\;x^2,\;x^2+1,\;x^2+x,\;x^2+x+1.$$
 </hgroup>
 
 
+
+-----
+
 # <lo-theory> Galīgie lauki R-S kodos
 
 <div style="font-size:70%">
@@ -933,6 +979,8 @@ par darbībām izmantojot $+$ un $\ast$, kas definētas šajā galīgajā laukā
 
 </div>
 
+
+--
 
 ## <lo-theory/> R-S kodēšana un atkodēšana
 
@@ -955,11 +1003,15 @@ $f(0)$, $f(1)$, $f(2)$, $f(3)$ un $f(4)$.
 </div>
 
 
+-----
+
 # <lo-sample/> Piemērs Nr.1
 
 Nokodēt $3, 2, 1$.  
 Izmantot polinomus ar koeficientiem, argumentiem un vērtībām no $\text{GF}(5)$. 
 
+
+--
 
 ## <lo-soln/> Piemērs Nr.1: Risinājums
 
@@ -984,11 +1036,15 @@ Tātad, tiek pārraidītas vērtības $1, 1, 2, 4, 2$.
 
 
 
+-----
+
 # <lo-sample/> Piemērs Nr.2
 
 Atkodēt $1, 1, \ast, 4, \ast$, kur $\ast$ ir pazaudēta vērtība (saņemtās vērtības visas ir pareizas).  
 Izmantot polinomus ar koeficientiem, argumentiem un vērtībām no $\text{GF}(5)$. 
 
+
+--
 
 ## <lo-soln/> Piemērs Nr.2: Risinājums
 
@@ -1019,6 +1075,9 @@ a + b = 1 - 1 = 0\;(\text{mod}\,5),\\
 
 </div>
 
+
+--
+
 ## <lo-soln/> Piemērs Nr.2: Risinājums (turpinājums)
 
 <div style="font-size:70%">
@@ -1039,11 +1098,15 @@ $$f(x)=3x^2 + 2x + 1.$$
 </div>
 
 
+-----
+
 # <lo-sample/> Piemērs Nr.3
 
 Atkodēt $2, 3, \ast, \ast, 2$, kur $\ast$ ir pazaudēta vērtība (saņemtās vērtības visas ir pareizas).
 Izmantot polinomus ar koeficientiem, argumentiem un vērtībām no $\text{GF}(5)$. 
 
+
+--
 
 ## <lo-soln/> Piemērs Nr.3: Risinājums
 
@@ -1076,6 +1139,7 @@ a + 4 b = 2 - 2 \equiv 0\;(\text{mod}\,5).
 
 
 
+--
 
 ## <lo-soln/> Piemērs Nr.3: Risinājums (turpinājums)
 
@@ -1109,6 +1173,7 @@ $$f(x) = 3 x^2 + 3x + 2.$$
 
 
 
+-----
 
 # <lo-theory/> Lagranža interpolācija
 
@@ -1131,6 +1196,9 @@ $(x-r_j)=0$, kas visu reizinājumu padara par $0$.
 
 </div>
 
+
+--
+
 ## <lo-theory/> Interpolāciju lietošana atkodēšanai
 
 Meklētais polinoms ir:
@@ -1143,6 +1211,8 @@ un vienīgi $f_i (r_i) = 1$.
 Tātad $f(r_i) = r_i  \cdot f_i(r_i) = r_i$.   
 Ja vienīgais kļūdu veids ir dažu vērtību pazušana, tad pietiek ar šo pieeju.
 
+
+--
 
 ## <lo-summary/> Interpolācija, ja var būt citas kļūdas
 
@@ -1159,7 +1229,7 @@ tieši kuras ir pareizas, lai tās varētu izmantot kļūdu meklēšanā.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -1184,6 +1254,8 @@ tieši kuras ir pareizas, lai tās varētu izmantot kļūdu meklēšanā.
 
 
 
+-----
+
 # <lo-theory/> Polinoms Y(x) - kļūdu lokators
 
 <div style="font-size:70%">
@@ -1204,6 +1276,8 @@ Polinoma pakāpe $\text{deg}\,Y(x) \leq c$.
 
 </div>
 
+
+--
 
 ## <lo-theory/> Polinoms Z(x): Y(x) un p(x) reizinājums
 
@@ -1229,6 +1303,8 @@ Tātad $Z(x) = Y(x) \cdot r$ ir spēkā visos $s$ pārraidītajos punktos.
 </div>
 
 
+--
+
 ## <lo-theory/> Y, Z atrašana
 
 <div style="font-size:70%">
@@ -1251,6 +1327,8 @@ Z(s-1) = Y(s-1) \cdot r_{s-1}
 \end{array} \right.$$
 
 
+--
+
 ## <lo-theory/> Y, Z atrašana (turpinājums)
 
 <div style="font-size:70%">
@@ -1271,6 +1349,8 @@ izmantojot $p(x) = Z(x)/Y(x)$ aprēķinām $p(x)$.
 
 </div>
 
+
+-----
 
 # <lo-theory/> Jautājumi par Berlekampu-Velču
 
@@ -1300,6 +1380,8 @@ noteikts $(Y(x), Z(x))$.
 </hgroup>
 
 
+--
+
 ## <lo-theory/> Berlekampa-Velča atrisināmība
 
 <div style="font-size:70%">
@@ -1324,6 +1406,8 @@ $$Z(i) \cdot Y’(i) = Z’(i) * Y(i)$$
 </div>
 
 
+--
+
 ## <lo-summary/> Berlekampa-Velča atrisināmība (turpinājums)
 
 <div style="font-size:70%">
@@ -1342,6 +1426,9 @@ $$Z(x) / Y(x) = Z’(x) / Y’(x)$$
 
 </div>
 
+
+--
+
 ## <lo-summary/> Algoritmiska Berlekampa-Velča atrisināšana
 
 Nosacījumos $Z(i) = Y(i) \cdot r_i$ ievietojot $i$ un $r_i$, 
@@ -1353,6 +1440,8 @@ mainīgajam (ar apzīmēšanas palīdzību) var atrast atrisinājumu.
 
 
 
+
+-----
 
 # &nbsp;
 
@@ -1376,6 +1465,8 @@ mainīgajam (ar apzīmēšanas palīdzību) var atrast atrisinājumu.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Tornado kodu ievads
 
 * Tornado kodi izstrādāti 1990-to gadu beigās. 
@@ -1390,6 +1481,8 @@ Abi aprēķini ir diezgan darbietilpīgi.
 Rīda-Solomona kodiem, izmantojot tikai XOR operāciju.
 
 
+--
+
 ## <lo-theory/> Tornado kodi un XOR
 
 Vienkāršākais Tornado kodu speciālgadījums ir šāds. 
@@ -1403,6 +1496,8 @@ kontrolbitiem $y_1, y_2, \ldots$. Ja kontrolbits
 $y_i$ ir kaut kādu ziņojuma bitu $x_j$ XOR, tad $y_i$ atbilstošā virsotne 
 tiek savienota ar katram $x_j$ atbilstošo virsotni. 
 
+
+--
 
 ## <lo-summary/> Hemings kā atsevišķs gadījums
 
@@ -1429,6 +1524,8 @@ atbilst šāds grafs:
 
 
 
+--
+
 ## <lo-summary/> Tornado atkodēšana
 
 Pieņemsim, ka mums ir situācija, kad visi kontrolbiti $y_i$ saņemti, 
@@ -1443,7 +1540,7 @@ kuram ir zināmi visi tajā ietilpstošie $x_j$, atskaitot vienu.
 
 
 
-
+-----
 
 # <lo-sample/> Piemērs
 
@@ -1462,6 +1559,8 @@ Noteikt pazaudētos ziņojuma bitus.
 
 </hgroup>
 
+
+--
 
 ## <lo-soln/> Piemēra atrisinājums
 
@@ -1486,7 +1585,7 @@ $(y_1,y_2,y_3,y_4) = (0,1,1,0)$.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -1510,6 +1609,8 @@ $(y_1,y_2,y_3,y_4) = (0,1,1,0)$.
 
 </hgroup>
 
+
+-----
 
 # <lo-theory/> Ko darījām nodarbībā
 

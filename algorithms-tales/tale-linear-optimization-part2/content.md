@@ -20,6 +20,7 @@
 
 
 
+-----
 
 # <lo-why/> why
 
@@ -39,6 +40,8 @@ pirmā stūra izvēle, pārejas izvēle un randomizācija).
 </div>
 
 
+
+--
  
 ## <lo-theory/> Sasniedzamie rezultāti
 
@@ -51,7 +54,7 @@ pirmā stūra izvēle, pārejas izvēle un randomizācija).
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -75,6 +78,8 @@ pirmā stūra izvēle, pārejas izvēle un randomizācija).
 
 
 
+-----
+
 # <lo-theory/> Kāpēc LP ir svarīgas?
 
 * (Reālo skaitļu) LP ir pirmais solis, lai risinātu 
@@ -88,6 +93,8 @@ Veselie skaitļi kā nezināmie (*Integer Programming*)
 labāk modelē Yes/No lēmumu pieņemšanu (0 un 1 vērtības), 
 bet šādus uzdevumus ir grūtāk risināt. 
 
+
+--
 
 ## <lo-summary/> LP algoritmi 
 
@@ -104,11 +111,13 @@ Matricām var būt ap 100 tūkstošiem rindiņu/kolonnu; ap miljons
 skaitļu šajās matricās nav nulles. 
 
 
+--
+
 ## <lo-summary/> Hamiltona cikli
 
 <hgroup style="font-size:70%">
 
-![Hamiltonian path](hamiltonian_path_3d.png)
+![Hamiltonian path](hamiltonian_path_3d.png) <!-- .element: width="200px" -->
 
 **Definīcija:** Par Hamiltona ciklu neorientētā grafā 
 sauc virsotņu virknīti $A_0,A_1,\ldots,A_n$, kur
@@ -125,6 +134,9 @@ lineāru vienādību vai nevienādību sistēmu, kuru atrisinot
 grafā (vai pierādīt, ka šāda cikla nav)?
 
 </hgroup>
+
+
+-----
 
 # &nbsp;
 
@@ -147,6 +159,8 @@ grafā (vai pierādīt, ka šāda cikla nav)?
 </hgroup>
 
 
+
+-----
 
 # <lo-theory/> Primārā lineārā programma
 
@@ -173,6 +187,8 @@ vai vispār nebūt nosacījuma attiecībā uz $x_i$.
 
 
 
+-----
+
 # <lo-theory/> Duālā LP uzdevuma definīcija
 
 <div style="font-size:70%">
@@ -198,6 +214,7 @@ kāda zīme bija primārās LP nosacījumā $a_{i1} x_1 + a_{i2} x_2 + \ldots + 
 
 
 
+-----
 
 # <lo-sample/> LP Piemērs #1
 
@@ -225,6 +242,8 @@ y_1 \geq 0,\;\; y_2 \geq 0.
 </hgroup>
 
 
+--
+
 ## <lo-sample/> Duālās programmas nozīme
 
 <div style="font-size:70%">
@@ -244,6 +263,8 @@ citu punktu, kur izpildās visi duālās programmas nosacījumi).
 </div>
 
 
+-----
+
 # <lo-theory/> Dualitātes teorēma
 
 1. Ja primārajai LP eksistē maksimums, tad duālajai LP arī eksistē 
@@ -253,6 +274,8 @@ tad duālajai LP mērķfunkcija var sasniegt patvaļīgi mazas vērtības.
 3. Ja primārajai LP mērķfunkcija var sasniegt patvaļīgi lielas vērtības, 
 tad duālajai LP atrisinājums neeksistē (nosacījumi ir pretrunīgi).
 
+
+--
 
 ## <lo-theory/> Primārās un duālās LP apvienošana
 
@@ -271,6 +294,7 @@ vienu punktu, kas apmierina visus nosacījumus, tad šo algoritmu
 var izmantot arī maksimuma atrašanai.
 
 
+-----
 
 # <lo-sample/> LP Piemērs #2
 
@@ -321,6 +345,8 @@ $$x_1 \geq 0,\;\;x_2 \geq 0,\;\;x_3\;\text{bez nosac.}.$$
 
 </hgroup>
 
+
+--
 
 ## <lo-sample/> LP Piemērs #2
 
@@ -400,6 +426,8 @@ $y_1 + 2y_2 + 3y_3 \geq 4$.
 
 
 
+-----
+
 # <lo-summary/> Duālais uzdevums (tikai nevienādības)
 
 Dualitāte izsakāma īpaši vienkārši, ja visi nosacījumi ir nevienādības.
@@ -424,6 +452,9 @@ A^{T}\mathbb{y} \geq \mathbb{c}\\
 \end{array} \right.$$
 
 </hgroup>
+
+
+--
 
 ## <lo-summary/> Dualitātes teorēma - 1
 
@@ -452,6 +483,7 @@ pašreizējais atrisinājums (neoptimāls, bet pieļaujams vektors $\mathbb{x}$
 vai attiecīgi $\mathbb{y}$) ir no optimālā.
 
 
+-----
 
 # &nbsp;
 
@@ -475,6 +507,8 @@ vai attiecīgi $\mathbb{y}$) ir no optimālā.
 
 
 
+-----
+
 # <lo-theory/> Mākslīgu mainīgo pievienošana - 1
 
 **Gadījums Nr.1:** Dots LP uzdevums šādā formā:
@@ -485,6 +519,8 @@ kas nosaka sākumstāvokli: visi vektora $\mathbb{x}$ mainīgie ir $0$,
 bet visi nokares mainīgie $\mathbb{y}$ vienādi ar attiecīgajām 
 vērtībām $\mathbb{b}$. 
 
+
+--
 
 ## <lo-summary/> Mākslīgu mainīgo pievienošana - 2
 
@@ -504,6 +540,8 @@ lai noteikti nebūtu izdevīgi tam piešķirt nekādu pozitīvu vērtību.
 </div>
 
 
+--
+
 ## <lo-summary/> Mākslīgu mainīgo pievienošana - 3
 
 
@@ -522,6 +560,7 @@ gājienu skaitā, kas sakristu ar šo mainīgo skaitu, neizdodas, tad nosacījum
 pretrunīgi.
 
 
+-----
 
 # &nbsp;
 
@@ -544,6 +583,9 @@ pretrunīgi.
 </hgroup>
 
 
+
+-----
+
 # <lo-summary/> Elipsoīda algoritma ievads
 
 Šo algoritmu izgudroja Hačijans (Khachiyan) 1979. gadā.  
@@ -554,6 +596,8 @@ kur $n$ - dimensiju skaits, $L$ – ar cik bitu precizitāti jāatrod atrisināj
 Lai gan teorētiski darbības laiks ir polinomiāls, praksē algoritms ir 
 lēns un netiek lietots. Tāpēc šajā kursā mēs ierobežosimies ar īsu šī algoritma aprakstu.
 
+
+--
 
 ## <lo-summary/> Elipsoīda algoritma pārskats
 
@@ -579,6 +623,7 @@ $$E_i \cap R_2 \subseteq E_{i+1}.$$
 </div>
 
 
+--
 
 ## <lo-summary/> Apgalvojums par elipsoīdu
 
@@ -597,7 +642,7 @@ veido konstantu attiecību, kas atkarīga no dimensiju skaita $n$.
 </hgroup>
 
 
-
+-----
 
 # &nbsp;
 
@@ -620,6 +665,7 @@ veido konstantu attiecību, kas atkarīga no dimensiju skaita $n$.
 </hgroup>
 
 
+-----
 
 # <lo-sample/> Maksimālās plūsmas atrašana grafā
 
@@ -637,6 +683,8 @@ Uzdevumu var arī reducēt uz Lineāro programmēšanu.
 
 </div>
 
+
+-----
 
 # <lo-soln/> Lineārā programma
 
@@ -662,6 +710,8 @@ $$x_1 \geq 0,\;\;x'_1 \geq 0.$$
 
 </hgroup>
 
+-----
+
 # <lo-soln/> Maksimizējamā funkcija
 
 <hgroup>
@@ -677,6 +727,8 @@ plūsmu uz šīs vienas šķautnes.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Dualitātes lietošana max plūsmai
 
 Sk. [Max Flow to Linear Programming](http://www.cs.cmu.edu/~odonnell/toolkit13/lecture14.pdf)
@@ -686,6 +738,8 @@ uzdevumam formulējam duālo uzdevumu un mēģinām atrast šī uzdevuma interpr
 
 
 
+
+-----
 
 # &nbsp;
 
@@ -708,6 +762,7 @@ uzdevumam formulējam duālo uzdevumu un mēģinām atrast šī uzdevuma interpr
 </hgroup>
 
 
+-----
 
 # <lo-theory/> Ko darījām šajā nodarbībā
 

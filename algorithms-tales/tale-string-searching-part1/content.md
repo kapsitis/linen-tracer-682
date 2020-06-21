@@ -44,6 +44,8 @@ Kopsavilkums
 
 
 
+-----
+
 
 # <lo-why/> why
 
@@ -65,6 +67,8 @@ virkņu/stringu meklēšanas algoritmi?
 
 
 
+--
+
 ## <lo-summary/> Nodarbības mērķi 
 
 * Lietot naivo stringu meklēšanas algoritmu. 
@@ -73,6 +77,8 @@ virkņu/stringu meklēšanas algoritmi?
 * Veidot KMP algoritma starprezultātu struktūras.
 * Pamatot KMP algoritma pareizību un sarežģītību.
 
+
+--
 
 ## <lo-summary/> Stringu meklēšanas lietojumi
 
@@ -90,7 +96,7 @@ drīkst veikt priekšapstrādi/indeksāciju.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -113,6 +119,8 @@ drīkst veikt priekšapstrādi/indeksāciju.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Uzdevuma nostādne
 
 Dots <blue>*teksts*</blue> (*text*) - virkne no $n$ simboliem:
@@ -125,6 +133,9 @@ vai arī tas izvada visas pozīcijas).
 
 **Definīcija:** Pozīciju tekstā $T$ (skaitli no $0$ līdz $n-1$), kur var sākties meklējamais
 paraugs sauc par <blue>*nobīdi*</blue> (*shift*). 
+
+
+--
 
 ## <lo-theory/> Apakšstringi un apakšvirknes
 
@@ -144,6 +155,9 @@ simbolu virkni no $T[i]$ (ieskaitot virknes garumā $0,1,2,\ldots$), kur $i$ vē
 (Apakšvirkni iegūst, sākotnējā virknē nosvītrojot $0$ vai vairāk simbolus jebkurās vietās.)
 
 </div>
+
+
+--
 
 ## <lo-theory/> Apakšstringu, apakšvirkņu piemēri
 
@@ -173,7 +187,7 @@ $n$ simbolu virknei ir ne vairāk kā ${\displaystyle 2^n}$ apakšvirknes
 
 
 
-
+-----
 
 # <lo-theory/> Naivā algoritma pseidokods
 
@@ -215,6 +229,8 @@ Ja sakrīt visi $m$ elementi, kas ir paraugā, tad apakšstringu esam atraduši.
 
 
 
+-----
+
 # <lo-theory/> Naivā algoritma ātrdarbība
 
 <hgroup style="font-size:70%;">
@@ -244,6 +260,8 @@ $$P = \underbrace{\mathtt{aa}\ldots\mathtt{a}}_{m-1\;\text{burti}}\mathtt{b}$$
 </hgroup>
 
 
+-----
+
 # &nbsp;
 
 <hgroup>
@@ -264,6 +282,8 @@ $$P = \underbrace{\mathtt{aa}\ldots\mathtt{a}}_{m-1\;\text{burti}}\mathtt{b}$$
 
 </hgroup>
 
+
+-----
 
 # <lo-summary/> Stringu meklēšanas vietā skaitļi
 
@@ -287,7 +307,7 @@ pierakstā būs $112 \cdot 128 + 116 = 14452$.
 
 
 
-
+--
 
 ## <lo-summary/> Rabina-Karpa algoritma pamatideja
 
@@ -305,6 +325,7 @@ $$t_{s+1} = \left( t_s - d^{m-1}T[s] \right) \cdot d + T[s+m].$$
     - Visbeidzot pieskaita jaunāko ciparu $T[s+m]$. 
 
 
+--
 
 ## <lo-summary/> Pamatidejas piemērs
 
@@ -322,6 +343,8 @@ $$t_1 = (t_0 - 10^4 \cdot T[0])\cdot 10 + T[5] = (\color{#F00}{\mathtt{3}}\color
 </div>
 
 
+--
+
 ## <lo-summary/> Ko dara ar ļoti lieliem skaitļiem
 
 Meklējamie paraugi mēdz būt gari, polinomu vērtības, kas iegūstamas
@@ -333,8 +356,10 @@ $$t_s \equiv p\;(\text{mod}\,q),$$
 kur $q$ izvēlas pietiekami lielu, lai bieži neparādītos 
 <blue>*viltus trāpījumi*</blue> (*spurious hits*). 
 
-# <lo-summary/> Rabina-Karpa pseidokods
 
+--
+
+# <lo-summary/> Rabina-Karpa pseidokods
 
 <table class="pseudocode" style="font-size:70%">
 <tr><th colspan="2"><tt>Rabin_Karp_Matcher</tt>($T$, $P$,$d$,$q$)</th></tr>
@@ -397,6 +422,7 @@ kur $q$ izvēlas pietiekami lielu, lai bieži neparādītos
 </table>
 
 
+--
 
 ## <lo-summary/> Cik liela ir q vērtība
 
@@ -406,6 +432,7 @@ bet bieži rodas viltus trāpījumi.
 aritmētikai iznāk laikietilpīga.
 
 
+-----
 
 # &nbsp;
 
@@ -428,6 +455,8 @@ aritmētikai iznāk laikietilpīga.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Ievadvirkni lasām tikai vienreiz
 
 Pieņemsim, ka lietojam naivo meklēšanas algoritmu un nobīdes (shift) 
@@ -440,6 +469,8 @@ bet $T[i + j] \neq P[j]$, tad to izmanto, lai izvēlētos nākamo pāri $(i^{\as
 
 Nav obligāti izvēlēties $(i^{\ast},j^{\ast}) = (i+1,0)$  kā naivajā algoritmā.
 
+
+--
 
 ## <lo-theory/> Automāta pamatideja
 
@@ -466,7 +497,7 @@ $$\mathtt{...ababab...}$$
 </hgroup>
 
 
-
+-----
 
 # <lo-sample/> Automāta konstrukcijas piemērs
 
@@ -478,6 +509,8 @@ ievadāmajā tekstā.
 ![aabab Automaton](aabab-automaton.png)
 
 
+
+-----
 
 # <lo-summary/> Laiks meklēšanai ar automātu
 
@@ -501,6 +534,8 @@ Pat pieņemot, ka $n >> m$, arī $m \cdot |S|$ var būt liels.
 </hgroup>
 
 
+-----
+
 # &nbsp;
 
 <hgroup>
@@ -522,6 +557,8 @@ Pat pieņemot, ka $n >> m$, arī $m \cdot |S|$ var būt liels.
 </hgroup>
 
 
+-----
+
 # <lo-summary/> KMP pamatideja
 
 * Izveidojam tabuliņu ar <blue>*prefiksu funkciju*</blue> (*prefix function*)
@@ -535,6 +572,8 @@ katram iespējamajam ievades simbolam $s \in S$.
 1. Ievades tekstu lasa tikai vienreiz: $O(n)$, nevis $O(n \cdot m)$, kā naivajam algoritmam.
 2. Parauga $P$ priekšapstrāde notiks laikā $O(m)$, nevis $O(m\cdot|S|)$, kā pilnīgi izveidotam automātam.
 
+
+-----
 
 # <lo-summary/> Prefiksu funkcija
 
@@ -559,6 +598,8 @@ $$\pi(j) = \max \left\{ k\,:\,k<j\;\text{un}\;P_k\;\text{ir virknes}\;P_j\;\text
 </div>
 
 
+--
+
 ## <lo-sample/> Piemērs Nr.1
 
 **Uzdevums:** Atrast prefiksu funkciju, kas atbilst 
@@ -578,6 +619,9 @@ meklējamajam paraugam $P = \mathtt{abab}$.
 <td>$0$</td><td>$0$</td><td>$1$</td><td>$2$</td>
 </tr>
 </table>
+
+
+--
 
 ## <lo-sample/> Piemērs Nr.2
 
@@ -606,7 +650,7 @@ meklējamajam paraugam $P = \mathtt{aabaab}$.
 
 
 
-
+-----
 
 # <lo-summary/> KMP pseidokods
 
@@ -663,6 +707,7 @@ meklējamajam paraugam $P = \mathtt{aabaab}$.
 </table>
 
 
+--
 
 ## <lo-summary/> Kāpēc KMP strādā pareizi
 
@@ -686,6 +731,8 @@ sākot ar pēdējiem $k$ burtiem no jau nolasītā $T$ gabala.
 
 </div>
 
+
+--
 
 ## <lo-sample/> KMP Piemērs
 
@@ -749,6 +796,8 @@ Prefiksu funkcija paraugam $P=\mathtt{ababaca}$:
 </tr>
 </table>
 
+
+--
 
 ## <lo-summary/> KMP_Matcher ātrdarbības novērtējums
 
@@ -828,6 +877,7 @@ Tātad KMP ātrdarbība ir $O(n)$.
 
 
 
+-----
 
 # <lo-summary/> Prefiksu funkcijas pseidokods
 
@@ -880,6 +930,7 @@ Tātad KMP ātrdarbība ir $O(n)$.
 </table>
 
 
+--
 
 ## <lo-sample/> Piemērs 
 
@@ -899,6 +950,7 @@ meklējamajam paraugam $P = \mathtt{ababaca}$.
 </table>
 
 
+--
 
 ## <lo-sample/> Piemērs 
 
@@ -1009,7 +1061,7 @@ meklējamajam paraugam $P = \mathtt{ababaca}$.
 
 
 
-
+--
 
 ## <lo-summary/> Prefiksu funkcijas iegūšanas ātrums
 
@@ -1079,7 +1131,7 @@ Tātad prefiksu funkcijas veidošanas laiks ir $O(m)$.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -1102,6 +1154,8 @@ Tātad prefiksu funkcijas veidošanas laiks ir $O(m)$.
 </hgroup>
 
 
+-----
+
 # <lo theory/> Daži tiešsaistes servisi
 
 * **Turnitin** - komerciāls serviss, pārbauda studentu eseju līdzību ar 
@@ -1113,6 +1167,8 @@ Vai ir ētiski gūt peļņu no studentu radītiem oriģināliem darbiem?
 konfidenciālu dokumentu noplūdes (pat ja dokumentu saturs ir izmainīts).
 
 
+--
+
 ## <lo-summary/> Daži algoritmi
 
 * Sufiksu koki 
@@ -1123,7 +1179,7 @@ konfidenciālu dokumentu noplūdes (pat ja dokumentu saturs ir izmainīts).
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -1145,6 +1201,8 @@ konfidenciālu dokumentu noplūdes (pat ja dokumentu saturs ir izmainīts).
 
 </hgroup>
 
+
+-----
 
 # <lo-summary/> Ko darījām šajā nodarbībā
 

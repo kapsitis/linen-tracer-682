@@ -29,6 +29,7 @@
 
 
 
+--
 
 ## <lo-theory/> Mērķi
 
@@ -39,6 +40,7 @@
 
 
 
+-----
 
 # &nbsp;
 
@@ -61,6 +63,8 @@
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Kļūdu detekcija un korekcija
 
 Kļūdu detekcija:
@@ -72,6 +76,7 @@ Kļūdu korekcija:
 ![Error detection](error-correction.png)
 
 
+--
 
 ## <lo-summary/> Bitu paritātes metode
 
@@ -86,6 +91,8 @@ Pēdējais bits glabā visu iepriekšējo bitu paritāti.
 Tāpēc visu $n+1$ bitu paritāte ir $0$. Ja pārraidē rodas viena
 kļūda, tad paritāte būs $1$, un kļūdu varēs konstatēt. 
 
+
+--
 
 ## <lo-summary/> CRC kontrolsumma
 
@@ -106,6 +113,8 @@ kuri ir kļūdaini. Augstāka līmeņa transporta protokoli (TCP)
 palūdz kļūdainos freimus sūtīt atkārtoti. 
 
 
+--
+
 ## <lo-summary/> MD5 hešfunkcija
 
 Garākiem failiem (kuri varbūt tikuši bojāti apzināti) var 
@@ -117,6 +126,9 @@ izmantot hešfunkcijas. Piemēram MD5 izveido 128 bitu virknīti
 MD5 hešfunkcijas kolīzijas...
 
 
+
+-----
+
 # <lo-theory/> Kļūdu korekcija
 
 ![Error correction](error-correction.png)
@@ -125,6 +137,8 @@ Ideja visās metodēs - papildināt pārraidāmos datus ar
 papildinformāciju, cerot, ka papildinformācija ļaus pamanīt 
 kļūdas. 
 
+
+--
 
 ## <lo-summary/> Triviāls kods: 3x atkārtošana
 
@@ -136,6 +150,7 @@ bitu ir vairāk – nuļļu vai vieninieku.
 Šāds kods var izlabot kļūdu vienā bitā.
 
 
+-----
 
 # &nbsp;
 
@@ -158,6 +173,8 @@ bitu ir vairāk – nuļļu vai vieninieku.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Korekcijas koda jēdziens
 
 **Definīcija:** Par $[n,k,d]$-kodu sauc kļūdu korekcijas kodu, kurā  
@@ -168,6 +185,8 @@ $d$ – kļūdu skaits, ko iespējams koriģēt.
 **Piemērs:** Atkārtošanas metodei $n=3$, $k=1$, $d=1$, tāpēc tas ir
 $[3,1,1]$-kods.
 
+
+--
 
 ## <lo-summary/> Negatīvs piemērs
 
@@ -183,6 +202,9 @@ saņemot virkni `0101`, nav skaidrs, vai tika pārraidīta virkne `0101`
 (ar vienu kļūdu – pirmajā bitā).  
 Divdomīgs ir arī `1001` u.c.
 
+
+
+-----
 
 # <lo-theory/> Kļūdu labošanas koda pazīmes
 
@@ -203,7 +225,9 @@ jāatšķiras vismaz $2d+1$ vietā. $\blacksquare$
 
 
 
-## <lo-summary> Piemērs n=3
+--
+
+## <lo-summary> Piemērs `$\;n=3$`
 
 Ja pārraidāmo bitu skaits ir $n=3$, 
 bet maksimāli pieļaujamo kļūdu skaits $d=1$, 
@@ -219,7 +243,9 @@ var izlabot kļūdas, kuru skaits nepārsniedz $d = 1$.
 Lielāku bitu skaitu nekā $k=1$ (jeb divas 
 atšķiramas virknes) pārraidīt nevar.
 
-## <lo-summary/> Piemērs n=4
+--
+
+## <lo-summary/> Piemērs `$\;n=4$`
 
 **Apgalvojums:** 
 Ja pārraida $n=4$ bitus, arī tad nevar 
@@ -236,6 +262,7 @@ Līdz ar to kopējais sakritību skaits
 nevar būt lielāks par $3$.
 
 
+--
 
 ## <lo-summary/> Piemērs n=4 (turpināts)
 
@@ -255,6 +282,8 @@ ka kopējais sakritību skaits būs vismaz 4, kas ir pretrunā ar to, ka šis sk
 Tātad kopa $S$ nevar saturēt vairāk par divām virknēm. 
 $\blacksquare$
 
+
+--
 
 ## <lo-sample/> Piemērs, ja n=5, k=2
 
@@ -276,6 +305,9 @@ bet pēdējais baits ir abu satura bitu paritāte.
 
 *Piezīme:* Tabulā redzams $[5,2,1]$-kods. 
 
+
+--
+
 ## <lo-sample/> Vai pie n=5 būt vairāk par 4 virknēm? 
 
 **Apgalvojums:** 
@@ -296,7 +328,7 @@ Pretruna. $\blacksquare$
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -317,6 +349,9 @@ Pretruna. $\blacksquare$
 <span>(7) [Kopsavilkums](#section-6)</span>
 
 </hgroup>
+
+
+-----
 
 # <lo-theory/> Ja pārraida n=7 bitus
 
@@ -359,6 +394,10 @@ $$y_1 = \left( x_1 + x_3 + x_4 \right)\,\text{mod}\,2$$
 Šis ir $[7,4,1]$-kods, ko sauc arī par 
 <blue>*Heminga kodu*</blue> (*Haming code*). 
 
+
+
+-----
+
 # <lo-theory/> Apgalvojums par Hemingu [7,4,1]
 
 **Teorēma:** Katras divas šādi konstruētas
@@ -371,6 +410,9 @@ virknes $x_1x_2x_3y_1x_4y_2y_3$ un
 $x'_1x'_2x'_3y'_1x'_4y'_2y'_3$.
 
 
+
+
+--
 
 ## <lo-summary/> Pierādījums - 1
 
@@ -387,6 +429,9 @@ $$y_2 = \left( x_1 + x_2 + x_4 \right)\,\text{mod}\,2$$
 $$y_1 = \left( x_1 + x_3 + x_4 \right)\,\text{mod}\,2$$
 </div>
 
+
+--
+
 ## <lo-summary/> Pierādījums - 1
 
 **2.gadījums:** Atšķiras divi $x_i$.  
@@ -400,6 +445,8 @@ vismaz $3$ vietās: divos $x_i$ un šajā vienā $y_i$.
 Tad uzreiz ir $3$ atšķirības attiecīgajos $x_i$ (jo tos 
 pārraida arī pašus).
 
+
+-----
 
 # <lo-theory/> Heminga kods: Vispārīgais gadījums
 
@@ -417,6 +464,9 @@ viens $1$ (`000001`, `000010`, $\ldots$, `100000`).
 
 Pārējās pozīcijas ir ziņojuma biti, kas var būt patvaļīgi.
 
+
+--
+
 ## <lo-theory/> Piemēri
 
 Vispārinātais Hemings ir 
@@ -429,6 +479,7 @@ $\left[ 2^n - 1, 2^n - n - 1,1 \right]$ kods - koriģē tikai $1$ bitu.
 * Ja $n = 6$, tad Hemings $[64,57,1]$. 
 
 
+--
 
 ## <lo-summary/> Kontrolbitu izrēķināšana
 
@@ -448,6 +499,9 @@ tad kļūda var būt tikai tajos bitos, kuru numuriem
 $k$-tajā pozīcijā ir $0$ 
 (jo visi biti ar 1 k-tajā pozīcijā ietilpst formulā).
 
+
+--
+
 ## <lo-summary/> Kļūdas atrašana
 
 Šādā veidā pēc katra kontrolbita var noteikt vienu bitu 
@@ -460,6 +514,8 @@ Citādi, mēs zinām, kurā vietā tā ir.
 Kas notiek, ja kļūda ir pašā kontrolbitā?
 
 
+-----
+
 # <lo-theory/> Heminga koda optimalitāte
 
 **Teorēma:** 
@@ -469,6 +525,9 @@ $$|S| \leq 2^{2^n-n-1}.$$
 
 Šī teorēma nozīmē, ka virkņu skaitu Heminga kodā 
 nevar uzlabot pat par $1$ virkni!
+
+
+--
 
 ## <lo-summary/> Optimalitātes pierādījums
 
@@ -489,7 +548,7 @@ $$2^n \cdot m \leq 2^{2^n - 1} \;\;\Rightarrow\;\; m \leq 2^{2^n - n-1}.$$
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -512,6 +571,8 @@ $$2^n \cdot m \leq 2^{2^n - 1} \;\;\Rightarrow\;\; m \leq 2^{2^n - n-1}.$$
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Lineāra koda jēdziens
 
 Jebkuru kodu, kurā katrs nokodētās virknes bits ir aprakstāms ar formulu
@@ -526,6 +587,8 @@ Ja bits $x_i$ ietilpst formulāpēc kuras rēķina $j$-to nokodētā ziņojuma b
 tad šīs matricas $(i,j)$-ajā vietā ir $1$.
 Citādi tur ir $0$. 
 
+
+--
 
 ## <lo-summary/> Lineāra koda piemērs
 
@@ -550,6 +613,9 @@ Pārējās rindas apraksta formulas kontrolbitiem.
 
 </div>
 
+
+--
+
 ## <lo-summary/> Ziņojuma kodēšana
 
 Lai nokodētu ziņojumu, mēs aprakstām to ar vektoru:
@@ -566,6 +632,7 @@ Nokodētais ziņojums būs $M\mathbf{x}$,
 visus tā elementus rēķinot pēc moduļa $2$.
 
 
+--
 
 ## <lo-summary/> Lineāru kodu pareizības pārbaude - 1
 
@@ -581,6 +648,8 @@ $$P = \left( \begin{array}{ccccccc}
 Katra tabulas rinda apraksta vienu no Heminga koda pārbaudēm 
 (vai kontrolbits sakrīt ar noteiktu bitu summu pēc mod $2$). 
 
+
+--
 
 ## <lo-summary/> Lineāru kodu pareizības pārbaude - 2
 
@@ -602,7 +671,7 @@ bet tas ir sarežģītāk un šajā kursā netiks aplūkots.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -624,6 +693,10 @@ bet tas ir sarežģītāk un šajā kursā netiks aplūkots.
 
 </hgroup>
 
+
+
+-----
+
 # <lo-theory/> Rīda-Solomona metodes ievads
 
 * Ļauj labot lielu daudzumu kļūdu.
@@ -637,6 +710,9 @@ Skaitļu $a_1,\ldots,a_k$ vietā nosūta polinoma vērtības:
 $$f(0),f(1),\ldots,f(s-1)$$
 atbilstoši izraudzītam $s>k$.
 
+
+--
+
 ## <lo-theory/> Rīda-Solomona kodu lietojumi
 
 Patērētāju tehnoloģijas, kur nolasīšanā var rasties kļūdas
@@ -649,6 +725,8 @@ Patērētāju tehnoloģijas, kur nolasīšanā var rasties kļūdas
 
 [Reed-Solomon error correction](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction)
 
+
+-----
 
 # <lo-theory/> Algebras pamatteorēma
 
@@ -664,6 +742,7 @@ ne obligāti ir visi dažādi.
 
 
 
+--
 
 ## <lo-theory/> Vienas sekas no pamatteorēmas
 
@@ -680,6 +759,9 @@ Izriet no algebras pamatteorēmas: ja sakņu $x_i$
 būtu vairāk, $h(x)$ varētu izteikt kā visu $(x-x_i)$ 
 reizinājumu. Atverot iekavas izrādītos, ka $h(x)$ 
 pakāpe pārsniedz $k$. Pretruna.
+
+
+--
 
 ## <lo-theory/> Otras sekas no pamatteorēmas
 
@@ -705,6 +787,8 @@ var novilkt tikai vienu parabolu vai taisni
 </div>
 
 
+
+-----
 
 # &nbsp;
 

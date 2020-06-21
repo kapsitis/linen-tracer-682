@@ -43,12 +43,10 @@ Arī E(X) kā vidējo vērtību.
 
 TODO: Pievienot testa uzdevumu atrisinājumus. 
 
-
-
-
-
-
 --> 
+
+
+-----
 
 
 
@@ -68,7 +66,9 @@ saspiešanas rezultātā samazinās simtiem reižu?
 </div>
 
 
- 
+--
+
+
 ## <lo-theory/> Sasniedzamie rezultāti
 
 1. Definēt ziņojumu kopu. 
@@ -79,7 +79,7 @@ saspiešanas rezultātā samazinās simtiem reižu?
 6. Definēt un aprēķināt entropiju varbūtiskai sistēmai.
 
 
-
+-----
 
 # &nbsp;
 
@@ -102,7 +102,7 @@ saspiešanas rezultātā samazinās simtiem reižu?
 
 </hgroup>
 
-
+-----
 
 # <lo-theory/> Alfabēti, vārdi, valodas
 
@@ -115,6 +115,8 @@ Par <blue>*alfabētu*</blue> saucam galīgu kopu ar simboliem.
 65536 simboli. Pavisam Unikoda standartā ir ap 170 tūkstošiem simbolu, 
 bet tad kodējumā parādās "papildu plaknes".
 
+
+--
 
 ## <lo-summary/> Vai baits ir 8 biti? 
 
@@ -130,6 +132,8 @@ kodējumi ērti lietoja baitus, lai tur saliktu modificētos
 R-Eiropas burtus, latviešu vai krievu burtus, u.c.
 
 
+--
+
 ## <lo-theory/> Ziņojumu kopa
 
 * Saspiešanas algoritmi ne vienmēr saspiež individuālus
@@ -137,7 +141,7 @@ burtus.
 * To salīdzināšanai ir derīgāks jēdziens: $S$ - iespējamo 
 ziņojumu kopa (*the set of messages*). Sākotnējie ziņojumi 
 pierakstīti vienā alfabētā, to kodējumi - varbūt jau citā.
-$$S = \{ s_1, s_2, \ldots, s_n \}.$$
+`$$S = \{ s_1, s_2, \ldots, s_n \}.$$`
 * Atkarībā no konteksta ziņojums var būt atsevišķs burts, 
 noteikta garuma vārds vai pat vesels fails (ziņojumu kopa 
 var būt arī bezgalīga, bet mums parasti to nevajadzēs). 
@@ -149,7 +153,7 @@ var runāt par <blue>*saspiešanas attiecību*</blue>
 
 
 
-
+--
 
 
 ## <lo-theory/> Kodējuma jēdziens
@@ -158,13 +162,13 @@ Kodējums $C$ ziņojumu kopai $S$ ir attēlojums, kas
 katru ziņojumu pārvērš par bitu virkni. 
 Katru bitu virkni sauc par kodavārdu (*codeword*) un 
 apzīmēsim visus kodējumā ietilpstošos attēlojumus šādi:
-$$C = \{ (s_1,w_1),(s_2,w_2),\ldots,(s_m,w_m)\}.$$
+`$$C = \{ (s_1,w_1),(s_2,w_2),\ldots,(s_m,w_m)\}.$$`
 
 
 
 
 
-
+-----
 
 # <lo-theory/> 2 saspiešanas veidi
 
@@ -179,7 +183,7 @@ ar sākotnējo.
 Attēlu, skaņas, video glabāšana un pārraide.
 
 
-
+--
 
 ## <lo-theory/> Universāli saspiest nevar
 
@@ -193,12 +197,15 @@ Bitam ir $2$ vērtības ($0$ vai $1$).
 * $m$ bitu virknei ir $2^m$ vērtības,
 * $k$ bitu virknei ir $2^k$ vērtības. 
 
+
+--
+
 ## <lo-theory/> Injektīvi attēlojumi
 
 **Definīcija:** Funkciju $f\,:\;X \rightarrow Y$ 
 sauc par <blue>*injektīvu*</blue>, 
 ja katriem diviem argumentiem $x_1,x_2 \in X$ izpildās:
-$$x_1 \neq x_2\;\;\Rightarrow\;\;f(x_1) \neq f(x_2).$$
+`$$x_1 \neq x_2\;\;\Rightarrow\;\;f(x_1) \neq f(x_2).$$`
 
 Bezzudumu saspiešanas funkcijai 
 jābūt injektīvai, tajā nedrīkst
@@ -208,6 +215,7 @@ Bet no <blue>*Dirihlē principa*</blue> (*Pigeonhole principle*)
 tieši seko, ka injektīva funkcija no kopas ar $2^m$ elementiem
 uz $2^k$ elementiem (ja $k < m$) neeksistē.
 
+-----
 
 # &nbsp;
 
@@ -230,6 +238,7 @@ uz $2^k$ elementiem (ja $k < m$) neeksistē.
 
 </hgroup>
 
+-----
 
 # <lo-theory/> Mainīga garuma kodi
 
@@ -240,11 +249,11 @@ ${\displaystyle \left\lceil \log_2 |S| \right\rceil }$ - tas parasti
 ir ļoti neoptimāli.
 * Ar dažāda garuma kodavārdiem rasties *divdomības* (*ambiguities*). 
 Piemēram, ja kodējums ir 
-$$\{(a, \mathtt{1}), (b, \mathtt{01}), (c, \mathtt{101}), (d, \mathtt{011})\},$$
+`$$\{(a, \mathtt{1}), (b, \mathtt{01}), (c, \mathtt{101}), (d, \mathtt{011})\},$$`
 tad $\mathtt{1011}$ var saprast trīs dažādos veidos:
-$$\mathtt{1.01.1},\;\;\mathtt{1.011},\;\;\mathtt{101.1}.$$
+`$$\mathtt{1.01.1},\;\;\mathtt{1.011},\;\;\mathtt{101.1}.$$`
 
-
+--
 
 ## <lo-theory/> Prefiksu kodējuma jēdziens
 
@@ -260,13 +269,15 @@ prefikss.
 </hgroup>
 <hgroup>
 
-$$C=\{ (S, \mathtt{00}), (I, \mathtt{01}),$$
-$$ (E, \mathtt{100}), (N, \mathtt{101}),$$
-$$ (T, \mathtt{110}), (A, \mathtt{111})\}.$$
+`$$C=\{ (S, \mathtt{00}), (I, \mathtt{01}),$$`
+`$$ (E, \mathtt{100}), (N, \mathtt{101}),$$`
+`$$ (T, \mathtt{110}), (A, \mathtt{111})\}.$$`
 
 
 </hgroup>
 
+
+--
 
 ## <lo-sample/> Atkodēšanas piemēri
 
@@ -283,6 +294,8 @@ $$ (T, \mathtt{110}), (A, \mathtt{111})\}.$$
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Vidējais kodējuma garums
 
 Pieņemsim, ka ir zināms varbūtību sadalījums ziņojumu telpā $S$: 
@@ -291,9 +304,11 @@ varbūtība $p(s)$ un $p(s_1)+\ldots+p(s_n)=1$.
 
 **Definīcija:** Par kodējuma $C = \{(s_1,w_1),\ldots,(s_n,w_n)\}$ 
 <blue>*vidējo garumu*</blue> (*average length*) sauksim summu:
-$$\ell_a(C) = \sum\limits_{(s,w) \in C} p(s)\ell(w),$$
+`$$\ell_a(C) = \sum\limits_{(s,w) \in C} p(s)\ell(w),$$`
 kur $\ell(w)$ apzīmē kodavārda $w$ garumu bitos. 
 
+
+--
 
 ## <lo-theory/> Optimāls prefiksu kodējums
 
@@ -302,6 +317,8 @@ prefiksu kods, ja tā $\ell_a(C)$ ir minimāls. Citiem vārdiem, ja
 dotajam ziņojumu varbūtību sadalījumam neeksistē cits prefiksu 
 kods, kam vidējais garums ir vēl zemāks.
 
+
+--
 
 ## <lo-yellow> Morzes kods
 
@@ -315,6 +332,8 @@ Atkodēšanas viennozīmību nodrošina atšķirīgās pauzes.
 
 Sk. [Morse structure and timing](http://www.nu-ware.com/NuCode%20Help/index.html?morse_code_structure_and_timing_.htm)
 
+
+-----
 
 # &nbsp;
 
@@ -338,6 +357,8 @@ Sk. [Morse structure and timing](http://www.nu-ware.com/NuCode%20Help/index.html
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Hafmana algoritms
 
 **Ievade:** Burti (ziņojumi) ar dotām varbūtībām.  
@@ -349,6 +370,8 @@ Hafmana algoritms atbilst <blue>*rijīgo*</blue> (*greedy*) algoritmu
 paradigmai - "lokāla" optimizēšana šoreiz noved pie globāli optimāla
 risinājuma.
 
+
+--
 
 ## <lo-theory/> Algoritma pseidokods
 
@@ -398,6 +421,8 @@ minimuma prioritāšu kaudzē vajag $O(\log n)$.
 * <span style="font-variant: small-caps;">Huffman($S$)</span> laiks ir $O(n \log n)$.
 
 
+--
+
 ## <lo-theory/> Kā atspiest Hafmana kodējumu
 
 ![Kanoniskais Hafmana kodējums](https://en.wikipedia.org/wiki/Canonical_Huffman_code)
@@ -416,7 +441,7 @@ Ja kodētājs un saņēmējs zina, ka lietots **sakārtots** ziņojumu alfabēts
 tad pietiek paziņot attiecīgo burtu kodavārdu garumus: $2, 1, 3, 3$.
 
 
-
+--
 
 ## <lo-yellow/> Daži Hafmana algoritma lietojumi
 
@@ -426,6 +451,8 @@ kuri lieto `DEFLATE` saspiešanas standartu
 * [RFC 7541 - HPACK: Header Compression for HTTP/2](https://tools.ietf.org/html/rfc7541)
 Hederu saspiešana HTTP/2 protokolam (RFC 7540), ko lieto kopš 2015.g.
 
+
+-----
 
 # <lo-theory/> Hafmana koka optimalitāte
 
@@ -439,12 +466,13 @@ ziņojumu kopai $S$ pie dotā varbūtību sadalījuma.
 Starp visiem kodējumiem $C$, kur ziņojumiem $s \in S$ 
 kaut kā piešķir bezprefiksu kodus $w_s$, 
 vid. garums 
-$$\ell_a(C) = \sum\limits_{(s,w_s) \in C} p(s)\ell(w_s)$$
+`$$\ell_a(C) = \sum\limits_{(s,w_s) \in C} p(s)\ell(w_s)$$`
 Hafmana koka aprakstītajā kodējumā $C^{\ast}$ būs vismazākais
 (vai viens no vismazākajiem).
 
 </hgroup>
 
+--
 
 ## <lo-theory/> Optimalitātes pierādījums - 1
 
@@ -455,6 +483,9 @@ kas ir gan optimālais, gan Hafmana koks.
 Pieņemam, ka Hafmana algoritms vienmēr dod optimālu koku pie $k-1$ burtiem.  
 Tagad dots alfabēts $S$ ar $k$ burtiem, kur
 $x$ un $y$ ir divi visretāk sastopamie burti.
+
+
+--
 
 ## <lo-theory/> Optimalitātes pierādījums - 2
 
@@ -469,6 +500,8 @@ blakus.
 
 Varbūt ir vēl optimālāks koks, kur $x$ un $y$ neatrodas blakus?
 
+--
+
 ## <lo-theory/> Optimalitātes pierādījums - 3
 
 Pamatosim, ka citus kokus var pārveidot par 
@@ -482,6 +515,8 @@ un kodējuma garums no tā samazinātos.)
 Tad ir divi tādi burti $u$, $v$, kuriem $\ell_u = \ell_v = \ell_{\text{max}}$.
 (Vispirms atrodam maksimāli dziļu $u$. Ja blakus nebūtu šķautnes uz $v$,
 tad varētu saīsināt $u$ kodējumu par vienu šķautni.)
+
+--
 
 ## <lo-theory/> Optimalitātes pierādījums - 4
 
@@ -503,7 +538,7 @@ iegūt citu optimālu koku, kuram $x$ un $y$ ir blakus.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -526,6 +561,7 @@ iegūt citu optimālu koku, kuram $x$ un $y$ ir blakus.
 
 </hgroup>
 
+-----
 
 # <lo-theory/> Entropija diskrētā sistēmā
 
@@ -533,15 +569,18 @@ iegūt citu optimālu koku, kuram $x$ un $y$ ir blakus.
 (*random variable*) ir zināma iespējamo stāvokļu kopa $S$ un 
 katram $s \in S$ zināma varbūtība, tad 
 par gadījuma lieluma <blue>*entropiju*</blue> sauc vērtību: 
-$$H(S) = - \sum\limits_{s \in S} p(s) \log_2 p(s),$$
+`$$H(S) = - \sum\limits_{s \in S} p(s) \log_2 p(s),$$`
 kur $p(s)$ ir stāvoklim $s$ atbilstošā varbūtība.
+
+
+--
 
 ## <lo-theory/> Kloda Šenona "pašinformācija"
 
 Katram ziņojumam $s \in S$ Klods Šenons (*Claude Shannon*) 
 definēja arī <blue>*pašinformāciju*</blue> 
 (*self information*) ar izteiksmi: 
-$$h(s) = \log_2 \frac{1}{p(s)} = -\log_2 p(s).$$
+`$$h(s) = \log_2 \frac{1}{p(s)} = -\log_2 p(s).$$`
 
 Jo retāks kāds ziņojums, jo tā apgrieztā varbūtība 
 ir lielāka, arī logaritms no tās lielāks.
@@ -551,17 +590,20 @@ daži $p(s) \rightarrow 0$,
 jo $\lim_{x \rightarrow 0} x \log_2(x) = 0$. 
 
 
+--
+
 ## <lo-summary/> Piemēri: monēta un metamais kauliņš
 
 1. "Godīgai" monētai ir divi stāvokļi: $S=\{ \text{cipars}, 
 \text{ģerbonis} \}$, katram $p=\frac{1}{2}$. 
 Entropija ir 
-$$H(S) = - (1/2) \cdot \log_2 (1/2) - (1/2) \cdot \log_2 (1/2) = 1/2+1/2 = 1.$$
+`$$H(S) = - (1/2) \cdot \log_2 (1/2) - (1/2) \cdot \log_2 (1/2) = 1/2+1/2 = 1.$$`
 2. Metamajam kauliņam ir seši stāvokļi, katram no tiem varbūtība
 ir $1/6$. Entropija: 
-$$H(S) = - 6 \cdot ((1/6) \cdot \log_2 (1/6)) \approx 2.585.$$
+`$$H(S) = - 6 \cdot ((1/6) \cdot \log_2 (1/6)) \approx 2.585.$$`
 
 
+--
 
 ## <lo-summary/> Bitu virknītes entropija
 
@@ -574,29 +616,33 @@ ir $L$.
 Šajā ekstrēmajā gadījumā entropija precīzi sakrīt ar kodēšanai nepieciešamajiem 
 baitiem. 
 
+--
+
 ## <lo-summary/> 2 ziņojumu pašinformāciju summa?
 
 Pieņemsim, ka $A,B \in S$ ir divi ziņojumi, kas ir neatkarīgi kā 
 varbūtiski notikumi. Tad saņemt tos vienu pēc otra var ar 
 varbūtību $p(AB) = p(A) \cdot p(B)$ un informācijas daudzums:
-$$h(AB) = -\log_2 (p(A) \cdot p(B)) = $$
-$$= -\log_2(p(A)) - \log_2(p(B)) = h(A) + h(B).$$
+`$$h(AB) = -\log_2 (p(A) \cdot p(B)) = $$`
+`$$= -\log_2(p(A)) - \log_2(p(B)) = h(A) + h(B).$$`
 
 Logaritms ir vienkārša funkcija, kas reizinājumu pārtaisa 
 par summu.
+
+--
 
 # <lo-theory/> Entropijas saistība ar saspiešanu
 
 
 **Teorēma:** Katrai ziņojumu kopai $S$ ar zināmu varbūtību sadalījumu 
 un optimālu prefiksu kodējumu $C$:
-$$\ell_a(C) \leq H(S) + 1.$$
+`$$\ell_a(C) \leq H(S) + 1.$$`
 
 *Pierādījums:* Sekos citā nodarbībā.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -620,6 +666,7 @@ $$\ell_a(C) \leq H(S) + 1.$$
 </hgroup>
 
 
+-----
 
 # <lo-quiz/> Jautājums Nr.1
 
@@ -640,17 +687,18 @@ kauliņa ģenerētā gadījumlieluma entropiju)?
 
 </hgroup>
 
-
+--
 
 ## <lo-quiz/> Jautājums Nr.1: Atrisinājums
 
 Logaritma bāzes maiņas formula ir šāda: 
-$$\log_a b = \frac{\log_m b}{\log_m a}.$$
+`$$\log_a b = \frac{\log_m b}{\log_m a}.$$`
 
 Mūsu gadījumā 
-$${\displaystyle \log_2 6 = (\ln 6)/(\ln 2) \approx 2.584963.}$$
+`$${\displaystyle \log_2 6 = (\ln 6)/(\ln 2) \approx 2.584963.}$$`
 
 
+-----
 
 # <lo-quiz/> Jautājums Nr.2
 
@@ -668,6 +716,7 @@ Ierakstīt skaitli formātā <red>`d.dd`</red>: _____
 </hgroup>
 
 
+--
 
 ## <lo-quiz/> Jautājums Nr.2: Atrisinājums
 
@@ -676,9 +725,10 @@ $h(A) = \log_2 \frac{1}{1/2} = \log_2 2 = 1.$
 $h(B)=h(C)= \log_2 \frac{1}{1/4} = \log_2 4 = 2.$
 
 Entropija ir svērts vidējais $(1/2)p(A) + (1/4)p(B) + (1/4)p(C)$: 
-$$(1/2)\cdot 1 + (1/4) \cdot 2 + (1/4) \cdot 2 = 1.5.$$
+`$$(1/2)\cdot 1 + (1/4) \cdot 2 + (1/4) \cdot 2 = 1.5.$$`
 
 
+-----
 
 # <lo-quiz/> Jautājums Nr.3
 
@@ -696,6 +746,8 @@ Ierakstīt skaitli formātā <red>`d.dd`</red>: _____
 
 </hgroup>
 
+
+--
 
 ## <lo-quiz/> Jautājums Nr.3: Atrisinājums
 
@@ -718,12 +770,13 @@ Burtu $I,S,M,P$ kodējumu garumi ir attiecīgi $1,2,3,3$ biti.
 Piereizinām ar attiecīgo burtu varbūtībām 
 (to relatīvajiem biežumiem vārdā <blue>`MISSISSIPPI`</blue>).
 
-$$1\frac{4}{11} + 2\frac{4}{11} + 3\frac{2}{11}+$$
-$$+ 3\frac{1}{11} = \frac{21}{11} \approx 1.91.$$
+`$$1\frac{4}{11} + 2\frac{4}{11} + 3\frac{2}{11}+$$`
+`$$+ 3\frac{1}{11} = \frac{21}{11} \approx 1.91.$$`
 
 </hgroup>
 
 
+-----
 
 # <lo-quiz/> Jautājums Nr.4
 
@@ -731,8 +784,8 @@ $$+ 3\frac{1}{11} = \frac{21}{11} \approx 1.91.$$
 
 Kāds būtu kodējuma vidējais garums, ja vārdā <blue>`MISSISSIPPI`</blue>
 katru no četriem burtiem kodētu šādi:
-$$C = \{(I,\mathtt{00}),(M,\mathtt{01}),$$
-$$(P,\mathtt{10}),(S,\mathtt{11})\}.$$
+`$$C = \{(I,\mathtt{00}),(M,\mathtt{01}),$$`
+`$$(P,\mathtt{10}),(S,\mathtt{11})\}.$$`
 Atbildi noapaļot
 līdz diviem cipariem aiz komata. 
 
@@ -743,17 +796,20 @@ Ierakstīt skaitli formātā <red>`d.dd`</red>: _____
 
 </hgroup>
 
+
+--
+
 ## <lo-quiz/> Jautājums Nr.4: Atrisinājums
 
 Pat neko nerēķinot, redzams, ka ikviena simbola kodējuma
 garums ir $2$, tātad arī vidējais kodējuma garums būs 
 svērts vidējais starp visiem šiem divniekiem:
 
-$$p(M)\cdot 2 + p(I)\cdot 2 + p(S)\cdot 2 + p(P)\cdot 2 =$$
-$$(1/11)\cdot 2 + (4/11)\cdot 2 + (4/11)\cdot 2 + (2/11)\cdot 2 = 2.$$
+`$$p(M)\cdot 2 + p(I)\cdot 2 + p(S)\cdot 2 + p(P)\cdot 2 =$$`
+`$$(1/11)\cdot 2 + (4/11)\cdot 2 + (4/11)\cdot 2 + (2/11)\cdot 2 = 2.$$`
 
 
-
+-----
 
 # &nbsp;
 
@@ -776,6 +832,9 @@ $$(1/11)\cdot 2 + (4/11)\cdot 2 + (4/11)\cdot 2 + (2/11)\cdot 2 = 2.$$
 
 </hgroup>
 
+
+-----
+
 # <lo-yellow/> Pasaka: Saspiešana programmēšanā
 
 Kāpēc pašiem nekodēt utilītalgoritmus:
@@ -786,6 +845,9 @@ Ja algoritmam robežgadījumu nav un heiristikas
 tur nelieto, tas (vēl) nav *īstās dzīves* algoritms.
 (Saspiešanas algoritmiem - ļoti gari failu ceļi; 
 īpaši simboli failu vārdos.) 
+
+
+--
 
 ## <lo-yellow/> Gatavu bibliotēku lietošana
 
@@ -800,7 +862,7 @@ baitu vai simbolu plūsmu ievadi/izvadi) un konfigurēt,
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -824,7 +886,7 @@ baitu vai simbolu plūsmu ievadi/izvadi) un konfigurēt,
 </hgroup>
 
 
-
+-----
 
 # <lo-theory/> Ko darījām šajā nodarbībā?
 
@@ -837,6 +899,7 @@ baitu vai simbolu plūsmu ievadi/izvadi) un konfigurēt,
 informācijas garumu.
 
 
+-----
 
 # <lo-theory/> Atsauces
 

@@ -22,7 +22,7 @@
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -54,7 +54,7 @@ https://stackoverflow.com/questions/40054218/what-if-dictionary-size-in-lzw-algo
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -78,7 +78,7 @@ https://stackoverflow.com/questions/40054218/what-if-dictionary-size-in-lzw-algo
 </hgroup>
 
 
-
+-----
 
 # &nbsp;
 
@@ -101,6 +101,8 @@ https://stackoverflow.com/questions/40054218/what-if-dictionary-size-in-lzw-algo
 
 </hgroup>
 
+
+-----
 
 # <lo-theory/> Berouza-Vīlera transformācija
 
@@ -126,6 +128,9 @@ https://serverfault.com/questions/2600/how-do-you-set-bzip2-block-size-when-usin
 :::
 
 
+
+--
+
 ## <lo-theory/> Inversi leksikogrāfiskā kārtība
 
 <hgroup>
@@ -144,6 +149,8 @@ inversi sakārtotās tabulas rindiņā.
 
 </hgroup>
 
+
+--
 
 ## <lo-theory/> Var kārtot arī parasti leksikogrāfiski
 
@@ -164,6 +171,7 @@ var uzrakstīt no otra gala).
 </hgroup>
 
 
+--
 
 ## <lo-theory/> Kāpēc var atjaunot sākotnējo?
 
@@ -171,12 +179,16 @@ var uzrakstīt no otra gala).
 [Sk. 177 lapu](https://www.cs.helsinki.fi/u/tpkarkka/opetus/12s/spa/lecture11.pdf)
 
 
+--
+
 ## <lo-theory/> Ko dod sašķiroti konteksti 
 
 Gari bloki - līdz pat 900K. 
 
 ![Izejas teksts](text-after-th.png)
 
+
+--
 
 ## <lo-theory/> Sašķiroti burti pēc TH
 
@@ -186,7 +198,7 @@ Gari bloki - līdz pat 900K.
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -210,6 +222,8 @@ Gari bloki - līdz pat 900K.
 </hgroup>
 
 
+-----
+
 # <lo-theory/> Kritēriji
 
 * Rīka standartizācija un saspiešanas/atspiešanas vispārēja pieejamība. 
@@ -221,6 +235,8 @@ Gari bloki - līdz pat 900K.
 programmu izejas tekstiem, rastra grafikai, u.c.).
 * Rīka saspiešanas un atspiešanas ātrums. 
 
+
+-----
 
 # <lo-theory/> Linux komandrindu rīks "tar"
 
@@ -252,6 +268,8 @@ https://en.wikipedia.org/wiki/List_of_archive_formats
 :::
 
 
+--
+
 ## <lo-theory/> Rīks gzip
 
 ```console
@@ -270,6 +288,8 @@ gzip -d examplefile.gz
 
 ```
 
+
+--
 
 ## <lo-theory/> Rīks LZMA
 
@@ -328,6 +348,7 @@ https://stackabuse.com/python-zlib-library-tutorial/
 
 
 
+-----
 
 # <lo-theory/> Kalgari un Kenterberijas korpusi
 
@@ -339,6 +360,7 @@ Kalgari korpusu arvien lieto metožu salīdzināšanai un pat saspiešanas sacen
 mūsdienīgāks korpuss.
 
 
+--
 
 ## <lo-summary/> Saspiežamība pēc algoritma
 
@@ -346,12 +368,14 @@ TODO: Attēls, kurā salīdzināti algoritmu compression ratio
 
 
 
+--
+
 ## <lo-summary/> Ātrums pēc algoritma
 
 TODO: Attēls, kurā salīdzināti  
 
 
-
+-----
 
 # <lo-theory/> Par PNG formātu
 
@@ -359,6 +383,9 @@ TODO: Attēls, kurā salīdzināti
 (turklāt atspiešanas ātrums būtiski nemainās).
 * Augstāks līmenis - lielāks bloku izmērs, lielāka vārdnīca.
 * `pngcrush` var piemeklēt optimālus parametrus, ja svarīgi iegūt vismazāko PNG.
+
+
+--
 
 ## <lo-theory/> PNG saspiešanas līmeņi
 
@@ -373,10 +400,14 @@ $ ffmpeg -i input -vframes 1 -compression_level 100 100.png
 ```
 
 
+--
 
 ## <lo-sample/> PNG izmērs fotogrāfijām pēc līmeņa
 
 ![Photograph compression](png-compression-level-photograph.png)
+
+
+--
 
 ## <lo-sample/> PNG izmērs pēc bloku lielumiem 
 
@@ -386,7 +417,7 @@ $ ffmpeg -i input -vframes 1 -compression_level 100 100.png
 
 
 
-
+-----
 
 # &nbsp;
 
@@ -410,6 +441,7 @@ $ ffmpeg -i input -vframes 1 -compression_level 100 100.png
 </hgroup>
 
 
+-----
 
 # <lo-quiz/> Jautājums Nr.1 
 
@@ -431,6 +463,7 @@ ar komatiem formātā <red>`a/b,c/d,e/f`</red> _____
 </hgroup>
 
 
+--
 
 ## <lo-quiz/> Jautājums Nr.1: Atrisinājums
 
@@ -462,6 +495,8 @@ Tātad varbūtību sadalījums ir $\left( \frac{1}{4}, \frac{3}{8}, \frac{3}{8} 
 </hgroup>
 
 
+--
+
 ## <lo-quiz/> Jautājums Nr.1: Atrisinājums
 
 Starp citu, trešajam burtam atbilstošā varbūtību sadalījuma $\{ 1/4, 3/8, 3/8 \}$ 
@@ -473,7 +508,7 @@ LZ78, Berouza-Vīlera u.c. algoritmi varētu būt labāki.
 
 
 
-
+-----
 
 # <lo-quiz/> Jautājums Nr.2
 
@@ -484,6 +519,9 @@ Ja $1/3$ atkodē, ar cik ziņojumiem `A` sākas virkne, pirms
 tajā parādās pirmais `B`.
 
 Ierakstīt ziņojumu `A` skaitu pirms pirmā `B`: _____
+
+
+--
 
 ## <lo-quiz/> Jautājums Nr.2: Atrisinājums
 
@@ -500,6 +538,8 @@ Mazākā veselā $k$ vērtība ir $11$, tātad $x = 1/3$ atkodējumā
 vispirms būs $k-1 = 10$ ziņojumi `A`, pēc tam sekos ziņojums `B`.
 
 
+--
+
 ## <lo-yellow/> Kā atrasts 1/3 binārais pieraksts?
 
 Kādēļ $(1/3)_{10}$ (viena trešdaļa decimālpierakstā)
@@ -514,7 +554,7 @@ $$\frac{1}{4} + \frac{1}{16} + \frac{1}{64} + \ldots = \frac{1/4}{1 - 1/4}.$$
 $$b_1 + b_1q + b_1q^2 + b_2q^3 + \ldots = \frac{b_1}{1 - q}.$$
 
 
-
+-----
 
 # <lo-quiz/> Jautājums Nr.3
 
@@ -524,7 +564,7 @@ Aiz tās norādīt, kurā vietā šajā transformācijā ir strings `ABBA$`.
 
 
 
-
+--
 
 ## <lo-quiz/> Jautājums Nr.3: Atrisinājums
 
@@ -548,6 +588,8 @@ B & B & A & \$ & \color{#F00}{A}
 Transformācijas rezultāts ir labējā kolonna: <red>`AB$BA`</red>.   
 Sākotnējā virkne ir 3.rindiņa.
 
+
+-----
 
 # <lo-quiz/> Jautājums Nr.4
 
@@ -577,6 +619,7 @@ tekošo simbolu uz alfabēta sākumu.
 Iegūtais kods ir `12222`.
 
 
+-----
 
 # &nbsp;
 
@@ -600,6 +643,7 @@ Iegūtais kods ir `12222`.
 </hgroup>
 
 
+-----
 
 # <lo-yellow/> Arhivatori un datu noplūde
 
@@ -612,6 +656,9 @@ Iegūtais kods ir `12222`.
 sk. [failu izmēru limiti](https://www.websense.com/content/support/library/data/v84/file_support/file_size_limits.aspx), 
 [atbalstītie arhīvu formāti](https://www.websense.com/content/support/library/data/v84/file_support/dlp_file_support.pdf). 
 
+
+--
+
 ## <lo-yellow/> Daži arhīvu lietojumi DLP
 
 * Kas notiek, ja atarhivējot failu, rodas ļoti daudz failu? 
@@ -623,6 +670,8 @@ kā aptuveni 10 sekundes, jo pārlūkprogrammu lietotāji nav pieraduši ilgi ga
 * Kas notiek, ja datus sāk sūtīt adresātam un pēkšņi pamana privātu datu noplūdi?  
 Vai saņēmējs arhīvu var saprast arī tad, ja saņemta daļa no tā?
 
+
+--
 
 ## <lo-yellow/> DLP atbildes uz izaicinājumiem
 
@@ -637,7 +686,7 @@ piespiest lietotājus sūtīt DLP rīkam saprotami.
 
 
 
-
+-----
 
 # &nbsp;
 

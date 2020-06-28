@@ -1,18 +1,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="../style/style.css"/>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  
 <style>
-h2 {
-  color: #990000;
+i { 
+  font-size:85%; 
+}
+table.colornavigation a { 
+  text-decoration: underline !important; 
 }
 </style>
 </head>
+
 
 <body>
 <h1>Data Structures: Home</h1>
@@ -38,7 +47,72 @@ h2 {
 </tr>
 </table>
 
-<p>List of topics and skills.</p>
+<p>The objectives of this course can be separated into a few big categories:</p>
+ 
+<ol type="1">
+<li>Use C++ language features to implement basic algorithms. Use object-orientation 
+to separate the public interface from the concrete implementation.</li>
+<li>Convert user stories into data manipulation calling ADTs. Use STL and similar 
+predefined C++ data structure libraries.</li> 
+<li>Discuss the implementation details for some popular data structures. Understand 
+their complexity and tradeoffs in terms of time-space or performance-complexity.</li>
+<li>Introduce general paradigms of algorithmic thinking and revisit data structures
+along with algorithms to manipulate them as particular cases of these paradigms.</li> 
+</ol>
+
+<p>Here are the topics in a greater detail:</p>
+
+
+
+<div class="panel-group" id="accordion">
+
+{% for item in jsonTopics %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}: {{item.title}}</a>
+</h4>
+</div>
+<div id="collapse{{item.itemNum}}" class="panel-collapse collapse">
+<div class="panel-body">
+{{item.description}}
+<p>
+{% for link in item.links %}
+<b>{{link.subsection}} {{link.title}}</b><br/>
+
+{% if link.reading != 'NA' %}
+<i>({{link.reading}})</i>.
+{% endif %}
+{% if link.video|length == 1 %}
+{% for vid in link.video %}
+{% if vid != 'NA' %}
+<i><a href={{vid}}>Video{{link.subsection}}</a></i>.<br/>
+{% endif %}
+{% endfor %}
+{% else %}
+{% for vid in link.video %}
+<i><a href={{vid}}>Video{{link.subsection}}.{{abc[loop.index]}}</a></i>.
+{% endfor %} <br/>
+{% endif %} 
+{% for task in link.task %}
+{{link.subsection}}.{{abc[loop.index]}}. {{task}}<br/>
+{% endfor %}
+{% endfor %}
+<p>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+<h2>Something else</h2>
+
 
 <ol type="1">
 <li>C++ Introduction (2 Weeks)
@@ -115,6 +189,11 @@ h2 {
   <li>Abstract operations on hashtables</li>
   <li>Hash functions and collisions</li>
   <li>Chaining in hash tables</li>
+  <li>Growing hash tables</li>
+<!--
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-9-table-doubling-karp-rabin/
+-->
+  <li>Rabin-Karp and rolling hash ADT (append, skip)</li>
   <li>Implementing dictionaries with hashtables</li>
   <li>Bloom filters</li>
   <li>Design Paradigm: Trading space for time</li>

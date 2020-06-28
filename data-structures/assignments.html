@@ -11,6 +11,9 @@
 h2 {
   color: #990000;
 }
+dt {
+  font-weight: bold;
+}
 </style>
 </head>
 
@@ -41,23 +44,111 @@ h2 {
 Syllabus for <a href="../data-structures-bin/data-structures-algorithms-fall-2020.docx">Fall 2020</a> 
 
 
+<h2>In-Class Assignments</h2>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Title</th>
+<th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</td>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>MK01</th>
+<td>Identify Growth Rate as Big-O</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK02</th>
+<td>C++ Expressions with Side Effects</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK03</th>
+<td>Inheritance, Polymorphism and Virtual Calls</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK04</th>
+<td>Define loop invariants</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK05</th>
+<td>Linked lists and related pointer manipulations</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK06</th>
+<td>Inspect code and cause referential exposure</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK07</th>
+<td>Array-based stacks or deques</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK08</th>
+<td>Use heap as a priority queue</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK09</th>
+<td>Construct a Huffman Code</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK10</th>
+<td>Run QuickSort iterations</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+
+
+</table>
+
+
 <h2>Coding Exercises</h2>
 
 <table border="1" cellspacing="0">
 <tr>
-<th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Hints</th><th>Due Date</th>
+<th>Ortus grade ID</th><th>Title</th><th>Due Date</th>
 <th style="background-color:#dddddd;">Time Est.</td>
 <th>Max</th><th>Average</th>
 </tr>
 <tr>
 <th>EX1</th>
-<td>Story</td>
-<td>
-ABC
-</td>
-<td>
-DEF
-</td>
+<td>A HelloWorld-style project</td>
 <td>TBA</td>
 <td style="background-color:#dddddd;">3h</td>
 <td>100&permil;</td><td>&nbsp;</td>
@@ -87,8 +178,6 @@ Make longer structures, using tries. Computing Entropy.
 --> 
 
 
---> 
-
 
 <h2>Programming Problems</h2>
 
@@ -96,31 +185,68 @@ Make longer structures, using tries. Computing Entropy.
 
 <table border="1" cellspacing="0">
 <tr>
-<th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Hints</th><th>Due Date</th>
+<th>Ortus grade ID</th><th>Topic</th><th>Due Date</th>
 <th style="background-color:#dddddd;">Time Est.</td>
 <th>Max</th><th>Average</th>
 </tr>
 <tr>
 <th>PROB1</th>
 <td>Story</td>
-<td>
-&nbsp;
-</td>
-<td>
-&nbsp;
-</td>
 <td>TBA</td>
 <td style="background-color:#dddddd;">8h</td>
 <td>100&permil;</td><td>&nbsp;</td>
 </tr>
 </table>
 
-</body>
-</html>
-
 
 <!--
 Assignment 4 idea: Matching DNS fragments using hashing.
 https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/assignments/MIT6_006F11_ps4_sol.pdf
 -->
+
+
+<h2>Appendix: The C++ Environments</h2>
+
+<p>The preparation labs are sets of instructions defining the suggested
+configurations to run coding exercises and programming projects.
+By themselves they are not graded, but going through these steps is highly recommended
+(and you can also suggest improvements, if the same thing can be done better).</p>
+
+<dl>
+<dt>PLAB1: Build a C++ Project in Visual Studio</dt>
+<dd>Create a directory structure for a small C++ project. Use one or more
+external C++ classes and their header files. Use the IFNDEF guards to include them properly.
+Learn about some Microsoft compiler options.<br/> 
+<small><b>Why do we care?</b> This setup can be used to do C++ 
+coding on a Windows10 OS machine.</small></dd>
+<dt>PLAB2: Build a C++ Project using Makefile</dt>
+<dd>Compilation and linking options. Build variables and variable paths.<br/> 
+<small><b>Why do we care?</b> Grading server runs Makefile from Jenkins. 
+To be sure that our project can run from the command-line, we can use the same Makefile.</small></dd>
+<dt>PLAB3: Test a C++ Project in a VirtualBox Linux</dt>
+<dd>Install VirtualBox software. Download and run an Xubuntu instance
+(optionally - set it up on your own).   
+Run a minimalistic C++ development environment. Check out, run and test 
+some C++ projects from the command-line, measure their running time.<br/>
+<small><b>Why do we care?</b> Grading server uses "g++" and similar compilers in Linux; 
+you can get advance knowledge, if something is not configured correctly. 
+Virtual machines are helpful to compare runtime for different algorithms.</small>
+</dd>
+<dt>PLAB4: Use logging and IDE debugger</dt>
+<dd>Apply "spdlog" library to create searchable logfiles. 
+Use the debugger in Visual Studio or other IDE.<br/>
+<small><b>Why do we care?</b> Debugger is just one way to fix errors, sometimes
+it is the best choice to understand what is going on.</small></dd>
+<dt>PLAB5: Build a tiny package for R</dt>
+<dd>Compile and use a C++ extension to R.<br/>
+<small><b>Why do we care?</b> 
+Sometimes algorithms in C++ are extending other development platforms to make them more efficient.
+R/RStudio is normally used for interdisciplinary 
+and business applications, reporting and data visualizations.</small></dd>
+</dl>
+
+
+</body>
+</html>
+
 

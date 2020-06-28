@@ -25,8 +25,8 @@ class DataStructuresHandler(webapp2.RequestHandler):
     def get(self,my_id):
         with open('data/global_navigation.json') as f1:
             nav_items = json.load(f1)
-        with open('data/data_structures_index.json') as f3:
-            indexItems = json.load(f3) 
+        with open('data/data_structures_topics.json') as f3:
+            jsonTopics = json.load(f3) 
 
             
         abc = ['-','a','b','c','d','e','f','g','h','i','j',
@@ -38,7 +38,8 @@ class DataStructuresHandler(webapp2.RequestHandler):
                 'my_id': my_id,
                 'course': 'data-structures',
                 'nav_items': nav_items,
-                'indexItems': indexItems,
+                'jsonTopics': jsonTopics,
+                'abc': abc
             }
             template = jinja_env.get_template('data-structures/index.html')
             output = template.render(template_context)
@@ -52,14 +53,14 @@ class DataStructuresHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('data-structures/cpp.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'presentations.html'):
+        elif (my_id == 'slides.html'):
             template_context = {
                 'my_id': my_id,
                 'course': 'data-structures',
                 'presentations': self.presentations, 
                 'nav_items': nav_items
             }
-            template = jinja_env.get_template('data-structures/presentations.html')
+            template = jinja_env.get_template('data-structures/slides.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'algorithms.html'):     

@@ -50,14 +50,10 @@ table.colornavigation a {
 <p>The objectives of this course can be separated into a few big categories:</p>
  
 <ol type="1">
-<li>Use C++ language features to implement basic algorithms. Use object-orientation 
-to separate the public interface from the concrete implementation.</li>
-<li>Convert user stories into data manipulation calling ADTs. Use STL and similar 
-predefined C++ data structure libraries.</li> 
-<li>Discuss the implementation details for some popular data structures. Understand 
-their complexity and tradeoffs in terms of time-space or performance-complexity.</li>
-<li>Introduce general paradigms of algorithmic thinking and revisit data structures
-along with algorithms to manipulate them as particular cases of these paradigms.</li> 
+<li>Use C++ and OO to implement basic algorithms</li>
+<li>Convert user stories into ADTs, use standard libraries.</li> 
+<li>Analyze the implementation alternatives of some data structures.</li>
+<li>Introduce general paradigms of algorithms.</li> 
 </ol>
 
 <p>Here are the topics in a greater detail:</p>
@@ -79,24 +75,24 @@ data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}:
 {{item.description}}
 <p>
 {% for link in item.links %}
-<b>{{link.subsection}} {{link.title}}</b><br/>
+<b>{{link.id}} {{link.title}}</b><br/>
 
 {% if link.reading != 'NA' %}
-<i>({{link.reading}})</i>.
+<i>({{link.reading}})</i>.<br/>
 {% endif %}
 {% if link.video|length == 1 %}
 {% for vid in link.video %}
 {% if vid != 'NA' %}
-<i><a href={{vid}}>Video{{link.subsection}}</a></i>.<br/>
+<i><a href={{vid}}>Video{{link.id}}</a></i>.<br/>
 {% endif %}
 {% endfor %}
 {% else %}
 {% for vid in link.video %}
-<i><a href={{vid}}>Video{{link.subsection}}.{{abc[loop.index]}}</a></i>.
+<i><a href={{vid}}>Video{{link.id}}.{{abc[loop.index]}}</a></i>.
 {% endfor %} <br/>
 {% endif %} 
 {% for task in link.task %}
-{{link.subsection}}.{{abc[loop.index]}}. {{task}}<br/>
+{{link.id}}.{{abc[loop.index]}}. {{task}}<br/>
 {% endfor %}
 {% endfor %}
 <p>
@@ -106,115 +102,6 @@ data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}:
 {% endfor %}
 
 </div>
-
-
-
-
-
-<h2>Something else</h2>
-
-
-<ol type="1">
-<li>C++ Introduction (2 Weeks)
-  <ol type="a">
-  <li>C++ syntax review</li>
-  <li>Macros and headerfiles</li>
-  <li>Runtime model of C++</li>
-  <li>Recursion and tail-recursion</li>
-  <li>Input and output streams</li>
-  <li>ASCII, Unicode and encodings</li>
-  <li>4 ways to pass parameters</li>
-  <li>Object orientation: Encapsulation, inheritance, polymorphism</li>
-  <li>Templates</li>
-  <li>Namespaces and libraries</li>
-  <li>Makefiles and linking</li>
-  <li>Testing and debugging</li>
-  </ol>
-</li>
-<li>Complexity of Algorithms
-  <ol type="a">
-  <li>Time and space complexity</li>
-  <li>O-notation, Ω-notation, Θ-notation.</li>
-  <li>Analysis of non-recursive algorithms.</li>
-  <li>Worst-case, expected and amortized complexity</li>
-  <li>STL implementations for lists, stacks, queues, dictionaries</li>
-  <li>Analysis of standard implementations</li>
-  <li>Exercises using just input and output libraries</li>
-  </ol>
-</li>
-<li>Lists and linked lists
-  <ol type="a">
-  <li>Array lists</li>
-  <li>Linked lists</li>
-  <li>Doubly linked lists</li>
-  <li>Abstract operations on lists, stacks, queues</li>
-  <li>Implementation of stacks</li>
-  <li>Implementation of queues</li>
-  <li>Sorting algorithms</li>
-  <li>Design Paradigm: Brute force and exhaustive algorithms</li>
-  <li>Design Paradigm: Divide and conquer</li>
-  </ol>
-</li>
-<li>Trees
-  <ol type="a">
-  <li>Graph-theoretic concepts of trees</li>
-  <li>Path concepts in trees</li>
-  <li>Full trees</li>
-  <li>Search trees and binary search trees</li>
-  <li>BFS tree traversals</li>
-  <li>DFS tree traversals</li>
-  <li>Expression evaluations in a stack</li>
-  <li>Node insertion and deletion</li>
-  <li>Abstract operations on trees</li>
-  <li>Implementing trees as arrays</li>
-  <li>Implementing trees as linked nodes</li>
-  <li>Implementing ordered N-ary trees with binary trees</li>
-  <li>Implementing AVL trees</li>
-  <li>Implementing red-black trees</li>
-  <li>Design Paradigm: Decrease and conquer algorithms</li>
-  <li>Design Paradigm: Transform and conquer algorithms</li>
-  </ol>
-</li>
-<li>Priority queues
-  <ol type="a">
-  <li>Abstract operations on priority queues</li>
-  <li>Binomial heaps</li>
-  <li>Skew binomial heap</li>
-  <li>Leftist binomial heap</li>
-  <li>Design Paradigm: Greedy algorithms</li>
-  </ol>
-</li>
-<li>Hashing
-  <ol type="a">
-  <li>Abstract operations on hashtables</li>
-  <li>Hash functions and collisions</li>
-  <li>Chaining in hash tables</li>
-  <li>Growing hash tables</li>
-<!--
-https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-9-table-doubling-karp-rabin/
--->
-  <li>Rabin-Karp and rolling hash ADT (append, skip)</li>
-  <li>Implementing dictionaries with hashtables</li>
-  <li>Bloom filters</li>
-  <li>Design Paradigm: Trading space for time</li>
-  <li>Design Paradigm: Trading accuracy for space</li>
-  </ol>
-</li>
-<li>Some problem types
-  <ol type="a">
-  <li>Sorting</li>
-  <li>Searching</li>
-  <li>String searching</li>
-  <li>Graph problems</li>
-  <li>Combinatorial problems</li>
-  <li>Geometric problems</li>
-  <li>Number theory problems</li>
-  <li>Design Paradigm: Dynamic programming algorithms</li>  
-  <li>Design Paradigm: Iterative improvement</li>
-  </ol>
-</li>
-</ol>
-
 
 
 

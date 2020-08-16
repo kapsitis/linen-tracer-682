@@ -14,8 +14,8 @@ class RbsHandler(webapp2.RequestHandler):
     tales = [
         {
             'id':'RBS.ProjectProcesses', 
-            'dir':'project-processes',
-            'title': u'(Week03, 2019-09-20) Project Processes'
+            'dir':'week03-development-by-a-team',
+            'title': u'(Week03, 2020-09-18) Development by a Team'
         },
         {
             'id':'RBS.DesignDocuments', 

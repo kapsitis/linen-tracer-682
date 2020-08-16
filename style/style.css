@@ -104,9 +104,6 @@ table.agenda td {
     border-right: 1px solid black;
 }
 
-
-
-
 dt {
     font-weight: bold;
 }
@@ -118,10 +115,14 @@ table.schedule {
     border-collapse: collapse;
 }
 
+table.schedule tbody {
+  margin: 10px 0px 10px 0px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;  
+}
+
 table.schedule td, table.schedule th {
-    padding: 2px 5px 2px 5px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    padding: 0px 5px 0px 5px;
 }
 
 button.nav {
@@ -132,4 +133,37 @@ button.nav {
     font-weight:bold;
 }
 
+table.schedule tbody {
+    background-color: #ffffff;
+}
+
+table.schedule tbody.lossless td:first-child {
+    background-color:#1B9E77;
+    color: white;
+}
+
+table.schedule tbody.lossy td:first-child {
+    background-color: #D95F02;
+    color: white;
+}
+
+table.schedule tbody.errors td:first-child {
+    background-color: #7570B3;
+    color: white;
+}
+
+table.schedule tbody.graphs td:first-child {
+    background-color: #E7298A;
+    color: white;
+}
+
+table.schedule tbody.linear td:first-child {
+    background-color: #66A61E;
+    color: white;
+}
+
+table.schedule tbody.strings td:first-child {
+    background-color: #E6AB02;
+    color: white;
+}
 

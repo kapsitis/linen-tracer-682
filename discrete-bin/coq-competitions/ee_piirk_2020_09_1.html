@@ -218,6 +218,15 @@ The product of two odd numbers is odd.
 &nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">ee_2020_09_1_helper</span> (<span class="id" title="var">a</span>-<span class="id" title="var">b</span>) (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>) <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sum_diff_evenness</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">even_andor_even</span> (<span class="id" title="var">a</span>-<span class="id" title="var">b</span>) (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>) <span class="id" title="var">H6</span> <span class="id" title="var">H5</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">H7A</span> <span class="id" title="var">H7B</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">fund_arithm_2020</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;<span class="id" title="var">a</span> &gt; 0 -&gt; <span class="id" title="var">b</span> &gt; <span class="id" title="var">a</span> -&gt; <span class="id" title="var">a</span>*<span class="id" title="var">b</span> = 2020 -&gt; <br/>
+&nbsp;&nbsp;((<span class="id" title="var">a</span>,<span class="id" title="var">b</span>) = (1,2020) \/ (<span class="id" title="var">a</span>,<span class="id" title="var">b</span>) = (2,1010) \/ (<span class="id" title="var">a</span>,<span class="id" title="var">b</span>) = (4,505) \/ (<span class="id" title="var">a</span>,<span class="id" title="var">b</span>) = (5,404) \/ (<span class="id" title="var">a</span>,<span class="id" title="var">b</span>) = (10,202) \/ (<span class="id" title="var">a</span>,<span class="id" title="var">b</span>) = (20,101)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+
+<br/>
 
 <br/>
 <span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>

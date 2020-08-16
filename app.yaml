@@ -7,6 +7,9 @@ threadsafe: yes
 handlers:
 - url: /
   script: root.app
+  
+- url: /loc
+  static_dir: ../math/src/site/algorithms
 
 - url: /tale/.*
   script: root.app

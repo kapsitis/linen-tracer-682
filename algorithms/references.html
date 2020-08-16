@@ -10,15 +10,15 @@
 </head>
 
 <body>
-<h1>Lietišķie algoritmi: Norādes</h1>
+<h1>Lietišķie algoritmi: Atsauces</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 <td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Mājasdarbi</a></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tales.html">Prezentācijas</a></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="skills.html">Prasmes</a></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>Norādes</b></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Vingrinājumi</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tales.html">Lekciju bildītes</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="lists.html">Rādītāji</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>Atsauces</b></td>
 <td>
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
 {% for item in nav_items %}
@@ -33,203 +33,20 @@
 </tr>
 </table>
 
-
-<p><a href="http://www.cs.cmu.edu/~guyb/rwc/">Algorithms in the "Real World"</a> <i>(G. Bleloka mājaslapa Karnegī-Melona universitātē; 
-līdzīgs LU kursam DatZ, bet tur tas domāts maģistrantiem, nevis bakalauriem - ir arī dažas sarežģītākas tēmas.)</i>
-
-<p>Kursa lasāmviela pa tēmām</p>
-
-<h2>Tēma #1: Bezzudumu saspiešanas algoritmi</h2>
+<h2>Radniecīgi kursi</h2>
 
 <dl>
-<dt>[Blelloch2013]</dt>
-<dd><a href="https://www.cs.cmu.edu/~guyb/realworld/compression.pdf">Introduction to Data Compression.</a> 
-Guy Blelloch. Carnegie Mellon University. 2013. 
-<i>(Analizēti Hafmana, Aritmētiskā koda, Lempela-Ziva, Berouza-Vīlera algoritmi, 
-definēta entropija, pamatotas teorēmas par saspiešanu.)</i></dd>
-<dt>[MacKay2014A]</dt>
-<dd><a href="https://youtu.be/y5VdtQSqiAI">Entropy and Data Compression (I)</a>: 
-Introduction to Compression, Inf.Theory and Entropy.
-David MacKay, University of Cambridge.</dd>
-<dt>[MacKay2014B]</dt>
-<dd><a href="https://youtu.be/0SxJl5G2bp0">Entropy and Data Compression (II)</a>: 
-Shannon's Source Coding Theorem, The Bent Coin Lottery.
-David MacKay, University of Cambridge.</dd>
-<dt>[MacKay2014C]</dt>
-<dd><a href="https://youtu.be/eHGqNvkL4n4">Entropy and Data Compression (III)</a>: 
-Shannon's Source Coding Theorem, Symbol Codes.
-David MacKay, University of Cambridge.</dd>
-<dt>[MacKay2014D]</dt>
-<dd><a href="https://youtu.be/cJ_rhZ9DP9k">Entropy and Data Compression (IV)</a>: 
-Shannon's Source Coding Theorem, Symbol Codes.
-David MacKay, University of Cambridge.</dd>
-<dt>[Said2004]</dt>
-<dd><a href="https://pdfs.semanticscholar.org/aa4b/e5c61d003030b96e7d10340db32ea79c3d77.pdf">Introduction 
-to Arithmetic Coding - Theory and Practice.</a> By Amir Said, HP Labs, 2004.</dd>
-</dl>
-
-
-
-<h2>Tēma #2: Zudumradošā (arī attēlu, video) saspiešana</h2>
-
-<dl>
-<dt>[Weitz2016]</dt>
-<dd><a href="http://weitz.de/dct/">Discrete Cosine Transform</a>. 
-<i>(Interaktīva mājaslapa.)</i></dd>
-<dt>[Weitz2017]</dt>
-<dd><a href="https://youtu.be/7fhHQgu2OcY">Diskrete Kosinustransformation (JPEG-Komprimierung)</a>
-<i>(Video skaidrojums [Weitz2016] resursam vāciski. HAW Hamburg 
-(Die Hochschule für Angewandte Wissenschaften Hamburg)</i></dd>
-<dt>[Reznik2010]</dt>
-<dd>
-<a href="http://www.reznik.org/software.html">Software, Standards and Products</a>
-<i>(J.Rezņika mājaslapa ar dažādām mediju saspiešanas atsaucēm)</i>
+<dt>[CMU:Blelloch2018]</dt>
+<dd><a href="http://www.cs.cmu.edu/~guyb/rwc/">Algorithms in the "Real World"</a>
+G. Bleloka mājaslapa Karnegī-Melona universitātē; līdzīgs LU kursam DatZ4020, 
+bet tur tas domāts maģistrantiem, nevis bakalauriem - ir arī dažas sarežģītākas tēmas.
 </dd>
-<dt>[Santos]</dt>
-<dd><a href="https://rstudio-pubs-static.s3.amazonaws.com/85215_d5640adef9b644c6b746a906af863af1.html">A Tomography of Electoral Methods</a>
-<i>(Citi skalārās kvantizācijas piemēri. Vizuāls salīdzinājums starp Donta un Senlaga vēlēšanu sistēmām. Ismael Santos, Madride.)</i></dd>
-<dt>[Wei2005]</dt>
-<dd><a href="https://www.sciencedirect.com/topics/computer-science/blocking-artifact">Wei, D., Bovik, A. 
-Handbook of Image and Video Processing (Second Edition), 2005.</a>
-<i>(Wavelet Denoising for Image Enhancement. 
-Kādus pamanāmus defektus var radīt JPEG dalīšana blokos.)</i></dd>
-<dt>[Martin2018]</dt>
-<dd><a href="https://youtu.be/YUBe-ro89I4">Fourier Series Animation (Saw Wave)</a>
-<i>(Video parāda, kā zāģi varētu aproksimēt ar parastu Furjē transformāciju.)</i></dd>
-<dt>[Raissi2002]</dt>
-<dd><a href="https://www.mp3-tech.org/programmer/docs/mp3_theory.pdf">The Theory behind MP3.</a> 
-<i>MP3 saspiešanā izmantotie principi.</i>
+
+
+
 </dl>
 
 
-
-<h2>Tēma #3: Kļūdu korekcijas algoritmi</h2>
-
-<dl>
-<dt>[MacKay2014E]</dt>
-<dd><a href="https://youtu.be/9w4LnXIip5A">Noisy Channel Coding (I)</a>: 
-Inference and Information Measures for Noisy Channels. 
-David MacKay, University of Cambridge.</dd>
-<dt>[MacKay2014F]</dt>
-<dd><a href="https://youtu.be/vVAsh5DAe10">Noisy Channel Coding (II)</a>: 
-The Capacity of a Noisy Channel.
-David MacKay, University of Cambridge.</dd>
-<dt>[MacKay2014G]</dt>
-<dd><a href="https://youtu.be/KSV8KnF38bs">Noisy Channel Coding (III)</a>: 
-The Noisy-Channel Coding Theorem.
-David MacKay, University of Cambridge.</dd>
-<dt>[Kak2019A]</dt>
-<dd><a href="https://engineering.purdue.edu/kak/compsec/NewLectures/Lecture6.pdf">Lecture 6: 
-Irreducible Polynomials</a></dd>
-<dt>[Kak2019B]</dt>
-<dd><a href="https://engineering.purdue.edu/kak/compsec/NewLectures/Lecture7.pdf">Lecture 7: 
-Finite Fields (PART 4)</a>: 
-<i>(Galīgi lauki <span class="math inline">\( \text{GF}\left( 2^n \right) \)</span>.)</i>
-</dd> 
-<dt>[aa]</dt>
-<dd><a href="https://crypto.stackexchange.com/questions/48918/inverse-of-a-polynomial-using-long-division-over-gf256">
-Building polinomials over the field $GF(2^8)$.</a></dd> 
-<dt>[Noisternig2006]</dt>
-<dd><a href="http://notion.muelln-kommune.net/tornado/index.html">An Introduction to Tornado Codes</a>: 
-Introduction to Error-Correcting Codes by Michael Noisternig. University of Darmstadt.
-</dl>
-
-
-
-<h2>Tēma #4: Asimetriskā kriptogrāfija</h2>
-
-
-<dl>
-<dt>[Paar2010]</dt>
-<dd><a href="http://www.crypto-textbook.com/">Understanding Cryptography: A Textbook 
-for Students and Practitioners</a> by Paar C., Pelzl J. 
-<i>(Mācību grāmatu pavadošo resursu mājaslapa.)</i>
-<dt>[Paar2014]</dt>
-<dd><a href="https://youtu.be/aeOzBCbwxUo">Diffie-Hellman Key Exchange and the Discrete Log Problem</a>
-Lecture 13 (Introduction to Cryptography and Data Security). 
-Christof Paar, Ruhr-Universität Bochum.</dd>
-<dt>[Adrian2015]</dt>
-<dd><a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">Imperfect Forward Secrecy: 
-How Diffie-Hellman Fails in Practice.</a>. 
-Adrian, D., Bhargavan, K., Durumeric, Z. et al. University of Michigan.</dd>
-<dt>[Riley2014]</dt>
-<dd><a href="https://youtu.be/1dOCHwf8zVQ">Heartbleed, Running the Code</a>
-Computerphile. Sean Riley, University of Nottingham.
-<i>(Populāra lekcija par "Heartbleed" apdraudējumu, ko SSL soketiem 
-atklāja 2014.gadā.)</i></dd>
-<dt>[Partow]</dt>
-<dd><a href="https://www.partow.net/programming/polynomials/index.html">Primitive Polynomial List</a> - 
-dažādiem kāpinātājiem $n$ piedāvāti nereducējami polinomi, kas ģenerē <span class="math inline">\( \text{GF}\left( 2^n \right) \)</span>.</dd>
-</dl>
-
-
-
-
-<h2 id="topic5">Tēma #5: Lineārā optimizācija</h2>
-
-<dl>
-<dt>[Panik2018]</dt>
-<dd><a href="https://learning.oreilly.com/library/view/linear-programming-and/9781119509448/">Linear 
-Programming and Resource Allocation Modeling</a>. Panik, M. Wiley, 2018.</dd>
-<dt>[Roughgarden2014]</dt>
-<dd><a href="http://theory.stanford.edu/~tim/f14/l/l15.pdf">Beyond 
-Worst-Case Analysis. Smoothed Complexity and
-Pseudopolynomial-Time Algorithms</a> by Tim Roughgarden</dd>
-<dt>[Uko2017]</dt>
-<dd><a href="https://www.abacademies.org/articles/an-application-of-linear-programming-in-performance-evaluation-6723.html">An Application 
-of Linear Programming In Performance Evaluation</a> by Uko, L.,
-Lutz, R., Weisel, J. (Georgia Gwinnett College, 2017. 
-<i>(LP lietojumi pasniedzēju darba izvērtēšanā.)</i></dd>
-<dt>[Goemans2009]</dt>
-<dd><a href="http://www-math.mit.edu/~goemans/18433S09/ellipsoid.pdf">Lecture notes on the ellipsoid algorithm</a>
-by Michael Goemans. Massachusetts Institute of Technology.</dd>
-</dl>
-
-
-<h2>Tēma #6: Virkņu meklēšana</h2>
-
-<dl>
-<dt>[Gusfield2019A]</dt>
-<dd><a href="https://web.cs.ucdavis.edu/~gusfield/">Dan Gusfield (Homepage at UC Davis)</a> - 
-virkņu algoritmi un citi skaitļošanas bioloģijas resursi.</dd>
-<dt>[Gusfield2019B]</dt>
-<dd><a href="https://web.cs.ucdavis.edu/~gusfield/cs224f11/bnotes.pdf">The Boyer-Moore Algorithm</a></dd>
-<dt>[Lang2001]</dt>
-<dd><a href="http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/bmen.htm">Boyer-Moore Algorithm</a></dd>
-<dt>[]</dt>
-<dd><a href="https://www.geeksforgeeks.org/boyer-moore-algorithm-good-suffix-heuristic/">BM Algorithm: Good Suffix heuristic</a>
-pseidokods un laba diskusija, ar ko "vājais" prefiksu likums atšķiras no "stiprā"</dd>
-<dt>[CMU2016]</dt>
-<dd><a href="http://www.cs.cmu.edu/afs/cs/academic/class/15451-f17/www/lectures/lec09-kmp.pdf">
-The Knuth-Morris-Pratt Algorithm</a> - Carniegie-Mellon universitātes lasāmviela par KMP algoritmu 
-(tas tika izgudrots arī šajā augstskolā).</dd>
-<dt>[Allison]</dt>
-<dd><a href="http://www.allisons.org/ll/AlgDS/Tree/Suffix/">Suffix Trees</a></dd>
-<dt>[Kay1]</dt>
-<dd><a href="https://web.stanford.edu/~mjkay/suffix_tree.pdf">Suffix trees</a> by Martin Kay (University of Standford)</dd>
-<dt>[Kay2]</dt>
-<dd><a href="https://web.stanford.edu/~mjkay/NewerUkkonen.pdf">Slides on Suffix trees</a> by Martin Kay (University of Standford)</dd>
-<dt>[]</dt>
-<dd><a href="https://www.geeksforgeeks.org/wildcard-pattern-matching/">Wildcard Patterns</a></dd>
-<dt>[MIT2013]</dt>
-<dd><a href="https://www.youtube.com/watch?v=OQ5jsbhAv_M&list=PLfMspJ0TLR5HRFu2kLh3U4mvStMO8QURm">YouTube:
-19. Dynamic Programming I: Fibonacci, Shortest Paths</a> - MIT lekciju sērija par dinamisko programmēšanu.</dd> 
-<dt>[Bellman1954]</dt>
-<dd><a href="http://smo.sogang.ac.kr/doc/bellman.pdf">Dynamic Programming by Richard Bellman</a> - lekcija par 
-dažiem matemātiskas optimizācijas uzdevumiem (viena no pirmajām vietām, kur parādījās DP jēdziens, jo RAND korporācijai 
-nepatika runāt par "matemātiskiem pētījumiem", bet pret vārdu "programmēšana" nebija iebildumu).</dd>
-</dl>
-
-<h2>Izklaidējoša lasāmviela par algoritmiem</h2>
-
-<ul>
-<li><a href="https://pdfs.semanticscholar.org/83a5/3c8fde0da91e277a45e4644fefcc224ffc98.pdf">Iordanis Kerenidis and Anupam Prakash. Quantum Recommendation System.</a></li>
-<li><a href="https://www.quantamagazine.org/teenager-finds-classical-alternative-to-quantum-recommendation-algorithm-20180731/">
-Kevin Hartnett. Major Quantum Computing Advance Made Obsolete by Teenager. 2018-07-31. 
-Quantamagazine.</li>
-<li><a href="https://towardsdatascience.com/colour-maps-using-integer-programming-e46b6297aad4">Mohamed
-Leila. Colour Maps using Integer Programming. 2017.</a></li>
-</ul>
 
 
 </body>
@@ -237,8 +54,4 @@ Leila. Colour Maps using Integer Programming. 2017.</a></li>
 </html>
 
 
-<!-- 
-https://www.math.ucdavis.edu/files/3415/5301/8154/Statistical_Analysis_of_Four_Pivot_Rules_for_the_Simplex_Method.pdf
-
--->
 

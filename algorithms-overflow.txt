@@ -1,0 +1,126 @@
+
+<h3>Kriptogrāfijas tēmas (neizmantotas)</h3>
+
+<ol type="a">
+<li>Pārbaudīt, vai skaitlis ir pirmskaitlis ar pilno pārlasi.</li>
+<li>Pārbaudīt, vai skaitlis (ar lielu varbūtību) ir pirmskaitlis ar Millera-Rabina testu</li>
+<li>Izmantot kāpinātāja bināro pierakstu, lai efektīvi kāpinātu lielās pakāpēs</li>
+<li>Izveidot privātās/publiskās atslēgas pāri RSA kriptosistēmā</li>
+<li>Iekodēt un atkodēt, izmantojot RSA publiskās/privātās atslēgas pāri</li>
+<li>Izveidot publisko atslēgu un divas privātās atslēgas Difī-Helmana diskrēto logaritmu kriptosistēmā</li>
+<li>Millera-Rabina varbūtiskais pirmskaitļu tests.</li>	
+<li>PGP epastu šifrēšanas standarts.</li>
+<li>Droša SMTP protokola izmantošana.</li>	
+<li>Web-of-Trust un PKI infrastruktūras atslēgu autentitātes pārbaudei</li>
+</ol>
+
+<p>Priekšzināšanas kriptogrāfijas tēmām</p>
+
+<ol type="a">
+<li>Naturāla skaitļa pozitīvo dalītāju struktūra (simetriski pret kvadrātsakni)</li>
+<li>Mazā Fermā teorēma</li>
+<li>Eilera funkcija</li>
+<li>Eilera teorēma</li>
+<li>Primitīvā sakne pēc pirmskaitļa moduļa</li>
+<li>Diskrētā logaritma problēma</li>
+</ol>
+
+
+
+
+<h1>Atsauces</h1>
+
+
+<h2>Tēma #2: Zudumradošā (arī attēlu, video) saspiešana</h2>
+
+<dl>
+<dt>[Reznik2010]</dt>
+<dd>
+<a href="http://www.reznik.org/software.html">Software, Standards and Products</a>
+<i>(J.Rezņika mājaslapa ar dažādām mediju saspiešanas atsaucēm)</i>
+</dd>
+<dt>[Santos]</dt>
+<dd><a href="https://rstudio-pubs-static.s3.amazonaws.com/85215_d5640adef9b644c6b746a906af863af1.html">A Tomography of Electoral Methods</a>
+<i>(Citi skalārās kvantizācijas piemēri. Vizuāls salīdzinājums starp Donta un Senlaga vēlēšanu sistēmām. Ismael Santos, Madride.)</i></dd>
+<dt>[Wei2005]</dt>
+<dd><a href="https://www.sciencedirect.com/topics/computer-science/blocking-artifact">Wei, D., Bovik, A. 
+Handbook of Image and Video Processing (Second Edition), 2005.</a>
+<i>(Wavelet Denoising for Image Enhancement. 
+Kādus pamanāmus defektus var radīt JPEG dalīšana blokos.)</i></dd>
+</dl>
+
+<h2>Tēma #4: Asimetriskā kriptogrāfija</h2>
+
+<dl>
+<dt>[Paar2010]</dt>
+<dd><a href="http://www.crypto-textbook.com/">Understanding Cryptography: A Textbook 
+for Students and Practitioners</a> by Paar C., Pelzl J. 
+<i>(Mācību grāmatu pavadošo resursu mājaslapa.)</i>
+<dt>[Paar2014]</dt>
+<dd><a href="https://youtu.be/aeOzBCbwxUo">Diffie-Hellman Key Exchange and the Discrete Log Problem</a>
+Lecture 13 (Introduction to Cryptography and Data Security). 
+Christof Paar, Ruhr-Universität Bochum.</dd>
+<dt>[Adrian2015]</dt>
+<dd><a href="https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf">Imperfect Forward Secrecy: 
+How Diffie-Hellman Fails in Practice.</a>. 
+Adrian, D., Bhargavan, K., Durumeric, Z. et al. University of Michigan.</dd>
+<dt>[Riley2014]</dt>
+<dd><a href="https://youtu.be/1dOCHwf8zVQ">Heartbleed, Running the Code</a>
+Computerphile. Sean Riley, University of Nottingham.
+<i>(Populāra lekcija par "Heartbleed" apdraudējumu, ko SSL soketiem 
+atklāja 2014.gadā.)</i></dd>
+<dt>[Partow]</dt>
+<dd><a href="https://www.partow.net/programming/polynomials/index.html">Primitive Polynomial List</a> - 
+dažādiem kāpinātājiem $n$ piedāvāti nereducējami polinomi, kas ģenerē <span class="math inline">\( \text{GF}\left( 2^n \right) \)</span>.</dd>
+</dl>
+
+
+<h2 id="topic5">Tēma #5: Lineārā optimizācija</h2>
+
+<dl>
+<dt>[Panik2018]</dt>
+<dd><a href="https://learning.oreilly.com/library/view/linear-programming-and/9781119509448/">Linear 
+Programming and Resource Allocation Modeling</a>. Panik, M. Wiley, 2018.</dd>
+</dl>
+
+
+
+<h2>Izklaidējoša lasāmviela par algoritmiem</h2>
+
+<ul>
+<li><a href="https://pdfs.semanticscholar.org/83a5/3c8fde0da91e277a45e4644fefcc224ffc98.pdf">Iordanis Kerenidis and Anupam Prakash. Quantum Recommendation System.</a></li>
+<li><a href="https://www.quantamagazine.org/teenager-finds-classical-alternative-to-quantum-recommendation-algorithm-20180731/">
+Kevin Hartnett. Major Quantum Computing Advance Made Obsolete by Teenager. 2018-07-31. 
+Quantamagazine.</li>
+<li><a href="https://towardsdatascience.com/colour-maps-using-integer-programming-e46b6297aad4">Mohamed
+Leila. Colour Maps using Integer Programming. 2017.</a></li>
+</ul>
+
+
+
+
+
+
+
+<!--
+<section style="font-size: 80%">
+
+<p><b>Norādes uz nodarbībās veikto aptauju jautājumiem:</b></p> 
+
+<ul>
+<li><a href="../algorithms-tales/tale-algorithms-lossless-part1/content.html#/jautājums-nr.1">1.nodarbības aptauja</a></li>
+</ul>
+
+<p><b>Agrāk piedāvātie mājasdarbi:</b> Šiem uzdevumiem ir tikai 
+ilustratīva nozīme; tie NAV jāiesniedz mūsu kursā.</p>
+
+<ul>
+<li><a href="../algorithms-bin/legacy-hw01-compression.pdf">MD - Bezzudumu saspiešana (2018.g.)</a></li>
+<li><a href="../algorithms-bin/legacy-hw02-error-correction.pdf">MD - Kļūdu korekcija (2018.g.)</a></li>
+<li><a href="../algorithms-bin/legacy-hw03-linear-programming.pdf">MD - Lineārā optimizācija (2018.g.)</a></li>
+<li><a href="../algorithms-bin/legacy-hw04-string-search.pdf">MD - Virkņu meklēšana (2018.g.)</a></li>
+</ul>
+
+</section>
+-->
+

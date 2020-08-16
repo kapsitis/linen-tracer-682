@@ -36,52 +36,624 @@ Olympiad Problems</a>.
  <b>Problem:</b> Show that 1/(1*3) + 1/(3*5) + 1/(5*7) + ... + 
 1/(2019*2021) = 1010/2021.
 
+<div class="paragraph"> </div>
+
+<br/>
+This problem uses mathematical induction on natural numbers, 
+but the sequence uses rational numbers. Therefore, the problem 
+has to deal with many technical lemmas that translate between 
+several sets: <br/> 
+<tt>nat</tt> - natural numbers (non-negative integers), <br/>
+<tt>Z</tt> - all integers, <br/>
+<tt>positive</tt> - all positive integers<br/>
+<tt>Q</tt> - rational numbers (in Coq they are pairs where
+a numerator from <tt>Z</tt> is divided by a denominator 
+from <tt>positive</tt>). <br/>
+
+<div class="paragraph"> </div>
+
+In Coq the set Q is, in fact, setoid (a collection of equivalence 
+classes between different notations of rational numbers). 
+In this world 1/2 is not quite the same as 2/4; their 
+equivalence is denoted by two equals signs <tt>==</tt> rather
+than a single equals sign.<br/>
+
+<div class="paragraph"> </div>
+
+It may happen that there is a more shorter proof, if we
+embed our sequence in the field of real numbers, because
+the results in the set of reals might be easier. But this 
+has not been tried yet.
+
 </div>
 <div class="code">
 
 <br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Field</span>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">QArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Qcanon</span>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Eqdep_dec</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="var">Setoid</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinInt</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Gt</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znat</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Q_scope</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">get_odd</span> (<span class="id" title="var">k</span>:<span class="id" title="var">nat</span>):<span class="id" title="var">positive</span> :=<br/>
-&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">k</span> <span class="id" title="keyword">with</span> <br/>
-&nbsp;&nbsp;| 0%<span class="id" title="var">nat</span> =&gt; 1%<span class="id" title="var">positive</span><br/>
-&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k'</span> =&gt; (<span class="id" title="var">get_odd</span> <span class="id" title="var">k'</span>) + 2<br/>
-&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
-
-<br/>
-<span class="id" title="keyword">Print</span> <span class="id" title="var">positive</span>.<br/>
-
-<br/>
-<span class="id" title="keyword">Compute</span> (<span class="id" title="var">xI</span> 4%<span class="id" title="var">positive</span>).<br/>
-
-<br/>
-<span class="id" title="keyword">Compute</span> (<span class="id" title="var">Pos.of_nat</span> 1%<span class="id" title="var">nat</span>).<br/>
-
-<br/>
 <span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">SeqA</span> (<span class="id" title="var">k</span>:<span class="id" title="var">nat</span>):<span class="id" title="var">Q</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">k</span> <span class="id" title="keyword">with</span> <br/>
 &nbsp;&nbsp;| 0%<span class="id" title="var">nat</span> =&gt; 0<br/>
-&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k'</span> =&gt; <span class="id" title="var">Qred</span> ((<span class="id" title="var">SeqA</span> <span class="id" title="var">k'</span>) + <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;(1#((2*(<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">k</span>)-1)*(2*(<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">k</span>)+1))))<br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k'</span> =&gt; (<span class="id" title="var">SeqA</span> <span class="id" title="var">k'</span>) + <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(1#((<span class="id" title="var">Pos.of_nat</span> (2*<span class="id" title="var">k</span>-1))*(<span class="id" title="var">Pos.of_nat</span> (2*<span class="id" title="var">k</span>+1))))<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Compute</span> (<span class="id" title="var">SeqA</span> 4).<br/>
+</div>
+
+<div class="doc">
+<a name="lab2"></a><h2 class="section">Some Inequalities of Rational Numbers</h2>
+
+<div class="paragraph"> </div>
+
+ 0 &lt; 1 (as rational numbers) 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Q_lt_0_1</span>: 0 &lt; 1.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qlt</span>. <span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Z.lt_0_1</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Theorem</span> <span class="id" title="var">lv_no_2020_9_2</span>: <span class="id" title="var">SeqA</span> 1010 = 1010#2021.<br/>
+</div>
+
+<div class="doc">
+0 &lt; 2 (as rational numbers) 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Q_lt_0_2</span>: 0 &lt; 2.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qlt</span>. <span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Z.lt_0_2</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+0 &lt; 3 (as rational numbers) 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Q_lt_0_3</span>: 0 &lt; 3.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qlt</span>. <span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab3"></a><h2 class="section">Basic Properties of Rationals</h2>
+
+<div class="paragraph"> </div>
+
+ Unless it is 0, any natural number converted to integer is positive 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperNatsArePositive</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">n</span> &lt;&gt; 0%<span class="id" title="var">nat</span> -&gt; (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span> &gt; 0)%<span class="id" title="var">Z</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">inj_gt</span> <span class="id" title="var">n</span> 0) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">gt_0_eq</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Z.of_nat</span> 0 = 0)%<span class="id" title="var">Z</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">n</span> = <span class="id" title="var">n</span>). <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H0</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Natural number n, when transformed to a rational n/1, is non-negative 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">nat_to_Qnonneg</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>), 0 &lt;= (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qle</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">Z.mul_1_r</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Zle_0_nat</span> <span class="id" title="var">n</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+(a + b)/p = (a/p) + (b/p) 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">add_numerators</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">a</span>:<span class="id" title="var">Z</span>) (<span class="id" title="var">b</span>:<span class="id" title="var">Z</span>) (<span class="id" title="var">p</span>:<span class="id" title="var">positive</span>),<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> + <span class="id" title="var">b</span>) # <span class="id" title="var">p</span> == (<span class="id" title="var">a</span>#<span class="id" title="var">p</span>) + (<span class="id" title="var">b</span>#<span class="id" title="var">p</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">p</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qplus</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qeq</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Pos2Z.inj_mul</span> <span class="id" title="var">p</span> <span class="id" title="var">p</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">Z.mul_assoc</span> (<span class="id" title="var">a</span> + <span class="id" title="var">b</span>) (<span class="id" title="var">Z.pos</span> <span class="id" title="var">p</span>) (<span class="id" title="var">Z.pos</span> <span class="id" title="var">p</span>) ).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">Z.mul_add_distr_r</span>  <span class="id" title="var">a</span>  <span class="id" title="var">b</span> (<span class="id" title="var">Z.pos</span> <span class="id" title="var">p</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+If k*a = b, then a = (1/k)*b 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">invert_z_pos</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">Q</span>) (<span class="id" title="var">k</span>:<span class="id" title="var">Z</span>), <br/>
+&nbsp;&nbsp;(0 &lt; <span class="id" title="var">k</span>)%<span class="id" title="var">Z</span> -&gt; (<span class="id" title="var">inject_Z</span> <span class="id" title="var">k</span>)*<span class="id" title="var">a</span> == <span class="id" title="var">b</span> -&gt; <span class="id" title="var">a</span> == (1#<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">k</span>)*<span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">Qmult_assoc</span> (1 # <span class="id" title="var">Z.to_pos</span> <span class="id" title="var">k</span>)  (<span class="id" title="var">inject_Z</span> <span class="id" title="var">k</span>) <span class="id" title="var">a</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((1 # <span class="id" title="var">Z.to_pos</span> <span class="id" title="var">k</span>) * <span class="id" title="var">inject_Z</span> <span class="id" title="var">k</span> == 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qeq</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.lt_irrefl</span> 0) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H1</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Pos2Z.neg_is_neg</span> <span class="id" title="var">p</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.lt_trans</span> 0 (<span class="id" title="var">Z.neg</span> <span class="id" title="var">p</span>) 0 <span class="id" title="var">H1</span> <span class="id" title="var">H4</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.lt_irrefl</span> 0) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H5</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">field</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab4"></a><h2 class="section">Type Conversions Between Positive Integers</h2>
+
+<div class="paragraph"> </div>
+
+ If n is a non-zero natural number, then you can cast it to 
+'positive' type, then back to 'nat' type, and you will get the original number 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperNatPNat</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>, <span class="id" title="var">n</span> &lt;&gt; 0%<span class="id" title="var">nat</span> -&gt; <span class="id" title="var">Pos.to_nat</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>) = <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Nat2Pos.id</span> <span class="id" title="var">n</span> <span class="id" title="var">H1</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperPNatZ</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">p</span>:<span class="id" title="var">positive</span>, <span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">Pos.to_nat</span> <span class="id" title="var">p</span>) = <span class="id" title="var">Z.pos</span> <span class="id" title="var">p</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">p</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">Pos2Nat.is_succ</span> <span class="id" title="var">p</span>) <span class="id" title="keyword">as</span> (<span class="id" title="var">n</span>,<span class="id" title="var">H</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">f_equal</span>. <span class="id" title="var">now</span> <span class="id" title="tactic">apply</span> <span class="id" title="var">SuccNat2Pos.inv</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperPZP</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">p</span>:<span class="id" title="var">positive</span>, (<span class="id" title="var">Z.to_pos</span> (<span class="id" title="var">Z.pos</span> <span class="id" title="var">p</span>)) = <span class="id" title="var">p</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">p</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Pos2Z.id</span> <span class="id" title="var">p</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperZPZ</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">z</span>:<span class="id" title="var">Z</span>, (<span class="id" title="var">z</span>&gt;0)%<span class="id" title="var">Z</span> -&gt; (<span class="id" title="var">Z.pos</span> (<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">z</span>)) = <span class="id" title="var">z</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">z</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Pos2Z.id</span> (<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">z</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z2Pos.inj</span> (<span class="id" title="var">Z.pos</span> (<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">z</span>)) <span class="id" title="var">z</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zgt_pos_0</span> (<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">z</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.gt_lt</span> (<span class="id" title="var">Z.pos</span> (<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">z</span>)) 0 <span class="id" title="var">H5</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.gt_lt</span> <span class="id" title="var">z</span> 0 <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H4</span> <span class="id" title="var">H6</span> <span class="id" title="var">H7</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperPZP</span> (<span class="id" title="var">Z.to_pos</span> <span class="id" title="var">z</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H8</span> <span class="id" title="var">H9</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperNatZP</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:<span class="id" title="var">nat</span>, <span class="id" title="var">n</span>&lt;&gt;0%<span class="id" title="var">nat</span> -&gt; <span class="id" title="var">Z.to_pos</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>) = <span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperNatsArePositive</span> <span class="id" title="var">n</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperPNatZ</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperNatPNat</span> <span class="id" title="var">n</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H4</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Z.to_pos</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>) = <span class="id" title="var">Z.to_pos</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span> <span class="id" title="tactic">at</span> 2.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperPZP</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H6</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H5</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helperNatPZ</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:<span class="id" title="var">nat</span>, <span class="id" title="var">n</span>&lt;&gt;0%<span class="id" title="var">nat</span> -&gt; (<span class="id" title="var">Z.pos</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>)) = <span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperPZP</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperNatZP</span> <span class="id" title="var">n</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H3</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Z.to_pos</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>) = <span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Z.pos</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>) = <span class="id" title="var">Z.pos</span> (<span class="id" title="var">Pos.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span>  &lt;- <span class="id" title="var">H4</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperZPZ</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperNatsArePositive</span> <span class="id" title="var">n</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H6</span> <span class="id" title="var">H7</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperNatZP</span> <span class="id" title="var">n</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab5"></a><h2 class="section">Inequalities of Linear Expressions</h2>
+
+<div class="paragraph"> </div>
+
+ We have ak + b &gt; 0, if a,k are non-negative, but b is positive. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">Q</span>, 0 &lt;= <span class="id" title="var">k</span> -&gt; 0 &lt;= <span class="id" title="var">a</span> -&gt; 0 &lt; <span class="id" title="var">b</span> -&gt; <span class="id" title="var">a</span>*<span class="id" title="var">k</span> + <span class="id" title="var">b</span> &gt; 0.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qmult_le_0_compat</span> <span class="id" title="var">a</span> <span class="id" title="var">k</span> <span class="id" title="var">H2</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qplus_lt_le_compat</span> 0 <span class="id" title="var">b</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>) (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>))  <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H8</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">Qplus_0_l</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>)) <span class="id" title="tactic">in</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">Qplus_comm</span> <span class="id" title="var">b</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>)) <span class="id" title="tactic">in</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qle_lt_trans</span> 0 (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>) (<span class="id" title="var">a</span>*<span class="id" title="var">k</span> + <span class="id" title="var">b</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H10</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H10</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Qle_refl</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>)).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+ak+b is not zero, if a,k are non-negative, bt b is positive. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">Q</span>, 0 &lt;= <span class="id" title="var">k</span> -&gt; 0 &lt;= <span class="id" title="var">a</span> -&gt; 0 &lt; <span class="id" title="var">b</span> -&gt; ~ <span class="id" title="var">a</span> * <span class="id" title="var">k</span> + <span class="id" title="var">b</span> == 0.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper1</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qlt_not_eq</span> 0 (<span class="id" title="var">a</span> * <span class="id" title="var">k</span> + <span class="id" title="var">b</span>) <span class="id" title="var">H4</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>. <span class="id" title="tactic">intros</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H6</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>, (0 &lt; <span class="id" title="var">b</span> -&gt; <span class="id" title="var">a</span>*<span class="id" title="var">k</span> + <span class="id" title="var">b</span> &gt; 0)%<span class="id" title="var">nat</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">k</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Nat.lt_lt_add_r</span> 0 <span class="id" title="var">b</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>) <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<span class="id" title="var">plus_comm</span> <span class="id" title="var">b</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span>)) <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">not_le</span> (<span class="id" title="var">a</span>*<span class="id" title="var">k</span> + <span class="id" title="var">b</span>) 0).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>. <span class="id" title="tactic">intros</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">lt_le_trans</span> 0 (<span class="id" title="var">a</span> * <span class="id" title="var">k</span> + <span class="id" title="var">b</span>) 0 <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Nat.lt_irrefl</span> 0) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H5</span> <span class="id" title="var">H4</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab6"></a><h2 class="section">Problem-specific algebra statements</h2>
+
+<div class="paragraph"> </div>
+
+ For every non-negative k, we have the algebraic identity: <br/>
+2*(1/((2*k+1)*(2*k+3))) == 1/(2*k+1) - 1/(2*k+3) 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper4</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">k</span>:<span class="id" title="var">Q</span>, 0 &lt;= <span class="id" title="var">k</span> -&gt; 2*(1/((2*<span class="id" title="var">k</span>+1)*(2*<span class="id" title="var">k</span>+3))) == 1/(2*<span class="id" title="var">k</span>+1) - 1/(2*<span class="id" title="var">k</span>+3).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">field</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> <span class="id" title="var">Q_lt_0_1</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qlt_le_weak</span> 0 2 <span class="id" title="var">Q_lt_0_2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> <span class="id" title="var">Q_lt_0_3</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">helper2</span> <span class="id" title="var">k</span> 2 3 <span class="id" title="var">H1</span> <span class="id" title="var">H3</span> <span class="id" title="var">H4</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">helper2</span> <span class="id" title="var">k</span> 2 1 <span class="id" title="var">H1</span> <span class="id" title="var">H3</span> <span class="id" title="var">H2</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+For all natural numbers a,b:  a/1 + b/1 = (a+b)/1. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">qOfNat_inj_add</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>),<br/>
+&nbsp;&nbsp;((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>))  + (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>)) == <br/>
+&nbsp;&nbsp;(<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>))) ).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>)) == ((<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>))#1) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>)) == ((<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>))#1) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span> + <span class="id" title="var">b</span>)) == ((<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>)#1))) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">add_numerators</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>) (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>) 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">inject_Z_injective</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span> + <span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>) ( <span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span> + <span class="id" title="var">b</span>))) <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">H5</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Nat2Z.inj_add</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+For all natural numbers a,b:  (a/1)* (b/1) = (a*b)/1. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">qOfNat_inj_mul</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>),<br/>
+&nbsp;&nbsp;((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>))  * (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>)) == <br/>
+&nbsp;&nbsp;(<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span>*<span class="id" title="var">b</span>))) ).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>)) == ((<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>))#1) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>)) == ((<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>))#1) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span> * <span class="id" title="var">b</span>)) == ((<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span>*<span class="id" title="var">b</span>)#1))) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qmult</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qnum</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qden</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">inject_Z_injective</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span> * <span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>) ( <span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span> * <span class="id" title="var">b</span>))) <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">H4</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Nat2Z.inj_mul</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+For all natural numbers a,b,n: converting (a*n+b) to a rational number
+is equal to ((a/1)*(n/1) + (b/1)). 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper5</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>),<br/>
+&nbsp;&nbsp;((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>))  * (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>))  + (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>)) == <br/>
+&nbsp;&nbsp;(<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span>*<span class="id" title="var">n</span>+<span class="id" title="var">b</span>))) ).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>))  * (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) == (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">a</span>*<span class="id" title="var">n</span>)))).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">qOfNat_inj_mul</span> <span class="id" title="var">a</span> <span class="id" title="var">n</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">qOfNat_inj_add</span> (<span class="id" title="var">a</span>*<span class="id" title="var">n</span>) <span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper6</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">k</span>:<span class="id" title="var">Q</span>), <br/>
+&nbsp;&nbsp;&nbsp;(<span class="id" title="var">k</span> == (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>))) -&gt; (<span class="id" title="var">b</span>&gt;0)%<span class="id" title="var">nat</span> -&gt;<br/>
+&nbsp;&nbsp;&nbsp;(<span class="id" title="var">Z.pos</span> (<span class="id" title="var">Pos.of_nat</span> (<span class="id" title="var">a</span> * <span class="id" title="var">n</span> + <span class="id" title="var">b</span>)) # 1) == (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">a</span>)) * <span class="id" title="var">k</span> + (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">b</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper5</span> <span class="id" title="var">n</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helperNatPZ</span> (<span class="id" title="var">a</span> * <span class="id" title="var">n</span> + <span class="id" title="var">b</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper3</span> <span class="id" title="var">n</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((<span class="id" title="var">a</span> * <span class="id" title="var">n</span> + <span class="id" title="var">b</span>)%<span class="id" title="var">nat</span> &lt;&gt; 0%<span class="id" title="var">nat</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>. <span class="id" title="tactic">intros</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H7</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">gt_irrefl</span> 0) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H8</span> <span class="id" title="var">H5</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H4</span> <span class="id" title="var">H6</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper7</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">k</span>:<span class="id" title="var">Q</span>), <br/>
+&nbsp;&nbsp;(<span class="id" title="var">k</span> == (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>) #1) -&gt; 1 /(2*<span class="id" title="var">k</span> +1) == (1 # <span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">n</span> + 1)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qmake_Qdiv</span> 1 (<span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">n</span> + 1))) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper6</span> <span class="id" title="var">n</span> 2 1 <span class="id" title="var">k</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (1 &gt; 0)%<span class="id" title="var">nat</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>. <span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H4</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper8</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">k</span>:<span class="id" title="var">Q</span>), <br/>
+&nbsp;&nbsp;(<span class="id" title="var">k</span> == (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>) #1) -&gt; 1 /(2*<span class="id" title="var">k</span> +3) == (1 # <span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">n</span> + 3)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qmake_Qdiv</span> 1 (<span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">n</span> + 3))) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">inject_Z</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper6</span> <span class="id" title="var">n</span> 2 3 <span class="id" title="var">k</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (3 &gt; 0)%<span class="id" title="var">nat</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>. <span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H4</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper9</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">k</span>:<span class="id" title="var">Q</span>), (<span class="id" title="var">k</span> == <span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) -&gt;<br/>
+&nbsp;&nbsp;1/((2*<span class="id" title="var">k</span>+1)*(2*<span class="id" title="var">k</span>+3)) == (1 # <span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">n</span> + 1) * <span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">n</span> + 3)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper7</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper8</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ( (1 / (2 * <span class="id" title="var">k</span> + 1)) * (1 / (2 * <span class="id" title="var">k</span> + 3)) == 1 / ((2 * <span class="id" title="var">k</span> + 1) * (2 * <span class="id" title="var">k</span> + 3))) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">field</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">nat_to_Qnonneg</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H1</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qlt_le_weak</span> 0 2 <span class="id" title="var">Q_lt_0_2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> <span class="id" title="var">Q_lt_0_3</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> <span class="id" title="var">Q_lt_0_1</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">helper2</span> <span class="id" title="var">k</span> 2 3 <span class="id" title="var">H5</span> <span class="id" title="var">H6</span> <span class="id" title="var">H7</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">helper2</span> <span class="id" title="var">k</span> 2 1 <span class="id" title="var">H5</span> <span class="id" title="var">H6</span> <span class="id" title="var">H8</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Qeq</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a name="lab7"></a><h2 class="section">Two Statements that Complete the Regional Olympiad Problem</h2>
+
+<div class="paragraph"> </div>
+
+ General statement about the telescopic sums: If we double the
+values of our sequence, we get (1 - 1/(2*n+1)). 
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">lv_no_2020_9_2_gen</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:<span class="id" title="var">nat</span>, 2*(<span class="id" title="var">SeqA</span> <span class="id" title="var">n</span>) == 1 - (1#(<span class="id" title="var">Pos.of_nat</span> (2*<span class="id" title="var">n</span>+1))).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">SeqA</span> (<span class="id" title="var">S</span> <span class="id" title="var">n</span>) == ((<span class="id" title="var">SeqA</span> <span class="id" title="var">n</span>) + <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(1#((<span class="id" title="var">Pos.of_nat</span> (2*(<span class="id" title="var">S</span> <span class="id" title="var">n</span>)-1))*(<span class="id" title="var">Pos.of_nat</span> (2*(<span class="id" title="var">S</span> <span class="id" title="var">n</span>)+1)))))) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (2* <span class="id" title="var">SeqA</span> (<span class="id" title="var">S</span> <span class="id" title="var">n</span>) == 2 * <span class="id" title="var">SeqA</span> (<span class="id" title="var">S</span> <span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span> <span class="id" title="tactic">at</span> 2.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Qmult_plus_distr_r</span> 2 (<span class="id" title="var">SeqA</span> <span class="id" title="var">n</span>) (1 # <span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">S</span> <span class="id" title="var">n</span> - 1) * <span class="id" title="var">Pos.of_nat</span> (2 * <span class="id" title="var">S</span> <span class="id" title="var">n</span> + 1))) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHn</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (2 * <span class="id" title="var">S</span> <span class="id" title="var">n</span> - 1 = 2*<span class="id" title="var">n</span> + 1)%<span class="id" title="var">nat</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (2 * <span class="id" title="var">S</span> <span class="id" title="var">n</span> + 1 = 2*<span class="id" title="var">n</span> + 3)%<span class="id" title="var">nat</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span> # 1 == <span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span> # 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper7</span> <span class="id" title="var">n</span> (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="var">H6</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper8</span> <span class="id" title="var">n</span> (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="var">H6</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper9</span> <span class="id" title="var">n</span> (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="var">H6</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">nat_to_Qnonneg</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H10</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper4</span>  (<span class="id" title="var">inject_Z</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>)) <span class="id" title="var">H10</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Evaluation for one specific case: The 1010th member of the series - 
+the one ending with 1/(2019*2021) equals to 1010/2021. <br/>
+<b>Note:</b> We could have computed this one sum directly in Coq, but 
+then we cannot claim the result for the general case. 
+Any real olympiad solution should not use 'brute force' with thousands 
+of arithmetic operations; so computing one sum does is not enough; 
+we want to derive the result from the general expression. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">lv_no_2020_9_2</span>: <span class="id" title="var">SeqA</span> 1010 == 1010#2021.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">lv_no_2020_9_2_gen</span> 1010) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">invert_z_pos</span> (<span class="id" title="var">SeqA</span> 1010) (1 - (1 # <span class="id" title="var">Pos.of_nat</span> (2*1010 + 1))) 2) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H2</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (1 - (1 # (<span class="id" title="var">Pos.of_nat</span> (2 * 1010 + 1))) == 2020 # 2021) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>. <span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">field</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Z.lt_0_2</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Q_scope</span>.<br/>
+
+<br/>
 </div>
 </div>
 

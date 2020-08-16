@@ -6,16 +6,34 @@
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  
 <style>
 h2 {
   color: #990000;
+}
+table.schedule tbody.cpp td:first-child {
+    background-color:#1B9E77;
+    color: white;
+}
+
+table.schedule tbody.adt td:first-child {
+    background-color: #D95F02;
+    color: white;
+}
+
+table.schedule tbody.structures td:first-child {
+    background-color: #7570B3;
+    color: white;
+}
+
+table.schedule tbody.paradigms td:first-child {
+    background-color: #E7298A;
+    color: white;
 }
 </style>
 </head>
 
 <body>
-<h1>Data Structures: C++</h1>
+<h1>Data Structures: Slides</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
@@ -38,7 +56,35 @@ h2 {
 </tr>
 </table>
 
-TBD  
+
+<p><small>Modules are in PPTX. Unfortunately, some modules will be available only in ORTUS 
+due to copyright limitations; in this case the title is grayed out.<br/>
+The presentation files may change without warning; it is better to rely on textbook or other 
+documentation.</small></p>
+
+<table class="schedule">
+<tr style="background-color:#dddddd"><th colspan="2">Module</th><th>Dates</th></tr>
+{% for jsonWeek in jsonModules %}
+<tbody class="{{jsonWeek[0].part}}">
+{% for tale in jsonWeek %}
+<tr>
+<td><small>{{tale.subid}}</small></td>
+{% if tale.show == "yes" %}
+<td><small><a href="../data-structures-tales/{{tale.subdir}}.pptx">{{tale.title}}</a></small></td>
+{% else %}
+<td><small style="color:#aaaaaa;">{{tale.title}}</small></td>
+{% endif %}
+{% if loop.index == 1 %}
+<td rowspan="{{jsonWeek|length}}"><small>{{tale.date}} ...<br/>{{tale.endDate}}</small></td>
+{% endif %}
+</tr>
+{% endfor %}
+</tbody>
+{% endfor %}
+</tbody>
+</table>
+
+
 
 </body>
 </html>

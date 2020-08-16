@@ -117,27 +117,25 @@ class AlgorithmsHandler(webapp2.RequestHandler):
         #nav_items = global_navigation.nav_items()
         with open('data/global_navigation.json') as f1:
             nav_items = json.load(f1)
-        with open('data-private/algorithms_grades.json') as f2:
-            grades = json.load(f2)
+        #with open('data-private/algorithms_grades.json') as f2:
+        #    grades = json.load(f2)
+        with open('data/algorithms_topics.json') as f3:
+            jsonTopics = json.load(f3)
+        with open('data/algorithms_modules.json') as f4:
+            jsonModules = json.load(f4)
         
+        abc = ['-','a','b','c','d','e','f','g','h','i','j',
+           'k','l','m','n','o','p','q','r','s','t',
+           'u','v','w','x','y','z']
+
         
         if (my_id == 'index.html'):
-            for grade in grades['students']:
-                my_total = 0
-                for gg in grade['presence']:
-                    if (gg == 'Y'):
-                        my_total += 10/16
-                    else:
-                        my_total += 10/16
-                #my_total += float(grade['hw1'])
-                self.total_grades[grade['id']] = str(my_total)
-            
             template_context = {
                 'my_id': my_id,
                 'course': 'algorithms',
                 'nav_items': nav_items,
-                'grades': grades,
-                'total_grades': self.total_grades
+                'jsonTopics': jsonTopics,
+                'abc': abc
             }
             template = jinja_env.get_template('algorithms/index.html')
             output = template.render(template_context)
@@ -146,19 +144,20 @@ class AlgorithmsHandler(webapp2.RequestHandler):
             template_context = {
                 'my_id': my_id,
                 'course': 'algorithms',
-                'tales': self.tales, 
+                #'tales': self.tales, 
+                'jsonModules': jsonModules,
                 'nav_items': nav_items
             }
             template = jinja_env.get_template('algorithms/tales.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'skills.html'):     
+        elif (my_id == 'lists.html'):     
             template_context = {
                 'my_id': my_id, 
                 'course': 'algorithms',
                 'nav_items': nav_items                
             }
-            template = jinja_env.get_template('algorithms/skills.html')
+            template = jinja_env.get_template('algorithms/lists.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'problems.html'):     

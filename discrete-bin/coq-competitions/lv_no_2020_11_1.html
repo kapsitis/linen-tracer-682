@@ -36,6 +36,16 @@ Olympiad Problems</a>.
  <b>Problem:</b> Show that for all positive integers n, 
 6^(2n) + 19^n - 2^(n+1) is divisible by 17.
 
+<div class="paragraph"> </div>
+
+
+<div class="paragraph"> </div>
+
+This example shows a traditional problem on modular arithmetic: 
+it is about the divisibility. 
+We use integer arithmetic that has lots of 'helper' lemmas already available, 
+so the proof is rather short.
+
 </div>
 <div class="code">
 
@@ -50,23 +60,121 @@ Olympiad Problems</a>.
 
 <br/>
 <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Zpow_facts</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Definition</span> <span class="id" title="var">SeqB</span> (<span class="id" title="var">n</span>: <span class="id" title="var">nat</span>):<span class="id" title="var">nat</span> := 6^(2*<span class="id" title="var">n</span>) + 19^<span class="id" title="var">n</span> - 2^(<span class="id" title="var">n</span>+1).<br/>
+</div>
 
-<br/>
-<span class="id" title="keyword">SearchRewrite</span> (<span class="id" title="var">_</span> <span class="id" title="var">mod</span> <span class="id" title="var">_</span>).<br/>
-
-<br/>
-<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
-
-<br/>
-<span class="id" title="keyword">Theorem</span> <span class="id" title="var">lv_no_2020_11_1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">nat</span>, (<span class="id" title="var">SeqB</span> <span class="id" title="var">n</span>) <span class="id" title="var">mod</span> 17 = 0.<br/>
+<div class="doc">
+Show that 19^n is congruent to 2^n modulo 17. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:<span class="id" title="var">Z</span>, 19^<span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17 = 2^<span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zpower_mod</span> 19 <span class="id" title="var">n</span> 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((19 <span class="id" title="var">mod</span> 17) = 2) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (0 &lt; 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H1</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+</div>
+
+<div class="doc">
+Show that 2^(n+1) is twice as large as 2^n for all non-negative n. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:<span class="id" title="var">Z</span>, 0 &lt;= <span class="id" title="var">n</span> -&gt; 2^(<span class="id" title="var">n</span>+1) = 2 * 2^<span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.pow_succ_r</span> 2 <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H2</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Z.succ</span> <span class="id" title="var">n</span> = <span class="id" title="var">n</span>+1) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H1</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Show that 6^(2n) = 36^n is congruent to 2^n modulo 17. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">helper3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>:<span class="id" title="var">Z</span>, 6^(2*<span class="id" title="var">n</span>) <span class="id" title="var">mod</span> 17 = 2^<span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.pow_twice_r</span> 6 <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.pow_mul_l</span> 6 6 <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H2</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zpower_mod</span> (6*6) <span class="id" title="var">n</span> 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> ((6*6 <span class="id" title="var">mod</span> 17) = 2) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H4</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (0 &lt; 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H3</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H5</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Define the sequence used in this problem 
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">SeqC</span> (<span class="id" title="var">n</span>: <span class="id" title="var">Z</span>):<span class="id" title="var">Z</span> := 6^(2*<span class="id" title="var">n</span>) + 19^<span class="id" title="var">n</span> - 2^(<span class="id" title="var">n</span>+1).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Prove the statement of the problem itself. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">lv_no_2020_11_1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">n</span>: <span class="id" title="var">Z</span>, 0 &lt;= <span class="id" title="var">n</span> -&gt; (<span class="id" title="var">SeqC</span> <span class="id" title="var">n</span>) <span class="id" title="var">mod</span> 17 = 0.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">SeqC</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zminus_mod</span> (6 ^ (2 * <span class="id" title="var">n</span>) + 19 ^ <span class="id" title="var">n</span>) (2 ^ (<span class="id" title="var">n</span> + 1)) 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zplus_mod</span> (6^(2*<span class="id" title="var">n</span>)) (19^<span class="id" title="var">n</span>) 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper3</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper1</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">helper2</span> <span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H6</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (2 = 1+1) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H8</span> <span class="id" title="tactic">at</span> 3.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_add_distr_r</span> 1 1 (2^<span class="id" title="var">n</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (1 * 2 ^ <span class="id" title="var">n</span>  = 2^<span class="id" title="var">n</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H10</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H10</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zplus_mod</span> (2^<span class="id" title="var">n</span>) (2^<span class="id" title="var">n</span>) 17) <span class="id" title="keyword">as</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (((2 ^ <span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17 + 2 ^ <span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17) <span class="id" title="var">mod</span> 17) - <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((2 ^ <span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17 + 2 ^ <span class="id" title="var">n</span> <span class="id" title="var">mod</span> 17) <span class="id" title="var">mod</span> 17) = 0) <span class="id" title="keyword">as</span> <span class="id" title="var">H12</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H12</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
 </div>
 </div>
 

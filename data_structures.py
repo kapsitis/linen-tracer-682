@@ -25,8 +25,12 @@ class DataStructuresHandler(webapp2.RequestHandler):
     def get(self,my_id):
         with open('data/global_navigation.json') as f1:
             nav_items = json.load(f1)
+        with open('data/data_structures_modules.json') as f2:
+            jsonModules = json.load(f2)
         with open('data/data_structures_topics.json') as f3:
             jsonTopics = json.load(f3) 
+        
+            
 
             
         abc = ['-','a','b','c','d','e','f','g','h','i','j',
@@ -58,7 +62,8 @@ class DataStructuresHandler(webapp2.RequestHandler):
                 'my_id': my_id,
                 'course': 'data-structures',
                 'presentations': self.presentations, 
-                'nav_items': nav_items
+                'nav_items': nav_items,
+                'jsonModules': jsonModules
             }
             template = jinja_env.get_template('data-structures/slides.html')
             output = template.render(template_context)

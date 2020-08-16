@@ -169,7 +169,15 @@ Proof.
   pose (ee_2020_09_1_helper (a-b) (a+b) H3) as H5.
   pose (sum_diff_evenness a b) as H6.
   destruct (even_andor_even (a-b) (a+b) H6 H5) as [H7A H7B].
+  Admitted.
 
+
+Lemma fund_arithm_2020: forall a b:Z, 
+  a > 0 -> b > a -> a*b = 2020 -> 
+  ((a,b) = (1,2020) \/ (a,b) = (2,1010) \/ (a,b) = (4,505) \/ (a,b) = (5,404) \/ (a,b) = (10,202) \/ (a,b) = (20,101)).
+Proof.
+
+  
 
 
 

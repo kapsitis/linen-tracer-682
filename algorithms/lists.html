@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>Lietišķie algoritmi: Rādītāji</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Sākums</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="problems.html">Vingrinājumi</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tales.html">Lekciju bildītes</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><b>Rādītāji</b></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">Atsauces</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<h2>Algoritmi: Saspiešana</h2>
+
+<dl>
+<dt>Hafmana algoritms</dt>
+<dd>Optimāla prefiksu koka iegūšana.</dd>
+<dt>Kanoniskais Hafmana koks</dt>
+<dd>Prefiksu koka attēlošana iespējami kompaktā un standartizētā veidā.</dd>
+<dt>Aritmētiskā iekodēšana</dt>
+<dd>Ziņojuma pārveidojums par galīgu bināru daļu, 
+izmantojot "entropijas koda" pieeju.</dd>
+<dt>Veselu skaitļu aritmētiskā kodēšana</dt>
+<dd>Aritmētiskā koda modifikācija veselu skaitļu aritmētikai</dd>
+</ul>
+
+
+<h2>Priekšzināšanas: Algebra un analīze</h2>
+
+<dl>
+<dt>Logaritma īpašības</dt><dd>Logaritms no reizinājuma; logaritma bāzes maiņa;  
+robežas ar logaritmiem. Entropijas jēdziens un tā īpašības</dd>
+<dt>Ieliektas/izliektas funkcijas</dt>
+<dd>Jensena nevienādība; dažas nevienādības ar aritmētisko vai kvadrātisko vidējo.</dd>
+<dt>Divu miliču teorēma</dt>
+<dd>Aritmētiskā koda rezultāts kā monotonu ierobežotu virkņu kopīgā robeža.
+</dl>
+
+<h2>Priekšzināšanas: Diskrētā matemātika</h2>
+
+<dl>
+<dt>Reizināšanas likums</dt>
+<dd>Virknīšu skaitīšanas metodes kombinatorikā</dd>
+<dt>Dirihlē princips</dt>
+<dd>Injektīvas funkcijas un dirihlē princips; universālas saspiešanas neiespējamība.</dd>
+<dt>Daļskaitļu binārs pieraksts</dt>
+<dd>Aritmētiskā koda iegūšana.</dd>
+</dl>
+
+
+
+<h2>Priekšzināšanas: Datu struktūras</h2>
+
+<dl>
+<dt>Prioritāšu rinda</dt><dd>Hafmana algoritmā izmantota.</dd>
+</dl>
+
+
+</body>
+
+</html>
+
+

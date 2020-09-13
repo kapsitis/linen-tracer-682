@@ -4,24 +4,34 @@
             "date": "2020-08-31",
             "endDate": "2020-09-04",
             "part": "cpp",
-            "show": "yes",
-            "subdir": "cpp01-helloworld",
-            "subid": "1.1",
-            "title": "HelloWorld programs",
+            "show": "no",
+            "subdir": "cpp00-introduction",
+            "subid": "1.0",
+            "title": "Intro and Environment Setup",
             "week": "W1"
         },
         {
             "date": "2020-08-31",
             "endDate": "2020-09-04",
             "part": "cpp",
-            "show": "no",
-            "subdir": "cpp02-expressions",
-            "subid": "1.2",
-            "title": "Expressions, control structures, functions",
+            "show": "yes",
+            "subdir": "cpp01-helloworld",
+            "subid": "1.1",
+            "title": "HelloWorld programs",
             "week": "W1"
         }
     ],
     [
+        {
+            "date": "2020-09-07",
+            "endDate": "2020-09-11",
+            "part": "cpp",
+            "show": "yes",
+            "subdir": "cpp02-expressions",
+            "subid": "1.2",
+            "title": "Expressions, control structures, functions",
+            "week": "W2"
+        },
         {
             "date": "2020-09-07",
             "endDate": "2020-09-11",
@@ -71,9 +81,9 @@
             "endDate": "2020-09-25",
             "part": "adt",
             "show": "no",
-            "subdir": "adt01-counting-operations",
+            "subdir": "adt01-analysis-of-algorithms",
             "subid": "2.1",
-            "title": "Analysis by counting operations",
+            "title": "Analysis of Algorithms",
             "week": "W4"
         },
         {
@@ -125,7 +135,7 @@
             "endDate": "2020-10-09",
             "part": "structures",
             "show": "no",
-            "subdir": "structures01-lists-like-structures",
+            "subdir": "structures01-lists",
             "subid": "3.1",
             "title": "List-like structures",
             "week": "W6"
@@ -135,7 +145,7 @@
             "endDate": "2020-10-09",
             "part": "structures",
             "show": "no",
-            "subdir": "structures02-tree-like-structures",
+            "subdir": "structures02-trees",
             "subid": "3.2",
             "title": "Tree-like structures",
             "week": "W6"
@@ -201,7 +211,7 @@
             "endDate": "2020-10-30",
             "part": "structures",
             "show": "no",
-            "subdir": "structures08-set-structures",
+            "subdir": "structures08-sets",
             "subid": "3.8",
             "title": "Set-Like structures",
             "week": "W9"
@@ -213,7 +223,7 @@
             "endDate": "2020-11-06",
             "part": "structures",
             "show": "no",
-            "subdir": "structures09-graph-structures",
+            "subdir": "structures09-graphs",
             "subid": "3.9",
             "title": "Graph structures and traversals",
             "week": "W10"

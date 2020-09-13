@@ -29,6 +29,8 @@ class DataStructuresHandler(webapp2.RequestHandler):
             jsonModules = json.load(f2)
         with open('data/data_structures_topics.json') as f3:
             jsonTopics = json.load(f3) 
+        with open('data/data_structures_grading.json') as f4:
+            gradingStuff = json.load(f4) 
         
             
 
@@ -81,7 +83,8 @@ class DataStructuresHandler(webapp2.RequestHandler):
             template_context = {
                 'my_id': my_id,
                 'course': 'discrete',
-                'nav_items': nav_items
+                'nav_items': nav_items,
+                'gradingStuff': gradingStuff
             }
             template = jinja_env.get_template('data-structures/assignments.html')
             output = template.render(template_context)

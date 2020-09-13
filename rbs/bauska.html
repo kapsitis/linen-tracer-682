@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style type="text/css">
+i { 
+  font-size:85%; 
+}
+table.colornavigation a { 
+  text-decoration: underline !important; 
+}
+
+.tltip {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-size:80%;
+  color: #2B547E;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tltip .tltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #ffffcc;
+  font-style: normal;
+  color: black;
+  padding: 5px;
+  border-radius: 4px; 
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tltip:hover .tltiptext {
+  visibility: visible;
+}
+</style>
+</head>
+
+<body>
+<h1>First Year Seminar (RBS): About Bauska</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Home</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="tasks.html">Tasks</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides.html">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><b>About Bauska</b></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references.html">References</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<p><b>Data sources:</b> In order to do IT projects on Bauska municipality, 
+we list common data references. All the references here apply to the "larger Bauska region"
+</p>
+
+<div class="panel-group" id="accordion">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapseEducation">Problem Topic: Education</a>
+</h4>
+</div>
+
+<div id="collapseEducation" class="panel-collapse collapse">
+
+<div class="panel-body">
+
+<h4>Student activities in olympiads, research, sports</h4>
+
+Foundation of Atis Kronvalds: School Rating<span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">This is a rough estimate on the 
+activity in school subject olympiads (more generally - capacity to attract and to educate high perfoming students)</span>
+</span><br/>
+ 
+<ol type="a">
+<li><a href="http://www.skolureitings.lv/">School Rating</a></li>
+<li>Bauska State Gymnasium (listed under gymnasiums); Vecumnieku vidusskola (listed among small schools)</li>
+</ol>
+
+
+School of Distance Mathematics Education (Math Olympiad Results)<span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext"></span>
+</span><br/>
+
+<ol type="a">
+<li><a href="http://nms.lu.lv/olimpiades/atklata/m-g/">Open Math Olympiad</a></li>
+<li>Results for years 2016-2019 (grades 5-12)</li>
+</ol>
+
+
+
+
+</div>
+
+<div class="panel-body">
+
+<h4>Studying abroad</h4>
+
+High-school student exchange programs <span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">Kaut kāds descriptions</span>
+</span><br/>
+
+<ol type="a" style="margin-top: 0px; margin-bottom: 0px; font-size:80%">
+<li><a href="https://www.facebook.com/BauskaYouth/">Social media posts on Bauska student exchanges</a></li>
+<li>Bauska State Gymnasium partner schools and ERASMUS+ programs</li>
+</ol>
+
+EducationUSA Latvia<span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">This is not just about the USA, 
+it can inform about the expected process to study in foreign countries.</span>
+</span><br/>
+
+<ol type="a" style="margin-top: 0px; margin-bottom: 0px; font-size:80%">
+<li><a href="https://educationusa.state.gov/centers/educationusa-rtu-riga-business-school">EducationUSA 
+at RTU Riga Business School</li>
+<li>EducationUSA Latvia bureau at Skolas 11</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapseTourism">Problem Topic: Tourism</a>
+</h4>
+</div>
+
+<div id="collapseTourism" class="panel-collapse collapse">
+<div class="panel-body">Culture institutions: Statistics on museum resources and attendance.
+<span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">This resource lists </span>
+</span><br/>
+
+<ol type="a" style="margin-top: 0px; margin-bottom: 0px; font-size:80%">
+<li><a href="https://kulturasdati.lv/lv">Kultūras Dati</a>.</li>
+<li>Enter a name of a cultural institution in a search box. For example <tt>Bauskas pils muzejs</tt></li>
+<li>Click search button; open the item that shows in the search results. Open <b>Statistics</b> tab.</li>
+</ol>
+
+Bauska Tourism Information Centre
+<span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">This resource lists </span>
+</span><br/>
+
+<ol type="a" style="margin-top: 0px; margin-bottom: 0px; font-size:80%">
+<li><a href="https://www.tourism.bauska.lv/">www.tourism.bauska.lv</a></li>
+<li>Culture objects near Bauska; Tourist Trails; Event calendar</li> 
+</ol>
+
+</div>
+</div>
+
+
+
+
+</body>
+</html>

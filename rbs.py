@@ -77,13 +77,13 @@ class RbsHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('rbs/slides.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'polls.html'):     
+        elif (my_id == 'bauska.html'):     
             template_context = {
                 'my_id': my_id,
                 'course': 'rbs',
                 'nav_items': nav_items
             }
-            template = jinja_env.get_template('rbs/polls.html')
+            template = jinja_env.get_template('rbs/bauska.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'tasks.html'):

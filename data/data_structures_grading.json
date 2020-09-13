@@ -1,0 +1,77 @@
+[
+    {
+        "testItems": [
+        	{ 
+        		"fname": "test01in.txt",
+        		"expected": "test01expected.txt",
+        		"title": "Public test on strings", 
+        		"label": "T01",
+        		"type": "public"
+        	},
+            { 
+            	"fname": "test02in.txt", 
+            	"expected": "test02expected.txt",
+            	"title": "Public test on decimals", 
+            	"label": "T02",
+            	"type": "ignored" 
+            },
+            { 
+            	"fname": "test03in.txt", 
+            	"expected": "test03expected.txt",
+            	"title": "Public test on hexadecimals", 
+            	"label": "T03",
+            	"type": "ignored" 
+            },
+            { 
+            	"fname": "test11in.txt", 
+            	"expected": "test11expected.txt",
+            	"title": "Extremely short strings", 
+            	"label": "T11",
+            	"type": "private" 
+            },
+            { 
+            	"fname": "test12in.txt", 
+            	"expected": "test12expected.txt",
+            	"title": "Short (1-2 character) periods", 
+            	"label": "T12",
+            	"type": "private" 
+            },
+            { 
+            	"fname": "test13in.txt", 
+            	"expected": "test13expected.txt",
+            	"title": "Periodic inputs: Up to 100 chars", 
+            	"label": "T13",
+            	"type": "private" 
+            },
+            { 
+            	"fname": "test14in.txt", 
+            	"expected": "test14expected.txt",
+            	"title": "Periodic inputs: Up to 1000 chars", 
+            	"label": "T14",
+            	"type": "private" 
+            },                        
+           	{ 
+            	"fname": "test15in.txt", 
+            	"expected": "test15expected.txt",
+            	"title": "Non-Periodic inputs: Up to 1000 chars", 
+            	"label": "T15",
+            	"type": "private" 
+            }
+        ],
+        "students": [
+            {
+                "studID": "000",
+                "grades": ["5","3","3","3","3","3"],
+                "notes": "Build OK"
+            },
+            {
+                "studID": "999",
+                "grades": ["5","0","0","0","0","0"],
+                "notes": "Build OK"
+            }
+        ],
+        "title": "EX01: Periodic Strings",
+        "label": "EX01",
+        "subdir": "ex01-periodic"
+    }
+]

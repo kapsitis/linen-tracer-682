@@ -55,5 +55,14 @@ reveal.js.40/
 reveal.js.40.bak/
 
 
-
-
+webflask/venv/
+*.pyc
+webflask/__pycache__/
+webflask/instance/
+webflask/.pytest_cache/
+webflask/.coverage
+webflask/htmlcov/
+webflask/dist/
+webflask/build/
+webflask/*.egg-info/
+.idea/

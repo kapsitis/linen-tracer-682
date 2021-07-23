@@ -1,0 +1,172 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+<!--<link rel="stylesheet" type="text/css" href="static/style2.css"/>-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+i { 
+  font-size:85%; 
+}
+table.colornavigation a { 
+  text-decoration: underline !important; 
+}
+
+.tltip {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-size:80%;
+  color: #2B547E;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tltip .tltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #ffffcc;
+  font-style: normal;
+  color: black;
+  padding: 5px;
+  border-radius: 4px; 
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tltip:hover .tltiptext {
+  visibility: visible;
+}
+</style>
+</head>
+
+
+<body>
+<h1>Data Structures: Home</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Topics</b></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="algorithms">Algorithms</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="submissions">Code Submissions</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<!--
+<p>The objectives of this course can be separated into a few big categories:</p>
+<ol type="1">
+<li>Use C++ and OO to implement basic algorithms</li>
+<li>Convert user stories into ADTs, use standard libraries.</li> 
+<li>Analyze the implementation alternatives of some data structures.</li>
+<li>Introduce general paradigms of algorithms.</li> 
+</ol>
+<p>Here are the topics in a greater detail:</p>
+-->
+
+
+<p><b>PBM763 Syllabus:</b>
+<a href="../data-structures-bin/data-structures-algorithms-fall-2020.docx">Fall 2020</a>.<br/>
+
+<p><b>Task analysis by week:</b> Concepts,  
+<span style="color:blue">Exercises</span>, <span style="color:green">Coding</span>, 
+<span style="color:#B00000;">Mathematics</span>.</p>
+
+<p><b>Disclaimer:</b> All the external links to readings and videos only point to task/topic scope; 
+their purpose is illustrative. They should NOT be considered assignments or part of the class.</p>
+
+
+<div class="panel-group" id="accordion">
+
+{% for item in jsonTopics %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}: {{item.title}}</a>
+</h4>
+</div>
+<div id="collapse{{item.itemNum}}" class="panel-collapse collapse">
+<div class="panel-body">
+{{item.description}}
+{% for link in item.links %}
+{% if link.topic %}
+<h2 style="font-size:120%; margin:2px;color:#2B65EC;text-decoration: underline;">{{link.topic}} {{link.title}}</h2> 
+{% else %}
+<b>{{link.id}} {{link.title}}</b> 
+<span class="tltip">Description <img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">{{link.description}}</span>
+</span><br/>
+{% if link.readings or link.videos %}
+{% if link.readings %}
+{% for reading in link.readings %}
+<a class="tltip" href="{{reading.url}}">{{reading.ref}}<span class="tltiptext">{{reading.title}}</span></a>
+{% endfor %}
+{% endif %}
+{% if link.videos %}
+&nbsp;<img style="vertical-align: middle;" 
+src="../static/video_icon.png" width="20px"/>
+{% for video in link.videos %}
+<a class="tltip" href="{{video.url}}">{{video.ref}}<span class="tltiptext">{{video.title}}</span></a>
+{% endfor %}
+{% endif %}
+<br/> {% endif %}
+{% for task in link.tasks %}
+{{link.id}}.{{loop.index}}. {{task.title}} 
+{% if task.description == 'NA' %} {% else %} <span class="tltip"><img style="vertical-align: middle;" 
+src="../static/blue_question_mark.png" width="12px"/>
+<span class="tltiptext">{{task.description}}</span>
+</span> 
+{% endif %}
+{% if task.subtasks or task.examples or task.maths %}
+<ol type="a" style="margin-top: 0px; margin-bottom: 0px; font-size:80%">
+{% for subtask in task.maths %}
+<li style="color:#B00000;">{{subtask.title}}</li> 
+{% endfor %}
+{% for subtask in task.subtasks %}
+<li style="color:black;">{{subtask.title}}</li>
+{% endfor %}
+{% for subtask in task.examples %}
+<li style="color:blue">{{subtask.title}}</li>
+{% endfor %}
+</ol>
+{% else %} <br/>
+{% endif %}
+{% endfor %}
+{% endif %}  <!-- link.topic -->
+{% endfor %}
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+</body>
+</html>
+

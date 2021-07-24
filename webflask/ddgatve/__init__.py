@@ -38,11 +38,14 @@ def create_app(test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
-    from . import datastructures
-    app.register_blueprint(datastructures.bp)
+    from . import data_structures
+    app.register_blueprint(data_structures.bp)
 
     from . import algorithms
     app.register_blueprint(algorithms.bp)
+
+    from . import numtheory
+    app.register_blueprint(numtheory.bp)
 
     return app
 

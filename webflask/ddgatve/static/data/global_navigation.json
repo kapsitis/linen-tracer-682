@@ -1,5 +1,9 @@
 [
     {
+    	"subdir": "numtheory",
+    	"title": "Skaitļu teorija" 
+    },
+    {
         "subdir": "algorithms",
         "title": "Lietišķie algoritmi"
     },

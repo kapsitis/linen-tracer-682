@@ -7,7 +7,7 @@ from flask import (
 
 #from ddgatve.db import get_db
 
-bp = Blueprint('datastructures', __name__, url_prefix='/data-structures')
+bp = Blueprint('data_structures', __name__, url_prefix='/data-structures')
 
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
@@ -22,7 +22,7 @@ def index():
                 'jsonTopics': jsonTopics
             }
     
-    return render_template('datastructures/index.html', **template_context)
+    return render_template('data_structures/index.html', **template_context)
 
 
 @bp.route('/assignments', methods=['GET','POST'])
@@ -35,7 +35,7 @@ def assignments():
                 'nav_items': nav_items
             }
     
-    return render_template('datastructures/assignments.html', **template_context)
+    return render_template('data_structures/assignments.html', **template_context)
 
 
 @bp.route('/slides', methods=['GET','POST'])
@@ -51,7 +51,7 @@ def slides():
         'nav_items': nav_items
     }
     
-    return render_template('datastructures/slides.html', **template_context)
+    return render_template('data_structures/slides.html', **template_context)
 
 
 @bp.route('/algorithms', methods=['GET','POST'])
@@ -64,7 +64,7 @@ def algorithms():
                 'nav_items': nav_items
             }
     
-    return render_template('datastructures/algorithms.html', **template_context)
+    return render_template('data_structures/algorithms.html', **template_context)
 
 
 
@@ -78,7 +78,7 @@ def submissions():
                 'nav_items': nav_items
             }
     
-    return render_template('datastructures/submissions.html', **template_context)
+    return render_template('data_structures/submissions.html', **template_context)
 
 
 

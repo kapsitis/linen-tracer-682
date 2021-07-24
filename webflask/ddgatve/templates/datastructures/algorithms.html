@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style>
+h2 {
+  color: #990000;
+}
+
+table.content {
+  border-collapse:collapse; 
+  border: 1px solid black;
+}
+table.content td, table.content th {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+<h1>Data Structures: Algorithms</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><b>Algorithms</b></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="submissions">Code Submissions</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+TBD
+
+<!--
+<p>This reference points to those flavors of ADTs and algorithms that are covered in the course.
+Algorithms tend to have different flavors and naming conventions; this page is meant 
+to define the public function names for ADTs and clarify some ambiguities.</p>
+
+<h3>Abstract data types (and implementations)</h3>
+
+<table class="content">
+<tr><th>Abstract Data Type</th><th>Implementations</th></tr>
+<tr><td>List</td><td>as an array or a linked list</td></tr>
+<tr><td>Set</td><td>as a tree or as a hashtable</td></tr>
+<tr><td>Stack</td><td>as an array</td></tr>
+<tr><td>Queue</td><td>as an array</td></tr>
+<tr><td>Double-ended queue</td><td>as an array</td></tr>
+<tr><td>Priority Queue</td><td>as a heap</td></tr>
+<tr><td>Rooted Ordered Tree</td><td>as an array or a pointer tree</td></tr>
+<tr><td>Graph</td><td>as an adjacency matrix</td></tr>
+<tr>
+  <td><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec09.pdf">Rolling Hash</a></td>
+  <td>&nbsp;</td>
+</table>
+
+<h3>Some algorithms</h3>
+
+<b>Sorting algorithms</b>
+
+-->
+
+
+</body>
+</html>
+

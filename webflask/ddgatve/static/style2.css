@@ -1,0 +1,169 @@
+body {
+  margin: 5%;
+  font-family: "Calibri (Body)", Calibri, sans-serif !important; 
+}
+
+h1 {
+  font-size: 150%;
+  font-weight: normal;  
+}
+
+h2 {
+  font-size: 120%;
+  font-weight: normal;
+  margin-block-end: 0.25em;
+}
+
+red {
+  color: red;
+}
+
+table.tasks, table.proofs {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.tasks tr td, table.proofs tr td {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+table.tasks tr th, table.proofs tr th {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    font-size: 120%;
+}
+
+table.tasks tr.odd, table.proofs tr.odd {
+    background-color: #eeeeee;
+}
+
+table.tasks col.aaa, table.proofs col.aaa {
+    width: 25%;
+}
+
+table.tasks col.bbb, table.proofs col.bbb {
+    width: 40%;
+}
+
+table.tasks col.ccc, table.proofs col.ccc {
+    width: 35%;
+}
+
+table.proofs td.compact {
+  font-size:80%;
+}
+
+/*
+table.agenda {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.agenda col.descriptions {
+    width: 50%;
+}
+
+table.agenda col.readings {
+    width: 50%;
+}
+
+table.agenda col.examples {
+    width: 50%;
+}
+*/
+
+
+table.agenda {
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    font-size: 0.7em;
+}
+
+
+table.agenda th {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.1em 0.4em 0.1em 0.4em;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    background-color: #bce4e5;
+}
+
+table.agenda td {
+    text-align: left;
+    padding: 0.1em 0.4em 0.1em 0.4em;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+dt {
+    font-weight: bold;
+}
+
+table.schedule {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.schedule tbody {
+  margin: 10px 0px 10px 0px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;  
+}
+
+table.schedule td, table.schedule th {
+    padding: 0px 5px 0px 5px;
+}
+
+button.nav {
+    margin-bottom: 2px;
+    color: white;
+    width:160px;
+    background-color:#0066cc;
+    font-weight:bold;
+}
+
+table.schedule tbody {
+    background-color: #ffffff;
+}
+
+table.schedule tbody.lossless td:first-child {
+    background-color:#1B9E77;
+    color: white;
+}
+
+table.schedule tbody.lossy td:first-child {
+    background-color: #D95F02;
+    color: white;
+}
+
+table.schedule tbody.errors td:first-child {
+    background-color: #7570B3;
+    color: white;
+}
+
+table.schedule tbody.graphs td:first-child {
+    background-color: #E7298A;
+    color: white;
+}
+
+table.schedule tbody.linear td:first-child {
+    background-color: #66A61E;
+    color: white;
+}
+
+table.schedule tbody.strings td:first-child {
+    background-color: #E6AB02;
+    color: white;
+}
+

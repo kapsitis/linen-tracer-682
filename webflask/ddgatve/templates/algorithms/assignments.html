@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+</head>
+
+<body>
+<h1>Lietišķie algoritmi: Mājasdarbi</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Sākums</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Uzdevumi</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Lekciju bildes</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="indices">Rādītāji</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coding">Programmēšana</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<h2>Mājasdarbi (max 600&permil;)</h2>
+
+<p>Pavisam sagaidāmi 5 mājasdarbi (pa 4 uzdevumiem). Mājasdarbos var būt arī "I-iespēja" (tās vērtējums
+ir 50&permil; par pilnībā izrēķinātu, šis vērtējums pieskaitāms papildus - neietilpst 
+nosauktajos 600&permil;).</p>
+
+<table border="1" cellspacing="0" style="margin-bottom:10px;">
+<tr>
+  <th>Estudiju ID</th>
+  <th>Nosaukums</th>
+  <th>Termiņš</th>
+  <th>Max</th>
+  <th>Average</th>
+</tr>
+<tr>
+  <td>HW01</td>
+  <td><a href="../algorithms-bin/fall2020-homeworks/fall2020-hw01-lossless-compression.pdf">Bezzudumu saspiešana</a></td>
+  <td>2020-09-28</td>
+  <td>120&permil;</td>
+  <td>TBD</td>
+</tr>
+</table>
+
+
+<p>Mājasdarbos centīsimies ievērot sekojošu struktūru:</p>
+
+<ul>
+<li><b>1. un 2.uzdevums</b>: Pielāgot zināmu algoritmu 
+vai analizēt noteiktu situāciju. Atrisinājums pseidokoda, pierakstītas datu struktūras
+vai nelielas esejas formā.</li>
+<li><b>3.uzdevums</b>: Datorsimulācija - uzdevums par konkrētu situāciju, kuru 
+parasti nav lietderīgi risināt uz papīra. Mums nav skaidru vadlīniju, ko un kā programmēt, 
+bet pieļaujam, ka vienkāršas scenāriju valodas (R/RStudio vai Python/Jupyter) varētu būt piemērotākās.</li>
+<li><b>4.uzdevums</b>: Vispārīgs pierādāms apgalvojums, piemēŗam,  
+par algoritma pareizumu vai ātrdarbību. Atrisinājums kā cilvēkam lasāms matemātisks 
+pierādījums ar apgalvojumiem, lemmām, sekām, formulu izvedumiem. 
+Noformējams līdzīgi kā skolu matemātikas olimpiādē.</li>
+<li><b>5.uzdevums</b>: "I-Iespēja" - Līdzīgs iepriekšējam (vispārīgs matemātisks apgalvojums), 
+bet šajā gadījumā tas var būt grūtāks; un punktus par to piešķir 5% bonusa veidā, lai 
+izrādītu atzinību tiem studentiem, kuri labi risina mājasdarbus un radītu praktisku iespēju augstākai atzīmei.
+</ul>
+
+
+
+<h2>Eksāmeni (max 400&permil;)</h2>
+
+<p>Viduseksāmenā un galaeksāmenā līdzīgi uzdevumu žanri (vai nu konkrēta situācija vai vispārīgs apgalvojums), 
+bet tur nebūs datorsimulāciju. Var nākties izmantot vai
+pielāgot mājasdarbos iegūtos rezultātus.</p>
+
+
+<h2>Citas lietas</h2>
+
+<section style="font-size: 80%">
+
+<p><b>Agrāk piedāvātie mājasdarbi:</b> Šiem uzdevumiem ir tikai 
+ilustratīva nozīme; tie NAV jāiesniedz mūsu kursā.</p>
+
+
+<ul>
+<li><a href="../algorithms-bin/homeworks/hw01-lossless-compression.pdf">MD01: Bezzudumu saspiešana</a> 
+(Termiņš: 2019-09-30);  
+<a href="../algorithms-bin/homeworks/hw01-lossless-compression-solution.pdf">MD01: Atrisinājums</a>
+</li>
+<li><a href="../algorithms-bin/homeworks/hw02-lossy-and-error-correction.pdf">MD02: Zudumradoša saspiešana
+un kļūdu korekcijas kodi</a> 
+(Termiņš: 2019-10-28)</li>
+<li><a href="../algorithms-bin/homeworks/midterm-examination.pdf">Semestra vidus eksāmens (2019-10-29)</a>;
+<a href="../algorithms-bin/homeworks/midterm-examination-solution.pdf">Eksāmena atrisinājumi</a></li>
+<li><a href="../algorithms-bin/homeworks/hw03-encryption-and-lp.pdf">MD03: Šifrēšana un lineārā 
+programmēšana</a> 
+(Termiņš: 2019-12-02)</li>
+<li><a href="../algorithms-bin/homeworks/hw04-string-searching.pdf">MD04: Šifrēšana, LP uzdevumi un virkņu meklēšana</a> 
+(Termiņš: 2019-12-09); 
+<a href="../algorithms-bin/homeworks/hw04-string-searching-solution.pdf">MD04: Atrisinājums</a></li>
+</ul>
+
+</section>
+
+
+
+</html>

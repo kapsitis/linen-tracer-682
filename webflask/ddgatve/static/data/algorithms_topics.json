@@ -1,0 +1,2162 @@
+[
+    {
+        "itemNum": 1,
+        "links": [
+            {
+                "title": "Lietot un analizēt bezzudumu saspiešanas algoritmus",
+                "topic": "1"
+            },
+            {
+                "description": "Definējam saspiešanas terminus, kopu teorijas un varbūtiskas sakarības; ieviešam arī informācijas saturu un entropiju ziņojumu telpā. Modulis neietver konkrētus saspiešanas algoritmus.",
+                "id": "1.1",
+                "readings": [
+                    {
+                        "ref": "(CMU:Blelloch2013, pp.1-9)",
+                        "title": "Introduction to Data Compression",
+                        "url": "https://bit.ly/2WDE6qG"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Izskaidrot sešas satura tēmas jeb priekšmetapgabalus"
+                            },
+                            {
+                                "title": "Identificēt algoritmu paradigmas jeb algoritmu veidošanas principus"
+                            },
+                            {
+                                "title": "Apspriest kursa mācību virsuzdevumus"
+                            },
+                            {
+                                "title": "Skaidrot rīku un metožu piemērotību virsuzdevumu sasniegšanai"
+                            },
+                            {
+                                "title": "Skaidrot kursa priekšnoteikumus un tvērumu"
+                            }
+                        ],
+                        "title": "Izskaidrot kursa saturu un tajā izmantotās metodes"
+                    },
+                    {
+                        "description": "Aprakstām saspiešanu klasisku kopu un funkciju līmenī bez varbūtiskiem modeļiem.",
+                        "examples": [
+                            {
+                                "title": "Dotajam saspiešanas kontekstam noteikt ziņojumu alfabētu un kodējuma funkciju."
+                            },
+                            {
+                                "title": "Dotajam alfabētam un ziņojumu virknes garumam noteikt iespējamo virkņu skaitu (t.sk. ar papildu ierobežojumiem)."
+                            },
+                            {
+                                "title": "Atrast varbūtību sadalījumu diskrētam gadījumlielumam (piemēram, ziņojumu kopai) ar nelielu skaitu vērtību, ja zināms ziņojumu ģenerēšanas process."
+                            }
+                        ],
+                        "maths": [
+                            {
+                                "title": "Pierādīt universāla saspiešanas algoritma neesamību ar Dirihlē principu"
+                            }
+                        ],
+                        "subtasks": [
+                            {
+                                "title": "Definēt ziņojumus un ziņojumu alfabētu"
+                            },
+                            {
+                                "title": "Definēt kodējumu kā funkciju no ziņojumiem uz bitu virknītēm"
+                            },
+                            {
+                                "title": "Definēt bezzudumu un zudumradošo saspiešanu"
+                            }
+                        ],
+                        "title": "Definēt ziņojumus, kodējumus, bezzudumu un zudumradošo saspiešanu"
+                    },
+                    {
+                        "description": "Piedēvējam ziņojumiem varbūtības un ieviešam saistītos jēdzienus - informācijas saturu un vidējo kodējuma garumu.",
+                        "examples": [
+                            {
+                                "title": "Atrast viena ziņojuma informācijas saturu."
+                            },
+                            {
+                                "title": "Aprēķināt entropiju dotajām burtu varbūtībām."
+                            },
+                            {
+                                "title": "Dotajam gadījumlieluma vērtību skaitam <span class=\"math inline\">\\( n \\)</span> atrast entropijas maksimums un minimumus"
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Pamatot saspiešanas metodes saistību ar ziņojumu varbūtisko modeli"
+                            },
+                            {
+                                "title": "Aprakstīt n-bitu kodu telpu un tās dalīšanu gabalos"
+                            },
+                            {
+                                "title": "Definēt konkrēta ziņojuma informācijas saturu"
+                            },
+                            {
+                                "title": "Definēt kodējuma vidējo garumu"
+                            }
+                        ],
+                        "title": "Definēt varbūtisku ziņojumu modeli, ziņojuma informācijas saturu tajā un vidējo kodējuma garumu."
+                    },
+                    {
+                        "description": "Ieviešam entropijas jēdzienu un ieskicējam tā saistību ar informācijas saspiežamību.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt gadījumlieluma entropiju kā vidējo vērtību informācijas saturiem"
+                            },
+                            {
+                                "title": "Definēt nosacīto entropiju."
+                            },
+                            {
+                                "title": "Definēt divu neatkarīgu gadījumu lielumu pāra entropiju."
+                            },
+                            {
+                                "title": "Formulēt (bez pierādījuma) entropijas saistību ar datu saspiežamību"
+                            }
+                        ],
+                        "title": "Definēt diskrēta gadījumlieluma entropiju"
+                    },
+                    {
+                        "description": "Nostiprinām entropijas izprašanu, risinot piemērus un teksta uzdevumus,",
+                        "examples": [
+                            {
+                                "title": "Aprēķināt entropiju monētu svēršanas uzdevumos"
+                            },
+                            {
+                                "title": "Aprēķināt entropiju kartiņu un urnu uzdevumos"
+                            },
+                            {
+                                "title": "Aprakstīt funkcijas definīcijas un vērtību apgabalus, raksturot entropiju algoritma ieejā un izejā."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt koda vidējo garumu un saspiešanas attiecību (compression ratio)"
+                            }
+                        ],
+                        "title": "Formulēt entropijas īpašības un izpausmes praktiskās situācijās"
+                    }
+                ],
+                "title": "Ieviest jēdzienus saistībā ar ziņojumu saspiešanu",
+                "videos": [
+                    {
+                        "ref": "(Cambridge:MacKay2014A)",
+                        "title": "Entropy and Data Compression (I): Introduction to Compression, Inf.Theory and Entropy.",
+                        "url": "https://youtu.be/y5VdtQSqiAI"
+                    },
+                    {
+                        "ref": "(Cambridge:MacKay2014B)",
+                        "title": "Entropy and Data Compression (II): Shannon's Source Coding Theorem, The Bent Coin Lottery.",
+                        "url": "https://youtu.be/0SxJl5G2bp0"
+                    }
+                ]
+            },
+            {
+                "description": "Aplūkojam mainīga garuma prefiksu kodus, to teorētiskās īpašības un Hafmana kodu optimalitāti.",
+                "id": "1.2",
+                "readings": [
+                    {
+                        "ref": "(CMU:Blelloch2013, pp.10-15)",
+                        "title": "Introduction to Data Compression",
+                        "url": "https://bit.ly/2WDE6qG"
+                    },
+                    {
+                        "ref": "(Thanh2020)",
+                        "title": "Demo Projects: Huffman coding",
+                        "url": "https://bit.ly/2DhHEaX"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Aprakstām prefiksu kodus vispārīgajā (ne obligāti Hafmana) veidā. Pieminam “non-prefix-free codes”, bet šādas neparastas lietas kursā neapspriežam.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Parādīt kā neprefiksu kodi rada divdomības"
+                            },
+                            {
+                                "title": ""
+                            },
+                            {
+                                "title": "Aplūkot Morzes kodu kā nedivdomīgu kodu un vai tas ir prefiksu kods"
+                            }
+                        ],
+                        "title": "Definēt prefiksu kodus"
+                    },
+                    {
+                        "description": "",
+                        "examples": [
+                            {
+                                "title": "Uzzīmēt Hafmana koku, ja dots ziņojumu varbūtību sadalījums."
+                            },
+                            {
+                                "title": "Pārveidot Hafmana koku kanoniskā formā."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Noskaidrot, kā Hafmana pseidokodā darbojas prioritātes rinda"
+                            }
+                        ],
+                        "title": "Konstruēt prefiksu kokus, zinot burtu parādīšanās varbūtības."
+                    },
+                    {
+                        "description": "",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Minēt prefiksu koka piemērus (teiksim, UTF-8 kodējums)"
+                            },
+                            {
+                                "title": "Minēt kodējumus, kas nav prefiksu kodi (teiksim, Morzes kods)"
+                            }
+                        ],
+                        "title": "Pamatot atkodēšanas viennozīmīgumu, ja kodēšanai izmantots prefiksu koks (neviens kods nav otram prefikss)."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt vispārīgu prefiksu saspiešanas metodi."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt Hafmana kodu dabīgu valodu burtiem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Ieviest kodu telpas jēdzienu"
+                            },
+                            {
+                                "title": "Aprakstīt, kā prefiksu koda garums atšķiras no entropijas."
+                            },
+                            {
+                                "title": "Izskaidrot entropiju kā saspiešanas teorētisko robežu"
+                            }
+                        ],
+                        "title": "Ieviest prefiksu koku vispārēju teoriju"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [
+                            {
+                                "title": "Krafta-Makmilana teorēma"
+                            },
+                            {
+                                "title": "Jensena nevienādība (t.sk. Logaritmu un entropijas novērtējumos)"
+                            },
+                            {
+                                "title": "Teorēma par koda garumu, kas nepārsniedz <span class=\"math inline\">\\( H(S)+1 \\)</span>"
+                            }
+                        ],
+                        "subtasks": [
+                            {
+                                "title": "Definēt vidējā prefiksu koda garumu <span class=\"math inline\">\\( M = \\sum_{x \\in X} p_x\\ell_x \\)</span>."
+                            }
+                        ],
+                        "title": "Šenona informācijas teorēma"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Pamatot, kāpēc Hafmana algoritms ir optimāls - vidējais koda garums uz vienu simbolu vismazākais, ja salīdzina ar citām prefiksu metodēm."
+                    }
+                ],
+                "title": "Formulēt un pamatot apgalvojumus par prefiksu kodiem",
+                "videos": [
+                    {
+                        "ref": "(Cambridge:McKay2014C)",
+                        "title": "Entropy and Data Compression (III):  Shannon's Source Coding Theorem, Symbol Codes.",
+                        "url": "https://youtu.be/eHGqNvkL4n4"
+                    },
+                    {
+                        "ref": "(Cambridge:McKay2014D)",
+                        "title": "Entropy and Data Compression (IV): Shannon's Source Coding Theorem, Symbol Codes.",
+                        "url": "https://youtu.be/cJ_rhZ9DP9k"
+                    }
+                ]
+            }
+        ],
+        "title": "2020-09-07 to 2020-09-11"
+    },
+    {
+        "itemNum": 2,
+        "links": [
+            {
+                "description": "Aplūkojam aritmētiskās saspiešanas algoritmu un tā optimalitātes īpašības starp citiem “entropijas kodiem”.",
+                "id": "1.3",
+                "readings": [
+                    {
+                        "ref": "(CMU:Blelloch2013, pp.16-21)",
+                        "title": "Introduction to Data Compression",
+                        "url": "https://bit.ly/2WDE6qG"
+                    },
+                    {
+                        "ref": "(Said2004)",
+                        "title": "Introduction to Arithmetic Coding - Theory and Practice. Amir Said, HP Labs, 2004.",
+                        "url": "https://bit.ly/2COXiuH"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Aplūkot metamo kauliņu piemēru aritmētiskai kodēšanai"
+                            }
+                        ],
+                        "maths": [
+                            {
+                                "title": "Daļskaitļu pieraksts divnieku sistēmā (aritmētiskajam kodam)"
+                            },
+                            {
+                                "title": "Kodēt skaitļu intervālus ar galīgām bitu virknēm"
+                            }
+                        ],
+                        "subtasks": [
+                            {
+                                "title": "Pamatot optimālā koda garuma nesasniedzamību, kodējot ziņojumus pa vienam"
+                            },
+                            {
+                                "title": "Izmantot kodu telpu optimāli vairāku ziņojumu virknei"
+                            }
+                        ],
+                        "title": "Izklāstīt aritmētiskā koda pamatideju"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Piekārtot vārdiem alfabētā intervālus no <span class=\"math inline\">\\( [0;1] \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Pamatot viennozīmīgas atkodēšanas iespēju."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Iekodēt ziņojumu virkni ar aritmētisko kodu, ja dotas ziņojumu varbūtības."
+                            },
+                            {
+                                "title": "Atkodēt aritmētisko kodu, ja dotas ziņojumu varbūtības."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Atrast intervālu garumus un to kodēšanai nepieciešamo bitu skaitu."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt veselo skaitļu aritmētisko kodējumu"
+                    }
+                ],
+                "title": "Aprakstīt aritmētisko saspiešanu.",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļā aplūkoti tie saspiešanas algoritmi, kuri līdzās saspiešanai veido datu struktūras ar bieži atkārtojošamies fragmentiem. Tie labi saspiež cilvēku valodas tekstus; ir efektīvi un plaši izmantoti.",
+                "id": "1.4",
+                "readings": [
+                    {
+                        "ref": "(CMU:Blelloch2013, pp.32-36)",
+                        "title": "Introduction to Data Compression",
+                        "url": "https://bit.ly/2WDE6qG"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt ķēdi kā varbūtisku automātu vai Markova modeli ar kārtu <span class=\"math inline\">\\( k \\)</span>."
+                            },
+                            {
+                                "title": "Definēt nosacīto varbūtību un nosacīto entropiju"
+                            },
+                            {
+                                "title": "Definēt valodas informācijas avota entropiju (source entropy) kā n-grammu entropiju robežu"
+                            }
+                        ],
+                        "title": "Definēt Markova ķēdes"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt LZ77 datu struktūras"
+                            },
+                            {
+                                "title": "Iekodēt un atkodēt ziņojumu virkni ar LZ77 algoritmu, izmantot tā datu struktūru (apzīmēt apakšvirknītes jau iekodētajā apgabalā)."
+                            }
+                        ],
+                        "title": "Definēt LZ77 saspiešanu un atspiešanu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt LZ78 un LZW algoritmu atšķirības, to datu struktūras un soļus"
+                            },
+                            {
+                                "title": "Iekodēt un atkodēt ziņojumu virkni ar LZ78 algoritmu, izmantot tā datu struktūru (tabulu ar pievienojamo virknīšu vārdnīcu)."
+                            }
+                        ],
+                        "title": "Definēt LZ78 un/vai LZW saspiešanu un atspiešanu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt Markova ķēdes modeli un tās ziņojumu saspiežamību"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aplūkot \"patentētus\" algoritmus un failu formātus, vārda brīvību algoritmu pasaulē."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Arhivēšanas rīku gz/WinZIP, gzip2 u.c. pārskats."
+                            },
+                            {
+                                "title": "PNG saspiešanas līmeņi"
+                            }
+                        ],
+                        "title": "Raksturot LZ saimes rīkus - `gz`, `WinZIP`, GIF, biroja failu formātus."
+                    }
+                ],
+                "title": "Lietot LZ77, LZ78 un LZW saspiešanas algoritmus",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-14 to 2020-09-18"
+    },
+    {
+        "itemNum": 3,
+        "links": [
+            {
+                "description": "Apakšnodaļā aprakstīts Berouza-Vīlera algoritms un tā variācijas",
+                "id": "1.5",
+                "readings": [
+                    {
+                        "ref": "(CMU:Blelloch2013, pp.37-39)",
+                        "title": "Introduction to Data Compression",
+                        "url": "https://bit.ly/2WDE6qG"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot “Move-to-front” iekodēšanu un atkodēšanu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt Berouza-Vīlera transformāciju un tai inverso."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Veikt 1 soli Berouza-Vīlera algoritma iekodēšanā vai atkodēšanā (virknēm garumā līdz 20 simboliem)."
+                            },
+                            {
+                                "title": "Veikt pilnu Berouza-Vīlera iekodēšanu vai atkodēšanu (virknēm garumā līdz 8 simboliem)."
+                            },
+                            {
+                                "title": "Analizēt Markova procesus u.c. stohastiskas ķēdes LZ77, LZ78 un Berouza-Vīlera algoritmos."
+                            }
+                        ],
+                        "maths": [
+                            {
+                                "title": "Atšķirt leksikogrāfisko, inversi leksikogrāfisko u.c. virkņu sakārtojumus"
+                            }
+                        ],
+                        "subtasks": [],
+                        "title": "Veidot Berouza-Vīlera transformācijas."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Minēt BW variantu, kur transformācijas rezultāts ir vienādi garš ar sākuma virkni; nav jāiegaumē sākumpozīcija."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Raksturot BW saimes rīkus, piemēram, `bzip2` u.c."
+                    }
+                ],
+                "title": "Lietot un analizēt Berouza-Vīlera algoritmu.",
+                "videos": []
+            },
+            {
+                "description": "Agrākajās apakšnodaļās izklāstīto algoritmu kopsavilkums un apsvērumi, kura saspiešanas metode piemērota katrai situācijai",
+                "id": "1.6",
+                "readings": [
+                    {
+                        "ref": "(Haecky2016, CH11)",
+                        "title": "Understanding Compression",
+                        "url": "https://bit.ly/3jlUIg1"
+                    },
+                    {
+                        "ref": "(Perry2014)",
+                        "title": "A Fictional Compression Metric Moves into the Real World",
+                        "url": "https://bit.ly/39erYBf"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt dabisko valodu entropijas raksturlielumus"
+                            },
+                            {
+                                "title": "Izmantot Kalgari u.c. korpusus saspiešanas metožu salīdzināšanai"
+                            },
+                            {
+                                "title": "Salīdzināt saspiešanas attiecības pēc algoritma un informācijas veida"
+                            },
+                            {
+                                "title": "Definēt “Veismana novērtējumu” saspiešanas algoritmam"
+                            }
+                        ],
+                        "title": "Analizēt empīriskus novērojumus par bezzudumu saspiešanu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt saspiešanu, ja datus arhivē bezsaistē, atarhivē uz klienta (video-satura u.c. piegādes scenārijs – failu izmērs vs. kvalitāte)"
+                            },
+                            {
+                                "title": "Aprakstīt saspiešanu, ja datus arhivē uz klienta, atarhivē mākonī (soctīklu scenārijs – datu apjoma tarifi vs. mobilās ierīces CPU un akumulators)"
+                            }
+                        ],
+                        "title": "Salīdzināt datu saspiešanas scenārijus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Raksturot ZPAQ saspiešanas pakotni"
+                            },
+                            {
+                                "title": "Raksturot bezzudumu attēlu saspiešanu (GIF, PNG, WebP)"
+                            },
+                            {
+                                "title": "Raksturot *File binder* programmas - pašatarhivējošus izpildāmos failus."
+                            }
+                        ],
+                        "title": "Raksturot kombinētus bezzudumu saspiešanas rīkus un formātus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt scenārijus, kur “man-in-the-middle” nodarbojas ar atarhivēšanu."
+                            },
+                            {
+                                "title": "Definēt DLP (datu noplūdes novēršanas) scenāriju, kurā jākontrolē izejošais saturs saspiestos datu pārraides kanālos."
+                            },
+                            {
+                                "title": "Paredzēt gaidāmo rezultātu, ja arhīva fails datortīklā nosūtīts ne līdz galam vai arī tajā ir daži sabojāti baiti."
+                            },
+                            {
+                                "title": "Raksturot *polymprhpic engine/polymorphic packer* - kā arhivēties katru reizi citādāk, lai vīrusi kļūtu polimorfi un varētu noslēpties no signatūru skenēšanas ((Mutation Engine, TridenT Polymorphic Engine (MtE), NuKE Encryption Device (NED), Dark Angel's Multiple Encryptor (DAME).)"
+                            },
+                            {
+                                "title": "Atšķirt Antivīrusu rīku metodes, kas ir efektīvas parastiem un polimorfiem vīrusiem."
+                            }
+                        ],
+                        "title": "Atpazīt saspiešanas algoritmu lietojumus datoru drošībā"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot programmatūras profilēšanas rīkus, mērīt bibliotēku izsaukumu ilgumu."
+                    }
+                ],
+                "title": "Salīdzināt saspiešanas metodes darbībā",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-21 to 2020-09-25"
+    },
+    {
+        "itemNum": 4,
+        "links": [
+            {
+                "title": "Lietot un analizēt zudumradošās saspiešanas algoritmus.",
+                "topic": "2"
+            },
+            {
+                "description": "Apakšnodaļa definē dažus zudumradošās saspiešanas jēdzienus un dažas izplatītas noapaļošanas vai kvantizācijas pieejas.",
+                "id": "2.1",
+                "readings": [
+                    {
+                        "ref": "(MIT:Penfield2008, U3)",
+                        "title": "Information and Entropy: Compression",
+                        "url": "https://bit.ly/30smDSX"
+                    },
+                    {
+                        "ref": "(MIT:Polyanskiy2016, CH23)",
+                        "title": "Information Theory: Rate-Distortion Theory",
+                        "url": "https://bit.ly/39bVxmW"
+                    },
+                    {
+                        "ref": "(Mozilla2020)",
+                        "title": "Image File Type and Format Guide",
+                        "url": "https://mzl.la/3jkMViQ"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Veikt pāreju no RGB uz YIQ un otrādi (vai citām krāsu plaknēm)"
+                            }
+                        ],
+                        "title": "Vektoru un matricu operāciju atkārtojums; krāsu koordinātes kā vektori"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Skalāra vienmērīgā un nevienmērīgā kvantizācija"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Loida algoritms un Centroid Vornoi Tesselation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Kvantizācija un noapaļošana ar Senlaga un Donta metodēm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Nepārtrauktas funkcijas Furjē pārveidojums"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulēt Šenona-Naikvista teorēmu"
+                    }
+                ],
+                "title": "Ieviest kvantizācijas un mediju datu apstrādes pamatjēdzienus",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļa definē JPEG algoritma soļus (citiem zudumradošiem attēlu formātiem soļi ir ļoti līdzīgi; JPEG ir tradicionālākais un labāk dokumentētais no tiem visiem)",
+                "id": "2.2",
+                "readings": [
+                    {
+                        "ref": "(Weitz2016)",
+                        "title": "Discrete Cosine Transform",
+                        "url": "https://bit.ly/2WZlYYd"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Uzrakstīt izteiksmes diskrēto kosinusu transformācijai 1D un 2D gadījumos"
+                            },
+                            {
+                                "title": "Uzrakstīt izteiksmes “wavelet’ pārveidojumam"
+                            }
+                        ],
+                        "maths": [
+                            {
+                                "title": "Definēt ortogonālas funkciju saimes"
+                            }
+                        ],
+                        "subtasks": [],
+                        "title": "Diskrētais kosinusu pārveidojums"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt rastra attēlu glabāšanai un apstrādei nepieciešamos datus."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Atrast krāsas pēc RGB koordinātēm. Definēt alfa caurspīdību kā rastra attēlu superpozīcijas/pārklāšanas koeficientu."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt zudumradošās saspiešanas uzdevumu."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Definēt JPEG un līdzīgiem algoritmiem iespējamos saspiešanas parametrus."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "JPEG algoritmā izpildīt plakņu I,Q izretināšanu"
+                            },
+                            {
+                                "title": "JPEG algoritmā izpildīt DFT 8x8 blokiem"
+                            },
+                            {
+                                "title": "JPEG algoritmā kvantizēt DFT koeficientus"
+                            },
+                            {
+                                "title": "JPEG algoritmā savirknēt koeficientus un iegūt starpības"
+                            },
+                            {
+                                "title": "Run-length encoding - kodēšana un atkodēšana"
+                            }
+                        ],
+                        "title": "Aprakstīt JPEG saspiešanas algoritmu."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Krāsu kodēšana, acīm atšķiramas atšķirības, Raw un JPEG dati foto un video aparatūrā."
+                            },
+                            {
+                                "title": "Pirkstu nospiedumu saspiešana ar “wavelet” pārveidojumu"
+                            }
+                        ],
+                        "title": "Apskatīt dažus attēlu zudumradošo saspiedumu lietojumus"
+                    }
+                ],
+                "title": "Aprakstīt JPEG saspiešanas algoritmu.",
+                "videos": [
+                    {
+                        "ref": "(Weitz2017)",
+                        "title": "Diskrete Kosinustransformation (JPEG-Komprimierung). Die Hochschule für Angewandte Wissenschaften Hamburg.",
+                        "url": "https://youtu.be/7fhHQgu2OcY"
+                    }
+                ]
+            }
+        ],
+        "title": "2020-09-28 to 2020-10-02"
+    },
+    {
+        "itemNum": 5,
+        "links": [
+            {
+                "description": "Apakšnodaļā aplūko skaņas un video saspiešanas metodes un arī zudumradošos algoritmus darbībā.",
+                "id": "2.3",
+                "readings": [
+                    {
+                        "ref": "(Raissi2002)",
+                        "title": "The Theory behind MP3.",
+                        "url": "https://bit.ly/30LTEda"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Definēt cilvēka dzirdes matemātisko modeli, kuru lieto MP3"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Aprēķināt MP4 formāta datu saspiežamību, ja zināms, cik tajā ir katra veida freimu, cik kadru sekundē un cik labi katru no tiem var saspiest."
+                            },
+                            {
+                                "title": "Aprēķināt MP3 formāta datu saspiežamību, ja zināms paraugā esošo frekvenču diapazons un iesaistīto \"filterbank\" skaits, un bitraide (bit/s)."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt MP3 skaņas saspiešanas pamatsoļus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt video saspiešanas algoritmus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identificēt praktiskai video failu sagatavošanai piemērotus konteineru formātus."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Patenti saistīti ar saspiešanas algoritmiem"
+                            },
+                            {
+                                "title": "Redzamās un neredzamās ūdenszīmes mediju failos \n(*watermarking algorithms*); to robustums atkarībā no saspiešanas veida."
+                            },
+                            {
+                                "title": "Identificēt lietojumus steganogrāfijai (informācijas paslēpšanai ar to nesaistītā failā; t.sk. JPEG)."
+                            },
+                            {
+                                "title": "Skaidrot steganogrāfijas un tās pazīšanas tehnoloģiju iespaidu uz datu noplūdes novēršanas rīkiem (Data Leak Prevention, DLP)."
+                            }
+                        ],
+                        "title": "Pārspriedumi par DRM"
+                    }
+                ],
+                "title": "Apskatīt skaņas un video saspiešanas algoritmus",
+                "videos": []
+            }
+        ],
+        "title": "2020-10-05 to 2020-10-09"
+    },
+    {
+        "itemNum": 6,
+        "links": [
+            {
+                "title": "Lietot un analizēt kļūdu korekcijas algoritmus",
+                "topic": "3"
+            },
+            {
+                "description": "Apakšnodaļā apskatām kļūdu identificēšanas paņēmienus (bez apņemšanās kļūdu lokalizēt vai izlabot)",
+                "id": "3.1",
+                "readings": [
+                    {
+                        "ref": "(Modiano2009, L15)",
+                        "title": "Communication Systems Engineering: Cyclic Codes and Error Detection",
+                        "url": "https://bit.ly/3hF5T1P"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt CRC32 algoritmu un apskatīt tā īpašības"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Lūna pārbaudes (Luhn check) algoritmu un līdzīgus kontrolsummu algoritmus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aplūkot dažus droša hešinga algoritmus (MD5, SHA256 u.c.) un to lietojamību, lai pamatotu, ka datu vai programmatūras fails nav korumpēts."
+                    }
+                ],
+                "title": "Pazīt un risināt kļūdu identificēšanas uzdevumus",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļa aplūko tos kodus, kam var izlabot tikai vienu kļūdu, toties tie balstās uz matricu algebru un to optimalitāte ir pierādāma.",
+                "id": "3.2",
+                "readings": [
+                    {
+                        "ref": "(MIT:Polyanskiy2016, CH16)",
+                        "title": "Information Theory: Linear Codes",
+                        "url": "https://bit.ly/32QMg2H"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt bitu virkņu attālumu (kļūdu jeb atšķirību skaitīšana)"
+                            },
+                            {
+                                "title": "Pamatot, ka attālums starp <span class=\"math inline\">\\( 2 \\)</span> ziņojumiem ir vismaz <span class=\"math inline\">\\( 2c+1 \\)</span>"
+                            }
+                        ],
+                        "title": "Definēt trijstūra nevienādību virkņu atšķirību metrikai un tās sekas kļūdu labošanā"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt, kas ir [n,k,d] kļūdu korekcijas kodi"
+                            },
+                            {
+                                "title": "Kombinatoriski pamatot <span class=\"math inline\">\\( [n,k,d] \\)</span> kodu (ne)esamību noteiktiem parametriem <span class=\"math inline\">\\( n,k,d \\)</span>."
+                            }
+                        ],
+                        "title": "Definēt n-dimensiju kubus ar kodavārdiem virsotnēs"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Izveidot Heminga kodu (saskaitāmās izteiksmes pēc mod 2) vienas kļūdas labošanai un iekodēt."
+                            },
+                            {
+                                "title": "Izlabot kļūdu saņemtā <span class=\"math inline\">\\( [7,4,1] \\)</span> Heminga koda ziņojumā un atkodēt"
+                            },
+                            {
+                                "title": "Aprakstīt <span class=\"math inline\">\\( [7,4,1] \\)</span> Heminga kodu ar matricas operāciju"
+                            }
+                        ],
+                        "title": "Definēt [7,4,1] Heminga kodu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Atkodēt 7-bitu un 15-bitu Heminga kodus"
+                            },
+                            {
+                                "title": "Sakārtot Heminga ziņojumu/kontroles bitus inversi leksikogrāfiski"
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulēt Heminga kodu optimalitātes teorēmu (ja koda garums ir <span class=\"math inline\">\\( 2^n-1 \\)</span>)."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Lietot lineāra koda ģeneratormatricu"
+                            },
+                            {
+                                "title": "Lietot lineāra koda pareizības pārbaudes matricu."
+                            }
+                        ],
+                        "title": "Definēt vispārīgu lineāru kodu."
+                    }
+                ],
+                "title": "Aprakstīt un analizēt Heminga un citus lineārus kļūdu labošanas kodus",
+                "videos": [
+                    {
+                        "ref": "(MacKay2014E)",
+                        "title": "Noisy Channel Coding (I):  Inference and Information Measures for Noisy Channels.",
+                        "url": "https://youtu.be/9w4LnXIip5A"
+                    },
+                    {
+                        "ref": "(MacKay2014F)",
+                        "title": "Noisy Channel Coding (II):  The Capacity of a Noisy Channel.",
+                        "url": "https://youtu.be/vVAsh5DAe10"
+                    },
+                    {
+                        "ref": "(MacKay2014G)",
+                        "title": "Noisy Channel Coding (III):  The Noisy-Channel Coding Theorem.",
+                        "url": "https://youtu.be/KSV8KnF38bs"
+                    }
+                ]
+            }
+        ],
+        "title": "2020-10-12 to 2020-10-16"
+    },
+    {
+        "itemNum": 7,
+        "links": [
+            {
+                "description": "Aplūkot algoritmu saimi, kas rodas no polinomu aplūkošanas un var izlabot lielāku skaitu kļūdu nekā Heminga kodi.",
+                "id": "3.3",
+                "readings": [
+                    {
+                        "ref": "(Kak2020, L6)",
+                        "title": "Computer and Network Security: Polynomial Arithmetic",
+                        "url": "https://bit.ly/3hElxKM"
+                    },
+                    {
+                        "ref": "(Kak2020, L7)",
+                        "title": "Computer and Network Security: Finite Fields of the Form $GF(2^n)$",
+                        "url": "https://bit.ly/2Bwhq44"
+                    },
+                    {
+                        "ref": "(Khan2017)",
+                        "title": "Building polinomials over the field $GF(2^8)$",
+                        "url": "https://bit.ly/2X0yzua"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Veikt aritmētiskas darbības galīgos laukos <span class=\"math inline\">\\( GF(p) \\)</span> (atlikumi pēc pirmskaitļa moduļa)"
+                            }
+                        ],
+                        "maths": [
+                            {
+                                "title": "Lauku jēdziens un piemēri"
+                            },
+                            {
+                                "title": "Lauks <span class=\"math inline\">\\( GF(p) \\)</span>, kur <span class=\"math inline\">\\( p \\)</span> ir pirmskaitlis"
+                            },
+                            {
+                                "title": "Veikt aritmētiskas darbības galīgos laukos <span class=\"math inline\">\\( GF(p^n) \\)</span>"
+                            },
+                            {
+                                "title": "Veikt četras aritmētiskas darbības galīgos laukos <span class=\"math inline\">\\( GF(2^n) \\)</span>."
+                            },
+                            {
+                                "title": "Veikt darbības ar polinomiem pār galīgiem laukiem"
+                            }
+                        ],
+                        "subtasks": [],
+                        "title": "Definēt galīgus laukus un formulēt to īpašības"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Formulēt algebras pamatteorēmas sekas par divu polinomu sakņu sakrišanu"
+                            },
+                            {
+                                "title": "Konstruēt polinomu ar dotajām saknēm"
+                            },
+                            {
+                                "title": "Rakstīt Lagranža interpolācijas polinomu formulas"
+                            }
+                        ],
+                        "title": "Definēt algebras pamatteorēmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apskatīt Rīda-Solomona kodus kā algebriskas interpolācijas uzdevumus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Saistīt Solomona-Rīda polinoma pakāpi, vērtību un kļūdu skaitu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apskatīt Rīda-Solomona kodus, veidojot polinomus virs Galuā laukiem"
+                    }
+                ],
+                "title": "Lietot Rīda-Solomona kodus un polinomu interpolāciju.",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļā aplūkoti daži moderni kļūdu labošanas algoritmi un esošo pieeju kombinācijas",
+                "id": "3.4",
+                "readings": [
+                    {
+                        "ref": "(Noisternig2006)",
+                        "title": "An Introduction to Tornado Codes:  Introduction to Error-Correcting Codes by Michael Noisternig. University of Darmstadt.",
+                        "url": "https://bit.ly/3g5O5fV"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Izmantot kļūdu atjaunošanas kodējumu divdaļīgā grafā."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt Tornado kodu vispārējo darbību"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Nosaukt OSI un arī TCP/IP protokolu steku līmeņus, kur labo kļūdas"
+                            },
+                            {
+                                "title": "Aprakstīt Etherneta freimu kļūdu labošanas metodi"
+                            },
+                            {
+                                "title": "Aprakstīt kļūdu detekcijas un labošanas metodes kompaktdisku datos."
+                            }
+                        ],
+                        "title": "Pazīt kļūdu detekcijas un labošanas metodes darbībā"
+                    }
+                ],
+                "title": "Aprakstīt un analizēt citus kļūdu labošanas algoritmu veidus",
+                "videos": []
+            }
+        ],
+        "title": "2020-10-19 to 2020-10-23"
+    },
+    {
+        "itemNum": 8,
+        "links": [
+            {
+                "title": "Lietot un analizēt grafu algoritmus",
+                "topic": "4"
+            },
+            {
+                "description": "Šajā apakšnodaļā apskatīti tie grafu algoritmi, kurus var risināt ar dažādām dinamiskās programmēšanas jeb memoizēšanas pieejām; t.sk. visu pāru īsākie ceļi.",
+                "id": "4.1",
+                "readings": [
+                    {
+                        "ref": "(MIT:Demaine2015, L11)",
+                        "title": "Design and Analysis of Algorithms: All-Pairs Shortest Paths",
+                        "url": "https://bit.ly/30JGgX1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Belmana-Forda algoritmu īsāko ceļu atrašanai"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Floida-Varšala algoritmu visu pāru īsāko ceļu atrašanai"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Varšala algoritmu transitīvā slēguma atrašanai"
+                    }
+                ],
+                "title": "Aplūkot dinamiskās programmēšanas paradigmu un lietot to īsāko ceļu algoritmos",
+                "videos": [
+                    {
+                        "ref": "(Demaine2013, L19)",
+                        "title": "Dynamic Programming I: Fibonacci, Shortest Paths",
+                        "url": "https://youtu.be/OQ5jsbhAv_M"
+                    }
+                ]
+            }
+        ],
+        "title": "2020-10-26 to 2020-10-30"
+    },
+    {
+        "itemNum": 9,
+        "links": [
+            {
+                "description": "Šajā apakšnodaļā minēti alkatīgās paradigmas grafu algoritmi.",
+                "id": "4.2",
+                "readings": [
+                    {
+                        "ref": "(MIT:Demaine2015, L12)",
+                        "title": "Design and Analysis of Algorithms:",
+                        "url": "https://bit.ly/3f2l1o8"
+                    },
+                    {
+                        "ref": "(MIT:Schulz, L10)",
+                        "title": "Optimization Methods: Network Flows I",
+                        "url": "https://bit.ly/3g13jmd"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Dijkstras algoritmu īsākā ceļa atrašanai"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Prima algoritmu minimālā savienotā koka (MST) atrašanai"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Kraskala algoritmu MST atrašanai"
+                    }
+                ],
+                "title": "Aplūkot alkatīgo paradigmu, t.sk. Īsāko ceļu un minimālā savienotā koka algoritmos",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļā aplūkoti grafu uzdevumi svērtiem grafiem, kuri risina plūsmu uzdevumus vai arī pieaudzē sapārojumus.",
+                "id": "4.3",
+                "readings": [
+                    {
+                        "ref": "(MIT:Demaine2015, L13)",
+                        "title": "Design and Analysis of Algorithms: Incremental Improvement: Max Flow, Min Cut",
+                        "url": "https://bit.ly/3eYGa2D"
+                    },
+                    {
+                        "ref": "(CMU:Sleator2018, L11)",
+                        "title": "Design & Analysis of Algorithms: Network Flows 2",
+                        "url": "https://bit.ly/32VTYZd"
+                    },
+                    {
+                        "ref": "(Goemans2009, L6)",
+                        "title": "Combinatorial Optimization: Flows and Cuts",
+                        "url": "https://bit.ly/39tDiJY"
+                    },
+                    {
+                        "ref": "(DU:Daugulis2005)",
+                        "title": "Grafu algoritmi",
+                        "url": "https://bit.ly/3f1T1kH"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt svērtu grafu ar izteku, ieteku un šķautņu ietilpībām."
+                            },
+                            {
+                                "title": "Definēt plūsmu svērtā grafā"
+                            },
+                            {
+                                "title": "Definēt šķēlumu svērtā grafā, tā ietilpību"
+                            },
+                            {
+                                "title": "Definēt reziduālo plūsmu"
+                            },
+                            {
+                                "title": "Definēt palielinošo ceļu grafā ar reziduālo plūsmu."
+                            }
+                        ],
+                        "title": "Definēt grafu plūsmu uzdevumu jēdzienus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulēt un pierādīt maksimālās plūsmas un minimālā šķēluma teorēmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Forda-Falkersona algoritmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt algoritmus maksimālajiem sapārojumiem divdaļīgos grafos"
+                    }
+                ],
+                "title": "Aplūkot pakāpenisko uzlabojumu paradigmu, t.sk. grafu plūsmu un maksimālo sapārojumu uzdevumos.",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-02 to 2020-11-06"
+    },
+    {
+        "itemNum": 10,
+        "links": [
+            {
+                "title": "Lietot un analizēt lineārās programmēšanas algoritmus",
+                "topic": "5"
+            },
+            {
+                "description": "Apakšnodaļā definēti lineārās optimizācijas uzdevumu pamatjēdzieni un vienkāršākie secinājumi par to risināmību kā arī visāda veida dualitātes rezultāti.",
+                "id": "5.1",
+                "readings": [
+                    {
+                        "ref": "(MIT:Goemans2008, L9)",
+                        "title": "Advanced Algorithms: Linear Programming",
+                        "url": "https://bit.ly/3jDwbmY"
+                    },
+                    {
+                        "ref": "(Vempala2003; L12)",
+                        "title": "Combinatorial Optimization: Linear Programs",
+                        "url": "https://bit.ly/3g0bUFQ"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [
+                            {
+                                "title": "Risināt nelielas lineāru vienādojumu sistēmas ar mainīgo izslēgšanu"
+                            },
+                            {
+                                "title": "Definēt un noteikt taisnstūrveida matricas rangu"
+                            },
+                            {
+                                "title": "Veikt Gausa izslēgšanas soļus matricās"
+                            }
+                        ],
+                        "subtasks": [],
+                        "title": "Ieviest lineārās programmēšanas pamatjēdzienus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Attēlot plaknē pieļaujamo apgabalu 2 brīvo mainīgo LP uzdevumam."
+                            },
+                            {
+                                "title": "Atzīmēt 2D vai 3D pieļaujamā apgabala robežai mainīgo, kurš ir 0."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Interpretēt ģeometriski LP uzdevuma nosacījumus un papildmainīgos"
+                            }
+                        ],
+                        "title": "Ieviest lineārās programmēšanas ģeometrisko interpretāciju"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Ģeometriskā intuīcija par optimālā risinājuma esamību un eksponenciāls “naivais algoritms”"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Pārveidot mērķa funkcijas minimizēšanu par maksimizēšanu"
+                            },
+                            {
+                                "title": "Izteikt vienādības ar nevienādībām"
+                            },
+                            {
+                                "title": "Izteikt nevienādību ar nenegativitāti un nokares mainīgo"
+                            },
+                            {
+                                "title": "Aizstāt ar zīmi neierobežotus mainīgos ar diviem nenegatīviem mainīgajiem"
+                            }
+                        ],
+                        "title": "Veikt LP uzdevumu pārrakstīšanas un manipulācijas"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Formulēt teksta uzdevumus kā veselo skaitļu LP uzdevumus."
+                            },
+                            {
+                                "title": "Reducēt Hamiltona ciklu uz veselo skaitļu LP uzdevumu."
+                            },
+                            {
+                                "title": "Reducēt SAT problēmu uz veselo skaitļu LP uzdevumu."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Aprakstīt problēmas kā veselo skaitļu programmēšanas uzdevumus"
+                    }
+                ],
+                "title": "Definēt LP pamatēdzienus un formalizēt teksta uzdevumus par LP.",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļa apskata vecāko un arvien populārāko LP risināšanas metodi ar simpleksu metodi. Vienlaikus pamatots neapmierinošs konverģences ātrums dažos īpašos gadījumos.",
+                "id": "5.2",
+                "readings": [
+                    {
+                        "ref": "(MIT:Goemans2008, L10)",
+                        "title": "Advanced Algorithms: Sketch of the Simplex Method",
+                        "url": "https://bit.ly/39c1O2e"
+                    },
+                    {
+                        "ref": "(MIT:Demaine2015, L15)",
+                        "title": "Design and Analysis of Algorithms: Linear Programming",
+                        "url": "https://bit.ly/39oSTdT"
+                    },
+                    {
+                        "ref": "(Chutong2019)",
+                        "title": "Statistical Analysis of Four Pivot Rules for the Simplex Method",
+                        "url": "https://bit.ly/30LqhaQ"
+                    },
+                    {
+                        "ref": "(Vempala2003, L13)",
+                        "title": "Combinatorial Optimization: The Simplex Algorithm",
+                        "url": "https://bit.ly/2ZVszVC"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Pārveidot LP uzdevumus simpleksu standartformā, t.sk. Ieviešot papildmainīgos."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Izvēlēties sākotnējo tuvinājumu simpleksu algoritmā"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Veikt simpleksa algoritma soļus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analizēt simpleksu algoritma ārtrdarbību un sliktākos gadījumus."
+                    }
+                ],
+                "title": "Lietot un analizēt simpleksu metodi lineārās programmēšanas uzdevumu risināšanai",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-09 to 2020-11-13"
+    },
+    {
+        "itemNum": 11,
+        "links": [
+            {
+                "description": "Šajā apakšnodaļā ieviešam teorijas rezultātus un algoritmus, kas izmanto lineāro programmu dualitāti.",
+                "id": "5.3",
+                "readings": [
+                    {
+                        "ref": "(MIT:Goemans2008; L10)",
+                        "title": "Advanced Algorithms: LP Duality",
+                        "url": "https://bit.ly/3f2mf2O"
+                    },
+                    {
+                        "ref": "(MIT:Goemans2008; L11)",
+                        "title": "Advanced Algorithms: Complexity of LP",
+                        "url": "https://bit.ly/32SVL1e"
+                    },
+                    {
+                        "ref": "(Cornell:Williamson2008; L7)",
+                        "title": "Mathematical Programming I",
+                        "url": "https://bit.ly/30N6RlV"
+                    },
+                    {
+                        "ref": "(MIT:Vempala2003, L16)",
+                        "title": "Combinatorial Optimization: The Primal-Dual Algorithm",
+                        "url": "https://bit.ly/2BtWXwN"
+                    },
+                    {
+                        "ref": "(CMU:Sleator2018, L15)",
+                        "title": "Algorithms: Linear Programming – Duality",
+                        "url": "https://bit.ly/3g0OYq7"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Formulēt Farkasa lemmu dažos ekvivalentos veidos"
+                            },
+                            {
+                                "title": "Pierādīt Farkasa lemmu"
+                            },
+                            {
+                                "title": "Formulēt Farkasa lemmas secinājumus"
+                            }
+                        ],
+                        "title": "Formulēt un pierādīt Farkasa lemmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Pārveidot (nestandartformas) LP uzdevumu par tam duālo."
+                            },
+                            {
+                                "title": "Teksta uzdevumos interpretēt gan primāros, gan duālos mainīgos."
+                            },
+                            {
+                                "title": "Izmantot dualitātes teorēmu un aprēķināt dualitātes atstarpi"
+                            },
+                            {
+                                "title": "Sastādīt LP modeli optimizācijas veida teksta uzdevumam."
+                            },
+                            {
+                                "title": "Sastādīt LP modeli maksimālās plūsmas uzdevumam grafā."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Minēt duālās problēmas fizikālo interpretāciju ar bumbiņu"
+                            }
+                        ],
+                        "title": "Pārveidot primāro LP uzdevumu par duālo"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Primārā-Duālā metode LP uzdevumos"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "LP uzdevumu izmērs un sarežģītība"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Izmantot dualitāti grafu plūsmas uzdevumos"
+                            },
+                            {
+                                "title": "Izmantot dualitāti krājumu vadības uzdevumos"
+                            },
+                            {
+                                "title": "Izmantot dualitāti matricu spēļu uzdevumos"
+                            }
+                        ],
+                        "title": "Analizēt dualitātes izpausmes teksta uzdevumos"
+                    }
+                ],
+                "title": "Lietot un analizēt  rezultātus par LP dualitāti.",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļa apskata iteratīvu (skaitlisko metožu iedvesmotu) LP risināšanas metodi – elipsoīdu metodi un tās ģeometrisko interpretāciju.",
+                "id": "5.4",
+                "readings": [
+                    {
+                        "ref": "(MIT:Goemans2008, L12)",
+                        "title": "Advanced Algorithms: Ellipsoid Algorithm",
+                        "url": "https://bit.ly/2BsZXtr"
+                    },
+                    {
+                        "ref": "(MIT:Goemans2009, L7)",
+                        "title": "Combinatorial Optimization: Ellipsoid Algorithm",
+                        "url": "https://bit.ly/3hD1dtf"
+                    },
+                    {
+                        "ref": "(MIT:Vempala2003; L17)",
+                        "title": "Combinatorial Optimization: The Ellipsoid Algorithm",
+                        "url": "https://bit.ly/32TGVYy"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Izklāstīt Elipsoīda algoritma soļus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulēt Hačijana elipsoīda algoritma tilpumu novērtējumu."
+                    }
+                ],
+                "title": "Izmantot elipsoīda metodi LP risināšanā",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-16 to 2020-11-20"
+    },
+    {
+        "itemNum": 12,
+        "links": [
+            {
+                "description": "Apakšnodaļā virspusēji aprakstītas vairākas iekšējā punkta metodes un viena no tām (afīnās mērogošanas atsevišķs variants) izklāstīts detalizēti.",
+                "id": "5.5",
+                "readings": [
+                    {
+                        "ref": "(MIT:Bertsimas2009, L21)",
+                        "title": "Optimization Methods: Affine scaling algorithm",
+                        "url": "https://bit.ly/3jDScSH"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt izliektas kopas"
+                            },
+                            {
+                                "title": "Nepārtrauktas un diferencējamas funkcijas maksimumi"
+                            },
+                            {
+                                "title": "Formulēt teorēmu par lineāras funkcijas lielāko vērtība uz sfēras"
+                            },
+                            {
+                                "title": "Rakstīt izteiksmi <span class=\"math inline\">\\( n \\)</span>-dimensiju vektora projicēšanai hiperplaknē."
+                            }
+                        ],
+                        "title": "Ieviest nepārtrauktu funkciju optimizācijā pazīstamus jēdzienus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Izpildīt afīnās mērogošanas metodes koordinātu pārveidojumus."
+                            },
+                            {
+                                "title": "Atrast afīnās mērogošanas metodes maksimālā pieauguma virzienu."
+                            },
+                            {
+                                "title": "Projicēt afīnās mērogošanas metodes virzienu dotajā plaknē"
+                            },
+                            {
+                                "title": "Atrast afīnās mērogošanas kārtējo tuvinājumu un atgriezties sākotnējos apzīmējumos"
+                            }
+                        ],
+                        "title": "Lietot un analizēt afīnās mērogošanas metodi LP risināšanā"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apskatīt LP modeļu izmantošanu Ieteikumu sistēmās (recommender systems) – tsk. Netflix vai grāmatu ieteikumos."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Reducēt dažas NP-pilnas problēmas uz lineāras optimizācijas (t.sk. Integer programming) uzdevumiem."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identificēt citus iekšējā punkta metožu variantus"
+                    }
+                ],
+                "title": "Izmantot iekšējā punkta metodes un afīno mērogošanu",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-23 to 2020-11-27"
+    },
+    {
+        "itemNum": 13,
+        "links": [
+            {
+                "title": "Lietot un analizēt virkņu meklēšanas algoritmus",
+                "topic": "6"
+            },
+            {
+                "description": "Šajā apakšnodaļā apskatām pamatjēdzienus un naivo algoritmu.",
+                "id": "6.1",
+                "readings": [
+                    {
+                        "ref": "(RajputJi2016)",
+                        "title": "Wildcard Pattern Matching",
+                        "url": "https://bit.ly/302iHcL"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [
+                            {
+                                "title": "Novērtēt apakšvirkņu un apakšstringu skaitu dotajā virknē"
+                            },
+                            {
+                                "title": "Pamatot dažas stringu prefiksu/sufiksu īpašības"
+                            }
+                        ],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt virkņu meklēšanas uzdevumus (jā/nē testēšana, pirmais indekss, visi indeksi)"
+                            },
+                            {
+                                "title": "Aprakstīt garākās kopīgās apakšvirknes uzdevumu."
+                            }
+                        ],
+                        "title": "Definēt terminus – virkne, apakšvirkne, apakšstrings, apakšstringa indekss"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Novērtēt naivā virkņu meklēšanas algoritma ātrdarbību sliktākajā gadījumā."
+                            },
+                            {
+                                "title": "Novērtēt naivā virkņu meklēšanas algoritma ātrdarbību “nejaušām” virknēm."
+                            }
+                        ],
+                        "title": "Lietot un analizēt naivo apakšstringa meklēšanas algoritmu."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt Levenšteina (rediģēšanas) attālumu"
+                            },
+                            {
+                                "title": "Lietot un analizēt dinamiskās programmēšanas algoritmu rediģēšanas attālumam"
+                            },
+                            {
+                                "title": "Pārveidot rediģēšanas attālumu par īsāko ceļu grafā un Dijkstras algoritmu"
+                            },
+                            {
+                                "title": "Izmantot dinamisko programmēšanu, meklējot paraugus ar aizstājējzīmēm (wildcards)"
+                            }
+                        ],
+                        "title": "Aplūkot algoritmiskus risinājumus rediģēšanas attālumam"
+                    }
+                ],
+                "title": "Ieviest virkņu meklēšanā izmantotos jēdzienus",
+                "videos": []
+            },
+            {
+                "description": "Šajā apakšnodaļā apspriesti slīdošā loga (sliding window jeb rolling hash) algoritmi.",
+                "id": "6.2",
+                "readings": [
+                    {
+                        "ref": "(MIT:Devadas2009, L6)",
+                        "title": "Introduction to Algorithms: Rolling Hash",
+                        "url": "https://bit.ly/2D6X0PK"
+                    },
+                    {
+                        "ref": "(MIT:Demaine2011, L9)",
+                        "title": "Introduction to Algorithms: Table Doubling, Karp-Rabin",
+                        "url": "https://bit.ly/2CSoske"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [
+                            {
+                                "title": "Pārveidot skaitļus no vienas skaitīšanas sistēmas citā"
+                            },
+                            {
+                                "title": "Aprēķināt polinomu vērtības ar Hornera shēmu"
+                            },
+                            {
+                                "title": "Aprēķināt pozicionāli pierakstītu skaitļu vērtības ar Hornera shēmu."
+                            },
+                            {
+                                "title": "Rakstīt formulas “ritinošā hešinga” efektīvai aprēķināšanai"
+                            }
+                        ],
+                        "subtasks": [],
+                        "title": "Manipulēt ar skaitļiem dažādās skaitīšanas sistēmās"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Ja doti parametri, novērtēt viltus trāpījumu varbūtību Rabina-Karpa algoritmā."
+                            },
+                            {
+                                "title": "Veikt Rabina-Karpa soli, ja doti parametri un pārbaudāmais teksts"
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Apskatīt optimāla modulārā hešinga funkciju parametru izvēli"
+                            }
+                        ],
+                        "title": "Lietot un analizēt Rabina-Karpa algoritmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Formulēt Blūma filtra abstrakto datu tipu, iespējamās kļūdas atbildēs"
+                            },
+                            {
+                                "title": "Aplūkot praktiski izraudzītus parametrus, lai Blūma filtrs sniegtu vietas ietaupījumu"
+                            }
+                        ],
+                        "title": "Definēt Blūma filtrus – varbūtiskas datu struktūras ar hešingu."
+                    }
+                ],
+                "title": "Lietot hešinga paradigmas virkņu meklēšanas algoritmos.",
+                "videos": []
+            },
+            {
+                "description": "Apakšnodaļa apraksta parauga meklēšanu ar galīga automāta palīdzību, kura stāvokļu pārejas iekodē prefiksu funkcija.",
+                "id": "6.3",
+                "readings": [
+                    {
+                        "ref": "(CMU:Kingsford2017, L9)",
+                        "title": "Design & Analysis of Algorithms: String Matching",
+                        "url": "https://bit.ly/3g0lJDH"
+                    },
+                    {
+                        "ref": "(Berkeley:Patrascu2009, HW5)",
+                        "title": "Computability and Complexity: Pattern Matching",
+                        "url": "https://bit.ly/2Db5FAM"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [
+                            {
+                                "title": "Izveidot automātu apakšstringu meklēšanai"
+                            },
+                            {
+                                "title": "Izveidot automātu regulāru izteiksmju meklēšanai"
+                            }
+                        ],
+                        "subtasks": [],
+                        "title": "Aplūkot galīgo automātu jēdzienus stringu analīzei."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Parādīt ievades papildināšanas (input enhancement) pieeju virkņu meklēšanas algoritmos."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Definēt prefiksu funkciju meklējamam paraugam un tās algoritmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Dotajam meklējamajam paraugam P izveidot KMP prefiksu funkcijas tabulu."
+                            },
+                            {
+                                "title": "Pamatot dažas prefiksu funkcijas īpašības"
+                            },
+                            {
+                                "title": "Saskaitīt simbolu salīdzināšanas, meklējot apakšvirknes ar KMP algoritmu."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Definēt KMP algoritmu, kas optimizē nobīdes palielinājumus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt stāvokļa automātu stringu meklēšanas uzdevumiem."
+                            },
+                            {
+                                "title": "Aplūkot prefiksu funkcijas saistību ar pārejām stāvokļu automātā"
+                            },
+                            {
+                                "title": "Dotam paraugam <span class=\"math inline\">\\( P \\)</span> izveidot galīgu automātu tā meklēšanai."
+                            }
+                        ],
+                        "title": "Salīdzināt KMP ar stāvokļu automātu"
+                    }
+                ],
+                "title": "Veidot datu struktūras Knuta-Morisa-Prata algoritumam",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-30 to 2020-12-04"
+    },
+    {
+        "itemNum": 14,
+        "links": [
+            {
+                "description": "Apakšnodaļa apraksta otra veida stringu meklēšanas algoritmus, kuri sāk pārbaudes no parauga beigām.",
+                "id": "6.4",
+                "readings": [
+                    {
+                        "ref": "(UCDavis:Gusfield2011)",
+                        "title": "String Algorithms: Notes on Boyer-Moore",
+                        "url": "https://bit.ly/3jHoImP"
+                    },
+                    {
+                        "ref": "(Lang2001)",
+                        "title": "Boyer-Moore-Algorithmus",
+                        "url": "https://bit.ly/32WHwIT"
+                    },
+                    {
+                        "ref": "(Mangal2017)",
+                        "title": "Boyer Moore Algorithm: Good Suffix heuristic",
+                        "url": "https://bit.ly/3g3MSWn"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [
+                            {
+                                "title": "Dotajam meklēšanas paraugam <span class=\"math inline\">\\( P \\)</span> izveidot labā sufiksa tabulu"
+                            },
+                            {
+                                "title": "Dotajam meklēšanas paraugam <span class=\"math inline\">\\( P \\)</span> izveidot  sliktā simbola tabulu."
+                            }
+                        ],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt sliktā simbola heiristiku un funkciju <span class=\"math inline\">\\( \\lambda(n) \\)</span>"
+                            },
+                            {
+                                "title": "Aprakstīt labā sufiksa heiristiku un gammas funkciju <span class=\"math inline\">\\( \\gamma(n) \\)</span>"
+                            }
+                        ],
+                        "title": "Aprakstīt Bojera-Mūra algoritmu"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analizēt pilna BM algoritma ātrdarbību caurmēra un sliktākajā gadījumā."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Lietot un analizēt Bojera-Mūra-Horspola algoritmu caurmēra un slikākajā gadījumā"
+                    }
+                ],
+                "title": "Veidot datu struktūras Bojera-Mūra algoritmam",
+                "videos": []
+            },
+            {
+                "description": "Šajā nodaļā apskatītas tās pieejas, kas nav radniecīgas RK, KMP, BM algoritmiem un virkņu algoritmu lietojumi dzīvē.",
+                "id": "6.5",
+                "readings": [
+                    {
+                        "ref": "(CMU:Kingsford2017, L10)",
+                        "title": "Algorithms: Suffix Trees and Arrays",
+                        "url": "https://bit.ly/32SSHSK"
+                    },
+                    {
+                        "ref": "(MIT:Karger1999, Handout 8)",
+                        "title": "Advanced Algorithms: Problemset 3 Solutions",
+                        "url": "https://bit.ly/32UjyOi"
+                    },
+                    {
+                        "ref": "(Allison)",
+                        "title": "Suffix Trees",
+                        "url": "https://bit.ly/2WYeSn3"
+                    },
+                    {
+                        "ref": "(Stanford:KayA)",
+                        "title": "Suffix Trees",
+                        "url": "https://stanford.io/2Dc2Pvm"
+                    },
+                    {
+                        "ref": "(Stanford:KayB)",
+                        "title": "Suffix Trees: Notes on Ukkonen's Algorithm",
+                        "url": "https://stanford.io/3hEnJlD"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Minēt garākā kopīgā apakšstringa meklēšanas algoritmus"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Apskatīt slīdošā hešinga lietojumus plaģiāta noķeršanā; pārskatīt rīkus un pakalpojumu veidus."
+                            },
+                            {
+                                "title": "Izskaidrot datu noplūdes novēršanas lietojumus (DLP); heštabulu un Blūma filtru lietojumus tajos."
+                            },
+                            {
+                                "title": "Pazīt algoritmus leksikonu (nelielu vārdnīcu) meklēšanu DLP rīkos"
+                            },
+                            {
+                                "title": "Pazīt algoritmus regulāru izteiksmju meklēšanu DLP rīkos"
+                            }
+                        ],
+                        "title": "Apskatīt stringu meklēšanas lietojumus datoru drošībā"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Definēt sufiksu koku datu struktūras."
+                            },
+                            {
+                                "title": "Lietot un analizēt Ukonena algoritmu sufiksu koku veidošanai."
+                            },
+                            {
+                                "title": "Izmantot sufiksu kokus dažiem meklēšanas uzdevumiem."
+                            }
+                        ],
+                        "title": "Iepazīties ar sufiksu kokiem"
+                    }
+                ],
+                "title": "Veidot sufiksu koku un lietot to virkņu uzdevumos",
+                "videos": [
+                    {
+                        "ref": "(MIT:Demaine2012)",
+                        "title": "Advanced Data Structures: Strings",
+                        "url": "https://bit.ly/30R8nDl"
+                    }
+                ]
+            }
+        ],
+        "title": "2020-12-07 to 2020-12-11"
+    }
+]

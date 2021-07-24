@@ -1,0 +1,421 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+h2 {
+  color: #990000;
+}
+dt {
+  font-weight: bold;
+}
+
+
+i { 
+  font-size:85%; 
+}
+table.colornavigation a { 
+  text-decoration: underline !important; 
+}
+
+.tltip {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-size:80%;
+  color: #2B547E;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tltip .tltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #ffffcc;
+  font-style: normal;
+  color: black;
+  padding: 5px;
+  border-radius: 4px; 
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tltip:hover .tltiptext {
+  visibility: visible;
+}
+</style>
+</head>
+
+
+
+
+
+
+
+<body>
+<h1>Data Structures: Assignments</h1>
+
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Assignments</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="algorithms">Algorithms</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="submissions">Code Submissions</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<p>See <a href="http://jlazovskis.com/teaching/datastructures/">Course page by Jānis Lazovskis</a> with worksheets.</p>
+
+
+
+<h2>In-Class Assignments (max 200&permil;)</h2>
+
+<p>These are short paper-based algorithmic tasks done in class; 
+about 10-15 minutes long; people who write them from home get 3 extra minutes of work to 
+download the paper,  to photograph and to send their solution.  
+We expect about 10-20 such exercises.
+(Sample assignments are just a preview for the real thing, they do not affect grade).</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Title</th>
+<th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</td>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>MK01 (SAMPLE A)</th>
+<td><a href="../data-structures-assignments/sample-assignment01.pdf">Build tools and expressions</a></td>
+<td>discussed on 2020-09-09</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<th>MK01 (SAMPLE B)</th>
+<td><a href="../data-structures-assignments/sample-assignment01B.pdf">Bitwise operations, flowcharts</a></td>
+<td>discussed on 2020-09-10</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</table>
+
+<!--
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Title</th>
+<th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</td>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>MK01</th>
+<td>Identify Growth Rate as Big-O</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK02</th>
+<td>C++ Expressions with Side Effects</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK03</th>
+<td>Inheritance, Polymorphism and Virtual Calls</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK04</th>
+<td>Define loop invariants</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK05</th>
+<td>Linked lists and related pointer manipulations</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK06</th>
+<td>Inspect code and cause referential exposure</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK07</th>
+<td>Array-based stacks or deques</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK08</th>
+<td>Use heap as a priority queue</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK09</th>
+<td>Construct a Huffman Code</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th>MK10</th>
+<td>Run QuickSort iterations</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">0h</td>
+<td>5&permil;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+-->
+
+
+<h2>Walk-Throughs</h2>
+
+<p><small>These activities are not graded.
+Most tools introduced here are not mandatory. 
+We appreciate, if you inform others about your preferred C++ coding practices.</small></p>
+
+<ul>
+<li><a href="../data-structures-bin/virtualbox-walk-through.pdf">Testing Machine on VirtualBox</a><br/>
+Install VirtualBox software. Download and run an Xubuntu instance
+(optionally - set it up on your own).
+Run a minimalistic C++ development environment. Check out, run and test 
+some C++ projects from the command-line.<br/>
+<small><b>Why do we care?</b> Grading server uses "g++" and similar compilers in Linux; 
+you can get advance knowledge, if something is not configured correctly. 
+Automating your code to run on Xubuntu Linux 
+can point to problems with your configuration; 
+it will be also helpful to monitor and to compare running time of algorithms.</small>
+</li>
+<!--
+<dt>Build a C++ Project in Visual Studio Code</dt>
+<dd>Create a directory structure for a small C++ project. Use one or more
+external C++ classes and their header files. Use the IFNDEF guards to include them properly.
+Learn about some Microsoft compiler options.<br/> 
+<small><b>Why do we care?</b> This setup can be used to do C++ 
+coding on a Windows10 OS machine.</small></dd>
+-->
+</ul>
+
+
+<h2>Coding Exercises (max 150&permil;)</h2>
+
+<p><small>These exercises are meant to write simple C++ programs. We plan 7 or 8 such exercises.</small></p>
+
+<table border="1" cellspacing="0" style="margin-bottom:10px;">
+<tr>
+  <th>Ortus grade ID</th>
+  <th>Title</th>
+  <th>Downloads</th>
+  <th>Due Date</th>
+  <th style="background-color:#dddddd;">Time Est.</td>
+  <th>Max</th>
+  <th>Average</th>
+</tr>
+<tr>
+  <th>EX1</th>
+  <td><a href="../data-structures-bin/exercise01-periodic-strings.pdf">Periodic strings</a></td>
+  <td><a href="../data-structures-bin/palindromes.zip">Palindromes (sample)</a></td>
+  <td>2020-09-09</td>
+  <td style="background-color:#dddddd;">4h</td>
+  <td>20&permil;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <th>EX2</th>
+  <td><a href="../data-structures-bin/exercise02-find-extremes.pdf">Finding extreme students</a></td>
+  <td>N/A</td>
+  <td>2020-09-11</td>
+  <td style="background-color:#dddddd;">4h</td>
+  <td>20&permil;</td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+
+
+<div class="panel-group" id="accordion">
+
+{% for gradingItem in gradingStuff %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{gradingItem.label}}">Exercise {{gradingItem.title}}</a>
+</h4>
+</div>
+<div id="collapse{{gradingItem.label}}" class="panel-collapse collapse">
+<div class="panel-body">
+<ul>
+{% for testItem in gradingItem.testItems %}
+{% if testItem.type != "ignored" %}
+<li><b>{{testItem.label}}</b> <a href="http://85.254.250.28/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.fname}}">in</a>/<a href="http://85.254.250.28/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.expected}}">out</a> 
+({{testItem.type}}): {{testItem.title}}</li>
+{% else %}
+<li style="text-decoration: line-through;"><b>{{testItem.label}}</b> <a href="http://85.254.250.28/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.fname}}">in</a>/<a href="http://85.254.250.28/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.expected}}">out</a> 
+({{testItem.type}}): {{testItem.title}}</li>
+{% endif %}
+{% endfor %}
+</ul>
+<table border="1">
+<tr>
+<th>ID</th>
+{% for testItem in gradingItem.testItems %}
+{% if testItem.type != "ignored" %}
+<th>{{testItem.label}}</th>
+{% endif %}
+{% endfor %}
+<th>Notes</th>
+</tr>
+{% for student in gradingItem.students %}
+<tr>
+<th>{{student.studID}}</th>
+{% for gg in student.grades %}<td>{{gg}}</td>{% endfor %}
+<td>{{student.notes}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+
+<!--
+Palindromes; Pig Latin. 
+
+String rewriting systems? Some fractals? Bifurcation?
+
+Shannon's n-grams 
+http://people.seas.harvard.edu/~madhusudan/courses/Spring2019/scribe/lect05.pdf
+Ielasa tekstus; veido n-grammas pie n=2, n=3, n=4
+
+
+Huffman codes
+
+
+Shannon's n-grams
+Make longer structures, using tries. Computing Entropy. 
+
+
+--> 
+
+
+<!--
+<h2>Programming Problems</h2>
+
+<p style="margin:0px;">Four computing assignments will add up to 500&permil; (1/2 of the total grade).</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Topic</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</td>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>PROB1</th>
+<td>Story</td>
+<td>TBA</td>
+<td style="background-color:#dddddd;">8h</td>
+<td>100&permil;</td><td>&nbsp;</td>
+</tr>
+</table>
+-->
+
+<!--
+Assignment 4 idea: Matching DNS fragments using hashing.
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/assignments/MIT6_006F11_ps4_sol.pdf
+-->
+
+<!--
+<h2>Appendix: The C++ Environments</h2>
+
+<p>The preparation labs are sets of instructions defining the suggested
+configurations to run coding exercises and programming projects.
+By themselves they are not graded, but going through these steps is highly recommended
+(and you can also suggest improvements, if the same thing can be done better).</p>
+
+<dl>
+
+<dt>PLAB2: Build a C++ Project using Makefile</dt>
+<dd>Compilation and linking options. Build variables and variable paths.<br/> 
+<small><b>Why do we care?</b> Grading server runs Makefile from Jenkins. 
+To be sure that our project can run from the command-line, we can use the same Makefile.</small></dd>
+
+<dt>PLAB4: Use logging and IDE debugger</dt>
+<dd>Apply "spdlog" library to create searchable logfiles. 
+Use the debugger in Visual Studio or other IDE.<br/>
+<small><b>Why do we care?</b> Debugger is just one way to fix errors, sometimes
+it is the best choice to understand what is going on.</small></dd>
+<dt>PLAB5: Build a tiny package for R</dt>
+<dd>Compile and use a C++ extension to R.<br/>
+<small><b>Why do we care?</b> 
+Sometimes algorithms in C++ are extending other development platforms to make them more efficient.
+R/RStudio is normally used for interdisciplinary 
+and business applications, reporting and data visualizations.</small></dd>
+</dl>
+-->
+
+</body>
+</html>
+
+

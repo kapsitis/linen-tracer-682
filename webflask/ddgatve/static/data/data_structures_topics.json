@@ -1,0 +1,1630 @@
+[
+    {
+        "itemNum": 1,
+        "links": [
+            {
+                "title": "Use C++ and Object Orientation",
+                "topic": "1"
+            },
+            {
+                "description": "Explain the entry point of a program, how it handles input and output, some fundamental data types and their conversions. Introduce the basic steps for its compilation and linking. In the module we stick with the Visual Studio Code possibilities.",
+                "id": "1.1",
+                "readings": [
+                    {
+                        "ref": "(SOF:Khachaturyan2019)",
+                        "title": "What is Plain Old Data (POD)",
+                        "url": "https://bit.ly/2Y53DtA"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Basic examples; whey they posess the main characteristics of an algorithm and how to run them in graphical IDEs (Visual Studio Code, etc).",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Write a program that also transforms input data"
+                            },
+                            {
+                                "title": "Use correct indentation and other basic coding conventions"
+                            },
+                            {
+                                "title": "Identify compiler and linker actions"
+                            },
+                            {
+                                "title": "Show the difference between the development environment and runtime environment."
+                            }
+                        ],
+                        "title": "Create a simple HelloWorld program"
+                    },
+                    {
+                        "description": "",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Introduce integer  types (short, int, long)"
+                            },
+                            {
+                                "title": "Introduce bool type"
+                            },
+                            {
+                                "title": "Define and use enum types"
+                            },
+                            {
+                                "title": "Introduce floating point types (float and double)"
+                            },
+                            {
+                                "title": "Introduce char type"
+                            },
+                            {
+                                "title": "Use std:string to manipulate strings"
+                            },
+                            {
+                                "title": "Convert between some fundamental types and strings"
+                            }
+                        ],
+                        "title": "Introduce fundamental types"
+                    },
+                    {
+                        "description": "",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Declare, define and initialize arrays of fundamental types"
+                            },
+                            {
+                                "title": "Declare and use pointers to variables"
+                            },
+                            {
+                                "title": "Refer to arrays using pointers"
+                            },
+                            {
+                                "title": "Declare and use references"
+                            },
+                            {
+                                "title": "Use C-style struct types"
+                            }
+                        ],
+                        "title": "Declare and use arrays, pointers, references and struct types"
+                    },
+                    {
+                        "description": "Introduce the identifiers (fully qualified with namespaces or local); understand the scope of a variable.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Define variables inside a scope"
+                            },
+                            {
+                                "title": "Refer to namespaced variables (with or without “using” statement)"
+                            },
+                            {
+                                "title": "Use “typedef” to give shorthand names for new types"
+                            },
+                            {
+                                "title": "Understand C++ variable scoping rules"
+                            }
+                        ],
+                        "title": "Use namespaces, typedefs, local and global variables"
+                    }
+                ],
+                "title": "Create HelloWorld style programs",
+                "videos": [
+                    {
+                        "ref": "(de:Franneck2016A)",
+                        "title": "Erstes Progrde:de:amm (Hel",
+                        "url": "https://youtu.be/ajRj_LmDmjk"
+                    },
+                    {
+                        "ref": "(de:Franneck2016B)",
+                        "title": "Datentypen & Variablen",
+                        "url": "https://youtu.be/aLdRUnZeSAw"
+                    },
+                    {
+                        "ref": "(de:Franneck2016AD)",
+                        "title": "Arrays (Erstellen & Initialisieren)",
+                        "url": "https://youtu.be/E0I3O7W5jcI"
+                    }
+                ]
+            }
+        ],
+        "title": "2020-08-31 to 2020-09-04"
+    },
+    {
+        "itemNum": 2,
+        "links": [
+            {
+                "description": "This module introduces longer code fragments, builds larger expressions and assignments, explains the structures of loops, branching and switching statements.",
+                "id": "1.2",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Understand binary representation of integer and float types"
+                            },
+                            {
+                                "title": "List all number-related types in C++"
+                            },
+                            {
+                                "title": "Understand character and string related types and encodings"
+                            }
+                        ],
+                        "title": "Describe fundamental types in C++"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Define variable pointers and references"
+                            },
+                            {
+                                "title": "Use namespaces explicitly or implicitly"
+                            },
+                            {
+                                "title": "Use literal values in variable initializations"
+                            }
+                        ],
+                        "title": "Declare, define and initialize variables, know their scope"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Write if and if-else statements"
+                            },
+                            {
+                                "title": "Write chains of if statements"
+                            },
+                            {
+                                "title": "Write switch statements, understand their performance implications"
+                            }
+                        ],
+                        "title": "Write conditional statements"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Write pre-increment and postincrement loops, loop variable scope"
+                            },
+                            {
+                                "title": "Write while statements"
+                            }
+                        ],
+                        "title": "Write loop statements."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Declare enum datatypes"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Declare struct datatypes"
+                    }
+                ],
+                "title": "Use expressions, control structures and functions in C++",
+                "videos": [
+                    {
+                        "ref": "(de:Franneck2016C)",
+                        "title": "Rechnen mit Variablen",
+                        "url": "https://youtu.be/d9rMdfqIOek"
+                    },
+                    {
+                        "ref": "(de:Franneck2016D)",
+                        "title": "If Abfragen",
+                        "url": "https://youtu.be/wzgzOnIcHoI"
+                    },
+                    {
+                        "ref": "(de:Franneck2016E)",
+                        "title": "Switch Anweisung",
+                        "url": "https://youtu.be/8DGGR8oFzEU"
+                    }
+                ]
+            },
+            {
+                "description": "Explain the structure of class definition, public, private members, nested classes, constructors and destructors.",
+                "id": "1.3",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Write simple class constructors and destructors"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Understand class member instantiation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Understand the visibility of class members by other members, clients and friends."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce stl::string and a few other classes"
+                    }
+                ],
+                "title": "Use C++ classes",
+                "videos": [
+                    {
+                        "ref": "(de:Franneck2016CA)",
+                        "title": "Eigene Klassen & Header",
+                        "url": "https://youtu.be/9I3so8hZq0g"
+                    }
+                ]
+            },
+            {
+                "description": "Separate concerns go into different files and mutual function calls; we do not focus on OO concepts here.",
+                "id": "1.4",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Understand the use of macro commands; use macros to do definition guards."
+                            },
+                            {
+                                "title": "Understand the process of compilation and linking."
+                            }
+                        ],
+                        "title": "Write C++ header files"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Define and call functions passing parameters by value"
+                            },
+                            {
+                                "title": "Define and call functions passing parameters by reference"
+                            },
+                            {
+                                "title": "Describe naming conventions and naming best practices in C++"
+                            },
+                            {
+                                "title": "Use plain recursion and tail recursion"
+                            },
+                            {
+                                "title": "Use mutual recursion"
+                            }
+                        ],
+                        "title": "Use various flavors of function calls"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use function pointers"
+                    }
+                ],
+                "title": "Write multi-file programs in C++",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-07 to 2020-09-11"
+    },
+    {
+        "itemNum": 3,
+        "links": [
+            {
+                "description": "The module explains the thinking behind keywords “public”, “private”, inheritance – and how this is typically used in writing algorithms and data-structure libraries.",
+                "id": "1.5",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain abstraction as an OO principle"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain encapsulation as an OO principle; keywords public/private and friends"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain inheritance as an OO principle; inheriting class contract"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain polymorophism as an OO principle; keywords virtual/abstract"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define class hierarhies following the OO principles"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain function overriding with inheritance"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain abstract classes and virtual functions."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define template functions and template classes."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and use overloaded operators"
+                    }
+                ],
+                "title": "Use Object Orientation concepts in C++",
+                "videos": []
+            },
+            {
+                "description": "Introduce handling the space or memory used by the algorithms during recursive function calls, memory allocation and deallocation.",
+                "id": "1.6",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the automatic variables and heap variables"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Understand the implications of memory allocation and deallocation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use proper garbage collection practices and detect memory leaks"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use caching for speedup"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Understand memory hierarchy"
+                    }
+                ],
+                "title": "Understand the C++ memory model",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-14 to 2020-09-18"
+    },
+    {
+        "itemNum": 4,
+        "links": [
+            {
+                "title": "Express algorithms through ADTs and data structure libraries",
+                "topic": "2"
+            },
+            {
+                "description": "Here we analyze the algorithms at pseudocode level (making assumptions regarding the cost of data structure library calls). More detailed analysis that takes into account alternatives of implementing the data structures themselves is postponed to other modules.",
+                "id": "2.1",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identify the key characteristics of an algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Determine function growth classes using O-notation, Ω-notation, Θ-notation."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the time complexity of an algorithm; make assumptions about the data structure manipulations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the space complexity of an algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the difference between feasible and infeasible algorithms"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Worst-case, expected and amortized complexity"
+                    }
+                ],
+                "title": "Analyze algorithms by counting data related operations",
+                "videos": []
+            },
+            {
+                "description": "This module discusses just the simplest ADTs. Every data structure in this course can be described in this way; more ADTs will be defined in subsequent modules.",
+                "id": "2.2",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define stack as an ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a deque as an ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a list as an ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a sequence as an ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a binary tree as an ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a map as an ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Implement data structures in arrays"
+                            },
+                            {
+                                "title": "Implement data structures with pointers"
+                            },
+                            {
+                                "title": "Understand advantages of encapsulation and hiding implementation details"
+                            }
+                        ],
+                        "title": "Understand how one ADT can have different implementations"
+                    }
+                ],
+                "title": "Define and implement functions for simple Abstract Data Types (ADT)",
+                "videos": []
+            },
+            {
+                "description": "Some built-in data structure libraries and template classes are introduced; this is the preferred way for the vast majority of C++ code that is ever written. (Only rarely you need to look at the implementation “under the hood”, and this will become our focus later on.)",
+                "id": "2.3",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Identify the key manipulations (initialize, sort, search, transform) on containers"
+                            },
+                            {
+                                "title": "Identify the iterators and ways to visit each element in a container for custom processing"
+                            }
+                        ],
+                        "title": "Indentify the main container classes typically implemented by data structure libraries"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Understand the representational exposure"
+                            },
+                            {
+                                "title": "Use defensive copying, proper get/set methods, verbal contract with client classes to avoid exposure"
+                            }
+                        ],
+                        "title": "Understand representation invariants (rep invariants)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use STL to initialize vectors, stacks and maps"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use C++ constructs to iterate over data structures"
+                    }
+                ],
+                "title": "Use STL to implement containers - vectors, stacks and maps",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-21 to 2020-09-25"
+    },
+    {
+        "itemNum": 5,
+        "links": [
+            {
+                "description": "The module only lists those design patterns that are typically used with data structures. One can certainly write good code without using “Gang of Four” jargon, but it can explain the thinking behind some popular APIs and data structure libraries.",
+                "id": "2.4",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the tradeoffs between top-down and bottom-up design"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the singleton OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the factory OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the adapter OO design patern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the decorator OO design patern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the command OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the composite OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the memento OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the iterator OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the observer OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the template method OO design pattern"
+                    }
+                ],
+                "title": "Define OO design patterns in C++",
+                "videos": []
+            },
+            {
+                "description": "The module explains general techniques to do unit testing and system testing, code inspection, printouts, logging and debugging in order to find bugs in algorithmic software.",
+                "id": "2.5",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identify the reasons why software can contain errors"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Write reasonably complete set of testcases."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Enforce invariants and Hoare logic to your data structure manipulations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use printouts and/or efficient logging"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze runtime behavior using breakpoints."
+                    }
+                ],
+                "title": "Test and debug algorithms in C++",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-28 to 2020-10-02"
+    },
+    {
+        "itemNum": 6,
+        "links": [
+            {
+                "title": "Analyze the implementations of some data structures.",
+                "topic": "3"
+            },
+            {
+                "description": "Define list and also vector (a.k.a. arraylist) allowing random access. In this and subsequent modules we start with the ADT we want, then show some ways to implement it.",
+                "id": "3.1",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define list and vector ADTs"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define an iterator ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement list as a singly linked list"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement list as a doubly linked list"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement vector as an extendable array"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement vector as an extendable cicular array"
+                    }
+                ],
+                "title": "Construct and manipulate list-like data structures",
+                "videos": []
+            },
+            {
+                "description": "Trees in this course are always assumed to be rooted (one node is root) and ordered (we always know, which is the 1st, 2nd etc. child of the same parent). This module only deals with trees in the most general sense (to store certain hierarchies). Trees with additional structural requirements (with keys ordered for fast search and/or balanced) are called search trees; they will be discussed later.",
+                "id": "3.2",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define graph-theoretic concepts: root, internal nodes, leaves, children, parent, siblings."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define path-related concepts in trees"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define full, complete and perfect n-ary trees."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define tree ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Parse algebraic expressions and convert them to trees"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Evaluate algebraic expression trees using stack data structure"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement trees with two-way pointers"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement (preferably, complete) trees with arrays"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Representing a rooted n-ary tree as a binary tree."
+                    }
+                ],
+                "title": "Construct and traverse tree-like data structures",
+                "videos": []
+            }
+        ],
+        "title": "2020-10-05 to 2020-10-09"
+    },
+    {
+        "itemNum": 7,
+        "links": [
+            {
+                "description": "Unlike more universal structures (binary search trees or hashtables) the data structures may only need to return (or remove) the minimal or maximal element; in this case they are called priority queues. A typical way to implement them is a tree-like structure called a heap.",
+                "id": "3.3",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Priority queue ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze priority queue implementation as a regular binomial heap"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze skew binomial heap implementation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze leftist binomial heap implementation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Huffman algorithm to compress a sequence of independent messages"
+                    }
+                ],
+                "title": "Construct and manipulate priority queues and heaps",
+                "videos": []
+            },
+            {
+                "description": "Finding values by non-integer keys (typically strings) defines the difference between maps and lists. Dictionaries are a variant of maps allowing repeated keys. In this module the ADTs are defined and also their implementations",
+                "id": "3.4",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define map ADT"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Describe a hash collision and hash tables with chaining"
+                            },
+                            {
+                                "title": "Growing and shrinking hash tables"
+                            },
+                            {
+                                "title": "Analyze worst-case and amortized operation complexity in hashtables"
+                            }
+                        ],
+                        "title": "Define a hashtable and a corresponding hash function"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a rolling hash ADT (append, skip)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Rabin-Karp algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement map as a doubly-linked list"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement skiplists"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Adjust data structures for dictionaries with repetitive keys"
+                    }
+                ],
+                "title": "Construct and manipulate maps and dictionaries",
+                "videos": []
+            }
+        ],
+        "title": "2020-10-12 to 2020-10-16"
+    },
+    {
+        "itemNum": 8,
+        "links": [
+            {
+                "description": "Binary Search Trees is one possible way to store maps with totally ordered keys. This is an overview chapter that shows the general principles how the search trees can be built and manipulated. More flavors of BSTs are shown in the next module.",
+                "id": "3.5",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define BST operations as ADT."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Run node search, insert and delete in an abstract BST"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement node search, insert and delete in pointer implementation."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement node search, insert and delete in array implementation"
+                    }
+                ],
+                "title": "Construct and manipulate BST structures",
+                "videos": []
+            },
+            {
+                "description": "Inserting nodes in certain patterns can lead to skinny and inefficient trees. This module considers a few approaches",
+                "id": "3.6",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement tree balancing as AVL tree"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement tree balancing as red-black tree"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement balancing as splay tree"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce (a,b)-search-trees and (2,4)-trees in particular"
+                    }
+                ],
+                "title": "Construct and manipulate balanced BSTs",
+                "videos": []
+            }
+        ],
+        "title": "2020-10-19 to 2020-10-23"
+    },
+    {
+        "itemNum": 9,
+        "links": [
+            {
+                "description": "This chapter describes general-purpose sorting algorithms (sorting also appears in STL module and as an illustration to various algorithm paradigms in later modules).",
+                "id": "3.7",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze insertion sort and bubble sort"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze merge sort algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze quicksort algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze heapsort algorithm"
+                    }
+                ],
+                "title": "Analyze and compare sorting algorithms",
+                "videos": []
+            },
+            {
+                "description": "This module explains ways to represent sets and also bags (allowing repetition of elements); their order relations and set-level operations. Element-level operations on sets were explained earlier – in fact, maps and dictionaries can be used for that.",
+                "id": "3.8",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit generalized container ADTs that are used to represent (unordered) sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce additional operations in ordered sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Analyze set-level operations (union, difference, etc.) in the list implementation."
+                            },
+                            {
+                                "title": "Analyze set-level operations in the hashtable implementation"
+                            },
+                            {
+                                "title": "Analyze set-level operations in tree implementations."
+                            }
+                        ],
+                        "title": "Revisit iterator ADTs in set-like data structures."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze some algorithms for the selection problem (identifying the n-th element)"
+                    }
+                ],
+                "title": "Construct and manipulate set-like structures",
+                "videos": []
+            }
+        ],
+        "title": "2020-10-26 to 2020-10-30"
+    },
+    {
+        "itemNum": 10,
+        "links": [
+            {
+                "description": "The module explains the most complex data structures covered in this course (undirected and directed graphs); their ADT and some general tasks associated with graphs (such as BFS and DFS traversal). Any weighted graph issues are postponed.",
+                "id": "3.9",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit graph concepts: undirected vs. directed, simple graphs vs. multigraphs, degrees, indegrees, outdegrees; their input via matrices and adjacency lists."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce graph ADTs, their iterators, accessor and update methods."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe alternatives of graph input, output and storage."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the BFS traversal algorithm template"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Use the DFS traversal to analyze mazes"
+                            },
+                            {
+                                "title": "Use the DFS traversal to find paths and cycles in a graph."
+                            }
+                        ],
+                        "title": "Describe the DFS traversal algorithm flavors."
+                    }
+                ],
+                "title": "Describe graph and directed graph structures and traversals",
+                "videos": []
+            },
+            {
+                "description": "Various general algorithmic ideas can be illustrated on weighted graph optimization problems. This module analyzes source-to-sink (or all-pairs) shortest paths and also the minimum spanning tree (MST) algorithms.",
+                "id": "3.10",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce the weighted graph framework and input data"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Dijkstra’s algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Bellman-Ford algorithm (and negative edge weights)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Kruskal’s algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Prim’s algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze Boruvka’s algorithm"
+                    }
+                ],
+                "title": "Analyze Shortest Paths and MST algorithms",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-02 to 2020-11-06"
+    },
+    {
+        "itemNum": 11,
+        "links": [
+            {
+                "title": "Introduce general paradigms for algorithms.",
+                "topic": "4"
+            },
+            {
+                "description": "The last module provides a high-level overview of some large classes of algorithmic problems; what algorithms were covered in each one of them and what paradigms were used.",
+                "id": "4.1",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe searching and sorting problems"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe string processing problems"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe some examples of graph problems"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe some examples of combinatorial problems"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe some examples of geometric problems"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe some examples of numerical problems"
+                    }
+                ],
+                "title": "Describe types of algorithmic problems and overview their algorithms",
+                "videos": []
+            },
+            {
+                "description": "Introduce algorithms that split the problem into subcases and then verify subcases in some order",
+                "id": "4.2",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define exhaustive search paradigm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe tactics to generate combinations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe examples of “naive” search algorithms"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe examples of “naive” string matching algorithms"
+                    }
+                ],
+                "title": "Describe exhaustive, brute-force paradigms",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-09 to 2020-11-13"
+    },
+    {
+        "itemNum": 12,
+        "links": [
+            {
+                "description": "Algorithm can reduce a problem to a simpler one. We discuss paradigms to solve a problem by stepwise reducing it to a simpler one.",
+                "id": "4.3",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe decrease and conquer paradigm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit insertion sort algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze topological sorting algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Generate permutations or subsets of a given set"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Discuss heap implementations in terms of decrease and conquer."
+                    }
+                ],
+                "title": "Describe decrease and conquer paradigm",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-16 to 2020-11-20"
+    },
+    {
+        "itemNum": 13,
+        "links": [
+            {
+                "description": "Many algorithmic problems can be solved or “conquered” by subdividing them in parts",
+                "id": "4.4",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe divide and conquer paradigm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit mergesort and quicksort"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit BSTs"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Run Karatsuba’s fast multiplication"
+                            },
+                            {
+                                "title": "Run Strassen’s fast matrix multiplication"
+                            }
+                        ],
+                        "title": "Analyze recurrence equations, apply Master method"
+                    }
+                ],
+                "title": "Describe divide and conquer paradigm",
+                "videos": []
+            },
+            {
+                "description": "In many cases algorithms can speed up, if they can use more space (or they can save space, if we allow more time).",
+                "id": "4.5",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the tradeoff between time and space complexity"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce input-enhancing approaches; analyze sorting-by-counting algorithms"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze tradeoffs in hashing algorithms and hashing function choices"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Introduce sets of hash functions for Bloom filters"
+                            },
+                            {
+                                "title": "Describe the tradeoff between probabilistic data structure accuracy and space"
+                            }
+                        ],
+                        "title": "Analyze Bloom filters; probabilistic dictionary implementations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce B-tree data structure and its use in databases"
+                    }
+                ],
+                "title": "Describe time and space tradeoffs",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-23 to 2020-11-27"
+    },
+    {
+        "itemNum": 14,
+        "links": [
+            {
+                "description": "Data structure manipulations are often a means to an end. Here we list some application areas that often lead to data structures; and this will help to introduce different algorithm creation paradigms – very general ideas that are behind the algorithm development.",
+                "id": "4.6",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe dynamic programming paradigm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit shortest paths problems"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze optimal matrix multiplication problem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze longest common subsequence algorithm"
+                    }
+                ],
+                "title": "Describe dynamic programming paradigm",
+                "videos": []
+            },
+            {
+                "description": "Some algorithms searching for the optimal (cheapest, fastest, etc.) way to complete the task follow the following rule: At every step select the “locally best” alternative and it will eventually lead to the globally best solution. This approach is usually efficient, but for many problem classes this could give a solution that is not the best possible.",
+                "id": "4.7",
+                "readings": [],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit Prim’s algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit Kruskal’s algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Revisit Huffman’s algorithm"
+                    }
+                ],
+                "title": "Describe greedy paradigm",
+                "videos": []
+            }
+        ],
+        "title": "2020-11-30 to 2020-12-04"
+    }
+]

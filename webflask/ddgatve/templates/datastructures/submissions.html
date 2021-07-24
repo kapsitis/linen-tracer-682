@@ -1,0 +1,157 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style>
+h2 {
+  color: #990000;
+}
+</style>
+</head>
+
+<body>
+<h1>Data Structures: Code Submissions</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Slides</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="algorithms">Algorithms</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>Code Submissions</b></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+
+<h3><a name="basics"></a>C++ Basics</h3>
+
+<ul>
+<li><a href="https://code.visualstudio.com/docs/languages/cpp">Visual Studio Code</a> with 
+<a href="https://code.visualstudio.com/docs/cpp/config-msvc">Microsoft Visual C++ compiler</a></li>
+<li><a href="http://geosoft.no/development/cppstyle.html">C++ Programming Style Guidelines</a></li>
+<li><a href="http://www.gnu.org/software/make/manual/make.html">Gnu Makefile tutorial</a></li>
+</ul>
+  
+<ul>
+<li><a href="https://bit.ly/3dMosyY">Organizing code files in C and C++</a></li>
+<li><a href="https://bit.ly/2VqvLpq">C++ FAQ Lite</a></li>
+<li><a href="http://en.cppreference.com/w/cpp">C++ reference</a></li>
+<li><a href="http://www.cplusplus.com/reference/">Another C++ reference</a></li>
+<li><a href="http://www.ibiblio.org/pub/docs/books/eckel/TICPP-2nd-ed-Vol-one.zip">Thinking in C++</a> (Bruce Eckel's free book, vol 1)</li>
+<li><a href="http://www.ibiblio.org/pub/docs/books/eckel/TICPP-2nd-ed-Vol-two.zip">Thinking in C++</a> (Bruce Eckel's free book, vol 2)</li>
+<li><a href="http://www.newty.de/fpt/">The function pointer tutorial</a>
+<li><a href="https://www.stroustrup.com/PPPslides/lecture-slides.html">Stroustrup's slides for his programming course</a>
+</ul>
+
+
+<h3><a name="key_inspirations"></a>Sources from SUNY Buffalo, MIT etc.</h3>
+
+<ul>
+<li><a href="https://en.cppreference.com/w/cpp">CPP Reference</a></li>
+<li><a href="https://cse.buffalo.edu/~hungngo/classes/2013/Fall/250/syllabus.html">CSE 250 by Hung Q. Ngo</a></li>
+<li><a href="https://cse.buffalo.edu/faculty/adrienne/SP2009/cse250/">An older CSE 250 course</a></li>
+<li><a href="https://cse.buffalo.edu/~hartloff/CSE250-Fall2015/index.html">A newer CSE 250 course</a></li>
+<li><a href="../data-structures-bin/original-syllabus.pdf">Original Syllabus</a> (The syllabus used during 
+the original accreditation of the study program; later was expanded into more detail.)</li>
+<li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/index.htm">MIT
+Mathematics for Computer Science course</a></li>
+<li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/index.htm">MIT
+6.006: Introduction to Algorithms course</a></li>
+<li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/">MIT
+Design and Analysis of Algorithms</a></li>
+</ul>  
+
+
+
+
+<b><a name="cpp11"></a>C++ Style</b>
+
+<ul>
+  <li><a href="http://herbsutter.com/elements-of-modern-c-style/">Elements of Modern C++ Style</a> (Sutter's Mill)</li>
+  <li><a href="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml">Google C++ style guide</a></li>
+  <li><a href="https://code.google.com/p/gperftools/source/browse/#git%2Fsrc">gperftools</a>
+  from Google, conforming to Google's style guide. More specifically: 
+  <a href="https://code.google.com/p/gperftools/source/browse/src/heap-profile-table.cc">heap-profile-table.cc</a>
+  and <a href="https://code.google.com/p/gperftools/source/browse/src/heap-profile-table.h">heap-profile-table.h</a>
+  </li>
+  <li><a href="http://www.boost.org/doc/libs/1_51_0/boost/">Boost library 15.1</a>. In particular, 
+  <a href="http://www.boost.org/doc/libs/1_51_0/boost/circular_buffer/base.hpp">circular buffer</a>.
+  </li>
+</ul>
+
+
+<small>
+<b><a name="editors"></a>Editors</b>
+
+<ul>
+  <li><a href="http://blog.interlinked.org/tutorials/vim_tutorial.html">vim
+  tutorial</a>; vim's <a href="http://vim.wikia.com/wiki/C++_code_completion">C++ code
+  completion tags</a></li>
+  <li><a href="http://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">Emacs tutorial</a></li>
+  <li><a href="http://notepad-plus-plus.org/">Notepad++</a></li>
+  <li><a href="http://www.eclipse.org/">Eclipse</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Pico_(text_editor)">pico</a></li>
+  <li><a href="http://www.nano-editor.org/">nano</a></li>
+  <li><a href="https://projects.gnome.org/gedit/">gedit</a></li>
+</ul>
+
+<b><a name="unix"></a>Unix/Linux, Git</b>
+
+<ul>
+<li><a href="http://matt.might.net/articles/basic-unix/">A survival guide to Unix newbie</a></li>
+<li><a href="http://matt.might.net/articles/settling-into-unix/">Settling into Unix</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Git Branches</a></li>
+<li>
+</ul>
+
+<b><a name="memory"></a>Memory</b>
+
+<ul>
+  <li><a href="http://www.akkadia.org/drepper/cpumemory.pdf">What every
+  programming should know about memory</a></li>
+  <li><a href="https://techtalk.intersec.com/2013/07/memory-part-1-memory-types/">Memory
+  part 1: virtual memory, swap, pages,</a></li>
+  <li><a href="https://techtalk.intersec.com/2013/07/memory-part-2-understanding-process-memory/">Memory
+  part 2: Process memory</a></li>
+  <li><a href="https://techtalk.intersec.com/2013/08/memory-part-3-managing-memory/">Memory
+  part 3: Allocating memory</a></li>
+</ul>
+
+
+
+<!--
+<b>Other</b>
+
+<ul>
+<li><a href="https://bit.ly/3d4zvTG">Fibonacci Heaps</a></li>
+<li><a href="https://youtu.be/nubC3dktQ24">Alma Deutscher and Tobias Cramm: Partimento 
+(18th century improvization and training technique for young composers)</a></li>
+</ul>
+-->
+
+<small>
+
+
+
+</body>
+</html>
+

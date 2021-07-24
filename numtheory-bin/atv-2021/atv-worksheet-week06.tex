@@ -1,0 +1,360 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{102}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\clearpage
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija \newline ATV} \hfill {\bf\LARGE Uzdevumu lapa \#6} \hfill \parbox{3.5cm}{\flushright\bf 2021-02-10} %\\[2pt]
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+
+\vspace{20pt}
+Dirihlē principu ({\em Pigeonhole principle}) bieži var izmantot neapzināti. 
+Vienkāršākajā formā to formulē šādi: ``Ja $n$ trusīšus jāizvieto $n-1$ būrīšos, tad kādā no būrīšiem atradīsies vismaz divi trusīši.''
+Šis princips nepiedāvā nekādu metodi atrast šo būrīti (un svarīgi, ka trusīšu skaits tur ir {\em vismaz divi}, tātad varētu būt arī lielāks).
+
+Tālāk dosim precīzus formulējumus vairākiem Dirihlē principa variantiem:
+\begin{itemize}
+\item Ja kopa no $m$ elementiem ir sadalīta $n$ grupās, un  $n<m$, tad kādā no grupām ir ne mazāk kā divi elementi.
+\item Ja $m$-elementu kopā ir izvēlēti $n$ elementi, un $n<m$, tad kopā ir vismaz viens elements, kurš atšķiras no izvēlētajiem elementiem.
+\item Ja kopa, kura satur vairāk kā $mn$ elementus, ir sadalīta $n$ grupās, tad kādā no grupām ir ne mazāk kā $m+1$ elements.
+\end{itemize}
+
+\vspace{20pt}
+{\bf Atlikumu salīdzināšana pēc moduļa.}
+
+\vspace{10pt}
+Risinot tālākos uzdevumus, izmantosim faktu, ka atlikumu skaits pēc moduļa $n$ ir vienāds ar $n$.
+
+
+\vspace{10pt}
+\begin{problem}
+%8.1. 
+Pierādiet, ka no patvaļīgiem trim veseliem skaitļiem var izvēlēties divus tā, ka to summa dalās ar $2$.
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+%8.2. 
+Pierādiet, ka patvaļīgiem veseliem skaitļiem  reizinājums
+\[ (a-b)(a-c)(a-d)(b-c)(b-d)(c-d) \]
+dalās ar $12$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.3. 
+Pierādiet, ka no patvaļīgiem pieciem veseliem skaitļiem 
+var izvēlēties tādus trīs, kuru summa dalās ar $3$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.4. 
+Pierādīt: ja $a,b,c$ ir veseli skaitļi, $n>3$ ir naturāls skaitlis, 
+tad eksistē tāds naturāls skaitlis $k$, 
+ka neviens no skaitļiem $k+a$, $k+b$, $k+c$ nedalās ar $n$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.5. 
+Doti $12$ dažādi divciparu skaitļi. 
+Pierādiet, ka no tiem var izvēlēties $2$ skaitļus, 
+kuru starpība ir divciparu skaitlis, un kurš ir 
+uzrakstāms ar diviem vienādiem cipariem.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.6. 
+Pierādiet, ka no patvaļīgiem $5$ naturāliem skaitļiem 
+var izvēlēties $2$ skaitļus tā, 
+lai to kvadrāti dotu vienādus atlikumus pēc moduļa $7$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.7. 
+Pierādīt: ja $a,a+d,a+2d,\ldots,a+(n-1)d$ 
+ir savstarpēji pirmskaitļi ar skaitli $n$, 
+tad skaitļi $d$ un $n$ nav savstarpēji pirmskaitļi. 
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.8. 
+Doti $37$ veseli skaitļi. Pierādīt, ka no tiem var 
+atrast septiņus skaitļus, kuru summa dalās ar $7$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.9. 
+Dots, ka $x,y,z,t$ ir nepāra skaitļi. Pierādīt, ka reizinājums
+\[ (x-y) \cdot (x-z) \cdot (x-t) \cdot (y-z) \cdot (y-t) \cdot (z-t) \]
+\begin{enumerate}[(a)]
+\item dalās ar $64$,
+\item dalās ar $256$,
+\item dalās ar $768$.
+\end{enumerate}
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.10. 
+Pierādīt, ka katram pirmskaitlim $p$ var atrast tādus 
+naturālus skaitļus $x$ un $y$, ka $x^2 + y^2 + 1$ dalās ar $p$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.11. 
+Doti $19$ veseli skaitļi. Pierādīt, ka no tiem var 
+izvēlēties tieši $10$ skaitļus tā, ka visu izraudzīto 
+skaitļu summa dalās ar $10$.
+\end{problem}
+
+ 
+ 
+\vspace{20pt}
+{\bf Skaitļu kombināciju salīdzināšana}
+
+\vspace{10pt}
+Turpmākajos uzdevumos Dirihlē princips ir jāpielieto 
+skaitļu pāriem, skaitļu virknēm un citām skaitļu kombinācijām.
+
+
+\vspace{10pt}
+\begin{problem}
+%8.12. 
+Plaknē doti pieci punkti ar veselām koordinātēm. Pierādiet, 
+ka no tiem var izraudzīties divus punktus tā, ka nogrieznim, 
+kura gala punkti atrodas šajos punktos, viduspunkta 
+koordinātes ir veseli skaitļi,
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.13. 
+Telpā novietots izliekts daudzskaldnis tā, ka tā virsotnes 
+atrodas punktos, kuru koordinātes ir veseli skaitļi. 
+Daudzskaldņa iekšpusē, uz skaldnēm un šķautnēm nav citu punktu, 
+kuru koordinātes ir veseli skaitļi. Pierādiet, ka daudzskaldnim 
+ir ne vairāk kā $8$ virsotnes.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.14. 
+Izliekta $63$-stūra virsotnēs uzrakstīti dažādi naturāli skaitļi, 
+kuri nepārsniedz $1997$. Pierādiet, ka atradīsies divas 
+daudzstūra diagonāles, kuru galapunktos uzrakstīto skaitļu 
+starpības ir vienādas.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.15. 
+Pierādiet, ka no $10$ patvaļīgiem dažādiem divciparu skaitļiem 
+var izvēlēties divas dažādas nešķeļošas skaitļu grupas tā, 
+ka skaitļu summas abās grupās ir vienādas.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.16. 
+Dota tāda augošu naturālu skaitļu virkne $\left( a_i \right)$, 
+ka katrs naturāls skaitlis ir vai nu šīs virknes loceklis 
+vai arī divu dažādu šīs virknes locekļu summa. Pierādīt, ka $a_n \leq n^2$  
+visiem naturāliem skaitļiem $n$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.17. 
+Pierādiet, ka katram naturālam skaitlim $n>1$  
+eksistē tāds vesels skaitlis $M$, ka nekādiem veseliem skaitļiem 
+$x$ un $y$ skaitlis $x^n + y^n - M$ nedalās ar $n^2$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.18. 
+Divdesmit četri studenti risināja $25$ uzdevumus. 
+Pasniedzējam ir tabula ar izmēriem $24 \times 25$, 
+kurā ierakstīts kādus uzdevumus risinājis katrs students. 
+Izrādījās, ka katru uzdevumu risināja vismaz viens students. 
+Pierādiet, ka var atzīmēt dažus uzdevumus tā, ka katrs 
+students risināja pāra skaitu atzīmēto uzdevumu.
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.19. 
+Šaha dēlīša $8 \times 8$ katrā rūtiņā ir ierakstīts naturāls skaitlis. 
+Atļauts izdalīt patvaļīgu kvadrātu ar izmēriem $3 \times 3$  
+vai $4 \times 4$  un visus skaitļus, kas atrodas šajā kvadrātā, 
+palielināt par $1$. 
+Atkārtoti izpildot šādas operācijas, mēs gribam panākt, 
+lai visi rūtiņās ierakstītie skaitļi dalītos ar $10$. 
+Vai vienmēr to ir iespējams izdarīt?
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.20. 
+Doti naturāli skaitļi $A,B,C$, kas nepārsniedz $100$. 
+Pierādiet, ka eksistē trīs veseli skaitļi $a,b,c$, 
+kas pēc moduļa nepārsniedz $18$, 
+visi vienlaicīgi nav vienādi ar $0$, un kuriem izpildās vienādība
+$aA + bB + cC = 0$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.21.
+Taisnstūris, kura izmēri ir $300 \times 1000$, 
+sadalīts vienības kvadrātiņos. Patvaļīgās $30$ kvadrātu virsotnēs 
+novietotas vienādas lodes. Pierādīt, ka var izvēlēties 
+nešķeļošu ložu grupas (ne vairāk kā $10$ lodes katrā grupā) tā, 
+ka to smaguma centri sakrīt.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.22. 
+Doti $17$ dažādi naturāli skaitļi; neviens no tiem nepārsniedz $25$. 
+Pierādīt, ka no tiem var izvēlēties divus tādus, 
+kuru reizinājums ir vesela skaitļa kvadrāts.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.23. 
+Naturāla skaitļa pierakstā nav nuļļu, un tas sastāv no $28$ cipariem.
+Pierādīt, ka dažus tā ciparus var izsvītrot tā, lai pāri palikušie 
+veidotu skaitli, kas dalās ar $101$.
+\end{problem}
+ 
+ 
+\vspace{10pt}
+\begin{problem}
+%8.24. 
+Jānis sareizināja divus trīsciparu skaitļus. Vai var gadīties, 
+ka visi cipari, kas ietilpst reizinātājos un reizinājumā, ir dažādi?
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.25. 
+Jānis raksta uz tāfeles skaitļus. Pirmais skaitlis ir $23$, 
+katrs nākošais ir divas reizes lielāks par iepriekšējo. 
+(Tātad pirmie uzrakstītie skaitļi ir $23; 46; 92; 184;\ldots$.) 
+Vai starp Jāņa uzrakstītajiem skaitļiem atradīsies divi tādi skaitļi, 
+kuru pirmie cipari ir vienādi, otrie \textendash{} arī vienādi, 
+priekšpēdējie \textendash{} arī vienādi? 
+(Uzskatām, ka Jānis turpina rakstīšanu neierobežoti ilgi).
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%8.26.  
+Vai naturālos skaitļus
+\begin{enumerate}[(a)]
+\item no 1 līdz 12 ieskaitot,
+\item no 1 līdz 50 ieskaitot
+\end{enumerate}
+var tā sadalīt pa pāriem, lai visas pāros ieejošo skaitļu summas 
+būtu dažādas, un katra no tām būtu pirmskaitlis?
+(Piemēram, skaitļus no $1$ līdz $6$ varētu sadalīt tā:  
+$1+2 = 3$, $3+4 =7$, $5+6 = 11$).
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%8.27. 
+Sniegbaltīte uzrakstīja rindā kaut kādā kārtībā visus 
+naturālos skaitļus no $1$ līdz $7$, katru skaitli tieši vienu reizi. 
+To pašu izdarīja katrs no $7$ rūķīšiem. Katrs rūķītis atrada, 
+kurus skaitļus viņš uzrakstījis tajās pašās vietās 
+(pirmajā, otrajā, trešajā, ...) kā Sniegbaltīte. 
+Visiem rūķīšiem šādu skaitļu daudzumi izrādījās atšķirīgi. 
+Vai var gadīties, ka neviens rūķītis neuzrakstīja skaitļus 
+tieši tādā pašā kārtībā kā Sniegbaltīte?
+\end{problem}
+
+
+\end{document}
+

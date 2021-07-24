@@ -1,0 +1,103 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{100}
+\setcounter{problem}{4}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija \newline ATV} \hfill {\bf\LARGE Uzdevumu lapa \#5} \hfill \parbox{3.5cm}{\flushright\bf 2021-02-03} %\\[2pt]
+%\rm\small 2020.gada 15.novembris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+%\vspace{10pt}
+%{\bf Iesniegšanas termiņš:} 2020.g.\ 2.janvāris\\
+%{\bf Kam iesūtīt:} {\tt kalvis.apsitis}, domēns {\tt gmail.com}
+
+%\vspace{5pt}
+%{\em (Par racionāliem un iracionāliem skaitļiem, skaitļu pierakstu un periodiskām virknēm.)}
+
+Šie uzdevumi no nesenām ``Baltic Way'' olimpiādēm 
+izmanto {\em Kāpinātāja pacelšanas lemmas} ({\em Lifting the Exponent Lemmas}).
+
+
+\vspace{10pt}
+\begin{problem}
+%BW.2015.16.SOL
+Ar $P(n)$ apzīmējam lielāko pirmskaitli, ar ko dalās $n$. Atrast visus
+naturālos skaitļus $n \geq 2$, kam
+\[ P(n) + \lfloor \sqrt{n} \rfloor = P(n+1) + \lfloor \sqrt{n+1} \rfloor. \]
+(Piezīme: $\lfloor x \rfloor$ apzīmē lielāko veselo skaitli, kas nepārsniedz $x$.)
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%BW.2015.17.SOL
+Atrast visus naturālos skaitļus $n$, kuriem $n^{n-1} - 1$ dalās ar $2^{2015}$,
+bet nedalās ar $2^{2016}$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%BW.2016.5.SOL
+Dots pirmskaitlis $p > 3$, kuram $p \equiv 3\;(\operatorname{mod}\,4)$.
+Dotam naturālam skaitlim $a_0$ virkni
+$a_0, a_1, \ldots$ definē kā $a_n = a^{2^n}_{n-1}$ visiem
+$n = 1, 2, \ldots$. Pierādīt, ka $a_0$ var izvēlēties tā, ka
+apakšvirkne $a_N, a_{N+1}, a_{N+2}, \ldots$
+nav konstanta pēc moduļa $p$ nevienam naturālam $N$.
+\end{problem}
+
+
+\vspace{10pt}
+%BW.TST.2015.15.SOL
+\begin{problem}
+Ar $\omega(n)$ apzīmēsim dažādo pirmskaitļu skaitu, ar ko dalās $n$. Pierādīt, ka ir bezgalīgi
+daudz tādu naturālu skaitļu $n$, kuriem $\omega(n) < \omega(n+1) < \omega(n+2)$.
+\end{problem}
+
+
+\vspace{10pt}
+%BW.2015.17.SOL
+\begin{problem}
+Pirmskaitlim $p$ un naturālam skaitlim $n$ apzīmējam 
+ar $f(p, n)$ lielāko veselo skaitli $k$, kuram $p^k \mid n!$. 
+Dots fiksēts pirmskaitlis $p$, bet $m$ un $c$ ir jebkādi naturāli skaitļi. 
+Pierādīt, ka eksistē bezgalīgi daudzi tādi naturāli skaitļi $n$, kuriem 
+$f(p, n) \equiv c \pmod m$.
+\end{problem}
+
+
+\end{document}

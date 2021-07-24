@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{100}
+\setcounter{problem}{0}
+
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija \newline ATV} \hfill {\bf\LARGE Uzdevumu lapa \#1} \hfill \parbox{3.5cm}{\flushright\bf 2021-01-06} %\\[2pt]
+%\rm\small 2020.gada 15.novembris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+%\vspace{10pt}
+%{\bf Iesniegšanas termiņš:} 2020.g.\ 2.janvāris\\
+%{\bf Kam iesūtīt:} {\tt kalvis.apsitis}, domēns {\tt gmail.com}
+
+%\vspace{5pt}
+%{\em (Par racionāliem un iracionāliem skaitļiem, skaitļu pierakstu un periodiskām virknēm.)}
+
+
+\vspace{10pt}
+\begin{problem}
+Ar $s(k)$ apzīmēsim naturāla skaitļa $k$ ciparu summu. 
+Pierādīt, ka ir bezgalīgi daudz tādu naturālu skaitļu $n$, kas nedalās ar $10$ un 
+kuriem ${\displaystyle s(n^2) < s(n) -5}$. 
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem} 
+Dots naturāls skaitlis $m$ un pirmskaitlis $p$, kas ir skaitļa $m^2 - 2$ dalītājs. 
+Zināms, ka eksistē tāds naturāls skaitlis $a$, ka $a^2 + m - 2$ dalās ar $p$. 
+Pierādīt, ka eksistē tāds naturāls skaitlis $b$, ka $b^2 - m - 2$ 
+dalās ar $p$. 
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+Atrodiet visus veselu skaitļu trijniekus $(a,b,c)$, kuriem 
+$$(a-b)^3(a+b)^2 = c^2 + 2(a - b) + 1.$$
+\end{problem}
+
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+Atrodiet visus naturālu skaitļu četriniekus $(x,y,z,t)$, kuri apmierina vienādojumu sistēmu
+$$\left\{ 
+\begin{array}{l}
+xyz = t!\\
+(x+1)(y+1)(z+1) = (t+1)!\\
+\end{array} 
+\right.$$
+\end{problem}
+
+
+
+\end{document}

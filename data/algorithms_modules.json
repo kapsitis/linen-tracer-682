@@ -31,59 +31,39 @@
             "subid": "1.3",
             "title": "Aritmētiskie kodi",
             "week": "W2"
-        },
+        }
+    ],
+    [
         {
-            "date": "2020-09-14",
-            "endDate": "2020-09-18",
+            "date": "2020-09-21",
+            "endDate": "2020-09-25",
             "part": "lossless",
             "show": "yes",
             "subdir": "lossless04-lempel-ziv",
             "subid": "1.4",
             "title": "Lempela-Ziva kodi",
-            "week": "W2"
+            "week": "W3"
         }
     ],
     [
         {
-            "date": "2020-09-21",
-            "endDate": "2020-09-25",
+            "date": "2020-09-28",
+            "endDate": "2020-10-02",
             "part": "lossless",
             "show": "yes",
             "subdir": "lossless05-burrows-wheeler",
             "subid": "1.5",
             "title": "Berouza-Vīlera transformācija",
-            "week": "W3"
-        },
-        {
-            "date": "2020-09-21",
-            "endDate": "2020-09-25",
-            "part": "lossless",
-            "show": "yes",
-            "subdir": "lossless06-applications",
-            "subid": "1.6",
-            "title": "Bezzudumu saspiešana darbībā",
-            "week": "W3"
-        }
-    ],
-    [
-        {
-            "date": "2020-09-28",
-            "endDate": "2020-10-02",
-            "part": "lossy",
-            "show": "yes",
-            "subdir": "lossy01-quantization",
-            "subid": "2.1",
-            "title": "Kvantizācija un noapaļošana",
             "week": "W4"
         },
         {
             "date": "2020-09-28",
             "endDate": "2020-10-02",
-            "part": "lossy",
+            "part": "lossless",
             "show": "yes",
-            "subdir": "lossy02-jpeg",
-            "subid": "2.2",
-            "title": "Rastra attēlu saspiešana ar JPEG",
+            "subdir": "lossless06-applications",
+            "subid": "1.6",
+            "title": "Bezzudumu saspiešana darbībā",
             "week": "W4"
         }
     ],
@@ -93,9 +73,9 @@
             "endDate": "2020-10-09",
             "part": "lossy",
             "show": "yes",
-            "subdir": "lossy03-media",
-            "subid": "2.3",
-            "title": "Skaņas un video saspiešana",
+            "subdir": "lossy01-jpeg",
+            "subid": "2.1",
+            "title": "Rastra attēlu saspiešana ar JPEG",
             "week": "W5"
         }
     ],
@@ -103,21 +83,11 @@
         {
             "date": "2020-10-12",
             "endDate": "2020-10-16",
-            "part": "errors",
+            "part": "lossy",
             "show": "yes",
-            "subdir": "errors01-checksums",
-            "subid": "3.1",
-            "title": "Failu kontrolsummas",
-            "week": "W6"
-        },
-        {
-            "date": "2020-10-12",
-            "endDate": "2020-10-16",
-            "part": "errors",
-            "show": "yes",
-            "subdir": "errors02-hamming",
-            "subid": "3.2",
-            "title": "Heminga un lineārie kodi",
+            "subdir": "lossy02-media",
+            "subid": "2.2",
+            "title": "Skaņas un video saspiešana",
             "week": "W6"
         }
     ],
@@ -127,9 +97,9 @@
             "endDate": "2020-10-23",
             "part": "errors",
             "show": "yes",
-            "subdir": "errors03-reed-solomon",
-            "subid": "3.3",
-            "title": "Rīda-Solomona kodi",
+            "subdir": "errors01-checksums",
+            "subid": "3.1",
+            "title": "Failu kontrolsummas",
             "week": "W7"
         },
         {
@@ -137,9 +107,9 @@
             "endDate": "2020-10-23",
             "part": "errors",
             "show": "yes",
-            "subdir": "errors04-other",
-            "subid": "3.4",
-            "title": "Citi kļūdu labošanas veidi",
+            "subdir": "errors02-hamming",
+            "subid": "3.2",
+            "title": "Heminga un lineārie kodi",
             "week": "W7"
         }
     ],
@@ -147,11 +117,21 @@
         {
             "date": "2020-10-26",
             "endDate": "2020-10-30",
-            "part": "graphs",
+            "part": "errors",
             "show": "yes",
-            "subdir": "graphs01-dynamic",
-            "subid": "4.1",
-            "title": "Grafi un dinamiskā programmēšana",
+            "subdir": "errors03-reed-solomon",
+            "subid": "3.3",
+            "title": "Rīda-Solomona kodi",
+            "week": "W8"
+        },
+        {
+            "date": "2020-10-26",
+            "endDate": "2020-10-30",
+            "part": "errors",
+            "show": "yes",
+            "subdir": "errors04-other",
+            "subid": "3.4",
+            "title": "Citi kļūdu labošanas veidi",
             "week": "W8"
         }
     ],
@@ -160,20 +140,10 @@
             "date": "2020-11-02",
             "endDate": "2020-11-06",
             "part": "graphs",
-            "show": "yes",
-            "subdir": "graphs02-greedy",
-            "subid": "4.2",
-            "title": "Grafi un alkatīgā paradigma",
-            "week": "W9"
-        },
-        {
-            "date": "2020-11-02",
-            "endDate": "2020-11-06",
-            "part": "graphs",
-            "show": "yes",
-            "subdir": "graphs03-incremental",
-            "subid": "4.3",
-            "title": "Grafi un pakāpeniskie uzlabojumi",
+            "show": "no",
+            "subdir": "nothing",
+            "subid": "&nbsp;",
+            "title": "Viduseksāmens",
             "week": "W9"
         }
     ],
@@ -184,7 +154,7 @@
             "part": "linear",
             "show": "yes",
             "subdir": "linear01-concepts",
-            "subid": "5.1",
+            "subid": "4.1",
             "title": "Lineārās programmēšanas pamatjēdzieni",
             "week": "W10"
         },
@@ -194,7 +164,7 @@
             "part": "linear",
             "show": "yes",
             "subdir": "linear02-simplex",
-            "subid": "5.2",
+            "subid": "4.2",
             "title": "Simpleksu metode",
             "week": "W10"
         }
@@ -206,29 +176,29 @@
             "part": "linear",
             "show": "yes",
             "subdir": "linear03-duality",
-            "subid": "5.3",
+            "subid": "4.3",
             "title": "Lineāro programmu dualitāte",
             "week": "W11"
-        },
+        }
+    ],
+    [
         {
             "date": "2020-11-16",
             "endDate": "2020-11-20",
             "part": "linear",
             "show": "yes",
             "subdir": "linear04-ellipsoid",
-            "subid": "5.4",
+            "subid": "4.4",
             "title": "Elipsoīda metode",
             "week": "W11"
-        }
-    ],
-    [
+        },
         {
             "date": "2020-11-23",
             "endDate": "2020-11-27",
             "part": "linear",
             "show": "yes",
             "subdir": "linear05-interior-point",
-            "subid": "5.5",
+            "subid": "4.5",
             "title": "Afīnās mērogošanas metode",
             "week": "W12"
         }
@@ -240,7 +210,7 @@
             "part": "strings",
             "show": "yes",
             "subdir": "strings01-introduction",
-            "subid": "6.1",
+            "subid": "5.1",
             "title": "Virkņu meklēšanas jēdzieni",
             "week": "W13"
         },
@@ -250,31 +220,33 @@
             "part": "strings",
             "show": "yes",
             "subdir": "strings02-rabin-karp",
-            "subid": "6.2",
+            "subid": "5.2",
             "title": "Rabina-Karpa un hešinga metodes",
             "week": "W13"
-        },
+        }
+    ],
+    [    
         {
-            "date": "2020-11-30",
+            "date": "2020-12-07",
             "endDate": "2020-12-04",
             "part": "strings",
             "show": "yes",
             "subdir": "strings03-kmp",
-            "subid": "6.3",
+            "subid": "5.3",
             "title": "Knuta-Morisa-Prata algoritms",
-            "week": "W13"
+            "week": "W14"
         }
     ],
     [
         {
-            "date": "2020-12-07",
+            "date": "2020-12-14",
             "endDate": "2020-12-11",
             "part": "strings",
             "show": "yes",
             "subdir": "strings04-boyer-moore",
-            "subid": "6.4",
+            "subid": "5.4",
             "title": "Bojera-Mūra algoritms",
-            "week": "W14"
+            "week": "W15"
         },
         {
             "date": "2020-12-07",
@@ -282,9 +254,9 @@
             "part": "strings",
             "show": "yes",
             "subdir": "strings05-suffix-trees",
-            "subid": "6.5",
+            "subid": "5.5",
             "title": "Sufiksu koki",
-            "week": "W14"
+            "week": "W15"
         }
     ]
 ]

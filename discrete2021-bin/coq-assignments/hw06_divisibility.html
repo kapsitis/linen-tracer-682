@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>hw06_divisibility</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library hw06_divisibility</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+
+<div class="paragraph"> </div>
+
+<a href="../../discrete2021/assignments.html">Back to Discrete Assignments</a>
+
+<div class="paragraph"> </div>
+
+<a id="lab1"></a><h2 class="section">Problems in H6.P5</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <span class="id" title="var">Homework6_Problems</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Theorem1 (i), p.252 in the textbook 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6_1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>:<span class="id" title="var">Z</span>, (<span class="id" title="var">a</span> | <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">a</span> | <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> | <span class="id" title="var">b</span>+<span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Theorem1 (ii), p.252 in the textbook 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6_2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>:<span class="id" title="var">Z</span>, (<span class="id" title="var">a</span> | <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">a</span> | <span class="id" title="var">b</span>*<span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Theorem1 (iii), p.252 in the textbook 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6_3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">a</span> | <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">b</span> | <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> | <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+See Theorem4, p.255 in the textbook 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6_4_helper</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">m</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">m</span> &lt;&gt; 0) -&gt;<br/>
+&nbsp;&nbsp;((<span class="id" title="var">a</span> <span class="id" title="var">mod</span> <span class="id" title="var">m</span>) = (<span class="id" title="var">b</span> <span class="id" title="var">mod</span> <span class="id" title="var">m</span>) -&gt; (<span class="id" title="var">m</span> | <span class="id" title="var">a</span> - <span class="id" title="var">b</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6_4</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">m</span>: <span class="id" title="var">Z</span>, (<span class="id" title="var">m</span> &lt;&gt; 0) -&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;((<span class="id" title="var">a</span> <span class="id" title="var">mod</span> <span class="id" title="var">m</span>) = (<span class="id" title="var">b</span> <span class="id" title="var">mod</span> <span class="id" title="var">m</span>) &lt;-&gt; (<span class="id" title="tactic">exists</span> <span class="id" title="var">k</span>:<span class="id" title="var">Z</span>, <span class="id" title="var">a</span> = <span class="id" title="var">b</span>+<span class="id" title="var">k</span>*<span class="id" title="var">m</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6_5</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : <span class="id" title="var">Z</span>, (<span class="id" title="var">a</span>|<span class="id" title="var">b</span>) \/ (<span class="id" title="var">a</span>|<span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span>| <span class="id" title="var">b</span>*<span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab2"></a><h2 class="section">Optional Corollary</h2>
+ Once the homework is proven, you can 
+obtain useful corollaries. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">divide_lincombination</span>: <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">m</span> <span class="id" title="var">n</span>, (<span class="id" title="var">a</span> | <span class="id" title="var">b</span>) /\ (<span class="id" title="var">a</span> | <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> | <span class="id" title="var">m</span>*<span class="id" title="var">b</span> + <span class="id" title="var">n</span>*<span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">Admitted</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <span class="id" title="var">Homework6_Problems</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

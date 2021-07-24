@@ -52,6 +52,10 @@ handlers:
 - url: /numtheory-bin
   static_dir: numtheory-bin
 
+- url: /numtheory-exams
+  static_dir: numtheory-exams
+
+
 - url: /numtheory-tales
   static_dir: numtheory-tales
 
@@ -90,6 +94,16 @@ handlers:
   
 - url: /discrete-tales
   static_dir: discrete-tales
+
+- url: /discrete2021/.*
+  script: discrete2021.app
+  
+- url: /discrete2021-bin
+  static_dir: discrete2021-bin
+  
+- url: /discrete2021-tales
+  static_dir: discrete-tales
+
 
 
 - url: /data-structures/.*

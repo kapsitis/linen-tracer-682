@@ -4,8 +4,20 @@
         "title": "Skaitļu teorija"
     },
     {
+        "subdir": "discrete2021",
+        "title": "Discrete (2021)"
+    },
+    {
         "subdir": "algorithms",
         "title": "Lietišķie algoritmi"
+    },
+    {
+        "subdir": "data-structures",
+        "title": "Data Structures"
+    },
+    {
+        "subdir": "rbs",
+        "title": "RBS Seminars"
     },
     {
         "subdir": "visualizations",
@@ -17,18 +29,10 @@
     },    
     {
         "subdir": "discrete",
-        "title": "Discrete Mathematics"
-    },
-    {
-        "subdir": "data-structures",
-        "title": "Data Structures"
-    },
-    {
-        "subdir": "rbs",
-        "title": "RBS Seminars"
-    },
+        "title": "Older PBM763"
+    },    
     {
         "subdir": "problembase",
         "title": "Olimpiāžu uzdevumu DB"
-    }
+    } 
 ]    

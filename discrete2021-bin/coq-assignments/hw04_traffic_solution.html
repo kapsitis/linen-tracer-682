@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>hw04_traffic_solution</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library hw04_traffic_solution</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+
+<div class="paragraph"> </div>
+
+<a href="../../discrete2021/assignments.html">Back to Discrete Assignments</a>
+
+<div class="paragraph"> </div>
+
+<a id="lab1"></a><h2 class="section">Initial Definitions</h2>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Section</span> <span class="id" title="var">Homework4_Problems</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+'Inductive' type means that there are no other cities 
+except those listed as A,B,C. 
+Use 'closed world assumption': all cities can be 
+analyzed by considering just three cases. 
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">City</span> : <span class="id" title="keyword">Type</span> := <br/>
+&nbsp;&nbsp;| <span class="id" title="var">A</span> <br/>
+&nbsp;&nbsp;| <span class="id" title="var">B</span> <br/>
+&nbsp;&nbsp;| <span class="id" title="var">C</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">Plane</span> : <span class="id" title="var">City</span>*<span class="id" title="var">City</span> -&gt; <span class="id" title="keyword">Prop</span>.<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">Rail</span>: <span class="id" title="var">City</span>*<span class="id" title="var">City</span> -&gt; <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">PlaneLinks</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>:<span class="id" title="var">City</span>, <span class="id" title="var">x</span>&lt;&gt;<span class="id" title="var">y</span> &lt;-&gt; <span class="id" title="var">Plane</span>(<span class="id" title="var">x</span>,<span class="id" title="var">y</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink1</span>: <span class="id" title="var">Rail</span>(<span class="id" title="var">A</span>,<span class="id" title="var">B</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink2</span>: <span class="id" title="var">Rail</span>(<span class="id" title="var">B</span>,<span class="id" title="var">A</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink3</span>: <span class="id" title="var">Rail</span>(<span class="id" title="var">B</span>,<span class="id" title="var">C</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink4</span>: <span class="id" title="var">Rail</span>(<span class="id" title="var">C</span>,<span class="id" title="var">A</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink5</span>: ~<span class="id" title="var">Rail</span>(<span class="id" title="var">A</span>,<span class="id" title="var">A</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink6</span>: ~<span class="id" title="var">Rail</span>(<span class="id" title="var">A</span>,<span class="id" title="var">C</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink7</span>: ~<span class="id" title="var">Rail</span>(<span class="id" title="var">B</span>,<span class="id" title="var">B</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink8</span>: ~<span class="id" title="var">Rail</span>(<span class="id" title="var">C</span>,<span class="id" title="var">B</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">RailLink9</span>: ~<span class="id" title="var">Rail</span>(<span class="id" title="var">C</span>,<span class="id" title="var">C</span>).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab2"></a><h2 class="section">The solution of Warmup Exercises</h2>
+
+<div class="paragraph"> </div>
+
+ <b>Sample Statement 1:</b> For any city there exists a different city 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Sample1</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">x</span>: <span class="id" title="var">City</span>), <span class="id" title="tactic">exists</span> (<span class="id" title="var">y</span>:<span class="id" title="var">City</span>), <span class="id" title="var">x</span>&lt;&gt;<span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">B</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">C</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">A</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Sample Statement 2:</b> There exist two cities that do not have a direct plane link 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Sample2</span>: <span class="id" title="tactic">exists</span> (<span class="id" title="var">x</span>:<span class="id" title="var">City</span>) (<span class="id" title="var">y</span>: <span class="id" title="var">City</span>), ~<span class="id" title="var">Plane</span>(<span class="id" title="var">x</span>,<span class="id" title="var">y</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">A</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">A</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">PlaneLinks</span> <span class="id" title="var">A</span> <span class="id" title="var">A</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">H1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H0</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">A</span>=<span class="id" title="var">A</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H3</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Sample Statement 3:</b>  For any city 'x' there is a city 'y' such that there is rail
+link between the two. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">Sample3</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">x</span>:<span class="id" title="var">City</span>), <span class="id" title="tactic">exists</span> (<span class="id" title="var">y</span>: <span class="id" title="var">City</span>), <span class="id" title="var">Rail</span>(<span class="id" title="var">x</span>,<span class="id" title="var">y</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">B</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">RailLink1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">C</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">RailLink3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">A</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">RailLink4</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab3"></a><h2 class="section">The solution of H4.Q5</h2>
+
+<div class="paragraph"> </div>
+
+ <b>H4.Q5.Lemma1:</b> From any city there is a direct plane-link to some other city. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">L1</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">x</span>: <span class="id" title="var">City</span>), <span class="id" title="tactic">exists</span> (<span class="id" title="var">y</span>: <span class="id" title="var">City</span>), (<span class="id" title="var">x</span>&lt;&gt;<span class="id" title="var">y</span> /\ <span class="id" title="var">Plane</span>(<span class="id" title="var">x</span>,<span class="id" title="var">y</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Sample1</span> <span class="id" title="var">x</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">y</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">y</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">PlaneLinks</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">H3</span> <span class="id" title="var">_</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">H3</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>H4.Q5.Lemma2:</b> From any city one can go to any other city in two steps like this: First take a
+plane-link and then take a rail-link. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">L2</span>: ~(<span class="id" title="keyword">forall</span> (<span class="id" title="var">x</span>:<span class="id" title="var">City</span>) (<span class="id" title="var">y</span>:<span class="id" title="var">City</span>), <span class="id" title="tactic">exists</span> (<span class="id" title="var">z</span>:<span class="id" title="var">City</span>), (<span class="id" title="var">Plane</span>(<span class="id" title="var">x</span>,<span class="id" title="var">z</span>) /\ <span class="id" title="var">Rail</span>(<span class="id" title="var">z</span>,<span class="id" title="var">y</span>))).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H0</span> <span class="id" title="var">B</span> <span class="id" title="var">C</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (~<span class="id" title="var">Plane</span>(<span class="id" title="var">B</span>,<span class="id" title="var">B</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (~(<span class="id" title="var">B</span>&lt;&gt;<span class="id" title="var">B</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">HH</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">B</span>=<span class="id" title="var">B</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">HH</span> <span class="id" title="var">H</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">PlaneLinks</span> <span class="id" title="var">B</span> <span class="id" title="var">B</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H4</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H5</span> <span class="id" title="var">H6</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H</span> (<span class="id" title="var">H6</span> <span class="id" title="var">H3</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">i</span> <span class="id" title="var">IH</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">IH</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">IHPlane</span> <span class="id" title="var">IHRail</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">i</span>&lt;&gt;<span class="id" title="var">B</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H7</span> <span class="id" title="tactic">in</span> <span class="id" title="var">IHPlane</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H</span> <span class="id" title="var">IHPlane</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">i</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">RailLink6</span> <span class="id" title="var">IHRail</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H</span> <span class="id" title="var">IHPlane</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">RailLink9</span> <span class="id" title="var">IHRail</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>H4.Q5.Lemma3:</b> From any city one can go to any other city in two steps like this: First take a
+plane-link and then take a rail-link. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">L3</span>: ~(<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">z</span>:<span class="id" title="var">City</span>, (<span class="id" title="var">Plane</span>(<span class="id" title="var">x</span>,<span class="id" title="var">z</span>) /\ <span class="id" title="var">Plane</span>(<span class="id" title="var">z</span>,<span class="id" title="var">y</span>) -&gt; <span class="id" title="var">Plane</span>(<span class="id" title="var">x</span>,<span class="id" title="var">y</span>))).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H0</span> <span class="id" title="var">A</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">A</span> &lt;&gt; <span class="id" title="var">B</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">PlaneLinks</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">H3</span> <span class="id" title="var">_</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">B</span> &lt;&gt; <span class="id" title="var">A</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">discriminate</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">PlaneLinks</span> <span class="id" title="var">B</span> <span class="id" title="var">A</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">H6</span> <span class="id" title="var">_</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H6</span> <span class="id" title="var">H5</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">Plane</span> (<span class="id" title="var">A</span>, <span class="id" title="var">B</span>) /\ <span class="id" title="var">Plane</span> (<span class="id" title="var">B</span>, <span class="id" title="var">A</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H8</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">PlaneLinks</span> <span class="id" title="var">A</span> <span class="id" title="var">A</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">H10</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H10</span> <span class="id" title="var">H9</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">A</span> = <span class="id" title="var">A</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H12</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H11</span> <span class="id" title="var">H12</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <span class="id" title="var">Homework4_Problems</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{amsthm}
+\usepackage{thmtools}
+
+
+\usepackage{fontspec} % loaded by polyglossia, but included here for transparency 
+\usepackage{polyglossia}
+
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\setmainlanguage{russian} 
+\setotherlanguage{english}
+
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}
+\newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial}
+\newfontfamily\cyrillicfonttt[Script=Cyrillic]{Courier New}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin 0.0in
+\headheight 0.0in
+\headsep 0.0in
+%\textheight 9.69in
+\textheight 9.00in
+ 
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+%\newenvironment{uzdevums}[1][\unskip]{%
+%\vspace{3mm}
+%\noindent
+%\textbf{#1:}
+%\noindent}
+%{}
+
+% (4;10;12;17)
+% (p1.19;5;15;20)
+
+% http://tex.stackexchange.com/questions/196961/thmtools-declaration-for-theorem-and-proof
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+%\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\def\changemargin#1#2{\list{}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\newcommand{\subf}[2]{%
+  {\small\begin{tabular}[t]{@{}c@{}}
+  #1\\#2
+  \end{tabular}}%
+}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+\newenvironment{zhtext}{\fontfamily{MS PGothic}\selectfont}{\par}
+
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+\newenvironment{tulkojums}[1][\unskip]{%
+\begin{changemargin}{8mm}{8mm}
+\fontsize{9}{11}
+\selectfont
+\textbf{#1:}
+}
+{ 
+\fontsize{12}{14}
+\selectfont
+\end{changemargin}
+}
+
+\setcounter{section}{2}
+
+
+\begin{document}
+
+\begin{center}
+{\Large \bf Uzdevumi 2020.g. 21.\ februāra nodarbībai}
+\end{center}
+
+\vspace{10pt}
+
+\begin{problem}
+Determine all positive integers $n$ such that $n$ has a multiple
+with all non-zero digits in its decimal notation. 
+\end{problem}
+
+\begin{problem}
+A {\em wobbly number} is a positive integer whose digits are alternately nonzero and
+zero with the units digit being nonzero. Determine all positive 
+integers that do not divide any wobbly numbers. 
+\end{problem}
+
+\begin{problem}
+Let $n$ be a given integer with $n \geq 4$. For a positive integer $m$ 
+let $S_m$ denote the set 
+$\{ m, m+1, \ldots, m+n-1 \}$. 
+Determine the minimum value of $f(n)$ such that every $f(n)$-element subset of $S_m$
+(for every $m$) contains at least three pairwise relatively 
+prime elements.
+\end{problem}
+
+\begin{problem}
+By $\sigma(k)$ we denote the sum of all positive divisors of $k$ (including $1$ and $k$ itself). 
+For every positive integer $n$, prove that 
+$$\frac{\sigma(1)}{1} + \frac{\sigma(2)}{2} + \ldots \frac{\sigma(n)}{n} \leq 2n.$$
+\end{problem}
+
+\vspace{10pt}
+{\em Note.} In the last two problems let
+$\text{gpf}(n)$ denote the greatest prime factor of an integer $n$.
+We also define $\text{gpf}(1) = \text{gpf}(-1) = 1$, and $\text{gpf}(0)$ is undefined.
+
+\begin{problem}
+Show that there exist infinitely many positive 
+integers $n$ such that $\text{gpf}(n^4 + 1)$ is greater than $2n$. 
+\end{problem}
+
+
+\begin{problem}
+Find all polynomials $P(n)$ with integer coefficients satisfying both properties:
+\begin{itemize}
+\item $P(n^2) \neq 0$ for all integers $n = 0,1,2,\ldots$ and 
+\item There exists $M >0$ such that $\text{gpf}(P(n^2)) - 2n \leq M$ for all integers $n = 0,1,2,\ldots$.
+\end{itemize}
+\end{problem}
+
+
+\end{document}
+
+

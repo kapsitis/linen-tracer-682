@@ -1,0 +1,211 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{MnSymbol}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{101}
+\setcounter{problem}{38}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\clearpage
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija \newline ATV} \hfill {\bf\LARGE Uzdevumu lapa \#4} \hfill \parbox{3.5cm}{\flushright\bf 2021-01-27} %\\[2pt]
+\end{center}
+
+\hrule
+
+%\vspace{10pt}
+%{\em (Kļūdas labojums).} Iepriekšējā uzdevumu lapā nebija līdz galam ierakstīts, ka
+%reizinājums $a_ia_{i+1}$ ir $0$ (t.i. blakusesošie koeficienti nevar abi vienlaikus būt 
+%atšķirīgi no nulles):
+
+%\vspace{10pt}
+%{\bf Uzdevums 101.35:} Pierādiet, ka jebkuru veselu skaitli n var izteikt formā
+%$$n = a_0 + a_1 2^1 + \cdots  + a_m2^m,$$
+%kur $a_i \in \{ -1,0,1\}$, un $a_ia_{i+1} = 0$ visiem $i$, $0 \leq i < m$.
+%Uzrakstiet šādā formā skaitli $1985$.
+
+
+\vspace{20pt}
+Turpmākajos uzdevumos, iespējams, nepieciešams 
+lietot matemātisko indukciju ar induktīvās hipotēzes pastiprināšanu. 
+Tas nozīmē, ka uzdevumā pierādāmo apgalvojumu tīšām pārraksta nedaudz ``stiprāku'', 
+lai varētu normāli veikt induktīvo pāreju.\\
+Sk. diskusiju \url{https://bit.ly/3o3OBOA}.
+
+
+\vspace{10pt}
+\begin{problem}
+%9.39. 
+Pierādīt, ka jebkuram naturālam skaitlim $n$ eksistē tāds naturāls skaitlis $m$, kuram
+\[ \left( \sqrt{2} - 1 \right)^n = \sqrt{m} - \sqrt{m-1}. \]
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.40. 
+Pierādiet, ka eksistē bezgalīgi daudz naturālu skaitļu $n$, kuriem skaitlis $2^n+2$  dalās ar $n$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.41. 
+Pierādiet, ka eksistē bezgalīgi daudz naturālu skaitļu $n$, kuriem skaitlis $n!$ dalās ar $n^2 + 1$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.42. 
+Dots nepāra pirmskaitlis $p$ un veseli skaitļi $a_1,a_2,\ldots,a_{p-1}$, kuri nedalās ar $p$. 
+Pierādiet, ka, aizstājot dažus no šiem skaitļiem ar pretējiem, var iegūt $p-1$ skaitļus, kuru summa dalās ar $p$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.43. 
+Doti tādi naturāli skaitļi $a_1,a_2,\ldots,a_n$, ka $a_k \leq k$, un visu šo $n$ skaitļu summa ir pāra skaitlis. 
+Pierādiet, ka, aizvietojot dažus no tiem ar pretējiem, var iegūt $n$ skaitļus, kuru summa ir $0$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.44. 
+Doti veseli skaitļi $a_1 = 1,a_2,\ldots,a_n$, kuriem $a_i \leq a_{i+1} \leq 2a_i$ visiem $i \in \{ 1,2,\ldots,n-1 \}$. 
+Zināms, ka šo skaitļu summa ir pāra skaitlis. Pierādiet, ka šos skaitļus var sadalīt divās grupās tā, 
+ka skaitļu summas abās grupās ir vienādas.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.45. 
+Pierādiet, ka jebkuram naturālam skaitlim $s$ vienādojumam
+\[ \frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_s} = 1 \]
+eksistē galīgs, lielāks par nulli, atrisinājumu skaits.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.46. 
+Kurš no skaitļiem 
+\[ \underbrace{2^{3^{2^{3^{\udots}}}}}_{\mbox{\footnotesize $n$ simboli}} \;\;\text{un} \underbrace{3^{2^{3^{2^{\udots}}}}}_{\mbox{\footnotesize $n$ simboli}} \]
+ir lielāks?
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.47. 
+Pierādiet, ka jebkuram naturālam skaitlim $n$ eksistē naturāls skaitlis, 
+kuru var uzrakstīt kā divu kvadrātu summu tieši n dažādos veidos. 
+(Izteiksmes $a^2 + b^2$ un $b^2 + a^2$ uzskatīsim par vienādām).
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.48. 
+Dota virkne $a_1 \in \mathbf{N}$, $a_{n+1} = a_n + 2^{a_n}$, ja $n \geq 1$. 
+Pierādiet, ka šajā virknē ir bezgalīgi daudz locekļu, kuri
+\begin{enumerate}[(a)]
+\item nedalās ar $3$,
+\item dalās ar $3$.
+\end{enumerate}
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.49. 
+Kādiem naturāliem skaitļiem $n$ visi skaitļi 
+\[ C_n^2,C_n^2,\ldots,C_n^n \]	 
+ir nepāra skaitļi?\\
+{\em Piezīme.} Ar $C_n^k$ apzīmē kombināciju skaitu pa $k$ no $n$, t.i. $\displaystyle{ \frac{n!}{k!(n-k)!}}$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.50. 
+Dota funkcija  $f(x,y)$, kura definēta visiem nenegatīviem pozitīviem skaitļiem. 
+Dots, ka visiem nenegatīviem pozitīviem skaitļiem $x$ un $y$ izpildās vienādības
+\begin{enumerate}[(a)]
+\item $f(0,y) = y+1$,
+\item $f(x+1,0) = f(x,1)$,
+\item $f(x+1,y+1) = f(x,f(x+1,y))$.
+\end{enumerate}
+Aprēķināt vērtību $f(4,1980)$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.51. 
+Funkcija  $f(x)$ definēta veselām pozitīvām $x$ vērtībām, un tās vērtības arī ir veseli pozitīvi skaitļi. 
+Zināms, ka vienlaikus ir spēkā šādas trīs īpašības:
+\begin{enumerate}[(1)]
+\item $f(1) < f(2) < f(3) < \cdots < f(n) < f(n+1) < \cdots$ t.i., funkcija $f(x)$ ir stingri augoša;
+\item $f(985) = 1985$;
+\item ja veseliem pozitīviem skaitļiem $m$ un $k$ lielākais kopīgais dalītājs ir $1$, tad 
+$f(m \cdot k) = f(m) \cdot f(k)$.
+\end{enumerate}
+Aprēķināt 
+\begin{enumerate}[(a)]
+\item $f(1000)$;
+\item $f(3599)$;
+\item $f(n)$ patvaļīgam pozitīvam $n$.
+\end{enumerate}
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.52. 
+Ar $a_n$ apzīmējam to dažādo veidu skaitu, kuros $n$ var izsacīt kā tādu saskaitāmo summu, 
+kas nepieņem citas vērtības kā $1; 3; 4$. Pieļaujamas arī summas, kas sastāv no viena saskaitāmā. Veidus, kas atšķiras tikai ar saskaitāmo kārtību, uzskatām par dažādiem.\\
+Piemēram, $a_1=1$; $a_2=1$; $a_3=2$; $a_4=4$.
+Pierādīt: ja $n$ \textendash{}  pāra skaitlis, tad $a_n$ ir naturāla skaitļa kvadrāts.
+\end{problem}
+
+
+
+
+
+
+\end{document}

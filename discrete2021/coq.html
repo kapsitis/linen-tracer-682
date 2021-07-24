@@ -1,0 +1,300 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+
+</head>
+
+<body>
+<h1>Discrete 2021: Proof Assistants</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Coq</b></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="summaries.html">Summaries</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations.html">Presentations</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+
+<h2>Simple Tautologies</h2>
+
+<div style="border: 1px solid gray; width:50%; margin-left: 50px;">
+<tt>intros x.</tt> (For variables)<br/>
+<tt>intros H.</tt> (For implications)<br/>
+<tt>unfold not.</tt> (Replace "~")<br/>
+<tt>unfold iff.</tt> (Replace "&lt;-&gt;")<br/>
+<tt>assert (...) as H1.</tt><br/>
+<tt>destruct H1 as [H2 H3].</tt><br/>
+<tt>destruct H1 as [H2 | H3].</tt><br/>
+<tt>exact H.</tt><br/>
+<tt>apply H.</tt>
+</div>
+
+<p style="margin-left: 50px;"><b>Sample Proofs:</b>
+<a href="../discrete2021-bin/coq-propositional/fromKnepleyTextbook_1_4.html">Examples from Ch1_4 (Knepley2021, p.13-25)</a></p>
+
+
+<h2>Non-Constructive Tautologies</h2>
+
+
+<div style="border: 1px solid gray; width:50%; margin-left: 50px;">
+<tt>Require Import Classical_Prop.</tt><br/>
+<tt>pose (classic (...)) as H.</tt><br/>
+<tt>elim classic.</tt></br>
+<tt>apply NNPP.</tt><br/>
+<tt>contradiction.</tt>
+</div>
+
+<p style="margin-left: 50px;"><b>Sample Proofs:</b>
+<a href="../discrete2021-bin/coq-propositional/two_nonconstructive_proofs.html">Two Non-Constructive Proofs</a><br/>
+<a href="../discrete2021-bin/coq-propositional/twenty_tautologies.html">20 Tautology Samples</a></p>
+
+
+
+
+<h2>Predicates on Finite Sets</h2>
+
+
+<div style="border: 1px solid gray; width:50%; margin-left: 50px;">
+<tt>Section someName.</tt><br/>
+<tt>Inductive typeName : Type := </tt><br/>
+<tt>Variable predicateName : typeName -> Prop.</tt><br/>
+<tt>Hypothesis ... </tt><br/>
+<tt>induction varName</tt><br/>
+<tt>reflexivity</tt><br/>
+<tt>discriminate</tt><br/>
+<tt>exists varName</tt>
+</div>
+
+<p style="margin-left: 50px;"><b>Sample Proofs:</b>
+<a href="../discrete2021-bin/coq-firstorder/fromKnepleyTextbook_2_3.html">Examples from Ch2_3 (Knepley2021, p.43-49)</a></p>
+
+
+<h2>General Predicate Calculus</h2>
+
+
+<p style="margin-left: 50px;"><b>Sample Proofs:</b>
+<a href="../discrete2021-bin/coq-firstorder/fromKnepleyTextbook_2_2.html">Examples from Ch2_2 (Knepley2021, p.38-43)</a><br/>
+<a href="../discrete2021-bin/coq-firstorder/fromKnepleyTextbook_3_2.html">Examples from Ch3_2 (Knepley2021, p.60-68)</a><br/>
+<a href="../discrete2021-bin/coq-firstorder/fromKnepleyTextbook_3_3.html">Examples from Ch3_3 (Knepley2021, p.69-81)</a></p>
+
+
+
+<h2>Integer Divisibility</h2>
+
+<div style="border: 1px solid gray; width:50%; margin-left: 50px;">
+<tt>Open Scope Z_scope.</tt><br/>
+<tt>Close Scope Z_scope.</tt><br/>
+<tt>ring.</tt><br/>
+<tt>rewrite H1 in H2.</tt><br/>
+<tt>rewrite &lt;- H1 in H2.</tt><br/>
+<tt>unfold Z.divide</tt>
+</div>
+
+<p style="margin-left: 50px;"><b>Sample Proofs:</b>
+<a href="../discrete2021-bin/coq-numbertheory/Rosen_1_7.html">Examples from Rosen2019, Ch1.7</a></p>
+
+
+<h2>GCD and Induction</h2>
+
+<div style="border: 1px solid gray; width:50%; margin-left: 50px;">
+<tt>Open Scope nat_scope.</tt><br/>
+<tt>Close Scope nat_scope.</tt><br/>
+<tt>destruct n.</tt><br/>
+<tt>induction n.</tt><br/>
+<tt>lia.</tt><br/>
+<tt>omega.</tt><br/>
+<tt>Fixpoint ...</tt>
+</div>
+
+
+<p style="margin-left: 50px;"><b>Sample Proofs:</b>
+<a href="../discrete2021-bin/coq-numbertheory/gcd_samples.html">Some theorems about GCD</a><br/>
+<a href="../discrete2021-bin/coq-numbertheory/Rosen_1_7.html">Examples from Rosen2019, Ch1.7</a><br/>
+<a href="../discrete2021-bin/coq-induction/fromKnepleyTextbook_4_4.html">Examples from Ch4_4 (Knepley2021, p.91-105)</a><br/>
+<a href="../discrete2021-bin/coq-induction/fromKnepleyTextbook_4_5.html">Examples from Ch4_5 (Knepley2021, p.106-129)</a><br/>
+<a href="../discrete2021-bin/coq-induction/induction_advanced.html">Some Advanced Induction Examples</a><br/></p>
+
+
+
+
+
+
+
+
+
+<!--
+<table border="1" cellspacing="0">
+<tr>
+<th>Question</th><th>Topic</th><th>Sample Proofs</th><th>Typical Language/Proof Elements</th>
+</tr>
+<tr>
+<th>H8.Q5</th><td>(TBD) Binary Relations and Set Partitions</td>
+<td>
+<a href="../discrete2021-bin/coq-relations/fromKnepleyTextbook_3_2.html">Examples from Ch3_2 (Knepley2021, p.60-68)</a><br/>
+<a href="../discrete2021-bin/coq-relations/fromKnepleyTextbook_3_3.html">Examples from Ch3_3 (Knepley2021, p.69-81)</a>
+</td>
+<td>
+<tt>Definition reflexive {X: Type} (R: relation X X)</tt><br/>
+<tt>Inductive lt (n : nat) : nat -> Prop</tt>
+</td>
+</tr>
+<tr>
+<th>H9.Q5</th><td>(TBD) Lists and String Search</td>
+<td>
+<a href="../discrete2021-bin/coq-lists/fromKnepleyTextbook_4_6.html">Examples from Ch4_6 (Knepley2021, p.129-131)</a><br/>
+<a href="../discrete2021-bin/coq-lists/list_samples.html">Lists of natural numbers</a>
+</td>
+<td>
+<tt>Notation "x :: L" := (cons x L).</tt><br/>
+<tt>Notation "x ++ y" := (app x y).</tt>
+</td>
+</tr>
+<tr>
+<th>H10.Q5</th><td>(TBD) Convert code to a Functional Language</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+-->
+
+
+
+
+<h2>Discrete 2020 Coq Samples and Tasks</h2>
+
+<ul>
+<li><a href="../discrete2021-bin/coq-propositional/fromKnepleyTextbook_1_4.html">Tautologies: Samples from M.Knepley CSE191 Ch1.4</a></li>
+<li><a href="../discrete2021-bin/coq-propositional/twenty_tautologies.html">Tautologies: Twenty Examples (revisiting older LAB01, 2020)</a></li>
+<li><a href="../discrete2021-bin/coq-firstorder/fromKnepleyTextbook_2_2.html">Predicates: Samples from M.Knepley CSE191 Ch2.2</a></li>
+<li><a href="../discrete2021-bin/coq-firstorder/fromKnepleyTextbook_2_3.html">Predicates: Samples from M.Knepley CSE191 Ch2.3</a></li>
+<li><a href="../discrete2021-bin/coq-relations/fromKnepleyTextbook_3_2.html">Relations: Samples from M.Knepley CSE191 Ch3.2</a></li>
+<li><a href="../discrete2021-bin/coq-relations/fromKnepleyTextbook_3_3.html">Relations: Samples from M.Knepley CSE191 Ch3.3</a></li>
+</ul>
+
+
+<h2>Old Coq Labs</h2>
+
+<ul>
+<li><a href="../discrete-bin/coq-propositional/lab01_template.html">Preparation for Coq LAB01: Problems</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_template_solution.html">Preparation for Coq LAB01: Solutions</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_tasks.html">Coq LAB01: Problems</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_tasks_solution.html">Coq LAB01: Solutions</a></li>
+<li><a href="../discrete-bin/coq-inductive/lab02_tasks.html">Coq LAB02: Problems</a></li>
+<li><a href="../discrete-bin/coq-inductive/lab02_tasks_solution.html">Coq LAB02: Solutions</a></li>
+</ul>
+
+
+
+<h2>Coq Examples and Tutorials</h2>
+
+<p style="margin:2px 0px 2px 0px">Official Tutorials:</p>
+
+<ul style="margin-top:0px">
+<li><a href="https://cel.archives-ouvertes.fr/inria-00001173v5/document">Coq in a Hurry</a></li>
+<li><a href="https://coq.inria.fr/tutorial-nahas">Mike Nahas Tutorial: Propositional Logic Proofs</a></li>
+<li><a href="https://coq.inria.fr/tutorial/1-basic-predicate-calculus">Coq: Predicate Calculus</a></li>
+<li><a href="https://coq.inria.fr/refman/coq-tacindex.html">Coq: The Full List of Proof Tactics</a></li>
+<li><a href="https://github.com/coq/coq/tree/master/theories">Coq Standard Libraries in GitHub</a>
+(proofs of some known facts that you can use)</li>
+<li><a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations (4 large textbooks on Coq)</a>
+- beware of some "pretty printed" symbols. They use "∀" instead of "forall", 
+"⇒" instead of "<tt>=&gt;</tt>"</li>
+<li><a href="http://flint.cs.yale.edu/cs428/coq/sf/Logic.html">Tutorial on Coq Proofs</a> (Yale CS428)</li>
+<li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">Some 
+other Coq links</a> (Buffalo CSE191)</li>
+</ul>
+
+
+<p style="margin:2px 0px 2px 0px"><a name="cheatsheets"/>Tactics and Cheatsheets</p>
+
+<ul>
+<li><a href="https://www.cs.cornell.edu/courses/cs3110/2017fa/a5/coq-tactics-cheatsheet.html">A Short 
+Coq Tactics Cheatsheet</a> and 
+their <a href="https://www.cs.cornell.edu/courses/cs3110/2017fa/l/20-coq-logic/notes.html">Notes 
+on Writing Proofs</a> (Cornell CS3110)</li> 
+<li><a href="http://www.inf.ed.ac.uk/teaching/courses/tspl/cheatsheet.pdf">Coq 
+tactics tutorial (U of Edinburgh)</a></li>
+</ul>
+
+
+<p style="margin:2px 0px 2px 0px">Specific Examples for "Discrete Structures"</p>
+
+<ul style="margin-top:0px">
+<li><a href="../discrete-bin/coq-propositional/CSEnotes_propositional.html">Proving Tautologies (Buffalo CSE191, p.12-20)</a></li>
+<li><a href="../discrete-bin/coq-propositional/classical_logic.html">On classical proofs</a></li>
+<li><a href="../discrete-bin/coq-propositional/example_scottish_club.html">Example: Scottish Club</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_lions_coffee.html">Example: Lions and Coffee</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_drinker_theorem.html">Example: Smullyan's Drinker Theorem</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_mybaby.html">Example: Everybody Loves My Baby</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px"><a name="classical"/>Classical vs. Intuitionistic Logic</p>
+
+<ul style="margin-top:0px">
+<li><a href="../discrete-bin/coq-propositional/classical_logic.html">On classical proofs</a></li>
+<li><a href="https://stackoverflow.com/questions/23996056/elim-a-double-negation-hypothesis-in-coq-proof-assistant">Elim 
+a double negation hypothesis in Coq Proof Assistant? (Classical Logic)</a></li>
+<li><a href="https://github.com/coq/coq/wiki/CoqAndAxioms">Axioms (on Classical Logic)</a></li>
+<li><a href="https://github.com/coq/coq/wiki/The-Logic-of-Coq">Logic in Coq</a></li>
+<li><a href="https://stackoverflow.com/questions/14644086/proving-p-q-q-p-using-coq-proof-assistant">NNPP and similar proofs</a></li>
+<li><a href="https://youtu.be/zmhd8clDd_Y">Five Stages of Accepting Constructive Mathematics</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px"><a name="inductive"/>Inductive Proofs and Integers</p>
+
+<ul>
+<li><a href="../discrete-bin/coq-predicates/CSEnotes_predicates.html">Predicates and Quantifiers (Buffalo CSE191, p.30-49)</a></li>
+<li><a href="../discrete-bin/coq-inductive/CSEnotes_inductive.html">Inductively Defined Types (Buffalo CSE191, p.84-106)</a></li>
+<li><a href="../discrete-bin/coq-numbertheory/CSEnotes_numbertheory.html">Integer Arithmetic (Buffalo CSE191, p.110-137)</a></li>
+<li><a href="https://www.cs.princeton.edu/courses/archive/fall07/cos595/stdlib/html/Coq.ZArith.Znumtheory.html">Number theory results
+(for Lab02, Problems 16-20)</a></li>
+<li><a href="https://stackoverflow.com/questions/29189073/coq-induction-on-modulo">Nat 
+modulo</a></li>
+<li><a href="https://fzn.fr/teaching/coq/ecole11/summer/lectures/lec9.pdf">Recursive 
+functions and proofs about them</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px">Competition Problems with Coq</p>
+
+<ul style="font-size:80%">
+<!--
+<li>
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_09_1.html">EE.PIIRK.2020.09.1</a>;&nbsp; 
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_10_3.html">EE.PIIRK.2020.10.3</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_11_3.html">EE.PIIRK.2020.11.3</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_12_3.html">EE.PIIRK.2020.12.3</a>
+</li>
+
+<li>
+<a href="../discrete-bin/coq-competitions/lt_raj_2020_9_5.html">LT.RAJ.2020.9.5</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/lt_raj_2020_11_3.html">LT.RAJ.2020.11.3</a>
+</li>
+-->
+<li>
+<a href="../discrete-bin/coq-competitions/lv_no_2020_9_2.html">LV.NO.2020.9.2</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/lv_no_2020_11_1.html">LV.NO.2020.11.1</a>;&nbsp;
+<!-- <a href="../discrete-bin/coq-competitions/lv_no_2020_12_1.html">LV.NO.2020.12.1</a> -->
+</li>
+</ul>
+
+
+</body>
+</html>
+

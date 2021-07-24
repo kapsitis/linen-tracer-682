@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{115}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\clearpage
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Varbūtības \newline ATV} \hfill {\bf\LARGE Uzdevumi nedēļai \#15} \hfill \parbox{3.5cm}{\flushright\bf 2021-04-16} %\\[2pt]
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+
+%1996.6 
+\vspace{10pt}
+\begin{problem}
+Sacensībās piedalās $n$ komandas ($n \geq 3$). Katras divas komandas spēlē tieši vienu spēli savā starpā; 
+komanda ikvienā spēlē uzvar ar varbūtību $\frac{1}{2}$ (izredzes uzvarēt nav atkarīgas no tā, kas
+ar ko spēlē un neviena spēle nebeidzas ar neizšķirtu).\\
+Atrast varbūtību, ka šajās sacensībās neparādās neviena komanda, kura uzvarējusi visas citas, ne arī 
+tāda komanda, kura visām citām zaudējusi.
+\end{problem}
+
+%1998.9 
+\vspace{10pt}
+\begin{problem}
+Divi draugi katru dienu iet uz ēdnīcu. Katrs no viņiem ienāk ēdnīcā nejauši izvēlētā
+laika momentā \textendash{} kaut kad starp 12:00 un 13:00. Viņu atnākšanas laiki netiek 
+saskaņoti; tie ir savstarpēji neatkarīgi viens no otra. Katrs no viņiem ēdnīcā pavada tieši $t$
+minūtes un pēc tam dodas prom.
+
+Atrast $t$ vērtību pie kuras viņi ēdnīcā sastopas tieši ar varbūtību $p=0.4$: 
+cik ilgi viņiem jāuzturas ēdnīcā, lai varbūtība, ka viens no viņiem ienāks ēdnīcā tanī momentā, 
+kad tur ir arī otrs, būtu tieši $0.4$.\\
+{\em Ieteikums.} Šajā uzdevumā ir jāizmanto vienmērīgais varbūtību sadalījums $60$ minūšu 
+intervālā; ienākšanas laiks ar vienādu varbūtību $1/3600$ ir ikvienā no $3600$ šīs stundas sekundēm
+(ar varbūtību $1/3600000$ ikvienā no milisekundēm utml.) 
+Abu draugu ierašanās laiku pāri var attēlot kā punktu plaknē.
+(
+\end{problem}
+
+%2000.1.5
+\vspace{10pt}
+\begin{problem}
+Divas kastes satur baltas un melnas lodītes; un abās kastēs esošo lodīšu skaits ir $25$. 
+No katras kastes nejauši izvēlas vienu lodīti. Varbūtība, ka abas lodītes ir melnas
+ir $27/50$. Atrast varbūtību, ka abas izvēlētās lodītes ir baltas. 
+\end{problem}
+
+
+%2001.1.6
+\vspace{10pt}
+\begin{problem}
+Metamo kauliņu (uz kura ar vienādām varbūtībām var uzmest skaitļus no $1$ līdz $6$) 
+meta četras reizes, iegūstot skaitļus $x_1, x_2, x_3, x_4$. 
+Atrast varbūtību tam, ka $x_1 \leq x_2 \leq x_3 \leq x_4$ (uzmesto skaitļu virkne
+ir nedilstoša). 
+\end{problem}
+
+
+
+
+%2001.2.9
+\vspace{10pt}
+\begin{problem}
+Katru no $3 \times 3$ kvadrāta rūtiņām neatkarīgi no citām 
+nokrāso zaļu vai sarkanu (katru krāsu izvēlas nejauši 
+ar varbūtību $1/2$). Atrast varbūtību, ka šajā $3 \times 3$ kvadrātā neeksistē 
+kvadrāts ar $2 \times 2$ rūtiņām, kurā visas rūtiņas būtu sarkanas.
+\end{problem}
+
+\end{document}
+

@@ -1,0 +1,299 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+
+
+\usepackage{amssymb}
+
+
+
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{2}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija\linebreak NMS juniori} \hfill {\bf\LARGE Mājasdarbs \#2} \hfill \parbox{3.5cm}{\flushright\bf 2020./2021.m.g.} \\[2pt]
+\rm\small 2020.gada 15.novembris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+\vspace{10pt}
+{\bf Iesniegšanas termiņš:} 2020.g.\ 5.decembris\\
+{\bf Kam iesūtīt:} {\tt kalvis.apsitis}, domēns {\tt gmail.com}
+
+%Yu Hong-Bing, p.49
+\vspace{10pt}
+\begin{problem}
+Regulāra $n$-stūra virsotnes savienotas ar slēgtu lauztu līniju, kurai ir $n$ posmi.
+\begin{enumerate}[(A)]
+\item Pierādīt, ka jebkuram pāra skaitlim $n \geq 4$, lauztajai līnijai ir vismaz divi 
+paralēli posmi.
+\item Pierādīt, ka jebkuram nepāra skaitlim $n > 3$ nav iespējams, ka lauztajai līnijai 
+ir tieši divi paralēli posmi (t.i.\ divi posmi ir paralēli, bet nekādi citi nav šiem diviem paralēli, 
+vai arī paralēli savā starpā).
+\end{enumerate}
+\end{problem}
+
+%Yu Hong-Bing, p.52
+\vspace{10pt}
+\begin{problem} 
+Dots pirmskaitlis $p$ un naturāli skaitļi $a \geq 2$, $m \geq 1$.\\
+Zināms, ka $a^m \equiv 1\;(\text{mod}\;p)$ un $a^{p-1} \equiv 1\;(\text{mod}\;p^2)$.
+\begin{enumerate}[(A)]
+\item
+Pierādīt, ka $a^m \equiv 1\;(\text{mod}\;p^2)$.
+\item 
+Atrast kādu pirmskaitli $p>10$ un $a,m$, kam minētie apgalvojumi izpildās.
+\end{enumerate}
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+Vai var atrast piecus tādus pirmskaitļus $p$, $q$, $r$, $s$, $t$, ka 
+$p^3 + q^3 + r^3 + s^3 = t^3$? 
+\end{problem}
+
+%Andreescu, p.21
+\vspace{10pt}
+\begin{problem}
+Atrast visus pirmskaitļus $p$ un $q$, kuriem izpildās vienādība
+$$p + q = (p - q)^3.$$
+\end{problem}
+
+
+%Andreescu, p.21
+\vspace{20pt}
+\begin{problem}
+Dots nepāra vesels skaitlis $a$. Pierādīt, ka ${\displaystyle a^{2^n} + 2^{2^n}}$
+un ${\displaystyle a^{2^m} + 2^{2^m}}$ ir savstarpēji pirmskaitļi visiem naturāliem 
+$n$ un $m$, kam $n \neq m$. 
+\end{problem}
+
+
+\vspace{5pt}
+{\em Piezīme.} Pieraksts $a^{b^c}$ vienmēr nozīmē $a^{(b^c)}$, t.i.\ darbību locekļus saliktās pakāpēs
+grupē no labās puses uz kreiso, nevis no kreisās uz labo.
+(Savukārt $(a^b)^c$ ir cita izteiksme, tā ir $a^{b \cdot c}$.)
+
+\newpage
+
+
+
+
+{\bf Uzdevums 2.3:} Atbilde: Vienādojumam nav atrisinājumu veselos skaitļos.
+
+Pamatosim, ka viens no pirmskaitļiem, piemēram, $p$ ir $2$.
+No pretējā: Ja visi $5$ pirmskaitļi būtu nepāru, tad mēs iegūtu, ka $4$
+nepāru skaitļu summa ir nepāru skaitlis. Pretruna.
+
+Aplūkosim atlikumus, kādus veido veselu skaitļu kubi, dalot ar $7$.
+Pārlasot visas $7$ kongruenču klases (t.i. skaitļus $a$, kas dod visus
+iespējamos atlikumus $0,1,2,3,4,5,6$, tos dalot ar $7$), iegūstam, ka
+\[
+\left\{
+\begin{array}{ll}
+a^3 \equiv 1\;(\operatorname{mod}\,7), & \mbox{ja $a \equiv 1$ vai $a \equiv 2$ vai $a \equiv 4\;(\operatorname{mod}\,7)$}\\
+a^3 \equiv 6\;(\operatorname{mod}\,7), & \mbox{ja $a \equiv 3$ vai $a \equiv 5$ vai $a \equiv 6\;(\operatorname{mod}\,7)$}\\
+a^3 \equiv 0\;(\operatorname{mod}\,7), & \mbox{ja $a \equiv 0\;(\operatorname{mod}\,7)$}\\
+\end{array}
+\right.
+\]
+
+Tā kā viens no kreisās puses saskaitāmajiem ir $2^3$ (atlikums $1$, dalot ar $7$), tad
+ir tikai nedaudzi veidi, kā tam pieskaitot vēl $3$ kongruenču klases,
+izvēloties no $0$, $1$, $6$ pēc $(\operatorname{mod}\,7)$
+varam iegūt summu $0$, $1$ vai $6$, kas varētu atbilst kāda vesela skaitļa kubam:
+\[
+\left\{
+\begin{array}{rcl}
+1 + (0 + 0 + 0) & \equiv & 1\;(\operatorname{mod}\,7)\\
+1 + (0 + 0 + 6) & \equiv & 0\;(\operatorname{mod}\,7)\\
+1 + (0 + 1 + 6) & \equiv & 1\;(\operatorname{mod}\,7)\\
+1 + (0 + 6 + 6) & \equiv & 6\;(\operatorname{mod}\,7)\\
+1 + (1 + 6 + 6) & \equiv & 0\;(\operatorname{mod}\,7)\\
+\end{array}
+\right.
+\]
+
+
+Faktiski, $1 + (1 + 6 + 6) \equiv 0$ nav iespējams panākt, jo tad sanāktu, ka saskaitot četru
+pirmskaitļu kubus, var iegūt $7^3$. Bet, pat izvēloties pašus lielākos pirmskaitļus, kuru
+kubi dotu attiecīgi atlikumus $1$, $6$ un $6$, mēs dabūtu
+$2^3 + (3^3 + 5^3 + 5^3) = 285 < 343 = 7^3$. Tādēļ ekvivalences kreisajā pusē noteikti
+viens no četriem saskaitāmajiem ir kongruenču klase $0$, kuru dod vienīgi pirmskaitlis, kas vienāds ar $7$ (jebkurš
+cits skaitlis, kurš dalās ar $7$ nav pirmskaitlis). Apzīmējumus izvēlamies tā, lai $q = 7$.
+
+Esam ieguvuši vienādojumu $2^3 + 7^3 + r^3 + s^3 = t^3$. Tālāk aplūkojam kongruenču
+klases pēc $(\operatorname{mod}\,13)$. Kongruenču klases no $0$ līdz $12$,
+ja tās kāpina kubā, dod šādus $13$ rezultātus:
+\[ \{ 0, 1, 8, 1, 12, 8, 8, 5, 5, 1, 12, 5, 12 \}. \]
+Ņemot vērā to, ka divi no pirmskaitļiem kreisajā pusē ir $2$ un $7$, un
+$2^3 \equiv 8\;(\operatorname{mod}\,13)$, bet $7^3 \equiv 5\;(\operatorname{mod}\,13)$,
+tad šo abu kongruenču klašu summa ir $0$. Piemeklēt $r^3$, $s^3$ un $t^3$ starp
+kongruenču klasēm $\{ 0, 1, 5, 8, 12 \}$ tā, lai $2^3 + 7^3 + r^3 + s^3$ un $t^3$
+piederētu tai pašai klasei $(\operatorname{mod}\,13)$ var tikai divos veidos, ja neņem
+vērā abu iekavās esošo saskaitāmo secību:
+$8+5 + (1 + 12) \equiv 0$ vai arī $8 + 5 + (5 + 8) \equiv 0$. Jebkurā gadījumā sanāk, ka $t^3$ un arī $t$
+ir kongruents $0$ jeb dalās ar $13$. Tādēļ $t = 13$, jo tas ir
+vienīgais pirmskaitlis, kurš dalās ar $13$.
+
+Iegūstam, ka jārisina vienādojums $2^3 + 7^3 + r^3 + s^3 = 13^3$. Turklāt, kongruences pēc
+$(\operatorname{mod}\,7)$ parāda, ka vienīgā iespēja ir
+$1 + 0 + 6 + 6 \equiv 6\;(\operatorname{mod}\,7)$, jo $13^3$ labajā pusē ir kongruents
+skaitlim $6$. Bet šajā situācijā $r^3$ un $s^3$ atrast vairs nav iespējams,
+jo vienīgais pirmskaitlis, kurš nepārsniedz $13$ un dod atlikumu $6$, dalot ar $7$ ir skaitlis $13$.
+Bet, acīmredzot, $2^3 + 7^3 + 13^3 + 13^3 \neq 13^3$. Iegūta pretruna. Tādēļ pirmskaitļi
+$p,q,r,s,t$, kas apmierinātu uzdevuma vienādību, neeksistē. $\blacksquare$
+
+
+
+
+\vspace{20pt}
+{\bf Uzdevums 2.4:} 
+$$p + q = (p - q)^3.$$
+
+0 0  0  0     xx
+0 1  1  2
+0 2  2  1
+1 0  1  1     xx
+1 1  2  0
+1 2  0  2
+2 0  2  2     xx
+2 1  0  1
+2 2  1  0 
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NMS gatavošanās materiāli
+
+\begin{itemize}
+\item \url{https://bit.ly/2Ur4gLs}: {\em Kongruences},  {\em Pretrunas modulis}. 
+\item \url{https://bit.ly/2H3LSFF}: {\em Vienādojumi veselos skaitļos}.
+\item \url{https://bit.ly/3pyitoa}: {\em Skaitļu dalāmība un kongruences}
+\end{itemize}
+
+
+\vspace{10pt}
+{\bf Definīcija.} Dots naturāls skaitlis $m > 1$. Veselus skaitļus $a,b$ sauc par 
+{\em kongruentiem pēc $m$ moduļa}, ja tie dod vienādus atlikumus, dalot ar $m$ 
+(citiem vārdiem, starpība $a-b$ dalās ar $m$). Pieraksts: $\textcolor{blue}{a \equiv b\;(\text{mod}\;m)}.$
+
+\vspace{5pt}
+{\em Piezīme.} Apzīmējumu ``mod'' izmanto arī veselo skaitļu aritmētikas darbībai: atlikuma iegūšanai. 
+Piemēram, $19\;\text{mod}\;7 = 5$ un $(-19)\;\text{mod}\;7 = 2$.\\
+Atlikums vienmēr pieder intervālam $\{0,\ldots,m-1\}$.\\
+$(a\;\text{mod}\;m) = (b\;\text{mod}\;m)$ ir patiess {\bf tad un tikai tad}, ja $a \equiv b\;(\text{mod}\;m)$.
+
+Ar kongruencēm pēc noteikta moduļa $m$ var veikt algebrā pazīstamas darbības (tās var saskaitīt, 
+atņemt, reizināt, pārnest locekļus uz otru pusi ar pretēju zīmi, utml.) Reizēm drīkst arī abas puses saīsināt
+ar to pašu nenulles reizinātāju $k$:
+
+\vspace{10pt}
+{\bf Teorēma par saīsināšanu kongruencēs (1).} Ja $p$ ir pirmskaitlis, $ka \equiv kb\;(\text{mod}\;p)$ un $k \not\equiv 0\;(\text{mod}\;p)$, 
+tad $a \equiv b\;(\text{mod}\;p)$.
+
+\vspace{5pt}
+{\em Piezīme.} Ja $m$ nav pirmskaitlis, tad šādi saīsināt nevar. Piemēram, ja $m=10$, tad\\ 
+$2 \cdot 1 \equiv 2 \cdot 6\;(\text{mod}\;10)$, bet $1 \not\equiv 6\;(\text{mod}\;10)$.
+
+\vspace{10pt}
+{\bf Teorēma par saīsināšanu kongruencēs (2).} Ja $m$ ir jebkurš skaitlis, bet $k$ ir savstarpējs pirmskaitlis ar $m$, tad 
+saīsināt drīkst: No $ka \equiv kb\;(\text{mod}\;p)$ seko $a \equiv b\;(\text{mod}\;p)$.
+
+\vspace{10pt}
+{\bf Definīcija.} Inversais jeb apgrieztais elements.
+
+
+
+
+
+
+\vspace{10pt}
+{\bf Mazā Fermā teorēma.} Ja $p$ ir pirmskaitlis un $a$ nedalās ar $p$, tad $a^{p-1} \equiv 1\;(\text{mod}\;p)$. 
+
+\vspace{10pt}
+{\bf Definīcija.} Katram naturālam skaitlim $n$ definējam {\em Eilera funkciju} $\varphi(n)$: Visu to 
+veselo skaitļu skaits $k \in [1;n]$, kas ir savstarpēji pirmskaitļi ar $n$.\\
+Sk. \url{https://bit.ly/38LCKRo}.
+
+\vspace{10pt}
+{\bf Eilera teorēma.} Ja $m>1$ ir jebkurš vesels skaitlis un $a$ ar $m$ ir savstarpēji pirmskaitļi, tad 
+$a^{\varphi(n)} \equiv 1\;(\text{mod}\;m)$. 
+
+\vspace{5pt}
+{\em Piezīme.} Var uzskatīt, ka Mazā Fermā teorēma ir atsevišķs gadījums Eilera teorēmai, jo katram pirmskaitlim $p$
+ir spēkā $\varphi(p) = p-1$.  
+
+\vspace{10pt}
+{\bf Definīcija.} Par $n$-to Fermā skaitli sauc $F_{n} = 2^{2^n} + 1$, kur $n\geq 0$ ir vesels nenegatīvs.\\
+Pirmie Fermā skaitļi ir 
+$$F_0=3,\;\; F_1=5,\;\; F_2=17,\;\; F_3=257,\;\; F_4=65537,\;\; F_5=4294967297.$$ 
+(Pirmie pieci šīs virknes locekļi $F_0,\ldots,F_4$ ir pirmskaitļi. 
+Izpētīti arī daudzi citi, bet to vidū citi pirmskaitļi pagaidām nav atrasti. 
+Piemēram, Fermā skaitlis $F_5$ dalās reizinātājos: $4294967297 = 641 \cdot 6700417$.)
+
+
+\vspace{10pt}
+{\bf Apgalvojums.} Katri divi Fermā skaitļi $F_m$ un $F_n$ ir savstarpēji pirmskaitļi, ja $m \neq n$.\\
+Sk. pamatojumu iepriekšējās lekcijas bildēs: \url{https://bit.ly/32MHClt}.
+
+
+
+
+
+
+
+\end{document}

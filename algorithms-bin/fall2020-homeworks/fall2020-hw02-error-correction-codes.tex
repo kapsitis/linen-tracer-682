@@ -1,0 +1,296 @@
+\documentclass[a4paper]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{caption}
+\captionsetup[table]{name=Tabula}
+
+
+%\documentclass[jou]{apa6}
+%\usepackage[american]{babel}
+
+%\usepackage{csquotes}
+%\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+%\DeclareLanguageMapping{american}{american-apa}
+%\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{xcolor}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1cm}
+
+
+\begin{document}
+
+\twocolumn
+
+\begin{center}
+{\Large 2. Mājasdarbs}\\
+{\Large Attēlu saspiešana un Kļūdu labošanas kodi}
+\end{center}
+
+%\begin{changemargin}{10pt}{10pt}
+{\footnotesize
+Vairāki uzdevumi šajā mājasdarbā iespaidojušies no MIT Open Courseware:
+\url{https://bit.ly/3dabHyG} and \url{https://bit.ly/36xvx4e}.\\
+}
+%\end{changemargin}
+
+
+{\bf Termiņš:} 2020.gada 9.novembris; līdz vakaram\\ (23:59:59 EET).\\
+{\bf Iesniegšanas veids:} E-studiju vide.
+
+
+\vspace{10pt}
+{\bf 1.uzdevums (Kodēšana ar tabulu).}
+Alise izveidoja $[5,2,1]$-kodu $2$-bitu datiem ($k=2$), 
+ko pārraida ar $5$-bitu kodējumiem
+($n=5$), kas atļauj $1$ kļūdas izlabošanu, 
+jo He\-min\-ga attālums starp jebkuriem diviem kodējumiem 
+ir vismaz $3$.
+Pirmie divi biti katrā kodējumā pārraida divus {\em derīgo datu} (payload)
+bitus; vēl trīs biti pievienoti kļūdu aizsardzībai.
+Diemžēl, Alises suns sagrauza viņas piezīmes un iznīcināja
+daļu no kodējumu tabulas (parādīts ar jautājuma zī\-mēm).
+Jūsu uzdevums ir atjaunot kodu, kas apmierina augš\-mi\-nē\-tās prasības.
+
+{\footnotesize
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ccccccc}
+Ievade & & \multicolumn{5}{c}{Kodējums} \\
+$\mathtt{00}$ & $\rightarrow$ & 0 & 0 & ? & ? & ? \\
+$\mathtt{01}$ & $\rightarrow$ & 0 & 1 & ? & ? & ? \\
+$\mathtt{10}$ & $\rightarrow$ & 1 & 0 & ? & ? & ? \\
+$\mathtt{11}$ & $\rightarrow$ & 1 & 1 & 0 & 0 & ? \\
+\end{tabular}
+\caption{\label{tab:codes523} Alises kodu tabula.}
+\end{center}
+\end{table}
+}
+
+\begin{enumerate}[(A)]
+\item Atrast kaut vienu veidu, kā atjaunot kodu tabulu,
+kas parādītu vienu veidu, kā nokodēt katru no $4$ divu bitu virknītēm, 
+kas var būt ievadē. (Vai arī pamatojiet, ka no šīs tabulas 
+$[5,2,1]$-kodu nevar iegūt.)
+\item No $32$ iespējamām $5$-bitu virknītēm, cik dau\-dzām 
+ir Heminga attālums tieši $1$
+līdz kādam no iekodējumiem; t.i. tās var pārlabot uz tuvāko atļauto vērtību,
+pieņemot, ka tās radīja viena kļūda?
+\item Cik daudzas no $5$-bitu virknītēm 
+varēja ras\-ties tikai tad, ja ir vairāk nekā $1$ kļūda?
+\item Jūsu priekšnieks uzskata, ka elektrības tau\-pī\-ša\-nas apstākļos
+sūtīt $1$-bitu ir dārgāk nekā $0$-bitu.
+Vai iespējams samazināt $1$-bitu skai\-tu, kas ir Jūsu iekodējumu tabulā?
+(Tikai jau\-tā\-jum\-zī\-mes drīkst mainīt 
+savas bitu vēr\-tī\-bas; visiem pārējiem bitiem,
+kas nav sagrauzti, jāpaliek tādiem, kādi tie tabulā ir.)
+\end{enumerate}
+
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-895-essential-coding-theory-fall-2004/assignments/ps1.pdf
+% http://www-math.mit.edu/~djk/18.310/18.310F04/matrix_hamming_codes.html
+\vspace{20pt}
+{\bf 2.uzdevums (Lineārie algoritmi) }
+Apzīmējam matricu $H$:
+{\footnotesize
+$$H = \left( \begin{array}{cccc}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 1 \\
+\end{array} \right).$$
+}
+
+\begin{enumerate}[(A)]
+\item
+Atrast matricu $G$ ar lielākajiem izmēriem (un ar lineāri neatkarīgām kolonnām), kurai 
+$G \cdot H$ ir matrica, kura satur tikai nulles, ja visas matricu darbības veic pēc $2$ moduļa. 
+\item Ko var apgalvot par $G$ ģenerēto kodu: Kādi ir mazākie iespējamie Heminga attālumi 
+starp $\mathbf{x}_1^T \cdot G$ un $\mathbf{x}_2^T \cdot G$, kur
+$\mathbf{x}_1^T, \mathbf{x}_2^T \in \{ 0,1 \}^4$ ir jebkuras 4-bitu virknes
+kas pierakstītas kā rindas vektori.
+\end{enumerate}
+
+{\em Piezīme.} Matricas $G$ kolonnas saucam par {\em lineāri neatkarīgām} 
+ja katrai netukšai $G$ kolonnu apakš\-ko\-pai, šo kolonnu summa nevar būt vektors, 
+kas satur tikai nulles (saskaitot pēc $2$ moduļa).
+Sk. teoriju \url{https://bit.ly/37Fv9mJ}.
+
+
+\vspace{20pt}
+{\bf 3.uzdevums (Diskrētais kosinusu pārveidojums).}
+
+Dota funkcija $f(x)$, kas definēta argumentiem $x=0,1,\ldots,N-1$.
+Par 1-dimensionālu DCT (diskrēto kosinusu pārveidojumu jeb {\em discrete cosine transform}) sauksim
+funkciju $F(u)$, kas definēta tām pašām argumenta vērtībām $u=0,1,\ldots,N-1$
+ar šādām vienādībām:
+$$F(u) = \sqrt{\frac{2}{N}} \cdot \lambda_u \cdot \sum\limits_{x=0}^{N-1} \cos \left( \frac{\pi u}{N}\left(  x+\frac{1}{2} \right) \right) \cdot f(x),$$
+kur $u=0,1,\ldots,N-1$ un $\lambda_u = \frac{1}{\sqrt{2}}$ (pie $u=0$) un $\lambda_u = 1$ (pie $u>0$).\\
+Sk.\ \url{https://bit.ly/3mj8h0A}.
+
+Par inverso diskrēto kosinusu pārveidojumu sauksim atgriešanos no funkcijas $F(u)$ atpakaļ pie funk\-ci\-jas $f(x)$,
+ko definē ar šādām vienādībām:
+$$f(x) = \sqrt{\frac{2}{N}} \sum\limits_{u=0}^{N-1} \lambda_u \cdot \cos \left( \frac{\pi u}{N}\left(  x+\frac{1}{2} \right) \right) \cdot F(u),$$
+kur $x=0,1,\ldots,N-1$ un $\lambda_u$ definēti tāpat kā agrāk.
+\begin{enumerate}[(A)]
+\item
+Atrast diskrēto kosinusu pārveidojumu $F(u)$ punktā $u=3$
+funkcijai\\ $f(x) = (N-1)-x$, kur $N=8$.
+Atbildi noapaļot līdz 4 cipariem aiz komata.
+\item
+Aprēķināt inverso diskrēto kosinusu pārveidojumu $f(x)$ visiem
+punktiem\\ $x=0,1,2,3,4,5,6,7$ no funkcijas $F(u)$, kas uzdota ar
+sekojošām $N=8$ vērtībām:
+{\footnotesize
+$$(F(0),F(1),F(2),F(3),F(4),F(5),F(6),F(7)) =$$
+$$ = (57.9828,-6.4423,0,-0.6735,0,-0.2009,0,-0.0507).$$
+}
+Atbildi noapaļot līdz 4 cipariem aiz komata.
+\end{enumerate}
+
+
+
+
+
+
+\vspace{20pt}
+{\bf 4.uzdevums (Rīda-Solomona kods).}
+
+\begin{enumerate}[(A)]
+\item Izmantojot galīgu lauku ar $7$ elementiem 
+$\text{GF}(7)$ kodējam ziņojumus no
+$7$ simbolu alfabēta $\{ 0,1,2,\ldots,6 \}$ ar 3.pakāpes polinomiem $f(n)$,
+pārraidot $7$ polinoma vērtības $(f(0),\ldots,f(6))$ visos
+galīgā lauka $\text{GF}(7)$ punktos.
+Dažas no šīm septiņām vērtībām var pa ceļam sabojāties 
+(tikt aizstātas ar citu $\text{GF}(7)$ elementu).
+Kāds ir maksimālais kļūdu skaits, pie kura iespējams
+viennozīmīgi atjaunot sākotnējo ziņojumu?
+Pamatot, kā\-pēc ir iespējams koriģēt šādu kļūdu skaitu un kāpēc nav
+iespējams koriģēt lielāku kļūdu skaitu.
+\item Galīga lauka $\text{GF}(2^3)$ elementus
+$$\left\{ 0,1,t,t+1,t^2,t^2+1,t^2+t,t^2+t+1 \right\}$$
+apzīmējam attiecīgi ar bitu virknēm 
+$$\{\mathtt{000},\mathtt{001},\mathtt{010},\mathtt{011},
+\mathtt{100},\mathtt{101},\mathtt{110},\mathtt{111}\}.$$
+$3$-pakāpes polinoms 
+$$p(x) = \mathtt{101}\cdot{}x^3 + \mathtt{100}\cdot{}x^2 + \mathtt{001}\cdot{}x + \mathtt{010}$$
+domāts, lai pārraidītu ziņojumu virknīti\\ $\mathtt{101.100.001.010}$.
+Atrast polinoma vērtību $p(\mathtt{011})$, kur $\mathtt{011}\in\text{GF}(2^3)$.\\
+\end{enumerate}
+
+{\em Piezīme:} Faktiski Rīda-Solomona kļūdu la\-bo\-ša\-nas kodā vajadzētu sūtīt
+visas $8$ polinoma vērtības, bet šajā vingrinājumā pietiek izrēķināt $p(x)$ tikai pie $x=\mathtt{011}$.
+
+
+
+\vspace{20pt}
+{\bf 5.uzdevums (I-Iespēja)}
+
+Jūs veidojat produktu, kas izmanto {\em Taisnstūrveida kodu} 
+(rectangular code) (sk. 48.lpp. no \url{https://bit.ly/2M5ptGR})
+lai nodrošinātu kritisko bitu pareizību, kurus sūta pa trokšņainu kanālu.
+Jūsu risinājumā katru bloku ar $9$ ``derīgo datu'' (payload) bitiem
+aizsargā ar Taisnstūrveida kodu.
+Jūsu metode katrus
+deviņus derīgo datu bitus ($\mathtt{D0},\ldots,\mathtt{D8}$)
+aizsargā ar septiņiem kļūdu labošanas bitiem 
+($\mathtt{PR0}$, $\mathtt{PR1}$, $\mathtt{PR2}$, $\mathtt{PC0}$, 
+$\mathtt{PC1}$, $\mathtt{PC2}$, $\mathtt{P0}$).
+Šie biti derīgo datu bitu summas (pēc $2$ moduļa) 
+pa rindiņām vai kolonnām (bet $P0$ ir visu 
+datu bitu summa). 
+
+Kļūdu labošanas metodei jāizpilda $2$ prasības:
+\begin{itemize}
+\item Atrast un izlabot kļūdu jebkurā vienā bitā no deviņiem 
+($\mathtt{D0},\ldots,\mathtt{D8}$).
+\item Atpazīt/detektēt kļūdas jebkuros divos bitos no deviņiem 
+(iespējams, nepasakot, kuri ir kļūdainie biti).
+\end{itemize}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{cccc}
+{\tt D0} & {\tt D1} & {\tt D2} & \textcolor{red}{\tt PR0} \\
+{\tt D3} & {\tt D4} & {\tt D5} & {\tt PR1} \\
+{\tt D6} & {\tt D7} & {\tt D8} & {\tt PR2} \\
+\textcolor{red}{\tt PC0} & {\tt PC1} & {\tt PC2} & {\tt P0} \\
+\end{tabular}
+\caption{\label{tab:rectangular} Taisnstūrveida kods.}
+\end{center}
+\end{table}
+
+Bens \textendash{} viens no Jūsu kolēģiem \textendash{} pārbaudījis Jūsu
+metodi, ierosina to mainīt tā, ka Jūs nepārraidāt paritātes bitus
+$\mathtt{PR0}$ un $\mathtt{PC0}$, tikai tos četrus bitus, kas
+saistīti ar citām rindām un kolonnām 
+($\mathtt{PR1},\mathtt{PR2}$ un $\mathtt{PC1},\mathtt{PC2}$), 
+kā arī kopējo paritātes bitu ($P0$).
+Viņš apgalvo, ka arī šāds kods izpildīs abas prasības 
+un efektīvāk izmantos sakaru kanālu.
+\begin{enumerate}[(A)]
+\item Vai visas viena bita kļūdas var atrast un izlabot (ar Bena piedāvāto izmaiņu).\\ 
+Pamatojiet, ka vienmēr var vai atrodiet pretpiemēru. 
+\item Vai visas divu bitu kļūdas var atrast un izlabot (ar Bena piedāvāto izmaiņu).\\
+Pamatojiet, ka vienmēr var vai atrodiet pretpiemēru. 
+\item Vai visas divu bitu kļūdas var atpazīt kā divu bitu kļūdas \textendash{} 
+nenosakot, kuros bitos bija kļūda (ar Bena piedāvāto izmaiņu).\\
+Pamatojiet, ka vienmēr var vai atrodiet pretpiemēru. 
+\end{enumerate}
+
+
+
+
+\end{document}
+

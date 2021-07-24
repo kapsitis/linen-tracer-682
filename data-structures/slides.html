@@ -29,6 +29,11 @@ table.schedule tbody.paradigms td:first-child {
     background-color: #E7298A;
     color: white;
 }
+
+table.schedule tbody.exam td:first-child {
+    background-color: #666666;
+    color: white;
+}
 </style>
 </head>
 
@@ -71,7 +76,7 @@ documentation.</small></p>
 <td><small>{{tale.subid}}</small></td>
 {% if tale.show == "yes" %}
 <!-- <td><small><a href="../data-structures-tales/{{tale.subdir}}.pptx">{{tale.title}}</a></small></td>-->
-<td><small><a href="http://85.254.250.28/data-structures/{{tale.subdir}}.pptx">{{tale.title}}</a></small></td>
+<td><small><a href="http://18.193.16.199/data-structures/slides/{{tale.subdir}}.pptx">{{tale.title}}</a></small></td>
 {% else %}
 <td><small style="color:#aaaaaa;">{{tale.title}}</small></td>
 {% endif %}
@@ -84,6 +89,9 @@ documentation.</small></p>
 {% endfor %}
 </tbody>
 </table>
+
+
+<p><a href="http://18.193.16.199/data-structures/slides-pdf/index.html">Slide decks as PDF</a></p>
 
 
 

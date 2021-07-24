@@ -1,0 +1,312 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{101}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+
+Matemātiski apgalvojumi par naturāliem skaitļiem parasti ir {\em vispārīgi} \textendash{}
+tie attiecas uzreiz uz visu naturālo skaitļu kopu $\mathbf{N}$ (vai vismaz kādu bezgalīgu apakškopu: 
+visiem pirmskaitļiem, visiem pāru skaitļiem, utml.) 
+Pat apgalvojumi par galīgu skaitļu kopu (visiem trīsciparu skaitļiem) ir pietiekoši vispārīgi: 
+tos nav praktiski iespējams atrisināt, aplūkojot visus gadījumus, ja neizmanto datoru. 
+Vispārīgu apgalvojumu pierādīšanai jāizmanto metodes, kas piemērotas bezgalīgām kopām.
+
+Matemātiskā indukcija balstās uz naturālo skaitļu {\em indukcijas aksiomu}, tā ir viena no t.s.\
+Peano aksiomām, tāpēc pati indukcija ir princips, kas piemīt naturāliem skaitļiem (atbilstoši pašam 
+šo skaitļu jēdzienam), šis princips nav pierādāms.
+Pēc būtības indukcijas aksioma apgalvo, ka katru naturālo skaitli var iegūt, 
+vienu vai vairākas reizes pieskaitot skaitlim 0 vieninieku. 
+Citiem vārdiem sakot, naturālie skaitļi ir skaitļi, kas rodas skaitīšanas rezultātā: $1,2,3,\ldots$. 
+Vēl citiem vārdiem \textendash{} indukcijas aksioma apgalvo, ka nav 
+``nesasniedzamu'' skaitļu, līdz katram var nonākt, pieskaitot vieninieku. 
+
+Matemātisko indukciju kā uzdevumu risināšanas metodi pieraksta šādi:
+Pieņemsim, ka mums ir jāpierāda kāds vispārīgs apgalvojums $P(n)$, kurš kaut ko apgalvo par naturālu skaitli $n$.\\
+{\bf 1.solis:} Vispirms pierāda apgalvojumu $P(1)$  ({\em indukcijas bāze});\\
+{\bf 1.solis:} Pieņem, ka izpildās $P(k)$ ({\em induktīvais pieņēmums}), un tad pierāda, 
+ka pie šī pieņēmuma izpildās arī apgalvojums $P(k+1)$ ({\em induktīvā pāreja}).
+
+Ja šie abi punkti ir pierādīti, tad no matemātiskās indukcijas principa seko, 
+ka apgalvojums $P(n)$ izpildās visiem naturāliem skaitļiem $n$.
+Šo pierādījuma shēmu apzīmēsim šādi:\\ 
+$1\,\parallel\,k \rightarrow k+1$, atdalot nepieciešamos
+soļus ar vertikālām svītriņām.
+Iespējamas arī citas indukcijas shēmas:
+\begin{itemize}
+\item
+$0\,\parallel\,k \rightarrow k+1$ (iepriekšējās shēmas variants, ja jāsāk pierādīt jau no $P(0)$.\\
+Līdzīgi var sākt arī no jekbkuras citas vietas; piemēram, var būt shēma $7\,\parallel\,k \rightarrow k+1$, 
+bet tad atsevišķi jāpamato daži citi gadījumi $P(1),\ldots,P(6)$. 
+\item
+$1\,\parallel\,2\,\parallel\,\ldots\,\parallel\,a\,\parallel\,k \rightarrow k+a$; 
+jāpārbauda apgalvojums pirmajiem $a$ skaitļiem, un jāpārbauda, ka no apgalvojuma $P(k)$ seko apgalvojums $P(k+a)$.
+\item 
+$1\,\parallel\,\;<k \rightarrow k+1$; jāpārbauda, ka izpildās apgalvojums $P(1)$, un, pieņemot, 
+ka apgalvojums izpildās visiem naturāliem skaitļiem $n$, kas ir mazāki par $k$, 
+jāpierāda, ka tas izpildās arī skaitlim $k$.
+\end{itemize}
+
+Pierādot jebkuru vispārīgu apgalvojumu par naturāliem skaitļiem formāli ir jāizmanto ma\-te\-mā\-tis\-kā indukcija, 
+tāpēc liela daļa uzdevuma krājuma uzdevumi varētu būt ievietoti šajā nodaļā. 
+Taču mēs šajā nodaļā esam apkopojuši tikai tos uzdevumus, 
+kuros matemātiskās indukcijas princips ir būtiskākā atrisinājuma sastāvdaļa (un nav ``noslēpts'', izmantojot
+kādu citu rezultātu, kas arī balstās uz indukciju). 
+Pirmajās trīs apakšnodaļās aplūkojam dažādas indukcijas shēmas. 
+
+Ceturtā apakšnodaļa pievēršas neparastam paņēmienam matemātiskajā indukcijā: 
+ar indukciju vispirms pierāda pastiprinātu apgalvojumu (kas reizēm ir izdevīgi, jo 
+ne tikai pierādāmais apgalvojums ir pastiprināts, bet arī induktīvais pieņēmums ir pastiprināts; 
+izejot no tā, var vairāk pierādīt.)
+Risinot šādus uzdevumus, vispirms formulēsim apgalvojumu, 
+no kura seko uzdevuma apgalvojums, un pēc tam pierādīsim to ar indukciju.
+Šādu metodi sauc par {\em induktīvās hipotēzes pastiprināšanu}, 
+sk. \url{https://bit.ly/3nrKz2u}.
+
+
+
+\clearpage
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija \newline ATV} \hfill {\bf\LARGE Uzdevumu lapa \#2} \hfill \parbox{3.5cm}{\flushright\bf 2021-01-13} %\\[2pt]
+%\rm\small 2020.gada 15.novembris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+
+\vspace{10pt}
+\begin{problem}
+%9.1. 
+Pierādiet, ka visiem naturāliem skaitļiem $n$ skaitlis $3^{3n+3} - 26n - 27$ dalās ar $169$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.2. 
+Atrodiet lielāko kopīgo dalītāju visiem skaitļiem $7^{n+2} + 8^{2n+1}$, 
+ja $n$ ir vesels nenegatīvs skaitlis.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.3. 
+Pierādiet, ka visiem naturāliem skaitļiem $n$ skaitlis 
+${\displaystyle 3\left( 1^5 + 2^5 + \cdots + n^5 \right)}$ dalās ar
+${\displaystyle \left( 1^3 + 2^3 + \cdots + n^3 \right)}$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.4. 
+Pierādiet, ka skaitlis $k^{2^n}-1$ dalās ar $2^{n+2}$, 
+ja $k$ ir nepāra skaitlis, bet $n$ ir naturāls skaitlis.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.5. 
+Pierādiet, ka visiem veseliem nenegatīviem skaitļiem $n$ skaitlis $2^{3^n}+1$ dalās ar $3^{n+1}$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.6. 
+Pierādiet, ka eksistē bezgalīgi daudzi tādi naturāli skaitļi $n$, 
+ka skaitlis $2^n+1$ dalās ar $n$, un atrodiet visus pirmskaitļus $n$, 
+kuriem izpildās šī īpašība.
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.7. 
+Pierādiet, ka katram naturālam skaitlim $a>1$ eksistē bezgalīgi daudz tādu naturālu skaitļu $n$, 
+kuriem skaitlis $a^n+1$ dalās ar $n$.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.8. 
+Pierādiet, ka katram naturālam skaitlim $n \geq 3$ eksistē naturāls skaitlis $k$, 
+kurš ir uzrakstāms kā $n$ dažādu savu dalītāju summa.
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.9. 
+Pierādiet, ka jebkuru naturālu skaitli, kurš nepārsniedz $n!$ 
+var uzrakstīt kā skaitļa $n!$ dalītāju summu, kas satur ne vairāk kā $n$ saskaitāmos.
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.10. 
+Pierādiet, ka katrai augošai aritmētiskai progresijai, kas sastāv no na\-tu\-rā\-liem skaitļiem, 
+eksistē $100$ pēc kārtas sekojoši locekļi, kas visi ir salikti skaitļi.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.11. 
+Dota virkne: $a_1=5,\;a_{n+1}=a_n^2$, ja $n \geq 1$. 
+Pierādiet, ka skaitļu $a_{1981}$ un $a_{1980}$ pēdējie $1980$ cipari ir vienādi.
+\end{problem}
+
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.12.
+Pierādīt, ka eksistē tāds naturāls skaitlis $n$, ka $n^2+1$ dalās ar $5^{1979}$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.13. 
+Apzīmēsim ar $d_n$  skaitļa $n$ lielāko nepāra dalītāju. Aprēķināt summu
+$$d_1 + d_2 + \cdots + d_{2^{100}}.$$
+\end{problem}
+
+
+	 .
+	 
+
+\vspace{10pt}
+\begin{problem}
+%9.14. 
+Pierādiet, ka no skaitļiem $1,2,3,\ldots,3^n$ var izvēlēties $2^n$ skaitļus tā, 
+ka nekādi trīs no tiem neveido aritmētisko progresiju.
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+%9.15. 
+Nogrieznis ar garumu $3^n$ ir sadalīts trīs vienādās daļās. 
+Pirmo un trešo no tām sauksim par apzīmētām daļām. 
+Katrs no apzīmētajiem nogriežņiem no jauna tiek sadalīts trīs 
+vienādās daļās, no kurām pirmo un trešo sauc par apzīmētām, u.t.t., 
+līdz tam brīdim, kamēr iegūsim nogriežņus ar garumu $1$. 
+Apzīmēto nogriežņu galapunktus sauksim par apzīmētiem punktiem. 
+Pierādiet, ka jebkuram naturālam skaitlim $k \leq 3^n$ 
+var atrast divus apzīmētus punktus, attālums starp kuriem ir vienāds ar $k$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.16. 
+Dota naturālu skaitļu virkne $a_1,a_2,a_3,\ldots$, kurai izpildās īpašība
+$$a_{k+1} \leq 1 + a_1 + a_2 + \cdots + a_{k-1}\;\;\mbox{visiem}\;\;k>1.$$
+Pierādiet, ka visus naturālos skaitļus var izteikt kā dažu (varbūt arī viena) atšķirīgu šīs virknes locekļu summu.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.17. 
+Dota naturālu skaitļu virkne $\left(a_n \right)$, 
+kurai visiem naturāliem skaitļiem $n$ un $k$ skaitlis $a_{n+k} - a_n$ dalās ar $a_k$. 
+Apzīmēsim skaitli $a_1a_2\cdots{}a_n$ ar $b_n$. 
+Pierādiet, ka visiem naturāliem skaitļiem $n$ un $k$ skaitlis $b_{n+k}$ dalās ar $b_nb_k$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.18. 
+Pierādīt šādu apgalvojumu: ja $n$ ir naturāls skaitlis, tad $n^3 + (n+1)^3 + (n+2)^3$ dalās ar $9$.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.19. 
+Simtciparu skaitlis vienāds ar savu ciparu summu plus visu iespējamo savu ciparu pāru reizinājumu summu 
+plus visu iespējamo savu ciparu trijnieku reizinājumu summu plus utt. plus visu savu ciparu reizinājumu. 
+Atrast visus šādus skaitļus.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.20. 
+Reālu skaitļu virkni definē šādi: $x_1$ un $x_2$ izvēlas patvaļīgi, un
+$$x_{n+2} = \frac{x_nx_{n+1}}{3x_n - 2x_{n+1}},\;\;n=1,2,3,\ldots .$$
+Atrast visas iespējas, kā var izvēlēties $x_1$ un $x_2$, lai bezgalīgi daudzi virknes $\left( x_n \right)$ 
+locekļi būtu naturāli skaitļi.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.21. 
+Aprēķināt izteiksmes
+\[\cfrac{1}{2-\cfrac{1}{2-\cfrac{1}{\ddots\;\;\;\;\cfrac{ \begin{array}{l} \ddots \\ 1 \\ \end{array}  }{2-\cfrac{1}{2}}}}}.\]
+vērtību, izsakot to kā nesaīsināmu daļu.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem}
+%9.22. 
+Pierādīt, ka katram naturālam $n$\\
+{\bf (a)} $1^3 + 2^3 + \cdots + n^3$ dalās ar $1 + 2 + \cdots +n$,\\
+{\bf (b)} $1^5 + 2^5 + \cdots + n^5$ dalās ar $1 + 2 + \cdots +n$.
+\end{problem}
+
+
+
+
+
+\end{document}

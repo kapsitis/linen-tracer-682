@@ -1,0 +1,3107 @@
+[
+    {
+        "itemNum": 1,
+        "links": [
+            {
+                "title": "Use Statements and Propositions.",
+                "topic": "1"
+            },
+            {
+                "description": "This subsection should introduce all 5 Boolean connectors (<span class=\"math inline\">\\( \\neg \\)</span>, <span class=\"math inline\">\\( \\wedge \\)</span>, <span class=\"math inline\">\\( \\vee \\)</span>, <span class=\"math inline\">\\( \\rightarrow \\)</span>, <span class=\"math inline\">\\( \\leftrightarrow \\)</span>), their truth tables.",
+                "id": "1.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.1-13)",
+                        "title": "Propositional Logic",
+                        "url": "Ch01P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Mention non-proposition sentences, include trickier situations (contradictory self-referential statements)",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define what is a proposition"
+                    },
+                    {
+                        "description": "Define Boolean operations through its natural language equivalent and its truth table.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Boolean operations (<span class=\"math inline\">\\( \\neg, \\wedge, \\vee, \\rightarrow, \\leftrightarrow \\)</span>)"
+                    },
+                    {
+                        "description": "Show how to evaluate expressions starting from subexpressions by plugging in the True/False values.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Create truth tables for expressions"
+                    },
+                    {
+                        "description": "Explain that power operation (<span class=\"math inline\">\\( 2^{3^4} \\)</span>) as well as the logical implication (<span class=\"math inline\">\\( A \\rightarrow B \\rightarrow C \\)</span>) are right-associative - they group from the right to the left.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce the formal concepts of precedence and associativity."
+                    },
+                    {
+                        "description": "Show that Boolean expressions is one specific case of expressions (along with arithmetic, polynomials, etc.) May also illustrate precedence (arithmetic, comparisons, Booleans) in some programming language.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Restore parentheses in a Boolean expression using precedence (e.g. negation has the highest priority, conjunction is done before disjunction). Draw syntax trees showing evaluation order."
+                    }
+                ],
+                "title": "Analyze Propositions and Boolean Expressions",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_1_1)",
+                        "title": "Propositional Logic",
+                        "url": "https://youtu.be/OApHaIMKMJE"
+                    }
+                ]
+            },
+            {
+                "description": "Solve some word problems with propositional logic. We should pay special attention to cases where the connectors can be misunderstood or their everyday meaning differs from the formal one.",
+                "id": "1.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.17-22)",
+                        "title": "Applications of Propositional Logic",
+                        "url": "Ch01P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Given a statement in English and atomic propositions, write its Boolean expression.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Translate English into Propositional logic."
+                    },
+                    {
+                        "description": "Analyze phrases expressing inclusive and exclusive OR; various ways to express implications (“sufficient”, “necessary”, “whenever”, “if”, “only if”, “if and only if”)",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Recognize situations when natural language uses logical connectives in a different sense."
+                    },
+                    {
+                        "description": "Use case analysis and other simple methods to establish truth values of propositions, if some incomplete information about the situation is given.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Solve Logic Puzzles and Word Problems based on propositional logic"
+                    },
+                    {
+                        "description": "Apply short-circuit Boolean evaluation in some programming language such as Python. Lazy and eager evaluation (and distinguishing them by side-effects). Explain how \"if” statements differ from implications in propositional calculus.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use Boolean expressions in programming."
+                    }
+                ],
+                "title": "Create propositional statements",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_1_2)",
+                        "title": "Applications of Propositional Logic",
+                        "url": "https://youtu.be/_RrxqiB_pfE"
+                    }
+                ]
+            },
+            {
+                "description": "Perform equivalent transformations of Boolean expressions (here we use equivalences not as Boolean connectors that may sometimes return “False”, but as a way to write Boolean identities that are universaly true). \nAlso solve satisfiablility of Boolean problems in a more general sense - even when they are not equivalences.",
+                "id": "1.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.26-33)",
+                        "title": "Propositional Equivalences",
+                        "url": "Ch01P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Tasks may include other manipulations on truth tables (building jus the \"interesting\" parts of tables; finding which values must take certain values)",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Check tautologies using truth tables"
+                    },
+                    {
+                        "description": "Simplify Boolean statements using Boolean identities (double negation; De Morgan's laws; Contrapositive for an Implication; distributive laws and so on)",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Rewrite propositions using equivalences"
+                    },
+                    {
+                        "description": "Describe tautologies, satisfiable expressions and contradictions in terms of truth tables. Prove or disprove Boolean tautologies; check satisfiability of Boolean expressions. In all these situations try to pare down the truth tables to find \"interesting\" subcases to check (get used to avoid mechanistical approach to verify all 2^n rows in a truth table as this would be error-prone and slow).",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identify tautologies, satisfiable statements and contradictions"
+                    },
+                    {
+                        "description": "Use syllogisms like Modus Ponens and other inference rules to derive logical formulas.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Create new tautologies from existing ones using inference rules."
+                    },
+                    {
+                        "description": "Use truth table to construct CNF or DNF; make it shorter by combining similar terms.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Convert every Boolean expression to its CNF and DNF"
+                    },
+                    {
+                        "description": "Draw Boolean circuits where you are allowed to reuse the same subexpression output in multiple inputs.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Draw a Boolean circuit, try to use limited number of elements."
+                    }
+                ],
+                "title": "Identify tautologies, contradictions and satisfiable expressions",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_1_3)",
+                        "title": "Propositional Equivalences",
+                        "url": "https://youtu.be/x0ELYvaf21E"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection introduces predicates as expressions depending on variables and \"naive\" concept of quantifiers (universal quantifier is just a long conjunction; existential quantifier is just a long disjunction)",
+                "id": "1.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.40-55)",
+                        "title": "Predicates and Quantifiers",
+                        "url": "Ch1P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Interpret commonly known math concepts (inequalities, relations in geometry) as predicates.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a predicate as a function to booleans."
+                    },
+                    {
+                        "description": "Draw syntax trees, define scopes of variables, recognize free and bound variables.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze syntax and restore parentheses in quantifier expressions."
+                    },
+                    {
+                        "description": "Given value table for some predicate on a finite domain, evaluate quantifier expressions.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Interpret quantifiers over finite domains as long conjunction (<span class=\"math inline\">\\( \\forall \\)</span>) or long disjunction (<span class=\"math inline\">\\( \\exists \\)</span>)"
+                    },
+                    {
+                        "description": "Use precedence rules, restore parentheses, avoid ambiguities with set domains.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Check the syntax in quantifier expressions"
+                    },
+                    {
+                        "description": "Negate predicates applying De Morgan's laws.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply simple manipulations to predicate/quantifier expressions (apply negations, rename variables, apply other tautologies)."
+                    }
+                ],
+                "title": "Use Predicates and Quantifiers",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_1_4)",
+                        "title": "Predicates and Quantifiers",
+                        "url": "https://youtu.be/rZH5RFSXsvI"
+                    }
+                ]
+            }
+        ],
+        "objectives": [],
+        "title": "2021-01-04 to 2021-01-08"
+    },
+    {
+        "itemNum": 2,
+        "links": [
+            {
+                "description": "This section does not cover much new material; it is useful as a reminder - how to use the first order logic to explain everyday situations.",
+                "id": "1.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.60-68)",
+                        "title": "Nested Quantifiers",
+                        "url": "Ch01P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Formalize English sentences and some mathematical statements into propositional logic and simple (1st order; no more than 2 nesting levels) predicate calculus.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Rewrite English sentences and mathematical statements with nested quantifiers."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Interpret quantifier expressions in human language (Show the difference between \"For every person there exists a father\" vs. \"There exists a father for everyone\")"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Negate multiple quantifiers using De Morgan's laws and other equivalence rules.Evaluate Boolean expressions (and also predicate/quantifier expressions over simple or finite sets). May need to introduce simple relations (square tables with True/False) to illustrate how predicates/quantifiers operate."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Rewrite popular mathematical concepts (divisibility, being a prime number, monotonicity, boundedness, continuity, existence of a limit, existence of a derivative) with predicates and quantifiers"
+                    }
+                ],
+                "title": "Use Nested Quantifiers",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_1_5_2)",
+                        "title": "Translating with Nested Quantifiers",
+                        "url": "https://youtu.be/xDaBIVPyvDQ"
+                    }
+                ]
+            },
+            {
+                "description": "This section is meant to introduce some Aristotelian and other traditional logic reasoning (modus ponens, substitution, etc.) and other rules of inference. Only simple cases are shown; we do not show the tricky cases of inference; do not differentiate between constructive and non-constructive logic at this point.",
+                "id": "1.6",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.73-82)",
+                        "title": "Rules of Inference",
+                        "url": "Ch01P6"
+                    },
+                    {
+                        "ref": "(Knepley2020, p.12-20)",
+                        "title": "SUNY Buffalo, CSE191 Notes.",
+                        "url": "https://bit.ly/3rFbcEo"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Recognize hypotheses and goals in a proof."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply modus ponens: <span class=\"math inline\">\\( A \\rightarrow B,\\, A \\;\\vdash\\; B \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply modus tollens: <span class=\"math inline\">\\( A \\rightarrow B,\\, (\\neg B) \\;\\vdash\\; (\\neg A) \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply transitivity: <span class=\"math inline\">\\( A \\rightarrow B,\\, B \\rightarrow C \\;\\vdash\\; A \\rightarrow C \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply disjunctive syllogism: <span class=\"math inline\">\\( A \\vee B,\\, \\neg A \\;\\vdash\\; B \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply \"addition\": <span class=\"math inline\">\\( A \\;\\vdash\\; A \\vee B \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply \"simplification\": <span class=\"math inline\">\\( (A \\wedge B) \\;\\vdash\\; A \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply \"conjunction\": <span class=\"math inline\">\\( A,\\, B \\;\\vdash\\; (A \\wedge B) \\)</span>"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply \"resolution\": <span class=\"math inline\">\\( (A \\vee B),\\, (\\neg A \\vee C) \\;\\vdash\\; (B \\vee C) \\)</span>"
+                    }
+                ],
+                "title": "Use Rules of Inference",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_1_6_1)",
+                        "title": "Rules of Inference for Propositional Logic",
+                        "url": "https://youtu.be/oasIqX74Mhc"
+                    },
+                    {
+                        "ref": "(Brehm2020_1_6_2)",
+                        "title": "Rules of Inference for Quantified Statements",
+                        "url": "https://youtu.be/zMtToQelLN8"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection should introduce the basics of human-readable proofs with simple logical structure (and without overly complicated mathematics). We illustrate IF-THEN and IF-AND-ONLY-IF types of statements with results from elementary geometry, algebra, number theory or real analysis. (It is highly desirable to choose examples that may be familiar to the participants.)",
+                "id": "1.7",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.84-93)",
+                        "title": "Introduction to Proofs",
+                        "url": "Ch01P7"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain direct proofs for IF-THEN statements"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain proofs by contraposition for IF-THEN statements"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain constructive proofs by contradiction (e.g. non-existence). Simple examples that show how proofs by contradiction do not need to rely on the classical logic (such as the Law of Excluded Middle)"
+                    }
+                ],
+                "title": "Use Common Proof Strategies",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_1_7_1)",
+                        "title": "Direct Proof",
+                        "url": "https://youtu.be/b-hKQOhxlNA"
+                    },
+                    {
+                        "ref": "(Brehm2018_1_7_2)",
+                        "title": "Proof by Contraposition",
+                        "url": "https://youtu.be/PNme9Kl3kDo"
+                    },
+                    {
+                        "ref": "(Brehm2018_1_7_3)",
+                        "title": "Proof by Contradiction",
+                        "url": "https://youtu.be/CCAgvPGOlmE"
+                    }
+                ]
+            },
+            {
+                "description": "Introduce proof techniques that reflect simple logical structure of the statement (for example analyzing cases would mean a generalization/universal quantifier over some finite set of cases;",
+                "id": "1.8",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.96-113)",
+                        "title": "Proof Methods and Strategy",
+                        "url": "Ch01P8"
+                    },
+                    {
+                        "ref": "(Nahas2019)",
+                        "title": "Nahas Tutorial",
+                        "url": "https://bit.ly/3n2OulP"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain proofs by analyzing cases."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain proofs by counterexamples."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce \"without loss of generality\" clauses."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain nonconstructive proofs by contradiction (e.g. existence). Game analysis by \"mirroring strategy\" and other proofs that look somewhat like cheating, but are actually correct. Why the Law of Excluded Middle is necessary in such cases."
+                    }
+                ],
+                "title": "Use More Proof Strategies",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_1_8_1)",
+                        "title": "Proof by Cases",
+                        "url": "https://youtu.be/dheuJkuSNyI"
+                    },
+                    {
+                        "ref": "(Brehm2020_1_8_2)",
+                        "title": "Proofs of Existence And Uniqueness",
+                        "url": "https://youtu.be/uNbt-ABKpj4"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Create simple human-readable proofs by cases/by exhaustion.",
+            "Create simple human-readable proofs \"by contradiction\".",
+            "Distinguish one-way (implication) proofs and two-way (equivalence) proofs.",
+            "Distinguish universal statements (about every element in some set) and the counterexample proofs (refute a universal statement by some unusual example)."
+        ],
+        "title": "2021-01-11 to 2021-01-15"
+    },
+    {
+        "itemNum": 3,
+        "links": [
+            {
+                "title": "Define Sets, Functions, their Set-Level Properties",
+                "topic": "2"
+            },
+            {
+                "description": "This subsection only cares about set notation, defining new sets via subset and tuple (pair, tripple, etc.) constructions.",
+                "id": "2.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.121-131)",
+                        "title": "Sets",
+                        "url": "Ch02P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define set by listing elements or intervals."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define set by defining a predicate."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define subsets, proper subsets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define pairs and other n-tuples."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define power sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Reproduce Russel's paradox and retell it in some situations."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Demonstrate how predicate logic statements depend on the set used as the domain for quantifiers."
+                    }
+                ],
+                "title": "Manipulate Sets and Functions",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_2_1_2)",
+                        "title": "More about Sets",
+                        "url": "https://youtu.be/jXxuwrAbpCU"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection is a refresher of the Boolean operations, since set operations for a given universe closely resemble Boolean operations (set intersection is same as conjunction, etc.)",
+                "id": "2.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.133-144)",
+                        "title": "Set Operations",
+                        "url": "Ch02P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the union of two or more sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the intersection of two or more sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the complement of a set."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the difference of two sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the symmetric difference of sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Draw Venn diagrams for 2, 3, 4 sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Draw Euler diagrams (where some subset relations are known - so you do not show all the <span class=\"math inline\">\\( 2^n \\)</span> theoretically possible regions as in a Venn diagram)."
+                    }
+                ],
+                "title": "Manipulate sets over some universe",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_2_2_1)",
+                        "title": "Operations on Sets",
+                        "url": "https://youtu.be/ceQmwJ0xGrQ"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_2_2)",
+                        "title": "Set Identities",
+                        "url": "https://youtu.be/ReV1lwBw_lc"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_2_3)",
+                        "title": "Proving Set Identities",
+                        "url": "https://youtu.be/tRknuaNSlrU"
+                    }
+                ]
+            },
+            {
+                "description": "Nearly every topic in mathematics is somehow related to functions; here we only explain some set-theoretical properties of functions - defining domain, range, some properties (one-to-one, onto, bijection), also inverse and composition of two or more functions.",
+                "id": "2.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.147-161)",
+                        "title": "Functions",
+                        "url": "Ch02P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the domain and the range (codomain) of a function."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the one-to-one, onto and bijective (i.e. one-to-one AND onto) properties of a function."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Find inverse functions for some known function examples"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Find composition of multiple functions."
+                    }
+                ],
+                "title": "Define functions and their set-related properties",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_2_3_1)",
+                        "title": "Introduction to Functions",
+                        "url": "https://youtu.be/BaaC0IOkfWI"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_3_2)",
+                        "title": "One to One and Onto Functions",
+                        "url": "https://youtu.be/plSzGYwo-ew"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_3_3)",
+                        "title": "Inverse Functions and Composition of Functions",
+                        "url": "https://youtu.be/aQefXelCN5Y"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_3_4)",
+                        "title": "Useful Functions to Know",
+                        "url": "https://youtu.be/_a9veRNS78w"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Create proofs showing that some 2 sets are different (find a conterexample or use some non-constructive approach).",
+            "Explain proofs for a function being bijective or injective.",
+            "Explain proofs and constructions by selecting an extreme element in a set.",
+            "Use set notation with a predicate (create a subset of a given set - all elements satisfying some property); use set notation for n-tuples, for finite sequences.",
+            "Use function and set notation to describe functions with the given domain and range; use the notation of an inverse function $f^{-1}$ and the composition of two functions. Also the image and the inverse image of some set w.r.t. some function."
+        ],
+        "title": "2021-01-18 to 2021-01-22"
+    },
+    {
+        "itemNum": 4,
+        "links": [
+            {
+                "description": "This subsection introduces simple sequences and also notation (long sums, products, Boolean operations, set unions/intersections) to manipulate them.",
+                "id": "2.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.179-186)",
+                        "title": "Sequences and Summations",
+                        "url": "Ch2P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define sequences as functions from natural numbers to something"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define recurrent sequences"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define long sums and similar looping constructs"
+                    }
+                ],
+                "title": "Define and use sequences",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_2_4_1)",
+                        "title": "Introduction to Sequences",
+                        "url": "https://youtu.be/x2Ul4NtyoHw"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_4_2)",
+                        "title": "Recurrence Relations",
+                        "url": "https://youtu.be/QaAQ-bKCUME"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_4_3)",
+                        "title": "Summations and Sigma Notation",
+                        "url": "https://youtu.be/w9zIex42wnY"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_4_4)",
+                        "title": "Summation Properties and Formulas",
+                        "url": "https://youtu.be/Zi2sLtCO44A"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection discusses comparing sizes of two sets; it is essential to develop intuition on which problems can be formalized and which ones are algorithmically solvable.",
+                "id": "2.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.179-186)",
+                        "title": "Cardinality of Sets",
+                        "url": "Ch02P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define injective functions between 2 sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define surjective functions between 2 sets."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that adding finitely many elements to a countable set is countable"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that the union of two countable sets is countable"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that the union of countably many countable sets is countable"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that the powerset of any set is larger than the original set"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove statements about subsets, functions, sequences in the set of integers"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Set cardinality results in geometry (2D space has the same number of points as a 1D space). Continuum hypothesis."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply Schroder-Bernstein theorem to show that bijection must exist."
+                    }
+                ],
+                "title": "Compare Set Cardinalities",
+                "videos": [
+                    {
+                        "ref": "(Bazett2018)",
+                        "title": "Integers and Rationals are both infinite but is it the SAME infinity?",
+                        "url": "https://youtu.be/WQWkG9cQ8NQ"
+                    }
+                ]
+            },
+            {
+                "description": "Matrices are rectangular tables of objects of some kind (usually numbers or truth values); this subsection shows how they can be used to describe functional dependencies between elements in two sets - e.g. linear transformations; directed graphs; relations on a given set - all these situations will need them. At this point it is just an introduction for the matrix notation and some simple manipulations on them.",
+                "id": "2.6",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.188-193)",
+                        "title": "Matrices",
+                        "url": "Ch02P6"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Perform sum, difference, product of numeric matrices"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define join (memberwise disjunction), meet (entry-by-entry conjunction) and the Boolean product of two matrices."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define transposed matrices, symmetric matrices."
+                    }
+                ],
+                "title": "Perform actions on matrices with discrete objects",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_2_6_1)",
+                        "title": "Matrices and Matrix Operations",
+                        "url": "https://youtu.be/dLm1pglDFHA"
+                    },
+                    {
+                        "ref": "(Brehm2020_2_6_3)",
+                        "title": "Zero-One Matrices",
+                        "url": "https://youtu.be/EkW2QsKyddM"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Define which sets are countable; how they can be enumerated and encoded in a computer's memory. (Consider finite sequences of integers; infinite sequences of integers; computable infinite sequences of integers; various sets of functions between certain sets)"
+        ],
+        "title": "2021-01-25 to 2021-01-29"
+    },
+    {
+        "itemNum": 5,
+        "links": [
+            {
+                "title": "Identify algorithms and estimate their time complexity",
+                "topic": "3"
+            },
+            {
+                "description": "In the subsection we introduce various concepts related to algorithms: input, output, pseudocode, execution time, underlying variables and data, proofs of correctness.",
+                "id": "3.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.201-213)",
+                        "title": "Algorithms",
+                        "url": "P03P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe common characteristics of algorithms (mass problem, input, output, strictly defined steps, finite time)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe an algorithm to find maximum in a list of n with pseudocode."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe linear search algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe binary search algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe bubble sort algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the naive string matching algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the greedy algorithm to pay the change with minimum coins."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that for the eurocent coins (1,2,5,10,20,50,100,200) greedy algorithm is optimal"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the greedy scheduling algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the halting problem; prove that it is unsolvable"
+                    }
+                ],
+                "title": "Describe algorithms for lists/arrays and their paradigms",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_3_1_1)",
+                        "title": "Introduction to Algorithms and Pseudo Code",
+                        "url": "https://youtu.be/vPqQSKsxH4k"
+                    },
+                    {
+                        "ref": "(Brehm2018_3_1_2)",
+                        "title": "Searching Algorithms",
+                        "url": "https://youtu.be/4kVVhSy3kfA"
+                    },
+                    {
+                        "ref": "(Brehm2018_3_1_3)",
+                        "title": "Sorting Algorithms",
+                        "url": "https://youtu.be/GNGUziMQ4R4"
+                    },
+                    {
+                        "ref": "(Brehm2018_3_1_4)",
+                        "title": "Optimization Algorithms",
+                        "url": "https://youtu.be/kkgTu5kaIXw"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection is preoccupied by the growth asymtotics, it introduces various growth rates (Big-O-Notation) and also the related Omega and Theta notations.",
+                "id": "3.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.216-228)",
+                        "title": "The Growth of Functions",
+                        "url": "Ch03P2"
+                    },
+                    {
+                        "ref": "(Tepper2016)",
+                        "title": "Total Noobs Guide to Big O",
+                        "url": "https://medium.com/@.RT/total-n00bs-guide-to-big-o-big-%CF%89-big-%CE%B8-aa259ae8a1c2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the big-O notation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Compare various elementary functions by their growth speed"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Compute the big-O for sums and products of functions."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define big-Omega and big-Theta notations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Produce graphs (in xOy plane) or tables for some functions to compare their growth"
+                    }
+                ],
+                "title": "Define and use the big-O notation and related complexity measures",
+                "videos": []
+            },
+            {
+                "description": "This subsection combines two previous ones – we analyze the pseudocode of an algorithm and come up with an estimate of how many operations it takes (up to a constant factor and addition with terms of smaller growth order).",
+                "id": "3.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, pp.231-235)",
+                        "title": "Complexity of Algorithms",
+                        "url": "Ch03P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define time and space complexity for the given run of a program"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define worst-case and average time complexity"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the number of steps for binary search in a list of n elements"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Compute the number of steps for bubble sort"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Compute the lower bound for any sorting algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Compute the number of steps for naive string matching"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Develop an intuition about function growth rates"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze some Fibonacci computation algorithms (avoid cases where recursive calls multiply exponentially)"
+                    }
+                ],
+                "title": "Define and determine some algorithm complexity measures",
+                "videos": []
+            }
+        ],
+        "objectives": [
+            "Compare two functions in terms of their asymptotic growth; find their location in the growth hierarchy.",
+            "Given a pseudocode of an algorithm (and assumptions about the speed of its data-structure calls) find its time complexity in terms of its input length.",
+            "For problems like sorting, searching, some number manipulations offer an optimal algorithm or analyze, if the proposed algorithm is efficient enough."
+        ],
+        "title": "2021-02-01 to 2021-02-05"
+    },
+    {
+        "itemNum": 6,
+        "links": [
+            {
+                "title": "Use modular arithmetic",
+                "topic": "4"
+            },
+            {
+                "description": "This subtopic only focuses on modular arithmetic (properties that are preserved when finding remainders during division by a fixed positive integer <span class=\"math inline\">\\( m \\)</span>).",
+                "id": "4.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.251-258)",
+                        "title": "Divisibility and Modular Arithmetic",
+                        "url": "Ch04P1"
+                    },
+                    {
+                        "ref": "(Knepley2020, p.132-182)",
+                        "title": "CSE191, Integer Arithmetic",
+                        "url": "https://bit.ly/2Mi54lg"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Add, subtract and multiply congruences (ring operations)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Transform congurences equivalently"
+                    }
+                ],
+                "title": "Operate with modular arithmetic",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_4_1_1)",
+                        "title": "Divisibility",
+                        "url": "https://youtu.be/XnshTUaIpc8"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_1_2)",
+                        "title": "Modular Arithmetic",
+                        "url": "https://youtu.be/Z-si4GE_n9k"
+                    }
+                ]
+            },
+            {
+                "description": "In this subsection we convert decimal to binary and similar numbering systems.",
+                "id": "4.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.260-268)",
+                        "title": "Integer Representation and Algorithms",
+                        "url": "Ch04P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Convert a representation of a number into a number by Horner’s scheme"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Obtain a representation of a number by Horner’s scheme backwards"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Perform arithmetic operations on number representations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Make computations on binary fractions (including infinite periodic fractions)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Perform efficient modular exponentiation"
+                    }
+                ],
+                "title": "Convert integer representations",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_4_2_1)",
+                        "title": "Decimal Expansions",
+                        "url": "https://youtu.be/xtIIUB6QUJ8"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_2_2)",
+                        "title": "Binary, Octal and Hexadecimal Expansions",
+                        "url": "https://youtu.be/iSTpfqZwb5A"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_2_3)",
+                        "title": "Conversion Between Binary, Octal and Hexadecimal Expansions",
+                        "url": "https://youtu.be/vAKiTsEKEQM"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_2_4)",
+                        "title": "Algorithms for Integer Operations",
+                        "url": "https://youtu.be/5ZbKtsbctf4"
+                    }
+                ]
+            },
+            {
+                "description": "This subtopic introduces algorithms related to primality, divisibility and finding GCD or LCM.",
+                "id": "4.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.271-288)",
+                        "title": "Primes and Greatest Common Divisors",
+                        "url": "Ch04P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze the full search primality testing algorithm (divide up to <span class=\"math inline\">\\( \\sqrt{n} \\)</span>)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that there are infinitely many primes"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "State known facts about prime “gaps”"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "State properties of LCD and GCD"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply Euclid algorithm to compute LCD"
+                    }
+                ],
+                "title": "Prove properties of primes, GCD, LCM and related algorithms",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_4_3_1)",
+                        "title": "Prime Numbers and Their Properties",
+                        "url": "https://youtu.be/tJeP8882zZg"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_3_2)",
+                        "title": "GCD's and LCM's",
+                        "url": "https://youtu.be/Dhpp5yTzNY8"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_3_3)",
+                        "title": "The Euclidean Algorithm",
+                        "url": "https://youtu.be/UDrU6Aw_gEY"
+                    }
+                ]
+            },
+            {
+                "description": "Show how to solve linear congruences (or systems of linear congruences as in the Chinese Remainder theorem)",
+                "id": "4.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.290-300)",
+                        "title": "Solving Congruences",
+                        "url": "Ch04P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use Blankinship algorithm to compute Bezout coefficients"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Find inverse of a number w.r.t. some module"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Solve arbitrary linear congruences"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove and use Chinese remainder theorem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove and use Little Fermat theorem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulate and use Euler's theorem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Solve problems with primitive roots and discrete logarithms"
+                    }
+                ],
+                "title": "Find Bezout coefficients and solve linear congruences",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_4_3_4)",
+                        "title": "GCD's as Linear Combinations",
+                        "url": "https://youtu.be/oXRT_TNoBaM"
+                    },
+                    {
+                        "ref": "(Brehm2018_4_4_1)",
+                        "title": "Solving Congruences",
+                        "url": "https://youtu.be/Ag3wFeScdP4"
+                    }
+                ]
+            },
+            {
+                "description": "The only subsection on the applications of number theory focuses on algorithms to compute hash functions and also the checksums designed to ensure the integrity of data. (There are other major applications, say, in cryptography, but we do not care, since the course has sufficiently large scope already.)",
+                "id": "4.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.303-308)",
+                        "title": "Applications of Congruences",
+                        "url": "Ch04P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define a simple hashing function using modular arithmetic"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define some popular checksums using modular arithmetic"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Check the integrity of credit cards, personal identity numbers (\"personas kods\", Latvia) and ISBN."
+                    }
+                ],
+                "title": "Define hashing and checksums in terms of modular arithmetic",
+                "videos": []
+            }
+        ],
+        "objectives": [
+            "Do addition, subtraction and multiplication on congruences",
+            "Do efficient raising to powers on congruences (apply Euler's theorem, if needed)",
+            "Run Euclid's algorithm to find GCD",
+            "Solve linear congruences, convert word problems into linear congruences",
+            "Perform Luhn check, ISBN check and some similar checksum tests",
+            "Convert to binary, hexadecimal, octal and back."
+        ],
+        "title": "2021-02-08 to 2021-02-12"
+    },
+    {
+        "itemNum": 7,
+        "links": [
+            {
+                "title": "Prove statements by mathematical induction",
+                "topic": "5"
+            },
+            {
+                "description": "This subsection explains the very basic scheme of induction (prove the statement for <span class=\"math inline\">\\( n=0 \\)</span> or <span class=\"math inline\">\\( n=1 \\)</span>, then prove it by advancing one step at a time).",
+                "id": "5.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.331-350)",
+                        "title": "Mathematical Induction",
+                        "url": "Ch05P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove summation formulas and other algebraic identities by induction"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove inequalities by induction"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the method of invariants to prove impossibility results"
+                    }
+                ],
+                "title": "Prove general statements using the simplest scheme of mathematical induction (<span class=\"math inline\">\\( n \\rightarrow n+1 \\)</span>)",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_5_1_1)",
+                        "title": "Mathematical Induction - Summation Formulae and Inequalities",
+                        "url": "https://youtu.be/TqpNDiqsz7k"
+                    },
+                    {
+                        "ref": "(Brehm_2018_5_1_2)",
+                        "title": "Mathematical Induction - Divisibility and Set Theory",
+                        "url": "https://youtu.be/pTj6J_kWddM"
+                    }
+                ]
+            },
+            {
+                "description": "Define and prove statements by induction, where it is essential to look back more than one step.",
+                "id": "5.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.354-362)",
+                        "title": "Strong Induction and Well-Ordering",
+                        "url": "Ch05P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce hot and cold states in combinatorial games."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze winning strategies in some games using strong induction"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove formulas for recurrent sequences (such as Fibonacci) by using modified scheme of induction."
+                    }
+                ],
+                "title": "Prove statements by variants of mathematical induction",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_5_2_1)",
+                        "title": "The Well Ordering Principle and Strong Induction",
+                        "url": "https://youtu.be/mZ8wcxnT9WQ"
+                    }
+                ]
+            },
+            {
+                "description": "Define and prove inductive statements that can be defined on expressions and/or tree-like structures.",
+                "id": "5.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.365-378)",
+                        "title": "Recursive Definitions and Structural Induction",
+                        "url": "Ch05P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define sequences recursively (Fibonacci, Catalan, etc.) and illustrate them in word problems."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define tree-like structures recursively (next level in a tree is created from multiple subtrees)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define syntax trees (for expressions, statements) in programming language"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce attributes that are calculated as we move up the tree"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define simple fractals using Lindenmayer systems"
+                    }
+                ],
+                "title": "Use recursive definitions and structural induction",
+                "videos": [
+                    {
+                        "ref": "(Brehm_5_3_1)",
+                        "title": "Recursive Definitions",
+                        "url": "https://youtu.be/_EVvOzBI05Q"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Prove general statements (predicates on the set of natural numbers) using mathematical induction",
+            "Explain proofs using invariants showing impossibility (some property holds at the beginning; then various transformations are applied that preserve that invariant; so it must hold at the end)",
+            "Prove some recurrent equalities (closed formulas for recurrent sequences) using mathematical induction",
+            "Create trees using production rules (like in Lindenmayer systems, formal grammars, etc.), evaluate attributes on these trees."
+        ],
+        "title": "2021-02-15 to 2021-02-19"
+    },
+    {
+        "itemNum": 8,
+        "links": [
+            {
+                "title": "Introduce relations, their properties and possible representations.",
+                "topic": "9"
+            },
+            {
+                "description": "This subsection only discusses binary relations at a general level.",
+                "id": "9.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.599-608)",
+                        "title": "Relations and their properties",
+                        "url": "Ch09P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define general binary relations on <span class=\"math inline\">\\( A \\times B \\)</span> and on <span class=\"math inline\">\\( A \\times A \\)</span>."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identify properties for relations; check them in examples."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Combine relations into new ones."
+                    }
+                ],
+                "title": "Define and analyze binary relations",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_9_1_1)",
+                        "title": "Introduction to Relations",
+                        "url": "https://youtu.be/dbihQ6tiRJ0"
+                    },
+                    {
+                        "ref": "(Brehm2020_9_1_2)",
+                        "title": "Properties of Relations",
+                        "url": "https://youtu.be/Crsyv7upe9g"
+                    },
+                    {
+                        "ref": "(Brehm2020_9_1_3)",
+                        "title": "Combining Relations",
+                        "url": "https://youtu.be/aEcAh-lcsgY"
+                    }
+                ]
+            },
+            {
+                "description": "The subsection adresses somewhat marginal topic of n-ary relations, but it is still important, since it forms the basis of relational databases (RDBMS) such as MySQL or Oracle. We try to illustrate it with in-memory databases (such as Pandas library).",
+                "id": "9.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.611-619)",
+                        "title": "n-ary Relations",
+                        "url": "Ch09P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define an n-ary relation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identify relational concepts in databases (tables, primary keys, foreign keys, composite keys)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Do simple selects and joins"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define support and confidence in association rules (such as item purchases)"
+                    }
+                ],
+                "title": "Operate with relational operations",
+                "videos": [
+                    {
+                        "ref": "(CS186Berkeley2018)",
+                        "title": "Binary vs Ternary Relationships",
+                        "url": "https://youtu.be/7ZRCUH-a2s0"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection discusses advantages for each representation and what things can be computed for each one.",
+                "id": "9.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.621-626)",
+                        "title": "Representing Relations",
+                        "url": "Ch09P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Manipulate relations with their matrix representation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Manipulate relations with their directed graph representation"
+                    }
+                ],
+                "title": "Represent binary relations as matrices and directed graphs",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_9_3_1)",
+                        "title": "Matrix Representations of Relations and Properties",
+                        "url": "https://youtu.be/KK-gZo2N0wk"
+                    },
+                    {
+                        "ref": "(Brehm2020_9_3_1)",
+                        "title": "Representing Relations Using Digraphs",
+                        "url": "https://youtu.be/9a39kWlFg-s"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Prove or disprove that a relation has a given property (include function/mapping properties).",
+            "Use in-memory databases to illustrate relational algebra (select and join)",
+            "Compute support and confidence for item collections in an n-ary database",
+            "Transform relations from one representation to another.",
+            "Construct relations by their properties."
+        ],
+        "title": "2021-02-22 to 2021-02-26"
+    },
+    {
+        "itemNum": 9,
+        "links": [
+            {
+                "description": "The subsection introduces the concept of closure (as the “smallest” of all possible subsets with the given property). One particularly useful subtype of closure is the transitive closure.",
+                "id": "9.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.599-608)",
+                        "title": "Relations and their properties",
+                        "url": "Ch09P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define transitive closure and some other closures."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use and analyze Warshall Algorithm"
+                    }
+                ],
+                "title": "Find and use relation closures",
+                "videos": [
+                    {
+                        "ref": "(GeorgiaTech2015)",
+                        "title": "Transitive Closure",
+                        "url": "https://youtu.be/NM0mAmylfMg"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection discusses a very useful subspecies of relations – equivalence relations; and how they can be used to structure the set where they are defined.",
+                "id": "9.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.599-608)",
+                        "title": "Relations and their properties",
+                        "url": "Ch09P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Verify that a relation is an equivalence relation"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Show the equivalence classes created by an equivalence relation"
+                    }
+                ],
+                "title": "Use equivalence relations for set partitions",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_9_5_1)",
+                        "title": "Equivalence Relations",
+                        "url": "https://youtu.be/ZgcTX16borA"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection addresses a set with a common relation – that of a partial order (which is also reflexive, antisymmetric and transitive, but two elements may also be incomparable).",
+                "id": "9.6",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.599-608)",
+                        "title": "Relations and their properties",
+                        "url": "Ch09P6"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce partially ordered set and related concepts (well ordered, totally ordered sets)."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce various types of lexicographic orderings (also reverse ordering, shortlist ordering)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Manipulate Hasse diagrams and transitive closures on them"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define lattices and the concepts of least upper bound and greatest lower bound."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe topological sorting"
+                    }
+                ],
+                "title": "Prove and use statements about partially ordered sets",
+                "videos": [
+                    {
+                        "ref": "(Lambert2019)",
+                        "title": "What is a Partial Order Relation?",
+                        "url": "https://youtu.be/samD2wp04Nw"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Transform Hasse diagram into its transitive closure and back again",
+            "Construct other types of closures (reflexive and symmetric closure)",
+            "Use equivalence relations in various problems",
+            "Define setoids as sets of equivalence classes with their canonical representatives",
+            "Define and use the total order relations.",
+            "Define and use the partial order relations",
+            "Run an algorithm on the ordered sets, do topological sorting"
+        ],
+        "title": "2021-03-01 to 2021-03-05"
+    },
+    {
+        "itemNum": 10,
+        "links": [
+            {
+                "title": "Use combinatorics",
+                "topic": "6"
+            },
+            {
+                "description": "The subsection shows easy principles to evaluate the number of various selections (and they generalize lots of specialized formulas)",
+                "id": "6.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.405-416)",
+                        "title": "The Basics of Counting",
+                        "url": "Ch06P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the product rule and the sum rule"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the subtraction rule and the division rule"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the principle of inclusion-exclusion"
+                    }
+                ],
+                "title": "Count the number of elements in ordered or unordered selections with or without repetition.",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_6_1_1)",
+                        "title": "Counting Rules",
+                        "url": "https://youtu.be/32MnjUdIF0c"
+                    }
+                ]
+            },
+            {
+                "description": "Subsection discusses a simple idea of a proof by contradiction also known as the Dirichlet principle (if there are n+1 objects and n boxes, then at least one box should have at least 2 objects) and some variants of this.",
+                "id": "6.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.420-426)",
+                        "title": "The Pigeonhole Principle",
+                        "url": "Ch06P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the simplest form of Pigeonhole principle"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the generalizations of the Pigeonhole principle"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use Pigeonhole principle in number theory"
+                    }
+                ],
+                "title": "Use the Pigeonhole principle",
+                "videos": []
+            },
+            {
+                "description": "This is similar to 6.1, but we revisit the material and show how to compute some well-known selections (permutations and combinations with or without repetition).",
+                "id": "6.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.428-434)",
+                        "title": "Permutations and Combinations",
+                        "url": "Ch06P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Count permutations without repetitions"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Count combinations without repetitions"
+                    }
+                ],
+                "title": "Count permutations and combinations",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_6_3_1)",
+                        "title": "Permutations and Combinations",
+                        "url": "https://youtu.be/1CTzx89Kzy4"
+                    },
+                    {
+                        "ref": "(Brehm2020_6_3_2)",
+                        "title": "Counting Rules Practice",
+                        "url": "https://youtu.be/zG1svk2ilZ4"
+                    }
+                ]
+            },
+            {
+                "description": "This is similar to 6.1, but we revisit the material and show how to compute some well-known selections (permutations and combinations with or without repetition).",
+                "id": "6.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.437-443)",
+                        "title": "Binomial Coefficients",
+                        "url": "Ch06P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Build pascal’s triangle and use it to view various sums of binomial coefficients"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use Newton’s binomial formula"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use multinomial formula"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove various identities with binomial coefficients."
+                    }
+                ],
+                "title": "Define binomial coefficients",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_6_4_1)",
+                        "title": "The Binomial Theorem",
+                        "url": "https://youtu.be/m8TsPMfcasI"
+                    }
+                ]
+            },
+            {
+                "description": "This subsection is a summary that discusses how the symmetry in a problem (distinguishable or indistinguishable objects, their order, their repetitions) affect the total count.",
+                "id": "6.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.445-454)",
+                        "title": "Binomial Coefficients",
+                        "url": "Ch06P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Count permutations with repetitions"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Count combinations with repetitions"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Count other selections with symmetry (distinguishable order, circular direction, etc.)"
+                    }
+                ],
+                "title": "Compute and use generalized permutations and combinations",
+                "videos": []
+            }
+        ],
+        "objectives": [
+            "Build the “decision trees” to compute combinations (using addition and multiplication rule)",
+            "Build the clusterings on sets to compute combinations (using subtraction and division rule)",
+            "Use Pigeonhole principle for number theory facts (full system of remainders and so on)",
+            "Use binomial coefficients in polynomial algebra and related counting tasks",
+            "Use counting formulas for combinatorial problems with various types of symmetries (ordered vs. unordered selections; ordered in a cycle; ordered in an unoriented cycle; etc.)"
+        ],
+        "title": "2021-03-08 to 2021-03-12"
+    },
+    {
+        "itemNum": 11,
+        "links": [
+            {
+                "title": "Compute and manipulate discrete probabilities",
+                "topic": "7"
+            },
+            {
+                "description": "This subsection introduces the simplest notion of probability for discrete (i.e. countable) events. Use assumptions that all elementary events have equal probabilities.",
+                "id": "7.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.469-475)",
+                        "title": "Introduction to Discrete Probability",
+                        "url": "Ch07P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the classical definition of probability and event"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define union, intersection and comlement of events"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Compute probability for some events and combinations of events"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Analyze probabilistic “paradoxes” and surprises"
+                    }
+                ],
+                "title": "Use the classical definition of probability",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_7_1_1)",
+                        "title": "An Intro to Discrete Probability",
+                        "url": "https://youtu.be/x5TIZMZpWHM"
+                    },
+                    {
+                        "ref": "(Brehm2020_7_1_2)",
+                        "title": "Discrete Probability Practice",
+                        "url": "https://youtu.be/ug08tMKxtZw"
+                    }
+                ]
+            },
+            {
+                "description": "This chapter introduces all the fundamental concepts of discrete probabilities once they have been defined.",
+                "id": "7.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.477-491)",
+                        "title": "Probability Theory",
+                        "url": "Ch07P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Add probabilities of elementary events in various combinations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the sum for pairwise disjoint events"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the inclusion/exclusion principle for probabilities"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and use conditional probabilities"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and use independent events"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Bernoulli distribution"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Binomial distribution"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and use the concept of random variable"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce and solve the Birthday problem (1st kind of waiting time)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce other types of waiting times"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define probabilistic algorithms and probabilistic simulations"
+                    }
+                ],
+                "title": "Introduce the basic concepts of the probability theory",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_7_2_1)",
+                        "title": "Probability Theory",
+                        "url": "https://youtu.be/ewrsDwDJXn4"
+                    },
+                    {
+                        "ref": "(Brehm2020_7_2_2)",
+                        "title": "Random Variables and the Binomial Distribution",
+                        "url": "https://youtu.be/37BhaWsJdrs"
+                    }
+                ]
+            },
+            {
+                "description": "The subsection shows a very practical way to express unknown conditional probabilities using directly observable ones (which show the “opposite” conditional probabilities).",
+                "id": "7.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.494-501)",
+                        "title": "Bayes’ Theorem",
+                        "url": "Ch07P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulate and prove Bayes’ Theorem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulate some variants and generalizations of Bayes’ Theorem"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Show the applications of Bayes’ Theorem in text clusterization, spam filters and Data Leak Prevention"
+                    }
+                ],
+                "title": "Apply Bayes’ theorem",
+                "videos": []
+            },
+            {
+                "description": "There are many ways to summarize larger amounts of numeric data (including median, inter-quartile range, mode, etc.), but here we only deal with the two simplest measures. Expected value (also mean and expectation) is defined for a random variable and it expresses the location. Variance (dispersija) and its square root – standard deviation (standartnovirze) measure the variability of data – how far it goes from the mean value.",
+                "id": "7.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.503-517)",
+                        "title": "Expected Value and Variance",
+                        "url": "Ch07P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and compute the expected value of a random variable"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the linearity of expected value and other properties"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Apply the expected value to find average-case computational complexity."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the uniform distribution; find its expected value and variance"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the Poisson distribution with parameters; find its expected value and variance"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the geometric distribution and find its expected value (the 2nd type of waiting time)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Multinomial distributions and their parameters; find its expected value and variance"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Hypergeometric distrubtions and their parameters; find its expected value and variance"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define independent set of random variables"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the variance of a random variable and its standard deviation."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulate and prove Bienayame’s Formula"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulate and prove Markov’s Inequality"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Formulate and prove Chebyshev’s Inequality"
+                    }
+                ],
+                "title": "Summarise data with expected value and variance",
+                "videos": []
+            }
+        ],
+        "objectives": [
+            "Use classic probability definitions to analyze combinatorial tasks",
+            "Use analytic methods and randomized experiments to analyze waiting times and similar word problems.",
+            "Use Bayes formula to compute conditional probabilities",
+            "Apply appropriate discrete distributions as models for real-life problems",
+            "Compute expected value and variance for random variables, use them to estimate probabilities of hitting an interval"
+        ],
+        "title": "2021-03-15 to 2021-03-19"
+    },
+    {
+        "itemNum": 12,
+        "links": [
+            {
+                "title": "Obtain convenient expressions for various useful sequences and counting problems",
+                "topic": "8"
+            },
+            {
+                "description": "The subsection shows how real-life problems can be converted into recurrent sequences; their definitions and closed formulas for these sequences (a closed formula is an explicit expression to compute the n-th member of a sequence without going through all the recurrent members preceding it.",
+                "id": "8.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.527-536)",
+                        "title": "Applications of Recurrence Relations",
+                        "url": "Ch08P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Write recurrent relations for Hanoi tower and similar recursive processes"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Write recurrent relations to count strings with certain properties"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Catalan numbers and use their correspondence with counting hierarchy-like structures"
+                    }
+                ],
+                "title": "Build recurrent relations for word problems",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_8_1_1)",
+                        "title": "Modeling with Recurrence Relations",
+                        "url": "https://youtu.be/awR_p6J7Lyg"
+                    }
+                ]
+            },
+            {
+                "description": "Homogeneous and nonhomogeneous linear recurrences have some general methods to solve them (characteristic equations that allow to determine, what part of the sequence grows like a geometric progression). Fibonacci series is the best known linear recurrence, but there are many others.",
+                "id": "8.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.540-550)",
+                        "title": "Solving Linear Recurrence Relations",
+                        "url": "Ch08P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the characteristic equation for the case when all the roots are different."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the characteristic equation for the case when some roots are equal."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use the characteristic equation for the case when there are complex roots"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Solve linear nonhomogeneous relations"
+                    }
+                ],
+                "title": "Solve linear recurrence relations",
+                "videos": [
+                    {
+                        "ref": "(Brehm2018_8_2_1)",
+                        "title": "Second Order Linear Homogeneous Recurrence Relations",
+                        "url": "https://youtu.be/mJPoIxvjUz0"
+                    }
+                ]
+            },
+            {
+                "description": "Some practically important recurrences (and related algorithms) are based on subdividing task into parts (and then reassembling their solutions with some additional cost). There is a famous theorem that solves this recurrence (and has three subcases) – it is called Master’s Theorem.",
+                "id": "8.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.553-561)",
+                        "title": "Divide-and-Conquer Algorithms and Recurrence Relations",
+                        "url": "Ch08P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and analyze the fast multiplication algorithm by Karatsuba"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and analyze the fast matrix multiplication by Strassen"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and analyze the merge-sort algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Generalize the recurrence relations into Master theorem"
+                    }
+                ],
+                "title": "Solve recurrences expressing divide-and-conquer algorithms",
+                "videos": [
+                    {
+                        "ref": "(Rman2018)",
+                        "title": "What is the Master Theorem?",
+                        "url": "https://youtu.be/2H0GKdrIowU"
+                    }
+                ]
+            },
+            {
+                "description": "Some counting tasks are more easily solved for the intersections (not unions) of multiple sets. If we need to solve them for unions, it is possible to count the union by adding the counts for individual sets, then subracting (and/or subsequently adding) for those cases where something has been counted twice, three times, etc.",
+                "id": "8.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.579-583)",
+                        "title": "Inclusion-Exclusion",
+                        "url": "Ch08P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain inclusion-exclusion principle on a Venn diagram"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use inclusion-exclusion principle in word problems when intersection counts are known"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use inclusion-exclusion principle for number divisibility and Euler’s function"
+                    }
+                ],
+                "title": "Apply inclusion-exclusion principle",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_8_5_1)",
+                        "title": "The Principle of Inclusion Exclusion",
+                        "url": "https://youtu.be/YlKDp03Kg68"
+                    }
+                ]
+            }
+        ],
+        "objectives": [
+            "Given a verbal description for a combinatorial problem, formulate the recurrence formula",
+            "Solve homogenous recurrent relations",
+            "Solve non-homogenous recurrent relations",
+            "Apply Master’s theorem for algorithm complexity",
+            "Apply inclusion-exclusion principle for hatcheck and similar problems"
+        ],
+        "title": "2021-03-22 to 2021-03-26"
+    },
+    {
+        "itemNum": 13,
+        "links": [
+            {
+                "title": "Solve graph problems and use graphs to model other tasks",
+                "topic": "10"
+            },
+            {
+                "description": "This subsection explains obvious and less obvious situations where graphs may provide an answer to combinatorial questions.",
+                "id": "10.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.673-682)",
+                        "title": "Graphs and Graph Models",
+                        "url": "Ch10P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain graph concepts to communication and transport networks"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain graph concepts in social networks, quotations, Web links, set intersections"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain graph concepts in semantic Web"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain graph concepts in tournaments"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain directed graph concepts in precedence and dependency problems"
+                    }
+                ],
+                "title": "Represnt word problem situations as graphs; define vertices and nodes for each case",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_10_1_1)",
+                        "title": "Introduction to Graphs",
+                        "url": "https://youtu.be/QHmL0AnZ3Dc"
+                    }
+                ]
+            },
+            {
+                "description": "The subsection focuses on identifying specific phenomena in graphs and also introduces additional restrictions on graphs (connected, bipartite, directed, planar, acyclic and so on) which lead to different parts of the theory.",
+                "id": "10.2",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.685-694)",
+                        "title": "Graph Terminology and Special Tpes of Graphs",
+                        "url": "Ch10P2"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define adjacency, neighborhood, the degree of a vertex, the Handshake theorem (the sum of all degrees in a graph)"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Explain the differences for the same concepts in a directed graph"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Introduce some special graphs – complete graphs <span class=\"math inline\">\\( K_n \\)</span>, cycles <span class=\"math inline\">\\( C_n \\)</span>, wheels <span class=\"math inline\">\\( W_n \\)</span> and <span class=\"math inline\">\\( n \\)</span>-dimensional cubes <span class=\"math inline\">\\( Q_n \\)</span>."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define bipartite graphs and matching concepts."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove and use Hall’s Marriage theorem."
+                    }
+                ],
+                "title": "Understand graph-related concepts and recognise them in concrete graphs",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_10_2_1)",
+                        "title": "Graph Terminology",
+                        "url": "https://youtu.be/PDxUDYEE-Sk"
+                    },
+                    {
+                        "ref": "(Brehm2020_10_2_2)",
+                        "title": "Special Types of Graphs",
+                        "url": "https://youtu.be/OgvGo09kAvA"
+                    },
+                    {
+                        "ref": "(Brehm2020_10_2_3)",
+                        "title": "Applications of Graphs",
+                        "url": "https://youtu.be/CQ2sIdOMin8"
+                    }
+                ]
+            },
+            {
+                "description": "The subsection compares two approaches to store graphs (such as using them as input for programs), and when to use each one. It also discusses the “invariant” properties of graphs that do not depend on their representations -  isomorphic graphs may be considered equivalent – regardless of how they are represented and how their vertices are labeled.",
+                "id": "10.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.703-710)",
+                        "title": "Representing Graphs and Graph Isomorphism",
+                        "url": "Ch10P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe a graph using adjacency lists"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe a graph using adjacency matrices"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define graph isomorphism problem and solve it in some particular cases"
+                    }
+                ],
+                "title": "Use adjacency list and matrix representations of graphs.",
+                "videos": []
+            },
+            {
+                "description": "The subsection defines connectivity for undirected and also directed graphs (included strong connectivity). It also shows how this is related to finding path or paths between given vertices.",
+                "id": "10.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.714-724)",
+                        "title": "Connectivity",
+                        "url": "Ch10P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define paths in undirected graphs"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define connected components in an undirected graph"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define some other vertex and edge connectedness measures"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove that two graphs are not isomorphic by looking at their paths or similar properties"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Show how the concepts apply to directed graphs"
+                    }
+                ],
+                "title": "Use the concepts of paths and connectivity",
+                "videos": []
+            },
+            {
+                "description": "This subsection introduces computationally easy problem (Euler’s cycles) and computationally hard problem (Hamilton’s cycles) – and how each one of them may be used.",
+                "id": "10.5",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.728-739)",
+                        "title": "Euler and Hamilton Paths",
+                        "url": "Ch10P5"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define an Euler path in a graph"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define and prove the necessary and sufficient coefficient for an Euler path"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the concept of a Hamiltonian path in a graph"
+                    }
+                ],
+                "title": "Solve problems related to cycles in graphs.",
+                "videos": []
+            }
+        ],
+        "objectives": [
+            "Count varios graph elements from word problems and their representations",
+            "Construct paths in graphs defined in various ways; apply paths to answer questions about particular graphs",
+            "Use bipartite graphs and related concepts; find matchings and apply the Hall’s Marriage theorem",
+            "Find cycles in graph; both Euler and Hamilton ones."
+        ],
+        "title": "2021-03-29 to 2021-04-03"
+    },
+    {
+        "itemNum": 14,
+        "links": [
+            {
+                "title": "Identify tree concepts, traverse trees with DFS and BFS for simple applications",
+                "topic": "11"
+            },
+            {
+                "description": "The root, inner nodes, leaves, ancestors and successors, paths, traversals – all these tree-related concepts are often needed when using hierarchies of various kinds. This subsection defines the concepts and also counts all such objects efficiently.",
+                "id": "11.1",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.781-791)",
+                        "title": "Introduction to Trees",
+                        "url": "Ch11P1"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define trees, inner nodes, leaves and related concepts"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Rooted trees, parents, children, siblings, ascendants, descendants, height and depth."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define full n-ary trees"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Count (or prove bounds) for various elements in trees"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Prove the logarithmic estimate for the depth of a full n-ary tree"
+                    }
+                ],
+                "title": "Identify, list and count various objects in trees.",
+                "videos": [
+                    {
+                        "ref": "(Brehm2020_11_1_1)",
+                        "title": "Introduction to Trees",
+                        "url": "https://youtu.be/hBKLhiumhhU"
+                    },
+                    {
+                        "ref": "(Brehm2018_11_1_2)",
+                        "title": "Rooted Trees",
+                        "url": "https://youtu.be/g9_PuhLwkOU"
+                    }
+                ]
+            },
+            {
+                "description": "There are a few standard orders how to visit nodes in a tree (DFS is somewhat similar to visiting a labyrinth – and it also has three separate flavors). All these orders are important as they serve as building blocks to various algorithms.",
+                "id": "11.3",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.808-819)",
+                        "title": "Tree Traversal",
+                        "url": "Ch11P3"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define BFS traversal in a tree"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define DFS preorder traversal"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define DFS inorder traversal"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define DFS post-order traversal"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use abstract syntax trees to get infix, prefix and postfix expressions"
+                    }
+                ],
+                "title": "Define and use preorder, inorder and postorder traversals in a rooted tree",
+                "videos": []
+            },
+            {
+                "description": "This section deals with MSTs – a concept applicable to an arbitrary connected graph with a tree (basically, which edges do we select from a given graph, so that it is a spanning tree (still connected graph, but does not contain any redundant  edges – there are no loops).",
+                "id": "11.4",
+                "readings": [
+                    {
+                        "ref": "(Rosen2019, p.821-832)",
+                        "title": "Spanning Trees",
+                        "url": "Ch11P4"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define Minimum Spanning Trees"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Construct the Spanning Trees obtained from the BFS or DFS traversals"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the backtracking problem to search for a solution in a hierarchy"
+                    }
+                ],
+                "title": "Define and construct MSTs (Minimum Spanning Trees)",
+                "videos": []
+            }
+        ],
+        "objectives": [
+            "Identify tree concepts; count them in trees defined in various ways",
+            "Navigate trees (show how to get from one node to another one).",
+            "Recognize rooted trees with additional limitations (full binary, n-ary)",
+            "Define and find Minimum Spanning Trees"
+        ],
+        "title": "2021-04-06 to 2021-04-10"
+    }
+]

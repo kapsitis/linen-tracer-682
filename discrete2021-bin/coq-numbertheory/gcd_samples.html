@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>gcd_samples</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library gcd_samples</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+
+<div class="paragraph"> </div>
+
+<a href="../../discrete2021/assignments.html">Back to Discrete Assignments</a>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+A warm-up example: Prove that (Zis_gcd 6 15 (-3)) is True. This means
+that (-3) satisfies all properties of a GCD. It divides both 6 and 15, and
+any other divisor of 6 and 15 is also a divisor of (-3). 
+</div>
+<div class="code">
+<span class="id" title="keyword">Example</span> <span class="id" title="var">gcd_6_16_warmup</span>: (<span class="id" title="var">Zis_gcd</span> 6 15 (-3)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>. <span class="id" title="tactic">exists</span> (-2). <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>. <span class="id" title="tactic">exists</span> (-5). <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">u</span> <span class="id" title="var">H1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">v</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">v</span> - 3*<span class="id" title="var">u</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Z.mul_sub_distr_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">Z.mul_assoc</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1"></a><h2 class="section">sample2_16</h2>
+ <b>Lemma:</b> If <tt>a,b</tt> are mutual primes, 
+  and <tt>(c|a)</tt>, then also <tt>b,c</tt> are mutual primes, 
+  i.e. <tt>gcd(b,c)=1</tt> 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_16</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">c</span> | <span class="id" title="var">a</span>) -&gt; (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">H1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.divide_1_l</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.divide_1_l</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H5</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.divide_trans</span> <span class="id" title="var">x</span> <span class="id" title="var">c</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H7</span> <span class="id" title="var">H6</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">x</span> <span class="id" title="var">H8</span> <span class="id" title="var">H5</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>. <span class="id" title="tactic">exact</span> <span class="id" title="var">H9</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Search</span> ((<span class="id" title="var">_</span> | <span class="id" title="var">_</span>) -&gt; (<span class="id" title="var">_</span> | <span class="id" title="var">_</span> *<span class="id" title="var">_</span>)).<br/>
+
+<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab2"></a><h2 class="section">sample2_17</h2>
+ <b>Lemma:</b> If gcd(a,b)=1, then then gcd(ac,b)=gcd(c,b). 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_17_helper</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">x</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">x</span> | <span class="id" title="var">a</span>*<span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">x</span> | <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">x</span> | <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">MutualPrimes</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">rel_prime_bezout</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">MutualPrimes</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">u</span> <span class="id" title="var">v</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_1_l</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H3</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">zAC</span> <span class="id" title="var">L11</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">L2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">zB</span> <span class="id" title="var">L22</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">u</span>*<span class="id" title="var">zAC</span> + <span class="id" title="var">v</span>*<span class="id" title="var">zB</span>*<span class="id" title="var">c</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H4</span> <span class="id" title="tactic">at</span> 1.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_add_distr_r</span> (<span class="id" title="var">u</span>*<span class="id" title="var">a</span>) (<span class="id" title="var">v</span>*<span class="id" title="var">b</span>) <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">u</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">L11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">L22</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Search</span> <span class="id" title="var">Zis_gcd</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_17</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">k</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; ((<span class="id" title="var">Zis_gcd</span> (<span class="id" title="var">a</span>*<span class="id" title="var">c</span>) <span class="id" title="var">b</span> <span class="id" title="var">k</span>) &lt;-&gt; (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">c</span> <span class="id" title="var">b</span> <span class="id" title="var">k</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">k</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_17_helper</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">k</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H4</span> <span class="id" title="var">H</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H6</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">x</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.divide_mul_r</span> <span class="id" title="var">x</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H9</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H8</span> <span class="id" title="var">H6</span> <span class="id" title="var">H7</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H10</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H10</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">m</span> <span class="id" title="var">H1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">a</span>*<span class="id" title="var">m</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">ring</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H21</span> <span class="id" title="var">H22</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_17_helper</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">x</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H23</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H23</span> <span class="id" title="var">H</span> <span class="id" title="var">H21</span> <span class="id" title="var">H22</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H24</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">x</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H25</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H25</span> <span class="id" title="var">H24</span> <span class="id" title="var">H22</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H26</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H26</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab3"></a><h2 class="section">sample2_18</h2>
+ <b>Lemma:</b> If <tt>a,b</tt> are mutual primes and <tt>c</tt> divides <tt>(a+b)</tt>, then <tt>a,c</tt> are mutual primes. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_18_helper</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">c</span> | (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>)) -&gt; (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span> 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">H1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">u</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">Zis_gcd_intro</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Z.divide_1_l</span> <span class="id" title="var">a</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">Z.divide_1_l</span> <span class="id" title="var">c</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H3</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">x</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">v</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H4</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">w</span> <span class="id" title="var">H4</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">w</span>*<span class="id" title="var">u</span> - <span class="id" title="var">v</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">Z.mul_sub_distr_r</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Lemma:</b> If <tt>gcd(a,b)=1</tt> and <tt>c</tt> divides <tt>(a+b)</tt>, then gcd(a,c)=gcd(b,c)=1. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_18</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">c</span> | (<span class="id" title="var">a</span>+<span class="id" title="var">b</span>)) -&gt; ((<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span> 1) /\ (<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> 1)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_18_helper</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_18_helper</span> <span class="id" title="var">b</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.add_comm</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H6</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zis_gcd_sym</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H7</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H5</span> <span class="id" title="var">H8</span> <span class="id" title="var">H2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H9</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab4"></a><h2 class="section">sample2_19</h2>
+ <b>Lemma:</b> If gcd(a,b)=1; d divides ac; d divides bc, then d divides c. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_19</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">d</span> | (<span class="id" title="var">a</span>*<span class="id" title="var">c</span>)) -&gt; (<span class="id" title="var">d</span> | (<span class="id" title="var">b</span>*<span class="id" title="var">c</span>)) -&gt; (<span class="id" title="var">d</span> | <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">rel_prime_bezout</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H4</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H5</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">H6</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H2</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">u</span> <span class="id" title="var">H22</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">v</span> <span class="id" title="var">H33</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.divide</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exists</span> (<span class="id" title="var">x</span>*<span class="id" title="var">u</span> + <span class="id" title="var">y</span>*<span class="id" title="var">v</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_add_distr_r</span> (<span class="id" title="var">x</span>*<span class="id" title="var">u</span>) (<span class="id" title="var">y</span>*<span class="id" title="var">v</span>) <span class="id" title="var">d</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_1_l</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H6</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">x</span> <span class="id" title="var">u</span> <span class="id" title="var">d</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H9</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H22</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">y</span> <span class="id" title="var">v</span> <span class="id" title="var">d</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H10</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H10</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H33</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">x</span> <span class="id" title="var">a</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H11</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">y</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H12</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H12</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_add_distr_r</span> (<span class="id" title="var">x</span>*<span class="id" title="var">a</span>) (<span class="id" title="var">y</span>*<span class="id" title="var">b</span>) <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H13</span>. <span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">H13</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H6</span>. <span class="id" title="tactic">ring</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab5"></a><h2 class="section">sample2_20</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_20_helper</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">Zis_gcd</span> (<span class="id" title="var">a</span>*<span class="id" title="var">a</span>) <span class="id" title="var">b</span> 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_17</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">a</span> 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">H2</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Lemma:</b> If gcd(a,b)=1, then gcd(a^2,b^2)=1. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_20</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="var">Z</span>, <br/>
+&nbsp;&nbsp;(<span class="id" title="var">Zis_gcd</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> 1) -&gt; (<span class="id" title="var">Zis_gcd</span> (<span class="id" title="var">a</span>^2) (<span class="id" title="var">b</span>^2) 1).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_20_helper</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zis_gcd_sym</span> (<span class="id" title="var">a</span>*<span class="id" title="var">a</span>) <span class="id" title="var">b</span> 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H4</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_20_helper</span> <span class="id" title="var">b</span> (<span class="id" title="var">a</span>*<span class="id" title="var">a</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H6</span> <span class="id" title="var">H5</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Zis_gcd_sym</span> (<span class="id" title="var">b</span>*<span class="id" title="var">b</span>) (<span class="id" title="var">a</span>*<span class="id" title="var">a</span>) 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H8</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H8</span> <span class="id" title="var">H7</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H9</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">unfold</span> <span class="id" title="var">Z.pow_pos</span>. <span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">a</span> <span class="id" title="var">a</span> 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H10</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H10</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_assoc</span> <span class="id" title="var">b</span> <span class="id" title="var">b</span> 1) <span class="id" title="keyword">as</span> <span class="id" title="var">H11</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H11</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_1_r</span> (<span class="id" title="var">a</span>*<span class="id" title="var">a</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H12</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H12</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">Z.mul_1_r</span> (<span class="id" title="var">b</span>*<span class="id" title="var">b</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H13</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H13</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H9</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">Z_scope</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

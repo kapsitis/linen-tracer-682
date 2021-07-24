@@ -1,0 +1,371 @@
+\documentclass[a4paper]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{fancyvrb}
+
+%% COLORED TABLES
+\usepackage{colortbl}% http://ctan.org/pkg/colortbl
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\colorlet{tableheadcolor}{gray!25} % Table header colour = 25% gray
+\newcommand{\headcol}{\rowcolor{tableheadcolor}} %
+\colorlet{tablerowcolor}{gray!10} % Table row separator colour = 10% gray
+\newcommand{\rowcol}{\rowcolor{tablerowcolor}} %
+\usepackage{multirow}
+
+
+\usepackage{fontspec} % loaded by polyglossia, but included here for transparency
+\usepackage{polyglossia}
+
+
+\makeatletter
+\def\legendre@dash#1#2{\hb@xt@#1{%
+  \kern-#2\p@
+  \cleaders\hbox{\kern.5\p@
+    \vrule\@height.2\p@\@depth.2\p@\@width\p@
+    \kern.5\p@}\hfil
+  \kern-#2\p@
+  }}
+\def\@legendre#1#2#3#4#5{\mathopen{}\left(
+  \sbox\z@{$\genfrac{}{}{0pt}{#1}{#3#4}{#3#5}$}%
+  \dimen@=\wd\z@
+  \kern-\p@\vcenter{\box0}\kern-\dimen@\vcenter{\legendre@dash\dimen@{#2}}\kern-\p@
+  \right)\mathclose{}}
+\newcommand\legendre[2]{\mathchoice
+  {\@legendre{0}{1}{}{#1}{#2}}
+  {\@legendre{1}{.5}{\vphantom{1}}{#1}{#2}}
+  {\@legendre{2}{0}{\vphantom{1}}{#1}{#2}}
+  {\@legendre{3}{0}{\vphantom{1}}{#1}{#2}}
+}
+\def\dlegendre{\@legendre{0}{1}{}}
+\def\tlegendre{\@legendre{1}{0.5}{\vphantom{1}}}
+\makeatother
+
+
+
+%\usepackage{xeCJK}
+%\setCJKmainfont{SimSun}
+%\setmainlanguage{russian}
+%\setotherlanguage{english}
+
+%\newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}
+%\newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial}
+%\newfontfamily\cyrillicfonttt[Script=Cyrillic]{Courier New}
+
+\oddsidemargin -1.27cm
+\evensidemargin -1.27cm
+%\textwidth 6.27in
+\textwidth 18.46cm
+\topmargin -1.27cm
+\headheight 0.0cm
+\headsep 0.0cm
+\textheight 27.16cm
+
+\setlength\parindent{0pt}
+
+
+
+
+% http://tex.stackexchange.com/questions/196961/thmtools-declaration-for-theorem-and-proof
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+
+\newcommand{\subf}[2]{%
+  {\small\begin{tabular}[t]{@{}c@{}}
+  #1\\#2
+  \end{tabular}}%
+}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+\newenvironment{zhtext}{\fontfamily{MS PGothic}\selectfont}{\par}
+
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+\usepackage{hyperref}
+
+\pagenumbering{gobble} 
+
+\begin{document}
+
+{\bf \large Reizināšana pēc $p$ moduļa, kur $p$ ir nepāru pirmskaitlis (``Multiplikatīvā teorija'').}
+
+\vspace{10pt}
+Rezultāti par skaitļu kāpināšanu pēc moduļa $p$ ir saistīti: 
+definīcijas un teorēmas labāk iegaumēt kā vienotu sistēmu.  
+
+\arrayrulecolor[HTML]{999999}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht!]\centering
+{\small
+\begin{tabular*}{18.46cm}{@{}|p{10.35cm}|p{7.25cm}|@{}} \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{E1FFE1}
+Intuīcija: Ja skaitli $a$, kas nedalās ar $p$, pietiekami ilgi reizina pašu ar sevi, iegūst atlikumu $1\,(\text{mod}\;p)$.
+} \\ \hline
+{\bf Mazā Fermā teorēma:} Ja $p$ ir pirmskaitlis un $\operatorname{gcd}(a,p)=1$, tad\newline 
+$a^{p-1} \equiv 1\;(\operatorname{mod}\,p)$. &
+$1^6 \equiv 2^6 \equiv 3^6 \equiv 4^6 \equiv 5^6 \equiv 6^6 \equiv 1\;(\operatorname{mod}\,7)$. \\ \hline
+\end{tabular*}
+}
+\end{table}
+
+{\small
+\vspace{-10pt}
+\begin{Verbatim}
+# Izdrukā dažādu skaitļu 40.pakāpes, ko dala ar 41. Tā ir Mazā Fermā teorēma pie p=41.
+list(map(lambda x: x**40 % 41, range(1,41)))
+# (Aizstājot kāpinātāju 40 ar citu skaitli, var pārliecināties, ka nesanāk visi vieninieki.)
+\end{Verbatim}
+}
+
+\vspace{-10pt}
+\arrayrulecolor[HTML]{999999}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht!]\centering
+{\small
+\begin{tabular*}{18.46cm}{@{}|p{10.35cm}|p{7.25cm}|@{}} \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{E1FFE1}
+Intuīcija: Ir tādi skaitļi $a$, kuri izstaigā visas kongruenču klases (izņemot $0\,(\text{mod}\;p)$), pirms atgriežas pie $1\,(\text{mod}\;p)$.
+} \\ \hline
+{\bf Teorēma par primitīvo sakni:} Katram pirmskaitlim $p$ eksistē tāds 
+$a$, kuram kongruenču klases $a^1,a^2,\ldots,a^{p-1}$ pieņem visas
+vērtības $1,2,\ldots,p-1$ (sajauktā secībā).\newline
+{\em Piezīme} Primitīvās saknes ir definējamas arī dažiem saliktiem skaitļiem, piemēram, 
+pirmskaitļu pakāpēm $p^k$; to pakāpes izstaigā kongruenču klases, kuras 
+nedalās ar $p$.\newline 
+Primitīvo sakņu tabulu sk. \url{https://bit.ly/2NqEzuB}.
+ &
+Ja $p=7$, tad $3^k$ pieņem visus iespējamos atlikumus, dalot ar $7$ (izņemot pašu $7$):\newline
+$3^k \equiv$ $3$, $2$, $6$, $4$, $5$, $1\;(\operatorname{mod}\,7)$ ja $k=1,\ldots,6$.\newline
+Arī $5$ ir primitīvā sakne (mod $7$). Citu primitīvo sakņu pirmskaitlim $p=7$ nav. \\ \hline
+\end{tabular*}
+}
+\end{table}
+
+{\small
+\vspace{-10pt}
+\begin{Verbatim}
+# Pirmskaitlim p=41 viena no primitīvajām saknēm ir 6. Kāpina a=6 visās pakāpēs līdz 40.pakāpei.
+a = 6
+list(map(lambda x: a**x % 41, range(1,41)))
+set(list(map(lambda x: a**x % 41, range(1,41))))
+# (Aizstājot a=6 ar citām vērtībām: 2, 3, 4, vai 5, var pārliecināties, ka tie nav primitīvās saknes.)
+\end{Verbatim}
+}
+
+\vspace{-10pt}
+\arrayrulecolor[HTML]{999999}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht!]\centering
+{\small
+\begin{tabular*}{18.46cm}{@{}|p{10.35cm}|p{7.25cm}|@{}} \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{E1FFE1}
+Intuīcija: Katram atlikumam $a$ (ja $a \not\equiv 0\,(\text{mod}\;p)$) var atrast vismazāko kāpinātāju, 
+kuram $a^k$ atgriežas pie vērtības $1\,(\text{mod}\;p)$.
+} \\ \hline
+{\bf Definīcija:} Par skaitļa $a$ multiplikatīvo kārtu ({\em multiplicative order}) 
+pēc $p$ moduļa sauc mazāko kāpinātāju $k$, kuram $a^k \equiv 1\,(\text{mod}\,p)$.\newline
+Multiplikatīvo kārtu apzīmē $\text{ord}_p(a)$.\newline
+{\bf Apgalvojums \#1:} Ja $\text{ord}_p(a) = p-1$, tad $a$ ir primitīvā sakne $(\text{mod}\;p)$.\newline
+{\bf Apgalvojums \#2:} $\text{ord}_p(a)$ vienmēr ir $p-1$ dalītājs.\newline
+{\bf Apgalvojums \#3:} Jebkuram skaitlim $k$, ar kuru dalās $p-1$, atradīsies tāds $a$, kuram $\text{ord}_p(a) = k$.\newline
+Definīciju sk. \url{https://bit.ly/35ZlK7V}.
+ &
+$\text{ord}_7(1) = 1$,\newline
+$\text{ord}_7(3) = \text{ord}_7(5) = 6$,\newline
+$\text{ord}_7(2) = \text{ord}_7(4) = 3$,\newline
+$\text{ord}_7(6) = 2$.
+\\ \hline
+\end{tabular*}
+}
+\end{table}
+
+{\small
+\vspace{-10pt}
+\begin{Verbatim}
+# Dažādo atlikumu skaits starp "a" pakāpēm sakrīt ar "a" multiplikatīvo kārtu. 
+# Pie p=41, ord(2)=20, ord(3)=8, ord(4)=10, ord(5)=20, ord(6)=40, utt.
+a = 3
+len(set(list(map(lambda x: a**x % 41, range(1,41)))))
+# Mēģiniet atrast tādus a, kuriem multiplikatīvā kārta (ja p=41) ir 1,2,4,5,8,10,20,40. 
+# Visi tie eksistē (Apgalvojums 3), jo skaitlim p-1=40 ir tieši šādi dalītāji.
+# Visus tos var viegli atrast, kāpinot primitīvo sakni (piemēram a=6) piemērotā pakāpē.
+\end{Verbatim}
+}
+
+
+\vspace{-10pt}
+\arrayrulecolor[HTML]{999999}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht!]\centering
+{\small
+\begin{tabular*}{18.46cm}{@{}|p{10.35cm}|p{7.25cm}|@{}} \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{E1FFE1}
+Intuīcija: Dažām $a\not\equiv 0$ vērtībām vienādojumu $x^2 \equiv a\,(\text{mod}\;p)$ var 
+atrisināt (un tad tam ir tieši divas saknes $x_1, x_2$, kam $x_2 \equiv - x_2$); citām $a$ vērtībām
+šim ``kongruenču kvadrātvienādojumam'' nav nevienas saknes.\newline 
+(Ja $a \equiv 0$, tad ir tieši viena sakne $x \equiv 0$.)
+} \\ \hline
+{\bf Definīcija:} Skaitli $a\not\equiv 0$ sauc par kvadrātisko atlikumu ({\em quadratic residue}), ja 
+kongruenču vienādojumu $x^2 \equiv a\,(\text{mod}\;p)$ var atrisināt.\newline
+Definīciju sk. \url{https://bit.ly/3sFNqsh}
+ &
+Pirmskaitlim $p=7$ skaitļi $a=1,2,4$ ir kvadrātiskie atlikumi, 
+bet $a = 3,5,6$ nav kvadrātiskie atlikumi.  \\ \hline
+\end{tabular*}
+}
+\end{table}
+
+{\small
+\vspace{-10pt}
+\begin{Verbatim}
+# Atrodam visus kvadrātiskos atlikumus, ja p=41 (Iegūstam tieši 20 skaitļus no 40.)
+set(map(lambda x: x**2 % 41, range(1,41)))
+# Tālāk risinām vienādojumu x**2 = 2. ("Kvadrātsakne no 2 (mod 41)")
+list(filter(lambda x: x**2 % 41 == 2, range(1,41)))
+# Iegūstam divas saknes: [17,24]. Ievērojam, ka 24 = -17 (mod 41).
+\end{Verbatim}
+}
+
+\vspace{-10pt}
+\arrayrulecolor[HTML]{999999}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht!]\centering
+{\small
+\begin{tabular*}{18.46cm}{@{}|p{10.35cm}|p{7.25cm}|@{}} \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{E1FFE1}
+Intuīcija: No visiem atlikumiem (izņemot atlikumu $0$) būs tieši puse tādu, kuri atgriežas
+pie $1\,(\text{mod}\;p)$ jau divreiz ātrāk nekā pēc $p-1$ soļiem.
+} \\ \hline
+{\bf Definīcija:} Par skaitļa $a$ Ležandra simbolu ({\em Legendre symbol}) 
+pēc $p$ mo\-du\-ļa sauc lielumu 
+$\dlegendre{a}{p} = a^{\frac{p-1}{2}}$.
+{\bf Teorēma (Eilera kritērijs):} Skaitlis $a$ ir kvadrātisks atlikums tad un tikai tad, ja
+${\displaystyle a^{\tfrac{p-1}{2}} \equiv 1\;(\text{mod}\;p)}$.\newline
+{\bf Secinājums:} Ja $\dlegendre{a}{p} = 1$, tad vienādojumu $x^2 \equiv a\,(\text{mod}\;p)$
+var atrisināt, bet ja $\dlegendre{a}{p} = -1$, tad nevar atrisināt.
+\newline
+Definīciju un vērtību tabulu sk. \url{https://bit.ly/3qFKH0m}.
+ &
+\vspace{1pt}
+$\dlegendre{0}{7} = 0$.\newline
+
+\vspace{6pt}
+$\dlegendre{1}{7} = \dlegendre{2}{7} = \dlegendre{4}{7} = 1$.\newline
+
+\vspace{6pt}
+$\dlegendre{3}{7} = \dlegendre{5}{7} = \dlegendre{6}{7} = -1$.\newline
+\\ \hline
+\end{tabular*}
+}
+\end{table}
+
+
+{\bf Piemērs.} Visu atlikumu (kongruenču klašu) $a = 1,\ldots,6$ pakāpes pēc $p = 7$ moduļa.
+
+\vspace{10pt}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+$a$                    & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+$a^2\,(\text{mod}\;7)$ & 1 & 4 & 2 & 2 & 4 & 1 \\ \hline
+$a^3\,(\text{mod}\;7)$ & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{6} & \textcolor{red}{1} & \textcolor{red}{6} & \textcolor{red}{6} \\ \hline
+$a^4\,(\text{mod}\;7)$ & 1 & 2 & 4 & 4 & 2 & 1 \\ \hline
+$a^5\,(\text{mod}\;7)$ & 1 & 4 & 5 & 2 & 3 & 6 \\ \hline
+$a^6\,(\text{mod}\;7)$ & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{1} & \textcolor{blue}{1} \\ \hline\hline
+$\text{ord}_7(a)$      & 1 & 3 & 6 & 3 & 6 & 2 \\ \hline
+$\dlegendre{a}{7}$ & $1$ & $1$ & $-1$ & $1$ & $-1$ & $-1$ \\ \hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{itemize}
+\item Ležandra simbols $\dlegendre{a}{7}$ ir atkarīgs no šīs pakāpju tabulas vidējās jeb 3.rindas (sarkana), kas atbilst kāpinātājam $\frac{p-1}{2} = 3$. 
+\item Pēdējā, 6.rindā visas pakāpes $a^6$ atgriežas pie vērtības $1$ (Mazā Fermā teorēma (zila).
+\item Katrā vertikālē var noskaidrot mazāko $k$, kuram $a^k$ ir kongruents $1$ (tā ir multiplikatīvā kārta).
+\item Pirmskaitļa $p = 7$ primitīvās saknes $a = 3$ un $a = 5$ nevar būt kvadrātiskie atlikumi. Arī $a = 6$ nevar 
+būt kvadrātiskais atlikums, jo šī skaitļa pakāpes veic nepāra skaitu ciklu (tieši trīs ciklus) līdzkamēr tiek līdz $a^6$. 
+Bet kvadrātiskajam atlikumam (piemēram $a=1$,$a=2$, vai $a=4$) savā stabiņā jāveic pāra skaits ciklu: $(p-1)/\text{ord}_p(a)$ jābūt pāru skaitlim.
+\end{itemize}
+
+
+
+\arrayrulecolor[HTML]{999999}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[ht!]\centering
+{\small
+\begin{tabular*}{18.46cm}{@{}|p{10.35cm}|p{7.25cm}|@{}} \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{E1FFE1}
+Intuīcija: No Ležandra simbola definīcijas (tā ir skaitļa $a$ pakāpe)
+seko vairākas vienkāršas īpašības:
+} \\ \hline
+{\bf Apgalvojums \#3:} Ja $a \equiv b\,(\text{mod}\;p)$, tad $\dlegendre{a}{p} = \dlegendre{b}{p}$, jeb 
+Ležandra simbols ir periodisks ar periodu $p$ (vienāds kongruentiem $a,b$).\newline
+{\bf Apgalvojums \#4:} $\dlegendre{-1}{p} = 1$ tad un tikai tad, ja $p = 4k+1$.\newline
+{\bf Apgalvojums \#5:} $\dlegendre{2}{p} = 1$ tad un tikai tad, ja $p = 8k+1$ vai $p = 8k+7$.\newline
+{\bf Apgalvojums \#6:} $\dlegendre{a \cdot b}{p} = \dlegendre{a}{p} \cdot \dlegendre{b}{p}$.
+&
+Kongruenci $x^2 + 1 \equiv 0\,(\text{mod}\;p)$ var atrisināt pirmskaitļiem $p = 5,13,17,29,\ldots$, 
+bet nevar at\-ri\-si\-nāt pirmskaitļiem $p = 3, 7, 11, 19, 23,\ldots$, jo tiem $\dlegendre{-1}{p} = -1$. \\ \hline
+\multicolumn{2}{|p{18.05cm}|}{
+\cellcolor[HTML]{FFE1E1}
+{\bf Baltic Way atlase, 2019.g.\ septembris.} 
+Dots naturāls skaitlis $m$ un pirmskaitlis $p$, kas ir skaitļa $m^2 - 2$ dalītājs. 
+Zināms, ka eksistē tāds naturāls skaitlis $a$, ka $a^2 + m - 2$ dalās ar $p$. 
+Pierādīt, ka eksistē tāds naturāls skaitlis $b$, ka $b^2 - m - 2$ 
+dalās ar $p$. 
+} \\ \hline
+\multicolumn{2}{|p{18.05cm}|}{
+{\bf Pierādījums.} Zināms, ka ${\displaystyle \dlegendre{2-m}{p} = 1}$; pieņemsim no pretējā, ka ${\displaystyle \dlegendre{2+m}{p} = -1}$
+(t.i. kongruenci $b^2 - m - 2 \equiv 0$  nevar atrisināt). Iegūstam: \newline
+${\displaystyle 1 \cdot (-1) = \dlegendre{2-m}{p} \cdot \dlegendre{2+m}{p} = \dlegendre{4 - m^2}{p} = \dlegendre{(4 - m^2) + (m^2 - 2)}{p} = 
+\dlegendre{2}{p}}$.\newline
+Esam ieguvuši, ka $\dlegendre{2}{p} = -1$, bet tas nav iespējams, jo $m^2 - 2$ dalās ar $p$, t.i. kongruenci 
+$m^2 \equiv 2$ var atrisināt un $2$ ir kvadrātiskais atlikums pēc $p$ moduļa. Pretruna. $\blacksquare$
+} \\ \hline
+\end{tabular*}
+}
+\end{table}
+
+{\bf Jautājums.} {\bf (A)} Izmantojot Python vai jebkādus matemātiskus spriedumus, atrast cik 
+dažādu primitīvo sakņu ir pirmskaitlim $p = 41$? (Viena no tām ir $a = 6$, bet ir arī citas.)\\
+{\bf (B)} Vai var pamatot, ka patvaļīgam nepāra pirmskaitlim $p$, primitīvo sakņu skaits ir $\varphi(p-1)$, kas ir Eilera funkcijas vērtība?
+
+
+
+
+
+
+
+% Legendre symbol
+% https://en.wikipedia.org/wiki/Legendre_symbol
+
+
+\end{document}
+
+

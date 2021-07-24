@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<h1>Discrete 2021: Summaries</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments.html">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq.html">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><b>Summaries</b></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations.html">Presentations</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<h2>Glossary</h2>
+
+<p>TBD</p>
+
+
+<h2>Theory Cheat Sheets</h2>
+
+<p>TBD</p>
+
+<h2>Algorithmic Procedures</h2>
+
+<ol>
+<li>Propositional and Predicate Logic</li>
+<li>Sets, Functions, Relations</li>
+<li>Algorithms, Asymptotics, Recursion</li>
+<li>Number Theory, Induction
+<ul>
+<li>Sieve of Eratosthenes</li>
+<li>Brute-force Primality Test</li>
+<li>Euclid Algorithm for GCD</li>
+<li>Blankinship Algorithm</li>
+</ul>
+</li>
+<li>Combinatorics
+<ul>
+<li>Characteristic Equation for a Recurrent Sequence (Real roots only)</li>
+</ul>
+</li>
+<li>Probabilities
+<ul>
+<li>Find E(X), V(X) if the probability density function is known.</li>
+</ul>
+</li>
+<li>Graphs and Trees
+<ul>
+<li>Count Paths Between Vertices</li>
+<li>Find Euler Circuit</li>
+<li>Preorder Traversal</li>
+<li>Inorder Traversal</li>
+<li>Postorder Traversal</li>
+<li>Print Infix</li>
+<li>Evaluate Postfix</li>
+</li>
+</ol>
+
+
+<h2>Python Demos (Optional)</h2>
+
+</body>
+</html>
+
+

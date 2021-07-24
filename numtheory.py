@@ -13,63 +13,71 @@ class NumtheoryHandler(webapp2.RequestHandler):
     local_tales = [
         {
             'id':'NumTh.ArithmProgressions', 
-            'dir':'tale-numtheory-arithm-progressions',
+            'dir':'nt_hi01-arithmetic-progressions',
             'title': u'Aritmētiskas progresijas'
-        },
-        {
-            'id':'NumTh.GeomProgressions', 
-            'dir':'tale-numtheory-geom-progressions',
-            'title': u'Ģeometriskas progresijas'
-        },
-        {
-            'id':'NumTh.PeriodicSequences', 
-            'dir':'numtheory-recurrence-relation',
-            'title': u'Rekurentu virkņu periodiskums'
-        },
-        {
-            'id':'NumTh.Grade10', 
-            'dir':'tale-numtheory-grade10',
-            'title': u'10.klases mix'
-        },
-        {
-            'id':'Comb.GamesSymmetry', 
-            'dir':'tale-numtheory-games-symmetry',
-            'title': u'Simetrija spēlēs'
-        },
-        {
-            'id':'NumTh.Multiplicative', 
-            'dir':'tale-numtheory-multiplicative',
-            'title': u'Multiplikatīva teorija (pārtaisāms)',
-            'date': '2019-06-10'
-        }    
+        }
+#         ,
+#         {
+#             'id':'NumTh.GeomProgressions', 
+#             'dir':'tale-numtheory-geom-progressions',
+#             'title': u'Ģeometriskas progresijas'
+#         },
+#         {
+#             'id':'NumTh.PeriodicSequences', 
+#             'dir':'numtheory-recurrence-relation',
+#             'title': u'Rekurentu virkņu periodiskums'
+#         },
+#         {
+#             'id':'NumTh.Grade10', 
+#             'dir':'tale-numtheory-grade10',
+#             'title': u'10.klases mix'
+#         },
+#         {
+#             'id':'Comb.GamesSymmetry', 
+#             'dir':'tale-numtheory-games-symmetry',
+#             'title': u'Simetrija spēlēs'
+#         },
+#         {
+#             'id':'NumTh.Multiplicative', 
+#             'dir':'tale-numtheory-multiplicative',
+#             'title': u'Multiplikatīva teorija (pārtaisāms)',
+#             'date': '2019-06-10'
+#         }    
     ]
         
     global_tales = [
-        {
-            'id':'NumTh.JunIntro',
-            'dir':'tale-numtheory-jun-intro',
-            'title': u'Jun00: Ievadlekcija',
-            'date': '2019-09-14'
-        },
+#         {
+#             'id':'NumTh.JunIntro',
+#             'dir':'tale-numtheory-jun-intro',
+#             'title': u'Jun00: Ievadlekcija',
+#             'date': '2019-09-14'
+#         },
         {
             'id':'NumTh.Jun01',
-            'dir':'tale-numtheory-jun01-divisibility',
+            'dir':'ntjun01-divisibility',
             'title': u'Jun01: Pirmskaitļi un dalāmība',
-            'date': '2019-09-28'
+            'date': '2020-10-10'
         },
-#        {
-#            'id':'NumTh.Jun03',
-#            'dir':'tale-numtheory-jun02-congruences',
-#            'title': u'Jun02: Modulārā aritmētika',
-#            'date': '2019-09-28',
-#            'nolink' : 'True'
-#        },        
         {
             'id':'NumTh.Jun02',
-            'dir':'tale-numtheory-jun03-crt',
-            'title': u'Jun02: Ķīniešu atlikumu teorēma',
-            'date': '2019-12-14'
-        },
+            'dir':'ntjun02-modular-arithmetic',
+            'title': u'Jun02: Modulārā aritmētika (PPTX)',
+            'url': 'http://18.193.16.199/nt/slides/ntjun02-modular-arithmetic.pptx',
+            'date': '2020-11-14',
+        },        
+        {
+            'id':'NumTh.Jun03',
+            'dir':'ntjun03-crt',
+            'title': u'Jun03: Ķīniešu atlikumu teorēma',
+            'date': '2021-01-30',
+        },        
+        {
+            'id':'NumTh.Jun04',
+            'dir':'ntjun04-rational-irational',
+            'title': u'Jun04: Racionāli, iracionāli skaitļi (PPTX)',
+            'url': 'http://18.193.16.199/nt/slides/ntjun04-rational-irational.pptx',
+            'date': '2021-03-27',
+        }
 #        {
 #            'id':'NumTh.Jun04',
 #            'dir':'tale-numtheory-jun04-valuations',
@@ -80,15 +88,15 @@ class NumtheoryHandler(webapp2.RequestHandler):
     ]
 
     exam_lst = [
+#         {
+#             'id':'G10.ALG', 
+#             'dir':'exam-numtheory-algebra',
+#             'title': u'Algebras prasmes'
+#         },
         {
-            'id':'G10.ALG', 
-            'dir':'exam-numtheory-algebra',
-            'title': u'Algebras prasmes'
-        },
-        {
-            'id':'G10.MOD', 
-            'dir':'exam-numtheory-modular-arithmetic',
-            'title': u'Modulārās aritmētikas prasmes'
+            'id':'Q.(NT10-NT12).MOD', 
+            'dir':'modular-arithmetic',
+            'title': u'Modulārā aritmētika'
         }
     ]
 
@@ -105,7 +113,7 @@ class NumtheoryHandler(webapp2.RequestHandler):
             template = jinja_env.get_template('numtheory/index.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
-        elif (my_id == 'tales.html'):            
+        elif (my_id == 'slides.html'):            
             template_context = {
                 'local_tales': self.local_tales,
                 'global_tales': self.global_tales,
@@ -113,7 +121,7 @@ class NumtheoryHandler(webapp2.RequestHandler):
                 'course': 'numtheory', 
                 'nav_items': nav_items                
             }
-            template = jinja_env.get_template('numtheory/tales.html')
+            template = jinja_env.get_template('numtheory/slides.html')
             output = template.render(template_context)
             self.response.out.write(output.encode('utf-8'))
         elif (my_id == 'references.html'):

@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>list_samples</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library list_samples</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a href="../../discrete/coq.html">Back to Coq Main Page</a>  
+<div class="paragraph"> </div>
+
+<a id="lab1"></a><h1 class="section">Lab02 Solutions</h1>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Nat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">PeanoNat</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">ZArith</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Znumtheory</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">BinInt</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Arith</span> <span class="id" title="var">Psatz</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab2"></a><h1 class="section">Lemmas 11-15 are Properties of Lists of Non-Negative Integers</h1>
+
+<div class="paragraph"> </div>
+
+ You do not need to modify anything in 
+this intro section. These function definitions and notations
+will be used below in samples 11 to 15. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">natlist</span> : <span class="id" title="keyword">Type</span> :=<br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">cons</span> (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) (<span class="id" title="var">L</span> : <span class="id" title="var">natlist</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;x :: L" := (<span class="id" title="var">cons</span> <span class="id" title="var">x</span> <span class="id" title="var">L</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60, <span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>).<br/>
+<span class="id" title="keyword">Notation</span> &quot;[ ]" := <span class="id" title="var">nil</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;[ x ; .. ; y ]" := (<span class="id" title="var">cons</span> <span class="id" title="var">x</span> .. (<span class="id" title="var">cons</span> <span class="id" title="var">y</span> <span class="id" title="var">nil</span>) ..).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function repeats numbers. For example,
+this should return the list <tt>[5;5;5;5;5;5;5]</tt>:
+<pre>
+  Compute (repeat 5 7).
+</pre>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="tactic">repeat</span> (<span class="id" title="var">n</span> <span class="id" title="var">count</span> : <span class="id" title="var">nat</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">count</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">O</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">count'</span> =&gt; <span class="id" title="var">n</span> :: (<span class="id" title="tactic">repeat</span> <span class="id" title="var">n</span> <span class="id" title="var">count'</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function returns the length of the list. For example, this should return 5:
+<pre>
+  Compute (length [1;2;4;8;16]).
+</pre>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">length</span> (<span class="id" title="var">L</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">nat</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">O</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">S</span> (<span class="id" title="var">length</span> <span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function appends one list at the end of another. For example, 
+this should return <tt>[1;2;4;8;16;3;5]</tt>:
+<pre>
+  Compute (app [1;2;4;8;16] [3;5]).
+</pre>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">app</span> (<span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">L2</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">h</span> :: (<span class="id" title="var">app</span> <span class="id" title="var">t</span> <span class="id" title="var">L2</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Appending lists will be expressed as an infix operator <tt>++</tt> 
+</div>
+<div class="code">
+<span class="id" title="keyword">Notation</span> &quot;x ++ y" := (<span class="id" title="var">app</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 60).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function to reverse a list. For example, <tt>(rev [1,2,3])</tt> 
+is <tt>[3,2,1]</tt> 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">rev</span> (<span class="id" title="var">L</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">rev</span> <span class="id" title="var">t</span> ++ [<span class="id" title="var">h</span>]<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The function returns the list of all natural numbers from 1 to n. 
+It is empty, if n=0 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">rangeTo</span>(<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>): <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">n</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| 0 =&gt; []<br/>
+&nbsp;&nbsp;| (<span class="id" title="var">S</span> <span class="id" title="var">n'</span>) =&gt; (<span class="id" title="var">rangeTo</span> <span class="id" title="var">n'</span>) ++ [<span class="id" title="var">n</span>]<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">nonzeros</span> (<span class="id" title="var">l</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> := <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">l</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| 0 :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">nonzeros</span>(<span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="var">h</span> :: <span class="id" title="var">nonzeros</span>(<span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_nonzeros</span>:<br/>
+&nbsp;&nbsp;<span class="id" title="var">nonzeros</span> [0;1;0;2;3;0;0] = [1;2;3].<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">oddmembers</span> (<span class="id" title="var">l</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">l</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h</span> :: <span class="id" title="var">t</span> =&gt; <span class="id" title="keyword">if</span> <span class="id" title="var">odd</span> <span class="id" title="var">h</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">then</span> <span class="id" title="var">h</span> :: <span class="id" title="var">oddmembers</span>(<span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">else</span> <span class="id" title="var">oddmembers</span>(<span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_oddmembers</span>:<br/>
+&nbsp;&nbsp;<span class="id" title="var">oddmembers</span> [0;1;0;2;3;0;0] = [1;3].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">countoddmembers</span> (<span class="id" title="var">l</span>:<span class="id" title="var">natlist</span>) : <span class="id" title="var">nat</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">length</span> (<span class="id" title="var">oddmembers</span> <span class="id" title="var">l</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_countoddmembers1</span>:<br/>
+&nbsp;&nbsp;<span class="id" title="var">countoddmembers</span> [1;0;3;1;4;5] = 4.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_countoddmembers2</span>:<br/>
+&nbsp;&nbsp;<span class="id" title="var">countoddmembers</span> [0;2;4] = 0.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">test_countoddmembers3</span>:<br/>
+&nbsp;&nbsp;<span class="id" title="var">countoddmembers</span> <span class="id" title="var">nil</span> = 0.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab3"></a><h2 class="section">Do not modify this line: sample2_11</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem <tt>'rev_app_distr'</tt> from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>. 
+This lemma tells how to reverse a concatentation of two lists: 
+<tt>rev([1;2;4]++[7;11]) = [11;7]++[4;2;1].</tt>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">concat_nil_r</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L</span>: <span class="id" title="var">natlist</span>, <span class="id" title="var">L</span> ++ [] = <span class="id" title="var">L</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">L</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">L</span> <span class="id" title="keyword">as</span> [| <span class="id" title="var">n</span> <span class="id" title="var">LL</span> <span class="id" title="var">IHL</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHL</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">concat_h_tail_tail</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">L1</span> <span class="id" title="var">L2</span>: <span class="id" title="var">natlist</span>), <br/>
+&nbsp;&nbsp;(<span class="id" title="var">n</span>::<span class="id" title="var">L1</span>)++<span class="id" title="var">L2</span> = <span class="id" title="var">n</span>::(<span class="id" title="var">L1</span>++<span class="id" title="var">L2</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">as</span> [| <span class="id" title="var">m</span> <span class="id" title="var">L1TAIL</span> <span class="id" title="var">IH</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">concat_assoc</span>: <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> <span class="id" title="var">L3</span>: <span class="id" title="var">natlist</span>, (<span class="id" title="var">L1</span> ++ <span class="id" title="var">L2</span>) ++ <span class="id" title="var">L3</span> = <span class="id" title="var">L1</span> ++ <span class="id" title="var">L2</span> ++ <span class="id" title="var">L3</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> <span class="id" title="var">L3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">as</span> [| <span class="id" title="var">n</span> <span class="id" title="var">L1TAIL</span> <span class="id" title="var">IH</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">concat_h_tail_tail</span> <span class="id" title="var">n</span> <span class="id" title="var">L1TAIL</span> <span class="id" title="var">L2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IH</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_11</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">natlist</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">rev</span> (<span class="id" title="var">L1</span> ++ <span class="id" title="var">L2</span>) = <span class="id" title="var">rev</span> <span class="id" title="var">L2</span> ++ <span class="id" title="var">rev</span> <span class="id" title="var">L1</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">L1</span> <span class="id" title="keyword">as</span> [| <span class="id" title="var">n</span> <span class="id" title="var">L11</span> <span class="id" title="var">IHL1</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">concat_nil_r</span> (<span class="id" title="var">rev</span> <span class="id" title="var">L2</span>)) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHL1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">concat_assoc</span> (<span class="id" title="var">rev</span> <span class="id" title="var">L2</span>) (<span class="id" title="var">rev</span> <span class="id" title="var">L11</span>) [<span class="id" title="var">n</span>]) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H3</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab4"></a><h2 class="section">Do not modify this line: sample2_12</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem <tt>'rev_involutive'</tt> from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>. 
+This lemma tells that reversing any list two times returns the
+original list: <tt>rev(rev([1;2;4])) = rev([4;2;1]) = rev([1;2;4])</tt>. 
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">concat_single</span>: <span class="id" title="keyword">forall</span> (<span class="id" title="var">n</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">L</span>:<span class="id" title="var">natlist</span>), <br/>
+&nbsp;&nbsp;<span class="id" title="var">n</span>::<span class="id" title="var">L</span> = [<span class="id" title="var">n</span>] ++ <span class="id" title="var">L</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">n</span> <span class="id" title="var">L</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">L</span> <span class="id" title="keyword">as</span> [| <span class="id" title="var">m</span> <span class="id" title="var">LTAIL</span> <span class="id" title="var">IH</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_12</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L</span> : <span class="id" title="var">natlist</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">rev</span> (<span class="id" title="var">rev</span> <span class="id" title="var">L</span>) = <span class="id" title="var">L</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">L</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">L</span> <span class="id" title="keyword">as</span> [| <span class="id" title="var">n</span> <span class="id" title="var">LTAIL</span> <span class="id" title="var">IH</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">concat_single</span> <span class="id" title="var">n</span> <span class="id" title="var">LTAIL</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_11</span> [<span class="id" title="var">n</span>] <span class="id" title="var">LTAIL</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_11</span> (<span class="id" title="var">rev</span> <span class="id" title="var">LTAIL</span>) (<span class="id" title="var">rev</span> [<span class="id" title="var">n</span>])) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IH</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab5"></a><h2 class="section">Do not modify this line: sample2_13</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem 'app_assoc4' from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>.
+This lemma tells that list concatenation is associative; 
+one can regroup as long as the order of lists does not change.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_13</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> <span class="id" title="var">L3</span> <span class="id" title="var">L4</span> : <span class="id" title="var">natlist</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">L1</span> ++ (<span class="id" title="var">L2</span> ++ (<span class="id" title="var">L3</span> ++ <span class="id" title="var">L4</span>)) = ((<span class="id" title="var">L1</span> ++ <span class="id" title="var">L2</span>) ++ <span class="id" title="var">L3</span>) ++ <span class="id" title="var">L4</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> <span class="id" title="var">L3</span> <span class="id" title="var">L4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> <span class="id" title="var">concat_assoc</span> <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+A longer proof can use associativity with special substitutions, 
+but this is longer. 
+<pre>
+  Lemma sample2_13: forall L1 L2 L3 L4 : natlist,
+    L1 ++ (L2 ++ (L3 ++ L4)) = ((L1 ++ L2) ++ L3) ++ L4.
+  Proof.
+    intros L1 L2 L3 L4.
+    pose (concat_assoc L1 L2 L3) as H1.
+    rewrite H1.
+    pose (concat_assoc L1 (L2 ++ L3) L4) as H2.
+    rewrite H2.
+    pose (concat_assoc L2 L3 L4) as H3.
+    rewrite H3.
+    reflexivity.
+  Qed.
+</pre>
+
+<div class="paragraph"> </div>
+
+<a id="lab6"></a><h2 class="section">Do not modify this line: sample2_14</h2>
+
+<div class="paragraph"> </div>
+
+ See the Theorem 'rev_injective' from the Coq textbook
+<a href='https://bit.ly/2uuX1ZK'>Lists: Working with Structured Data</a>.
+This lemma tells that reversing a list is an injection: different lists
+must lead to different reversed lists.
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">list_refl</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">L</span>: <span class="id" title="var">natlist</span>, <span class="id" title="var">L</span> = <span class="id" title="var">L</span>.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_14</span>:  <span class="id" title="keyword">forall</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span> : <span class="id" title="var">natlist</span>, <span class="id" title="var">rev</span> <span class="id" title="var">L1</span> = <span class="id" title="var">rev</span> <span class="id" title="var">L2</span> -&gt; <span class="id" title="var">L1</span> = <span class="id" title="var">L2</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">L1</span> <span class="id" title="var">L2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">list_refl</span> (<span class="id" title="var">rev</span> (<span class="id" title="var">rev</span> <span class="id" title="var">L1</span>))) <span class="id" title="keyword">as</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span> <span class="id" title="tactic">at</span> 2.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_12</span> <span class="id" title="var">L1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample2_12</span> <span class="id" title="var">L2</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H2</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">H3</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H1</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab7"></a><h2 class="section">Do not modify this line: sample2_15</h2>
+
+<div class="paragraph"> </div>
+
+ See <a href='https://bit.ly/2tM6N9C'>Latvian Open Math Olympiad, 2004</a>, 
+Grade 8, Problem 5.<br/>
+In an increasing sequence there are all positive integers from 1 to 2004; 
+every number is written exactly once.
+We remove all numbers that are written in the positions 
+n=1, n=4, n=7, n=10, and so on. 
+From the remaining sequence we again remove all numbers in 
+the positions n=1, n=4, n=7, n=10.<br/>
+We repeat this procedure until there is only one number left. 
+Which one is it? 
+<div class="paragraph"> </div>
+
+ This function should return a new list where 
+1st, 4th, 7th, etc. members are removed 
+</div>
+<div class="code">
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">sample15_rm_one_third</span> (<span class="id" title="var">L</span>: <span class="id" title="var">natlist</span>) : <span class="id" title="var">natlist</span> := <br/>
+&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h1</span> :: <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">h1</span> :: <span class="id" title="var">h2</span> :: <span class="id" title="var">nil</span> =&gt; <span class="id" title="var">h2</span> :: <span class="id" title="var">nil</span><br/>
+&nbsp;&nbsp;| (<span class="id" title="var">h1</span> :: <span class="id" title="var">h2</span> :: <span class="id" title="var">h3</span> :: <span class="id" title="var">t</span>) =&gt; <span class="id" title="var">h2</span> :: <span class="id" title="var">h3</span> :: (<span class="id" title="var">sample15_rm_one_third</span> <span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+These are 10 unit tests. Once the function is 
+defined correctly, each proof here can be replaced
+by <tt>'Proof. simpl. reflexivity. Qed'</tt> or similar.
+</div>
+<div class="code">
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test0</span>: <span class="id" title="var">sample15_rm_one_third</span> [] = [].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test1</span>: <span class="id" title="var">sample15_rm_one_third</span> [1] = [].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test2</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2] = [2].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test3</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3] = [2;3].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test4</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4] = [2;3].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test5</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5] = [2;3;5].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test6</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6] = [2;3;5;6].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test7</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6;7] = [2;3;5;6].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test8</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6;7;8] = [2;3;5;6;8].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test9</span>: <span class="id" title="var">sample15_rm_one_third</span> [1;2;3;4;5;6;7;8;9] = [2;3;5;6;8;9].<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+This function is supposed to return the last number that
+remains, if we apply <tt>'sample15_rm_one_third'</tt> until  
+the last number remains. 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">recursive_remove</span> (<span class="id" title="var">j</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">k</span>:<span class="id" title="var">nat</span>) (<span class="id" title="var">L</span>:<span class="id" title="var">natlist</span>) (<span class="id" title="var">M</span>:<span class="id" title="var">natlist</span>): <span class="id" title="var">nat</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">k</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;| 0 =&gt; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">M</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">MHead</span> :: <span class="id" title="var">MTail</span> =&gt; <span class="id" title="var">MHead</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">S</span> <span class="id" title="var">k'</span> =&gt; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">M</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; (<span class="id" title="var">recursive_remove</span> 0 <span class="id" title="var">k'</span> [] [])<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">MHead</span>::<span class="id" title="var">nil</span> =&gt; (<span class="id" title="var">recursive_remove</span> 0 <span class="id" title="var">k'</span> [] [<span class="id" title="var">MHead</span>])<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">MHead</span>::<span class="id" title="var">MTail</span> =&gt; (<span class="id" title="var">recursive_remove</span> 1 <span class="id" title="var">k'</span> (<span class="id" title="var">MHead</span>::<span class="id" title="var">MTail</span>) [])<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">LHead</span>::<span class="id" title="var">LTail</span> =&gt; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">j</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1 =&gt; (<span class="id" title="var">recursive_remove</span> 2 <span class="id" title="var">k'</span> <span class="id" title="var">LTail</span> <span class="id" title="var">M</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2 =&gt; (<span class="id" title="var">recursive_remove</span> 3 <span class="id" title="var">k'</span> <span class="id" title="var">LTail</span> (<span class="id" title="var">M</span>++[<span class="id" title="var">LHead</span>]))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">_</span> =&gt; (<span class="id" title="var">recursive_remove</span> 1 <span class="id" title="var">k'</span> <span class="id" title="var">LTail</span> (<span class="id" title="var">M</span>++[<span class="id" title="var">LHead</span>]))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">sample15_rm_until_last</span> (<span class="id" title="var">L</span>: <span class="id" title="var">natlist</span>) : <span class="id" title="var">nat</span> := <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">L</span> <span class="id" title="keyword">with</span> <br/>
+&nbsp;&nbsp;| <span class="id" title="var">nil</span> =&gt; 0<br/>
+&nbsp;&nbsp;| <span class="id" title="var">LHead</span>::<span class="id" title="var">nil</span> =&gt; <span class="id" title="var">LHead</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">_</span> =&gt; <span class="id" title="var">recursive_remove</span> 1 (3*(<span class="id" title="var">length</span> <span class="id" title="var">L</span>)) <span class="id" title="var">L</span> []<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test10</span>: <span class="id" title="var">sample15_rm_until_last</span> [] = 0.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test11</span>: <span class="id" title="var">sample15_rm_until_last</span> [1] = 1.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test12</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2] = 2.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test13</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2;3] = 3.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test14</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2;3;4] = 3.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Example</span> <span class="id" title="var">sample15_test15</span>: <span class="id" title="var">sample15_rm_until_last</span> [1;2;3;4;5] = 5.<br/>
+<span class="id" title="keyword">Proof</span>. <span class="id" title="tactic">simpl</span>. <span class="id" title="tactic">reflexivity</span>. <span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The following lemma may cause Coq to crash, so it was replaced
+by a simple 'Compute' call instead of a proper testcase:
+<pre>
+  Lemma sample2_15: (sample15_rm_until_last (rangeTo 2004)) = 1598.
+  Proof. simpl. reflexivity. Qed.
+</pre>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Compute</span> (<span class="id" title="var">sample15_rm_until_last</span> (<span class="id" title="var">rangeTo</span> 2004)).<br/>
+
+<br/>
+<span class="id" title="keyword">Close</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">nat_scope</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

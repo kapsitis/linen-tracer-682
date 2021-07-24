@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{3}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija\linebreak NMS juniori} \hfill {\bf\LARGE Mājasdarbs \#3} \hfill \parbox{3.5cm}{\flushright\bf 2020./2021.m.g.} \\[2pt]
+\rm\small 2021.gada 31.janvāris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+\vspace{10pt}
+{\bf Iesniegšanas termiņš:} 2021.g.\ 20.februāris\\
+{\bf Kam iesūtīt:} {\tt kalvis.apsitis}, domēns {\tt gmail.com}
+
+\vspace{10pt}
+\begin{problem}
+% Yuhong; p55, ex3
+Pierādīt, ka jebkuram naturālam skaitlim $n$, ir $n$ pēc kārtas sekojoši 
+naturāli skaitļi, ka jebkuram no tiem ir dalītājs, kas ir pilns kvadrāts, kas lielāks par $1$. 
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+% Yuhong; p57, ex5
+Dotajam naturālam skaitlim $n$, ar $f(n)$ apzīmējam mazāko naturālo skaitli, ka 
+${\displaystyle \sum\limits_{k=1}^{f(n)} k}$ dalās ar $n$. 
+Pierādīt, ka $f(n) = 2n-1$ tad un tikai tad, ja $n$ ir skaitļa $2$ pakāpe.
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+% Yuhong; p58, ex6
+Ar $n$ un $k$ apzīmējam veselus skaitļus, ka $n>0$ un skaitlis $k(n-1)$ ir pāra skaitlis. 
+Pierādīt, ka eksistē skaitļi $x$ un $y$, ka $\text{LKD}(x,n) = \text{LKD}(y,n) = 1$ un 
+$x + y \equiv k\;\pmod{n}$. 
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+Plakne sadalīta kvadrātiņos kā rūtiņu papīra lapa; rūtiņas garums ir $1$ un vienā no rūtiņu 
+virsotnēm ir koordinātu sākumpunkts.
+Sauksim rūtiņu virsotni $X$ šajā plaknē par {\em redzamu} no koordinātu sākumpunkta 
+$O(0;0)$, ja nogrieznis $OX$ nesatur citas rūtiņu virsotnes ar abām veselām koordinātēm, 
+izņemot $O$ un $X$. Pierādīt, ka jebkuram naturālam $n$ eksistē kvadrāts ar $n \times n$ rūtiņu virsotnēm
+(kur kvadrāta malas ir paralēlas koordinātu asīm), 
+ka neviena no šīm $n^2$ rūtiņu virsotnēm nav redzama no koordinātu sākumpunkta.
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+Ar $m, n$ apzīmēti naturāli skaitļi, kas apmierina šādu īpašību:
+$$ \text{LKD}(11k-1,m) = \text{LKD}(11k-1,n)\;\;\text{ir spēkā visiem naturāliem skaitļiem $k$.}$$
+Pierādīt, ka $m = 11^rn$ kādam veselam skaitlim $r$. 
+\end{problem}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{25}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija\linebreak ATV} \hfill {\bf\LARGE Uzdevumu lapa \#0} \hfill \parbox{3.5cm}{\flushright\bf 2020./2021.m.g.} %\\[2pt]
+%\rm\small 2020.gada 15.novembris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+%\vspace{10pt}
+%{\bf Iesniegšanas termiņš:} 2020.g.\ 2.janvāris\\
+%{\bf Kam iesūtīt:} {\tt kalvis.apsitis}, domēns {\tt gmail.com}
+
+\vspace{5pt}
+{\em (Par racionāliem un iracionāliem skaitļiem, skaitļu pierakstu un periodiskām virknēm.)}
+
+
+\vspace{10pt}
+\begin{problem}
+Plakne sadalīta vienības kvadrātiņos kā rūtiņu papīra lapa. 
+\begin{enumerate}[(A)]
+\item Vai var šajā plaknē uzzīmēt regulāru piecstūri, kura visas virsotnes atrastos rūtiņu virsotnēs?
+\item Vai šajā plaknē var uzzīmēt regulāru trijstūri, kura visas virsotnes atrastos rūtiņu virsotnēs?
+\end{enumerate}
+{\em Piezīme.} Par {\em rūtiņu virsotnēm} saucam tos plaknes punktus, kuros sastopas četri vienības kvadrātiņi.
+\end{problem}
+
+
+\vspace{10pt}
+\begin{problem} 
+Rūtiņu plaknē var iezīmēt dažādu izmēru kvadrātus (gan taisnus, gan slīpus), kuru virsotnes var atrasties rūtiņu 
+virsotnēs. Šajos piemēros mūs interesē kvadrāti ar noteitiem izmēriem. Pieņemam, ka vienas rūtiņas izmērs ir $1 \times 1$
+(viena garuma vienība). 
+\begin{enumerate}[(A)]
+\item
+Vai eksistē kvadrāts ar izmēriem $17 \times 17$, kura virsotnes atrodas rūtiņu virsotnēs, bet malas nav paralēlas rūtiņu malām?
+\item 
+Vai eksistē kvadrāts ar diagonāles garumu $\sqrt{26}$, kura virsotnes atrodas rūtiņu virsotnēs?
+\item 
+Vai eksistē kvadrāts ar diagonāles garumu $\sqrt{76}$, kura virsotnes atrodas rūtiņu virsotnēs?
+\item 
+Vai eksistē kvadrāts ar diagonāles garumu $\sqrt{126}$, kura virsotnes atrodas rūtiņu virsotnēs?
+\end{enumerate}
+\end{problem}
+
+\vspace{10pt}
+\begin{problem}
+Bezgalīgu virkni no nullēm un vieniniekiem veido sekojoši: 
+\begin{itemize} 
+\item Vispirms uzraksta ciparu $0$. 
+\item Katrā nākamajā solī apskata līdzšinējās virknes locekļus, visu nuļļu vietā ieraksta vieniniekus, bet visu vieninieku vietā nulles \textendash{}
+un pieraksta galā esošajai virknei. 
+\end{itemize}
+Veicot šos soļus, iegūstam meklējamās virknes posmus (katrs nākamais posms divreiz garāks par iepriekšējo):
+\begin{verbatim}
+0
+01
+0110
+01101001
+0110100110010110
+01101001100101101001011001101001
+...
+\end{verbatim}
+Ja virknes locekļus numurē, sākot ar $0$-to, iegūstam, ka 
+$t_0 = 0$, $t_1 = 1$, $t_2 = 1$, $t_3 = 0$, $t_4 = 1$, $t_5 = 0$, $t_6 = 0$, $t_7 = 1$, 
+$t_8 = 1$, $t_9 = 0$, utt. Lai atrastu jebkuru virknes locekli, uzraksta pietiekoši 
+daudzus posmus šajā konstrukcijā. 
+\begin{enumerate}[(A)]
+\item Vai virkne $t_n$ ir periodiska? (Ja ir, atrast tās priekšperiodu un periodu. Ja nav, pamatot, kāpēc nav.)
+\item Aplūkojam jaunu virkni ${\displaystyle g_n = t_{3^n}}$, t.i. tos $t_n$ locekļus, kuru numuri ir skaitļa $3$ pakāpes. 
+Jau atradām, ka 
+$$\left\{ \begin{array}{l}
+g_0 = t_{3^0} = t_1 = 1,\\
+g_1 = t_{3^1} =  t_3 = 0,\\
+g_2 = t_{3^2} = t_9 = 0. 
+\end{array} \right.$$
+Vai virkne $g_n$ ir periodiska? (Ja ir, atrast tās priekšperiodu un periodu. Ja nav, pamatot, kāpēc nav.)
+\end{enumerate}
+\end{problem}
+
+
+
+\vspace{10pt}
+\begin{problem}
+Ilzītei sākumā bija $10$ eirocenti. Viņa nopelnīja vēl $7$ eiras, bet pēc tam $7$ eiras iztērēja. 
+Lai noskaidrotu, cik naudas atlicis, viņa rēķināja ar Python:
+\begin{Verbatim}[frame=single,numbers=left]
+(base) PS C:\> python
+>>> 0.1
+0.1
+>>> 0.1 + 7
+7.1
+>>> (0.1 + 7) - 7
+0.09999999999999964
+\end{Verbatim}
+Ilzītei radās aizdomas, ka pēdējais rezultāts radies noapaļojot, 
+tāpēc viņa izteica skaitli $0.1 = \frac{1}{10}$ kā bezgalīgu summu:
+$$0.1 = \frac{d_1}{2} + \frac{d_2}{2^2} + \frac{d_3}{2^3} + \frac{d_4}{2^4} + \ldots,$$
+kur ikviens $d_i$ ir {\em binārā pieraksta cipars}, kas ir vai nu $0$, vai $1$. 
+
+Atrast periodisku virkni ar binārajiem cipariem, kas precīzi izsaka $0.1$. Un atrast, 
+līdz kurai pozīcijai skaitlis varētu būt bijis noapaļots, ka tika iegūts rezultāts {\tt 0.09999999999999964}. 
+\end{problem}
+
+
+
+
+%Farey sequence
+\vspace{10pt}
+\begin{problem}
+Zināms, ka racionāla daļa $\frac{p}{q}$ apmierina nevienādības:
+$$\frac{2019}{2020} < \frac{p}{q} < \frac{2020}{2021}.$$
+Starp visām šādām daļām atrast to, kurai saucējs $q$ ir vismazākais.
+\end{problem}
+
+
+%Farey sequence
+\vspace{10pt}
+\begin{problem}
+\begin{enumerate}[(A)]
+\item Vai skaitlis $\sqrt[3]{2}$ ir racionāls vai iracionāls?
+\item Pierādīt vai apgāzt sekojošu apgalvojumu:\\
+``Katram reālam skaitlim $x$, ja $x^2$ ir iracionāls, tad arī $x^3$ ir iracionāls.''
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}

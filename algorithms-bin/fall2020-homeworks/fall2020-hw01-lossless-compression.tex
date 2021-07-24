@@ -87,49 +87,49 @@
 
 %\begin{changemargin}{10pt}{10pt}
 {\footnotesize
-Vairāki uzdevumi šajā mājasdarbā iespaidojušies no MIT Open Courseware: 
+Vairāki uzdevumi šajā mājasdarbā iespaidojušies no MIT Open Courseware:
 \url{https://bit.ly/37Aywtf} un \url{https://bit.ly/2BdK8GA}\\
 }
 %\end{changemargin}
 
-{\bf Termiņš:} 2020.gada 28.septembris, līdz vakaram (23:59:59 EEST).\\
+{\bf Termiņš:} 2020.gada 5.oktobris, līdz vakaram\\ (23:59:59 EEST).\\
 {\bf Iesniegšanas veids:} E-studiju vide.
 
 \vspace{10pt}
 {\bf 1.uzdevums (Gabalu garumu kodējums).}\\
-Aplūkojam {\em Bernulli gadījumlielumu} $X$, kam 
+Aplūkojam {\em Bernulli gadījumlielumu} $X$, kam
 $$\left\{
 \begin{array}{l}
 P(X = 0) = \dfrac{255}{256},\\[6pt]
 P(X = 1) = \dfrac{1}{256}.\\
 \end{array} \right.$$
-(Piemēram, tiek mesta asi\-met\-ris\-ka monēta, kam ``cipars'' 
+(Piemēram, tiek mesta asi\-met\-ris\-ka monēta, kam ``cipars''
 ({\em heads} jeb bits $1$) uzkrīt ar varbūtību $\frac{1}{256}$.)
 
-Virknīti ar $n$ šī gadījumlieluma vērtībām ap\-zī\-mē ar $X^n$. 
+Virknīti ar $n$ šī gadījumlieluma vērtībām ap\-zī\-mē ar $X^n$.
 To saspiež, izmantojot {\em Gabalu garumu ko\-dē\-ju\-mu} ({\em run-length encoding}).
-Katru vieninieku kodē atsevišķi, bet 
+Katru vieninieku kodē atsevišķi, bet
 nepārtrauktiem nuļļu gabaliem izvada tikai gabalu garumus.
 
 {\bf Algoritma apraksts:}\\
 Ievadei $X^n$ saspiesto rezultātu $f(X^n)$ iegūst,
-atkārtoti izpildot šos 3 soļus, ko turpina līdzkamēr 
+atkārtoti izpildot šos 3 soļus, ko turpina līdzkamēr
 ievade pilnībā nolasīta.
 
 \begin{description}
 \item[1.Solis] \hfill \\
-Ja ievadē pirmais bits ir ``1'', tad to nolasa un 
-izvadē raksta astoņas nulles: 
+Ja ievadē pirmais bits ir ``1'', tad to nolasa un
+izvadē raksta astoņas nulles:
 $\textcolor{blue}{\mathtt{00000000}}$.
 \item[2.Solis] \hfill \\
-Ja ievades sākumā ir $r \leq 255$ nulles, aiz kurām seko vieninieks, 
-tad visas šīs nulles nolasa un 
+Ja ievades sākumā ir $r \leq 255$ nulles, aiz kurām seko vieninieks,
+tad visas šīs nulles nolasa un
 izvadē raksta $8$-bitu virknīti \textendash{} skaitļa $r$ bināro pierakstu.
 (Tā kā nuļļu skaits $r \neq 0$, tad šajā solī nerodas izvade $\textcolor{blue}{\mathtt{00000000}}$.)
 \item[3.Solis] \hfill \\
-Ja ievadē ir $r > 255$ pēc kārtas esošas nulles, 
+Ja ievadē ir $r > 255$ pēc kārtas esošas nulles,
 tad šajā solī nolasa tikai $255$ nulles (un izvadē raksta skaitli $255$ bināri, kā iepriekšējā punktā:
-$\textcolor{blue}{\mathtt{11111111}}$). Turpina pildīt 3.soli (un izvadīt skaitļa 
+$\textcolor{blue}{\mathtt{11111111}}$). Turpina pildīt 3.soli (un izvadīt skaitļa
 $255$ kodus) līdzkamēr iestājas 1.\ vai 2.\ soļa situācija.
 \end{description}
 
@@ -144,10 +144,10 @@ $\ell(f(X^n))$ apzīmē saspiestās virknītes garumu.
 \begin{enumerate}[(A)]
 \item
 Atrast (\ref{eq1}) vērtību ar precizitāti līdz $10^{-8}$.
-\item 
+\item
 Atrast {\em entropijas ātrumu} ({\em entropy rate}) Bernulli eksperimentu virknei:
-$\lim_{n \rightarrow \infty} \frac{1}{n} H(X^n)$ jeb teo\-rē\-tis\-ko robežu, cik labi 
-šo virkni var saspiest. Izteikt šo lielumu ar formulu un arī aprēķināt to 
+$\lim_{n \rightarrow \infty} \frac{1}{n} H(X^n)$ jeb teo\-rē\-tis\-ko robežu, cik labi
+šo virkni var saspiest. Izteikt šo lielumu ar formulu un arī aprēķināt to
 ar precizitāti līdz $10^{-8}$
 \end{enumerate}
 
@@ -156,16 +156,16 @@ ar precizitāti līdz $10^{-8}$
 
 \vspace{10pt}
 {\bf 2.uzdevums (Gadījuma analīze).}\\
-Aplūkojam ziņojumu alfabētu ar četriem ziņojumiem: 
+Aplūkojam ziņojumu alfabētu ar četriem ziņojumiem:
 $S = \{ \mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d} \}$,
 kuru varbūtības ir attiecīgi $\{1/3, 1/3, 2/9, 1/9\}$.
- 
+
 \begin{enumerate}
 \item Izmantot Hafmana algoritmu, lai atrastu šim ziņojumu alfabētam optimālu bezprefiksu ko\-dē\-ju\-mu.
-\item Vai ar Hafmana algoritmu var konstruēt bū\-tis\-ki citādu optimālu bezprefiksu kodējumu 
-(t.i.\ tādu, kas simboliem $\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}$ 
+\item Vai ar Hafmana algoritmu var konstruēt bū\-tis\-ki citādu optimālu bezprefiksu kodējumu
+(t.i.\ tādu, kas simboliem $\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}$
 piekārto citādus kodu garumus, nevis tikai kaut kur aizstāj
-\textcolor{blue}{\tt 0} ar \textcolor{blue}{\tt 1} un otrādi). 
+\textcolor{blue}{\tt 0} ar \textcolor{blue}{\tt 1} un otrādi).
 \item Atrast bezprefiksu kodējumu, kurš arī ir optimāls, bet nevar būt radies Hafmana algoritma rezultātā.
 \end{enumerate}
 
@@ -174,10 +174,10 @@ piekārto citādus kodu garumus, nevis tikai kaut kur aizstāj
 
 \vspace{10pt}
 {\bf 3.uzdevums (Markova process).}\\
-Pieņemsim, ka {\em Markova process} (Attēls~\ref{fig:markov-chain}) 
-ir jau sasniedzis stabilu stāvokli 
-(jau ir notikusi pietiekami gara nejauša staigāšana pa šo varbūtisko grafu, lai 
-simbolu proporcijas un secību vairs nenoteiktu sā\-kum\-stā\-vok\-lis). 
+Pieņemsim, ka {\em Markova process} (Attēls~\ref{fig:markov-chain})
+ir jau sasniedzis stabilu stāvokli
+(jau ir notikusi pietiekami gara nejauša staigāšana pa šo varbūtisko grafu, lai
+simbolu proporcijas un secību vairs nenoteiktu sā\-kum\-stā\-vok\-lis).
 
 
 \begin{figure}[!htb]
@@ -185,21 +185,21 @@ simbolu proporcijas un secību vairs nenoteiktu sā\-kum\-stā\-vok\-lis).
 \caption{\label{fig:markov-chain} Markova process.}
 \end{figure}
 
-Aplūkojam stabilā Markova procesa ģenerētu simbolu virkni $X^n$, kur 
+Aplūkojam stabilā Markova procesa ģenerētu simbolu virkni $X^n$, kur
 $X$ pieņem vērtības no $\{\mathtt{a}, \mathtt{b}, \mathtt{c}\}$.
 \begin{enumerate}[(A)]
-\item Atrast saspiešanas attiecības robežu, ja simbolu virkni $X^n$ saspiež ar 
+\item Atrast saspiešanas attiecības robežu, ja simbolu virkni $X^n$ saspiež ar
 aritmētisko kodu.
-\item Ar datorsimulāciju izveidot virkni $X^n$ garumā $n = 10^6$. 
-Atrast saspiešanas attiecību, ja izmanto WinZip arhivatoru 
-(WinZip parasti lie\-to {\em DEFLATE} algoritmu, kas ir modificēts LZ77 un 
+\item Ar datorsimulāciju izveidot virkni $X^n$ garumā $n = 10^6$.
+Atrast saspiešanas attiecību, ja izmanto WinZip arhivatoru
+(WinZip parasti lie\-to {\em DEFLATE} algoritmu, kas ir modificēts LZ77 un
 vēl arī Hafmana kods.)
 \item Atrast saspiešanas attiecības robežu ($n \rightarrow \infty$),
-ja Markova virkni $X^n$ saspiež ar Hafmana kodu, 
+ja Markova virkni $X^n$ saspiež ar Hafmana kodu,
 piešķirot prefiksu kodus atsevišķiem burtiem $\{\mathtt{a}, \mathtt{b}, \mathtt{c}\}$.
 \item Atrast saspiešanas attiecības robežu ($n \rightarrow \infty$),
-ja Markova virkni $X^n$ saspiež ar Hafmana kodu, piešķirot prefiksu kodus 
-burtu pāriem 
+ja Markova virkni $X^n$ saspiež ar Hafmana kodu, piešķirot prefiksu kodus
+burtu pāriem
 $$\{\mathtt{aa}, \mathtt{ab}, \ldots, \mathtt{cc}\}.$$
 (Neiespējamie burtu pāri prefiksu kokā nav jāattēlo.)
 \end{enumerate}
@@ -208,25 +208,77 @@ $$\{\mathtt{aa}, \mathtt{ab}, \ldots, \mathtt{cc}\}.$$
 
 
 
-\vspace{10pt}
-{\bf 5.uzdevums (I-iespēja).}\\
-Teksts satur $n = 2^k$ dažādus simbolus: 
-$$S = \{ s_1,s_2,\ldots,s_n \}.$$ 
-To
-varbūtības izkārtotas dilstošā secībā: 
-$$p_1 \geq \ldots \geq p_n.$$ 
+%\vspace{10pt}
+%{\bf 4.uzdevums (Berouza-Vīlera transformācija).}\\
+%Pieņemsim, ka Berouza-Vīlera transformāciju veic,
+%kārtojot visas cikliskās permutācijas atpakaļejošā alfabētiskā secībā:
+%\begin{figure}[!htb]
+%\center{\includegraphics[width=3in]{burrows-wheeler.png}}
+%\caption{\label{fig:burrows-wheeler} Berouza-Vīlera transformācija.}
+%\end{figure}
+%Stringa $w$ transormācija $\text{BWT}(w)$ ir
+%$(\mathtt{AB})^n$ jeb
+%virknīte $\mathtt{AB}$ atkārtota $n$ reizes.
+%Transformācija neatzīmē iekodējamā vārda beigas.
+% Kuriem $n$ tas ir iespējams?
+%https://www.cs.princeton.edu/courses/archive/spr02/cs493/lec3.pdf
+%http://www.cs.tau.ac.il/~haimk/adv-ds-2007/homework2-2007.pdf
 
-Zināms, ka ziņojumu kopai $S$
-optimālu prefiksu ko\-dē\-ju\-mu veido visas 
-$2^k$ vienāda garuma $k$-bitu virk\-nī\-tes. 
+
+
+\vspace{10pt}
+{\bf 4.uzdevums (LZ78 apakšējais novērtējums).}\\
+Bobs vēlas izveidot bitu virknīti jeb stringu, uz kura 
+LZ78 algoritms uzvedas vissliktāk (virknes garums pēc arhivēšanas sanāk visgarākais).
+Šai nolūkā viņš izraksta visas netukšās galīgās bitu virknītes {\em Shortlex order} secībā:
+vispirms leksikogrāfiski sakārtotas viena bita virknītes, tad leksikogrāfiski sakārtotas
+divu bitu virknītes utml. Rezultātā viņam iznāk sekojoša virkne:
+$$\mathtt{0.1.00.01.10.11.000.001.010.011.100.101.110.111}\ldots$$
+Bobs šo virkni pārstāj rakstīt tad, kad ir izrakstītas visas bitu virknītes līdz garumam $k$ ieskaitot. 
+(Piemērā dota virknīte tad, ja $k=3$.) Punkti ievietoti tikai uzskatāmības dēļ; LZ78 
+ievade faktiski satur tikai simbolus ``0'' un ``1''.
+
+Boba uzrakstīto bitu stringu (bez atdalītājpunktiem) apzīmēsim ar $W_k$. 
+To arī izmantojam par LZ78 algoritma ``sliktāko ievadi'', 
+kas cenšas panākt, lai Lempels-Zivs retāk
+izmantotu virknes no vārdnīcas, lai kods sanāktu iespējami garš.
 
 \begin{enumerate}[(A)]
-\item Vai noteikti ir spēkā apgalvojums: Populārākā ziņojuma varbūtība 
-apmierina nevienādību: 
+\item Pierādīt, ka Boba uzrakstītās virknītes garums $|W_k| = (k-1)2^{k+1} + 2$.
+\item Ar $c(W_k)$ apzīmējam to kodu skaitu, kas tiek ievietoti vārdnīcā, ja iekodē $W_k$. 
+Atrast, ar ko vienāds $c(W_k)$ (formula, kas atkarīga no $k$).
+\item Uzrakstīt LZ78 kodu, kas rodas iekodējot $W_3$ (sk. slaidu ``LZ78 (biti par bitiem)''). 
+Vai ir iespējams, ka LZ78 kods (bitu virkne) ir garāks par ievadē saņemto bitu virkni?
+\end{enumerate}
+
+{\bf Piezīme:} Šis uzdevums izmanto LZ78 variantu, kas sāk ar tukšu vārdnīcu. 
+Piemēru sk. \url{https://bit.ly/3i7HEsU}. 
+(Šo nevajag jaukt ar LZW algoritmu, kurš ir līdzīgs, bet sākumā ir jau sabāzis vārdnīcā 
+visu ziņojumu alfabētu - katram alfabēta burtam ir jau unikāls kods.)
+
+
+% http://www-math.mit.edu/~shor/PAM/lempel_ziv_notes.pdf
+
+
+\vspace{10pt}
+{\bf 5.uzdevums (I-iespēja).}\\
+Teksts satur $n = 2^k$ dažādus simbolus:
+$$S = \{ s_1,s_2,\ldots,s_n \}.$$
+To
+varbūtības izkārtotas dilstošā secībā:
+$$p_1 \geq \ldots \geq p_n.$$
+
+Zināms, ka ziņojumu kopai $S$
+optimālu prefiksu ko\-dē\-ju\-mu veido visas
+$2^k$ vienāda garuma $k$-bitu virk\-nī\-tes.
+
+\begin{enumerate}[(A)]
+\item Vai noteikti ir spēkā apgalvojums: Populārākā ziņojuma varbūtība
+apmierina nevienādību:
 $${\displaystyle p_1 \leq \frac{2}{2^k + 1}}?$$
-\item Vai noteikti ir spēkā apgalvojums: Populārākā ziņojuma varbūtība 
+\item Vai noteikti ir spēkā apgalvojums: Populārākā ziņojuma varbūtība
 nepārsniedz divu retāko ziņojumu varbūtību summu: $p_1 \leq p_{n-1} + p_{n}$?
-\item Vai noteikti ir spēkā apgalvojums: Populārākā ziņojuma varbūtība 
+\item Vai noteikti ir spēkā apgalvojums: Populārākā ziņojuma varbūtība
 nepārsniedz divkāršotu visretākā ziņojuma varbūtību: $p_1 \leq 2p_n$?
 \end{enumerate}
 

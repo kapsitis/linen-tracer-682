@@ -122,7 +122,12 @@ src="../static/blue_question_mark.png" width="12px"/>
 {% if link.readings or link.videos %}
 {% if link.readings %}
 {% for reading in link.readings %}
+{% if reading.ref == "(Goodrich2011)" %}
+<a class="tltip" href="https://estudijas.rtu.lv/mod/lti/view.php?id=1283781">{{reading.ref}}<span 
+class="tltiptext">{{reading.url}}: {{reading.title}}</span></a>
+{% else %}
 <a class="tltip" href="{{reading.url}}">{{reading.ref}}<span class="tltiptext">{{reading.title}}</span></a>
+{% endif %}
 {% endfor %}
 {% endif %}
 {% if link.videos %}

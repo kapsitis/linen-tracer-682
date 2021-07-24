@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mybaby</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library mybaby</h1>
+
+<div class="code">
+<span class="id" title="keyword">Axiom</span> <span class="id" title="var">ContraPos</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">p</span> <span class="id" title="var">q</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">p</span> -&gt; <span class="id" title="var">q</span>) &lt;-&gt; (~<span class="id" title="var">q</span> -&gt; ~<span class="id" title="var">p</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <span class="id" title="var">mybaby</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">Human</span>: <span class="id" title="keyword">Type</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">Me</span> : <span class="id" title="var">Human</span>.<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">MyBaby</span> : <span class="id" title="var">Human</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <span class="id" title="var">L</span> : <span class="id" title="var">Human</span>*<span class="id" title="var">Human</span> -&gt; <span class="id" title="keyword">Prop</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">ItemA</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>: <span class="id" title="var">Human</span>, <span class="id" title="var">L</span>(<span class="id" title="var">x</span>,<span class="id" title="var">MyBaby</span>).<br/>
+<span class="id" title="keyword">Hypothesis</span> <span class="id" title="var">ItemB</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">x</span>: <span class="id" title="var">Human</span>, ~(<span class="id" title="var">x</span>=<span class="id" title="var">Me</span>) -&gt; ~(<span class="id" title="var">L</span>(<span class="id" title="var">MyBaby</span>,<span class="id" title="var">x</span>)).<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">who_is_mybaby</span>: <span class="id" title="var">MyBaby</span>=<span class="id" title="var">Me</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">MyBaby</span> &lt;&gt; <span class="id" title="var">Me</span> -&gt; ~<span class="id" title="var">L</span>(<span class="id" title="var">MyBaby</span>,<span class="id" title="var">MyBaby</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">ItemB</span> <span class="id" title="keyword">with</span> (<span class="id" title="var">x</span> := <span class="id" title="var">MyBaby</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">L</span>(<span class="id" title="var">MyBaby</span>,<span class="id" title="var">MyBaby</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">ItemA</span> <span class="id" title="keyword">with</span> (<span class="id" title="var">x</span> := <span class="id" title="var">MyBaby</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">clear</span> <span class="id" title="var">ItemA</span> <span class="id" title="var">ItemB</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<span class="id" title="var">ContraPos</span> (<span class="id" title="var">L</span>(<span class="id" title="var">MyBaby</span>,<span class="id" title="var">MyBaby</span>)) (<span class="id" title="var">MyBaby</span> = <span class="id" title="var">Me</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">clear</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H0</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <span class="id" title="var">mybaby</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{amsmath,amssymb,multicol,tikz,enumitem}
+\usepackage[margin=2cm]{geometry}
+%\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{enumerate}
+
+\pagestyle{empty}
+
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand\indd{${}$\hspace{20pt}}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries,notefont=\mdseries\bfseries,bodyfont = \normalfont,headpunct={:}]{normalhead}
+\declaretheorem[name={Uzdevums}, style=normalhead,numberwithin=section]{problem}
+
+\setcounter{section}{1}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\begin{center}
+\parbox{3.5cm}{\flushleft\bf Skaitļu teorija\linebreak NMS juniori} \hfill {\bf\LARGE Tests \#1} \hfill \parbox{3.5cm}{\flushright\bf 2020./2021.m.g.} \\[2pt]
+\rm\small 2020.gada 31.decembris
+\end{center}
+
+%\hrule\vspace{2pt}\hrule
+\hrule
+
+\vspace{20pt}
+%{\bf Iesniegšanas termiņš:} 2020.g.\ 31.oktobris\\
+%{\bf Kam iesūtīt:} {\tt kalvis.apsitis}, domēns {\tt gmail.com}
+
+
+\vspace{20pt}
+\begin{problem}
+Atrast moduli, pie kura dotajam uzdevumam nav 
+(vai ir tikai galīgs skaits) atrisinājumu.\\
+Atrisinājumā minēt moduli $m$, kuriem atlikumiem (mod $m$) 
+var būt kongruenta kreisā puse, kuriem var būt kongruenta labā puse.\\
+{\bf (A)} $x^2 - 5y^2 = 6$\\
+{\bf (B)} $15x^2 - 7y^2 = 9$\\
+{\bf (C)} $x^2 - 2y^2 + 8z = 19$\\
+{\bf (D)} $x^3 + y^3 + z^3 = 1969^2$\\
+{\bf (E)} $x^2 + y^2 = 8z + 6$\\
+{\bf (F)} $x^2 + 8z = 2y^2 + 3$\\
+{\bf (G)} $x^4 - 12y^4 = 24$. 
+{\bf (H)} $11^x - 8^y = 1$. 
+% list(map(lambda x: 11**x % 8, range(0,100)))
+
+Atbildes:\\
+(A) $4$, (B) $5$, (C) $8$, (D) $9$. (E) $8$. (F) $8$. (G) $13$. (H) $8$. 
+
+
+
+
+
+
+\vspace{20pt}
+\begin{problem} 
+Visiem naturāliem skaitļiem $m > n$ pierādīt, ka
+$$\mbox{MKD}(m,n) + \mbox{MKD}(m+1,n+1) > \frac{2mn}{\sqrt{m-n}}.$$
+(Ar $\operatorname{MKD}(a,b)$ apzīmē naturālu skaitļu $a$ un $b$ {\em mazāko 
+kopīgo dalāmo} \textendash{} mazāko skaitli, kas dalās gan ar $a$, gan ar $b$.)
+\end{problem}
+
+\vspace{20pt}
+\begin{problem}
+Vai eksistē bezgalīga
+stingri augoša naturālu skaitļu virkne $a_1 < a_2 < a_3 <\ldots$,
+ka jebkuram fiksētam naturālam skaitlim $a$ virknē 
+$$a_1+a < a_2+a < a_3 + a < \ldots$$
+ir ne vairāk kā galīgs skaits pirmskaitļu?
+\end{problem}
+
+\vspace{20pt}
+\begin{problem}
+Pierādīt, ka virkne $1,11,111,\ldots$ satur bezgalīgu apakšvirkni,
+kuras katri divi locekļi ir savstarpēji pirmskaitļi.
+\end{problem}
+
+
+
+\vspace{20pt}
+\begin{problem}
+Pierādīt vai apgāzt sekojošus apgalvojumus:
+\begin{enumerate}
+\item Jebkuram $k \geq 2$, un jebkuriem $k$ pēc kārtas sekojošiem naturāliem 
+skaitļiem atradīsies skaitlis, kurš nedalās ne ar vienu pirmskaitli, kas mazāks par $k$.   
+\item Jebkuram $k \geq 2$, un jebkurai $k$ pēc kārtas sekojošu naturālu skaitļu virknei atradīsies skaitlis, kas ir savstarpējs pirmskaitlis ar visiem citiem virknes locekļiem. 
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+
+{\bf (1) Galīgas ģeometriskas progresijas summa.} Ģeometrisko progresiju ar pirmo locekli $b_0$ 
+un kvocientu $q$ definē ar formulu: $b_k = b_0 \cdot q^k$ (naturāliem $k>0$), t.i.\ katru nākamo locekli 
+iegūst, reizinot iepriekšējo ar $q$. Šādas progresijas pirmo $k$ locekļu summu izsaka ar formulu:
+$$\sum\limits_{j=0}^{k-1} b_0 q^j = b_0 + b_0 \cdot q + b_0 \cdot q^2 + \ldots + q^{k-1} = b_0 \frac{q^k-1}{q-1}.$$
+
+{\bf (2) Pakāpju starpības dalīšana reizinātājos.} 
+Ja naturāls skaitlis $k$ dalās ar naturālu skaitli $m$, bet $a,b$ ir jebkādi (reāli vai naturāli) mainīgie, 
+tad algebrisku izteiksmi $a^k - b^k$ var sadalīt reizinātājos tā, ka viens no reizinātājiem ir $a^m - b^m$.\\
+Piemērs: Ja $k = 6$ un $m=2$, tad var lietot kubu starpības formulu:
+$$a^6 - b^6 = (a^2)^3 - (b^2)^3 = \left(a^2 - b^2\right)\left(a^4 + a^2b^2 + b^4\right).$$
+
+{\bf (3) Nevienādība par aritmētisko un ģeometrisko vidējo.}
+Ja $a,b$ ir jebkuri pozitīvi (reāli) skaitļi, tad ir spēkā nevienādība:
+${\displaystyle \frac{a+b}{2} \leq \sqrt{a \cdot b}}$.
+
+{\bf (4) Divi blakusesoši skaitļi ir savstarpēji pirmskaitļi.}
+Ja $n$ ir jebkurš naturāls skaitlis, tad lielākais kopīgais dalītājs $\operatorname{LKD}(n,n+1) = 1$.
+
+{\bf (5) LKD un MKD īpašības.}\\
+{\bf (a)} Ja $\operatorname{LKD}(a,b)=\operatorname(a,c)=1$, tad 
+$\operatorname{LKD}(a,bc)=1$.\\
+{\bf (b)} Ja $\operatorname{LKD}(a,b)=1$ un $c\,\mid\,a$, tad 
+$\operatorname{LKD}(b,c)=1$.\\
+{\bf (c)} Ja $\operatorname{LKD}(a,b)=1$, tad $\operatorname{LKD}(ac,b)
+= \operatorname{LKD}(c,b)$.\\
+{\bf (d)} Ja $\operatorname{LKD}(a,b)=1$ un $c\,\mid\,(a+b)$, tad
+$\operatorname{LKD}(a,c) = \operatorname{LKD}(b,c)=1$.\\
+{\bf (e)} Ja $\operatorname{LKD}(a,b)=1$, $d\,\mid\,ac$ un 
+$d\,\mid\,bc$, tad $d\,\mid\,c$.\\
+{\bf (f)} Ja $\operatorname{LKD}(a,b)=1$, 
+tad $\operatorname{LKD}\left(a^2,b^2\right)=1$.\\
+{\bf (g)} $\operatorname{LKD}(a,b)\cdot\operatorname{MKD}(a,b)=a \cdot b$.\\
+{\bf (h)} Distributivitātes likumi abām operācijām vienai pret otru:\\
+\mbox{}\hspace{20pt}$\operatorname{MKD}(a,\operatorname{LKD}(b,c)) = \operatorname{LKD}(\operatorname{MKD}(a,b),\operatorname{MKD}(a,c))$,\\
+\mbox{}\hspace{20pt}$\operatorname{LKD}(a,\operatorname{MKD}(b,c)) = \operatorname{MKD}(\operatorname{LKD}(a,b),\operatorname{LKD}(a,c))$.\\
+{\bf (i)} Ja $p$ ir pirmskaitlis, tad $\text{LKD}(p,m)$ ir 
+$p$ vai $1$.\\
+{\bf (j)} Ja $\text{LKD}(m,n) = d$, tad $m/d$ un $n/d$ ir
+savstarpēji pirmskaitļi.\\
+{\bf (k)} Ja $m/d^{\ast}$ un $n/d^{\ast}$ abi ir veseli 
+un savstarpēji pirmskaitļi, tad 
+$\text{LKD}(m,n) = d^{\ast}$.\\
+{\bf (l)} $\text{LKD}(m,n) = \text{LKD}(m-n,n)$. LKD
+nemainās, ja no viena skaitļa atņem otru skaitli 
+(arī divkāršotu, trīskāršotu utt. otru skaitli).
+
+
+
+{\bf (6) Ķīniešu atlikumu teorēma.}\\
+Ja $a,b,c$ ir naturāli skaitļi, kuri ir pa pāriem savstarpēji pirmskaitļi ($\operatorname{LKD}(a,b)=1$, 
+$\operatorname{LKD}(a,c)=1$, $\operatorname{LKD}(b,c)=1$), tad jebkuriem trim skaitļiem 
+$$a_1 \in [0,a-1],\;\;b_1 \in [0,b-1],\;\;c_1 \in [0,c-1],$$
+atradīsies tāds $M$, kurš dod šos atlikumus $a_1,b_1,c_1$, dalot attiecīgi ar $a,b,c$. 
+(Līdzīgu rezultātu var vispārināt; nav noteikti jāņem trīs savstarpēji pirmskaitļi $a,b,c$, 
+bet var būt divi, četri, pieci vai vairāk.)\\
+{\em Piemērs:} Atrast skaitli, kas dod atlikumu $9$, dalot ar $11$, atlikumu $3$, dalot ar $13$ un 
+atlikumu $1$, dalot ar $17$. ($11,13,17$ ir savstarpēji pirmskaitļi, tātad mūsu atlikumu vēlmes nav pretrunīgas.)
+Visi skaitļi formā $11k+9$ dod atlikumu $9$, dalot ar $11$:\\
+$9,20,31,42,53,64,75,86,97,108,119,130,141,\ldots$
+Starp tiem ir skaitlis $42$, kas dod ar atlikumu $3$, dalot ar $13$.\\
+Vispārīgā formā visi skaitļi $11 \cdot 13 \cdot k + 42$ dos vēlamos atlikumus, 
+gan dalot ar $11$, gan, dalot ar $13$. 
+Visbeidzot, ievērojam, ka ievietojot $k=16$, iegūstam 
+$11 \cdot 13 \cdot k + 42 = 2330$, kas dod 
+sākumā izraudzītos atlikumus $9,3,1$, dalot attiecīgi ar $11,13,17$. 
+
+
+
+
+
+\end{document}

@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>twenty_tautologies</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library twenty_tautologies</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+
+<div class="paragraph"> </div>
+
+<a href="../../discrete2021/assignments.html">Back to Discrete Assignments</a>
+
+<div class="paragraph"> </div>
+
+<a id="lab1"></a><h2 class="section">This is a training file before H3.Q5 (non-constructive tautologies).</h2>
+
+We cover not just the non-constructive stuff (axioms <tt>classic</tt> and 
+<tt>NNPP</tt>, but many other tactics used in tautologies.
+
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> If 'a' is both True and False, it implies any 'b' 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample1</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, ~<span class="id" title="var">a</span> -&gt; <span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> <span class="id" title="var">H2</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Same proof, just a bit shorter 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample1_VAR</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, ~<span class="id" title="var">a</span> -&gt; <span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> You cannot switch 'aFalse' and 'aTrue' in the last line. 
+The following will not be accepted:
+<pre>
+  contradiction (aTrue aFalse).
+</pre>
+Modus ponens cannot insert '(a -&gt; False)' into expression 'a', but it can insert
+'a' into '(a -&gt; False)' to get 'False', a contradiction. 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> If a=True, but b=False, then implication (a -&gt;b) is always False. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">a</span> -&gt; (~<span class="id" title="var">b</span> -&gt; ~(<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span> <span class="id" title="var">bFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">bFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">aTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> In this example we reasoned 'backwards' with three 'apply' tactics.
+<ol type='A'><li>replaced the goal False  by 'b',</li> 
+<li>replaced the goal 'b' by 'a',</li>
+<li>finally, we know that 'a' is true.</li></ol>
+
+<div class="paragraph"> </div>
+
+ Same proof written shorter 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_VAR</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">a</span> -&gt; (~<span class="id" title="var">b</span> -&gt; ~(<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">aTrue</span> <span class="id" title="var">bFalse</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">bFalse</span> (<span class="id" title="var">H</span> <span class="id" title="var">aTrue</span>)).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The last line works just like function composition.<br/> 
+In most programming languages we would write function calls like this:
+<pre>
+  bFalse(H(aTrue))
+</pre>
+But in Coq syntax function call is an expression in parentheses:
+The first item is the function/implication name. After that there is
+one or more arguments.
+
+<div class="paragraph"> </div>
+
+ The last goal is False; so it is also a contradiction 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample2_VARVAR</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">a</span> -&gt; (~<span class="id" title="var">b</span> -&gt; ~(<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">aTrue</span> <span class="id" title="var">bFalse</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">bFalse</span> (<span class="id" title="var">H</span> <span class="id" title="var">aTrue</span>)).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab2"></a><h2 class="section">Non-constructive stuff</h2>
+
+
+<div class="paragraph"> </div>
+
+Here we import some axioms to do classical logic
+(also called non-constructive stuff) 
+</div>
+<div class="code">
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Classical_Prop</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Intuition:</b> If implication (a -> b) is False, then 'a' must be True 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample3</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, ~(<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">NNPP</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+Using the tactic
+<pre>
+  apply NNPP
+</pre>
+adds two negations to the goal. 
+The axiom NNPP reads like this: <tt>~~a -> a</tt>, one can reason backwards.
+Such step provides additional possibilities to do non-constructive proofs by contradiction 
+whenever we are stuck. 
+<div class="paragraph"> </div>
+
+ Type this to display meaning of this symbol 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="var">NNPP</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> The lemma NNPP (just like the lemmas that
+we are doing is, in fact, a function. 
+It eats one parameter and (after some body) produces 'usable stuff': 
+<tt>~~p -> p</tt>. 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> If both 'a' and 'b' are False, then the disjunction 'a \/ b' is False 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample4</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, ~<span class="id" title="var">a</span> -&gt; ~<span class="id" title="var">b</span> -&gt; ~(<span class="id" title="var">a</span> \/ <span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span> <span class="id" title="var">bFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aORb</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">aORb</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">bTrue</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">bFalse</span> <span class="id" title="var">bTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> This shows a standard way to 'destruct' disjunctions in hypotheses: 
+Sort two cases: Left side of aORb (in our case it is aTrue). 
+The right side of aORb (in our case it is bTrue). 
+In both cases we get a contradiction. 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> If 'a' and 'b' are not simultaneously true, 
+one of them implies the negation of another. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample5</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, ~(<span class="id" title="var">a</span> /\ <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">b</span> -&gt; ~<span class="id" title="var">a</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> This shows a standard way to 'split' conjunction in the goal.
+Split into two subgoals. 
+First prove the left part of the conjunction, then prove the right part. 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> The tautology is a typical non-constructive stuff:<br/>
+If '~b' implies '~a', and '~b' also implies 'a', 
+then 'b' must be true 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample6</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, (~<span class="id" title="var">b</span> -&gt; ~<span class="id" title="var">a</span>) -&gt; (~<span class="id" title="var">b</span> -&gt; <span class="id" title="var">a</span>) -&gt; <span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">bTrue</span> | <span class="id" title="var">bFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">bFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">bFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> Here is one new trick: First introduce 'classic' axiom; 
+then immediately destruct it into two subcases:
+<ol><li>b=True. (Really easy case)</li>
+<li>b=False. In this situation we get contradictions with our earlier hypotheses.</li></ol>
+
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> Similar to the previous result: 
+If ~b implies ~a, and ~b also implies a, 
+then b must be true 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample7</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (~<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; <span class="id" title="var">b</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aFalse</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> Very similar to the previous case, 
+but it shows that you should pay attention to what 
+'classic' axiom you need. In this case we wanted to sort two cases:
+<ol><li>a = True</li>
+<li>b = False</li></ol>
+
+<div class="paragraph"> </div>
+
+ Similar to sample6, but not exactly the same 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample8</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">a</span> -&gt; ~<span class="id" title="var">b</span>) -&gt; ~<span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> ((<span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>) (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>)).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aFalse</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> Pay attention to the latest long expression that gives contradiction. 
+Can rewrite the following expression:
+<pre>
+  contradiction ((H2 aTrue) (H1 aTrue)).
+</pre>
+as the following: 
+<pre>
+  pose (H1 aTrue) as bTrue.
+  pose (H2 aTrue) as bFalse.
+  contradiciton (bFalse bTrue) as CONTRA.
+</pre>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample9</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, (~<span class="id" title="var">b</span> -&gt; <span class="id" title="var">a</span>) -&gt; (<span class="id" title="var">b</span> -&gt; <span class="id" title="var">a</span>) -&gt; <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">classic</span> <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">bTrue</span> | <span class="id" title="var">bFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">bTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H1</span> <span class="id" title="var">bFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> In the last few proofs there is a pattern: 
+<pre>
+  pose (classic b) as H3.
+  destruct H3 as [bTrue | bFalse].
+</pre>
+In the following proof we show that you can 
+rewrite this in a single line; and (instead of sorting two hypotheses)
+prove two separate goals.
+
+<div class="paragraph"> </div>
+
+ <b>Intution:</b> If 'a','b' are either both True or both False, then ~a OR b must be True. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample10</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> &lt;-&gt; <span class="id" title="var">b</span>) -&gt; (~<span class="id" title="var">a</span> \/ <span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H1</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H2</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">elim</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aFalse</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Intuition:</b> If 'a','b' both together imply 'c'; and also 'a-&gt;b', then 'a-&gt;c' 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample11</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span> -&gt; <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> (<span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> Some implications are easy, if they are constructive and
+you can apply Modus Ponens - i.e. simply 'plug in' one expression into another 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> 'a' implies 'b -&gt; c' iff 'a and b' together imply 'c' 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample12</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span> -&gt; <span class="id" title="var">c</span>) &lt;-&gt; ((<span class="id" title="var">a</span> /\ <span class="id" title="var">b</span>) -&gt; <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">aTrue</span> <span class="id" title="var">bTrue</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span> <span class="id" title="var">bTrue</span>).<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">a</span> /\ <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">H3</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">cTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">cTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> Tactic 'split' is useful when proving conjunctions and also equivalences. 
+In this case we need to check the statement in both directions. 
+<pre>
+  intros [aTrue bTrue].
+</pre>
+means the same as this:
+<pre>
+  intros myHypothesis. 
+  destruct myHypothesis as [aTrue bTrue].
+</pre>
+Preceding your subcases with '+' and '-' is sometimes 
+used to split long proofs in shorter sections.
+It may keep things cleaner and more focused, 
+but splitting into sections is never mandatory and does not affect the correctness of your proof. 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> If both (a-&gt;c) and (b-&gt;c), and you know that (a \/ b) is True, then c is True 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample13</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">b</span> -&gt; <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> \/ <span class="id" title="var">b</span>) -&gt; <span class="id" title="var">c</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">bTrue</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H2</span> <span class="id" title="var">bTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> One more shorthand notation: 
+<pre>
+  intros [aTrue | bTrue].
+</pre>
+is same as this:
+<pre>
+  intros H.
+  destruct H as [aTrue | bTrue].
+</pre>
+
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> Just a statement that if (a-&gt;b) and (c-&gt;a), then (c-&gt;b). 
+Transitivity - similar to the problem in Homeowork 2, Q2.C. 
+It was about the plane/railway traffic being transitive.
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample14</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">c</span> -&gt; <span class="id" title="var">a</span>) -&gt; (<span class="id" title="var">c</span> -&gt; <span class="id" title="var">b</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">cTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H1</span> (<span class="id" title="var">H2</span> <span class="id" title="var">cTrue</span>)).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Intuition:</b> Some variant to say that disjunction is associative; and one can regroup. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample15</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, <span class="id" title="var">a</span> \/ (<span class="id" title="var">b</span> \/ <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">b</span> \/ (<span class="id" title="var">a</span> \/ <span class="id" title="var">c</span>)) \/ <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> [<span class="id" title="var">H2</span> | <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">right</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">H2</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H3</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">H4</span> | <span class="id" title="var">H5</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">left</span>; <span class="id" title="tactic">left</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">left</span>; <span class="id" title="tactic">right</span>; <span class="id" title="tactic">right</span>; <span class="id" title="tactic">exact</span> <span class="id" title="var">H5</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+The long expression with semicolons (;)
+left; right; right; exact H5.
+applies all the goals right after one another (one big jump). 
+How to expalain this? We have the following goal: 
+<pre>
+  (b \/ a \/ c) \/ a.
+</pre>
+It seems that disjunction is right-associative: 
+<pre>
+  (b \/ a \/ c) \/ a = (b \/ (a \/ c)) \/ a. 
+</pre>
+Our hypothesis H5 says that 'c' must be True. 
+We can 'drill down' to that variable:<br/>
+'left' on '(b \/ (a \/ c)) \/ a' is '(b \/ (a \/ c))' <br/>
+'right' on '(b \/ (a \/ c))' is '(a \/ c)'.<br/>
+'right' on '(a \/ c)' is 'c'. <br/>
+It is exactly our hypothesis H5. 
+
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> Realy easy lemma: If 'a' and then 'b' both imply 'c', 
+then 'b' and 'a' (switched places) imply 'c'
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample16</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; (<span class="id" title="var">b</span> -&gt; <span class="id" title="var">c</span>)) -&gt; (<span class="id" title="var">b</span> -&gt; (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">c</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H</span> <span class="id" title="var">bTrue</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> ((<span class="id" title="var">H</span> <span class="id" title="var">aTrue</span>) <span class="id" title="var">bTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b> Here we pass two arguments to the 'two-argument' hypothesis H. 
+The notation: 
+<pre>
+  (H aTrue bTrue)
+</pre>
+actually means this: <tt>((H aTrue) bTrue)</tt>. It is not same as:
+<pre>
+  (H (aTrue bTrue))
+</pre>
+Function/implication application is left-associative.
+
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> Implication is transitive'; similar to 'sample14', but switched order. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample17</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (<span class="id" title="var">b</span> -&gt; <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H2</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>)).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Note:</b>
+In this case we need to group the function application from right to left 
+<div class="paragraph"> </div>
+
+ <b>Intuition:</b> If (a and b) imply c, then 'a' implies that 'b' implies 'c' 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample18</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, ((<span class="id" title="var">a</span> /\ <span class="id" title="var">b</span>) -&gt; <span class="id" title="var">c</span>) -&gt; (<span class="id" title="var">a</span> -&gt; (<span class="id" title="var">b</span> -&gt; <span class="id" title="var">c</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">a</span> /\ <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aANDb</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aANDb</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Intuition:</b> 'a' implies 'b and c'  iff  'a-&gt;b' and 'a-&gt;c' 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample19</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>: <span class="id" title="keyword">Prop</span>, (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span> /\ <span class="id" title="var">c</span>) &lt;-&gt; (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) /\ (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">c</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">bTrue</span> <span class="id" title="var">_</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">bTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">H1</span> <span class="id" title="var">aTrue</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">_</span> <span class="id" title="var">cTrue</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">cTrue</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> [<span class="id" title="var">H2</span> <span class="id" title="var">H3</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exact</span> (<span class="id" title="var">H2</span> <span class="id" title="var">aTrue</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">exact</span> (<span class="id" title="var">H3</span> <span class="id" title="var">aTrue</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<b>Intuition:</b> The final 2 lemmas are not too intuitive, but they are also tautologies.<br/>
+Once again a long proof structured into subsections. 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">sample20</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span> <span class="id" title="var">e</span>: <span class="id" title="keyword">Prop</span>, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;((((<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (~<span class="id" title="var">c</span> -&gt; ~<span class="id" title="var">d</span>)) -&gt; <span class="id" title="var">c</span>) -&gt; <span class="id" title="var">e</span>) -&gt; ~<span class="id" title="var">a</span> -&gt; (<span class="id" title="var">d</span> -&gt; <span class="id" title="var">e</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span> <span class="id" title="var">e</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">dTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (((<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; ~ <span class="id" title="var">c</span> -&gt; ~ <span class="id" title="var">d</span>) -&gt; <span class="id" title="var">c</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H6</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> (<span class="id" title="var">aFalse</span> <span class="id" title="var">aTrue</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H5</span> <span class="id" title="var">H6</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H7</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">NNPP</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">not</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">cFalse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">contradiction</span> ((<span class="id" title="var">H7</span> <span class="id" title="var">cFalse</span>) <span class="id" title="var">dTrue</span>).<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> (<span class="id" title="var">H1</span> <span class="id" title="var">H4</span>).<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">longTautology</span>: <span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span> <span class="id" title="var">e</span>: <span class="id" title="keyword">Prop</span>, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;((((<span class="id" title="var">a</span> -&gt; <span class="id" title="var">b</span>) -&gt; (~<span class="id" title="var">c</span> -&gt; ~<span class="id" title="var">d</span>)) -&gt; <span class="id" title="var">c</span>) -&gt; <span class="id" title="var">e</span>) -&gt; ((<span class="id" title="var">e</span> -&gt; <span class="id" title="var">a</span>) -&gt; (<span class="id" title="var">d</span> -&gt; <span class="id" title="var">a</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span> <span class="id" title="var">e</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">H1</span> <span class="id" title="var">H2</span> <span class="id" title="var">dTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<span class="id" title="var">classic</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> [<span class="id" title="var">aTrue</span> | <span class="id" title="var">aFalse</span>].<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">sample20</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> <span class="id" title="var">d</span> <span class="id" title="var">e</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H3</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H3</span> <span class="id" title="var">H1</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H4</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H4</span> <span class="id" title="var">aFalse</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">H5</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H5</span> <span class="id" title="var">dTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">eTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">pose</span> (<span class="id" title="var">H2</span> <span class="id" title="var">eTrue</span>) <span class="id" title="keyword">as</span> <span class="id" title="var">aTrue</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">exact</span> <span class="id" title="var">aTrue</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

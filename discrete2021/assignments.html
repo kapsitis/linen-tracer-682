@@ -1,0 +1,436 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style>
+h2 {
+  color: #990000;
+}
+</style>
+</head>
+
+<body>
+<h1>Discrete 2021: Assignments</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index.html">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Assignments</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq.html">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="summaries.html">Summaries</a></td>
+<td style="background-color:#6966cc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations.html">Presentations</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="sources.html">Sources</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<h2>Homeworks (600&permil; of the grade)</h2>
+
+<p style="font-size:80%">We expect about 12 homeworks, so each one is worth 0.6/12 = 0.05 or
+50 permilles (<i>promilles</i>, &permil;). The actual promilles used for grading
+may differ, if the total number of homeworks is not exactly 12; or one homework is 
+considered bigger (and weighs more) than another.<br/>
+<em>Time estimates</em> are not meant to be precise or useful. They are 
+a <em>relative</em> measure; for example, an 16h assignment for a typical student
+would require considerably more time and energy than a 2h assignment.
+</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Grade ID</th><th>Title</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</th><th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>HW1</th>
+<td><a href="../discrete2021-bin/discretestructures-homework01.pdf">Propositional Logic</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework01-solutions.pdf">Homework1 Solutions</a>
+</td>
+<td>2020-01-12</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW2</th>
+<td><a href="../discrete2021-bin/discretestructures-homework02.pdf">Predicate Logic</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework02-solutions.pdf">Homework2 Solutions</a>
+</td>
+<td>2020-01-19</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW3</th>
+<td><a href="../discrete2021-bin/discretestructures-homework03.pdf">Set Notation</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework03-solutions.pdf">Homework3 Solutions</a>
+</td>
+<td>2020-01-26</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW4</th>
+<td><a href="../discrete2021-bin/discretestructures-homework04.pdf">Sequences, Set Cardinalities</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework04-solutions.pdf">Homework4 Solutions</a>
+</td>
+<td>2020-02-02</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW5</th>
+<td><a href="../discrete2021-bin/discretestructures-homework05.pdf">Algorithms, Asymptotics</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework05-solutions.pdf">Homework5 Solutions</a>
+</td>
+<td>2020-02-09</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW6</th>
+<td><a href="../discrete2021-bin/discretestructures-homework06.pdf">Number Theory</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework06-solutions.pdf">Homework6 Solutions</a>
+</td>
+<td>2020-02-16</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW7</th>
+<td><a href="../discrete2021-bin/discretestructures-homework07.pdf">Mathematical Induction</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework07-solutions.pdf">Homework7 Solutions</a>
+</td>
+<td>2020-02-23</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>40&permil;</td>
+<td>NA</td>
+</tr>
+<tr>
+<th>HW7P2</th>
+<td><a href="../discrete2021-bin/discretestructures-homework07-part2.pdf">GCDs, Mathematical Induction</a></td>
+<td>2020-03-16</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>20&permil;</td>
+<td>NA</td>
+</tr>
+
+<tr>
+<th>(HW8)</th><td style="background-color:#dddddd;" colspan="5">No homework with this number due to midterm</td>
+<tr>
+<th>HW9</th>
+<td><a href="../discrete2021-bin/discretestructures-homework09.pdf">Relations</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework09-solutions.pdf">Homework9 Solutions</a>
+</td>
+<td>2020-03-09</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>40&permil;</td>
+<td>NA</td>
+</tr>
+
+
+<tr>
+<th>HW10</th>
+<td><a href="../discrete2021-bin/discretestructures-homework10.pdf">Combinatorics</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework10-solutions.pdf">Homework10 Solutions</a>
+</td>
+<td>2020-03-16</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+
+
+<tr>
+<th>HW11</th>
+<td><a href="../discrete2021-bin/discretestructures-homework11.pdf">Probabilities</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework11-solutions.pdf">Homework11 Solutions</a>
+</td>
+<td>2020-03-23</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+
+
+<tr>
+<th>HW12</th>
+<td><a href="../discrete2021-bin/discretestructures-homework12.pdf">Recurrent Sequences</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework12-solutions.pdf">Homework12 Solutions</a>
+</td>
+<td>2020-03-30</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+
+
+<tr>
+<th>HW13</th>
+<td><a href="../discrete2021-bin/discretestructures-homework13.pdf">Graphs and Trees</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-homework13-solutions.pdf">Homework13 Solutions</a>
+</td>
+<td>2020-04-16</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>50&permil;</td>
+<td>NA</td>
+</tr>
+
+</table>
+
+
+
+<h2>Exams (150+200&permil; of the grade)</h2>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Grade ID</th><th>Title</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time</th><th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>MIDTERM</th>
+<td>
+<a href="../discrete2021-bin/discretestructures-midterm-review.pdf">All Review Topics</a><br/>
+<a href="../discrete2021-bin/discretestructures-midterm-samples.pdf">Sample Questions (Logic, Sets, Predicates only)</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-midterm-samples-solution.pdf">Sample Questions - Solved</a><br/>
+<a style="font-size:120%" href="../discrete2021-bin/discretestructures-midterm.pdf">Midterm Exam</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-midterm-solution.pdf">Midterm Solution</a><br/>
+<a style="font-size:120%" href="../discrete2021-bin/discretestructures-midterm-var2.pdf">Midterm(Var.2)</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-midterm-var2-solution.pdf">Midterm(Var.2) Solution</a>
+</td>
+<td>2020-02-24</td>
+<td style="background-color:#dddddd;">1:40h</td>
+<td>150&permil;</td>
+<td>NA</td>
+</tr>
+
+<tr>
+<th>FINAL</th>
+<td>
+<a href="../discrete2021-bin/discretestructures-final-review.pdf">All Review Topics</a><br/>
+<a href="../discrete2021-bin/discretestructures-final-samples-day1.pdf">Review Samples 1: Relations</a><br/>
+<a href="../discrete2021-bin/discretestructures-final-samples-day2.pdf">Review Samples 2: Number theory, Recurrences</a><br/>
+<a href="../discrete2021-bin/discretestructures-final-samples-day3a.pdf">Review Samples 3a: Counting</a><br/>
+<a href="../discrete2021-bin/discretestructures-final-samples-day3.pdf">Review Samples 3: Probabilities</a><br/>
+<a href="../discrete2021-bin/discretestructures-final-samples-day4.pdf">Review Samples 4: Graphs and Trees</a><br/>
+<a style="font-size:120%" href="../discrete2021-bin/discretestructures-final.pdf">Final Exam</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-final-solution.pdf">Final Solution</a>
+</td>
+<td>2020-04-28</td>
+<td style="background-color:#dddddd;">2:00h</td>
+<td>200&permil;</td>
+<td>NA</td>
+</tr>
+</table>
+
+
+<h2><a name="coqAssignments"/>Coq Assignments</h2>
+
+<p style="font-size:80%">Coq assignments were part of homeworks HW2 to HW7. 
+Here is the summary of all proofs assigned and solved during the class.
+To see sample proofs visit our <a href="coq.html">Coq page</a>; it has some general tutorials and also contains
+the techniques and Coq language features used in the proofs needed for each exercise.
+</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Grade ID</th><th>Title</th><th>Due Date</th>
+</tr>
+<tr>
+<th>H2.Q5</th>
+<td><a href="../discrete2021-bin/coq-assignments/hw02_simple_tautologies.html">Simple Tautologies</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/coq-assignments/hw02_simple_tautologies_solution.html">H2.Q5 Solution</a>
+</td>
+<td>2020-01-19</td>
+</tr>
+
+<tr>
+<th>H3.Q5</th>
+<td><a href="../discrete2021-bin/coq-assignments/hw03_classic_tautologies.html">Non-Constructive Tautologies</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/coq-assignments/hw03_classic_tautologies_solution.html">H3.Q5 Solution</a>
+</td>
+<td>2020-01-26</td>
+</tr>
+
+<tr>
+<th>H4.Q5</th>
+<td><a href="../discrete2021-bin/coq-assignments/hw04_traffic.html">Generalizing Relational Rules</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/coq-assignments/hw04_traffic_solution.html">H4.Q5 Solution</a>
+</td>
+<td>2020-02-02</td>
+</tr>
+
+<tr>
+<th>H5.Q5</th>
+<td><a href="../discrete2021-bin/coq-assignments/hw05_predicates.html">General Predicate Logic</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/coq-assignments/hw05_predicates_solution.html">H5.Q5 Solution</a>
+</td>
+<td>2020-02-09</td>
+</tr>
+
+<tr>
+<th>H6.Q5</th>
+<td><a href="../discrete2021-bin/coq-assignments/hw06_divisibility.html">Integer Divisibility</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/coq-assignments/hw06_divisibility_solution.html">H6.Q5 Solution</a>
+</td>
+<td>2020-02-16</td>
+</tr>
+
+<tr>
+<th>H7.Q5</th>
+<td><a href="../discrete2021-bin/coq-assignments/hw07_induction.html">GCDs, Mathematical Induction</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/coq-assignments/hw07_induction_solution.html">H7.Q5 Solution</a>
+</td>
+<td>2020-03-16</td>
+</tr>
+</table>
+
+
+
+
+<h2>Worksheets (Not for a Grade)</h2>
+
+<p style="font-size:80%">These worksheets are used in the lab sessions on Wednesdays and Fridays.</p>
+
+<table border="1" cellspacing="0">
+<tr><th>ID</th><th>Dates</th><th>Title</th></tr>
+<tr>
+<th>Week01</th>
+<td>2021-01-06, 2021-01-08</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet01.pdf">Worksheet1: Propositions, Predicates</a></td>
+</tr>
+
+<tr>
+<th>Week02</th>
+<td>2021-01-13, 2021-01-15</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet02.pdf">Worksheet2: More Predicates, Coq Intro</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet02-solutions.pdf">Worksheet2 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week03</th>
+<td>2021-01-20, 2021-01-22</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet03.pdf">Worksheet3: Set Notation</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet03-solutions.pdf">Worksheet3 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week04</th>
+<td>2021-01-27, 2021-01-29</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet04.pdf">Worksheet4: Sequences, Cardinalities</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet04-solutions.pdf">Worksheet4 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week05</th>
+<td>2021-02-03, 2021-02-05</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet05.pdf">Worksheet5: Algorithms, Big-O, Omega, Theta</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet05-solutions.pdf">Worksheet5 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week06</th>
+<td>2021-02-10, 2021-02-12</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet06.pdf">Worksheet6: Number Theory</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet06-solutions.pdf">Worksheet6 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week07</th>
+<td>2021-02-17, 2021-02-19</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet07.pdf">Worksheet7: Induction and Recursive Definitions</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet07-solutions.pdf">Worksheet7 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week08</th>
+<td>2021-02-26</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet08.pdf">Worksheet8: Relations</a>
+</td>
+</tr>
+
+<tr>
+<th>Week09</th>
+<td>2021-03-03, 2021-03-05</td>
+<td><a href="../discrete2021-bin/discretestructures-worksheet09.pdf">Worksheet9: Relations</a>
+</td>
+</tr>
+
+<tr>
+<th>Week10</th>
+<td>2021-03-10, 2021-03-12</td>
+<td>
+<a href="../discrete2021-bin/discretestructures-worksheet10-1.pdf">Worksheet10.1: Combinatorics Intro</a><br/>
+<a href="../discrete2021-bin/discretestructures-worksheet10-2.pdf">Worksheet10.2: Permutations, Combinations</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet10-2-solutions.pdf">Worksheet10.2 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week11</th>
+<td>2021-03-17, 2021-03-19</td>
+<td>
+<a href="../discrete2021-bin/discretestructures-worksheet11-1.pdf">Worksheet11.1: Probabilities Intro</a><br/>
+<a href="../discrete2021-bin/discretestructures-worksheet11-2.pdf">Worksheet11.2: E(X), V(X), Bayes Formula</a>
+</td>
+</tr>
+
+<tr>
+<th>Week12</th>
+<td>2021-03-24, 2021-03-26</td>
+<td>
+<a href="../discrete2021-bin/discretestructures-worksheet12-1.pdf">Worksheet12.1: Linear Recurrences</a><br/>
+<a href="../discrete2021-bin/discretestructures-worksheet12-2.pdf">Worksheet12.2: Divide-and-Conquer, Inclusion-Exclusion</a>
+</td>
+</tr>
+
+<tr>
+<th>Week13</th>
+<td>2021-03-31</td>
+<td>
+<a href="../discrete2021-bin/discretestructures-worksheet13.pdf">Worksheet13: Graphs</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../discrete2021-bin/discretestructures-worksheet13-solutions.pdf">Worksheet13 Solutions</a>
+</td>
+</tr>
+
+<tr>
+<th>Week14</th>
+<td>2021-04-16</td>
+<td>
+<a href="../discrete2021-bin/discretestructures-worksheet14.pdf">Worksheet14: Trees</a>
+</td>
+</tr>
+
+
+</table>
+
+
+</body>
+</html>
+

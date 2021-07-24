@@ -38,9 +38,9 @@ table.content td, table.content th {
 <select ONCHANGE="location = this.options[this.selectedIndex].value;">
 {% for item in nav_items %}
 {% if item.subdir == course %}
-    <option value="../{{item.subdir}}/index.html" selected="selected">{{item.title}}</option>
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
 {% else %}
-    <option value="../{{item.subdir}}/index.html">{{item.title}}</option> 
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
 {% endif %}
 {% endfor %}
 </select>

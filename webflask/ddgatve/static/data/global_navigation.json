@@ -1,34 +1,10 @@
 [
     {
-        "subdir": "numtheory",
-        "title": "Skaitļu teorija"
-    },
-    {
         "subdir": "algorithms",
         "title": "Lietišķie algoritmi"
     },
     {
-        "subdir": "visualizations",
-        "title": "Vizualizāciju seminārs"
-    },
-    {
-        "subdir": "semantic",
-        "title": "Semantic Web"
-    },    
-    {
-        "subdir": "discrete",
-        "title": "Discrete Mathematics"
-    },
-    {
         "subdir": "data-structures",
         "title": "Data Structures"
-    },
-    {
-        "subdir": "rbs",
-        "title": "RBS Seminars"
-    },
-    {
-        "subdir": "problembase",
-        "title": "Olimpiāžu uzdevumu DB"
     }
 ]    

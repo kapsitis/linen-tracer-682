@@ -41,5 +41,8 @@ def create_app(test_config=None):
     from . import datastructures
     app.register_blueprint(datastructures.bp)
 
+    from . import algorithms
+    app.register_blueprint(algorithms.bp)
+
     return app
 

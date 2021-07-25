@@ -46,6 +46,9 @@ def create_app(test_config=None):
 
     from . import numtheory
     app.register_blueprint(numtheory.bp)
+    
+    from . import discrete_spring2021
+    app.register_blueprint(discrete_spring2021.bp)
 
     return app
 

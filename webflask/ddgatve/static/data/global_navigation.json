@@ -10,5 +10,9 @@
     {
         "subdir": "data-structures",
         "title": "Data Structures"
+    },
+    {
+    	"subdir": "discrete-spring2021", 
+    	"title": "Discrete (Spring2021)"
     }
 ]    

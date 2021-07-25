@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+</head>
+
+<body>
+<h1>Discrete Spring2021: Sources</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="summaries">Summaries</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>References</b></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<p><b>Discrete Math in Other Universities</b></p>
+
+<ul>
+<li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">SUNY Buffalo: 
+Discrete Structures</a></li>
+<li><a href="https://www.cs.cornell.edu/~rafael/discmath.pdf">Cornell: A Course in Discrete Structures</a></li>
+<li><a href="https://terrytao.wordpress.com/2008/12/14/on-multiple-choice-questions-in-mathematics/">Terry Tao. 
+On Multiple-Choice Questions in Mathematics</a></li>
+</ul>
+
+<p><b>Proof Assistants</b></p>
+
+TBD
+
+
+</body>
+</html>
+

@@ -381,7 +381,13 @@
                 ],
                 "title": "Aprakstīt aritmētisko saspiešanu.",
                 "videos": []
-            },
+            }
+        ],
+        "title": "2020-09-14 to 2020-09-18"
+    },
+    {
+        "itemNum": 3,
+        "links": [
             {
                 "description": "Apakšnodaļā aplūkoti tie saspiešanas algoritmi, kuri līdzās saspiešanai veido datu struktūras ar bieži atkārtojošamies fragmentiem. Tie labi saspiež cilvēku valodas tekstus; ir efektīvi un plaši izmantoti.",
                 "id": "1.4",
@@ -471,10 +477,10 @@
                 "videos": []
             }
         ],
-        "title": "2020-09-14 to 2020-09-18"
+        "title": "2020-09-21 to 2020-09-25"
     },
     {
-        "itemNum": 3,
+        "itemNum": 4,
         "links": [
             {
                 "description": "Apakšnodaļā aprakstīts Berouza-Vīlera algoritms un tā variācijas",
@@ -642,17 +648,17 @@
                 "videos": []
             }
         ],
-        "title": "2020-09-21 to 2020-09-25"
+        "title": "2020-09-28 to 2020-10-02"
     },
     {
-        "itemNum": 4,
+        "itemNum": 5,
         "links": [
             {
                 "title": "Lietot un analizēt zudumradošās saspiešanas algoritmus.",
                 "topic": "2"
             },
             {
-                "description": "Apakšnodaļa definē dažus zudumradošās saspiešanas jēdzienus un dažas izplatītas noapaļošanas vai kvantizācijas pieejas.",
+                "description": "Apakšnodaļa definē dažus zudumradošās saspiešanas jēdzienus un dažas izplatītas noapaļošanas vai kvantizācijas pieejas. Apakšnodaļa definē JPEG algoritma soļus (citiem zudumradošiem attēlu formātiem soļi ir ļoti līdzīgi.",
                 "id": "2.1",
                 "readings": [
                     {
@@ -669,6 +675,11 @@
                         "ref": "(Mozilla2020)",
                         "title": "Image File Type and Format Guide",
                         "url": "https://mzl.la/3jkMViQ"
+                    },
+                    {
+                        "ref": "(Weitz2016)",
+                        "title": "Discrete Cosine Transform",
+                        "url": "https://bit.ly/2WZlYYd"
                     }
                 ],
                 "tasks": [
@@ -717,22 +728,7 @@
                         "maths": [],
                         "subtasks": [],
                         "title": "Formulēt Šenona-Naikvista teorēmu"
-                    }
-                ],
-                "title": "Ieviest kvantizācijas un mediju datu apstrādes pamatjēdzienus",
-                "videos": []
-            },
-            {
-                "description": "Apakšnodaļa definē JPEG algoritma soļus (citiem zudumradošiem attēlu formātiem soļi ir ļoti līdzīgi; JPEG ir tradicionālākais un labāk dokumentētais no tiem visiem)",
-                "id": "2.2",
-                "readings": [
-                    {
-                        "ref": "(Weitz2016)",
-                        "title": "Discrete Cosine Transform",
-                        "url": "https://bit.ly/2WZlYYd"
-                    }
-                ],
-                "tasks": [
+                    },
                     {
                         "description": "NA",
                         "examples": [
@@ -748,15 +744,12 @@
                                 "title": "Definēt ortogonālas funkciju saimes"
                             }
                         ],
-                        "subtasks": [],
+                        "subtasks": [
+                            {
+                                "title": "Aprakstīt rastra attēlu glabāšanai un apstrādei nepieciešamos datus."
+                            }
+                        ],
                         "title": "Diskrētais kosinusu pārveidojums"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Aprakstīt rastra attēlu glabāšanai un apstrādei nepieciešamos datus."
                     },
                     {
                         "description": "NA",
@@ -817,7 +810,7 @@
                         "title": "Apskatīt dažus attēlu zudumradošo saspiedumu lietojumus"
                     }
                 ],
-                "title": "Aprakstīt JPEG saspiešanas algoritmu.",
+                "title": "Ieviest kvantizācijas un mediju datu apstrādes pamatjēdzienus",
                 "videos": [
                     {
                         "ref": "(Weitz2017)",
@@ -827,14 +820,14 @@
                 ]
             }
         ],
-        "title": "2020-09-28 to 2020-10-02"
+        "title": "2020-10-05 to 2020-10-09"
     },
     {
-        "itemNum": 5,
+        "itemNum": 6,
         "links": [
             {
                 "description": "Apakšnodaļā aplūko skaņas un video saspiešanas metodes un arī zudumradošos algoritmus darbībā.",
-                "id": "2.3",
+                "id": "2.2",
                 "readings": [
                     {
                         "ref": "(Raissi2002)",
@@ -903,10 +896,10 @@
                 "videos": []
             }
         ],
-        "title": "2020-10-05 to 2020-10-09"
+        "title": "2020-10-12 to 2020-10-16"
     },
     {
-        "itemNum": 6,
+        "itemNum": 7,
         "links": [
             {
                 "title": "Lietot un analizēt kļūdu korekcijas algoritmus",
@@ -1053,10 +1046,10 @@
                 ]
             }
         ],
-        "title": "2020-10-12 to 2020-10-16"
+        "title": "2020-10-19 to 2020-10-23"
     },
     {
-        "itemNum": 7,
+        "itemNum": 8,
         "links": [
             {
                 "description": "Aplūkot algoritmu saimi, kas rodas no polinomu aplūkošanas un var izlabot lielāku skaitu kļūdu nekā Heminga kodi.",
@@ -1195,191 +1188,18 @@
                 "videos": []
             }
         ],
-        "title": "2020-10-19 to 2020-10-23"
-    },
-    {
-        "itemNum": 8,
-        "links": [
-            {
-                "title": "Lietot un analizēt grafu algoritmus",
-                "topic": "4"
-            },
-            {
-                "description": "Šajā apakšnodaļā apskatīti tie grafu algoritmi, kurus var risināt ar dažādām dinamiskās programmēšanas jeb memoizēšanas pieejām; t.sk. visu pāru īsākie ceļi.",
-                "id": "4.1",
-                "readings": [
-                    {
-                        "ref": "(MIT:Demaine2015, L11)",
-                        "title": "Design and Analysis of Algorithms: All-Pairs Shortest Paths",
-                        "url": "https://bit.ly/30JGgX1"
-                    }
-                ],
-                "tasks": [
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Belmana-Forda algoritmu īsāko ceļu atrašanai"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Floida-Varšala algoritmu visu pāru īsāko ceļu atrašanai"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Varšala algoritmu transitīvā slēguma atrašanai"
-                    }
-                ],
-                "title": "Aplūkot dinamiskās programmēšanas paradigmu un lietot to īsāko ceļu algoritmos",
-                "videos": [
-                    {
-                        "ref": "(Demaine2013, L19)",
-                        "title": "Dynamic Programming I: Fibonacci, Shortest Paths",
-                        "url": "https://youtu.be/OQ5jsbhAv_M"
-                    }
-                ]
-            }
-        ],
         "title": "2020-10-26 to 2020-10-30"
     },
     {
         "itemNum": 9,
         "links": [
             {
-                "description": "Šajā apakšnodaļā minēti alkatīgās paradigmas grafu algoritmi.",
-                "id": "4.2",
-                "readings": [
-                    {
-                        "ref": "(MIT:Demaine2015, L12)",
-                        "title": "Design and Analysis of Algorithms:",
-                        "url": "https://bit.ly/3f2l1o8"
-                    },
-                    {
-                        "ref": "(MIT:Schulz, L10)",
-                        "title": "Optimization Methods: Network Flows I",
-                        "url": "https://bit.ly/3g13jmd"
-                    }
-                ],
-                "tasks": [
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Dijkstras algoritmu īsākā ceļa atrašanai"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Prima algoritmu minimālā savienotā koka (MST) atrašanai"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Kraskala algoritmu MST atrašanai"
-                    }
-                ],
-                "title": "Aplūkot alkatīgo paradigmu, t.sk. Īsāko ceļu un minimālā savienotā koka algoritmos",
-                "videos": []
-            },
-            {
-                "description": "Apakšnodaļā aplūkoti grafu uzdevumi svērtiem grafiem, kuri risina plūsmu uzdevumus vai arī pieaudzē sapārojumus.",
-                "id": "4.3",
-                "readings": [
-                    {
-                        "ref": "(MIT:Demaine2015, L13)",
-                        "title": "Design and Analysis of Algorithms: Incremental Improvement: Max Flow, Min Cut",
-                        "url": "https://bit.ly/3eYGa2D"
-                    },
-                    {
-                        "ref": "(CMU:Sleator2018, L11)",
-                        "title": "Design & Analysis of Algorithms: Network Flows 2",
-                        "url": "https://bit.ly/32VTYZd"
-                    },
-                    {
-                        "ref": "(Goemans2009, L6)",
-                        "title": "Combinatorial Optimization: Flows and Cuts",
-                        "url": "https://bit.ly/39tDiJY"
-                    },
-                    {
-                        "ref": "(DU:Daugulis2005)",
-                        "title": "Grafu algoritmi",
-                        "url": "https://bit.ly/3f1T1kH"
-                    }
-                ],
-                "tasks": [
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [
-                            {
-                                "title": "Definēt svērtu grafu ar izteku, ieteku un šķautņu ietilpībām."
-                            },
-                            {
-                                "title": "Definēt plūsmu svērtā grafā"
-                            },
-                            {
-                                "title": "Definēt šķēlumu svērtā grafā, tā ietilpību"
-                            },
-                            {
-                                "title": "Definēt reziduālo plūsmu"
-                            },
-                            {
-                                "title": "Definēt palielinošo ceļu grafā ar reziduālo plūsmu."
-                            }
-                        ],
-                        "title": "Definēt grafu plūsmu uzdevumu jēdzienus"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Formulēt un pierādīt maksimālās plūsmas un minimālā šķēluma teorēmu"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt Forda-Falkersona algoritmu"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Lietot un analizēt algoritmus maksimālajiem sapārojumiem divdaļīgos grafos"
-                    }
-                ],
-                "title": "Aplūkot pakāpenisko uzlabojumu paradigmu, t.sk. grafu plūsmu un maksimālo sapārojumu uzdevumos.",
-                "videos": []
-            }
-        ],
-        "title": "2020-11-02 to 2020-11-06"
-    },
-    {
-        "itemNum": 10,
-        "links": [
-            {
                 "title": "Lietot un analizēt lineārās programmēšanas algoritmus",
-                "topic": "5"
+                "topic": "4"
             },
             {
                 "description": "Apakšnodaļā definēti lineārās optimizācijas uzdevumu pamatjēdzieni un vienkāršākie secinājumi par to risināmību kā arī visāda veida dualitātes rezultāti.",
-                "id": "5.1",
+                "id": "4.1",
                 "readings": [
                     {
                         "ref": "(MIT:Goemans2008, L9)",
@@ -1478,7 +1298,7 @@
             },
             {
                 "description": "Apakšnodaļa apskata vecāko un arvien populārāko LP risināšanas metodi ar simpleksu metodi. Vienlaikus pamatots neapmierinošs konverģences ātrums dažos īpašos gadījumos.",
-                "id": "5.2",
+                "id": "4.2",
                 "readings": [
                     {
                         "ref": "(MIT:Goemans2008, L10)",
@@ -1538,11 +1358,11 @@
         "title": "2020-11-09 to 2020-11-13"
     },
     {
-        "itemNum": 11,
+        "itemNum": 10,
         "links": [
             {
                 "description": "Šajā apakšnodaļā ieviešam teorijas rezultātus un algoritmus, kas izmanto lineāro programmu dualitāti.",
-                "id": "5.3",
+                "id": "4.3",
                 "readings": [
                     {
                         "ref": "(MIT:Goemans2008; L10)",
@@ -1652,7 +1472,7 @@
             },
             {
                 "description": "Apakšnodaļa apskata iteratīvu (skaitlisko metožu iedvesmotu) LP risināšanas metodi – elipsoīdu metodi un tās ģeometrisko interpretāciju.",
-                "id": "5.4",
+                "id": "4.4",
                 "readings": [
                     {
                         "ref": "(MIT:Goemans2008, L12)",
@@ -1693,11 +1513,11 @@
         "title": "2020-11-16 to 2020-11-20"
     },
     {
-        "itemNum": 12,
+        "itemNum": 11,
         "links": [
             {
                 "description": "Apakšnodaļā virspusēji aprakstītas vairākas iekšējā punkta metodes un viena no tām (afīnās mērogošanas atsevišķs variants) izklāstīts detalizēti.",
-                "id": "5.5",
+                "id": "4.5",
                 "readings": [
                     {
                         "ref": "(MIT:Bertsimas2009, L21)",
@@ -1775,15 +1595,15 @@
         "title": "2020-11-23 to 2020-11-27"
     },
     {
-        "itemNum": 13,
+        "itemNum": 12,
         "links": [
             {
                 "title": "Lietot un analizēt virkņu meklēšanas algoritmus",
-                "topic": "6"
+                "topic": "5"
             },
             {
                 "description": "Šajā apakšnodaļā apskatām pamatjēdzienus un naivo algoritmu.",
-                "id": "6.1",
+                "id": "5.1",
                 "readings": [
                     {
                         "ref": "(RajputJi2016)",
@@ -1853,7 +1673,7 @@
             },
             {
                 "description": "Šajā apakšnodaļā apspriesti slīdošā loga (sliding window jeb rolling hash) algoritmi.",
-                "id": "6.2",
+                "id": "5.2",
                 "readings": [
                     {
                         "ref": "(MIT:Devadas2009, L6)",
@@ -1925,7 +1745,7 @@
             },
             {
                 "description": "Apakšnodaļa apraksta parauga meklēšanu ar galīga automāta palīdzību, kura stāvokļu pārejas iekodē prefiksu funkcija.",
-                "id": "6.3",
+                "id": "5.3",
                 "readings": [
                     {
                         "ref": "(CMU:Kingsford2017, L9)",
@@ -2009,11 +1829,11 @@
         "title": "2020-11-30 to 2020-12-04"
     },
     {
-        "itemNum": 14,
+        "itemNum": 13,
         "links": [
             {
                 "description": "Apakšnodaļa apraksta otra veida stringu meklēšanas algoritmus, kuri sāk pārbaudes no parauga beigām.",
-                "id": "6.4",
+                "id": "5.4",
                 "readings": [
                     {
                         "ref": "(UCDavis:Gusfield2011)",
@@ -2073,7 +1893,7 @@
             },
             {
                 "description": "Šajā nodaļā apskatītas tās pieejas, kas nav radniecīgas RK, KMP, BM algoritmiem un virkņu algoritmu lietojumi dzīvē.",
-                "id": "6.5",
+                "id": "5.5",
                 "readings": [
                     {
                         "ref": "(CMU:Kingsford2017, L10)",

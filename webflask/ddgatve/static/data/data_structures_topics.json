@@ -11,6 +11,11 @@
                 "id": "1.1",
                 "readings": [
                     {
+                        "ref": "(Goodrich2011)",
+                        "title": "Basic C++ Programming Elements",
+                        "url": "Ch01P01"
+                    },
+                    {
                         "ref": "(SOF:Khachaturyan2019)",
                         "title": "What is Plain Old Data (POD)",
                         "url": "https://bit.ly/2Y53DtA"
@@ -38,7 +43,7 @@
                         "title": "Create a simple HelloWorld program"
                     },
                     {
-                        "description": "",
+                        "description": "Describe all kinds of “built in” C++ types; their bitwise structure and how to initialize them.",
                         "examples": [],
                         "maths": [],
                         "subtasks": [
@@ -58,16 +63,13 @@
                                 "title": "Introduce char type"
                             },
                             {
-                                "title": "Use std:string to manipulate strings"
-                            },
-                            {
-                                "title": "Convert between some fundamental types and strings"
+                                "title": "Use type casts between the fundamental types"
                             }
                         ],
                         "title": "Introduce fundamental types"
                     },
                     {
-                        "description": "",
+                        "description": "How to build “derived types” from fundamental types and other derived types.",
                         "examples": [],
                         "maths": [],
                         "subtasks": [
@@ -85,6 +87,9 @@
                             },
                             {
                                 "title": "Use C-style struct types"
+                            },
+                            {
+                                "title": "Use std:string to manipulate strings; convert to strings"
                             }
                         ],
                         "title": "Declare and use arrays, pointers, references and struct types"
@@ -138,27 +143,21 @@
             {
                 "description": "This module introduces longer code fragments, builds larger expressions and assignments, explains the structures of loops, branching and switching statements.",
                 "id": "1.2",
-                "readings": [],
-                "tasks": [
+                "readings": [
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [
-                            {
-                                "title": "Understand binary representation of integer and float types"
-                            },
-                            {
-                                "title": "List all number-related types in C++"
-                            },
-                            {
-                                "title": "Understand character and string related types and encodings"
-                            }
-                        ],
-                        "title": "Describe fundamental types in C++"
+                        "ref": "(Goodrich2011)",
+                        "title": "Expressions",
+                        "url": "Ch01P02"
                     },
                     {
-                        "description": "NA",
+                        "ref": "(Goodrich2011)",
+                        "title": "Control Flow",
+                        "url": "Ch01P03"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Distinguish between declarations and definitions; understand scoping and namespace rules.",
                         "examples": [],
                         "maths": [],
                         "subtasks": [
@@ -170,12 +169,15 @@
                             },
                             {
                                 "title": "Use literal values in variable initializations"
+                            },
+                            {
+                                "title": "Use “external” keyword and global variables (accessible in multiple modules)"
                             }
                         ],
                         "title": "Declare, define and initialize variables, know their scope"
                     },
                     {
-                        "description": "NA",
+                        "description": "Use correct syntax and best practices for conditional statements (3 kinds)",
                         "examples": [],
                         "maths": [],
                         "subtasks": [
@@ -183,16 +185,16 @@
                                 "title": "Write if and if-else statements"
                             },
                             {
-                                "title": "Write chains of if statements"
+                                "title": "Write chains of if statements; place next if statement in the else branch only."
                             },
                             {
-                                "title": "Write switch statements, understand their performance implications"
+                                "title": "Write switch statements, use breaks; understand performance implications of “switch” vs. “if”"
                             }
                         ],
                         "title": "Write conditional statements"
                     },
                     {
-                        "description": "NA",
+                        "description": "Use correct syntax and best practices for loop statements",
                         "examples": [],
                         "maths": [],
                         "subtasks": [
@@ -238,39 +240,125 @@
                         "url": "https://youtu.be/8DGGR8oFzEU"
                     }
                 ]
-            },
+            }
+        ],
+        "title": "2020-09-07 to 2020-09-11"
+    },
+    {
+        "itemNum": 3,
+        "links": [
             {
                 "description": "Explain the structure of class definition, public, private members, nested classes, constructors and destructors.",
                 "id": "1.3",
-                "readings": [],
-                "tasks": [
+                "readings": [
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Write simple class constructors and destructors"
+                        "ref": "(Goodrich2011)",
+                        "title": "C++ Classes",
+                        "url": "Ch01P05"
                     },
                     {
-                        "description": "NA",
+                        "ref": "(Goodrich2011)",
+                        "title": "C++ Program and File Organization",
+                        "url": "Ch01P06"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "Describe struct types as aggregations of (public) data members.",
                         "examples": [],
                         "maths": [],
-                        "subtasks": [],
+                        "subtasks": [
+                            {
+                                "title": "Define struct as a heterogeneous collection of different types"
+                            },
+                            {
+                                "title": "Understand struct layout in memory and reinterpret type casts"
+                            },
+                            {
+                                "title": "Explain C++ Plain Old Data (POD) concept"
+                            }
+                        ],
+                        "title": "Define and use struct types"
+                    },
+                    {
+                        "description": "Explain why classes are used differently from types; what changes as we use “single concern” and “encapsulation” principles (i.e. hiding implementation details).",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Define public and private members"
+                            },
+                            {
+                                "title": "Use encapsulation principle in OO"
+                            },
+                            {
+                                "title": "Recognize Dijkstra’s “one concern per class” principle"
+                            }
+                        ],
+                        "title": "Define and use class types"
+                    },
+                    {
+                        "description": "Understand what happens as new class members are instantiated, in which order parent/child objects are instantiated; initializer lists, etc.",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Write simple class constructors"
+                            },
+                            {
+                                "title": "Write class destructors"
+                            },
+                            {
+                                "title": "Use “public” class inheritance"
+                            }
+                        ],
                         "title": "Understand class member instantiation"
                     },
                     {
-                        "description": "NA",
+                        "description": "Specify the function/method prototypes using public/private/protected, also “const” specifiers.",
                         "examples": [],
                         "maths": [],
-                        "subtasks": [],
-                        "title": "Understand the visibility of class members by other members, clients and friends."
+                        "subtasks": [
+                            {
+                                "title": "Use Liskov principle (subclass can replace parent class)"
+                            },
+                            {
+                                "title": "Use “const” modifier for methods and their formal parameters"
+                            },
+                            {
+                                "title": "Understand the visibility of class members by other members, clients and friends."
+                            }
+                        ],
+                        "title": "Use class design principles"
                     },
                     {
-                        "description": "NA",
+                        "description": "Create and build C++ sources and headers to reflect the design of your C++ classes.",
                         "examples": [],
                         "maths": [],
-                        "subtasks": [],
-                        "title": "Introduce stl::string and a few other classes"
+                        "subtasks": [
+                            {
+                                "title": "Use Linux command-line utilities g++ and similar."
+                            },
+                            {
+                                "title": "Build your code from multiple files inside the C++ IDEs."
+                            },
+                            {
+                                "title": "Understand the use of macro commands; use macros to do definition guards."
+                            },
+                            {
+                                "title": "Understand the process of compilation and linking."
+                            },
+                            {
+                                "title": "Separate declarations/definitions between header (H) and source (CPP) files."
+                            },
+                            {
+                                "title": "Write Makefile for typical"
+                            },
+                            {
+                                "title": "Best practices and mistakes when setting up build practices (typical linker errors; not recompiling or not including all dependencies, name conflicts)"
+                            }
+                        ],
+                        "title": "Use C++ build utilities and Makefiles"
                     }
                 ],
                 "title": "Use C++ classes",
@@ -283,26 +371,18 @@
                 ]
             },
             {
-                "description": "Separate concerns go into different files and mutual function calls; we do not focus on OO concepts here.",
+                "description": "Define functions with appropriate prototypes (to pass arrays and large objects). Separate concerns go into different files and mutual function calls.",
                 "id": "1.4",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Functions",
+                        "url": "Ch01P04"
+                    }
+                ],
                 "tasks": [
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [
-                            {
-                                "title": "Understand the use of macro commands; use macros to do definition guards."
-                            },
-                            {
-                                "title": "Understand the process of compilation and linking."
-                            }
-                        ],
-                        "title": "Write C++ header files"
-                    },
-                    {
-                        "description": "NA",
+                        "description": "Describe the typical patterns of parameter passing to C++ functions",
                         "examples": [],
                         "maths": [],
                         "subtasks": [
@@ -311,40 +391,135 @@
                             },
                             {
                                 "title": "Define and call functions passing parameters by reference"
+                            }
+                        ],
+                        "title": "Use various flavors of function calls"
+                    },
+                    {
+                        "description": "",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
+                            {
+                                "title": "Pass static arrays as parameters, specify array length as an extra paramater"
                             },
                             {
-                                "title": "Describe naming conventions and naming best practices in C++"
+                                "title": "Pass dynamic arrays as parameters"
                             },
+                            {
+                                "title": "Pass large objects as references with “const” modifier"
+                            }
+                        ],
+                        "title": "Pass arrays and large objects as parameters to functions"
+                    },
+                    {
+                        "description": "Some flavors of recursion, their implications on memory use, time efficiency and declaration order in the source files",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [
                             {
                                 "title": "Use plain recursion and tail recursion"
                             },
                             {
                                 "title": "Use mutual recursion"
+                            },
+                            {
+                                "title": "Use function pointers"
                             }
                         ],
-                        "title": "Use various flavors of function calls"
+                        "title": "Use recursive functions in C++"
+                    }
+                ],
+                "title": "Use arrays, pointers and references in functions",
+                "videos": []
+            }
+        ],
+        "title": "2020-09-14 to 2020-09-18"
+    },
+    {
+        "itemNum": 4,
+        "links": [
+            {
+                "title": "Express algorithms through ADTs and data structure libraries",
+                "topic": "2"
+            },
+            {
+                "description": "Here we analyze the algorithms at pseudocode level (making assumptions regarding the cost of data structure library calls). More detailed analysis that takes into account alternatives of implementing the data structures themselves is postponed to other modules.",
+                "id": "2.1",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Analysis of Algorithms",
+                        "url": "Ch04P02"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Identify the key characteristics of an algorithm"
                     },
                     {
                         "description": "NA",
                         "examples": [],
                         "maths": [],
                         "subtasks": [],
-                        "title": "Use function pointers"
+                        "title": "Determine function growth classes using O-notation, Ω-notation, Θ-notation."
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the time complexity of an algorithm; make assumptions about the data structure manipulations"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Define the space complexity of an algorithm"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Describe the difference between feasible and infeasible algorithms"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Worst-case, expected and amortized complexity"
                     }
                 ],
-                "title": "Write multi-file programs in C++",
+                "title": "Analyze algorithms by counting data related operations",
                 "videos": []
-            }
-        ],
-        "title": "2020-09-07 to 2020-09-11"
-    },
-    {
-        "itemNum": 3,
-        "links": [
+            },
             {
                 "description": "The module explains the thinking behind keywords “public”, “private”, inheritance – and how this is typically used in writing algorithms and data-structure libraries.",
-                "id": "1.5",
-                "readings": [],
+                "id": "2.2",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "OO Goals, Principles and Patterns",
+                        "url": "Ch02P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Inheritance and Polymorphism",
+                        "url": "Ch02P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Templates",
+                        "url": "Ch02P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -412,116 +587,38 @@
                 ],
                 "title": "Use Object Orientation concepts in C++",
                 "videos": []
-            },
-            {
-                "description": "Introduce handling the space or memory used by the algorithms during recursive function calls, memory allocation and deallocation.",
-                "id": "1.6",
-                "readings": [],
-                "tasks": [
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Use the automatic variables and heap variables"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Understand the implications of memory allocation and deallocation"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Use proper garbage collection practices and detect memory leaks"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Use caching for speedup"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Understand memory hierarchy"
-                    }
-                ],
-                "title": "Understand the C++ memory model",
-                "videos": []
             }
         ],
-        "title": "2020-09-14 to 2020-09-18"
+        "title": "2020-09-21 to 2020-09-25"
     },
     {
-        "itemNum": 4,
+        "itemNum": 5,
         "links": [
             {
-                "title": "Express algorithms through ADTs and data structure libraries",
-                "topic": "2"
-            },
-            {
-                "description": "Here we analyze the algorithms at pseudocode level (making assumptions regarding the cost of data structure library calls). More detailed analysis that takes into account alternatives of implementing the data structures themselves is postponed to other modules.",
-                "id": "2.1",
-                "readings": [],
-                "tasks": [
+                "description": "This module discusses just the simplest ADTs.",
+                "id": "2.3",
+                "readings": [
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Identify the key characteristics of an algorithm"
+                        "ref": "(Goodrich2011)",
+                        "title": "C++ Classes",
+                        "url": "Ch01P05"
                     },
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Determine function growth classes using O-notation, Ω-notation, Θ-notation."
+                        "ref": "(Goodrich2011)",
+                        "title": "Vectors",
+                        "url": "Ch06P01"
                     },
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Define the time complexity of an algorithm; make assumptions about the data structure manipulations"
+                        "ref": "(Goodrich2011)",
+                        "title": "Lists",
+                        "url": "Ch06P02"
                     },
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Define the space complexity of an algorithm"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Describe the difference between feasible and infeasible algorithms"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Worst-case, expected and amortized complexity"
+                        "ref": "(Goodrich2011)",
+                        "title": "Sequences",
+                        "url": "Ch06P03"
                     }
                 ],
-                "title": "Analyze algorithms by counting data related operations",
-                "videos": []
-            },
-            {
-                "description": "This module discusses just the simplest ADTs. Every data structure in this course can be described in this way; more ADTs will be defined in subsequent modules.",
-                "id": "2.2",
-                "readings": [],
                 "tasks": [
                     {
                         "description": "NA",
@@ -569,28 +666,30 @@
                         "description": "NA",
                         "examples": [],
                         "maths": [],
-                        "subtasks": [
-                            {
-                                "title": "Implement data structures in arrays"
-                            },
-                            {
-                                "title": "Implement data structures with pointers"
-                            },
-                            {
-                                "title": "Understand advantages of encapsulation and hiding implementation details"
-                            }
-                        ],
+                        "subtasks": [],
                         "title": "Understand how one ADT can have different implementations"
-                    }
-                ],
-                "title": "Define and implement functions for simple Abstract Data Types (ADT)",
-                "videos": []
-            },
-            {
-                "description": "Some built-in data structure libraries and template classes are introduced; this is the preferred way for the vast majority of C++ code that is ever written. (Only rarely you need to look at the implementation “under the hood”, and this will become our focus later on.)",
-                "id": "2.3",
-                "readings": [],
-                "tasks": [
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement data structures in arrays"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Implement data structures with pointers"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Understand advantages of encapsulation and hiding implementation details"
+                    },
                     {
                         "description": "NA",
                         "examples": [],
@@ -634,19 +733,34 @@
                         "title": "Use C++ constructs to iterate over data structures"
                     }
                 ],
-                "title": "Use STL to implement containers - vectors, stacks and maps",
+                "title": "Define and implement functions for simple Abstract Data Types (ADT)",
                 "videos": []
-            }
-        ],
-        "title": "2020-09-21 to 2020-09-25"
-    },
-    {
-        "itemNum": 5,
-        "links": [
+            },
             {
                 "description": "The module only lists those design patterns that are typically used with data structures. One can certainly write good code without using “Gang of Four” jargon, but it can explain the thinking behind some popular APIs and data structure libraries.",
                 "id": "2.4",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "OO Goals, Principles and Patterns",
+                        "url": "Ch02P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Deques: Adapter Design Pattern",
+                        "url": "Ch05P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Binary Trees: Template Method Pattern",
+                        "url": "Ch07P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Sets: Template Method Pattern",
+                        "url": "Ch11P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -674,27 +788,6 @@
                         "examples": [],
                         "maths": [],
                         "subtasks": [],
-                        "title": "Define the adapter OO design patern"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Define the decorator OO design patern"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Define the command OO design pattern"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
                         "title": "Define the composite OO design pattern"
                     },
                     {
@@ -702,28 +795,14 @@
                         "examples": [],
                         "maths": [],
                         "subtasks": [],
-                        "title": "Define the memento OO design pattern"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Define the iterator OO design pattern"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Define the observer OO design pattern"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
                         "title": "Define the template method OO design pattern"
+                    },
+                    {
+                        "description": "NA",
+                        "examples": [],
+                        "maths": [],
+                        "subtasks": [],
+                        "title": "Use virtual functions in C++ also in factory or template method patterns"
                     }
                 ],
                 "title": "Define OO design patterns in C++",
@@ -732,7 +811,18 @@
             {
                 "description": "The module explains general techniques to do unit testing and system testing, code inspection, printouts, logging and debugging in order to find bugs in algorithmic software.",
                 "id": "2.5",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Writing a C++ Program",
+                        "url": "Ch01P07"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Loop Invariants",
+                        "url": "Ch04P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -786,7 +876,53 @@
             {
                 "description": "Define list and also vector (a.k.a. arraylist) allowing random access. In this and subsequent modules we start with the ADT we want, then show some ways to implement it.",
                 "id": "3.1",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Using Arrays",
+                        "url": "Ch03P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Using Singly Linked Lists",
+                        "url": "Ch03P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Using Doubly Linked Lists",
+                        "url": "Ch03P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Stacks",
+                        "url": "Ch05P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Queues",
+                        "url": "Ch05P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Doubly-Ended Queues",
+                        "url": "Ch05P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Vectors",
+                        "url": "Ch06P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Lists",
+                        "url": "Ch06P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Sequences",
+                        "url": "Ch06P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -833,11 +969,28 @@
                 ],
                 "title": "Construct and manipulate list-like data structures",
                 "videos": []
-            },
+            }
+        ],
+        "title": "2020-10-05 to 2020-10-09"
+    },
+    {
+        "itemNum": 7,
+        "links": [
             {
                 "description": "Trees in this course are always assumed to be rooted (one node is root) and ordered (we always know, which is the 1st, 2nd etc. child of the same parent). This module only deals with trees in the most general sense (to store certain hierarchies). Trees with additional structural requirements (with keys ordered for fast search and/or balanced) are called search trees; they will be discussed later.",
                 "id": "3.2",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "General Trees",
+                        "url": "Ch07P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Tree Traversal Algorithms",
+                        "url": "Ch07P02"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -907,15 +1060,31 @@
                 "videos": []
             }
         ],
-        "title": "2020-10-05 to 2020-10-09"
+        "title": "2020-10-12 to 2020-10-16"
     },
     {
-        "itemNum": 7,
+        "itemNum": 8,
         "links": [
             {
                 "description": "Unlike more universal structures (binary search trees or hashtables) the data structures may only need to return (or remove) the minimal or maximal element; in this case they are called priority queues. A typical way to implement them is a tree-like structure called a heap.",
                 "id": "3.3",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "The Priority Queue ADT",
+                        "url": "Ch08P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Implementing a Priority Queue with a List",
+                        "url": "Ch08P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Heaps",
+                        "url": "Ch08P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -955,11 +1124,38 @@
                 ],
                 "title": "Construct and manipulate priority queues and heaps",
                 "videos": []
-            },
+            }
+        ],
+        "title": "2020-10-19 to 2020-10-23"
+    },
+    {
+        "itemNum": 9,
+        "links": [
             {
                 "description": "Finding values by non-integer keys (typically strings) defines the difference between maps and lists. Dictionaries are a variant of maps allowing repeated keys. In this module the ADTs are defined and also their implementations",
                 "id": "3.4",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Maps",
+                        "url": "Ch09P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Hash Tables",
+                        "url": "Ch09P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Ordered Maps",
+                        "url": "Ch09P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Skip Lists",
+                        "url": "Ch09P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1025,15 +1221,36 @@
                 "videos": []
             }
         ],
-        "title": "2020-10-12 to 2020-10-16"
+        "title": "2020-10-26 to 2020-10-30"
     },
     {
-        "itemNum": 8,
+        "itemNum": 10,
         "links": [
             {
-                "description": "Binary Search Trees is one possible way to store maps with totally ordered keys. This is an overview chapter that shows the general principles how the search trees can be built and manipulated. More flavors of BSTs are shown in the next module.",
+                "description": "Binary Search Trees is one possible way to store maps with totally ordered keys. This is an overview chapter that shows the general principles how the search trees can be built and manipulated. Inserting nodes in certain patterns can lead to skinny and inefficient trees; so they need some balancing.",
                 "id": "3.5",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Binary Search Trees",
+                        "url": "Ch10P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "AVL Trees",
+                        "url": "Ch10P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Splay Trees",
+                        "url": "Ch10P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "2-4 Trees",
+                        "url": "Ch10P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1062,16 +1279,7 @@
                         "maths": [],
                         "subtasks": [],
                         "title": "Implement node search, insert and delete in array implementation"
-                    }
-                ],
-                "title": "Construct and manipulate BST structures",
-                "videos": []
-            },
-            {
-                "description": "Inserting nodes in certain patterns can lead to skinny and inefficient trees. This module considers a few approaches",
-                "id": "3.6",
-                "readings": [],
-                "tasks": [
+                    },
                     {
                         "description": "NA",
                         "examples": [],
@@ -1101,19 +1309,29 @@
                         "title": "Introduce (a,b)-search-trees and (2,4)-trees in particular"
                     }
                 ],
-                "title": "Construct and manipulate balanced BSTs",
+                "title": "Construct and manipulate BST structures",
                 "videos": []
-            }
-        ],
-        "title": "2020-10-19 to 2020-10-23"
-    },
-    {
-        "itemNum": 9,
-        "links": [
+            },
             {
                 "description": "This chapter describes general-purpose sorting algorithms (sorting also appears in STL module and as an illustration to various algorithm paradigms in later modules).",
-                "id": "3.7",
-                "readings": [],
+                "id": "3.6",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Merge-Sort",
+                        "url": "Ch11P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Quick-Sort",
+                        "url": "Ch11P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Sorting through an Algorithmic Lens",
+                        "url": "Ch11P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1146,11 +1364,23 @@
                 ],
                 "title": "Analyze and compare sorting algorithms",
                 "videos": []
-            },
+            }
+        ],
+        "title": "2020-11-02 to 2020-11-06"
+    },
+    {
+        "itemNum": 11,
+        "links": [
             {
                 "description": "This module explains ways to represent sets and also bags (allowing repetition of elements); their order relations and set-level operations. Element-level operations on sets were explained earlier – in fact, maps and dictionaries can be used for that.",
-                "id": "3.8",
-                "readings": [],
+                "id": "3.7",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Sets and Union/Find Structures",
+                        "url": "Ch11P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1193,17 +1423,32 @@
                 ],
                 "title": "Construct and manipulate set-like structures",
                 "videos": []
-            }
-        ],
-        "title": "2020-10-26 to 2020-10-30"
-    },
-    {
-        "itemNum": 10,
-        "links": [
+            },
             {
                 "description": "The module explains the most complex data structures covered in this course (undirected and directed graphs); their ADT and some general tasks associated with graphs (such as BFS and DFS traversal). Any weighted graph issues are postponed.",
-                "id": "3.9",
-                "readings": [],
+                "id": "3.8",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Graphs",
+                        "url": "Ch13P01"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Data Structures for Graphs",
+                        "url": "Ch13P02"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Graph Traversals",
+                        "url": "Ch13P03"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Directed Graphs",
+                        "url": "Ch13P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1250,11 +1495,28 @@
                 ],
                 "title": "Describe graph and directed graph structures and traversals",
                 "videos": []
-            },
+            }
+        ],
+        "title": "2020-11-09 to 2020-11-13"
+    },
+    {
+        "itemNum": 12,
+        "links": [
             {
                 "description": "Various general algorithmic ideas can be illustrated on weighted graph optimization problems. This module analyzes source-to-sink (or all-pairs) shortest paths and also the minimum spanning tree (MST) algorithms.",
-                "id": "3.10",
-                "readings": [],
+                "id": "3.9",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Shortest Paths",
+                        "url": "Ch13P05"
+                    },
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Minimum Spanning Trees",
+                        "url": "Ch13P06"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1303,10 +1565,10 @@
                 "videos": []
             }
         ],
-        "title": "2020-11-02 to 2020-11-06"
+        "title": "2020-11-16 to 2020-11-20"
     },
     {
-        "itemNum": 11,
+        "itemNum": 13,
         "links": [
             {
                 "title": "Introduce general paradigms for algorithms.",
@@ -1315,7 +1577,13 @@
             {
                 "description": "The last module provides a high-level overview of some large classes of algorithmic problems; what algorithms were covered in each one of them and what paradigms were used.",
                 "id": "4.1",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Pattern Matching Algorithms",
+                        "url": "Ch12P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1366,7 +1634,13 @@
             {
                 "description": "Introduce algorithms that split the problem into subcases and then verify subcases in some order",
                 "id": "4.2",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Pattern Matching Algorithms",
+                        "url": "Ch12P03"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1399,17 +1673,17 @@
                 ],
                 "title": "Describe exhaustive, brute-force paradigms",
                 "videos": []
-            }
-        ],
-        "title": "2020-11-09 to 2020-11-13"
-    },
-    {
-        "itemNum": 12,
-        "links": [
+            },
             {
                 "description": "Algorithm can reduce a problem to a simpler one. We discuss paradigms to solve a problem by stepwise reducing it to a simpler one.",
                 "id": "4.3",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Directed Graphs",
+                        "url": "Ch13P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1451,15 +1725,21 @@
                 "videos": []
             }
         ],
-        "title": "2020-11-16 to 2020-11-20"
+        "title": "2020-11-23 to 2020-11-27"
     },
     {
-        "itemNum": 13,
+        "itemNum": 14,
         "links": [
             {
                 "description": "Many algorithmic problems can be solved or “conquered” by subdividing them in parts",
                 "id": "4.4",
-                "readings": [],
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Merge-Sort",
+                        "url": "Ch11P01"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1501,66 +1781,15 @@
                 "videos": []
             },
             {
-                "description": "In many cases algorithms can speed up, if they can use more space (or they can save space, if we allow more time).",
+                "description": "Data structure manipulations are often a means to an end. Here we list some application areas that often lead to data structures; and this will help to introduce different algorithm creation paradigms – very general ideas that are behind the algorithm development.",
                 "id": "4.5",
-                "readings": [],
-                "tasks": [
+                "readings": [
                     {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Describe the tradeoff between time and space complexity"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Introduce input-enhancing approaches; analyze sorting-by-counting algorithms"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Analyze tradeoffs in hashing algorithms and hashing function choices"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [
-                            {
-                                "title": "Introduce sets of hash functions for Bloom filters"
-                            },
-                            {
-                                "title": "Describe the tradeoff between probabilistic data structure accuracy and space"
-                            }
-                        ],
-                        "title": "Analyze Bloom filters; probabilistic dictionary implementations"
-                    },
-                    {
-                        "description": "NA",
-                        "examples": [],
-                        "maths": [],
-                        "subtasks": [],
-                        "title": "Introduce B-tree data structure and its use in databases"
+                        "ref": "(Goodrich2011)",
+                        "title": "Dynamic Programming",
+                        "url": "Ch12P02"
                     }
                 ],
-                "title": "Describe time and space tradeoffs",
-                "videos": []
-            }
-        ],
-        "title": "2020-11-23 to 2020-11-27"
-    },
-    {
-        "itemNum": 14,
-        "links": [
-            {
-                "description": "Data structure manipulations are often a means to an end. Here we list some application areas that often lead to data structures; and this will help to introduce different algorithm creation paradigms – very general ideas that are behind the algorithm development.",
-                "id": "4.6",
-                "readings": [],
                 "tasks": [
                     {
                         "description": "NA",
@@ -1596,8 +1825,14 @@
             },
             {
                 "description": "Some algorithms searching for the optimal (cheapest, fastest, etc.) way to complete the task follow the following rule: At every step select the “locally best” alternative and it will eventually lead to the globally best solution. This approach is usually efficient, but for many problem classes this could give a solution that is not the best possible.",
-                "id": "4.7",
-                "readings": [],
+                "id": "4.6",
+                "readings": [
+                    {
+                        "ref": "(Goodrich2011)",
+                        "title": "Text Compression and the Greedy Method",
+                        "url": "Ch12P04"
+                    }
+                ],
                 "tasks": [
                     {
                         "description": "NA",

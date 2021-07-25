@@ -30,11 +30,10 @@ def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-                'my_id': 'assignments.html',
-                'course': 'data-structures',
-                'nav_items': nav_items
-            }
-    
+        'my_id': 'assignments.html',
+        'course': 'data-structures',
+        'nav_items': nav_items
+    }
     return render_template('data_structures/assignments.html', **template_context)
 
 
@@ -72,12 +71,15 @@ def algorithms():
 def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
+    grading_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_grading.json')
+    gradingStuff = json.load(open(grading_url))
+
     template_context = {
-                'my_id': 'algorithms.html',
-                'course': 'data-structures',
-                'nav_items': nav_items
-            }
-    
+        'my_id': 'algorithms.html',
+        'course': 'data-structures',
+        'gradingStuff': gradingStuff,
+        'nav_items': nav_items
+    }
     return render_template('data_structures/submissions.html', **template_context)
 
 

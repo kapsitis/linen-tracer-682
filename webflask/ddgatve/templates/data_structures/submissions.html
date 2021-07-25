@@ -2,21 +2,69 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  
 <style>
 h2 {
   color: #990000;
 }
+dt {
+  font-weight: bold;
+}
+
+
+i { 
+  font-size:85%; 
+}
+table.colornavigation a { 
+  text-decoration: underline !important; 
+}
+
+.tltip {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-size:80%;
+  color: #2B547E;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tltip .tltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #ffffcc;
+  font-style: normal;
+  color: black;
+  padding: 5px;
+  border-radius: 4px; 
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tltip:hover .tltiptext {
+  visibility: visible;
+}
 </style>
 </head>
 
+
+
+
 <body>
+
+
 <h1>Data Structures: Code Submissions</h1>
 
 <table border="0" cellspacing="2">
@@ -41,6 +89,135 @@ h2 {
 </table>
 
 
+
+
+<h2><a name="exercises"></a>Grading Weights (20+20+20+30+30+30+100+100+150=500)</h2>
+
+<ul>
+<li><b>EX01:</b> 2 points, if builds as expected with g++; 6 testcases, 3 points each;  (max total 20 points)</li>
+<li><b>EX02:</b> 2 points, if builds as expected with g++; 6 testcases, 3 points each;  (max total 20 points)</li>
+<li><b>EX03:</b> 10 testcases, 2 points each; (max total 20 points)</li>
+<li><b>EX04:</b> 10 testcases, 3 points each; (max total 30 points)</li>
+<li><b>EX05:</b> 6 testcases, 5 points each; (max total 30 points)</li>
+<li><b>EX06:</b> 15 testcases, 2 points each, if the SVG image did match; (max total 30 points)</li>
+<li><b>EX07:</b> 13 testcases, 8 points each; (max total 100 points, not 104 points)</li>
+<li><b>EX08:</b> 10 testcases, 10 points each; (max total 100 points)</li>
+<li><b>EX09:</b> Just one grade (max 150 points)</li> 
+</ul>
+
+<p><a href="http://18.193.16.199/training/data-structures/workspace-kalvis.zip">Download all testcases</a></p>
+
+<p>Unzip the directory "workspace-kalvis" so that it located in the same subdirectory as your own workspace. 
+Copy the <tt>ex03-alice/grading-default.sh</tt> or a similar grading file into your EX03 directory; 
+make the script executable ("chmod u+x grading-default.sh") and run it. 
+If your code needs other compiler options in order to run (and some tests failed 
+because of this grading approach), please let me know by January 4, 2021.
+Every exercise has a different default grading script. (EX06 does not check your output 
+file with the expected SVG file with <tt>diff</tt>; instead you can just visually compare the images - 
+your SVG should show the same thing as the expected result.)
+</p>
+
+<div class="panel-group" id="accordion">
+
+{% for gradingItem in gradingStuff %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{gradingItem.label}}">Exercise {{gradingItem.title}}</a>
+</h4>
+</div>
+<div id="collapse{{gradingItem.label}}" class="panel-collapse collapse">
+<div class="panel-body">
+<ul>
+{% for testItem in gradingItem.testItems %}
+{% if testItem.type != "ignored" and testItem.type != "hidden" %}
+<li><b>{{testItem.label}}</b> 
+{% if testItem.type != "nonfunctional" %} 
+<a href="http://18.193.16.199/training/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.fname}}">in</a>/<a href="http://18.193.16.199/training/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.expected}}">out</a>
+{% endif %} 
+({{testItem.type}}): {{testItem.title}}</li>
+{% elif testItem.type == "ignored" and testItem.type != "hidden" %}
+<li style="text-decoration: line-through;"><b>{{testItem.label}}</b> <a href="http://18.193.16.199/training/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.fname}}">in</a>/<a href="http://18.193.16.199/training/data-structures/{{gradingItem.subdir}}/testcases/{{testItem.expected}}">out</a> 
+({{testItem.type}}): {{testItem.title}}</li>
+{% endif %}
+{% endfor %}
+</ul>
+<table border="1" class="grades">
+<tr>
+<th>ID</th>
+{% for testItem in gradingItem.testItems %}
+{% if testItem.type != "ignored" %}
+<th>{{testItem.label}}</th>
+{% endif %}
+{% endfor %}
+<th>Total</th>
+<th>Notes</th>
+</tr>
+{% for student in gradingItem.students %}
+<tr>
+{% if student.notes != "Version control issue" and student.notes != "not found in GitHub" %}
+<td style="padding: 0px 6px 0px 6px;"><a href="http://18.193.16.199/training/data-structures/{{gradingItem.subdir}}/grades/{{student.studID}}-output.txt">{{student.studID}}</a></td>
+{% else %}
+<td style="padding: 0px 6px 0px 6px;">{{student.studID}}</td>
+{% endif %}
+{% for gg in student.grades %}<td style="text-align: center;">{{gg}}</td>{% endfor %}
+<td style="background-color:#cccccc;text-align: center;">{{student.total}}</td>
+<td style="text-align: left; padding: 0px 6px 0px 6px">{{student.notes}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+<h2>Appendix: The C++ Environments</h2>
+
+<p>The preparation labs are sets of instructions defining the suggested
+configurations to run coding exercises and programming projects.
+By themselves they are not graded, but going through these steps is highly recommended
+(and you can also suggest improvements, if the same thing can be done better).</p>
+
+<dl>
+
+<dt>PLAB2: Build a C++ Project using Makefile</dt>
+<dd>Compilation and linking options. Build variables and variable paths.<br/> 
+<small><b>Why do we care?</b> Grading server runs Makefile from Jenkins. 
+To be sure that our project can run from the command-line, we can use the same Makefile.</small></dd>
+
+<dt>PLAB4: Use logging and IDE debugger</dt>
+<dd>Apply "spdlog" library to create searchable logfiles. 
+Use the debugger in Visual Studio or other IDE.<br/>
+<small><b>Why do we care?</b> Debugger is just one way to fix errors, sometimes
+it is the best choice to understand what is going on.</small></dd>
+<dt>PLAB5: Build a tiny package for R</dt>
+<dd>Compile and use a C++ extension to R.<br/>
+<small><b>Why do we care?</b> 
+Sometimes algorithms in C++ are extending other development platforms to make them more efficient.
+R/RStudio is normally used for interdisciplinary 
+and business applications, reporting and data visualizations.</small></dd>
+</dl>
+-->
+
+
+
+
+<hr width="50%"/>
 
 <h3><a name="basics"></a>C++ Basics</h3>
 

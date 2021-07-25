@@ -1,0 +1,609 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style>
+h2 {
+  color: #990000;
+}
+</style>
+</head>
+
+<body>
+<h1>Discrete Spring 2020: Assignments</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Assignments</b></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs">Proofs</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations">Presentations</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+<p style="font-size:120%"><a 
+href="../discrete-bin/questionbase/discrete-math-all-exam-papers.pdf">All Worksheets, Quizzes, Exams (as one PDF)</a></p>
+
+
+<h2>Calendar Events</h2>
+
+<p style="margin:0px;">Hover your mouse over the event to see the due date.</p>
+
+<table class="agenda">
+<tr>
+<th>Week 1<br/> 01-06 to 01-10</th>
+<th>Week 2<br/> 01-13 to 01-17</th>
+<th>Week 3<br/> 01-20 to 01-24</th>
+<th>Week 4<br/> 01-27 to 01-31</th>
+<th>Week 5<br/> 02-03 to 02-07</th>
+<th>Week 6<br/> 02-10 to 02-14</th>
+<th>Week 7<br/> 02-17 to 02-21</th>
+<th>Week 8<br/> 02-24 to 02-28</th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>HW1<br/>
+<span class="explain">(Logic,Sets)</span>
+<td>
+LAB1<br/>
+<span class="explain">(Coq)</span>
+</td>
+<td>PRES1<br/> 
+<span class="explain">(Analysis)</span></td>
+<td>HW2<br/>
+<span class="explain">(Num.Theory)</span></td>
+<td>MIDTERM</td>
+<td>
+LAB2<br/>
+<span class="explain">(Coq)</span>
+</td>
+</tr>
+</table>
+
+<table style="margin-top:5px;" class="agenda">
+<tr>
+<th>Week 9<br/> 03-02 to 03-06</th>
+<th>Week 10<br/> 03-09 to 03-13</th>
+<th>Week 11<br/> 03-16 to 03-20</th>
+<th>Week 12<br/> 03-23 to 03-27</th>
+<th>Week 13<br/> 03-30 to 04-03</th>
+<th>Week 14<br/> 04-06 to 04-10</th>
+<th>Reviews<br/> 04-13 to 04-17</th>
+<th>Finals<br/> 04-20 to 04-24</th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>PRES2<br/> 
+<span class="explain">(Draft)</span>
+</td>
+<td>HW3<br/>
+<span class="explain">(Counting)</span>
+</td>
+<td>PRES3<br/>
+<span class="explain">(Final)</span></td>
+<td>LAB3<br/>
+<span class="explain">(Scala)</span>
+</td>
+<td>
+HW4<br/>
+<span class="explain">(Graphs)</span>
+</td>
+<td>
+LAB4<br/>
+<span class="explain">(Scala)</span></td>
+<td>FINAL</td>
+</tr>
+</table>
+
+
+<p><small><b>Note on Academic Honor:</b> All homeworks and coding assignments can 
+be discussed in spoken language; exchange of ideas, how to solve them, 
+is encouraged. It is forbidden to show or otherwise communicate written solutions of 
+human-readable proofs and coding exercises.</small></p>
+
+
+<h2>Attendance</h2>
+
+<p>The following counting was used:</p>
+
+<ul>
+<li>Anyone who has attended at least one lab class (out of 2) and both 
+lecture classes gets 100% attendance credit for that week.</li>
+<li>Anyone who has attended two classes (or two labs and one lecture)
+gets 50% attendance credit for that week.</li>
+<li>Anyone who attended zero or one classes gets 0% attendance credit for that week.</li> 
+</ul> 
+
+After that the average over all 14 weeks is computed.
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Dates</th>
+<th style="background-color:#dddddd;">Time Est.</th>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<td>ATTENDANCE</td>
+<td>2020-01-06 to 2020-04-10</td>
+<td style="background-color:#dddddd;">84h</td>
+<td>100&permil;</td>
+<td>94.00&permil;</td>
+</tr>
+</table>
+
+
+<h2>Homeworks</h2>
+
+<p style="margin:0px;">Four homeworks will add up to 200&permil; (1/5 of the total grade).<br/>
+LaTeX Template for all homeworks: 
+<a href="../discrete-bin/samples/discrete-hw01-janis-aboltins.tex">TEX</a>;&nbsp; 
+(the stub file generated from that TEX: 
+<a href="../discrete-bin/samples/discrete-hw01-janis-aboltins.pdf">PDF</a>).<br/>
+<b>Time estimates</b> are not meant to be precise or useful. They are 
+a <b>relative</b> measure; for example, an 16h assignment for a typical student
+would require considerably more time and energy than a 2h assignment.
+</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Hints</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</th><th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>HW1</th>
+<td>Logic and Sets</td>
+<td><a href="../discrete-bin/homeworks/discrete-structures-hw01.pdf">Homework 1</a></td>
+<td>
+
+<a href="../discrete-bin/homeworks/discrete-structures-hw01-criteria.pdf">HW01 Grading Criteria</a>
+</td>
+<td>2020-01-20</td>
+<td style="background-color:#dddddd;">16h</td>
+<td>50&permil;</td><td>34.17&permil;</td>
+</tr>
+<tr>
+<th>HW2</th>
+<td>Algorithms and Number Theory</td>
+<td><a href="../discrete-bin/homeworks/discrete-structures-hw02.pdf">Homework 2</a></td>
+<td><a href="../discrete-bin/homeworks/discrete-structures-hw02-hints.pdf">HW Hints 2</a></td>
+<td>2020-02-10</td>
+<td style="background-color:#dddddd;">16h</td>
+<td>50&permil;</td><td>38.39&permil;</td>
+</tr>
+<tr>
+<th>HW3</th>
+<td>Counting and Probabilities</td>
+<td>
+<a href="../discrete-bin/homeworks/discrete-structures-hw03.pdf">Homework 3</a>
+</td>
+<td>
+<a href="../discrete-bin/homeworks/discrete-structures-hw03-hints.pdf">HW Hints 3</a>
+</td>
+<td>2020-03-16</td>
+<td style="background-color:#dddddd;">8h</td>
+<td>50&permil;</td><td>39.53&permil;</td>
+</tr>
+<tr>
+<th>HW4</th>
+<td>Recurrent Sequences, Graphs</td>
+<td>
+<a href="../discrete-bin/homeworks/discrete-structures-hw04.pdf">Homework 4</a>
+</td>
+<td>
+&nbsp;
+<!--
+<a href="../discrete-bin/homeworks/discrete-structures-hw04-hints.pdf">HW Hints 4</a>
+-->
+</td>
+<td>2020-04-10</td>
+<td style="background-color:#dddddd;">8h</td>
+<td>50&permil;</td><td>38.38&permil;</td>
+</tr>
+</table>
+
+
+
+<h2>Coq and/or Scala Assignments</h2>
+
+<p style="margin:0px;">Four computing assignments will add up to 200&permil; (1/5 of the total grade).</p>
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Hints</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</td>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>LAB1</th>
+<td>Proving Tautologies</td>
+<td>
+<a href="../discrete-bin/coq-propositional/lab01_tasks.html">LAB1 Description</a>;<br/>
+<a href="../discrete-bin/coq-propositional/lab01_tasks.v">LAB1 Source File</a>
+</td>
+<td>
+<a href="../discrete-bin/homeworks/lab01-hints.pdf">Hints for LAB1</a><br/>
+<b><a href="../discrete-bin/coq-propositional/lab01_tasks_solution.html">Lab01 Solution</a></b><br/>
+<a href="coq.html#cheatsheets">Cheetsheets</a><br/>
+<a href="coq.html#classical">Classical Coq</a>
+</td>
+<td>2020-01-27</td>
+<td style="background-color:#dddddd;">8h</td>
+<td>50&permil;</td><td>48.58&permil;</td>
+</tr>
+<tr>
+<th>LAB2</th>
+<td>Induction and<br/> Number Theory</td>
+<td>
+<a href="../discrete-bin/coq-inductive/lab02_tasks.html">LAB2 Description</a>;<br/>
+<a href="../discrete-bin/coq-inductive/lab02_tasks.v">LAB2 Source File</a>
+</td>
+<td>
+<a href="../discrete-bin/coq-inductive/preparation_material_prob11-prob15.html">Hints for P11-P15</a>;<br/>
+<a href="../discrete-bin/homeworks/preparation_material_prob16-prob20.pdf">Hints for P16-P20</a>;<br/>
+<b><a href="../discrete-bin/coq-inductive/lab02_tasks_solution.html">Lab02 Solution</a></b>
+</td>
+<td>2020-02-28</td>
+<td style="background-color:#dddddd;">16h</td>
+<td>50&permil;</td><td>42.94&permil;</td>
+</tr>
+<tr>
+<th>LAB3</th>
+<td>String Search</td>
+<td>
+<a href="../discrete-bin/homeworks/lab03-description.pdf">LAB3/LAB4 Description</a><br/>
+<a href="https://github.com/kapsitis/discrete-lab03">LAB3/LAB4 Sample Code</a>
+</td>
+<td>
+<a href="../discrete-bin/homeworks/lab03-hints.pdf">LAB3 Setup and Testing Hints</a><br/>
+<a href="../discrete-bin/slides/discrete-week12-string-search.pptx">Matching Algorithms: Part1</a>
+</td>
+<td>2020-04-01</td>
+<td style="background-color:#dddddd;">12h</td>
+<td>100&permil;</td>
+<td>70.65&permil;</td>
+</tr>
+<tr>
+<th>LAB4</th>
+<td>More String Search</td>
+<!--
+<td>
+<a href="../discrete-bin/homeworks/lab03-description.pdf">LAB3/LAB4 Description (updated!)</a><br/>
+</td>
+-->
+<td>See LAB3/LAB4 above</td>
+<td>
+<a href="../discrete-bin/slides/discrete-week14-string-search.pptx">Matching Algorithms: Part2</a>
+</td>
+<td>2020-04-17</td>
+<td style="background-color:#dddddd;">12h</td>
+<td>100&permil;</td><td>57.47&permil;</td>
+</tr>
+</table>
+
+<small>The total grade for LAB3+LAB4 that counts for the total was the maximum of both grades 
+(it is computed for every student separately). The average of all these 
+maxima was 79.95&permil;.</small>
+
+
+
+
+<h2>Individual Presentations</h2>
+
+<p style="margin:0px;">Individual Presentations are worth 100&permil; (10% of your grade); they are 
+submitted in three installments (Analysis Document; Design+Draft Presentation; 
+Finalized Presentation).<br />
+References for your individual topics are under 
+<a href="presentations.html">Presentations</a></p>
+
+
+<table border="1" cellspacing="0">
+<tr>
+<th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</th>
+<th>Max</th><th>Average</th>
+</tr>
+<tr>
+<th>PRES1</th>
+<td>Analysis and Plannning Doc</td>
+<td>
+<a href="../discrete-bin/homeworks/individual-presentation-part1.pdf">Guidelines: Part 1</a>
+</td>
+<td>
+2020-02-03
+</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<th>PRES2</th>
+<td>Design+Draft Presentation</td>
+<td>
+<a href="../discrete-bin/homeworks/individual-presentation-part2.pdf">Guidelines: Part 2</a>
+</td>
+<td>
+2020-03-09
+</td>
+<td style="background-color:#dddddd;">4h</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<th>PRES3</th>
+<td>Final Presentation</td>
+<td>
+<a href="../discrete-bin/homeworks/individual-presentation-part3.pdf">Guidelines: Part 3</a><br/>
+<a href="../discrete-bin/homeworks/individual-presentation-grading.pdf">Grading Procedure</a>
+</td>
+<td>
+2020-03-24
+</td>
+<td style="background-color:#dddddd;">8h</td>
+<td>100&permil;</td>
+<td>90.00&permil;</td>
+</tr>
+<tr>
+<th>TopicQuiz</th>
+<td>Quiz on Individual Topics</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-on-individual-topics.pdf">Quiz on Individual Topics</a>
+</td>
+<td>
+2020-04-24
+</td>
+<td style="background-color:#dddddd;">4h</td>
+<td style="background-color:#dddddd;">N/A</td>
+<td style="background-color:#dddddd;">(77.47&permil;)</td>
+</tr>
+</table>
+
+<p><small>Individual grades for the topics quiz (max=18):<br/>
+15,15,11,16,14,14,15,16,16,16,16,15,16,0,16,8,16,16 (avg 77.47%).<br/>
+Individual grade about the presentation depends on the evaluations from the fellow students; 
+it is in the interval [77;100].</small></p> 
+
+
+
+
+<h2>Quizzes (Short-Answer Tests)</h2>
+
+<p style="margin:0px;">12 quizzes will add up to 100&permil; (1/10 of the total grade).
+Quizzes typically have 7 to 11 questions; the time is 3-4 minutes per question.
+They usually occur once every week.
+</p>
+
+
+<table border="1" cellspacing="0">
+<tr><th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Due Date</th>
+<th style="background-color:#dddddd;">Time Est.</th><th>Max</th><th>Average</th></tr>
+<tr>
+<th>QUIZ01</th>
+<td>Boolean Expressions</td>
+<td><a href="../discrete-bin/questionbase/quiz-sample-01.pdf">Sample Quiz 01</a>;&nbsp; 
+<a href="../discrete-bin/questionbase/quiz-01.pdf">Quiz 01</a></td>
+<td>2020-01-09</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>5.53&permil;</td>
+</tr>
+<tr>
+<th>QUIZ02</th>
+<td>First Order Logic - 1</td>
+<td><a href="../discrete-bin/questionbase/quiz-sample-02.pdf">Sample Quiz 02</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-02.pdf">Quiz 02</a></td>
+<td>2020-01-23</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>3.18&permil;</td>
+</tr>
+<tr>
+<th>QUIZ03</th>
+<td>First Order Logic - 2</td>
+<td><a href="../discrete-bin/questionbase/quiz-sample-03.pdf">Sample Quiz 03</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-03.pdf">Quiz 03</a></td>
+</td>
+<td>2020-01-31</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>5.27&permil;</td>
+</tr>
+<tr>
+<th>QUIZ04</th>
+<td>Sets and Functions</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-04.pdf">Sample Quiz 04</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-04.pdf">Quiz 04</a></td>
+</td>
+</td>
+<td>2020-02-07</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>11&permil;</td><td>7.00&permil;</td>
+</tr>
+<tr>
+<th>QUIZ05</th>
+<td>Number Theory</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-05.pdf">Sample Quiz 05</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-05.pdf">Quiz 05</a>
+</td>
+</td>
+<td>2020-02-14</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>12&permil;</td><td>11.47&permil;</td>
+</tr>
+<tr>
+<th>QUIZ06</th>
+<td>Recursive Sequences</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-06.pdf">Sample Quiz 06</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-06.pdf">Quiz 06</a>
+</td>
+</td>
+<td>2020-02-28</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>6.58&permil;</td>
+</tr>
+<tr>
+<th>QUIZ07</th>
+<td>Counting</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-07.pdf">Sample Quiz 07</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-07.pdf">Quiz 07</a>
+</td>
+</td>
+<td>2020-03-10</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>6.94&permil;</td>
+</tr>
+
+<!--
+<tr>
+<th>QUIZ08</th>
+<td>Probabilities</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-08.pdf">Sample Quiz 08</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-08.pdf">Quiz 08</a>
+</td>
+</td>
+<td>2020-03-13</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>5.53&permil;</td>
+</tr>
+-->
+
+<tr>
+<th>QUIZ09</th>
+<td>Recurrent Sequences</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-09.pdf">Sample Quiz 09</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-09.pdf">Quiz 09</a>
+</td>
+</td>
+<td>2020-03-20</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>6.35&permil;</td>
+</tr>
+<tr>
+<th>QUIZ10</th>
+<td>Binary Relations</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-10.pdf">Sample Quiz 10</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-10.pdf">Quiz 10</a><br/>
+<a href="../discrete-bin/questionbase/quiz10-answers.txt">Answers by ID</a>
+</td>
+</td>
+<td>2020-03-27</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>7&permil;</td><td>5.00&permil;</td>
+</tr>
+<tr>
+<th>QUIZ11</th>
+<td>Graphs</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-11.pdf">Sample Quiz 11</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-11.pdf">Quiz 11</a>
+</td>
+</td>
+<td>2020-04-13</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>11&permil;</td><td>8.00&permil;</td>
+</tr>
+<tr>
+<th>QUIZ12</th>
+<td>Trees</td>
+<td>
+<a href="../discrete-bin/questionbase/quiz-sample-12.pdf">Sample Quiz 12</a>;&nbsp;
+<a href="../discrete-bin/questionbase/quiz-12.pdf">Quiz 12</a>
+</td>
+</td>
+<td>2020-04-13</td>
+<td style="background-color:#dddddd;">2h</td>
+<td>10&permil;</td><td>8.13&permil;</td>
+</tr>
+</table>
+
+ 
+
+<h2>Exams</h2>
+
+<p style="margin:0px;">Exams are worth 300‰ (30% of your grade).<br/>
+"Time Estimate" also includes the preparation time.</p>
+
+<table border="1" cellspacing="0">
+<tr><th>Ortus grade ID</th><th>Topic</th><th>Files</th><th>Due Date</th>
+<th style="background-color:#dddddd">Time Est.</th><th>Max</th><th>Average</th></tr>
+<tr>
+<th>MIDTERM</th>
+<td>Topics W1..W6</td>
+<td>
+<a href="../discrete-bin/questionbase/midterm-exam-preparation.pdf">Midterm Preparation</a>;<br/> 
+<a href="../discrete-bin/questionbase/midterm.pdf">Midterm (with solution)</a>;<br/>
+Your percentiles in ORTUS should be<br/> the midterm points multiplied by 2. 
+</td>
+<td>2020-02-17</td>
+<td style="background-color:#dddddd">8h</td>
+<td>150&permil;</td><td>78.80&permil;</td>
+</tr>
+<tr>
+<th>FINAL</th>
+<td>Topics W1..W14</td>
+<td>
+<a href="../discrete-bin/questionbase/final-exam-preparation.pdf">Final Preparation</a>;<br/> 
+<a href="../discrete-bin/questionbase/final.pdf">Final (with solution)</a>
+</td>
+<td>2020-04-23</td>
+<td style="background-color:#dddddd">8h</td>
+<td>150&permil;</td><td>106.17&permil;</td>
+</tr>
+</table>
+
+
+<h2>Conclusion</h2>
+
+<div style="font-size:80%; color: #666666; width: 60%;">
+<p>There are many real-world locations where people use Discrete Mathematics. Researchers in our 
+<a href="https://www.df.lu.lv/petnieciba/projekti/kvantu-algoritmi-no-sarezgitibas-teorijas-lidz-eksperimentam/">quantum computing team</a>, 
+scientists in the field of <a href="http://www.lumii.lv/resource/show/93">natural language technologies</a>, 
+IT security developers at <a href="https://www.intertrust.com/products/application-shielding/">WhiteCryption/Intertrust</a>, 
+networking experts at <a href="https://mikrotik.com/">Mikrotik</a> and others.
+After finishing this course you might also find that nothing there is needed for your
+career; that is perfectly normal. The one skill that, hopefully, stays with you is the readiness to solve
+all sorts of problems. Also formulating your own problems, not needing an instructor to 
+cause problems for you anymore.</p>
+
+<p>In this field where the results range from those by Euclid around 300 B.C.E. to 
+those named after our contemporaries (such as Prim's algorithm) you can expect to be more creative than the 
+generations before you.
+Doing mathematics is something that happens in your head; it is thus similar to doing music.  
+Of course, musicians may work in an orchestra with an impressive conductor 
+as in <a href="https://youtu.be/3viwse1M7L4">Antonio Vivaldi - Gloria in D major</a>. 
+But oftentimes they create interesting stuff on their own with just a few colleagues: 
+<a href="https://youtu.be/uhGwpwr94X4">Alma Deutscher - Quartet movement in A major</a>.</p>
+
+<p>Best wishes to you all during the summer! Have joy being yourselves, 
+and keep trying doing the hard things that inspire you.<br/> 
+(Kalvis, April 2020.)</p>
+</div>
+ 
+
+</body>
+</html>
+

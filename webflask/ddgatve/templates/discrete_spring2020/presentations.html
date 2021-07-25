@@ -1,0 +1,192 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1">
+-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+<style type="text/css">
+table.colornavigation a { 
+  text-decoration: underline !important; 
+}
+</style>
+</head>
+
+<body>
+<h1>Discrete Spring2020: Readings for Presentations</h1>
+
+<table border="0" cellspacing="2" class="colornavigation">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs">Proofs</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><b>Presentations</b></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+
+
+<div class="container">
+  
+<p>Individual reading assignments to prepare presentations.</p>
+
+<div class="panel-group" id="accordion">
+
+{% for reading in readings %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{reading.itemNum}}">{{reading.title}} ({{reading.name}})</a>
+</h4>
+</div>
+<div id="collapse{{reading.itemNum}}" class="panel-collapse collapse">
+<div class="panel-body">
+{{reading.description}}
+<ul>
+{% for link in reading.links %}
+<li><a href="{{link.url}}">{{link.link}}</a>: {{link.note}}</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+<h2>Unclaimed Stories</h2>
+
+<ul>
+<li>
+<a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm">Karatsuba or Toom-Cook Multiplication</a>
+<div style="font-size:70%">Explain one of the fast algorithms to multiply two numbers (can pick 
+something else, but it has to be faster than quadratic.) 
+Apply Master's theorem to solve the recursion and estimate the speed of the algorithm.
+</li>
+
+<li>
+<a href="https://en.wikipedia.org/wiki/L-system">Lindenmayer systems</a>
+<div style="font-size:70%">Use recursive rules to generate 2D patterns and 
+also recursive plants.</div> 
+</li>
+
+<li>
+Maximum Flow in a Directed Graph 
+<div style="font-size:70%">
+<a href="https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm">Ford-Fulkerson algorithm</a>
+or Edmonds-Karp algorithm; 
+<a href="https://en.wikipedia.org/wiki/Braess%27s_paradox#Mathematical_approach">Braes's paradox</a>.</div>
+</li>
+
+<li>
+The Anatomy of a Credit Card Number.
+<div style="font-size:70%">
+How to prevent stealing large numbers of credit card numbers.
+Luhn check, IINs/BINs - Predicting issuer bank, first digit. Support terms to avoid
+false positives.
+</div>
+</li>
+
+<li>
+File Checksums
+<div style="font-size:70%">CRC and other "binary fingerprints" of files to avoid
+file tampering or unintended leaks.</div>
+</li>
+
+<li>
+<a href="https://csiflabs.cs.ucdavis.edu/~gusfield/godelproofrevisedarXiv.pdf">Gödel's Incompleteness
+Theorem</a>
+<div style="font-size:70%">Results about non-provable, 
+but true statements that exist for each formal system.</div>
+</li>
+
+<li>
+Approximating irrational numbers (roots etc.) with rational ones.
+<div style="font-size:70%"><a href="https://youtu.be/cyW5z-M2yzw">Examples of well-tempered harmonies</a>; 
+Farey fraction sequences and Stern–Brocot tree, mediant of two rational numbers, continuous fractions and 
+when they are periodic.</div>
+</li>
+
+<li>
+Cellular Automata
+<div style="font-size:70%">Early results by John von Neumann, Conway's Game of Life, 
+other cellular automata models that are Turing complete (or other cases when 
+seemingly simple rules generate complicated systems with some self-replication).</div>
+</li>
+
+<li>
+Counter-examples in Probabilities
+<div style="font-size:70%">Various surprises in probability theory: 
+<a href="https://math.stackexchange.com/questions/200807/boy-and-girl-paradox">Boy 
+or Girl paradox</a>. Monty Hall problem. Four 6-sided dices that
+have non-transitive order relationship. 
+Three pairwise independent random events are not necessarily
+mutually independent. 
+</li>
+
+<li>
+Coin Tossing and Random Walks
+<div style="font-size:70%">Explain coin-tossing experiment series; how frequently the change
+of sign happens, how often one player is ahead of another; how far the random walk 
+is expected to get away from the equilibrium.</div>
+</li>
+
+<li>
+<a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classifiers</a>
+<div style="font-size:70%">Classification of texts based on models 
+showing conditional probabilities of certain words. Show how spam filters can be implemented 
+based on Naive Bayes.</div>
+</li>
+
+<li>
+<a href="https://rstudio-pubs-static.s3.amazonaws.com/85215_d5640adef9b644c6b746a906af863af1.html">Proportional 
+Voting Systems</a>
+<div style="font-size:70%">D'Hondt or Sainte-Laguë proportional voting systems, 
+their practical consequences in Latvia, Israel, Hungary and elsewhere.</div>
+</li>
+
+<li>Discrete random distributions and their properties
+<div style="font-size:70%">Mention "canonical" examples and practical applications
+to Bernoulli distribution, Geometric distribution, Poisson distribution etc.</div>
+</li>
+
+</ul>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+</head>
+
+<body>
+<h1>Discrete Spring2020: Coq and Scala</h1>
+
+<table border="0" cellspacing="2">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Topics</a></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Coq</b></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs">Proofs</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations.html">Presentations</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+</td>
+</tr>
+</table>
+
+<h2>Coq Labs</h2>
+
+<ul>
+<li><a href="../discrete-bin/coq-propositional/lab01_template.html">Preparation for Coq LAB01: Problems</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_template_solution.html">Preparation for Coq LAB01: Solutions</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_tasks.html">Coq LAB01: Problems</a></li>
+<li><a href="../discrete-bin/coq-propositional/lab01_tasks_solution.html">Coq LAB01: Solutions</a></li>
+<li><a href="../discrete-bin/coq-inductive/lab02_tasks.html">Coq LAB02: Problems</a></li>
+<li><a href="../discrete-bin/coq-inductive/lab02_tasks_solution.html">Coq LAB02: Solutions</a></li>
+</ul>
+
+
+
+<h2>Coq Examples and Tutorials</h2>
+
+<p style="margin:2px 0px 2px 0px">Official Tutorials:</p>
+
+<ul style="margin-top:0px">
+<li><a href="https://cel.archives-ouvertes.fr/inria-00001173v5/document">Coq in a Hurry</a></li>
+<li><a href="https://coq.inria.fr/tutorial-nahas">Mike Nahas Tutorial: Propositional Logic Proofs</a></li>
+<li><a href="https://coq.inria.fr/tutorial/1-basic-predicate-calculus">Coq: Predicate Calculus</a></li>
+<li><a href="https://coq.inria.fr/refman/coq-tacindex.html">Coq: The Full List of Proof Tactics</a></li>
+<li><a href="https://github.com/coq/coq/tree/master/theories">Coq Standard Libraries in GitHub</a>
+(proofs of some known facts that you can use)</li>
+<li><a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations (4 large textbooks on Coq)</a>
+- beware of some "pretty printed" symbols. They use "∀" instead of "forall", 
+"⇒" instead of "<tt>=&gt;</tt>"</li>
+<li><a href="http://flint.cs.yale.edu/cs428/coq/sf/Logic.html">Tutorial on Coq Proofs</a> (Yale CS428)</li>
+<li><a href="https://cse.buffalo.edu/~knepley/classes/cse191/Syllabus.html">Some 
+other Coq links</a> (Buffalo CSE191)</li>
+</ul>
+
+
+<p style="margin:2px 0px 2px 0px"><a name="cheatsheets"/>Tactics and Cheatsheets</p>
+
+<ul>
+<li><a href="https://www.cs.cornell.edu/courses/cs3110/2017fa/a5/coq-tactics-cheatsheet.html">A Short 
+Coq Tactics Cheatsheet</a> and 
+their <a href="https://www.cs.cornell.edu/courses/cs3110/2017fa/l/20-coq-logic/notes.html">Notes 
+on Writing Proofs</a> (Cornell CS3110)</li> 
+<li><a href="http://www.inf.ed.ac.uk/teaching/courses/tspl/cheatsheet.pdf">Coq 
+tactics tutorial (U of Edinburgh)</a></li>
+</ul>
+
+
+<p style="margin:2px 0px 2px 0px">Specific Examples for "Discrete Structures"</p>
+
+<ul style="margin-top:0px">
+<li><a href="../discrete-bin/coq-propositional/CSEnotes_propositional.html">Proving Tautologies (Buffalo CSE191, p.12-20)</a></li>
+<li><a href="../discrete-bin/coq-propositional/classical_logic.html">On classical proofs</a></li>
+<li><a href="../discrete-bin/coq-propositional/example_scottish_club.html">Example: Scottish Club</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_lions_coffee.html">Example: Lions and Coffee</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_drinker_theorem.html">Example: Smullyan's Drinker Theorem</a></li>
+<li><a href="../discrete-bin/coq-predicates/example_mybaby.html">Example: Everybody Loves My Baby</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px"><a name="classical"/>Classical vs. Intuitionistic Logic</p>
+
+<ul style="margin-top:0px">
+<li><a href="../discrete-bin/coq-propositional/classical_logic.html">On classical proofs</a></li>
+<li><a href="https://stackoverflow.com/questions/23996056/elim-a-double-negation-hypothesis-in-coq-proof-assistant">Elim 
+a double negation hypothesis in Coq Proof Assistant? (Classical Logic)</a></li>
+<li><a href="https://github.com/coq/coq/wiki/CoqAndAxioms">Axioms (on Classical Logic)</a></li>
+<li><a href="https://github.com/coq/coq/wiki/The-Logic-of-Coq">Logic in Coq</a></li>
+<li><a href="https://stackoverflow.com/questions/14644086/proving-p-q-q-p-using-coq-proof-assistant">NNPP and similar proofs</a></li>
+<li><a href="https://youtu.be/zmhd8clDd_Y">Five Stages of Accepting Constructive Mathematics</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px"><a name="inductive"/>Inductive Proofs and Integers</p>
+
+<ul>
+<li><a href="../discrete-bin/coq-predicates/CSEnotes_predicates.html">Predicates and Quantifiers (Buffalo CSE191, p.30-49)</a></li>
+<li><a href="../discrete-bin/coq-inductive/CSEnotes_inductive.html">Inductively Defined Types (Buffalo CSE191, p.84-106)</a></li>
+<li><a href="../discrete-bin/coq-numbertheory/CSEnotes_numbertheory.html">Integer Arithmetic (Buffalo CSE191, p.110-137)</a></li>
+<li><a href="https://www.cs.princeton.edu/courses/archive/fall07/cos595/stdlib/html/Coq.ZArith.Znumtheory.html">Number theory results
+(for Lab02, Problems 16-20)</a></li>
+<li><a href="https://stackoverflow.com/questions/29189073/coq-induction-on-modulo">Nat 
+modulo</a></li>
+<li><a href="https://fzn.fr/teaching/coq/ecole11/summer/lectures/lec9.pdf">Recursive 
+functions and proofs about them</a></li>
+</ul>
+
+<p style="margin:2px 0px 2px 0px">Competition Problems with Coq</p>
+
+<ul style="font-size:80%">
+<!--
+<li>
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_09_1.html">EE.PIIRK.2020.09.1</a>;&nbsp; 
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_10_3.html">EE.PIIRK.2020.10.3</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_11_3.html">EE.PIIRK.2020.11.3</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/ee_piirk_2020_12_3.html">EE.PIIRK.2020.12.3</a>
+</li>
+
+<li>
+<a href="../discrete-bin/coq-competitions/lt_raj_2020_9_5.html">LT.RAJ.2020.9.5</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/lt_raj_2020_11_3.html">LT.RAJ.2020.11.3</a>
+</li>
+-->
+<li>
+<a href="../discrete-bin/coq-competitions/lv_no_2020_9_2.html">LV.NO.2020.9.2</a>;&nbsp;
+<a href="../discrete-bin/coq-competitions/lv_no_2020_11_1.html">LV.NO.2020.11.1</a>;&nbsp;
+<!-- <a href="../discrete-bin/coq-competitions/lv_no_2020_12_1.html">LV.NO.2020.12.1</a> -->
+</li>
+</ul>
+
+
+</body>
+</html>
+

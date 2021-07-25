@@ -8,11 +8,15 @@
         "title": "Lietišķie algoritmi"
     },
     {
-        "subdir": "data-structures",
-        "title": "Data Structures"
+        "subdir": "data-structures-fall2020",
+        "title": "Data Structures (Fall2020)"
     },
     {
     	"subdir": "discrete-spring2021", 
     	"title": "Discrete (Spring2021)"
+    },
+    {
+        "subdir": "discrete-spring2020",
+        "title": "Discrete (Spring2020)"
     }
 ]    

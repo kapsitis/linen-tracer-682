@@ -7,22 +7,22 @@ from flask import (
 
 #from ddgatve.db import get_db
 
-bp = Blueprint('data_structures', __name__, url_prefix='/data-structures')
+bp = Blueprint('data_structures_fall2020', __name__, url_prefix='/data-structures-fall2020')
 
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
-    json_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_topics.json')
+    json_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_fall2020_topics.json')
     jsonTopics = json.load(open(json_url))
     template_context = {
                 'my_id': 'index.html',
-                'course': 'data-structures',
+                'course': 'data-structures-fall2020',
                 'nav_items': nav_items,
                 'jsonTopics': jsonTopics
             }
     
-    return render_template('data_structures/index.html', **template_context)
+    return render_template('data_structures_fall2020/index.html', **template_context)
 
 
 @bp.route('/assignments', methods=['GET','POST'])
@@ -31,26 +31,26 @@ def assignments():
     nav_items = json.load(open(navig_url))
     template_context = {
         'my_id': 'assignments.html',
-        'course': 'data-structures',
+        'course': 'data-structures-fall2020',
         'nav_items': nav_items
     }
-    return render_template('data_structures/assignments.html', **template_context)
+    return render_template('data_structures_fall2020/assignments.html', **template_context)
 
 
 @bp.route('/slides', methods=['GET','POST'])
 def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
-    modules_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_modules.json')
+    modules_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_fall2020_modules.json')
     jsonModules = json.load(open(modules_url))
     template_context = {
         'my_id': 'slides.html',
-        'course': 'data-structures',
+        'course': 'data-structures-fall2020',
         'jsonModules': jsonModules,
         'nav_items': nav_items
     }
     
-    return render_template('data_structures/slides.html', **template_context)
+    return render_template('data_structures_fall2020/slides.html', **template_context)
 
 
 @bp.route('/algorithms', methods=['GET','POST'])
@@ -59,11 +59,11 @@ def algorithms():
     nav_items = json.load(open(navig_url))
     template_context = {
                 'my_id': 'algorithms.html',
-                'course': 'data-structures',
+                'course': 'data-structures-fall2020',
                 'nav_items': nav_items
             }
     
-    return render_template('data_structures/algorithms.html', **template_context)
+    return render_template('data_structures_fall2020/algorithms.html', **template_context)
 
 
 
@@ -71,16 +71,16 @@ def algorithms():
 def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
-    grading_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_grading.json')
+    grading_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_fall2020_grading.json')
     gradingStuff = json.load(open(grading_url))
 
     template_context = {
         'my_id': 'algorithms.html',
-        'course': 'data-structures',
+        'course': 'data-structures-fall2020',
         'gradingStuff': gradingStuff,
         'nav_items': nav_items
     }
-    return render_template('data_structures/submissions.html', **template_context)
+    return render_template('data_structures_fall2020/submissions.html', **template_context)
 
 
 

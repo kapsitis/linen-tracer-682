@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+i { 
+  font-size:85%; 
+}
+table.colornavigation a { 
+  text-decoration: underline !important; 
+}
+</style>
+</head>
+
+
+<body>
+<h1>Discrete Spring2020: Topics</h1>
+
+<table border="0" cellspacing="2" class="colornavigation">
+<tr style="font-size:120%">
+<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Topics</b></td>
+<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
+<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq">Coq</a></td>
+<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs">Proofs</a></td>
+<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations">Presentations</a></td>
+<td>
+<select ONCHANGE="location = this.options[this.selectedIndex].value;">
+{% for item in nav_items %}
+{% if item.subdir == course %}
+    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
+{% else %}
+    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
+{% endif %}
+{% endfor %}
+</select>
+
+</td>
+</tr>
+</table>
+
+<h2>Course Datasheet</h2>
+
+<p style="margin-top:5px"><small>
+<b>Semester:</b> Spring 2020<br/>
+<b>Syllabus:</b> <a href="../discrete-bin/discrete-structures-spring-2020.docx">[MS DOCX]</a><br/>
+<b>Course Code:</b> PBM 763 (for Course Search in ORTUS)<br/>
+<b>Creditpoints:</b> TBD<br/>
+<b>Course Home:</b> <a href="https://www.bitl.lv/diskretas_sistemas/">BITL.LV</a>
+</small></p>
+
+<!--
+YouTube video with start and end params (may be useful later:
+https://www.youtube.com/embed/h_8smKNoAAw?start=2285&end=2300&autoplay=1
+-->
+
+<h2>Topics and Objectives</h2>
+
+
+<p>Open any week. Subchapters "1.1", "1.2" are numbered 
+as in (Rosen2019).
+Occasional extra topics (NOT from that book) have 
+numbers "1.X", "2.Y", etc.
+<a href="https://www.youtube.com/playlist?list=PLl-gb0E4MII0L5lz8uQ8j5aSFQQHoAzXx">Many 
+videos</a> below are by
+<a href="http://blogs.bellevue.edu/alumni/?p=2361">Kimberly Brehm</a> 
+from Bellevue, Nebraska.
+</p> 
+
+
+<div class="panel-group" id="accordion">
+
+{% for item in indexItems %}
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" 
+data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}: {{item.title}}</a>
+</h4>
+</div>
+<div id="collapse{{item.itemNum}}" class="panel-collapse collapse">
+<div class="panel-body">
+{{item.description}}
+<p>
+{% for link in item.links %}
+<b>{{link.subsection}} {{link.title}}</b><br/>
+
+{% if link.reading != 'NA' %}
+<i>({{link.reading}})</i>.
+{% endif %}
+{% if link.video|length == 1 %}
+{% for vid in link.video %}
+{% if vid != 'NA' %}
+<i><a href={{vid}}>Video{{link.subsection}}</a></i>.<br/>
+{% endif %}
+{% endfor %}
+{% else %}
+{% for vid in link.video %}
+<i><a href={{vid}}>Video{{link.subsection}}.{{abc[loop.index]}}</a></i>.
+{% endfor %} <br/>
+{% endif %} 
+{% for task in link.task %}
+{{link.subsection}}.{{abc[loop.index]}}. {{task}}<br/>
+{% endfor %}
+{% endfor %}
+<p>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
+

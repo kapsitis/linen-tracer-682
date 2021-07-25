@@ -38,8 +38,8 @@ def create_app(test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
     
-    from . import data_structures
-    app.register_blueprint(data_structures.bp)
+    from . import data_structures_fall2020
+    app.register_blueprint(data_structures_fall2020.bp)
 
     from . import algorithms
     app.register_blueprint(algorithms.bp)
@@ -47,6 +47,9 @@ def create_app(test_config=None):
     from . import numtheory
     app.register_blueprint(numtheory.bp)
     
+    from . import discrete_spring2020
+    app.register_blueprint(discrete_spring2020.bp)
+
     from . import discrete_spring2021
     app.register_blueprint(discrete_spring2021.bp)
 

@@ -17,9 +17,9 @@ def index():
                'k','l','m','n','o','p','q','r','s','t',
                'u','v','w','x','y','z']
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))    
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     json_url = os.path.join(current_app.root_path, 'static/data', 'discrete_spring2020_topics.json')
-    indexItems = json.load(open(json_url))
+    indexItems = json.load(open(json_url, encoding='utf-8'))
     template_context = {
         'my_id': 'index',
         'course': 'discrete-spring2020',
@@ -33,7 +33,7 @@ def index():
 @bp.route('/assignments', methods=['GET','POST'])
 def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'assignments',
         'course': 'discrete-spring2020',
@@ -45,7 +45,7 @@ def assignments():
 @bp.route('/coq', methods=['GET','POST'])
 def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'coq',
         'course': 'discrete-spring2020',
@@ -57,7 +57,7 @@ def slides():
 @bp.route('/proofs', methods=['GET','POST'])
 def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'proofs',
         'course': 'discrete-spring2020',
@@ -70,9 +70,9 @@ def algorithms():
 @bp.route('/presentations', methods=['GET','POST'])
 def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     readings_url = os.path.join(current_app.root_path, 'static/data', 'discrete_spring2020_readings.json')
-    my_readings = json.load(open(readings_url))        
+    my_readings = json.load(open(readings_url, encoding='utf-8'))
     template_context = {
         'my_id': 'presentations',
         'course': 'discrete-spring2020',

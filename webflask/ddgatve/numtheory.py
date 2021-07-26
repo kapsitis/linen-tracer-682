@@ -102,7 +102,7 @@ exam_lst = [
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'index',
         'course': 'numtheory',
@@ -114,7 +114,7 @@ def index():
 @bp.route('/assignments', methods=['GET','POST'])
 def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'assignments',
         'course': 'numtheory',
@@ -126,7 +126,7 @@ def assignments():
 @bp.route('/slides', methods=['GET','POST'])
 def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'local_tales': local_tales,
         'global_tales': global_tales,
@@ -140,7 +140,7 @@ def slides():
 @bp.route('/exams', methods=['GET','POST'])
 def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'lst_comp': exam_lst,
         'my_id': 'exams',
@@ -154,7 +154,7 @@ def algorithms():
 @bp.route('/references', methods=['GET','POST'])
 def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'references',
         'course': 'numtheory',

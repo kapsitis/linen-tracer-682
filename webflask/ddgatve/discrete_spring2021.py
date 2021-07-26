@@ -14,9 +14,9 @@ bp = Blueprint('discrete_spring2021', __name__, url_prefix='/discrete-spring2021
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     json_url = os.path.join(current_app.root_path, 'static/data', 'discrete2021_topics.json')
-    jsonTopics = json.load(open(json_url))
+    jsonTopics = json.load(open(json_url, encoding='utf-8'))
     template_context = {
         'my_id': 'index',
         'course': 'discrete-spring2021',
@@ -29,7 +29,7 @@ def index():
 @bp.route('/assignments', methods=['GET','POST'])
 def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'assignments',
         'course': 'discrete-spring2021',
@@ -41,7 +41,7 @@ def assignments():
 @bp.route('/coq', methods=['GET','POST'])
 def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'coq',
         'course': 'discrete-spring2021',
@@ -53,7 +53,7 @@ def slides():
 @bp.route('/summaries', methods=['GET','POST'])
 def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'summaries',
         'course': 'discrete-spring2021',
@@ -66,7 +66,7 @@ def algorithms():
 @bp.route('/references', methods=['GET','POST'])
 def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
         'my_id': 'references',
         'course': 'discrete-spring2021',

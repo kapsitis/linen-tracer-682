@@ -14,9 +14,9 @@ bp = Blueprint('algorithms', __name__, url_prefix='/algorithms')
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     json_url = os.path.join(current_app.root_path, 'static/data', 'algorithms_topics.json')
-    jsonTopics = json.load(open(json_url))
+    jsonTopics = json.load(open(json_url, encoding='utf-8'))
     template_context = {
                 'my_id': 'index',
                 'course': 'algorithms',
@@ -30,7 +30,7 @@ def index():
 @bp.route('/assignments', methods=['GET','POST'])
 def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
                 'my_id': 'assignments',
                 'course': 'algorithms',
@@ -43,9 +43,9 @@ def assignments():
 @bp.route('/slides', methods=['GET','POST'])
 def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     modules_url = os.path.join(current_app.root_path, 'static/data', 'algorithms_modules.json')
-    jsonModules = json.load(open(modules_url))
+    jsonModules = json.load(open(modules_url, encoding='utf-8'))
     template_context = {
         'my_id': 'slides',
         'course': 'algorithms',
@@ -59,7 +59,7 @@ def slides():
 @bp.route('/indices', methods=['GET','POST'])
 def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
                 'my_id': 'algorithms',
                 'course': 'algorithms',
@@ -73,7 +73,7 @@ def algorithms():
 @bp.route('/coding', methods=['GET','POST'])
 def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
-    nav_items = json.load(open(navig_url))
+    nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
                 'my_id': 'coding',
                 'course': 'algorithms',

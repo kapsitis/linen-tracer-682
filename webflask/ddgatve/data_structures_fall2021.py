@@ -17,14 +17,14 @@ def getNavigItems(rootPath):
     global global_nav_items
     if global_nav_items == None:
         navig_url = os.path.join(rootPath, 'static/data', 'global_navigation.json')
-        global_nav_items = json.load(open(navig_url))
+        global_nav_items = json.load(open(navig_url, encoding='utf-8'))
     return global_nav_items
 
 
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     json_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_fall2020_topics.json')
-    jsonTopics = json.load(open(json_url))
+    jsonTopics = json.load(open(json_url, encoding='utf-8'))
     template_context = {
         'my_id': 'index',
         'course': 'data-structures-fall2021',
@@ -47,7 +47,7 @@ def assignments():
 @bp.route('/slides', methods=['GET','POST'])
 def slides():
     modules_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_fall2020_modules.json')
-    jsonModules = json.load(open(modules_url))
+    jsonModules = json.load(open(modules_url, encoding='utf-8'))
     template_context = {
         'my_id': 'slides',
         'course': 'data-structures-fall2021',
@@ -73,7 +73,7 @@ def algorithms():
 @bp.route('/submissions', methods=['GET','POST'])
 def submissions():
     grading_url = os.path.join(current_app.root_path, 'static/data', 'data_structures_fall2020_grading.json')
-    gradingStuff = json.load(open(grading_url))
+    gradingStuff = json.load(open(grading_url, encoding='utf-8'))
     template_context = {
         'my_id': 'submissions',
         'course': 'data-structures-fall2021',

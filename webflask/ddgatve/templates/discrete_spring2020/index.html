@@ -1,6 +1,9 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+{{ super() }}
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -21,33 +24,11 @@ table.colornavigation a {
   text-decoration: underline !important; 
 }
 </style>
-</head>
 
 
-<body>
-<h1>Discrete Spring2020: Topics</h1>
+{% endblock %}
 
-<table border="0" cellspacing="2" class="colornavigation">
-<tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><b>Topics</b></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Assignments</a></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coq">Coq</a></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="proofs">Proofs</a></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="presentations">Presentations</a></td>
-<td>
-<select ONCHANGE="location = this.options[this.selectedIndex].value;">
-{% for item in nav_items %}
-{% if item.subdir == course %}
-    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
-{% else %}
-    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
-{% endif %}
-{% endfor %}
-</select>
-
-</td>
-</tr>
-</table>
+{% block content %}
 
 <h2>Course Datasheet</h2>
 
@@ -123,9 +104,6 @@ data-parent="#accordion" href="#collapse{{item.itemNum}}">Week {{item.itemNum}}:
 
 
 
+{% endblock %}
 
-
-
-</body>
-</html>
 

@@ -16,10 +16,10 @@ def index():
     json_url = os.path.join(current_app.root_path, 'static/data', 'discrete2021_topics.json')
     jsonTopics = json.load(open(json_url))
     template_context = {
-        'my_id': 'index.html',
+        'my_id': 'index',
         'course': 'discrete-spring2021',
         'nav_items': nav_items,
-        'indexItems': jsonTopics
+        'jsonTopics': jsonTopics
     }
     return render_template('discrete_spring2021/index.html', **template_context)
 
@@ -29,7 +29,7 @@ def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'assignments.html',
+        'my_id': 'assignments',
         'course': 'discrete-spring2021',
         'nav_items': nav_items
     }
@@ -41,7 +41,7 @@ def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'coq.html',
+        'my_id': 'coq',
         'course': 'discrete-spring2021',
         'nav_items': nav_items
     }
@@ -53,7 +53,7 @@ def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'summaries.html',
+        'my_id': 'summaries',
         'course': 'discrete-spring2021',
         'nav_items': nav_items
     } 
@@ -66,7 +66,7 @@ def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'references.html',
+        'my_id': 'references',
         'course': 'discrete-spring2021',
         'nav_items': nav_items
     }

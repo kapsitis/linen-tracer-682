@@ -1,11 +1,76 @@
 [
     {
     	"subdir": "numtheory",
-    	"title": "Skaitļu teorija" 
+    	"title": "Skaitļu teorija",
+        "pages": [
+            {
+            	"shortName": "Sākums", 
+            	"longName": "Sākums",
+	        "link": "index",
+	        "color": "#de6745"
+	    },
+            {
+            	"shortName": "Uzdevumi", 
+            	"longName": "Uzdevumi",
+	        "link": "assignments",
+	        "color": "#f1a72c"
+	    },
+            {
+            	"shortName": "Lekciju bildes", 
+            	"longName": "Lekciju bildes",
+	        "link": "slides",
+	        "color": "#40ce7c"
+	    },
+            {
+            	"shortName": "Sacensības", 
+            	"longName": "Sacensības",
+	        "link": "exams",
+	        "color": "#4ca7dc"
+	    },
+            {
+            	"shortName": "Norādes", 
+            	"longName": "Norādes",
+	        "link": "references",
+      	        "color": "#9e69af"
+	    }	    
+        ]    	    	
     },
     {
         "subdir": "algorithms",
-        "title": "Lietišķie algoritmi"
+        "title": "Lietišķie algoritmi",
+        "pages": [
+            {
+            	"shortName": "Sākums", 
+            	"longName": "Sākumlapa",
+	        "link": "index",
+	        "color": "#de6745"
+	    },
+            {
+            	"shortName": "Uzdevumi", 
+            	"longName": "Uzdevumi",
+	        "link": "assignments",
+	        "color": "#f1a72c"
+	    },
+            {
+            	"shortName": "Lekciju bildes", 
+            	"longName": "Lekciju bildes",
+	        "link": "slides",
+	        "color": "#40ce7c"
+	    },
+            {
+            	"shortName": "Rādītāji", 
+            	"longName": "Rādītāji",
+	        "link": "indices",
+	        "color": "#4ca7dc"
+	    },
+            {
+            	"shortName": "Programmēšana", 
+            	"longName": "Programmēšana",
+	        "link": "coding",
+      	        "color": "#9e69af"
+
+	    }	    
+        ]        
     },
     {
         "subdir": "data-structures-fall2021",
@@ -83,10 +148,74 @@
     },
     {
     	"subdir": "discrete-spring2021", 
-    	"title": "Discrete Spring2021"
+    	"title": "Discrete Spring2021",
+        "pages": [
+            {
+            	"shortName": "Topics", 
+            	"longName": "Topics",
+	        "link": "index",
+	        "color": "#de6745"
+	    },
+            {
+            	"shortName": "Assignments", 
+            	"longName": "Assignments",
+	        "link": "assignments",
+	        "color": "#f1a72c"
+	    },
+            {
+            	"shortName": "Coq", 
+            	"longName": "Coq",
+	        "link": "coq",
+	        "color": "#40ce7c"
+	    },
+            {
+            	"shortName": "Summaries", 
+            	"longName": "Summaries",
+	        "link": "summaries",
+	        "color": "#4ca7dc"
+	    },
+            {
+            	"shortName": "References", 
+            	"longName": "References",
+	        "link": "references",
+      	        "color": "#9e69af"
+	    }	    
+        ]    	
     },
     {
         "subdir": "discrete-spring2020",
-        "title": "Discrete Spring2020"
+        "title": "Discrete Spring2020",
+        "pages": [
+            {
+            	"shortName": "Topics", 
+            	"longName": "Topics",
+	        "link": "index",
+	        "color": "#de6745"
+	    },
+            {
+            	"shortName": "Assignments", 
+            	"longName": "Assignments",
+	        "link": "assignments",
+	        "color": "#f1a72c"
+	    },
+            {
+            	"shortName": "Coq", 
+            	"longName": "Coq",
+	        "link": "coq",
+	        "color": "#40ce7c"
+	    },
+            {
+            	"shortName": "Proofs", 
+            	"longName": "Proofs",
+	        "link": "proofs",
+	        "color": "#4ca7dc"
+	    },
+            {
+            	"shortName": "Presentations", 
+            	"longName": "Presentations",
+	        "link": "presentations",
+      	        "color": "#9e69af"
+	    }	    
+        ]    	        
     }
 ]    

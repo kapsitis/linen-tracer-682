@@ -1,50 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+{% extends "layout.html" %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+{% block title %}Sākumlapa{% endblock %}
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-
-
-<h1>Skaitļu teorija: Lekciju bildes</h1>
-
-
-
-<table border="0" cellspacing="2">
-<tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Sākums</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Uzdevumi</a></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><b>Lekciju bildes</b></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams">Sacensības</a></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references">Norādes</a></td>
-<td>
-<select ONCHANGE="location = this.options[this.selectedIndex].value;">
-{% for item in nav_items %}
-{% if item.subdir == course %}
-    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
-{% else %}
-    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
-{% endif %}
-{% endfor %}
-</select>
-</td>
-</tr>
-</table>
-
-
-
-
-
-
-
+{% block content %}
 
 
 
@@ -138,7 +96,8 @@ Sk. arī <a href="/problembase/tasks.html">Vidusskolēnu prasmju saraksts</a>.</
 
 
 
-</body>
 
-</html>
+{% endblock %}
+
+
 

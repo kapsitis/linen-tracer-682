@@ -102,7 +102,7 @@ def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'index.html',
+        'my_id': 'index',
         'course': 'numtheory',
         'nav_items': nav_items
     } 
@@ -114,7 +114,7 @@ def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'assignments.html',
+        'my_id': 'assignments',
         'course': 'numtheory',
         'nav_items': nav_items
     }
@@ -128,7 +128,7 @@ def slides():
     template_context = {
         'local_tales': local_tales,
         'global_tales': global_tales,
-        'my_id': 'slides.html',
+        'my_id': 'slides',
         'course': 'numtheory',
         'nav_items': nav_items
     }
@@ -141,7 +141,7 @@ def algorithms():
     nav_items = json.load(open(navig_url))
     template_context = {
         'lst_comp': exam_lst,
-        'my_id': 'algorithms.html',
+        'my_id': 'exams',
         'course': 'numtheory',
         'nav_items': nav_items
     } 
@@ -154,7 +154,7 @@ def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'references.html',
+        'my_id': 'references',
         'course': 'numtheory',
         'nav_items': nav_items
     }

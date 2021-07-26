@@ -1,34 +1,8 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+{% extends "layout.html" %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+{% block title %}Rādītāji{% endblock %}
 
-</head>
-
-<body>
-<h1>Lietišķie algoritmi: Rādītāji</h1>
-
-<table border="0" cellspacing="2">
-<tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Tēmas</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="assignments">Uzdevumi</a></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Lekciju bildes</a></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><b>Rādītāji</b></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="coding">Programmēšana</a></td>
-<td>
-<select ONCHANGE="location = this.options[this.selectedIndex].value;">
-{% for item in nav_items %}
-{% if item.subdir == course %}
-    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
-{% else %}
-    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
-{% endif %}
-{% endfor %}
-</select>
-</td>
-</tr>
-</table>
+{% block content %}
 
 
 <h2>Algoritmi: Saspiešana</h2>
@@ -76,9 +50,5 @@ robežas ar logaritmiem. Entropijas jēdziens un tā īpašības</dd>
 <dt>Prioritāšu rinda</dt><dd>Hafmana algoritmā izmantota.</dd>
 </dl>
 
-
-</body>
-
-</html>
-
+{% endblock %}
 

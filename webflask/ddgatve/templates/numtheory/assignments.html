@@ -1,34 +1,8 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+{% extends "layout.html" %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+{% block title %}Uzdevumi{% endblock %}
 
-</head>
-
-<body>
-<h1>Skaitļu teorija: Uzdevumi</h1>
-
-<table border="0" cellspacing="2">
-<tr style="font-size:120%">
-<td style="background-color:#de6745;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="index">Sākums</a></td>
-<td style="background-color:#f1a72c;color:white;padding:2px 10px 2px 10px"><b>Uzdevumi</b></td>
-<td style="background-color:#40ce7c;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="slides">Lekciju bildes</a></td>
-<td style="background-color:#4ca7dc;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="exams">Sacensības</a></td>
-<td style="background-color:#9e69af;color:white;padding:2px 10px 2px 10px"><a style="color:white" href="references">Norādes</a></td>
-<td>
-<select ONCHANGE="location = this.options[this.selectedIndex].value;">
-{% for item in nav_items %}
-{% if item.subdir == course %}
-    <option value="../{{item.subdir}}/index" selected="selected">{{item.title}}</option>
-{% else %}
-    <option value="../{{item.subdir}}/index">{{item.title}}</option> 
-{% endif %}
-{% endfor %}
-</select>
-</td>
-</tr>
-</table>
+{% block content %}
 
 
 <p><b>2020./2021.m.g. junioru uzdevumi</b></p>
@@ -214,4 +188,7 @@ par gadījumlielumiem</li>
 
 
 
-</html>
+{% endblock %}
+
+
+

@@ -16,7 +16,7 @@ def index():
     json_url = os.path.join(current_app.root_path, 'static/data', 'algorithms_topics.json')
     jsonTopics = json.load(open(json_url))
     template_context = {
-                'my_id': 'index.html',
+                'my_id': 'index',
                 'course': 'algorithms',
                 'nav_items': nav_items,
                 'jsonTopics': jsonTopics
@@ -30,7 +30,7 @@ def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-                'my_id': 'assignments.html',
+                'my_id': 'assignments',
                 'course': 'algorithms',
                 'nav_items': nav_items
             }
@@ -45,7 +45,7 @@ def slides():
     modules_url = os.path.join(current_app.root_path, 'static/data', 'algorithms_modules.json')
     jsonModules = json.load(open(modules_url))
     template_context = {
-        'my_id': 'slides.html',
+        'my_id': 'slides',
         'course': 'algorithms',
         'jsonModules': jsonModules,
         'nav_items': nav_items
@@ -59,7 +59,7 @@ def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-                'my_id': 'algorithms.html',
+                'my_id': 'algorithms',
                 'course': 'algorithms',
                 'nav_items': nav_items
             }
@@ -73,7 +73,7 @@ def submissions():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-                'my_id': 'coding.html',
+                'my_id': 'coding',
                 'course': 'algorithms',
                 'nav_items': nav_items
             }

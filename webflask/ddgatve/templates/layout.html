@@ -1,5 +1,8 @@
 <!doctype html>
 <html>
+{%- macro titleLong() -%}
+    {% for item in nav_items %}{% if item.subdir == course %}{{item.title}}{% endif %}{% endfor %}: {% block title %}{% endblock %}
+{%- endmacro -%}
 <head>
 {% block head %}
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -9,14 +12,14 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 
-<title>{% block title %}{% endblock %}</title>
+<title>{{ titleLong() }}</title>
 {% endblock %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 </head>
 
 <body>
 
-<h1>{% for item in nav_items %}{% if item.subdir == course %}{{item.title}}{% endif %}{% endfor %}: {% block h1 %}{% endblock %}</h1>
+<h1>{{ titleLong() }}</h1>
 
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">

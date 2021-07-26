@@ -19,7 +19,7 @@ def index():
     json_url = os.path.join(current_app.root_path, 'static/data', 'discrete_spring2020_topics.json')
     indexItems = json.load(open(json_url))
     template_context = {
-        'my_id': 'index.html',
+        'my_id': 'index',
         'course': 'discrete-spring2020',
         'nav_items': nav_items,
         'indexItems': indexItems,
@@ -33,7 +33,7 @@ def assignments():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'assignments.html',
+        'my_id': 'assignments',
         'course': 'discrete-spring2020',
         'nav_items': nav_items
     }
@@ -45,7 +45,7 @@ def slides():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'coq.html',
+        'my_id': 'coq',
         'course': 'discrete-spring2020',
         'nav_items': nav_items
     }
@@ -57,7 +57,7 @@ def algorithms():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url))
     template_context = {
-        'my_id': 'proofs.html',
+        'my_id': 'proofs',
         'course': 'discrete-spring2020',
         'nav_items': nav_items
     } 
@@ -72,7 +72,7 @@ def submissions():
     readings_url = os.path.join(current_app.root_path, 'static/data', 'discrete_spring2020_readings.json')
     my_readings = json.load(open(readings_url))        
     template_context = {
-        'my_id': 'presentations.html',
+        'my_id': 'presentations',
         'course': 'discrete-spring2020',
         'readings': my_readings,
         'nav_items': nav_items

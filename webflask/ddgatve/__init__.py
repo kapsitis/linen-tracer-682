@@ -41,6 +41,9 @@ def create_app(test_config=None):
     from . import data_structures_fall2020
     app.register_blueprint(data_structures_fall2020.bp)
 
+    from . import data_structures_fall2021
+    app.register_blueprint(data_structures_fall2021.bp)
+
     from . import algorithms
     app.register_blueprint(algorithms.bp)
 

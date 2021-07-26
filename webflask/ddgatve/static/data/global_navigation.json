@@ -8,6 +8,43 @@
         "title": "Lietišķie algoritmi"
     },
     {
+        "subdir": "data-structures-fall2021",
+        "title": "Data Structures Fall2021",
+        "pages": [
+            {
+            	"shortName": "Topics", 
+            	"longName": "Home",
+	        "link": "index",
+	        "color": "#de6745"
+	    },
+            {
+            	"shortName": "Assignments", 
+            	"longName": "Assignments",
+	        "link": "assignments",
+	        "color": "#f1a72c"
+	    },
+            {
+            	"shortName": "Slides", 
+            	"longName": "Slides",
+	        "link": "slides",
+	        "color": "#40ce7c"
+	    },
+            {
+            	"shortName": "Algorithms", 
+            	"longName": "Algorithms",
+	        "link": "algorithms",
+	        "color": "#4ca7dc"
+	    },
+            {
+            	"shortName": "Code Submissions", 
+            	"longName": "Code Submissions",
+	        "link": "submissions",
+      	        "color": "#9e69af"
+
+	    }	    
+        ]
+    },    
+    {
         "subdir": "data-structures-fall2020",
         "title": "Data Structures Fall2020",
         "pages": [

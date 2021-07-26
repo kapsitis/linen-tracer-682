@@ -1,20 +1,23 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - DDgatve</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1>DDgatve</h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
-</nav>
+<html>
+<head>
+{% block head %}
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 
-<section class="topicNavigation">
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
+<title>{% block title %}{% endblock %}</title>
+{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+
+<body>
+
+<h1>{% for item in nav_items %}{% if item.subdir == course %}{{item.title}}{% endif %}{% endfor %}: {% block h1 %}{% endblock %}</h1>
+
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 {% for item in nav_items %}
@@ -41,15 +44,9 @@
 </td>
 </tr>
 </table>
-</section>
 
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+{% block content %}{% endblock %}
+
+</body>
+</html>
 

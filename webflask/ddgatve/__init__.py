@@ -7,12 +7,13 @@ from flask import Flask
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    #print(os.path.join(app.instance_path, 'ddgatve.sqlite'))
+    dbHome = app.instance_path
+    if os.name == 'posix':
+        dbHome = '/home/kalvis'
     app.config.from_mapping(
         #SECRET_KEY='dev',
         SECRET_KEY = b'Yu\xdat\x8epp\xa3\xf0\x81x\xbc\xcd\xc3\x923',
-        #DATABASE=os.path.join(app.instance_path, 'ddgatve.sqlite'),
-        DATABASE=os.path.join('/home/kalvis','ddgatve.sqlite'),
+        DATABASE=os.path.join(dbHome, 'ddgatve.sqlite'),
     )
 
     if test_config is None:
@@ -39,9 +40,12 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
     
+#    from . import blog
+#    app.register_blueprint(blog.bp)
+#    app.add_url_rule('/', endpoint='index')
+
     from . import blog
     app.register_blueprint(blog.bp)
-    app.add_url_rule('/', endpoint='index')
     
     from . import data_structures_fall2020
     app.register_blueprint(data_structures_fall2020.bp)
@@ -60,6 +64,10 @@ def create_app(test_config=None):
 
     from . import discrete_spring2021
     app.register_blueprint(discrete_spring2021.bp)
+    
+    from . import default
+    app.register_blueprint(default.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app
 

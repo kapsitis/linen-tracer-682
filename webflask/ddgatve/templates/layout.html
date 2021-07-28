@@ -21,15 +21,23 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 
+{% if course != 'default' %}
 <title>{{ titleLong() }}</title>
+{% else %}
+<title>DudajevaGatve: Home</title>
+{% endif %}
+
 {% endblock %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 </head>
 
 <body>
 
+{% if course != 'default' %}
 <h1>{{ titleLong() }}</h1>
+{% endif %}
 
+{% if course != 'default' %}
 <table border="0" cellspacing="2">
 <tr style="font-size:120%">
 {% for item in nav_items %}
@@ -56,6 +64,7 @@
 </td>
 </tr>
 </table>
+{% endif %}
 
 {% block content %}{% endblock %}
 

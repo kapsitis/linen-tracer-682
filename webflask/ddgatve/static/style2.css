@@ -126,11 +126,13 @@ table.schedule td, table.schedule th {
 }
 
 button.nav {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     color: white;
-    width:160px;
+    width:200px;
     background-color:#0066cc;
     font-weight:bold;
+	padding-left: 10px;
+	text-align: left;
 }
 
 table.schedule tbody {

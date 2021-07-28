@@ -9,7 +9,8 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     #print(os.path.join(app.instance_path, 'ddgatve.sqlite'))
     app.config.from_mapping(
-        SECRET_KEY='dev',
+        #SECRET_KEY='dev',
+        SECRET_KEY = b'Yu\xdat\x8epp\xa3\xf0\x81x\xbc\xcd\xc3\x923',
         #DATABASE=os.path.join(app.instance_path, 'ddgatve.sqlite'),
         DATABASE=os.path.join('/home/kalvis','ddgatve.sqlite'),
     )

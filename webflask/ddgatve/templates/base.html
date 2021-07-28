@@ -1,6 +1,19 @@
 <!doctype html>
+<html>
+<head>
 <title>{% block title %}{% endblock %} - DDgatve</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S73XXGK0ZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S73XXGK0ZP');
+</script>
+</head>
+<body>
 <nav>
   <h1>DDgatve</h1>
   <ul>
@@ -8,7 +21,7 @@
       <li><span>{{ g.user['username'] }}</span>
       <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
     {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
+    <!--<li><a href="{{ url_for('auth.register') }}">Register</a>-->
       <li><a href="{{ url_for('auth.login') }}">Log In</a>
     {% endif %}
   </ul>
@@ -53,3 +66,5 @@
   {% block content %}{% endblock %}
 </section>
 
+</body>
+</html>

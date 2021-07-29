@@ -19,7 +19,7 @@ bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</small></p>
 <tr>
 <td><small>{{tale.subid}}</small></td>
 {% if tale.show == "yes" %}
-<td><small><a href="../algorithms-tales/{{tale.subdir}}/index.html">{{tale.title}}</a></small></td>
+<td><small><a href="{{ url_for('static', filename='algorithms-slides/{}/index.html'.format(tale.subdir)) }}">{{tale.title}}</a></small></td>
 {% else %}
 <td><small style="color:#aaaaaa;">{{tale.title}}</small></td>
 {% endif %}

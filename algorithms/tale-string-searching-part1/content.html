@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Virkņu meklēšana - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti un naivais algoritms</a></span><br />
+<span>(3) <a href="#/section-2">Rabina-Karpa algoritms</a></span><br />
+<span>(4) <a href="#/section-3">Meklēšana ar automātu</a></span><br />
+<span>(5) <a href="#/section-4">Knuta-Morisa-Prata algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plaģiāta atrašana</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup>
+<!--
+Meklēšana virknēs - 2
+------
+Ievads
+Galīgi automāti
+Bojera-Mūra algoritms
+BM algoritma pareizība
+(P) Regulāru izteiksmju atrašana
+Kopsavilkums
+
+
+
+Meklēšana virknēs - 3
+------------
+Ievads
+Rekursīvu algoritmu sarežģītība
+Dinamiskā programmēšana
+Sufiksu koku jēdziens
+Ukkonena algoritms
+(P) Failu digitālnospiedumi (fingerprinting) un Blūma filtri
+Kopsavilkums
+--></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc nepieciešami ātri un daudzveidīgi virkņu/stringu meklēšanas algoritmi?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Teksta redaktori un dokumentu skatītāji</li>
+<li>Datu noplūdes novēršana, <em>Data Leak Prevention (DLP)</em></li>
+<li>Dokumentu atrašana <em>Document retrieval</em>, Lucene/Elasticsearch.</li>
+<li>Plaģiāta meklēšana.</li>
+</ul>
+</div></section><section id="nodarbības-mērķi" class="slide level2">
+<h2><lo-summary/> Nodarbības mērķi</h2>
+<ul>
+<li>Lietot naivo stringu meklēšanas algoritmu.</li>
+<li>Analizēt naivā algoritma sarežģītību.</li>
+<li>Analizēt Rabina-Karpa algoritmu, tā sarežģītību.</li>
+<li>Veidot KMP algoritma starprezultātu struktūras.</li>
+<li>Pamatot KMP algoritma pareizību un sarežģītību.</li>
+</ul>
+</section><section id="stringu-meklēšanas-lietojumi" class="slide level2">
+<h2><lo-summary/> Stringu meklēšanas lietojumi</h2>
+<ul>
+<li>Teksta redaktori: 1 vārds, 1 dokuments</li>
+<li>Datu noplūdes novēršana (DLP): daudzi paraugi (vārdi, reg.izteiksmes), 1 pārbaudāmais dokuments.</li>
+<li>Dokumentu atrašana (<em>Document retrieval</em>): nedaudzi paraugi, daudzi dokumenti, kam drīkst veikt priekšapstrādi/indeksāciju.</li>
+<li>Plaģiāta meklēšana: Daudzi dokumenti, 1 pārbaudāmais dokuments, atrast “kopētos-ielīmētos” (<em>Copy-Paste</em>) gabalus vai “kopētos-ielīmētos” un drusku parediģētos.</li>
+</ul>
+</section></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Meklēšana virknēs - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Pamatfakti un naivais algoritms</strong></span><br />
+<span>(3) <a href="#/section-2">Rabina-Karpa algoritms</a></span><br />
+<span>(4) <a href="#/section-3">Meklēšana ar automātu</a></span><br />
+<span>(5) <a href="#/section-4">Knuta-Morisa-Prata algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plaģiāta atrašana</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="uzdevuma-nostādne" class="title-slide slide level1"><h1><lo-theory/> Uzdevuma nostādne</h1><p>Dots <blue><em>teksts</em></blue> (<em>text</em>) - virkne no <span class="math inline">\(n\)</span> simboliem: <span class="math display">\[T = T[0], \ldots, T[n-1]\]</span> Dots arī <blue><em>paraugs</em></blue> (<em>pattern</em>) - virkne no <span class="math inline">\(m\)</span> simboliem: <span class="math display">\[P = P[0], \ldots, P[m-1]\]</span></p>
+<p>Vai virknē <span class="math inline">\(T\)</span> ir atrodama apakšvirkne <span class="math inline">\(P\)</span> (algoritms izvada vai nu tikai 1.pozīciju, kur <span class="math inline">\(P\)</span> ieiet virknē <span class="math inline">\(T\)</span>, vai arī tas izvada visas pozīcijas).</p>
+<p><strong>Definīcija:</strong> Pozīciju tekstā <span class="math inline">\(T\)</span> (skaitli no <span class="math inline">\(0\)</span> līdz <span class="math inline">\(n-1\)</span>), kur var sākties meklējamais paraugs sauc par <blue><em>nobīdi</em></blue> (<em>shift</em>).</p></section><section id="apakšstringi-un-apakšvirknes" class="slide level2">
+<h2><lo-theory/> Apakšstringi un apakšvirknes</h2>
+<div style="font-size:70%">
+<p><blue><em>Virkne</em></blue> ir gan <em>sequence</em> (galīga vai bezgalīga, no jebkāda veida objektiem), gan <em>string</em> (galīga virkne ar galīga alfabēta burtiem). Parasti <blue><em>virkni</em></blue> var droši lietot kā sinonīmu vārdam <blue><em>strings</em></blue>, bet ir daži izņēmumi.</p>
+<p><strong>Definīcija:</strong> Par virknes <span class="math inline">\(T[0],T[1],\ldots,T[n-1]\)</span> <blue><em>apakšstringu</em></blue> (<em>substring</em>) sauc simbolu virkni no <span class="math inline">\(T[i]\)</span> (ieskaitot virknes garumā <span class="math inline">\(0,1,2,\ldots\)</span>), kur <span class="math inline">\(i\)</span> vērtības seko pēc kārtas.<br />
+(Apakšstringu iegūst, sākotnējai virknei nosvītrojot (varbūt tukšus) gabalus sākumā un beigās.)</p>
+<p><strong>Definīcija:</strong> Par virknes <span class="math inline">\(T[0],T[1],\ldots,T[n-1]\)</span> <blue><em>apakšvirkni</em></blue> (<em>subsequence</em>) sauc simbolu virkni no <span class="math inline">\(T[i]\)</span> (ieskaitot virknes garumā <span class="math inline">\(0,1,2,\ldots\)</span>), kur <span class="math inline">\(i\)</span> vērtības aug, bet var nebūt pēc kārtas.<br />
+(Apakšvirkni iegūst, sākotnējā virknē nosvītrojot <span class="math inline">\(0\)</span> vai vairāk simbolus jebkurās vietās.)</p>
+</div>
+</section><section id="apakšstringu-apakšvirkņu-piemēri" class="slide level2">
+<h2><lo-theory/> Apakšstringu, apakšvirkņu piemēri</h2>
+<hgroup style="font-size:80%">
+<p>Virknes <code>"APPLE"</code> apakšstringi ir šīs <span class="math inline">\(15\)</span> virknes:<br />
+<code>""</code> (tukšā virkne), <code>"A"</code>, <code>"E"</code>, <code>"L"</code>, <code>"P"</code>, <code>"AP"</code>, <code>"LE"</code>, <code>"PL"</code>, <code>"PP"</code>, <code>"APP"</code>, <code>"PLE"</code>, <code>"PPL"</code>, <code>"APPL"</code>, <code>"PPLE"</code> un <code>"APPLE"</code>.</p>
+<p><span class="math inline">\(n\)</span> simbolu virknei ir ne vairāk kā <span class="math inline">\({\displaystyle 1 + \frac{n(n+1)}{2}}\)</span> apakšstringi (to sasniedz, ja visi burti dažādi).</p>
+</hgroup>
+<hgroup style="font-size:80%">
+<p>Virknes <code>"APPLE"</code> apakšvirknes ir šīs <span class="math inline">\(24\)</span> virknes:<br />
+<code>""</code> (tukšā virkne), <code>"A"</code>, <code>"E"</code>, <code>"L"</code>, <code>"P"</code>, <code>"AE"</code>, <code>"AL"</code>, <code>"AP"</code>, <code>"LE"</code>, <code>"PE"</code>, <code>"PL"</code>, <code>"PP"</code>, <code>"ALE"</code>, <code>"APE"</code>, <code>"APL"</code>, <code>"APP"</code>, <code>"PLE"</code>, <code>"PPE"</code>, <code>"PPL"</code>, <code>"APLE"</code>, <code>"APPE"</code>, <code>"APPL"</code>, <code>"PPLE"</code>, <code>"APPLE"</code>.</p>
+<p><span class="math inline">\(n\)</span> simbolu virknei ir ne vairāk kā <span class="math inline">\({\displaystyle 2^n}\)</span> apakšvirknes (to sasniedz, ja visi burti dažādi).</p>
+</hgroup>
+</section></section>
+<section id="naivā-algoritma-pseidokods" class="title-slide slide level1"><h1><lo-theory/> Naivā algoritma pseidokods</h1><table class="pseudocode">
+<tr>
+<th colspan="2">
+<tt>Naive_String_Matcher</tt>(<span class="math inline">\(T\)</span>, <span class="math inline">\(P\)</span>)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(n = T.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<b>for</b> <span class="math inline">\(i=0\)</span> <b>to</b> <span class="math inline">\(n-m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td class="ind1">
+<b>if</b> (<span class="math inline">\(P[0],\ldots,P[m-1]) == (T[i],\ldots,T[i+m-1]])\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td class="ind2">
+print “Paraugs parādās ar nobīdi” <span class="math inline">\(i\)</span>
+</td>
+</tr>
+</table>
+<div style="font-size: 70%">
+<p>Novietojam vienu virkni zem otras un sākam salīdzināt: <span class="math display">\[ \begin{array}{llllll}
+\ldots, &amp; T[i], &amp; T[i + 1], &amp; \ldots, &amp; T[i+m-1], &amp; \ldots \\
+&amp; P[0], &amp; P[1], &amp; \ldots, &amp; P[m-1] &amp; 
+\end{array}\]</span> Ja sakrīt visi <span class="math inline">\(m\)</span> elementi, kas ir paraugā, tad apakšstringu esam atraduši.</p>
+</div></section>
+<section id="naivā-algoritma-ātrdarbība" class="title-slide slide level1"><h1><lo-theory/> Naivā algoritma ātrdarbība</h1><hgroup style="font-size:70%;">
+<p><strong>Apgalvojums:</strong> Naivā apakšstringu meklēšanas algoritma laika sarežģītība ir <span class="math inline">\(O(n \cdot m)\)</span> sliktākajā gadījumā.</p>
+<p>Ir <span class="math inline">\(n - m + 1\)</span> iespējamās vērtības mainīgajam <span class="math inline">\(s\)</span>. Katrai no tām var gadīties salīdzināt līdz <span class="math inline">\(m\)</span> simboliem. Laiks <span class="math display">\[(n - m + 1) \cdot m \approx n \cdot m.\]</span></p>
+<p><strong>Piezīme:</strong> Parasti pieņemam, ka meklējamais paraugs ir daudz īsāks par pašu tekstu: <span class="math inline">\(m &lt;&lt; n\)</span>.</p>
+</hgroup>
+<hgroup style="font-size:70%;">
+<p><strong>Piemērs 1:</strong> Uzlabot to nevar:</p>
+<p><span class="math display">\[T = \underbrace{\mathtt{aa}\ldots\mathtt{a}}_{n\;\text{burti}}\]</span> <span class="math display">\[P = \underbrace{\mathtt{aa}\ldots\mathtt{a}}_{m\;\text{burti}}\]</span></p>
+<p><strong>Piemērs 2:</strong> Cits sliktākais gadījums (pat ja meklētu tikai vienu apakšstringu):</p>
+<p><span class="math display">\[T = \underbrace{\mathtt{aa}\ldots\mathtt{a}}_{n\;\text{burti}}\]</span> <span class="math display">\[P = \underbrace{\mathtt{aa}\ldots\mathtt{a}}_{m-1\;\text{burti}}\mathtt{b}\]</span></p>
+</hgroup></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Meklēšana virknēs - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti un naivais algoritms</a></span><br />
+<span style="color:darkgreen"><strong>(3) Rabina-Karpa algoritms</strong></span><br />
+<span>(4) <a href="#/section-3">Meklēšana ar automātu</a></span><br />
+<span>(5) <a href="#/section-4">Knuta-Morisa-Prata algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plaģiāta atrašana</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="stringu-meklēšanas-vietā-skaitļi" class="title-slide slide level1"><h1><lo-summary/> Stringu meklēšanas vietā skaitļi</h1><p>Uztveram gan tekstu <span class="math inline">\(T\)</span>, gan meklējamo paraugu <span class="math inline">\(P\)</span> kā (lielus) veselus skaitļus.</p>
+<ul>
+<li>Alfabētu (kurā pierakstīti <span class="math inline">\(T\)</span> un <span class="math inline">\(P\)</span>) varbūt veido decimālcipari: <span class="math inline">\(S = \{ 0,1,2,\ldots,9 \}\)</span>.</li>
+<li>Ja alfabēts ir lielāks, tad pieraksta <span class="math inline">\(T\)</span> un <span class="math inline">\(P\)</span> skaitīšanas sistēmā ar citu bāzi (<em>radix-<span class="math inline">\(d\)</span> notation</em>), kur <span class="math inline">\(d\)</span> - burtu skaits alfabētā.</li>
+</ul>
+<p><strong>Piemērs:</strong> Dots strings <code>"pt"</code>. Ievērojam, ka burtu “p” un “t” ASCII baiti ir attiecīgi <code>x70</code> un <code>x74</code> (heksadecimālajā pierakstā). Tātad to decimālās vērtības ir attiecīgi <span class="math inline">\(112\)</span> un <span class="math inline">\(116\)</span>. Un ASCII alfabētā ir pavisam <span class="math inline">\(128\)</span> simboli.</p>
+<p>Iegūstam, ka stringa <code>"pt"</code> vērtība bāzes-<span class="math inline">\(128\)</span> (<em>radix</em>-<span class="math inline">\(128\)</span>) pierakstā būs <span class="math inline">\(112 \cdot 128 + 116 = 14452\)</span>.</p></section><section id="rabina-karpa-algoritma-pamatideja" class="slide level2">
+<h2><lo-summary/> Rabina-Karpa algoritma pamatideja</h2>
+<ol type="1">
+<li>Tekstā <span class="math inline">\(T\)</span> meklēsim ciparu virknes garumā <span class="math inline">\(m\)</span> (parauga <span class="math inline">\(P\)</span> garums), kas skaitliski vienādas ar <span class="math inline">\(P\)</span>.</li>
+<li>Ar <span class="math inline">\(t_s\)</span> apzīmējam (decimālajā sistēmā pārveidotu) skaitli, ko veido skaitīšanas bāzē-<span class="math inline">\(d\)</span> (<em>radix</em>-<span class="math inline">\(d\)</span>) cipari: <span class="math inline">\(T[s],T[s+1],\ldots,T[s+m-1]\)</span>, kur nobīde <span class="math inline">\(s\)</span> var būt <span class="math inline">\(0,1,\ldots,n-m\)</span>.</li>
+<li>Ja zināms <span class="math inline">\(t_s\)</span>, tad <span class="math inline">\(t_{s+1}\)</span> var iegūt ar algebrisku triku: <span class="math display">\[t_{s+1} = \left( t_s - d^{m-1}T[s] \right) \cdot d + T[s+m].\]</span>
+<ul>
+<li>No <span class="math inline">\(t_s\)</span> atņem kreisā/vecākā cipara vērtību <span class="math inline">\(d^{m-1}T[s]\)</span>,</li>
+<li>Pabīda citus ciparus vienu pozīciju uz augšu (piereizina ar <span class="math inline">\(d\)</span>),</li>
+<li>Visbeidzot pieskaita jaunāko ciparu <span class="math inline">\(T[s+m]\)</span>.</li>
+</ul></li>
+</ol>
+</section><section id="pamatidejas-piemērs" class="slide level2">
+<h2><lo-summary/> Pamatidejas piemērs</h2>
+<div style="font-size:80%">
+<ul>
+<li>Dots “teksts” 10-ciparu alfabētā: <span class="math inline">\(T=\mathtt{31415926}\)</span> (garums <span class="math inline">\(n=8\)</span>); paraugs <span class="math inline">\(P = \mathtt{14159}\)</span> (garums <span class="math inline">\(m=5\)</span>).</li>
+<li>Aplūkojam visus <span class="math inline">\(T\)</span> apakšstringus garumā <span class="math inline">\(m=5\)</span>: <span class="math display">\[t_0 = 31415,\;t_1 = 14159,\,t_2=41592,\;t_3 = 15926.\]</span></li>
+<li>Pirmo skaitli <span class="math inline">\(t_0 = \color{#F00}{\mathtt{31415}}\)</span> iegūst ar <blue><em>Hornera shēmu</em></blue>: <span class="math display">\[t_0 = 10 \cdot (10 \cdot (10 \cdot (10 \cdot \color{#F00}{\mathtt{3}} + \color{#F00}{\mathtt{1}}) + \color{#F00}{\mathtt{4}}) + \color{#F00}{\mathtt{1}}) + \color{#F00}{\mathtt{5}} = 31415.\]</span></li>
+<li><span class="math inline">\(t_1\)</span> iegūst no <span class="math inline">\(t_0\)</span> konstantā laikā (tāpat <span class="math inline">\(t_2\)</span> no <span class="math inline">\(t_1\)</span> utt.): <span class="math display">\[t_1 = (t_0 - 10^4 \cdot T[0])\cdot 10 + T[5] = (\color{#F00}{\mathtt{3}}\color{#0C0}{\mathtt{1415}} - 10000 \cdot \color{#F00}{\mathtt{3}}) \cdot 10 + \color{#F00}{\mathtt{9}} = \color{#0C0}{\mathtt{1415}}\color{#F00}{\mathtt{9}}.\]</span></li>
+</ul>
+</div>
+</section><section id="ko-dara-ar-ļoti-lieliem-skaitļiem" class="slide level2">
+<h2><lo-summary/> Ko dara ar ļoti lieliem skaitļiem</h2>
+<p>Meklējamie paraugi mēdz būt gari, polinomu vērtības, kas iegūstamas ar Hornera shēmu, var būt lieli skaitļi. Lai algoritma ātrdarbība no tā neciestu, pārbaudām nevis vienādību pašiem <span class="math inline">\(t_s\)</span> (teksta <span class="math inline">\(T\)</span> gabals garumā <span class="math inline">\(m\)</span> nobīdīts par <span class="math inline">\(s\)</span> simboliem) ar paraugam <span class="math inline">\(P\)</span> atbilstošo bāzes-<span class="math inline">\(d\)</span> pieraksta skaitli <span class="math inline">\(p\)</span>, bet gan kongruenci: <span class="math display">\[t_s \equiv p\;(\text{mod}\,q),\]</span> kur <span class="math inline">\(q\)</span> izvēlas pietiekami lielu, lai bieži neparādītos <blue><em>viltus trāpījumi</em></blue> (<em>spurious hits</em>).</p>
+</section></section>
+<section><section id="rabina-karpa-pseidokods" class="title-slide slide level1"><h1><lo-summary/> Rabina-Karpa pseidokods</h1><table class="pseudocode" style="font-size:70%">
+<tr>
+<th colspan="2">
+<tt>Rabin_Karp_Matcher</tt>(<span class="math inline">\(T\)</span>, <span class="math inline">\(P\)</span>,<span class="math inline">\(d\)</span>,<span class="math inline">\(q\)</span>)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(n = T.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(h = d^{m-1}\,\text{mod}\,q\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(p = 0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+<span class="math inline">\(t_0 = 0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+<b>for</b> <span class="math inline">\(i = 0\)</span> <b>to</b> <span class="math inline">\(m-1\)</span>  <green>// saskaita pēc Hornera shēmas</green>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind1">
+<span class="math inline">\(p = (d \cdot p + P[i])\,\text{mod}\,q\)</span>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<span class="math inline">\(t_0 = (d \cdot t_0 + T[i])\,\text{mod}\,q\)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td>
+<b>for</b> <span class="math inline">\(s=0\)</span> <b>to</b> <span class="math inline">\(n-m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(p==t_s\)</span>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td class="ind2">
+<b>if</b> <span class="math inline">\((P[0],\ldots,P[m-1]) == (T[s],\ldots,T[s+m-1])\)</span>
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td class="ind3">
+print <span style="font-family:&#39;Courier New&#39;">“Paraugs parādās ar nobīdi”</span> <span class="math inline">\(s\)</span>
+</td>
+</tr>
+<tr>
+<td>
+13
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(s &lt; n-m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+14
+</td>
+<td class="ind2">
+<span class="math inline">\(t_{s+1} = (d(t_s - T[s]\cdot{}h) + T[s+m])\,\text{mod}\,q\)</span>
+</td>
+</tr>
+</table></section><section id="cik-liela-ir-q-vērtība" class="slide level2">
+<h2><lo-summary/> Cik liela ir q vērtība</h2>
+<ul>
+<li>Ja <span class="math inline">\(q\)</span> ir pārāk mazs, tad aritmētika pēc <span class="math inline">\(q\)</span> moduļa ir ļoti ātra, bet bieži rodas viltus trāpījumi.</li>
+<li>Ja <span class="math inline">\(q\)</span> ir pārāk liels, tad reizināšanas tabulas uzbūvēšana modulārajai aritmētikai iznāk laikietilpīga.</li>
+</ul>
+</section></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Meklēšana virknēs - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti un naivais algoritms</a></span><br />
+<span>(3) <a href="#/section-2">Rabina-Karpa algoritms</a></span><br />
+<span style="color:darkgreen"><strong>(4) Meklēšana ar automātu</strong></span><br />
+<span>(5) <a href="#/section-4">Knuta-Morisa-Prata algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plaģiāta atrašana</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="ievadvirkni-lasām-tikai-vienreiz" class="title-slide slide level1"><h1><lo-theory/> Ievadvirkni lasām tikai vienreiz</h1><p>Pieņemsim, ka lietojam naivo meklēšanas algoritmu un nobīdes (shift) pašreizējā vērtība ir <span class="math inline">\(i\)</span>, bet salīdzināšanu esam veikuši līdz pozīcijai <span class="math inline">\(j\)</span>.</p>
+<p>Ja izrādās, ka <span class="math display">\[T[i] = P[0], \ldots, T[i + j - 1] = P[j - 1],\]</span> bet <span class="math inline">\(T[i + j] \neq P[j]\)</span>, tad to izmanto, lai izvēlētos nākamo pāri <span class="math inline">\((i^{\ast},j^{\ast})\)</span>.</p>
+<p>Nav obligāti izvēlēties <span class="math inline">\((i^{\ast},j^{\ast}) = (i+1,0)\)</span> kā naivajā algoritmā.</p></section><section id="automāta-pamatideja" class="slide level2">
+<h2><lo-theory/> Automāta pamatideja</h2>
+<hgroup>
+<p>Apakšstringa meklēšana ar galīgu automātu:<br />
+Automāta stāvokļi <span class="math inline">\(q_0, q_1, \ldots, q_{m-1}\)</span>.</p>
+<p><strong>Prefiksu īpašība:</strong> Stāvoklī <span class="math inline">\(q_i\)</span> atrodamies tad un tikai tad, ja “pēdējie <span class="math inline">\(i\)</span> simboli no <span class="math inline">\(T\)</span> sakrīt ar pirmajiem <span class="math inline">\(i\)</span> simboliem no <span class="math inline">\(P\)</span>”.</p>
+</hgroup>
+<hgroup style="font-size:80%">
+<p><strong>Piemērs:</strong> Parauga <span class="math inline">\(P = \mathtt{abab}\)</span> meklēšanas automāts:</p>
+<figure>
+<img data-src="abab-automaton.png" alt="abab Automaton" /><figcaption>abab Automaton</figcaption>
+</figure>
+<p><em>Piezīme.</em> Pēc <span class="math inline">\(P = \mathtt{abab}\)</span> atrašanas pārejam uz <span class="math inline">\(q_2\)</span> (nevis <span class="math inline">\(q_0\)</span>), jo paraugi var pārklāties.</p>
+<p><span class="math display">\[\mathtt{...ababab...}\]</span></p>
+</hgroup>
+</section></section>
+<section id="automāta-konstrukcijas-piemērs" class="title-slide slide level1"><h1><lo-sample/> Automāta konstrukcijas piemērs</h1><p><strong>Uzdevums:</strong> Uzzīmēt galīgu automātu, kas meklē <code>aabab</code> kā apakšvirkni ievadāmajā tekstā.</p>
+<p><strong>Atrisinājums:</strong></p>
+<figure>
+<img data-src="aabab-automaton.png" alt="aabab Automaton" /><figcaption>aabab Automaton</figcaption>
+</figure></section>
+<section id="laiks-meklēšanai-ar-automātu" class="title-slide slide level1"><h1><lo-summary/> Laiks meklēšanai ar automātu</h1><hgroup>
+<p><strong>Teksta lasīšanas laiks:</strong> Gatava automāta darbināšanai vajag <span class="math inline">\(O(n)\)</span> laiku: katram teksta burtam viena operācija.</p>
+<p><strong>Parauga priekšapstrādes laiks:</strong> Lai izveidotu automātu, jānosaka nākošais stāvoklis <span class="math inline">\(q’\)</span> jebkurai pašreizējā stāvokļa <span class="math inline">\(q\)</span> un pašreizējā burta kombinācijai.</p>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Pavisam ir <span class="math inline">\(m\)</span> stāvokļi. Ar <span class="math inline">\(|S|\)</span> apzīmējam alfabēta <span class="math inline">\(S\)</span> burtu skaitu. Veidojas tabula ar <span class="math inline">\(m \cdot |S|\)</span> elementiem. Tam vajadzīgas vismaz <span class="math inline">\(O(m \cdot |S|)\)</span> operācijas.<br />
+<strong>Pilnais laiks:</strong> <span class="math inline">\(O(n + m \cdot |S|)\)</span>.</p>
+<p><em>Piezīme:</em> Priekšapstrādes laiks ir pārāk liels; praksē tā cenšas nedarīt - par to ir KMP algoritms. Pat pieņemot, ka <span class="math inline">\(n &gt;&gt; m\)</span>, arī <span class="math inline">\(m \cdot |S|\)</span> var būt liels.</p>
+</hgroup></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Meklēšana virknēs - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti un naivais algoritms</a></span><br />
+<span>(3) <a href="#/section-2">Rabina-Karpa algoritms</a></span><br />
+<span>(4) <a href="#/section-3">Meklēšana ar automātu</a></span><br />
+<span style="color:darkgreen"><strong>(5) Knuta-Morisa-Prata algoritms</strong></span><br />
+<span>(6) <a href="#/section-5">(P) Plaģiāta atrašana</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="kmp-pamatideja" class="title-slide slide level1"><h1><lo-summary/> KMP pamatideja</h1><ul>
+<li>Izveidojam tabuliņu ar <blue><em>prefiksu funkciju</em></blue> (<em>prefix function</em>) <span class="math inline">\(\pi\)</span> dotajam <blue><em>paraugam</em></blue> (<em>pattern</em>). Šī funkcija ietver zināšanas par to, kā paraugs <span class="math inline">\(P\)</span> sakrīt pats ar savām nobīdēm.
+<ul>
+<li>Izvairāmies no nevajadzīgām nobīdēm naivajā meklēšanas algoritmā.</li>
+<li>Nav jāveido automāta stāvokļu diagramma ar atsevišķu bultiņu katram iespējamajam ievades simbolam <span class="math inline">\(s \in S\)</span>.</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>Ievades tekstu lasa tikai vienreiz: <span class="math inline">\(O(n)\)</span>, nevis <span class="math inline">\(O(n \cdot m)\)</span>, kā naivajam algoritmam.</li>
+<li>Parauga <span class="math inline">\(P\)</span> priekšapstrāde notiks laikā <span class="math inline">\(O(m)\)</span>, nevis <span class="math inline">\(O(m\cdot|S|)\)</span>, kā pilnīgi izveidotam automātam.</li>
+</ol></section>
+<section><section id="prefiksu-funkcija" class="title-slide slide level1"><h1><lo-summary/> Prefiksu funkcija</h1><div style="font-size:80%">
+<p>Prefiksu funkcija atkarīga no meklējamā parauga <span class="math inline">\(P=P[0]\ldots{}P[m-1]\)</span>.</p>
+<p><strong>Definīcija:</strong> Katram <span class="math inline">\(j = 1,\ldots,m\)</span> atrod maksimālo <span class="math inline">\(k\)</span> (<span class="math inline">\(k&lt;j\)</span>), kam izpildās: <span class="math display">\[\left\{ \begin{array}{l}
+P[0] = P[j - k]\\
+P[1] = P[j - k + 1]\\
+\ldots\\
+P[k - 1] = P[j - 1]
+\end{array} \right.\]</span> Prefiksu funkcijas vērtība: <span class="math inline">\(\pi[j]=k\)</span>. Ja tāda <span class="math inline">\(k\)</span> (<span class="math inline">\(k&lt;j\)</span>) nav, tad <span class="math inline">\(\pi[j]=0\)</span>.</p>
+<p><strong>Cita definīcija:</strong> Ar <span class="math inline">\(P_k\)</span> apzīmē virknes <span class="math inline">\(P\)</span> prefiksu garumā <span class="math inline">\(k\)</span>. Tad <span class="math inline">\(\pi(j)=k\)</span> ir <span class="math inline">\(P\)</span> <span class="math inline">\(j\)</span>-tā prefiksa (<span class="math inline">\(P_j\)</span>) visgarākā sufiksa garums, kas īsāks par pašu <span class="math inline">\(j\)</span>: <span class="math display">\[\pi(j) = \max \left\{ k\,:\,k&lt;j\;\text{un}\;P_k\;\text{ir virknes}\;P_j\;\text{sufikss} \right\}\]</span></p>
+</div></section><section id="piemērs-nr.1" class="slide level2">
+<h2><lo-sample/> Piemērs Nr.1</h2>
+<p><strong>Uzdevums:</strong> Atrast prefiksu funkciju, kas atbilst meklējamajam paraugam <span class="math inline">\(P = \mathtt{abab}\)</span>.</p>
+<p><strong>Maksimālā teleskopiskā sabīdīšana:</strong></p>
+<figure>
+<img data-src="prefix-functions1.png" alt="Prefix functions1" /><figcaption>Prefix functions1</figcaption>
+</figure>
+<table style="margin-right:auto;margin-left:0px;">
+<tr>
+<th>
+<span class="math inline">\(j\)</span>
+</th>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(4\)</span>
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\pi(j)\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+</tr>
+</table>
+</section><section id="piemērs-nr.2" class="slide level2">
+<h2><lo-sample/> Piemērs Nr.2</h2>
+<p><strong>Uzdevums:</strong> Atrast prefiksu funkciju, kas atbilst meklējamajam paraugam <span class="math inline">\(P = \mathtt{aabaab}\)</span>.</p>
+<p><strong>Maksimālā teleskopiskā sabīdīšana:</strong></p>
+<figure>
+<img data-src="prefix-functions2.png" alt="Prefix functions2" /><figcaption>Prefix functions2</figcaption>
+</figure>
+<table style="margin-right:auto;margin-left:0px;">
+<tr>
+<th>
+<span class="math inline">\(j\)</span>
+</th>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(4\)</span>
+</td>
+<td>
+<span class="math inline">\(5\)</span>
+</td>
+<td>
+<span class="math inline">\(6\)</span>
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\pi(j)\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+</tr>
+</table>
+</section></section>
+<section><section id="kmp-pseidokods" class="title-slide slide level1"><h1><lo-summary/> KMP pseidokods</h1><table class="pseudocode">
+<tr>
+<th colspan="2">
+<span class="smallcaps">KMP_Matcher</span>(<span class="math inline">\(T\)</span>, <span class="math inline">\(P\)</span>)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(n = T.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(\pi =\)</span><span class="smallcaps">Compute_Prefix_Function</span>(<span class="math inline">\(P\)</span>)
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(k=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+<b>for</b> <span class="math inline">\(i=0\)</span> <b>to</b> <span class="math inline">\(n-1\)</span>  <green>// lasa T no kreisās uz labo</green>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td class="ind1">
+<b>while</b> <span class="math inline">\(k&gt;0\)</span> <b>and</b> <span class="math inline">\(P[k] \neq T[i]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind2">
+<span class="math inline">\(k = \pi(k)\)</span>  <green>// hipotēze bija aplama, paraugu pārceļ uz priekšu</green>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(P[k] == T[i]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td class="ind2">
+<span class="math inline">\(k = k+1\)</span>  <green>// hipotēze pagaidām apstiprinās, salīdzina tālāk</green>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(k == m\)</span>  <green>// viss paraugs P jau nolasīts?</green>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td class="ind2">
+print <tt style="font-family:'Courier New'">“Paraugs parādās ar nobīdi”</tt> <span class="math inline">\(i-m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td class="ind2">
+<span class="math inline">\(k = \pi(k)\)</span>  <green>// nākamā tuvākā vieta, uz kuru pārcelt paraugu</green>
+</td>
+</tr>
+</table></section><section id="kāpēc-kmp-strādā-pareizi" class="slide level2">
+<h2><lo-summary/> Kāpēc KMP strādā pareizi</h2>
+<div style="font-size:70%">
+<p>Pieņemsim, ka tekošā nobīde (<em>shift</em>) ir <span class="math inline">\(i \in \{ 0,\ldots,n-m\}\)</span>: Ceram, ka paraugs <span class="math inline">\(P\)</span> atradīsies tekstā <span class="math inline">\(T\)</span>, sākot ar <span class="math inline">\(i\)</span>-to pozīciju.</p>
+<p>Bet izrādās, ka kārtējais <span class="math inline">\(T\)</span> simbols (<span class="math inline">\(T[i+j]\)</span>) nesakrīt ar <span class="math inline">\(P[j]\)</span> (kur <span class="math inline">\(j \in \{ 0,\ldots,m-1\}\)</span>). Tad ir spēkā vienādības:</p>
+<p><span class="math display">\[\left\{ \begin{array}{lll}
+T[i] &amp; =P[j-k] &amp; =P[0]\\
+T[i+1] &amp; =P[j-k+1] &amp; =P[1]\\
+\ldots &amp; \ldots &amp; \ldots\\
+T[i+k+1] &amp; =P[j-1] &amp; =P[k-1]
+\end{array} \right.\]</span></p>
+<p>Nākamā pozīcija tekstā <span class="math inline">\(T\)</span>, no kuras var sākties apakšstrings <span class="math inline">\(P\)</span>, ir, sākot ar pēdējiem <span class="math inline">\(k\)</span> burtiem no jau nolasītā <span class="math inline">\(T\)</span> gabala.</p>
+</div>
+</section><section id="kmp-piemērs" class="slide level2">
+<h2><lo-sample/> KMP Piemērs</h2>
+<p>Meklējam paraugu <span class="math inline">\(P=\mathtt{ababaca}\)</span> tekstā <span class="math inline">\(T = \mathtt{ababaababaca}\)</span>.</p>
+<table>
+<tr style="font-size:70%">
+<th>
+<span class="math inline">\(i\)</span>
+</th>
+<th>
+0
+</th>
+<th>
+1
+</th>
+<th>
+2
+</th>
+<th>
+3
+</th>
+<th>
+4
+</th>
+<th>
+5
+</th>
+<th>
+6
+</th>
+<th>
+7
+</th>
+<th>
+8
+</th>
+<th>
+9
+</th>
+<th>
+10
+</th>
+<th>
+11
+</th>
+<th>
+ 
+</th>
+</tr>
+<tr>
+<th>
+ 
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{b}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{b}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{b}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{b}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{c}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(k=0\)</span>
+</th>
+</tr>
+<tr>
+<th>
+ 
+</th>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{c}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+<green><span class="math inline">\(k=1,2,3,4,5\)</span></green>
+</td>
+</tr>
+<tr>
+<th>
+ 
+</th>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#F00}{\mathtt{c}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+<green><span class="math inline">\(k=\pi(5)=3\)</span></green>
+</td>
+</tr>
+<tr>
+<th>
+ 
+</th>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#F00}{\mathtt{b}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{c}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+<green><span class="math inline">\(k=\pi(3)=1\)</span></green>
+</td>
+</tr>
+<tr>
+<th>
+ 
+</th>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#F00}{\mathtt{b}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{b}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{c}}\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#CCC}{\mathtt{a}}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+<green><span class="math inline">\(k=\pi(1)=0\)</span></green>
+</td>
+</tr>
+<tr>
+<th>
+ 
+</th>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{b}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{c}\)</span>
+</td>
+<td>
+<span class="math inline">\(\mathtt{a}\)</span>
+</td>
+<td>
+<green><span class="math inline">\(k=1,2,3,4,5,6,7\)</span></green>
+</td>
+</tr>
+</table>
+<p>Prefiksu funkcija paraugam <span class="math inline">\(P=\mathtt{ababaca}\)</span>:</p>
+<table style="margin-right:auto;margin-left:0px;">
+<tr>
+<th>
+<span class="math inline">\(j\)</span>
+</th>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(4\)</span>
+</td>
+<td>
+<span class="math inline">\(5\)</span>
+</td>
+<td>
+<span class="math inline">\(6\)</span>
+</td>
+<td>
+<span class="math inline">\(7\)</span>
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\pi(j)\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+</tr>
+</table>
+</section><section id="kmp_matcher-ātrdarbības-novērtējums" class="slide level2">
+<h2><lo-summary/> KMP_Matcher ātrdarbības novērtējums</h2>
+<hgroup>
+<table class="pseudocode" style="font-size:50%">
+<tr>
+<th colspan="2">
+<span class="smallcaps">KMP_Matcher</span>(<span class="math inline">\(T\)</span>, <span class="math inline">\(P\)</span>)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(n = T.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(\pi =\)</span><span class="smallcaps">Compute_Prefix_Function</span>(<span class="math inline">\(P\)</span>)
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(k=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+<b>for</b> <span class="math inline">\(i=0\)</span> <b>to</b> <span class="math inline">\(n-1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td class="ind1">
+<b>while</b> <span class="math inline">\(k&gt;0\)</span> <b>and</b> <span class="math inline">\(\color{#F00}{P[k] \neq T[i]}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind2">
+<span class="math inline">\(k = \pi(k)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(\color{#F00}{P[k] == T[i]}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td class="ind2">
+<span class="math inline">\(k = k+1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(k == m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td class="ind2">
+print <tt style="font-family:'Courier New'">“Atrasts ar nobīdi”</tt> <span class="math inline">\(i-m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+12
+</td>
+<td class="ind2">
+<span class="math inline">\(k = \pi(k)\)</span>
+</td>
+</tr>
+</table>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Pieņemsim, ka <span class="math inline">\(\pi(j)\)</span> jau izrēķināta.<br />
+Ievērojam, ka jebkurā parauga <span class="math inline">\(P\)</span> un teksta <span class="math inline">\(T\)</span> salīdzināšanā izpildās viena no divām lietām:</p>
+<ul>
+<li>ja <span class="math inline">\(P[k] == T[i]\)</span>, tad palielinās <span class="math inline">\(i\)</span>, bet <span class="math inline">\(i-k\)</span> nemainās.</li>
+<li>ja <span class="math inline">\(P[k] \neq T[i]\)</span>, tad palielinās <span class="math inline">\(i-k\)</span>, bet <span class="math inline">\(i\)</span> nemainās.</li>
+</ul>
+<p>Tā kā <span class="math inline">\(i\)</span> un <span class="math inline">\(i-k\)</span> ir veseli skaitļi, kas sākumā ir <span class="math inline">\(0\)</span> un nevar pārsniegt <span class="math inline">\(n\)</span>, tad algoritmā ir ne vairāk kā <span class="math inline">\(2n\)</span> salīdzināšanas. Tātad KMP ātrdarbība ir <span class="math inline">\(O(n)\)</span>.</p>
+</hgroup>
+</section></section>
+<section><section id="prefiksu-funkcijas-pseidokods" class="title-slide slide level1"><h1><lo-summary/> Prefiksu funkcijas pseidokods</h1><table class="pseudocode">
+<tr>
+<th colspan="2">
+<span class="smallcaps">Compute_Prefix_Function(<span class="math inline">\(P\)</span>)</span>
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+Rezervē tabulu <span class="math inline">\(\pi(1)\ldots{}\pi(m)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(\pi(1)=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(k=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+<b>for</b> <span class="math inline">\(q=2\)</span> <b>to</b> <span class="math inline">\(m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td class="ind1">
+<b>while</b> <span class="math inline">\(k&gt;0\)</span> <b>and</b> <span class="math inline">\(P[k]\neq{}P[q-1]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind2">
+<span class="math inline">\(k=\pi(k)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(P[k]==P[q-1]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td class="ind2">
+<span class="math inline">\(k=k+1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind1">
+<span class="math inline">\(\pi(q)=k\)</span>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+<b>return</b> <span class="math inline">\(\pi\)</span>
+</td>
+</tr>
+</table></section><section id="piemērs" class="slide level2">
+<h2><lo-sample/> Piemērs</h2>
+<p><strong>Uzdevums:</strong> Atrast prefiksu funkciju, kas atbilst meklējamajam paraugam <span class="math inline">\(P = \mathtt{ababaca}\)</span>.</p>
+<figure>
+<img data-src="prefix-functions3.png" alt="Prefix functions 3" /><figcaption>Prefix functions 3</figcaption>
+</figure>
+<table style="margin-right:auto;margin-left:0px;">
+<tr>
+<th>
+<span class="math inline">\(j\)</span>
+</th>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(4\)</span>
+</td>
+<td>
+<span class="math inline">\(5\)</span>
+</td>
+<td>
+<span class="math inline">\(6\)</span>
+</td>
+<td>
+<span class="math inline">\(7\)</span>
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\pi(j)\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+</tr>
+</table>
+</section><section id="piemērs-1" class="slide level2">
+<h2><lo-sample/> Piemērs</h2>
+<hgroup>
+<table class="pseudocode" style="font-size:55%">
+<tr>
+<th colspan="2">
+<span class="smallcaps">Compute_Prefix_Function(<span class="math inline">\(P\)</span>)</span>
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+Rezervē tabulu <span class="math inline">\(\pi(1)\ldots{}\pi(m)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(\pi(1)=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(k=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+<b>for</b> <span class="math inline">\(q=2\)</span> <b>to</b> <span class="math inline">\(m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td class="ind1">
+<b>while</b> <span class="math inline">\(k&gt;0\)</span> <b>and</b> <span class="math inline">\(P[k]\neq{}P[q-1]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind2">
+<span class="math inline">\(k=\pi(k)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(P[k]==P[q-1]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td class="ind2">
+<span class="math inline">\(k=k+1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind1">
+<span class="math inline">\(\pi(q)=k\)</span>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+<b>return</b> <span class="math inline">\(\pi\)</span>
+</td>
+</tr>
+</table>
+</hgroup>
+<hgroup style="font-size:90%">
+<table>
+<tr>
+<th>
+ 
+</td>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{b}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{b}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{c}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{a}\)</span>
+</th>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(i\)</span>
+</th>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+<td>
+7
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=1\)</span>
+</th>
+<td>
+<span class="math inline">\(\color{#00F}{0}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=2\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{0}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=3\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{1}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=4\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{2}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=5\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{3}\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=6\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td style="font-size:70%">
+<span class="math inline">\(\color{#F00}{3\downarrow}\)</span><br/><span class="math inline">\(1\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=6\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td style="font-size:70%">
+<span class="math inline">\(\color{#F00}{1\downarrow}\)</span><br/><span class="math inline">\(0\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=6\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{0}\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(q=7\)</span>
+</th>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(2\)</span>
+</td>
+<td>
+<span class="math inline">\(3\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(\color{#00F}{1}\)</span>
+</td>
+</tr>
+</table>
+</hgroup>
+</section><section id="prefiksu-funkcijas-iegūšanas-ātrums" class="slide level2">
+<h2><lo-summary/> Prefiksu funkcijas iegūšanas ātrums</h2>
+<hgroup>
+<table class="pseudocode" style="font-size:55%">
+<tr>
+<th colspan="2">
+<span class="smallcaps">Compute_Prefix_Function(<span class="math inline">\(P\)</span>)</span>
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+<span class="math inline">\(m = P.\mathit{length}\)</span>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+Rezervē tabulu <span class="math inline">\(\pi(1)\ldots{}\pi(m)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(\pi(1)=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(k=0\)</span>
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+<b>for</b> <span class="math inline">\(q=2\)</span> <b>to</b> <span class="math inline">\(m\)</span>
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td class="ind1">
+<b>while</b> <span class="math inline">\(k&gt;0\)</span> <b>and</b> <span class="math inline">\(P[k]\neq{}P[q-1]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td class="ind2">
+<span class="math inline">\(k=\pi(k)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td class="ind1">
+<b>if</b> <span class="math inline">\(P[k]==P[q-1]\)</span>
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td class="ind2">
+<span class="math inline">\(k=k+1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td class="ind1">
+<span class="math inline">\(\pi(q)=k\)</span>
+</td>
+</tr>
+<tr>
+<td>
+11
+</td>
+<td>
+<b>return</b> <span class="math inline">\(\pi\)</span>
+</td>
+</tr>
+</table>
+</hgroup>
+<hgroup style="font-size:70%">
+<ol type="1">
+<li>Ārējais cikls izpildās <span class="math inline">\(m-1\)</span> reizes.</li>
+<li>Katrā iekšējā cikla iterācijā <span class="math inline">\(\pi[i+1]\)</span> vērtība tiek samazināta.</li>
+<li>Tā kā šī vērtība tiek palielināta tikai katrā ārējā cikla iterācijā par <span class="math inline">\(1\)</span>, tad tā var sasniegt ne vairāk kā <span class="math inline">\(m\)</span>. Tā kā tā nevar būt negatīva, tad samazināties var ne vairāk kā <span class="math inline">\(m\)</span> reizes, tātad iekšējais cikls kopumā izpildās ne vairāk kā <span class="math inline">\(m\)</span> reizes.</li>
+</ol>
+<p>Tātad prefiksu funkcijas veidošanas laiks ir <span class="math inline">\(O(m)\)</span>.</p>
+</hgroup>
+</section></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Meklēšana virknēs - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti un naivais algoritms</a></span><br />
+<span>(3) <a href="#/section-2">Rabina-Karpa algoritms</a></span><br />
+<span>(4) <a href="#/section-3">Meklēšana ar automātu</a></span><br />
+<span>(5) <a href="#/section-4">Knuta-Morisa-Prata algoritms</a></span><br />
+<span style="color:darkgreen"><strong>(6) (P) Plaģiāta atrašana</strong></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="daži-tiešsaistes-servisi" class="title-slide slide level1"><h1><lo theory/> Daži tiešsaistes servisi</h1><ul>
+<li><strong>Turnitin</strong> - komerciāls serviss, pārbauda studentu eseju līdzību ar tur jau esošiem darbiem. Abonēšanas modelis, darbojas kopš 1997.g.<br />
+Vai ir ētiski gūt peļņu no studentu radītiem oriģināliem darbiem?</li>
+<li><strong>Plag.lv</strong> - kaut kas līdzīgs. Sk. rakstu <a href="https://www.tvnet.lv/4838652/latvija-palaista-programma-kas-atklaj-plagiatu-akademiskos-darbos">Latvijā palaista programma…</a>.</li>
+<li><strong>Symantec DLP</strong>, <strong>Forcepoint DLP</strong> - organizāciju pasargāšana no konfidenciālu dokumentu noplūdes (pat ja dokumentu saturs ir izmainīts).</li>
+</ul></section><section id="daži-algoritmi" class="slide level2">
+<h2><lo-summary/> Daži algoritmi</h2>
+<ul>
+<li>Sufiksu koki</li>
+<li>N-gramu algoritmi</li>
+<li><a href="https://en.wikipedia.org/wiki/MinHash">MinHash</a>; Andrei Broder (AltaVista, 1997).</li>
+</ul>
+</section></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Meklēšana virknēs - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Pamatfakti un naivais algoritms</a></span><br />
+<span>(3) <a href="#/section-2">Rabina-Karpa algoritms</a></span><br />
+<span>(4) <a href="#/section-3">Meklēšana ar automātu</a></span><br />
+<span>(5) <a href="#/section-4">Knuta-Morisa-Prata algoritms</a></span><br />
+<span>(6) <a href="#/section-5">(P) Plaģiāta atrašana</a></span><br />
+<span style="color:darkgreen"><strong>(7) Kopsavilkums</strong></span></p>
+</hgroup></section>
+<section id="ko-darījām-šajā-nodarbībā" class="title-slide slide level1"><h1><lo-summary/> Ko darījām šajā nodarbībā</h1><ol type="1">
+<li>Apskatījām naivo virkņu meklēšanas algoritmu.</li>
+<li>Apskatījām Rabina-Karpa algoritmu.</li>
+<li>Apskatījām naivā algoritma uzlabojumu - meklēšanas automātu.</li>
+<li>Veidojām KMP algoritmam vajadzīgo prefiksu funkciju.</li>
+</ol></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

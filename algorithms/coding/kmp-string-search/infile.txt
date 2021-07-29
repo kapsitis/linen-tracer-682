@@ -1,0 +1,35 @@
+NEEDLE: abacus
+HAYSTACK: abacus
+OUTPUT: 1
+
+NEEDLE: abacus
+HAYSTACK: trabacu
+OUTPUT: NO
+
+NEEDLE: abacus
+HAYSTACK: mababacus
+OUTPUT: 4
+
+NEEDLE: abacus
+HAYSTACK: aabacaabacusabacu
+OUTPUT: 7
+
+NEEDLE: abacus
+HAYSTACK: aabacaabacuabbacusabacabacuas
+OUTPUT: NO
+
+NEEDLE: ananab
+HAYSTACK: bananab
+OUTPUT: 2
+
+NEEDLE: ananab
+HAYSTACK: ananananananananaban
+OUTPUT: 13
+
+NEEDLE: ananab
+HAYSTACK: anabananananananxanabananananana
+OUTPUT: NO
+
+NEEDLE: ananab
+HAYSTACK: ananaanabananaananabxananabx
+OUTPUT: 15

@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Optimizācijas uzdevumi</a></span><br />
+<span>(3) <a href="#/section-2">Grafiskā interpretācija</a></span><br />
+<span>(4) <a href="#/section-3">Simpleksa algoritma piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Simpleksa algoritma tabula</a></span><br />
+<span>(6) <a href="#/section-5">(P) LP lietojumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup>
+<!--
+P2.
+Simpleksu metodes atkārtojums
+Dualitāte
+Simpleksu sarežģītība
+Elipsoīdu  metode
+
+P3.
+Visādas iekšējo punktu metodes
+
+https://www.abacademies.org/articles/an-application-of-linear-programming-in-performance-evaluation-6723.html
+--></section>
+<section><section id="why" class="title-slide slide level1"><h1><lo-why/> why</h1><div class="bigWhy">
+<p>Kāpēc lineāru izteiksmju maksimizēšana ir praktiski svarīga?</p>
+</div>
+<div class="smallWhy">
+<ul>
+<li>Kāpēc risinām lineārās programmēšanas uzdevumus noteiktā formā?</li>
+<li>Kāpēc simpleksu metode LP uzdevumu risināšanā ir praktiska un intuitīvi saprotama?</li>
+</ul>
+</div></section><section id="sasniedzamie-rezultāti" class="slide level2">
+<h2><lo-theory/> Sasniedzamie rezultāti</h2>
+<ol type="1">
+<li>Definēt dažus optimizācijas uzdevumu veidus (ar vai bez nosacījumiem).</li>
+<li>Uzrakstīt lineārās programmēšanas uzdevumu vispārīgā formā.</li>
+<li>Izveidot grafisku interpretāciju LP uzdevumam nelielam dimensiju skaitam.</li>
+<li>Risināt LP uzdevumus ar simpleksu metodi.</li>
+</ol>
+</section></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen"><strong>(2) Optimizācijas uzdevumi</strong></span><br />
+<span>(3) <a href="#/section-2">Grafiskā interpretācija</a></span><br />
+<span>(4) <a href="#/section-3">Simpleksa algoritma piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Simpleksa algoritma tabula</a></span><br />
+<span>(6) <a href="#/section-5">(P) Lineārās programmēšanas lietojumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="optimizācijas-uzdevumu-veidi" class="title-slide slide level1"><h1><lo-theory/> Optimizācijas uzdevumu veidi</h1><p>Optimizācijas uzdevumos mērķis ir maksimizēt (vai minimizēt) noteiktu funkciju (piemēram, peļņu vai izmaksas) pie kaut kādiem dotiem nosacījumiem.</p>
+<ul>
+<li>Optimizācija bez nosacījumiem: Minimizēt <span class="math inline">\(f(x_1, x_2, \ldots, x_n)\)</span>.</li>
+<li>Optimizācija ar nosacījumiem: Minimizēt <span class="math inline">\(f(x_1, x_2, \ldots, x_n)\)</span> pie nosacījumiem <span class="math display">\[c_1(x_1, x_2, \ldots, x_n) \geq 0, \ldots, c_k(x_1, x_2, \ldots, x_n) \geq 0,\]</span> <span class="math display">\[d_1(x_1, x_2, \ldots, x_n) = 0, \ldots, d_{\ell}(x_1, x_2, \ldots, x_n) = 0.\]</span></li>
+</ul></section><section id="piemērs-kvadrātiskā-programmēšana" class="slide level2">
+<h2><lo-summary/> Piemērs: Kvadrātiskā programmēšana</h2>
+<div style="font-size:80%">
+<p>Ieviešot nosacījumus attiecībā uz funkciju <span class="math inline">\(f\)</span>, iegūst šādus optimizācijas uzdevumu paveidus:</p>
+<p><strong>Kvadrātiskā programmēšana:</strong> Minimizēt <span class="math inline">\({\displaystyle \sum\limits_{i,j=1}^{n} a_{ij}x_ix_j + \sum\limits_{i=1}^{n} b_ix_i }\)</span> pie nosacījumiem <span class="math display">\[\left\{ 
+\begin{array}{l} 
+c_{11} x_1 + c_{12} x_1 + \ldots + c_{1n} x_n \leq d_1,\\
+\ldots,\\
+c_{m1} x_1 + c_{m2} x_1 + \ldots + c_{mn} x_n \leq d_m,
+\end{array} \right.\]</span></p>
+<p>Šajā gadījumā minimizējamā funkcija ir kvadrātiska, bet nosacījumi ir lineāri.</p>
+</div>
+</section><section id="piemērs-lineārā-programmēšana" class="slide level2">
+<h2><lo-summary/> Piemērs: Lineārā programmēšana</h2>
+<div style="font-size:80%">
+<p><strong>Lineārā programmēšana:</strong> Minimizēt <span class="math inline">\({\displaystyle \sum\limits_{i=1}^{n} b_ix_i }\)</span> pie nosacījumiem <span class="math display">\[\left\{ \begin{array}{l}
+c_{11} x_1 + c_{12} x_2 + \ldots + c_{1n} x_n \leq d_1,\\
+\ldots,\\
+c_{m1} x_1 + c_{m2} x_2 + \ldots + c_{mn} x_n \leq d_m,
+\end{array} \right.\]</span></p>
+<p><em>Piezīme:</em> Vārds “programmēšana” lietots nozīmē “plānošana”. Dažus optimizācijas uzdevumu veidus sauc par programmēšanu jau kopš 1920.-tajiem gadiem.</p>
+</div>
+</section><section id="piemērs-lineārā-programmēšana-1" class="slide level2">
+<h2><lo-summary/> Piemērs: Lineārā programmēšana</h2>
+<p><strong>Veselo skaitļu programmēšana:</strong> Jeb lineārā programmēšana veselos skaitļos (<em>Integer Linear Programming</em> jeb <em>Integer Programming</em>): uzdevums tāds pats kā lineārā programmēšanā, tikai klāt nāk nosacījums, ka visi <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span> visiem jābūt veseliem skaitļiem.</p>
+<p>Ar lineārajām programmām veselos skaitļos var aprakstīt daudzus interesantus un praktiski svarīgus uzdevumus, bet tām nav zināms algoritms, kas ātri (polinomiālā laikā) atrisina patvaļīgu veselo skaitļu programmu.</p>
+</section><section id="np-pilni-uzdevumi" class="slide level2">
+<h2><lo-summary/> NP-pilni uzdevumi</h2>
+<p><strong>Apgalvojums:</strong> Veselo skaitļu programmēšanas uzdevums ir <span class="math inline">\(NP\)</span>-pilns: tas pieder labi pazīstamai uzdevumu saimei, kurus var visus citu uz citu reducēt.<br />
+(Efektīvs algoritms nav zināms. Ja tādu veselo skaitļu programmēšanai atrastu, tad varētu efektīvi atrisināt arī pārējos <span class="math inline">\(20\)</span> uzdevumus no slavenā <a href="https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">Ričarda Karpa saraksta</a> un vēl simtiem citu uzdevumu, kas arī ir <span class="math inline">\(NP\)</span>-pilni - algoritmiski ekvivalenti katrs ar katru.)</p>
+<p>Lineārām programmām reālos skaitļos efektīvi polinomiāli algoritmi ir. Tāpēc šajā kursā mēs tālāk apskatīsim tikai lineāras programmas, kuru mainīgie ir reāli skaitļi.</p>
+</section></section>
+<section><section id="lp-piemērs-pārtikas-iepirkšana" class="title-slide slide level1"><h1><lo-sample/> LP Piemērs: Pārtikas iepirkšana</h1><p>Ir zināmi produkti <span class="math inline">\(1,\ldots, n\)</span> ar cenām <span class="math inline">\(p_1,\ldots, p_n\)</span>. Ir <span class="math inline">\(k\)</span> uzturvielu tipi un vienā dienā cilvēkam vajadzīgs daudzums <span class="math inline">\(c_i\)</span> ar uzturvielu <span class="math inline">\(i\)</span>. Atrast lētāko produktu kombināciju, kas nodrošina pietiekami daudz katras uzturvielas.</p>
+<p><strong>Leonīds Kantorovičs (1912-1986)</strong> (<em>Леонид Канторович</em>, <em>Leonid Kantorovich</em>):<br />
+Optimāla izejvielu izmantošana finiera rūpniecībā (1939.g.). Agrīni optimizācijas uzdevumi bieži saistīti ar ražošanas plānošanu, it īpaši situācijās, kurās nav brīvā tirgus.</p></section><section id="pārtikas-iepirkšanas-lineārais-modelis" class="slide level2">
+<h2><lo-summary/> Pārtikas iepirkšanas lineārais modelis</h2>
+<div style="font-size:80%">
+<p>Ar <span class="math inline">\(x_i\)</span> apzīmējam <span class="math inline">\(i\)</span>-tā produkta daudzumu, ko iegādāsimies. Tad jāminimizē kopējās izmaksas <span class="math inline">\(\color{#00F}{p_1 x_1 + p_2 x_2 + \ldots + p_n x_n}\)</span> pie nosacījumiem <span class="math display">\[\left\{ 
+\begin{array}{l}
+x_1 \geq 0,\;\; x_2 \geq 0,\;\; \ldots,\;\; x_n \geq 0,\\
+a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_n \geq c_1,\\
+\ldots,\\
+a_{k1} x_1 + a_{k2} x_2 + \ldots + a_{kn} x_n \geq c_k,
+\end{array} \right.\]</span> kur <span class="math inline">\(a_{ij}\)</span> apzīmē <span class="math inline">\(i\)</span>-tās uzturvielas daudzumu produktā <span class="math inline">\(j\)</span>.</p>
+<p>Ja produktu daudzumi ir mērāmi veselos skaitļos (piemēram, veselā skaitā <span class="math inline">\(1L\)</span> paku), tad iegūstam lineāro programmēšanu veselos skaitļos. Ja dažiem mainīgajiem jābūt veseliem, bet citi drīkst būt patvaļīgi reāli skaitļi, tad tā ir jauktā veselo skaitļu programmēšana (<em>mixed integer programming</em>).</p>
+</div>
+</section></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Optimizācijas uzdevumi</a></span><br />
+<span style="color:darkgreen"><strong>(3) Grafiskā interpretācija</strong></span><br />
+<span>(4) <a href="#/section-3">Simpleksa algoritma piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Simpleksa algoritma tabula</a></span><br />
+<span>(6) <a href="#/section-5">(P) Lineārās programmēšanas lietojumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="vispārīgais-lp-uzdevums" class="title-slide slide level1"><h1><lo-theory/> Vispārīgais LP uzdevums</h1><p>Lineārā programmēšana apraksta daudzas praktiskas problēmas. LP uzdevumiem eksistē efektīvi algoritmi.</p>
+<p>Vispārīgais LP uzdevums:<br />
+Atrast <span class="math inline">\(\color{#00F}{\max\left(c_1x_1 + \ldots + c_nx_n\right)}\)</span>, ja izpildās nosacījumi: <span class="math display">\[\left\{
+\begin{array}{l}
+a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1\\
+\ldots\\
+a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m
+\end{array} \right.\]</span></p></section><section id="dimensiju-piemērs" class="slide level2">
+<h2><lo-summary/> 2-dimensiju piemērs</h2>
+<div style="font-size:80%">
+<p>Atrast <span class="math inline">\(\color{#00F}{\max(2x_1 + 3x_2)}\)</span>, kur <span class="math display">\[\left\{ \begin{array}{l}
+x_1 - 2x_2 \leq 4,\\
+x_1 + x_2 \leq 18,\\
+x_2 \leq 10,\\
+x_1,x_2 \geq 0.
+\end{array} \right.\]</span></p>
+<p><em>Piezīme.</em> Katrs maksimizācijas uzdevums ekvivalents kādam minimizācijas uzdevumam (un otrādi). Piemēram: <span class="math display">\[\max(2x_1 + 3x_2) = -\min(-2x_1 - 3x_2).\]</span> Turpmāk apskatīsim tikai maksimizācijas uzdevumus.</p>
+</div>
+</section></section>
+<section><section id="grafiskā-interpretācija" class="title-slide slide level1"><h1><lo-theory/> Grafiskā interpretācija</h1><hgroup style="font-size:70%">
+<p>Atrast <span class="math inline">\(\color{#00F}{\max(2x_1 + 3x_2)}\)</span>, kur <span class="math display">\[\left\{ \begin{array}{l}
+x_1 - 2x_2 \leq 4,\\
+x_1 + x_2 \leq 18,\\
+x_2 \leq 10,\\
+x_1,x_2 \geq 0.
+\end{array} \right.\]</span></p>
+<figure>
+<img data-src="graphical-interpretation.png" alt="Grafiska interpretācija" /><figcaption>Grafiska interpretācija</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Attēlā viegli redzēt uzdevuma atrisinājumu – tas ir punkts <span class="math inline">\((8,10)\)</span>. Lielākam dimensiju skaitam var būt grūti veidot šādu attēlu. Tipiskos LP uzdevumos <blue><em>pieļaujamais apgabals</em></blue> (<em>feasible region</em>) ir galīgs. Citādi var gadīties, ka maksimuma nemaz nav - izteiksme var pieņemt patvaļīgi lielas vērtības. Pirms LP risināšanas jāpārbauda, ka apgabals ir galīgs.</p>
+</hgroup></section><section id="optimuma-atrašanās" class="slide level2">
+<h2><lo-summary/> Optimuma atrašanās</h2>
+<hgroup>
+<figure>
+<img data-src="graphical-interpretation.png" alt="Grafiska interpretācija" /><figcaption>Grafiska interpretācija</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:80%">
+<p>Attēlos var pamanīt divus nozīmīgus faktus:</p>
+<p><strong>Fakts 1:</strong> Mērķfunkcija savu maksimumu sasniedz pieļaujamā apgabala stūrī.<br />
+<strong>Fakts 2:</strong> Ja kādā stūri <span class="math inline">\(a_1x_1 + \ldots + a_nx_n\)</span> nesasniedz maksimumu, tad vienā no blakus stūriem <span class="math inline">\(a_1x_1 + \ldots + a_nx_n\)</span> ir lielāka vērtība.   Divu dimensiju gadījumā, piemēram, par 2.faktu var pārliecināties, lietojot ģeometrisko interpretāciju.</p>
+</hgroup>
+</section><section id="kur-atrodas-maksimums" class="slide level2">
+<h2><lo-summary/> Kur atrodas maksimums</h2>
+<hgroup>
+<figure>
+<img data-src="locate-maximum.png" alt="Locate maximum" /><figcaption>Locate maximum</figcaption>
+</figure>
+</hgroup>
+<hgroup style="font-size:80%">
+<p>1.gadījumā iegūstam vienu no diviem rezultātiem:<br />
+<strong>(a)</strong> <span class="math inline">\(c_1x_1 + c_2x_2 \leq c\)</span> visā pieļaujamajā apgabalā – stūris ir maksimums.<br />
+<strong>(b)</strong> <span class="math inline">\(c_1x_1+c_2x_2 \geq c\)</span> visā pieļaujamajā apgabalā – stūris ir minimums.</p>
+<p>2.gadījumā stūris nav nedz maksimums, nedz minimums un redzams, ka ir gan blakus stūris ar lielāku <span class="math inline">\(c_1x_1+c_2x_2\)</span> vērtību, gan blakus stūris ar mazāku vērtību.</p>
+</hgroup>
+</section></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Optimizācijas uzdevumi</a></span><br />
+<span>(3) <a href="#/section-2">Grafiskā interpretācija</a></span><br />
+<span style="color:darkgreen"><strong>(4) Simpleksa algoritma piemērs</strong></span><br />
+<span>(5) <a href="#/section-4">Simpleksa algoritma tabula</a></span><br />
+<span>(6) <a href="#/section-5">(P) Lineārās programmēšanas lietojumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="simpleksa-metode" class="title-slide slide level1"><h1><lo-theory/> Simpleksa metode</h1><p>Simpleksalgoritma pamatideja:</p>
+<ol type="1">
+<li>Sāk ar <span class="math inline">\(v\)</span> - patvaļīgu stūri pieļaujamajā apgabalā.</li>
+<li>Kamēr stūrim <span class="math inline">\(v\)</span> blakus atrodas stūris <span class="math inline">\(u\)</span>, kurā <span class="math inline">\(c_{11}x_1+\ldots+c_nx_n\)</span> vērtība ir lielāka, aizstāj <span class="math inline">\(v\)</span> ar <span class="math inline">\(u\)</span>.</li>
+</ol>
+<p>Atkārto otro soli tik ilgi, kamēr nevar atrast blakus stūri, kurā mērķa funkcijai ir lielāka vērtība.   Otrā fakta dēļ, ja tāda blakus stūra nav, tad mērķa funkcija sasniedz maksimālo vērtību visā pieļaujamajā apgabalā.</p></section><section id="pārveidojuma-piemērs" class="slide level2">
+<h2><lo-summary/> Pārveidojuma piemērs</h2>
+<hgroup style="font-size:70%">
+<p>Par uzdevuma standartformu sauc uzdevumu tādā formā, ka nosacījumi ir nevienādības formā <span class="math inline">\(x_i \geq 0\)</span> vai arī vienādības.</p>
+<p>Piemēram, lai nosacījumu <span class="math inline">\(x_1 - 2x_2 \leq 4\)</span> pārvērstu standartformā, ievieš papildus mainīgo <span class="math inline">\(x_3 \geq 0\)</span>. Tātad: <span class="math display">\[x_1-2x_2 \leq 4\;\; \Leftrightarrow\]</span> <span class="math display">\[x_1-2x_2+x_3=4,\;x_3 \geq 0\]</span> Tādā veidā var iegūt ekvivalentu uzdevumu, kurā vienīgās nevienādības ir formā <span class="math inline">\(x_i \geq 0\)</span>.</p>
+</hgroup>
+<hgroup style="font-size:70%">
+<p>Piemēram: <span class="math inline">\(\color{#00F}{\max \left( 2x_1 + 3x_2 \right)}\)</span>, kur <span class="math display">\[\left\{ \begin{array}{l} 
+x_1-2x_2 \leq 4,\\
+x_1+x_2 \leq 18,\\
+x_2 \leq 10,\\
+x_1,x_2 \geq 0. 
+\end{array} \right.\]</span>   Pārveidojot iegūst: <span class="math inline">\(\color{#00F}{\max \left( 2x_1 + 3x_2 \right)}\)</span>, kur <span class="math display">\[\left\{ \begin{array}{l}
+x_1-2x_2+x_3=4,\\
+x_1+x_2+x_4=18,\\
+x_2+x_5=10,\\
+x_1,x_2,x_3,x_4,x_5 \geq 0.
+\end{array} \right.\]</span></p>
+</hgroup>
+</section><section id="nosacījumiem-atbilstošais-apgabals" class="slide level2">
+<h2><lo-sample/> Nosacījumiem atbilstošais apgabals</h2>
+<figure>
+<img data-src="feasible-region.png" alt="Feasible region" /><figcaption>Feasible region</figcaption>
+</figure>
+<p>Stūris - punkts, kur krustojas <span class="math inline">\(2\)</span> taisnes, kas atbilst nosacījumam - ir punkts, kurā divi no <span class="math inline">\(x_1,\ldots,x_n= 0\)</span>. No iepriekšējā piemēra.</p>
+</section><section id="attēls-ar-stūriem" class="slide level2">
+<h2><lo-sample/> Attēls ar stūriem</h2>
+<figure>
+<img data-src="lp-polygon.png" alt="LP Polygon" /><figcaption>LP Polygon</figcaption>
+</figure>
+<p>Plaknes gadījumā stūri var aprakstīt, pasakot kuri divi mainīgie ir vienādi ar <span class="math inline">\(0\)</span>. Vairāku dimensiju gadījumā ir līdzīgi. Trīs dimensiju gadījumā stūris ir punkts, kurā <span class="math inline">\(3\)</span> mainīgie ir <span class="math inline">\(0\)</span>.</p>
+<p>Ja ir <span class="math inline">\(k\)</span> dimensijas (meklē <span class="math inline">\(\color{#00F}{\max \left(a_1x_1 + \ldots + a_kx_k\right)}\)</span>), tad stūris ir punkts, kurā sastopas <span class="math inline">\(k\)</span> plaknes <span class="math inline">\(n\)</span>-dimensiju telpā, t.i. <span class="math inline">\(k\)</span> mainīgie ir vienādi ar <span class="math inline">\(0\)</span>.</p>
+</section></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Optimizācijas uzdevumi</a></span><br />
+<span>(3) <a href="#/section-2">Grafiskā interpretācija</a></span><br />
+<span>(4) <a href="#/section-3">Simpleksa algoritma piemērs</a></span><br />
+<span style="color:darkgreen"><strong>(5) Simpleksa algoritma tabula</strong></span><br />
+<span>(6) <a href="#/section-5">(P) Lineārās programmēšanas lietojumi</a></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="simpleksalgoritms" class="title-slide slide level1"><h1><lo-theory/> Simpleksalgoritms</h1><p>Simpleksalgoritma parādīšanai turpinām agrāko piemēru:</p>
+<p><span class="math display">\[\color{#00F}{\max \left( 2x_1+3x_2 \right)}\]</span> <span class="math display">\[\left\{ \begin{array}{l}
+x_1-2x_2+x_3=4\\
+x_1+x_2+x_4=18\\
+x_2+x_5=10\\
+x_1,x_2,x_3,x_4,x_5 \geq 0 
+\end{array} \right.\]</span></p></section><section id="simpleksalgoritma-tabula" class="slide level2">
+<h2><lo-summary/> Simpleksalgoritma tabula</h2>
+<div style="font-size:70%">
+<p>Simpleksalgoritma soļus ērti pierakstīt ar tabulas palīdzību. Sākotnējo tabulu sastāda tabulas rindiņās ierakstot uzdevuma ierobežojumus. Tabulas pēdējā rindiņa raksta funkciju, kuru maksimizēt.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-2
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(x_1-2x_2+x_3=4\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+18
+</td>
+<td>
+<span class="math inline">\(x_1+x_2+x_4=18\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1+3x_2\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p><span class="math inline">\(x_i = 0\)</span> - brīvie mainīgie,<br />
+<span class="math inline">\(x_i \neq 0\)</span> - pamatmainīgie.</p>
+</div>
+</section><section id="lp-vispārīgajā-formā" class="slide level2">
+<h2><lo-sample/> LP vispārīgajā formā</h2>
+<div style="font-size:70%">
+
+<p><strong>LP uzdevums:</strong> Atrast <span class="math inline">\(\color{#00F}{\max(c_1x_1 + \ldots + c_nx_n)}\)</span>, ja izpildās <span class="math inline">\(k+n\)</span> nosacījumi: <span class="math display">\[\left\{
+\begin{array}{l}
+a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n = b_1\\
+\ldots\\
+a_{k1}x_1 + a_{m2}x_2 + \ldots + a_{kn}x_n = b_k\\
+x_1,x_2,\ldots,x_n \geq 0
+\end{array} \right.\]</span></p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(\ldots\)</span>
+</th>
+<th>
+<span class="math inline">\(x_{n-k}\)</span>
+</th>
+<th>
+<span class="math inline">\(x_{n-k+1}\)</span>
+</th>
+<th>
+ 
+</th>
+<th>
+<span class="math inline">\(\ldots\)</span>
+</th>
+<th>
+<span class="math inline">\(x_{n}\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(a_{1,1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{1,n-k}\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{1,n-k+1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{1,n}\)</span>
+</td>
+<td>
+<span class="math inline">\(b_1\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{1,1}x_1+\ldots+a_{1,n}x_n=b_1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(a_{2,1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{2,n-k}\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{2,n-k+1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{2,n}\)</span>
+</td>
+<td>
+<span class="math inline">\(b_2\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{2,1}x_1+\ldots+a_{2,n}x_n=b_2\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(a_{k,1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{k,n-k}\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{k,n-k+1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{k,n}\)</span>
+</td>
+<td>
+<span class="math inline">\(b_k\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{k,1}x_1+\ldots+a_{k,n}x_n=b_k\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+<span class="math inline">\(c_1\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</th>
+<td>
+<span class="math inline">\(c_{n-k}\)</span>
+</td>
+<td>
+<span class="math inline">\(c_{n-k+1}\)</span>
+</td>
+<td>
+<span class="math inline">\(c_{n-k+2}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(c_n\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+<span class="math inline">\(\max(c_1x_1 + \ldots + c_nx_n)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="background-color:#DAEEF3;">
+<span class="math inline">\(x_1 = 0, \ldots, x_{n-k} = 0\)</span>
+</td>
+<td colspan="4" style="background-color:#E5DFEC;">
+<span class="math inline">\(x_i \neq 0\)</span>
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Ar šo <blue><em>simpleksalgoritma tabulu</em></blue> (<em>simplex tableau</em>), kas ir taisnstūrveida <span class="math inline">\((k+1) \times (n+1)\)</span> matrica, veiksim rindu un kolonnu pārveidojumus.</p>
+</div>
+</section><section id="pārveidošana-standartformā" class="slide level2">
+<h2><lo-sample/> Pārveidošana standartformā</h2>
+<div style="font-size:70%">
+
+<p><strong>Tāpat kā agrāk:</strong> Mainīgie <span class="math inline">\(x_1,\ldots,x_n \geq 0\)</span> apmierina <span class="math inline">\(k\)</span> lineāras vienādības (<span class="math inline">\(k &lt; n\)</span>).<br />
+<strong>Papildus zināms:</strong> Simpleksalgoritms atrodas stūrī: <span class="math inline">\(x_1,\ldots,x_{n-k} = 0\)</span>.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(\ldots\)</span>
+</th>
+<th>
+<span class="math inline">\(x_{n-k}\)</span>
+</th>
+<th>
+<span class="math inline">\(x_{n-k+1}\)</span>
+</th>
+<th>
+ 
+</th>
+<th>
+<span class="math inline">\(\ldots\)</span>
+</th>
+<th>
+<span class="math inline">\(x_{n}\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(a_{1,1}\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(a_{1,n-k}\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(1\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(b_1\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(1\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(b_2\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td style="background-color:#ffffbb">
+<span class="math inline">\(1\)</span>
+</td>
+<td>
+<span class="math inline">\(b_k\)</span>
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+<span class="math inline">\(c_1\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</th>
+<td>
+<span class="math inline">\(c_{n-k}\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+<span class="math inline">\(\ldots\)</span>
+</td>
+<td>
+<span class="math inline">\(0\)</span>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td colspan="3" style="background-color:#DAEEF3;">
+<span class="math inline">\(x_1 = 0, \ldots, x_{n-k} = 0\)</span>
+</td>
+<td colspan="4" style="background-color:#E5DFEC;">
+<span class="math inline">\(x_i \neq 0\)</span>
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Iepriekšējā piemērā <span class="math inline">\(n=5\)</span>, <span class="math inline">\(k=3\)</span> un tabula jau ir standartformā:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-2
+</td>
+<td style="background-color:#ffffbb">
+1
+</td>
+<td style="background-color:#ffffbb">
+0
+</td>
+<td style="background-color:#ffffbb">
+0
+</td>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(x_1-2x_2+x_3=4\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td style="background-color:#ffffbb">
+0
+</td>
+<td style="background-color:#ffffbb">
+1
+</td>
+<td style="background-color:#ffffbb">
+0
+</td>
+<td>
+18
+</td>
+<td>
+<span class="math inline">\(x_1+x_2+x_4=18\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td style="background-color:#ffffbb">
+0
+</td>
+<td style="background-color:#ffffbb">
+0
+</td>
+<td style="background-color:#ffffbb">
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1+3x_2\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+</div>
+</section><section id="simpleksalgoritma-solis" class="slide level2">
+<h2><lo-sample/> Simpleksalgoritma solis</h2>
+<div style="font-size:70%">
+<p>Esam stūrī, kuru apraksta iepriekšējā tabula. Pārbauda, vai blakus stūrī vērtība nav lielāka</p>
+<ol type="1">
+<li>Atrod brīvo mainīgo, kuru palielinot pieaug mērķfunkcija</li>
+<li>Palielina šo mainīgo. Tas bija <span class="math inline">\(0\)</span>, tagad pozitīvs, vienlaikus mainot pamatmainīgos tā, lai visi nosacījumi paliktu patiesi.</li>
+<li>Ja kāds no pamatmainīgajiem ir <span class="math inline">\(0\)</span>, apstājas.</li>
+</ol>
+<p>Jāatrod mainīgais, kuru palielinot funkcijas vērtība pieaug. Der abi mainīgie. Piemēram, palielinām <span class="math inline">\(x_2\)</span>.   Ja <span class="math inline">\(x_2\)</span> pieaug par <span class="math inline">\(d\)</span>:<br />
+<span class="math inline">\(x_1-2x_2+x_3\)</span> samazinās par <span class="math inline">\(2d\)</span>. Pēc nosacījumiem izteiksmei jābūt vienādai ar <span class="math inline">\(4\)</span>. Lai to panāktu <span class="math inline">\(x_3\)</span> palielina par <span class="math inline">\(2d\)</span>.<br />
+<span class="math inline">\(x_1+x_2+x_4\)</span> pieaug par <span class="math inline">\(d\)</span>. Lai saglabātu vienādību, <span class="math inline">\(x_4\)</span> samazina par <span class="math inline">\(d\)</span>; <span class="math inline">\(x_2+x_5\)</span> pieaug par <span class="math inline">\(d\)</span>. Jāsamazina <span class="math inline">\(x_5\)</span> par <span class="math inline">\(d\)</span>.</p>
+</div>
+</section></section>
+<section><section id="piemēra-turpinājums" class="title-slide slide level1"><h1><lo-summary/> Piemēra turpinājums</h1><div style="font-size:70%">
+<p>Cik daudz var palielināt <span class="math inline">\(x_2\)</span>, nepadarot citu mainīgo negatīvu?<br />
+<span class="math inline">\(x_3=4\)</span>, <span class="math inline">\(x_4=18\)</span>, <span class="math inline">\(x_5=10\)</span>.</p>
+<p>Palielinot <span class="math inline">\(x_2\)</span> par <span class="math inline">\(d\)</span>:<br />
+<span class="math inline">\(x_3= 4 + 2d\)</span>; <span class="math inline">\(x_4=18 - d\)</span>; <span class="math inline">\(x_5=10 - d\)</span>.<br />
+Ja <span class="math inline">\(d = 10\)</span>, tad <span class="math inline">\(x_5 = 0\)</span>. Ja <span class="math inline">\(d &gt; 10\)</span>, <span class="math inline">\(x_5 &lt; 0\)</span>. Tātad maksimālais palielinājums ir <span class="math inline">\(10\)</span>.   Tādā gadījumā mēs būsim pārgājuši no stūra, kurā <span class="math inline">\(x_1 = x_2 = 0\)</span> uz stūri, kurā <span class="math inline">\(x_1 = x_5 = 0\)</span>.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+-2
+</td>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(x_1-2x_2+x_3=4\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+18
+</td>
+<td>
+<span class="math inline">\(x_1+x_2+x_4=18\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1+3x_2\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+</div></section><section id="solis" class="slide level2">
+<h2><lo-summary/> 2.solis</h2>
+<div style="font-size:70%">
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+-2
+</td>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(x_1-2x_2+x_3=4\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+18
+</td>
+<td>
+<span class="math inline">\(x_1+x_2+x_4=18\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1+3x_2\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Lai izdarītu nākamo soli, tabula jāpārveido par ekvivalentu tabulu standartformā: </p>
+<ol type="1">
+<li>Pareizina 3.rindu ar <span class="math inline">\(2\)</span>, pieskaita 1.rindai: <span class="math inline">\((x_1+x_3-2x_2)+2(x_5+x_2)=4 + 2 \cdot 10\)</span></li>
+<li>Atņem 3.rindu no 2.rindas</li>
+</ol>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+24
+</td>
+<td>
+<span class="math inline">\(x_1+2x_5+x_3=24\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1+3x_2\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+</div>
+</section><section id="solis-1" class="slide level2">
+<h2><lo-summary/> 3.solis</h2>
+<div style="font-size:70%">
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+24
+</td>
+<td>
+<span class="math inline">\(x_1+2x_5+x_3=24\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1+3x_2\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Jātiek vaļā arī no nenulles koeficienta pēdējā rindā:</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+24
+</td>
+<td>
+<span class="math inline">\(x_1+2x_5+x_3=24\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+-3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+<red>0</red>
+</td>
+<td>
+-30
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1-3x_5\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+</div>
+</section><section id="solis-2" class="slide level2">
+<h2><lo-summary/> 4.solis</h2>
+<div style="font-size:70%">
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+24
+</td>
+<td>
+<span class="math inline">\(x_1+2x_5+x_3=24\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+2
+</td>
+<td>
+-3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+-30
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1-3x_5\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Iegūta tabula standartformā.<br />
+Tā kā palielinot <span class="math inline">\(x_5\)</span> mērķa funkcija samazinātos, atliek palielināt <span class="math inline">\(x_1\)</span>.</p>
+<p><span class="math inline">\(x_1 = x_1 + d\)</span>; <span class="math inline">\(x_3 = x_3 - d\)</span>; <span class="math inline">\(x_3 = 24 - d\)</span>, <span class="math inline">\(x_4 = x_4 - d\)</span>, <span class="math inline">\(x_4 = 8 - d\)</span>.<br />
+Ja <span class="math inline">\(d=8\)</span>, tad <span class="math inline">\(x_4=0\)</span>.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+24
+</td>
+<td>
+<span class="math inline">\(x_1+2x_5+x_3=24\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+0
+</td>
+<td>
+-3
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+-30
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1-3x_5\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+</div>
+</section><section id="solis-3" class="slide level2">
+<h2><lo-summary/> 5.solis</h2>
+<div style="font-size:70%">
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+24
+</td>
+<td>
+<span class="math inline">\(x_1+2x_5+x_3=24\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+0
+</td>
+<td>
+-3
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+-30
+</td>
+<td>
+<span class="math inline">\(\max\left(2x_1-3x_5\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Pārveidojam standartformā.</p>
+<table>
+<tr>
+<th>
+<span class="math inline">\(x_4\)</span>
+</th>
+<th>
+<span class="math inline">\(x_5\)</span>
+</th>
+<th>
+<span class="math inline">\(x_3\)</span>
+</th>
+<th>
+<span class="math inline">\(x_1\)</span>
+</th>
+<th>
+<span class="math inline">\(x_2\)</span>
+</th>
+<th>
+<span class="math inline">\(b_i\)</span>
+</th>
+<th>
+Atbilstošā izteiksme
+</th>
+</tr>
+<tr>
+<td>
+-1
+</td>
+<td>
+3
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+16
+</td>
+<td>
+<span class="math inline">\(-x_4+3x_5+x_3=16\)</span>
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+<span class="math inline">\(x_1-x_5+x_4=8\)</span>
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+<span class="math inline">\(x_2+x_5=10\)</span>
+</td>
+</tr>
+<tr style="color:blue;">
+<td>
+-2
+</td>
+<td>
+-1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+-30
+</td>
+<td>
+<span class="math inline">\(\max\left(-2x_4-x_5\right)\)</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color:#DAEEF3;">
+brīvie mainīgie,<br/> <span class="math inline">\(x_i = 0\)</span>
+</td>
+<td colspan="3" style="background-color:#E5DFEC;">
+pamatmainīgie,<br/> <span class="math inline">\(x_i \neq 0\)</span>
+</td>
+<td colspan="2">
+ 
+</td>
+</tr>
+</table>
+<p>Brīvos mainīgos nevar palielināt tā, lai izteiksmes vērtība palielinātos. Sasniegts maksimums.</p>
+</div>
+</section></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Optimizācijas uzdevumi</a></span><br />
+<span>(3) <a href="#/section-2">Grafiskā interpretācija</a></span><br />
+<span>(4) <a href="#/section-3">Simpleksa algoritma piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Simpleksa algoritma tabula</a></span><br />
+<span style="color:darkgreen"><strong>(6) (P) Lineārās programmēšanas lietojumi</strong></span><br />
+<span>(7) <a href="#/section-6">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-6" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Lineārā optimizācija - 1</blue></p>
+</hgroup>
+<hgroup style="font-size:90%">
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Optimizācijas uzdevumi</a></span><br />
+<span>(3) <a href="#/section-2">Grafiskā interpretācija</a></span><br />
+<span>(4) <a href="#/section-3">Simpleksa algoritma piemērs</a></span><br />
+<span>(5) <a href="#/section-4">Simpleksa algoritma tabula</a></span><br />
+<span>(6) <a href="#/section-5">(P) Lineārās programmēšanas lietojumi</a></span><br />
+<span style="color:darkgreen"><strong>(7) Kopsavilkums</strong></span></p>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,multicol,tikz,enumitem}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+%\usepackage{enumerate}
+\usepackage[margin=2cm]{geometry}
+\usetikzlibrary{calc,arrows.meta}
+
+\newcommand\N{\mathbf{N}}
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+% Comment out one or the other
+
+\ifdefined\mysolution
+  \newcommand\answer[1]{\mbox{}\\[-15pt]{\color{blue}{#1}}\hfill{\color{blue}$\qed$}\mbox{}\\[-15pt]} 
+  \newcommand\ans[1]{{\color{blue}{#1}}}
+\else 
+  \newcommand\answer[1]{}
+  \newcommand\ans[1]{}
+\fi
+
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\bf\Huge Programmēšanas vingrinājumi} \\[5pt]
+Lietišķie algoritmi, 2019.g.\ rudens\\
+Termiņš: 2019-10-22
+\end{center}
+
+\hrule
+\vspace{2pt}
+\hrule
+\vspace{12pt}
+
+
+\noindent
+{\bf 1.uzdevums. Diskrēts gadījumlielums.}
+M.Bendiks reizēm pērk Rūjienas saldējumu ar rozīnēm (\url{https://bit.ly/2OO1xdn}).
+Pieņemsim, ka rozīņu skaits vienā saldējumā pakļaujas Puasona sadalījumam 
+ar vidējo vērtību $\lambda = 5$. Aprēķinu vienkāršošanai var pieņemt, ka
+rozīņu skaits nevienā saldējumā nepārsniedz $20$ (t.i.\ gadījumlielums
+$X \in \{ 0,1,\ldots,20 \}$); saldējumi, kuros $X > 20$, 
+pārdošanā nenonāca.\\
+Atrasto rozīņu skaitus M.Bendiks vēlas nosūtīt, izmantojot Hafmana kodus. 
+\begin{enumerate}
+\item Cik garš ir visīsākais Hafmana kods; kuram rozīņu skaitam tas atbilst?
+\item Cik garš Hafmana kods atbilst vērtībai $X=0$?
+\item Cik garš Hafmana kods atbilst vērtībai $X=20$?
+\item Kāda ir saldējumā atrodamā rozīņu skaita entropija jeb caurmēra ziņojumā
+esošās informācijas saspiežamības robeža? {\em (Noapaļot rezultātu līdz 3 cipariem 
+aiz komata.)}
+\end{enumerate}
+
+\vspace{6pt}
+{\bf 2.uzdevums. Aritmētiskais kods.}
+Aritmētiskais kods definēts, sākot ar 16.lappusi G.Bleloka konspektā: 
+\url{https://www.cs.cmu.edu/~guyb/realworld/compression.pdf}. 
+Dots apriori varbūtību sadalījums sekojošiem ziņojuma alfabēta 
+burtiem: $\{ (\mathtt{A},6/10), (\mathtt{B},2/10), (\mathtt{C},1/10), 
+(\mathtt{\$},1/10) \}$. Izveidot aritmētisko kodu sekojošai $8$ ziņojumu virknei:
+$\mathtt{ABABACA\$}$.
+Zināms, ka ziņojums beidzas ar "end-of-text" simbolu (dolāru), kam piedēvēta varbūtība $1/10$
+(un nekur ziņojuma iekšienē šāda simbola nav).  
+Kodēšana beidzas ar intervālu $[\ell_8,\ell_8+s_8)$. 
+Aritmētiskais kods ir īsākais skaitļa $c$ binārais pieraksts ar $k$ (binārajiem) cipariem 
+aiz komata, kuram $[c,c+2^{-k})$ ir intervāls, kurš pilnībā ietilpst
+intervālā $[\ell_8,\ell_8+s_8)$.
+
+
+% https://www.geeksforgeeks.org/move-front-data-transform-algorithm/
+\vspace{6pt}
+{\bf 3.uzdevums. Move to Front kods:} Pieņemsim, ka visi $26$ mazie 
+latīņu alfabēta burti sākotnēji sakārtoti masīvā alfabētiskā secībā
+($A[0]=\mathtt{a}$, $\ldots$, $A[25]=\mathtt{z}$). 
+Izveidot "Move to Front" kodējumu sekojošam vārdam: $\mathtt{interchangeableness}$
+
+
+\vspace{6pt}
+{\bf 4.uzdevums. Markova ķēdes arhivācija:} 
+Dota Markova ķēde no $6$ stāvokļiem - sk. zīmējumu 
+\url{https://bit.ly/2LDJqo8}. 
+Izveidot ar šo Markova ķēdi simbolu virknīti tieši miljons ciparu garumā
+(katru ciparu attēlot kā ASCII simbolu "1", "2", "3", "4", "5", "6"). 
+Arhivēt šo simbolu virkni ar WinZIP (vai Linux "gz") arhivatoru, lai iegūtu 
+LZ78-veida arhīva garuma novērtējumu.\\
+Saskaitīt, cik šajā virknē ir katra veida ciparu un izrēķināt entropiju (un 
+teorētiski īsāko sasiestās virknes garumu). Salīdzināt, cik tuvu ir ZIP 
+faila izmērs teorētiskajam minimumam. 
+
+
+\vspace{6pt}
+{\bf 5.uzdevums. Diskrētais kosinusu pārveidojums:} 
+$$X_k = \sum_{n=0}^{N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}\right) k \right] \quad \quad k = 0, \dots, N-1.$$
+Diskrēto kosinusu pārveidojumu uzdod augšminētā formula, kur $N=100$. 
+Iedomāsimies, ka $x_n$ ir virkne, kas definēta ar vienādojumu $x_n = \sin x$, kur $n=0,\ldots,99$. 
+Atrast, kuri ir trīs lielākie no DCT koeficientiem $X_k$, un kurām $k$ vērtībām tie atbilst.
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

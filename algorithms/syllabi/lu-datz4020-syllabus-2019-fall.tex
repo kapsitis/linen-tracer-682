@@ -1,0 +1,229 @@
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.50in
+
+%\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\Large \bf DatZ4020 - Lietišķie algoritmi: Syllabus, 2019.g. rudens}
+
+CMU līdzīgu kursu sauc ``Algoritmi īstajā 
+pasaulē'' ({\em Algorithms in the Real World}), kas labi izteic kursa
+būtību, jo dažādi algoritmi var kļūt ``lietišķi'' un tad to darbināšanā
+ir svarīgs ne tikai pareizuma pierādījums un asimptotiskā laika sarežģītība, 
+bet arī atmiņas izlietojums, universālums, spēja ar heiristikām apstrādāt
+atsevišķus grūtus gadījumus.
+
+Kurss ``Lietišķie algoritmi'' stāsta par algoritmiem, kurus ikdienā darbina 
+lietotāju darbstacijās un serveros, kuru veiktspēja vistiešāk iespaido datoru 
+lietotāja pieredzi, piemēram, meklējot, pārraidot vai saspiežot un atspiežot 
+dokumentus un multimediju saturu. Kaut arī šo algoritmu "noklusētās" implementācijas
+ir labi pazīstamas un pieejamas kā gatavas lietojumprogrammas un bibliotēkas
+visdažādākajās operētājsistēmās un programmēšanas platformās, to variācijas 
+un nestandarta lietojumi
+joprojām iedvesmo jaunu programmatūras risinājumu radītājus. 
+
+Lietišķos algoritmus derīgi saprast dažādām ļaužu grupām un IT pasaulē nodarbinātajiem. 
+{\em Datorzinātnieki} un arī topošie datorikas maģistranti studē algoritmu grāmatas
+(\cite{CLR} u.c.), matemātiski analizē un pamato algoritmu darbības pareizumu un ātrdarbību, 
+meklē jaunus algoritmus. {\em Programmētāji} parasti izvairās no plaši pazīstamu algoritmu 
+atkārtotas kodēšanas, jo tas var būt nevajadzīgs laika patēriņš, kā arī algoritmos, kas uzrakstīti
+no mācību grāmatas bieži nav izķertas kļūdas, robežgadījumi un reālās pasaules ierobežojumi. 
+Programmētājiem toties jāvar izvēlēties algoritmu bibliotēkas un tās pareizi jāizsauc, 
+jāapzinās, kurās vietās algoritma izvēle atbilst vienam vai otram lietojuma mērķim.
+Visbeidzot {\em IT konsultanti} palīdz integrēt dažādu piegādātāju risinājumus; viņiem 
+jāsaprot konfigurējamo parametru sekas. 
+
+Lai noderētu minētajām IT profesionāļu lomām, "Lietišķie algoritmi" gan iepazīstina ar algoritmu 
+vispārīgajām īpašībām, gan arī mudina tās izmēģināt praktiski. Dažreiz jāvar teorētiski analizēt
+algoritma veiktspēja, piemēram, atbildot uz jautājumu, vai "stiprāka" datu saspiešana 
+ietaupa pietiekami daudz vietas, lai attaisnotu lielāku CPU resursa patēriņu. 
+Citreiz var praktiski izmēģināt, cik garu "slepeno ziņojumu" var noslēpt noteikta lieluma 
+attēla failā, izmantojot steganogrāfijas metodes; vai šiem failiem var pievienot
+"ūdenszīmes", kuru klātesamību var pārbaudīt arī pēc attēla pārveidojumiem.
+
+
+
+\vspace{10pt}
+{\large \bf Kursa mērķi}
+
+Lai sagatavotos patstāvīgai algoritmu grāmatu studēšanai, iegūtu 
+praktisku pieredzi izsaukt, konfigurēt un pielāgot dažus bieži lietotus algoritmus
+kā arī saprastu kontekstu, kurā ar tiem strādā programmatūras produkti un integrēti 
+risinājumi, kursu sadalām 6 tēmās: 
+
+\begin{enumerate}
+\item Bezzudumu saspiešana
+\item Zudumradošā saspiešana
+\item Kļūdu korekcija
+\item Kriptogrāfija
+\item Lineārā programmēšana
+\item Meklēšana virknēs
+\end{enumerate}
+
+Šīs nodaļas nav vienīgā iespējamā izvēle (sal. \cite{GuyBlelloch} \textendash{} šī kursa sākotnējās
+idejas autora mājaslapu Karnegī-Melona universitātē), tomēr LU piedāvātais kurss domāts bakalauru 
+studijām. Kursā aplūkojamie algoritmi veido savstarpēji saistītu sistēmu, kura sākas ar idejām, kas
+lietojamas individuālu dokumentu vai mediju failu saspiešanai, turpinās ar to drošu nogādāšanu 
+datortīklos un visbeidzot aplūko svarīgas tehnoloģijas, ko lieto pārsvarā servera pusē, lai 
+galalietotājs varētu efektīvi sameklēt tos dokumentus un mediju failus, ko vēlas atrast.
+Uz šiem algoritmiem balstās pazīstamu uzņēmumu, piemēram, Google un Netflix populārākie pakalpojumi. 
+
+
+
+
+
+
+\vspace{10pt}
+{\large \bf Nodarbību tēmas}
+
+\begin{itemize}
+\item {\bf 2019-09-03. Bezzudumu saspiešana \textendash{} 1.} 
+Informācijas teorijas jēdzieni, entropija. Hofmana saspiešana. 
+Vispārīgā prefiksu saspiešana un prefiksu koki. Aritmētiskā saspiešana.\\
+{\em Pasaka:} 
+Kādas atvērtā koda implementācijas pieejamas šī kursa algoritmiem, programmēšanas vides,
+testēšana un veiktspējas profilēšana.
+\item {\bf 2019-09-10. Bezzudumu saspiešana \textendash{} 2.} 
+LZ77 un Lempela-Ziva-Velča algoritmi. 
+Empīriska saspiešanas mērīšana (biti uz simbolu). Entropija un saspiešanas teorētiskā robeža. \\
+{\em Pasaka:} 
+Saspiežamības atkarība no failu žanra; Kalgari korpuss.
+LZW un GIF - kas ir “patentēti” algoritmi un failu formāti, vārda brīvība algoritmu pasaulē.
+\item {\bf 2019-09-17. Bezzudumu saspiešana \textendash{} 3.} 
+Berouza-Vīlera algoritms.\\
+{\em Pasaka:} 
+Arhivēšanas rīku `zip`, `bzip2` u.c. salīdzinājums. Kas ir PNG saspiešanas līmenis (compression level). 
+HTTP sūtāmo failu un biroja programmu formātu ({\tt docx}, nevis {\tt doc}) saspiešanas sekas.
+\item {\bf 2019-09-24. Zudumradošā saspiešana \textendash{} 1.} Diskrētais kosinusu pārveidojums, JPEG algoritms.\\
+{\em Pasaka:} 
+Krāsu kodēšana, acīm atšķiramas atšķirības, Raw un JPEG dati foto un video aparatūrā.
+\item {\bf 2019-10-01. Zudumradošās saspiešana \textendash{} 2.} Solomona-Rīda algoritms.\\
+{\em Pasaka:} 
+MP3 un video formāti, to DRM ({\em digital rights management}). Redzamās un neredzamās 
+ūdenszīmes mediju failos ({\em watermarking algorithms}); to noturība atkarībā no saspiešanas veida.
+\item {\bf 2019-10-08. Kļūdu korekcijas algoritmi \textendash{} 1.} Heminga kods, piemēri un vispārīgais gadījums. 
+Rīda-Solomona kodi.\\
+{\em Pasaka:} 
+Steganogrāfija jeb informācijas paslēpšana saturīgi nesaistītā failā. 
+Kā aizsargāt uzņēmumus un iestādes pret konfidenciālu datu noplūdēm: Data Leak Prevention (DLP).
+\item {\bf 2019-10-15. Kļūdu korekcijas algoritmi \textendash{} 2.} Galīgu lauku jēdziens. 
+Grafu kodi un Tornado kodi.\\
+{\em Pasaka:} TCP/IP saimes tīklošanās protokoli, kuros izmanto redundanci.
+\item {\bf 2019-10-22. Kriptogrāfija \textendash{} 1.} 
+Difī-Helmaņa publisku atslēgu apmaiņa. Semestra vidus eksāmens ({\em Midterm exam}).
+{\em Pasaka:} Publisko atslēgu algoritmi HTTP un SMTP (Weba un epasta) lietojumos.
+\item {\bf 2019-10-29. Kriptogrāfija \textendash{} 2.} TSL 1.3 un PGP standartos izmantotie algoritmi.\\
+{\em Pasaka:} Heartbleed bug un OpenSSL bibliotēka; kriptogrāfijas bibliotēku ievainojamības.
+\item {\bf 2019-11-05. Lineārā programmēšana \textendash{} 1.} Optimizācijas problēmu veidi. 
+Lineārās programmēšanas vizualizācija zemām dimensijām. Simpleksalgoritma ievads.\\
+{\em Pasaka:} 
+Transporta, preču ražošanas u.c. uzdevumi, kas noved pie lineārās optimizācijas.
+\item {\bf 2019-11-12. Lineārā programmēšana \textendash{} 2.} Simpleksu algoritms, tā korektums. 
+Primārā un duālā lineārā programma.\\
+{\em Pasaka:} Algoritmu sarežģītība (laika un telpas prasības aprēķina veikšanai atkarībā 
+no ievades datu lieluma); praksē populāri algoritmi, kam ir slikti “sliktākie gadījumi”.
+\item {\bf 2019-11-19. Lineārā programmēšana \textendash{} 3.} Elipsoīda algoritms. Iekšējā punkta metode un tās varianti 
+(afīnā mērogošana, potenciāla redukcija, centrālā trajektorija).\\
+{\em Pasaka:} Lineāri modeļi Google meklēšanas rezultātu ranžējumā ({\em Page Rank}), 
+Netflix rekomendācijās utml.
+\item {\bf 2019-11-26. Meklēšana virknēs \textendash{} 1.} 
+Algoritmisko problēmu definīcijas. Naivais algoritms. Knuta-Morisa-Prata algoritms, 
+tam veidojamās datu struktūras (tabuliņas). Laika sarežģītības salīdzinājums.\\
+{\em Pasaka:} Vienkāršs zināšanu pārvaldības ({\em knowledge management}) uzdevums \textendash{} 
+kā nepazaudēt pašam savus dokumentus. Teksta dokumentu indeksācijas rīku salīdzinājums un to ātrdarbība.
+\item {\bf 2019-12-03. Meklēšana virknēs \textendash{} 2.} 
+Bojera-Mūra algoritms. Laika sarežģītības salīdzinājums ar KMP.\\
+{\em Pasaka:} Antivīrusu skenēšana, tradicionālās AV produktu vīrusu signatūras. 
+Kā iepakot vīrusus, lai no tām izvairītos.
+\item {\bf 2019-12-10. Meklēšana virknēs \textendash{} 3.} Dinamiskā programmēšana. Ukkonena algoritms. 
+Edsgera Deikstras (Edsger W. Dijkstra) algoritms.\\
+{\em Pasaka:} Regulāru izteiksmju meklēšanas lietojumi DLP produktos (kā pasargāt organizācijas datortīklu no 
+cilvēku vārdu, adresu, telefonu u.c. noplūdes). Kā rakstīt regulāras izteiksmes, lai DLP skenēšana būtu efektīva. 
+Kāpēc kredītkaršu datu noplūdes parasti nemeklē ar regulārām izteiksmēm.
+\item {\bf 2019-12-17. Pārskata nodarbība.} Savācam atgriezenisko saiti, uzklausām kursa dalībniekus, atbildam uz jautājumiem.\\
+Gala eksāmens ({\em Final exam}).
+\end{itemize}
+
+\vspace{10pt}
+{\large \bf Kursa vērtēšana}
+
+\begin{itemize}
+\item $50\%$ no vērtējuma veido 4 mājas darbi, kas vienmērīgi sadalīti semestra laikā.
+\item $15\%$ no vērtējuma veido Semestra vidus eksāmens (45 minūtes, mājasdarbiem līdzīgi uzdevuvmi, drīkst izmantot materiālus, bet eksāmena laikā nedrīkst sazināties ar citiem cilvēkiem).
+\item $25\%$ no vērtējuma veido Gala eksāmens (90 minūtes, drīkst izmantot materiālus).
+\item $10\%$ no vērtējuma veido nodarbību apmeklējums un līdzdalība lekciju ekspressaptaujās - šis vērtējums pienākas ikvienam, kurš atnācis un aktīvi piedalās nodarbībā. Ekspresaptaujās vērtē godprātīgu piedalīšanos nevis pašas atbildes, jo aptaujas var būt par nupat izstāstīto materiālu.
+\end{itemize}
+
+{\em Nokavēšanās politika.} Mājas darbi jāiesniedz paredzētajā termiņā (parasti termiņš ir 13 dienas pēc mājasdarba izplatīšanas nodarbības jeb pusnakts tieši pirms aiznākamās nodarbības). Par mājas darbiem, 
+kas nokavēti par laiku līdz 3 diennaktīm no atbilstošā mājas darba atzīmes tiek atskaitīti $10\%$ no vērtējuma; 
+par laiku līdz 7 diennaktīm \textendash $20\%$ no vērtējuma. Abi eksāmeni jāraksta tiem paredzētajā laikā. 
+Studentiem, kuriem ir pamatots neierašanās iemesls (darba nespējas lapa, dekanāta lūgums augstskolas 
+atzītās īpašās situācijās), var paredzēt iespēju tos rakstīt citā laikā, bet ar citu uzdevumu lapu.
+
+Atzīmi par kursu aprēķina, visos vērtējumos iegūtos procentpunktus 
+dalot ar 10 un aprēķinot apakšējo veselo daļu.
+Vērtējumu "10" ir pat teorētiski sarežģīti iegūt, vācot procentus aprakstītajā veidā. 
+Papildus $10\%$ vērtējumu par kursu piešķir studentiem, kuri izpildījuši mājasdarba 
+neobligāto daļu - piemēram, pierādījuši kādu sarežģītu apgalvojumu par algoritmiem vai 
+uzprogrammējuši kādu neobligāto vingrinājumu.
+
+\vspace{10pt}
+{\large \bf Akadēmiskā godīguma politika}
+
+Mājasdarbu uzdevumus un to risināšanas pieejas studenti drīkst apspriest savā starpā 
+kā arī ar cilvēkiem, kuri paši kursā nepiedalās. Viens no kursa uzdevumiem ir 
+mācīties komunicēt par algoritmiem.
+Mājasdarba teksts jāraksta patstāvīgi, izmantojot tikai savas piezīmes, 
+Internetā brīvi pieejamus resursus (uz kuriem mājasdarbā pareizi jāatsaucas), 
+paša veidotas datorprogrammas un to izvades datus. Mājasdarba rakstīšanas laikā 
+nedrīkst sazināties ar citiem cilvēkiem vai norakstīt kaut ko no svešām 
+piezīmēm neatkarīgi no saziņas kanāla. Līdz kursa beigām (t.i. nākamā 
+semestra pirmajai mācību dienai) kursa dalībniekiem aizliegts publiskot 
+Internetā savus mājasdarbu atrisinājumus vai citos veidos padarīt 
+tos pieejamus citiem kursa dalībniekiem.
+Semestra vidus un gala eksāmenā var ņemt līdzi piezīmes, bet nevar sazināties 
+ar citiem cilvēkiem vai lietot elektroniskas ierīces.
+
+\end{document}
+
+
+

@@ -1,0 +1,246 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,multicol,tikz,enumitem}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+%\usepackage{enumerate}
+\usepackage[margin=2cm]{geometry}
+\usetikzlibrary{calc,arrows.meta}
+
+\newcommand\N{\mathbf{N}}
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+% Comment out one or the other
+
+\ifdefined\mysolution
+  \newcommand\answer[1]{\mbox{}\\[-15pt]{\color{blue}{#1}}\hfill{\color{blue}$\qed$}\mbox{}\\[-15pt]} 
+  \newcommand\ans[1]{{\color{blue}{#1}}}
+\else 
+  \newcommand\answer[1]{}
+  \newcommand\ans[1]{}
+\fi
+
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+
+\begin{center}
+{\bf\Huge 3.\ mājasdarbs} \\[5pt]
+Lietišķie algoritmi: Lineārā programmēšana \\
+Termiņš: 2020-12-11\\[5pt]
+{\em Atrisinājumus lūdzam pārveidot par vienu PDF.}
+\end{center}
+
+\hrule
+\vspace{2pt}
+\hrule
+\vspace{12pt}
+
+
+
+\vspace{10pt}
+{\bf 1.uzdevums (Simpleksalgoritma soļi).}
+
+No noliktavas ik dienu jāizved uz galapunktu $480$ kastes
+ar āboliem, $400$ kastes ar bumbieriem un $230$ kastes ar cidonijām. 
+Katru no produktiem var piegādāt pa pastu, ar kurjeru vai ar dronu. 
+Kurjeri katru dienu var piegādāt līdz $420$ kastēm ar jebkuru produktu, 
+droni katru dienu var pie\-gā\-dāt līdz $250$ kastēm ar jebkuru produktu. 
+Parastais pasts var piegādāt jebkuru kastu skaitu. 
+Katram piegādes veidam atšķiras pašizmaksa, āt\-rums un tātad \textendash{} arī 
+peļņa. Noliktavas peļņa par vienu kasti (atkarībā no produkta veida 
+un pie\-gā\-des metodes) 
+parādīta tabulā: 
+
+\vspace{4pt}
+\begin{tabular}{|l|c|c|c|} \hline
+Produkts & Pasts & Kurjers & Drons \\ \hline
+Āboli & $4$ EUR & $12$ EUR & $7$ EUR \\ \hline
+Bumbieri & $4$ EUR & $13$ EUR & $9$ EUR \\ \hline
+Cidonijas & $8$ EUR & $14$ EUR & $11$ EUR \\ \hline
+\end{tabular}
+
+\vspace{4pt}
+{\bf (A)} Uzrakstīt lineāru programmu, kas ir standartformā, lai ar to varētu sākt simpleksu metodi.\\
+{\bf (B)} Uzrakstīt visus simpleksa metodes soļus, izmantojot Danciga metodi, nomainot kārtējo brī\-vo mainīgo 
+ar standartmainīgo. (Šī metode ir izplatītākā. Nomaiņas metožu jeb {\em Pivot rules} pār\-ska\-tu sk. 
+šeit: \url{https://bit.ly/3fDMzkn}).\\
+{\bf (C)} Atrast, cik kastes jāpiegādā ar katru no me\-to\-dēm, lai maksimizētu peļņu. 
+(Jūsu atbildes var nebūt veseli skaitļi \textendash{} veselu skaitļu programmēšanas uzdevumu 
+ar simpleksa metodi parasti nevar atrisināt.) 
+
+
+
+%% (Only Simplex algorithm; the course focuses on "Advanced algorithms" in general)
+%% Added to the simplex chapter (5.2)
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/assignments/MIT6_046JS15_pset8.pdf
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/index.htm
+
+
+
+
+
+%% Newest LP Course
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/
+%% HW3 (P4: Scooter problem)
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/assignments/ps3.pdf
+%% (Added to the simplex chapter 5.1, 5.2, 5.3, 5.4)
+
+
+
+%% Combinatorial Optimization stuff - in 5.1, 5.2, 5.3, 5.4
+%% https://ocw.mit.edu/courses/mathematics/18-433-combinatorial-optimization-fall-2003/assignments/a3.pdf
+%% https://www.chegg.com/homework-help/questions-and-answers/problem-4-meat-packing-plant-produces-480-hams-400-pork-bellies-230-picnic-hams-every-day--q19404846
+
+
+
+
+
+
+
+\vspace{20pt}
+{\bf 2.uzdevums (Tuvināšana ar taisni).}
+
+Plaknē doti šādi $5$ punkti:
+$$(1, 3), (2, 5), (3, 6), (5, 8), (8, 13).$$
+Apzīmējam tos attiecīgi ar $(x_1,y_1)$, $\ldots$, $(x_5,y_5)$.\\
+{\bf (A)} Atrast taisni $ax + by = c$, kas iet iespējami tuvu šiem punktiem (neviena taisne nevar 
+iet cauri visiem šiem punktiem). Uzrakstīt li\-ne\-ā\-ru programmu (tā nav jārisina!), lai atrastu taisni, 
+kura minimizē maksimālo absolūto kļūdu:
+$$\max_{i \in \{1,\ldots,5\}} |ax_i + by_i - c|.$$
+{\bf (B)} Vai eksistē lineāra programma, kas minimizē pilno kvadrātisko kļūdu: 
+$$\sum\limits_{i \in \{1,\ldots,5\}} (ax_i + by_i - c)^2.$$
+
+(Parodija par uzdevumu 7.8, sk. p.240 \url{https://bit.ly/2YcgCtW}.)
+
+
+
+\vspace{20pt}
+{\bf 3.uzdevums (Veselo skaitļu programmēšana).}
+
+Izpildīt ``branch and bound'' algoritmu: Atrast $x_i$, 
+kas var pieņemt tikai veselas vērtības $0$ vai $1$, šādai lineārajai
+programmai:
+$$\min\;x_1 + 4x_2 + x_3 + x_4,$$
+kur ir spēkā ierobežojumi: 
+$$\left\{ \begin{array}{l} 
+x_1 + x_2 + x_3 \geq 2,\\
+x_1 + x_2 + x_4 \geq 2,\\
+0 \leq x_1 \leq 1,\; 0 \leq x_2 \leq 1,\\
+0 \leq x_3 \leq 1,\;0 \leq x_4 \leq 1.\\
+\end{array} \right.$$
+{\footnotesize
+{\em Piezīme.} ``Branch and bound'' metode meklē atrisinājumu 
+starp visām $16$ teorētiski iespējamām bitu $(x_1,x_2,x_3,x_4)$ 
+kombinācijām (lielākam parametru skaitam to var būt daudz vairāk par $16$). 
+Lai saprastu, kuras bitu kombinācijas vajag pārbaudīt (un kuras var atmest), 
+dažus mainīgos $x_i$ piesaista noteiktām vērtībām ($0$ vai $1$) un 
+{\em relaksē} uzdevumu līdz parastai lineārai programmai. 
+Ja arī relaksētā lineārā programma nedod labāku risinājumu par labāko pašreiz zināmo, 
+visu šo zaru (ar visiem apakšvariantiem) atmet. 
+Tas parasti ļauj jau uzreiz ārkārtīgi strauji samazināt meklējumu telpu, 
+aprobežoties tikai ar tām bitu kombinācijām, kas dod risinājumu, kas tuvs optimālajam. 
+Algoritms tiks aplūkots 23.novembra nodarbībā; relaksēto LP risināšanai varat izmantot
+jebkuru programmēšanas rīku vai Web lietotni, kas risina lineāras programmas.
+}
+
+ 
+
+
+
+
+
+% https://homepages.rpi.edu/~mitchj/handouts/interior_html/interior.html
+
+
+\vspace{20pt}
+{\bf 4.uzdevums (Ceļošana ar motorolleru)}
+
+Komanda ar $n$ cilvēkiem grib iespējami 
+ātri no\-kļūt no punkta $A$ līdz punktam $B$, 
+virzoties pa ceļu garumā $d$. 
+Katrs dalībnieks var iet kājām un viņiem ir uz visiem 
+viens motorollers (sākumā tas atrodas punktā $A$,  
+vienlaikus var pārvietot vienu cilvēku). 
+Katram cilvēkam $i$ ($1 \leq i \leq n$) 
+ir dots gan viņa iešanas ātrums $w_i$, 
+gan ātrums, braucot ar motorolleru, $s_i$.
+
+Uzdevums ir atrast veidu, kā visiem $n$ cilvēkiem veikt ceļu
+no $A$ uz $B$ tā, lai minimizētu laiku no kustības sākuma 
+līdz brīdim, kurā pēdējais cilvēks nonāk punktā $B$. 
+Motorolleru jebkurš var 
+atrast ceļmalā un to var savākt jebkurš cits no komandas. 
+Komandas biedri var iet vai braukt ar 
+motorolleru arī pretējā virzienā (pa ceļu 
+atpakaļ uz punktu $A$), ja tas viņiem kaut kā palīdz.
+
+\vspace{4pt}
+{\bf (A)} Aplūkojiet gadījumu, kad $n = 3$, 
+$w_1 = w_2 = 1$, $s_1 = s_2 = 6$, $w_3 = 2$, $s_3 = 8$ un
+attālums $d = 100$. Atrast ātrāko veidu, 
+kā viņiem visiem trim veikt
+attālumu $d$, nonākot no $A$ uz $B$.\\
+{\bf (B)} Vispārīgajam gadījumam (jebkurai $n$ 
+vēr\-tī\-bai un patvaļīgiem ātrumiem) izveidot lineāru programmu, 
+kuras atrisinājums ir apakšējais 
+no\-vēr\-tē\-jums laikam, 
+kas vajadzīgs $n$ personu komandai 
+pārvietojoties par attālumu $d$. 
+Šai li\-ne\-ā\-ra\-jai programmai jābūt iespējami mazai 
+(mainīgo un ierobežojumu skaits ir $O(n)$), 
+tas nav atkarīgs no $d$ vai arī no konstrukcijā 
+izmantoto posmu (pār\-sē\-ša\-nos un virziena maiņu) skaita.\\
+{\bf (C)} Uzrakstīt citu variantu lineārajai programmai, ja neviens nedrīkst iet vai braukt
+pretējā virzienā (virzienā no $B$ uz $A$). Vai šāds ierobežojums var palielināt 
+ceļojumam nepieciešamo lai\-ku? (Parodija 
+par 4.uzd. no \url{https://bit.ly/3ectpC2}.)
+
+
+%% Older LP Course
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2005/
+%% HW6 (P3: Polytope and ball problem; P4: Students and Desks problem)
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2005/assignments/ps6.pdf
+
+
+
+
+
+
+
+
+\vspace{20pt}
+{\bf 5.uzdevums (I-Iespēja)}
+
+Definēsim ``maksimālā sapārojuma'' uzdevumu. 
+Doti $n$ cilvēki un $n$ uzdevumi; zināms, kuri cilvēki drīkst pildīt kurus uzdevumus. 
+Jānosaka maksimālais uzdevumu
+skaits, ko var izpildīt vienlaikus, ja viens cilvēks drīkst pildīt ne vairāk
+kā vienu uzdevumu (un vienu uzdevumu drīkst pildīt ne vairāk kā viens
+cilvēks). Šo uzdevumu var modelēt ar lineāru programmu ar mainīgajiem
+$x_{ij}$ katram $i$,$j$, kur $i$ ir cilvēks, kas drīkst pildīt uzdevumu $j$:
+$$\text{Maksimizēt:}\;\;\sum\limits_{ij} x_{ij},$$
+ar nosacījumiem
+$$\sum\limits_{j} x_{ij} \leq 1,\;\mbox{katram $i$};$$
+$$\sum\limits_{i} x_{ij} \leq 1,\;\mbox{katram $j$};$$
+$$0 \leq x_{ij} \leq 1,\;\mbox{katram $i,j$}.$$
+
+Pierādīt, ka šīs programmas maksimums reālos skaitļos sakrīt ar tās 
+maksimumu veselos skaitļos (tas ir, katram atrisinājumam reālos skaitļos, kas
+sasniedz summu $S$, ir atrisinājums veselos skait\-ļos, kas sasniedz vismaz
+tikpat lielu summu $S$).
+
+
+
+\end{document}
+

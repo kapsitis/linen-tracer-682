@@ -1,0 +1,381 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,multicol,tikz,enumitem}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+%\usepackage{enumerate}
+\usepackage[margin=2cm]{geometry}
+\usetikzlibrary{calc,arrows.meta}
+
+\newcommand\N{\mathbf{N}}
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+% Comment out one or the other
+
+\ifdefined\mysolution
+  \newcommand\answer[1]{\mbox{}\\[-15pt]{\color{blue}{#1}}\hfill{\color{blue}$\qed$}\mbox{}\\[-15pt]} 
+  \newcommand\ans[1]{{\color{blue}{#1}}}
+\else 
+  \newcommand\answer[1]{}
+  \newcommand\ans[1]{}
+\fi
+
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+
+\begin{center}
+{\bf\Huge Vidus eksāmens} \\[5pt]
+Lietišķie algoritmi \\
+Termiņš: 2020-11-02\\[5pt]
+{\em Atrisinājumus lūdzam pārveidot par vienu PDF.}
+\end{center}
+
+\hrule
+\vspace{2pt}
+\hrule
+\vspace{12pt}
+
+
+
+\vspace{10pt}
+{\bf 1.uzdevums(Berouza-Vīlera trans\-for\-mā\-ci\-ja)}\\
+{\bf (A)} Izpildīt Berouza-Vīlera transformāciju ie\-va\-des virknei jeb stringam
+$\textcolor{blue}{\mathtt{PANAMACANAL\$}}$, izmantojot 
+ciklisko permutāciju parasto alfabētisko sakārtojumu 
+(algoritmu sk.\ \url{https://bit.ly/37XTbd3}).\\
+Veikt transformācijas rezultātam ``move to front'' kodējumu, 
+pieņemot, ka alfabēts satur sekojošos burtus (uzskaitītajā secībā): 
+$$\mathcal{A}=\{\textcolor{blue}{\mathtt{\$}},\textcolor{blue}{\mathtt{A}},\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{L}},\textcolor{blue}{\mathtt{M}},\textcolor{blue}{\mathtt{N}},\textcolor{blue}{\mathtt{P}} \}$$
+
+{\bf (B)} Izpildīt Berouza-Vīlera transformāciju tam pa\-šam stringam 
+$\textcolor{blue}{\mathtt{PANAMACANAL\$}}$, izmantojot inversi leksikogrāfisko sakārtojumu 
+(algoritmu sk.\ \url{https://bit.ly/3mIu7e9}, 37.lpp.). 
+
+\answer{
+
+{\bf (A)} Izrakstām cikliskās permutācijas:\\
+
+
+{\tt PANAMACANAL\$}\\
+{\tt \$PANAMACANAL}\\
+{\tt L\$PANAMACANA}\\
+{\tt AL\$PANAMACAN}\\
+{\tt NAL\$PANAMACA}\\
+{\tt ANAL\$PANAMAC}\\
+{\tt CANAL\$PANAMA}\\
+{\tt ACANAL\$PANAM}\\
+{\tt MACANAL\$PANA}\\
+{\tt AMACANAL\$PAN}\\
+{\tt NAMACANAL\$PA}\\
+{\tt ANAMACANAL\$P}\\
+
+
+Sakārtojam alfabētiskā secībā:\\
+
+{\tt \$PANAMACANAL}\\
+{\tt ACANAL\$PANAM}\\
+{\tt AL\$PANAMACAN}\\
+{\tt AMACANAL\$PAN}\\
+{\tt ANAL\$PANAMAC}\\
+{\tt ANAMACANAL\$P}\\
+{\tt CANAL\$PANAMA}\\
+{\tt L\$PANAMACANA}\\
+{\tt MACANAL\$PANA}\\
+{\tt NAL\$PANAMACA}\\
+{\tt NAMACANAL\$PA}\\
+{\tt PANAMACANAL\$}\\
+
+
+Pēdējā kolonna ir transformācijas rezultāts: $\textcolor{blue}{\mathtt{LMNNCPAAAAA\$}}$.
+
+Lietojam ``Move to Front'' kodējumu. 
+Pašā sākumā alfabēts ir sākotnējā secībā. Iepriekšējā soļa ievadē 
+sastaptais burts ikreiz pārceļo uz alfabēta sākumu.
+
+\begin{tabular}{|l|l|l|} \hline
+{\bf Ievade} & {\bf Alfabēts} & {\bf Izvade} \\ \hline
+L & 
+$\{
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{N}}
+,\textcolor{blue}{\mathtt{P}} 
+\}$ & 
+3 \\ \hline
+M & 
+$\{
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{P}} 
+\}$ & 
+4 \\ \hline
+N & 
+$\{
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{P}} 
+\}$ & 
+5 \\ \hline
+N & 
+$\{
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{P}} 
+\}$ & 
+0 \\ \hline
+C & 
+$\{
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{P}} 
+\}$ & 
+5 \\ \hline
+P & 
+$\{
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{P}} 
+\}$ & 
+6 \\ \hline
+A & 
+$\{
+\textcolor{blue}{\mathtt{P}}, 
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{C}}
+\}$ & 
+5 \\ \hline
+A & 
+$\{
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{P}},
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{C}}
+\}$ & 
+0 \\ \hline
+A & 
+$\{
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{P}}, 
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{C}}
+\}$ & 
+0 \\ \hline
+A & 
+$\{
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{P}}, 
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{C}}
+\}$ & 
+0 \\ \hline
+A & 
+$\{
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{P}},
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{C}}
+\}$ & 
+0 \\ \hline
+\$ & 
+$\{
+\textcolor{blue}{\mathtt{A}},
+\textcolor{blue}{\mathtt{P}},
+\textcolor{blue}{\mathtt{N}},
+\textcolor{blue}{\mathtt{M}},
+\textcolor{blue}{\mathtt{L}},
+\textcolor{blue}{\mathtt{\$}},
+\textcolor{blue}{\mathtt{C}}
+\}$ & 
+5 \\ \hline
+\end{tabular}
+
+Tātad pie dotā alfabēta 
+$\mathcal{A}=\{\textcolor{blue}{\mathtt{\$}},\textcolor{blue}{\mathtt{A}},\textcolor{blue}{\mathtt{C}},
+\textcolor{blue}{\mathtt{L}},\textcolor{blue}{\mathtt{M}},\textcolor{blue}{\mathtt{N}},\textcolor{blue}{\mathtt{P}} \}$
+Berouza-Vīlera iekodēšanas rezultāts:\\
+$\textcolor{red}{\mathtt{3,4,5,0,5,6,5,0,0,0,0,5}}$.
+
+
+
+{\bf (B)} Izrakstām cikliskās permutācijas:\\
+
+{\tt PANAMACANAL \$}\\
+{\tt \$PANAMACANA L}\\
+{\tt L\$PANAMACAN A}\\
+{\tt AL\$PANAMACA N}\\
+{\tt NAL\$PANAMAC A}\\
+{\tt ANAL\$PANAMA C}\\
+{\tt CANAL\$PANAM A}\\
+{\tt ACANAL\$PANA M}\\
+{\tt MACANAL\$PAN A}\\
+{\tt AMACANAL\$PA N}\\
+{\tt NAMACANAL\$P A}\\
+{\tt ANAMACANAL\$ P}\\
+
+
+Sakārtojam inversi leksikogrāfiski virknītes (no sākuma līdz priekšpēdējai pozīcijai):\\
+
+{\tt ANAMACANAL\$ P}\\
+{\tt AL\$PANAMACA N}\\
+{\tt ANAL\$PANAMA C}\\
+{\tt \$PANAMACANA L}\\
+{\tt ACANAL\$PANA M}\\
+{\tt AMACANAL\$PA N}\\
+{\tt NAL\$PANAMAC A}\\
+{\tt PANAMACANAL \$}\\
+{\tt CANAL\$PANAM A}\\
+{\tt L\$PANAMACAN A}\\
+{\tt MACANAL\$PAN A}\\
+{\tt NAMACANAL\$P A}\\
+
+
+Pēdējā kolonna ir transformācijas rezultāts: 
+$\mathtt{PNCLMNA\$AAAA}$.
+}
+
+
+
+
+
+
+
+
+\vspace{20pt}
+{\bf 2.uzdevums (Aritmētiskais kods).}\\
+Iekodēt $\textcolor{blue}{\mathtt{PANAMACANAL\$}}$ ar aritmētisko kodu, ja visu septiņu
+alfabēta burtu varbūtības ir šādas: 
+
+{\small
+\begin{tabular}{|l|l|l|l|l|l|l|} \hline
+$\textcolor{blue}{\mathtt{\$}}$ & $\textcolor{blue}{\mathtt{A}}$ & 
+$\textcolor{blue}{\mathtt{C}}$ & $\textcolor{blue}{\mathtt{L}}$ &
+$\textcolor{blue}{\mathtt{M}}$ & $\textcolor{blue}{\mathtt{N}}$ & $\textcolor{blue}{\mathtt{P}}$ \\ \hline
+$1/10$ & $3/10$ & $1/10$ & $1/10$ & $1/10$ & $2/10$ & $1/10$ \\ \hline
+\end{tabular}
+}
+
+\vspace{5pt}
+{\bf (A)} Uzrakstīt pusatvērtu intervālu $I_{12} = [c;d)$, kurš izveidojas pēc visu $12$ burtu iekodēšanas
+(var parādīt arī starprezultātus, lai varētu saņemt pozitīvu vērtējumu arī neuzmanības kļūdu gadījumā). 
+
+\vspace{5pt}
+{\bf (B)} Uzrakstīt bitu virknīti $\beta = b_1b_2\ldots{}b_k$ ar $k$ bitiem, ka 
+skaitlis $u$, kura binārais pieraksts ir $u = 0.b_1b_2\ldots{}b_k$ pieder iekodējamajam intervālam 
+$I_{12}$ un arī skaitlis $v = u + \frac{1}{2^k}$ pieder $I_{12}$. Ja tādas virknītes ir 
+vairākas, izvēlieties to, kura ir īsākā (kurai $k$ vērtība ir minimālā), lai $[u;v) \subseteq [c;d)$. 
+
+\vspace{5pt}
+Piemēram, bitu virknīte $\beta = \textcolor{blue}{\mathtt{010}}$ iekodē intervālu $[u;v) = [1/4;3/8)$, 
+bet virknīte $\beta = \textcolor{blue}{\mathtt{01}}$ iekodē intervālu $[u;v) = [1/4; 1/2)$. 
+(Atkodēšanas algoritmam palīdz virknes/stringa beigu simbols $\textcolor{blue}{\mathtt{\$}}$, jo 
+tiklīdz kā tas ir atkodēts un izvadīts, tad var beigt darbu.)
+
+\answer{
+
+Izmantojot rekurentas sakarības, atrodam, ka 
+$$I_{12} = [0.935721517000; 0.935721517972).$$
+
+}
+
+
+
+
+
+
+\vspace{20pt}
+{\bf 3.uzdevums (Heminga kodi).}\\
+Atrast kļūdas (ja tādas ir) sekojošos Heminga koda ziņojumos:\\
+{\bf (A)} $\mathtt{1100000}$ (tas ir $[7,4,1]$-kods, bitu secība no $x_{001}$ līdz $x_{111}$). 
+
+\vspace{5pt}
+{\bf (B)} $\mathtt{0110011}$ (tas ir $[7,4,1]$-kods, bitu secība no $x_{001}$ līdz $x_{111}$). 
+
+\vspace{5pt}
+{\bf (C)} $\mathtt{001001111000101}$ (tas ir $[15,11,1]$ Heminga kods, bitu secība \textendash{} no $x_{0001}$ līdz
+$x_{1111}$ ).
+
+
+
+\vspace{20pt}
+{\bf 4.uzdevums (Rīda-Solomona kods).}\\
+Divi kodētāji kodē to pašu bitu virkni ar Rīda-Solomona kodu:
+
+\vspace{5pt}
+{\bf (A)} Pirmais kodētājs griež bitu virkni 
+gabaliņos pa $4$ bitiem, katru gabaliņu iekodē par skaitli $a_i$ no $0$ līdz $15$, sakrāj $n$ šādas vērtības 
+un tad sūta $n-1$ pakāpes polinoma 
+$$p(x) = a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \ldots + a_1x + a_0$$
+vērtības visos $17$ punktos $x \in \{ 0,1,\ldots,16 \}$, veicot aprēķinus atbilstoši galīgā lauka $GF(17)$ 
+aritmētikai (tā ir aritmētika pēc moduļa $17$).
+
+\vspace{5pt}
+{\bf (B)} Otrais kodētājs griež bitu virkni gabaliņos pa $8$ bitiem, katru iekodē par skaitli $b_i$ no $0$ līdz $255$ 
+un tad sūta $n-1$ pakāpes polinoma 
+$$q(x) = b_{n-1}x^{n-1} + b_{n-2}x^{n-2} + \ldots + b_1x + b_0$$
+vērtības visos $257$ punktos $x \in \{ 0,1,\ldots,256 \}$, vei\-cot aprēķinus atbilstoši galīgā lauka $GF(257)$ 
+aritmētikai (tā ir aritmētika pēc pirmskaitļa $257$ moduļa). 
+
+\vspace{5pt}
+Abos gadījumos atrast, cik kļūdas var izlabot (at\-ka\-rī\-bā no parametra $n$). Par kļūdu uzskatām situāciju, kad 
+attiecīgo polinoma $p(x)$ vai $q(x)$ vērtību saņēmējam neizdevās saņemt (saņēmējam ir zināms, kuras vērtības pa ceļam 
+sabojājās, bet viņam nav zināms, kādas bija šīs vērtības). 
+
+
+
+
+
+
+
+\end{document}
+

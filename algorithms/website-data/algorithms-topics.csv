@@ -1,0 +1,425 @@
+Week,Class,Id
+1,topic,Lietot un analizēt bezzudumu saspiešanas algoritmus
+1.1,task,Ieviest jēdzienus saistībā ar ziņojumu saspiešanu
+1.1,description,"Definējam saspiešanas terminus, kopu teorijas un varbūtiskas sakarības; ieviešam arī informācijas saturu un entropiju ziņojumu telpā. Modulis neietver konkrētus saspiešanas algoritmus."
+1.1,reading,"https://bit.ly/2WDE6qG (CMU:Blelloch2013, pp.1-9) Introduction to Data Compression"
+1.1,video,"https://youtu.be/y5VdtQSqiAI (Cambridge:MacKay2014A) Entropy and Data Compression (I): Introduction to Compression, Inf.Theory and Entropy."
+1.1,video,"https://youtu.be/0SxJl5G2bp0 (Cambridge:MacKay2014B) Entropy and Data Compression (II): Shannon's Source Coding Theorem, The Bent Coin Lottery."
+1.1.1,task,Izskaidrot kursa saturu un tajā izmantotās metodes
+1.1.1.1,task,Izskaidrot sešas satura tēmas jeb priekšmetapgabalus
+1.1.1.2,task,Identificēt algoritmu paradigmas jeb algoritmu veidošanas principus
+1.1.1.3,task,Apspriest kursa mācību virsuzdevumus
+1.1.1.4,task,Skaidrot rīku un metožu piemērotību virsuzdevumu sasniegšanai
+1.1.1.5,task,Skaidrot kursa priekšnoteikumus un tvērumu
+1.1.2,task,"Definēt ziņojumus, kodējumus, bezzudumu un zudumradošo saspiešanu"
+1.1.2,description,Aprakstām saspiešanu klasisku kopu un funkciju līmenī bez varbūtiskiem modeļiem.
+1.1.2.1,task,Definēt ziņojumus un ziņojumu alfabētu
+1.1.2.2,task,Definēt kodējumu kā funkciju no ziņojumiem uz bitu virknītēm
+1.1.2.3,math,Pierādīt universāla saspiešanas algoritma neesamību ar Dirihlē principu
+1.1.2.4,task,Definēt bezzudumu un zudumradošo saspiešanu
+1.1.2.5,example,Dotajam saspiešanas kontekstam noteikt ziņojumu alfabētu un kodējuma funkciju.
+1.1.2.6,example,Dotajam alfabētam un ziņojumu virknes garumam noteikt iespējamo virkņu skaitu (t.sk. ar papildu ierobežojumiem).
+1.1.2.7,example,"Atrast varbūtību sadalījumu diskrētam gadījumlielumam (piemēram, ziņojumu kopai) ar nelielu skaitu vērtību, ja zināms ziņojumu ģenerēšanas process."
+1.1.3,task,"Definēt varbūtisku ziņojumu modeli, ziņojuma informācijas saturu tajā un vidējo kodējuma garumu."
+1.1.3,description,Piedēvējam ziņojumiem varbūtības un ieviešam saistītos jēdzienus - informācijas saturu un vidējo kodējuma garumu.
+1.1.3.1,task,Pamatot saspiešanas metodes saistību ar ziņojumu varbūtisko modeli
+1.1.3.2,task,Aprakstīt n-bitu kodu telpu un tās dalīšanu gabalos
+1.1.3.3,task,Definēt konkrēta ziņojuma informācijas saturu
+1.1.3.4,task,Definēt kodējuma vidējo garumu
+1.1.3.5,example,Atrast viena ziņojuma informācijas saturu.
+1.1.3.6,example,Aprēķināt entropiju dotajām burtu varbūtībām.
+1.1.3.7,example,Dotajam gadījumlieluma vērtību skaitam $n$ atrast entropijas maksimums un minimumus
+1.1.4,task,Definēt diskrēta gadījumlieluma entropiju
+1.1.4,description,Ieviešam entropijas jēdzienu un ieskicējam tā saistību ar informācijas saspiežamību.
+1.1.4.1,task,Definēt gadījumlieluma entropiju kā vidējo vērtību informācijas saturiem
+1.1.4.2,task,Definēt nosacīto entropiju. 
+1.1.4.3,task,Definēt divu neatkarīgu gadījumu lielumu pāra entropiju.
+1.1.4.4,task,Formulēt (bez pierādījuma) entropijas saistību ar datu saspiežamību
+1.1.5,task,Formulēt entropijas īpašības un izpausmes praktiskās situācijās
+1.1.5,description,"Nostiprinām entropijas izprašanu, risinot piemērus un teksta uzdevumus, "
+1.1.5.1,task,Definēt koda vidējo garumu un saspiešanas attiecību (compression ratio)
+1.1.5.2,example,Aprēķināt entropiju monētu svēršanas uzdevumos
+1.1.5.3,example,Aprēķināt entropiju kartiņu un urnu uzdevumos
+1.1.5.4,example,"Aprakstīt funkcijas definīcijas un vērtību apgabalus, raksturot entropiju algoritma ieejā un izejā."
+1.2,task,Formulēt un pamatot apgalvojumus par prefiksu kodiem
+1.2,description,"Aplūkojam mainīga garuma prefiksu kodus, to teorētiskās īpašības un Hafmana kodu optimalitāti."
+1.2,reading,"https://bit.ly/2WDE6qG (CMU:Blelloch2013, pp.10-15) Introduction to Data Compression"
+1.2,reading,https://bit.ly/2DhHEaX (Thanh2020) Demo Projects: Huffman coding
+1.2,video,"https://youtu.be/eHGqNvkL4n4 (Cambridge:McKay2014C) Entropy and Data Compression (III):  Shannon's Source Coding Theorem, Symbol Codes."
+1.2,video,"https://youtu.be/cJ_rhZ9DP9k (Cambridge:McKay2014D) Entropy and Data Compression (IV): Shannon's Source Coding Theorem, Symbol Codes."
+1.2.1,task,Definēt prefiksu kodus
+1.2.1,description,"Aprakstām prefiksu kodus vispārīgajā (ne obligāti Hafmana) veidā. Pieminam “non-prefix-free codes”, bet šādas neparastas lietas kursā neapspriežam."
+1.2.1.1,task,Parādīt kā neprefiksu kodi rada divdomības
+1.2.1.2,task,
+1.2.1.3,task,Aplūkot Morzes kodu kā nedivdomīgu kodu un vai tas ir prefiksu kods
+1.2.2,task,"Konstruēt prefiksu kokus, zinot burtu parādīšanās varbūtības. "
+1.2.2,description,
+1.2.2.1,task,"Noskaidrot, kā Hafmana pseidokodā darbojas prioritātes rinda"
+1.2.2.2,example,"Uzzīmēt Hafmana koku, ja dots ziņojumu varbūtību sadalījums."
+1.2.2.3,example,Pārveidot Hafmana koku kanoniskā formā.
+1.2.3,task,"Pamatot atkodēšanas viennozīmīgumu, ja kodēšanai izmantots prefiksu koks (neviens kods nav otram prefikss)."
+1.2.3,description,
+1.2.3.1,task,"Minēt prefiksu koka piemērus (teiksim, UTF-8 kodējums)"
+1.2.3.2,task,"Minēt kodējumus, kas nav prefiksu kodi (teiksim, Morzes kods)"
+1.2.4,task,Aprakstīt vispārīgu prefiksu saspiešanas metodi. 
+1.2.5,task,Aprakstīt Hafmana kodu dabīgu valodu burtiem
+1.2.6,task,Ieviest prefiksu koku vispārēju teoriju
+1.2.6.1,task,Ieviest kodu telpas jēdzienu
+1.2.6.2,task,"Aprakstīt, kā prefiksu koda garums atšķiras no entropijas."
+1.2.6.3,task,Izskaidrot entropiju kā saspiešanas teorētisko robežu
+1.2.7,task,Šenona informācijas teorēma
+1.2.7.1,task,Definēt vidējā prefiksu koda garumu $M = \sum_{x \in X} p_x\ell_x$. 
+1.2.7.2,math,Krafta-Makmilana teorēma
+1.2.7.3,math,Jensena nevienādība (t.sk. Logaritmu un entropijas novērtējumos)
+1.2.7.4,math,"Teorēma par koda garumu, kas nepārsniedz $H(S)+1$ "
+1.2.8,task,"Pamatot, kāpēc Hafmana algoritms ir optimāls - vidējais koda garums uz vienu simbolu vismazākais, ja salīdzina ar citām prefiksu metodēm."
+1.3,task,Aprakstīt aritmētisko saspiešanu.
+1.3,description,Aplūkojam aritmētiskās saspiešanas algoritmu un tā optimalitātes īpašības starp citiem “entropijas kodiem”. 
+1.3,reading,"https://bit.ly/2WDE6qG (CMU:Blelloch2013, pp.16-21) Introduction to Data Compression"
+1.3,reading,"https://bit.ly/2COXiuH (Said2004) Introduction to Arithmetic Coding - Theory and Practice. Amir Said, HP Labs, 2004."
+1.3,video,NA
+1.3.1,task,Izklāstīt aritmētiskā koda pamatideju
+1.3.1.1,task,"Pamatot optimālā koda garuma nesasniedzamību, kodējot ziņojumus pa vienam"
+1.3.1.2,task,Izmantot kodu telpu optimāli vairāku ziņojumu virknei
+1.3.1.3,example,Aplūkot metamo kauliņu piemēru aritmētiskai kodēšanai
+1.3.1.4,math,Daļskaitļu pieraksts divnieku sistēmā (aritmētiskajam kodam)
+1.3.1.5,math,Kodēt skaitļu intervālus ar galīgām bitu virknēm
+1.3.2,task,Piekārtot vārdiem alfabētā intervālus no $[0;1]$ 
+1.3.3,task,Pamatot viennozīmīgas atkodēšanas iespēju.
+1.3.4,task,Atrast intervālu garumus un to kodēšanai nepieciešamo bitu skaitu.
+1.3.4.1,example,"Iekodēt ziņojumu virkni ar aritmētisko kodu, ja dotas ziņojumu varbūtības."
+1.3.4.2,example,"Atkodēt aritmētisko kodu, ja dotas ziņojumu varbūtības."
+1.3.5,task,Lietot un analizēt veselo skaitļu aritmētisko kodējumu
+1.4,task,"Lietot LZ77, LZ78 un LZW saspiešanas algoritmus"
+1.4,description,"Apakšnodaļā aplūkoti tie saspiešanas algoritmi, kuri līdzās saspiešanai veido datu struktūras ar bieži atkārtojošamies fragmentiem. Tie labi saspiež cilvēku valodas tekstus; ir efektīvi un plaši izmantoti. "
+1.4,reading,"https://bit.ly/2WDE6qG (CMU:Blelloch2013, pp.32-36) Introduction to Data Compression"
+1.4,video,NA
+1.4.1,task,Definēt Markova ķēdes
+1.4.1.1,task,Aprakstīt ķēdi kā varbūtisku automātu vai Markova modeli ar kārtu $k$. 
+1.4.1.2,task,Definēt nosacīto varbūtību un nosacīto entropiju
+1.4.1.3,task,Definēt valodas informācijas avota entropiju (source entropy) kā n-grammu entropiju robežu
+1.4.2,task,Definēt LZ77 saspiešanu un atspiešanu
+1.4.2.1,task,Aprakstīt LZ77 datu struktūras
+1.4.2.2,task,"Iekodēt un atkodēt ziņojumu virkni ar LZ77 algoritmu, izmantot tā datu struktūru (apzīmēt apakšvirknītes jau iekodētajā apgabalā)."
+1.4.3,task,Definēt LZ78 un/vai LZW saspiešanu un atspiešanu
+1.4.3.1,task,"Aprakstīt LZ78 un LZW algoritmu atšķirības, to datu struktūras un soļus"
+1.4.3.2,task,"Iekodēt un atkodēt ziņojumu virkni ar LZ78 algoritmu, izmantot tā datu struktūru (tabulu ar pievienojamo virknīšu vārdnīcu)."
+1.4.4,task,Aprakstīt Markova ķēdes modeli un tās ziņojumu saspiežamību
+1.4.5,task,"Aplūkot ""patentētus"" algoritmus un failu formātus, vārda brīvību algoritmu pasaulē."
+1.4.6,task,"Raksturot LZ saimes rīkus - `gz`, `WinZIP`, GIF, biroja failu formātus."
+1.4.6.1,task,"Arhivēšanas rīku gz/WinZIP, gzip2 u.c. pārskats."
+1.4.6.2,task,PNG saspiešanas līmeņi
+1.5,task,Lietot un analizēt Berouza-Vīlera algoritmu.
+1.5,description,Apakšnodaļā aprakstīts Berouza-Vīlera algoritms un tā variācijas 
+1.5,reading,"https://bit.ly/2WDE6qG (CMU:Blelloch2013, pp.37-39) Introduction to Data Compression"
+1.5,video,NA
+1.5.1,task,Lietot “Move-to-front” iekodēšanu un atkodēšanu
+1.5.2,task,Aprakstīt Berouza-Vīlera transformāciju un tai inverso.
+1.5.3,task,Veidot Berouza-Vīlera transformācijas.
+1.5.3.1,math,"Atšķirt leksikogrāfisko, inversi leksikogrāfisko u.c. virkņu sakārtojumus"
+1.5.3.2,example,Veikt 1 soli Berouza-Vīlera algoritma iekodēšanā vai atkodēšanā (virknēm garumā līdz 20 simboliem).
+1.5.3.3,example,Veikt pilnu Berouza-Vīlera iekodēšanu vai atkodēšanu (virknēm garumā līdz 8 simboliem).
+1.5.3.4,example,"Analizēt Markova procesus u.c. stohastiskas ķēdes LZ77, LZ78 un Berouza-Vīlera algoritmos."
+1.5.4,task,"Minēt BW variantu, kur transformācijas rezultāts ir vienādi garš ar sākuma virkni; nav jāiegaumē sākumpozīcija. "
+1.6.5,task,"Raksturot BW saimes rīkus, piemēram, `bzip2` u.c."
+1.6,task,Salīdzināt saspiešanas metodes darbībā
+1.6,description,"Agrākajās apakšnodaļās izklāstīto algoritmu kopsavilkums un apsvērumi, kura saspiešanas metode piemērota katrai situācijai"
+1.6,reading,"https://bit.ly/3jlUIg1 (Haecky2016, CH11) Understanding Compression"
+1.6,reading,https://bit.ly/39erYBf (Perry2014) A Fictional Compression Metric Moves into the Real World
+1.6,video,NA
+1.6.1,task,Analizēt empīriskus novērojumus par bezzudumu saspiešanu
+1.6.1.1,task,Definēt dabisko valodu entropijas raksturlielumus
+1.6.1.2,task,Izmantot Kalgari u.c. korpusus saspiešanas metožu salīdzināšanai
+1.6.1.3,task,Salīdzināt saspiešanas attiecības pēc algoritma un informācijas veida
+1.6.1.4,task,Definēt “Veismana novērtējumu” saspiešanas algoritmam
+1.6.2,task,Salīdzināt datu saspiešanas scenārijus
+1.6.2.1,task,"Aprakstīt saspiešanu, ja datus arhivē bezsaistē, atarhivē uz klienta (video-satura u.c. piegādes scenārijs – failu izmērs vs. kvalitāte)"
+1.6.2.2,task,"Aprakstīt saspiešanu, ja datus arhivē uz klienta, atarhivē mākonī (soctīklu scenārijs – datu apjoma tarifi vs. mobilās ierīces CPU un akumulators)"
+1.6.3,task,Raksturot kombinētus bezzudumu saspiešanas rīkus un formātus
+1.6.3.1,task,Raksturot ZPAQ saspiešanas pakotni
+1.6.3.1,task,"Raksturot bezzudumu attēlu saspiešanu (GIF, PNG, WebP)"
+1.6.3.2,task,Raksturot *File binder* programmas - pašatarhivējošus izpildāmos failus.
+1.6.4,task,Atpazīt saspiešanas algoritmu lietojumus datoru drošībā
+1.6.4.1,task,"Definēt scenārijus, kur “man-in-the-middle” nodarbojas ar atarhivēšanu."
+1.6.4.2,task,"Definēt DLP (datu noplūdes novēršanas) scenāriju, kurā jākontrolē izejošais saturs saspiestos datu pārraides kanālos."
+1.6.4.3,task,"Paredzēt gaidāmo rezultātu, ja arhīva fails datortīklā nosūtīts ne līdz galam vai arī tajā ir daži sabojāti baiti."
+1.6.4.4,task,"Raksturot *polymprhpic engine/polymorphic packer* - kā arhivēties katru reizi citādāk, lai vīrusi kļūtu polimorfi un varētu noslēpties no signatūru skenēšanas ((Mutation Engine, TridenT Polymorphic Engine (MtE), NuKE Encryption Device (NED), Dark Angel's Multiple Encryptor (DAME).) "
+1.6.4.5,task,"Atšķirt Antivīrusu rīku metodes, kas ir efektīvas parastiem un polimorfiem vīrusiem."
+1.6.5,task,"Lietot programmatūras profilēšanas rīkus, mērīt bibliotēku izsaukumu ilgumu."
+2,topic,Lietot un analizēt zudumradošās saspiešanas algoritmus.
+2.1,task,Ieviest kvantizācijas un mediju datu apstrādes pamatjēdzienus
+2.1,description,Apakšnodaļa definē dažus zudumradošās saspiešanas jēdzienus un dažas izplatītas noapaļošanas vai kvantizācijas pieejas. Apakšnodaļa definē JPEG algoritma soļus (citiem zudumradošiem attēlu formātiem soļi ir ļoti līdzīgi.
+2.1,reading,"https://bit.ly/30smDSX (MIT:Penfield2008, U3) Information and Entropy: Compression"
+2.1,reading,"https://bit.ly/39bVxmW (MIT:Polyanskiy2016, CH23) Information Theory: Rate-Distortion Theory"
+2.1,reading,https://mzl.la/3jkMViQ (Mozilla2020) Image File Type and Format Guide
+2.1,reading,https://bit.ly/2WZlYYd (Weitz2016) Discrete Cosine Transform
+2.1,video,https://youtu.be/7fhHQgu2OcY (Weitz2017) Diskrete Kosinustransformation (JPEG-Komprimierung). Die Hochschule für Angewandte Wissenschaften Hamburg.
+2.1.1,task,Vektoru un matricu operāciju atkārtojums; krāsu koordinātes kā vektori
+2.1.1.1,task,Veikt pāreju no RGB uz YIQ un otrādi (vai citām krāsu plaknēm)
+2.1.2,task,Skalāra vienmērīgā un nevienmērīgā kvantizācija
+2.1.3,task,Loida algoritms un Centroid Vornoi Tesselation
+2.1.4,task,Kvantizācija un noapaļošana ar Senlaga un Donta metodēm
+2.1.5,task,Nepārtrauktas funkcijas Furjē pārveidojums
+2.1.6,task,Formulēt Šenona-Naikvista teorēmu
+,,
+2.1.7,task,Diskrētais kosinusu pārveidojums
+2.1.7.1,math,Definēt ortogonālas funkciju saimes
+2.1.7.2,example,Uzrakstīt izteiksmes diskrēto kosinusu transformācijai 1D un 2D gadījumos
+2.1.7.3,example,Uzrakstīt izteiksmes “wavelet’ pārveidojumam
+2.1.7.4,task,Aprakstīt rastra attēlu glabāšanai un apstrādei nepieciešamos datus.
+2.1.8,task,Atrast krāsas pēc RGB koordinātēm. Definēt alfa caurspīdību kā rastra attēlu superpozīcijas/pārklāšanas koeficientu.
+2.1.9,task,Aprakstīt zudumradošās saspiešanas uzdevumu.
+2.1.10,task,Definēt JPEG un līdzīgiem algoritmiem iespējamos saspiešanas parametrus.
+2.1.11,task,Aprakstīt JPEG saspiešanas algoritmu.
+2.1.11.1,task,"JPEG algoritmā izpildīt plakņu I,Q izretināšanu"
+2.1.11.2,task,JPEG algoritmā izpildīt DFT 8x8 blokiem
+2.1.11.3,task,JPEG algoritmā kvantizēt DFT koeficientus
+2.1.11.4,task,JPEG algoritmā savirknēt koeficientus un iegūt starpības
+2.1.11.5,task,Run-length encoding - kodēšana un atkodēšana
+2.1.12,task,Apskatīt dažus attēlu zudumradošo saspiedumu lietojumus
+2.1.12.1,task,"Krāsu kodēšana, acīm atšķiramas atšķirības, Raw un JPEG dati foto un video aparatūrā."
+2.1.12.2,task,Pirkstu nospiedumu saspiešana ar “wavelet” pārveidojumu
+2.2,task,Apskatīt skaņas un video saspiešanas algoritmus
+2.2,description,Apakšnodaļā aplūko skaņas un video saspiešanas metodes un arī zudumradošos algoritmus darbībā.
+2.2,reading,https://bit.ly/30LTEda (Raissi2002) The Theory behind MP3.
+2.2,video,NA
+2.2.1,task,"Definēt cilvēka dzirdes matemātisko modeli, kuru lieto MP3"
+2.2.2,task,Lietot un analizēt MP3 skaņas saspiešanas pamatsoļus
+2.2.2.1,example,"Aprēķināt MP4 formāta datu saspiežamību, ja zināms, cik tajā ir katra veida freimu, cik kadru sekundē un cik labi katru no tiem var saspiest."
+2.2.2.2,example,"Aprēķināt MP3 formāta datu saspiežamību, ja zināms paraugā esošo frekvenču diapazons un iesaistīto ""filterbank"" skaits, un bitraide (bit/s)."
+2.2.3,task,Lietot un analizēt video saspiešanas algoritmus
+2.2.4,task,Identificēt praktiskai video failu sagatavošanai piemērotus konteineru formātus.
+2.2.5,task,Pārspriedumi par DRM
+2.2.5.1,task,Patenti saistīti ar saspiešanas algoritmiem
+2.2.5.2,task,"Redzamās un neredzamās ūdenszīmes mediju failos 
+(*watermarking algorithms*); to robustums atkarībā no saspiešanas veida."
+2.2.5.3,task,Identificēt lietojumus steganogrāfijai (informācijas paslēpšanai ar to nesaistītā failā; t.sk. JPEG).
+2.2.5.4,task,"Skaidrot steganogrāfijas un tās pazīšanas tehnoloģiju iespaidu uz datu noplūdes novēršanas rīkiem (Data Leak Prevention, DLP)."
+3,topic,Lietot un analizēt kļūdu korekcijas algoritmus
+3.1,task,Pazīt un risināt kļūdu identificēšanas uzdevumus
+3.1,description,Apakšnodaļā apskatām kļūdu identificēšanas paņēmienus (bez apņemšanās kļūdu lokalizēt vai izlabot)
+3.1,reading,"https://bit.ly/3hF5T1P (Modiano2009, L15)  Communication Systems Engineering: Cyclic Codes and Error Detection"
+3.1,video,NA
+3.1.1,task,Lietot un analizēt CRC32 algoritmu un apskatīt tā īpašības
+3.1.2,task,Lietot un analizēt Lūna pārbaudes (Luhn check) algoritmu un līdzīgus kontrolsummu algoritmus
+3.1.3,task,"Aplūkot dažus droša hešinga algoritmus (MD5, SHA256 u.c.) un to lietojamību, lai pamatotu, ka datu vai programmatūras fails nav korumpēts. "
+3.2,task,Aprakstīt un analizēt Heminga un citus lineārus kļūdu labošanas kodus
+3.2,description,"Apakšnodaļa aplūko tos kodus, kam var izlabot tikai vienu kļūdu, toties tie balstās uz matricu algebru un to optimalitāte ir pierādāma."
+3.2,reading,"https://bit.ly/32QMg2H (MIT:Polyanskiy2016, CH16) Information Theory: Linear Codes "
+3.2,video,https://youtu.be/9w4LnXIip5A (MacKay2014E) Noisy Channel Coding (I):  Inference and Information Measures for Noisy Channels.
+3.2,video,https://youtu.be/vVAsh5DAe10 (MacKay2014F) Noisy Channel Coding (II):  The Capacity of a Noisy Channel.
+3.2,video,https://youtu.be/KSV8KnF38bs (MacKay2014G) Noisy Channel Coding (III):  The Noisy-Channel Coding Theorem.
+3.2.1,task,Definēt trijstūra nevienādību virkņu atšķirību metrikai un tās sekas kļūdu labošanā
+3.2.1.1,task,Definēt bitu virkņu attālumu (kļūdu jeb atšķirību skaitīšana)
+3.2.1.2,task,"Pamatot, ka attālums starp $2$ ziņojumiem ir vismaz $2c+1$"
+3.2.2,task,Definēt n-dimensiju kubus ar kodavārdiem virsotnēs
+3.2.2.1,task,"Definēt, kas ir [n,k,d] kļūdu korekcijas kodi"
+3.2.2.2,task,"Kombinatoriski pamatot $[n,k,d]$ kodu (ne)esamību noteiktiem parametriem $n,k,d$."
+3.2.3,task,"Definēt [7,4,1] Heminga kodu"
+3.2.3.1,task,Izveidot Heminga kodu (saskaitāmās izteiksmes pēc mod 2) vienas kļūdas labošanai un iekodēt.
+3.2.3.2,task,"Izlabot kļūdu saņemtā $[7,4,1]$ Heminga koda ziņojumā un atkodēt"
+3.2.3.3,task,"Aprakstīt $[7,4,1]$ Heminga kodu ar matricas operāciju"
+3.2.4,task,Formulēt Heminga kodu optimalitātes teorēmu (ja koda garums ir $2^n-1$).
+3.2.4.1,example,Atkodēt 7-bitu un 15-bitu Heminga kodus
+3.2.4.2,example,Sakārtot Heminga ziņojumu/kontroles bitus inversi leksikogrāfiski
+3.2.5,task,Definēt vispārīgu lineāru kodu.
+3.2.5.1,task,Lietot lineāra koda ģeneratormatricu
+3.2.5.2,task,Lietot lineāra koda pareizības pārbaudes matricu.
+3.3,task,Lietot Rīda-Solomona kodus un polinomu interpolāciju.
+3.3,description,"Aplūkot algoritmu saimi, kas rodas no polinomu aplūkošanas un var izlabot lielāku skaitu kļūdu nekā Heminga kodi."
+3.3,reading,"https://bit.ly/3hElxKM (Kak2020, L6) Computer and Network Security: Polynomial Arithmetic"
+3.3,reading,"https://bit.ly/2Bwhq44 (Kak2020, L7) Computer and Network Security: Finite Fields of the Form $GF(2^n)$"
+3.3,reading,https://bit.ly/2X0yzua (Khan2017) Building polinomials over the field $GF(2^8)$
+3.3,video,NA
+3.3.1,task,Definēt galīgus laukus un formulēt to īpašības
+3.3.1.1,math,Lauku jēdziens un piemēri
+3.3.1.2,math,"Lauks $GF(p)$, kur $p$ ir pirmskaitlis"
+3.3.1.3,example,Veikt aritmētiskas darbības galīgos laukos $GF(p)$ (atlikumi pēc pirmskaitļa moduļa)
+3.3.1.4,math,Veikt aritmētiskas darbības galīgos laukos $GF(p^n)$
+3.3.1.5,math,Veikt četras aritmētiskas darbības galīgos laukos $GF(2^n)$.
+3.3.1.6,math,Veikt darbības ar polinomiem pār galīgiem laukiem
+3.3.2,task,Definēt algebras pamatteorēmu
+3.3.2.1,task,Formulēt algebras pamatteorēmas sekas par divu polinomu sakņu sakrišanu
+3.3.2.2,task,Konstruēt polinomu ar dotajām saknēm
+3.3.2.3,task,Rakstīt Lagranža interpolācijas polinomu formulas
+3.3.3,task,Apskatīt Rīda-Solomona kodus kā algebriskas interpolācijas uzdevumus
+3.3.4,task,"Saistīt Solomona-Rīda polinoma pakāpi, vērtību un kļūdu skaitu"
+3.3.5,task,"Apskatīt Rīda-Solomona kodus, veidojot polinomus virs Galuā laukiem"
+3.4,task,Aprakstīt un analizēt citus kļūdu labošanas algoritmu veidus
+3.4,description,Apakšnodaļā aplūkoti daži moderni kļūdu labošanas algoritmi un esošo pieeju kombinācijas
+3.4,reading,https://bit.ly/3g5O5fV (Noisternig2006) An Introduction to Tornado Codes:  Introduction to Error-Correcting Codes by Michael Noisternig. University of Darmstadt.
+3.4,video,NA
+3.4.1,task,Izmantot kļūdu atjaunošanas kodējumu divdaļīgā grafā.
+3.4.2,task,Aprakstīt Tornado kodu vispārējo darbību
+3.4.3,task,Pazīt kļūdu detekcijas un labošanas metodes darbībā
+3.4.3.1,task,"Nosaukt OSI un arī TCP/IP protokolu steku līmeņus, kur labo kļūdas"
+3.4.3.2,task,Aprakstīt Etherneta freimu kļūdu labošanas metodi
+3.4.3.3,task,Aprakstīt kļūdu detekcijas un labošanas metodes kompaktdisku datos.
+4,topic,Lietot un analizēt lineārās programmēšanas algoritmus
+4.1,task,Definēt LP pamatēdzienus un formalizēt teksta uzdevumus par LP.
+4.1,description,Apakšnodaļā definēti lineārās optimizācijas uzdevumu pamatjēdzieni un vienkāršākie secinājumi par to risināmību kā arī visāda veida dualitātes rezultāti. 
+4.1,reading,"https://bit.ly/3jDwbmY (MIT:Goemans2008, L9) Advanced Algorithms: Linear Programming"
+4.1,reading,https://bit.ly/3g0bUFQ (Vempala2003; L12) Combinatorial Optimization: Linear Programs
+4.1,video,NA
+4.1.1,task,Ieviest lineārās programmēšanas pamatjēdzienus
+4.1.1.1,math,Risināt nelielas lineāru vienādojumu sistēmas ar mainīgo izslēgšanu
+4.1.1.2,math,Definēt un noteikt taisnstūrveida matricas rangu
+4.1.1.3,math,Veikt Gausa izslēgšanas soļus matricās
+4.1.2,task,Ieviest lineārās programmēšanas ģeometrisko interpretāciju
+4.1.2.1,task,Interpretēt ģeometriski LP uzdevuma nosacījumus un papildmainīgos
+4.1.2.2,example,Attēlot plaknē pieļaujamo apgabalu 2 brīvo mainīgo LP uzdevumam.
+4.1.2.3,example,"Atzīmēt 2D vai 3D pieļaujamā apgabala robežai mainīgo, kurš ir 0."
+4.1.3,task,Ģeometriskā intuīcija par optimālā risinājuma esamību un eksponenciāls “naivais algoritms”
+4.1.4,task,Veikt LP uzdevumu pārrakstīšanas un manipulācijas
+4.1.4.1,task,Pārveidot mērķa funkcijas minimizēšanu par maksimizēšanu
+4.1.4.2,task,Izteikt vienādības ar nevienādībām
+4.1.4.3,task,Izteikt nevienādību ar nenegativitāti un nokares mainīgo
+4.1.4.4,task,Aizstāt ar zīmi neierobežotus mainīgos ar diviem nenegatīviem mainīgajiem
+4.1.5,task,Aprakstīt problēmas kā veselo skaitļu programmēšanas uzdevumus
+4.1.5.1,example,Formulēt teksta uzdevumus kā veselo skaitļu LP uzdevumus.
+4.1.5.2,example,Reducēt Hamiltona ciklu uz veselo skaitļu LP uzdevumu.
+4.1.5.3,example,Reducēt SAT problēmu uz veselo skaitļu LP uzdevumu.
+4.2,task,Lietot un analizēt simpleksu metodi lineārās programmēšanas uzdevumu risināšanai
+4.2,description,Apakšnodaļa apskata vecāko un arvien populārāko LP risināšanas metodi ar simpleksu metodi. Vienlaikus pamatots neapmierinošs konverģences ātrums dažos īpašos gadījumos.
+4.2,reading,"https://bit.ly/39c1O2e (MIT:Goemans2008, L10) Advanced Algorithms: Sketch of the Simplex Method"
+4.2,reading,"https://bit.ly/39oSTdT (MIT:Demaine2015, L15) Design and Analysis of Algorithms: Linear Programming"
+4.2,reading,https://bit.ly/30LqhaQ (Chutong2019) Statistical Analysis of Four Pivot Rules for the Simplex Method
+4.2,reading,"https://bit.ly/2ZVszVC (Vempala2003, L13) Combinatorial Optimization: The Simplex Algorithm"
+4.2,video,NA
+4.2.1,task,"Pārveidot LP uzdevumus simpleksu standartformā, t.sk. Ieviešot papildmainīgos."
+4.2.2,task,Izvēlēties sākotnējo tuvinājumu simpleksu algoritmā
+4.2.3,task,Veikt simpleksa algoritma soļus
+4.2.4,task,Analizēt simpleksu algoritma ārtrdarbību un sliktākos gadījumus.
+4.3,task,Lietot un analizēt  rezultātus par LP dualitāti.
+4.3,description,"Šajā apakšnodaļā ieviešam teorijas rezultātus un algoritmus, kas izmanto lineāro programmu dualitāti."
+4.3,reading,https://bit.ly/3f2mf2O (MIT:Goemans2008; L10) Advanced Algorithms: LP Duality
+4.3,reading,https://bit.ly/32SVL1e (MIT:Goemans2008; L11) Advanced Algorithms: Complexity of LP
+4.3,reading,https://bit.ly/30N6RlV (Cornell:Williamson2008; L7) Mathematical Programming I
+4.3,reading,"https://bit.ly/2BtWXwN (MIT:Vempala2003, L16) Combinatorial Optimization: The Primal-Dual Algorithm"
+4.3,reading,"https://bit.ly/3g0OYq7 (CMU:Sleator2018, L15) Algorithms: Linear Programming – Duality"
+4.3,video,NA
+4.3.1,task,Formulēt un pierādīt Farkasa lemmu
+4.3.1.1,task,Formulēt Farkasa lemmu dažos ekvivalentos veidos
+4.3.1.2,task,Pierādīt Farkasa lemmu
+4.3.1.3,task,Formulēt Farkasa lemmas secinājumus
+4.3.2,task,Pārveidot primāro LP uzdevumu par duālo
+4.3.2.1,task,Minēt duālās problēmas fizikālo interpretāciju ar bumbiņu
+4.3.2.2,example,Pārveidot (nestandartformas) LP uzdevumu par tam duālo.
+4.3.2.3,example,"Teksta uzdevumos interpretēt gan primāros, gan duālos mainīgos."
+4.3.2.4,example,Izmantot dualitātes teorēmu un aprēķināt dualitātes atstarpi
+4.3.2.5,example,Sastādīt LP modeli optimizācijas veida teksta uzdevumam.
+4.3.2.6,example,Sastādīt LP modeli maksimālās plūsmas uzdevumam grafā.
+4.3.3,task,Primārā-Duālā metode LP uzdevumos
+4.3.4,task,LP uzdevumu izmērs un sarežģītība
+4.3.5,task,Analizēt dualitātes izpausmes teksta uzdevumos
+4.3.5.1,task,Izmantot dualitāti grafu plūsmas uzdevumos
+4.3.5.2,task,Izmantot dualitāti krājumu vadības uzdevumos
+4.3.5.3,task,Izmantot dualitāti matricu spēļu uzdevumos
+4.4,task,Izmantot elipsoīda metodi LP risināšanā
+4.4,description,Apakšnodaļa apskata iteratīvu (skaitlisko metožu iedvesmotu) LP risināšanas metodi – elipsoīdu metodi un tās ģeometrisko interpretāciju. 
+4.4,reading,"https://bit.ly/2BsZXtr (MIT:Goemans2008, L12) Advanced Algorithms: Ellipsoid Algorithm"
+4.4,reading,"https://bit.ly/3hD1dtf (MIT:Goemans2009, L7) Combinatorial Optimization: Ellipsoid Algorithm"
+4.4,reading,https://bit.ly/32TGVYy (MIT:Vempala2003; L17) Combinatorial Optimization: The Ellipsoid Algorithm
+4.4,video,NA
+4.4.1,task,Izklāstīt Elipsoīda algoritma soļus
+4.4.2,task,Formulēt Hačijana elipsoīda algoritma tilpumu novērtējumu.
+4.5,task,Izmantot iekšējā punkta metodes un afīno mērogošanu
+4.5,description,Apakšnodaļā virspusēji aprakstītas vairākas iekšējā punkta metodes un viena no tām (afīnās mērogošanas atsevišķs variants) izklāstīts detalizēti.
+4.5,reading,"https://bit.ly/3jDScSH (MIT:Bertsimas2009, L21) Optimization Methods: Affine scaling algorithm"
+4.5,video,NA
+4.5.1,task,Ieviest nepārtrauktu funkciju optimizācijā pazīstamus jēdzienus
+4.5.1.1,task,Definēt izliektas kopas
+4.5.1.2,task,Nepārtrauktas un diferencējamas funkcijas maksimumi
+4.5.1.3,task,Formulēt teorēmu par lineāras funkcijas lielāko vērtība uz sfēras
+4.5.1.4,task,Rakstīt izteiksmi $n$-dimensiju vektora projicēšanai hiperplaknē.
+4.5.2,task,Lietot un analizēt afīnās mērogošanas metodi LP risināšanā
+4.5.2.1,task,Izpildīt afīnās mērogošanas metodes koordinātu pārveidojumus.
+4.5.2.2,task,Atrast afīnās mērogošanas metodes maksimālā pieauguma virzienu.
+4.5.2.3,task,Projicēt afīnās mērogošanas metodes virzienu dotajā plaknē
+4.5.2.4,task,Atrast afīnās mērogošanas kārtējo tuvinājumu un atgriezties sākotnējos apzīmējumos
+4.5.3,task,Apskatīt LP modeļu izmantošanu Ieteikumu sistēmās (recommender systems) – tsk. Netflix vai grāmatu ieteikumos.
+4.5.4,task,Reducēt dažas NP-pilnas problēmas uz lineāras optimizācijas (t.sk. Integer programming) uzdevumiem.
+4.5.5,task,Identificēt citus iekšējā punkta metožu variantus
+5,topic,Lietot un analizēt virkņu meklēšanas algoritmus
+5.1,task,Ieviest virkņu meklēšanā izmantotos jēdzienus
+5.1,description,Šajā apakšnodaļā apskatām pamatjēdzienus un naivo algoritmu.
+5.1,reading,https://bit.ly/302iHcL (RajputJi2016) Wildcard Pattern Matching
+5.1,video,NA
+5.1.1,task,"Definēt terminus – virkne, apakšvirkne, apakšstrings, apakšstringa indekss"
+5.1.1.1,task,"Aprakstīt virkņu meklēšanas uzdevumus (jā/nē testēšana, pirmais indekss, visi indeksi)"
+5.1.1.2,task,Aprakstīt garākās kopīgās apakšvirknes uzdevumu.
+5.1.1.3,math,Novērtēt apakšvirkņu un apakšstringu skaitu dotajā virknē
+5.1.1.4,math,Pamatot dažas stringu prefiksu/sufiksu īpašības
+5.1.2,task,Lietot un analizēt naivo apakšstringa meklēšanas algoritmu.
+5.1.2.1,task,Novērtēt naivā virkņu meklēšanas algoritma ātrdarbību sliktākajā gadījumā.
+5.1.2.2,task,Novērtēt naivā virkņu meklēšanas algoritma ātrdarbību “nejaušām” virknēm.
+5.1.3,task,Aplūkot algoritmiskus risinājumus rediģēšanas attālumam
+5.1.3.1,task,Definēt Levenšteina (rediģēšanas) attālumu
+5.1.3.2,task,Lietot un analizēt dinamiskās programmēšanas algoritmu rediģēšanas attālumam
+5.1.3.3,task,Pārveidot rediģēšanas attālumu par īsāko ceļu grafā un Dijkstras algoritmu
+5.1.3.4,task,"Izmantot dinamisko programmēšanu, meklējot paraugus ar aizstājējzīmēm (wildcards)"
+5.2,task,Lietot hešinga paradigmas virkņu meklēšanas algoritmos.
+5.2,description,Šajā apakšnodaļā apspriesti slīdošā loga (sliding window jeb rolling hash) algoritmi.
+5.2,reading,"https://bit.ly/2D6X0PK (MIT:Devadas2009, L6) Introduction to Algorithms: Rolling Hash"
+5.2,reading,"https://bit.ly/2CSoske (MIT:Demaine2011, L9) Introduction to Algorithms: Table Doubling, Karp-Rabin"
+5.2.1,task,Manipulēt ar skaitļiem dažādās skaitīšanas sistēmās
+5.2.1.1,math,Pārveidot skaitļus no vienas skaitīšanas sistēmas citā
+5.2.1.2,math,Aprēķināt polinomu vērtības ar Hornera shēmu
+5.2.1.2,math,Aprēķināt pozicionāli pierakstītu skaitļu vērtības ar Hornera shēmu.
+5.2.1.4,math,Rakstīt formulas “ritinošā hešinga” efektīvai aprēķināšanai
+5.2.2,task,Lietot un analizēt Rabina-Karpa algoritmu 
+5.2.2.1,task,Apskatīt optimāla modulārā hešinga funkciju parametru izvēli
+5.2.2.2,example,"Ja doti parametri, novērtēt viltus trāpījumu varbūtību Rabina-Karpa algoritmā."
+5.2.2.3,example,"Veikt Rabina-Karpa soli, ja doti parametri un pārbaudāmais teksts"
+5.2.3,task,Definēt Blūma filtrus – varbūtiskas datu struktūras ar hešingu.
+5.2.3.1,task,"Formulēt Blūma filtra abstrakto datu tipu, iespējamās kļūdas atbildēs"
+5.2.3.2,task,"Aplūkot praktiski izraudzītus parametrus, lai Blūma filtrs sniegtu vietas ietaupījumu"
+5.3,task,Veidot datu struktūras Knuta-Morisa-Prata algoritumam
+5.3,description,"Apakšnodaļa apraksta parauga meklēšanu ar galīga automāta palīdzību, kura stāvokļu pārejas iekodē prefiksu funkcija. "
+5.3,reading,"https://bit.ly/3g0lJDH (CMU:Kingsford2017, L9)  Design & Analysis of Algorithms: String Matching"
+5.3,reading,"https://bit.ly/2Db5FAM (Berkeley:Patrascu2009, HW5) Computability and Complexity: Pattern Matching"
+5.2,video,NA
+5.3.1,task,Aplūkot galīgo automātu jēdzienus stringu analīzei.
+5.3.1.1,math,Izveidot automātu apakšstringu meklēšanai
+5.3.1.2,math,Izveidot automātu regulāru izteiksmju meklēšanai
+5.3.2,task,Parādīt ievades papildināšanas (input enhancement) pieeju virkņu meklēšanas algoritmos.
+5.3.3,task,Definēt prefiksu funkciju meklējamam paraugam un tās algoritmu
+5.3.4,task,"Definēt KMP algoritmu, kas optimizē nobīdes palielinājumus"
+5.3.4.1,example,Dotajam meklējamajam paraugam P izveidot KMP prefiksu funkcijas tabulu.
+5.3.4.2,example,Pamatot dažas prefiksu funkcijas īpašības
+5.3.4.3,example,"Saskaitīt simbolu salīdzināšanas, meklējot apakšvirknes ar KMP algoritmu."
+5.3.5,task,Salīdzināt KMP ar stāvokļu automātu 
+5.3.5.1,task,Definēt stāvokļa automātu stringu meklēšanas uzdevumiem.
+5.3.5.2,task,Aplūkot prefiksu funkcijas saistību ar pārejām stāvokļu automātā
+5.3.5.3,task,Dotam paraugam $P$ izveidot galīgu automātu tā meklēšanai.
+5.4,task,Veidot datu struktūras Bojera-Mūra algoritmam
+5.4,description,"Apakšnodaļa apraksta otra veida stringu meklēšanas algoritmus, kuri sāk pārbaudes no parauga beigām."
+5.4,reading,https://bit.ly/3jHoImP (UCDavis:Gusfield2011) String Algorithms: Notes on Boyer-Moore
+5.4,reading,https://bit.ly/32WHwIT (Lang2001) Boyer-Moore-Algorithmus
+5.4,reading,https://bit.ly/3g3MSWn (Mangal2017) Boyer Moore Algorithm: Good Suffix heuristic
+5.4,video,NA
+5.4.1,task,Aprakstīt Bojera-Mūra algoritmu
+5.4.1.1,task,Aprakstīt sliktā simbola heiristiku un funkciju $\lambda(n)$
+5.4.1.2,task,Aprakstīt labā sufiksa heiristiku un gammas funkciju $\gamma(n)$
+5.4.1.3,example,Dotajam meklēšanas paraugam $P$ izveidot labā sufiksa tabulu
+5.4.1.4,example,Dotajam meklēšanas paraugam $P$ izveidot  sliktā simbola tabulu.
+5.4.3,task,Analizēt pilna BM algoritma ātrdarbību caurmēra un sliktākajā gadījumā. 
+5.4.4,task,Lietot un analizēt Bojera-Mūra-Horspola algoritmu caurmēra un slikākajā gadījumā
+5.5,task,Veidot sufiksu koku un lietot to virkņu uzdevumos
+5.5,description,"Šajā nodaļā apskatītas tās pieejas, kas nav radniecīgas RK, KMP, BM algoritmiem un virkņu algoritmu lietojumi dzīvē."
+5.5,reading,"https://bit.ly/32SSHSK (CMU:Kingsford2017, L10) Algorithms: Suffix Trees and Arrays"
+5.5,reading,"https://bit.ly/32UjyOi (MIT:Karger1999, Handout 8) Advanced Algorithms: Problemset 3 Solutions"
+5.5,reading,https://bit.ly/2WYeSn3 (Allison) Suffix Trees
+5.5,reading,https://stanford.io/2Dc2Pvm (Stanford:KayA) Suffix Trees
+5.5,reading,https://stanford.io/3hEnJlD (Stanford:KayB) Suffix Trees: Notes on Ukkonen's Algorithm
+5.5,video,https://bit.ly/30R8nDl (MIT:Demaine2012) Advanced Data Structures: Strings
+5.5.1,task,Minēt garākā kopīgā apakšstringa meklēšanas algoritmus
+5.5.2,task,Apskatīt stringu meklēšanas lietojumus datoru drošībā
+5.5.2.1,task,Apskatīt slīdošā hešinga lietojumus plaģiāta noķeršanā; pārskatīt rīkus un pakalpojumu veidus.
+5.5.2.2,task,Izskaidrot datu noplūdes novēršanas lietojumus (DLP); heštabulu un Blūma filtru lietojumus tajos.
+5.5.2.3,task,Pazīt algoritmus leksikonu (nelielu vārdnīcu) meklēšanu DLP rīkos
+5.5.2.4,task,Pazīt algoritmus regulāru izteiksmju meklēšanu DLP rīkos
+5.5.3,task,Iepazīties ar sufiksu kokiem
+5.5.3.1,task,Definēt sufiksu koku datu struktūras.
+5.5.3.2,task,Lietot un analizēt Ukonena algoritmu sufiksu koku veidošanai.
+5.5.3.3,task,Izmantot sufiksu kokus dažiem meklēšanas uzdevumiem.

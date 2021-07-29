@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,multicol,tikz,enumitem}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+%\usepackage{enumerate}
+\usepackage[margin=2cm]{geometry}
+\usetikzlibrary{calc,arrows.meta}
+
+\newcommand\N{\mathbf{N}}
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+% Comment out one or the other
+
+\ifdefined\mysolution
+  \newcommand\answer[1]{\mbox{}\\[-15pt]{\color{blue}{#1}}\hfill{\color{blue}$\qed$}\mbox{}\\[-15pt]} 
+  \newcommand\ans[1]{{\color{blue}{#1}}}
+\else 
+  \newcommand\answer[1]{}
+  \newcommand\ans[1]{}
+\fi
+
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\bf\Huge Gala eksāmens} \\[5pt]
+Lietišķie algoritmi, 2019.g.\ rudens\\
+Termiņš: 2019-12-17
+\end{center}
+
+\hrule
+\vspace{2pt}
+\hrule
+\vspace{12pt}
+
+
+% https://learning.oreilly.com/library/view/operations-research-2nd/9789332537392/xhtml/chapter002-001.xhtml
+% Example 5
+\noindent
+{\bf 1.uzdevums. LP uzdevums ar simpleksu metodi.}  
+Maksimizēt $z = 6x_1 + 4x_2$, kur izpildās šādi nosacījumi:
+$$\left\{ \begin{array}{l}
+2x_1 + 3x_2 \leq 30\\
+3x_1 + 2x_2 \leq 24\\
+x_1 + x_2 \geq 3\\
+x_1,x_2 \geq 0
+\end{array} \right.$$
+
+\vspace{6pt}
+{\bf 2.uzdevums. Primārais un duālais LP uzdevumi.}
+Dots primārais LP uzdevums: Maksimizēt $z = 2 x_1 + 5 x_2$, 
+kur $3 x_1 + 7x_2  = 12$ un $x_1, x_2 \geq 0$. 
+\begin{enumerate}
+\item Kāds ir primārā LP mērķfunkcijas $2x_1 + 5x_2$ maksimumu un pie kuriem $x_i$ to sasniedz.
+\item Formulēt duālo LP uzdevumu. 
+\item Atrast duālā uzdevuma mērķfunkcijas minimumu un kādiem mainīgajiem to sasniedz.
+\end{enumerate}
+
+
+\vspace{6pt}
+{\bf 3.uzdevums. Meklēšanas algoritmu salīdzināšana.} Meklējam paraugu $P = \mathtt{abcbcab}$
+tekstā $T = \mathtt{abcabbcabcbcababababcbcab}$ (sk.\ 4.\ mājasdarba 4.\ uzdevumu). 
+\begin{enumerate}
+\item Izveidot Knuta-Morisa-Prata algoritmam nepieciešamo prefiksu funkciju $\pi$. 
+\item Atrast, cik reizes tekstā $T$ ielūkojas
+Knuta-Morisa-Prata algoritms. Attēlot to tabuliņā \textendash{} 
+tās augšējā rinda ir pats teksts $T$. 
+Visas nākamās rindiņas parāda paraugu $P$ (kas nobīdīts
+atbilstoši ikreizējai KMP algoritma hipotēzei). 
+Šajās rindiņās vajag apvilkt visus tos parauga $P$ 
+simbolus, kas tika salīdzināti ar teksta $T$ simboliem. 
+\item Atrast, cik reizes tekstā $T$ ielūkojas
+Bojera-Mūra algoritms. Arī attēlot to tabuliņā, kur 
+redzamas visas parauga $P$ nobīdes un apvilkti simboli, 
+kuri tika salīdzināti ar teksta $T$ simboliem. 
+\end{enumerate}
+
+\vspace{6pt}
+{\bf 4.uzdevums. Kļūdu labošana $[7,4,1]$ Heminga kodā:} 
+Mums jānosūta četru bitu vektors $\mathbf{x}=(x_1,x_2,x_3,x_4)^T$ 
+pa trokšņainu sakaru kanālu, izmantojot kļūdu korekcijas kodu. 
+Heminga kodu  $[7,4,1]$ aprēķina, reizinot $\mathbf{x}$ ar 
+ģeneratormatricu
+$$G\mathbf{x} = \left(
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 0 & 1 & 1 
+\end{array} \right) \left( \begin{array}{c}
+x_1\\
+x_2\\
+x_3\\
+x_4
+\end{array} \right).$$
+\begin{enumerate}
+\item Alise grib nosūtīt Bobam vektoriņu $\mathbf{x} = (1,0,1,0)^T$, izmantojot šo Heminga kodu.
+Uzrakstīt Alises pusē iegūto Heminga kodējumu.
+\item Sakaru kanāls sabojāja pašu pirmo un pašu pēdējo bitu ("0" vietā Bobs saņēma "1",
+bet "1" vietā "0"). Uzrakstīt, kādu vektoriņu saņēma Bobs.
+\item Bobs pieņēma, ka sakaru kanāls ir sabojājis ne vairāk kā vienu bitu un atkodēja
+saņemto vektoriņu, izmantojot Heminga $[7,4,1]$ kļūdu labošanas algoritmu. 
+Uzrakstīt, kāds izskatās Boba pusē atkodētais ziņojums.
+Kurš bits Bobam izskatās kļūdains?
+\end{enumerate}
+
+
+
+
+\end{document}
+
+
+

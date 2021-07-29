@@ -1,0 +1,222 @@
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage{fancyvrb}
+%\usepackage{changepage}
+\usepackage{caption}% http://ctan.org/pkg/caption
+\captionsetup[table]{format=plain,labelformat=simple,labelsep=period}%
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+%\topmargin -24pt
+\topmargin -32pt
+\headheight 12pt
+\headsep 12pt
+%\textheight 9.19in
+\textheight 9.35in
+
+
+\title{Sample Quiz 8}
+\author{Discrete Structures, Spring 2020}
+\affiliation{RBS}
+
+\leftheader{Discrete Sample Quiz 8}
+
+\abstract{%
+}
+
+%\keywords{}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\twocolumn
+\thispagestyle{empty}
+
+\begin{center}
+{\Large Alternative Homework 3:}\\
+{\Large Linear Optimization}
+\end{center}
+
+\begin{changemargin}{10pt}{10pt}
+{\footnotesize
+{\em Note.} This is a parody of MIT OCW content.\\
+See \url{https://ocw.mit.edu/terms/}. 
+The original assignments and related materials can be retrieved from 
+\url{https://bit.ly/2YcyvII}, \url{https://bit.ly/30R4j7S} and 
+\url{https://bit.ly/2YcgCtW}.
+}
+\end{changemargin}
+
+
+%% (Only Simplex algorithm; the course focuses on "Advanced algorithms" in general)
+%% Added to the simplex chapter (5.2)
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/assignments/MIT6_046JS15_pset8.pdf
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/index.htm
+
+
+
+
+
+%% Newest LP Course
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/
+%% HW3 (P4: Scooter problem)
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/assignments/ps3.pdf
+%% (Added to the simplex chapter 5.1, 5.2, 5.3, 5.4)
+
+\vspace{4pt}
+{\bf Question 1.} A warehouse has to ship 480 boxes of apples, 400 boxes of pears and 230 boxes
+of quinces every day. 
+It can ship any product by mail, by courier or by drone. 
+The couriers can ship up to 420 boxes of any product; drones can ship up to 250 boxes. Regular mail can ship any number of boxes. 
+Each shipment method has different costs, different speed (and therefore \textendash{} different earnings). 
+The money earned by the warehouse per every box (depending on the product and its shipment method) is shown in the table:
+
+\vspace{4pt}
+\begin{tabular}{|l|c|c|c|} \hline
+Product & Mail & Courier & Drone \\ \hline
+Apples & $4$ EUR & $12$ EUR & $7$ EUR \\ \hline
+Pears & $4$ EUR & $13$ EUR & $9$ EUR \\ \hline
+Quinces & $8$ EUR & $14$ EUR & $11$ EUR \\ \hline
+\end{tabular}
+
+\vspace{4pt}
+{\bf (A)} Write a Linear Program in a form that is 
+an appropriate starting point for a simplex method.\\
+{\bf (B)} Write all the steps for the simplex method with Dantzig pivot rule, which is the most common one. (Pivot rules 
+can be found e.g.\ here: \url{https://bit.ly/3fDMzkn}).\\
+{\bf (C)} Find the actual number of boxes to ship by each method to maximize the money earned.
+Are the answers obtained from the simplex  method integer numbers?
+
+
+%% Combinatorial Optimization stuff - in 5.1, 5.2, 5.3, 5.4
+%% https://ocw.mit.edu/courses/mathematics/18-433-combinatorial-optimization-fall-2003/assignments/a3.pdf
+%% https://www.chegg.com/homework-help/questions-and-answers/problem-4-meat-packing-plant-produces-480-hams-400-pork-bellies-230-picnic-hams-every-day--q19404846
+
+
+\vspace{10pt}
+{\bf Question 2.} A team of $n$ members would like to travel a distance $d$ from $A$ to $B$
+as quickly as possible. All of them can walk and they also have one scooter \textendash{} initially 
+the scooter is located in the point $A$ and can be used to carry only one person at a time.  
+For each person $i$ ($1 \leq i \leq n$), we
+know his/her walking speed $w_i$ and his/her speed $s_i$ when travelling on the scooter.
+The goal is to find a way to bring all $n$ people to destination so as to minimize the
+time at which the last person arrives. The scooter can be left by any member of the
+group on the side of the road, and picked up by anyone else of the group. Members
+of the group can also walk or use the scooter backwards (towards $A$) if that helps.
+
+\vspace{4pt}
+{\bf (A)} Consider the case where $n = 3$, $w_1 = w_2 = 1$, $s_1 = s_2 = 6$, $w_3 = 2$, $s_3 = 8$ and
+$d = 100$. Find the fastest way for everyone to travel the distance $d$.\\
+{\bf (B)} For a general instance (general $n$ and arbitrary speeds), write a linear program
+whose value is always a lower bound on the time needed for the $n$-person team
+to travel a distance $d$. This should be a small linear program; the number
+of variables and constraints should be $O(n)$ (and not dependent on $d$, or the
+number of `legs' of the solution).\\
+{\bf (C)} Write a different variant of the linear program, if nobody is allowed 
+to walk or to use the scooter in the backwards direction (towards $A$). 
+Can this restriction increase the total travel time?
+
+(This is a parody of Problem 4, see \url{https://bit.ly/3ectpC2}.)
+
+
+%% Older LP Course
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2005/
+%% HW6 (P3: Polytope and ball problem; P4: Students and Desks problem)
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2005/assignments/ps6.pdf
+
+
+%\vspace{10pt}
+%{\bf Question 3.} 
+%You are given a bounded polytope in an $n$-dimensional space $\mathbb{R}^n$ 
+%defined by a collection of inequalities $A\mathbf{x} \leq \mathbf{b}$ (where $A$ is an $m \times n$ matrix, $\mathbf{x} \in \mathbb{R}^n$ 
+%and $\mathbf{b} \in \mathbb{R}^m$), and
+%want to determine the smallest ball that contains the polytope. Show how to write 
+%a linear program to identify the center of that ball.
+%{\em Note.} A polytope is called bounded, if there exists a positive number $r > 0$ such that 
+%all the feasible vectors $\mathbf{x} \in \mathbb{R}^n$ satisfying a
+%system of $m$ inequalities $A\mathbf{x} \leq \mathbf{b}$ fall within a large sphere with radius $r$, 
+%i.e. $|\mathbf{x}| \leq r$; i.e. the ``polytope'' is not infinite/unbounded.
+% (This is a parody of Problem 3, see \url{https://bit.ly/2YHSD4N}.)
+
+\vspace{10pt}
+{\bf Question 3.} 
+% yy <- round(2*(xx + rnorm(5)))
+You are given the following points in the plane:
+$$(1, 3), (2, 5), (3, 6), (5, 8), (8, 13).$$
+We denote them by $(x_1,y_1)$, $\ldots$, $(x_5,y_5)$ respectively.\\
+{\bf (A)} Find a line $ax + by = c$ that approximately passes through these points (no line is a
+perfect fit). Write a linear program (you don't need to solve it) to find the line that minimizes the
+maximum absolute error:
+$$\max_{i \in \{1,\ldots,5\}} |ax_i + by_i - c|.$$
+{\bf (B)} Is there a linear program that minimizes the total quadratic error? It is expressed like this:
+$$\sum\limits_{i \in \{1,\ldots,5\}} (ax_i + by_i - c)^2.$$
+
+(This is a parody of Problem 7.8, see p.240 \url{https://bit.ly/2YcgCtW}.)
+
+
+
+
+%% Even older LP Course
+%% https://ocw.mit.edu/courses/mathematics/18-433-combinatorial-optimization-fall-2003/index.htm
+
+
+%% Oldest LP Course
+%% https://dspace.mit.edu/bitstream/handle/1721.1/36897/6-854JFall-1999/OcwWeb/Electrical-Engineering-and-Computer-Science/6-854JAdvanced-AlgorithmsFall1999/LectureNotes/index.htm
+%% HW7 (P5: Currency converting to Yen)
+%% https://dspace.mit.edu/bitstream/handle/1721.1/36897/6-854JFall-1999/NR/rdonlyres/Electrical-Engineering-and-Computer-Science/6-854JAdvanced-AlgorithmsFall1999/2C7C47C7-7F02-4BF9-A7E0-8A629555245B/0/ps7.pdf
+%% H8 (P1: Intersection of two polyhedra)
+%% https://dspace.mit.edu/bitstream/handle/1721.1/36897/6-854JFall-1999/NR/rdonlyres/Electrical-Engineering-and-Computer-Science/6-854JAdvanced-AlgorithmsFall1999/8F211420-7108-4779-8774-629FC5C263BD/0/ps8.pdf
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

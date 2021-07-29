@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>"Uzdevumi"</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../../reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Zudumradošā saspiešana - 1</blue></p>
+</hgroup>
+<hgroup>
+<p><span style="color:darkgreen"><strong>(1) Ievads</strong></span><br />
+<span>(2) <a href="#/section-1">Kvantizācija</a></span><br />
+<span>(3) <a href="#/section-2">Kosinusu transformācija</a></span><br />
+<span>(4) <a href="#/section-3">JPEG apraksts</a></span><br />
+<span>(5) <a href="#/section-4">Citas transformācijas</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-1" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 3</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span style="color:darkgreen">(2) <a href="#/section-1">Kvantizācija</a></span><br />
+<span>(3) <a href="#/section-2">Kosinusu transformācija</a></span><br />
+<span>(4) <a href="#/section-3">JPEG apraksts</a></span><br />
+<span>(5) <a href="#/section-4">Citas transformācijas</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section><section id="skalārā-kvantizācija" class="title-slide slide level1"><h1><lo-theory/> Skalārā kvantizācija</h1><p>Piemērs: melnbalti attēli.</p>
+<ul>
+<li>Attēlā skaitlis <span class="math inline">\(0-255\)</span> apzı̄mē krāsu (no melnas līdz baltai).</li>
+<li>Visus <span class="math inline">\(256\)</span> toņus acs neatšķir, tāpēc var attēlot <span class="math inline">\(256\)</span> krāsas uz mazāku skaitu.</li>
+<li>Vienkāršākais attēlojums, piemēram <span class="math inline">\(f(x) = \left\lfloor\frac{x}{4} \right\rfloor\)</span>. Tad <span class="math inline">\(f\,:\,\{0,\ldots,255\} \rightarrow \{0,\ldots,63\}\)</span>.</li>
+<li>Praksē lieto sarežǧı̄tāku funkciju, kas kopā sagrupē krāsas, kuras acs sliktāk atšķir.</li>
+</ul></section><section id="vektoru-kvantizācija-melnbalti-attēli" class="slide level2">
+<h2><lo-theory/> Vektoru kvantizācija (melnbalti attēli)</h2>
+<ul>
+<li>Krāsainu punktu nosaka <span class="math inline">\(3\)</span> vērtı̄bas <span class="math inline">\((\text{Red}, \text{Green}, \text{Blue})\)</span>. Telpa <span class="math inline">\(\{ 0,\ldots,255\}^3\)</span>.</li>
+<li><span class="math inline">\(f(x_1, x_2, x_3 ) = (y_1,y_2,y_3)\)</span>, tā, lai dažādi trijnieki <span class="math inline">\((x_1, x_2, x_3)\)</span>, kas attēlojas par vienu <span class="math inline">\((y_1,y_2,y_3)\)</span>, būtu grūti atšķirami.</li>
+</ul>
+<p>Piemērs: <a href="https://whatis.techtarget.com/definition/216-color-browser-safe-palette">Browser-safe color palette</a></p>
+<ul>
+<li>Visas krāsu koordinātes, kam abi hex cipariņi ir vienādi un dalās ar <span class="math inline">\(3\)</span>: (<code>00,33,66,99,CC,FF</code>).</li>
+<li>Trīs baitus jeb <span class="math inline">\(2^{24} = 16777216\)</span> saspiež par <span class="math inline">\(6^3 = 216\)</span> vērtībām.</li>
+<li>Cik liels ietaupījums sakaru kanālā?</li>
+</ul>
+</section></section>
+<section><section id="citi-krāsu-kvantizācijas-veidi" class="title-slide slide level1"><h1><lo-summary/> Citi krāsu kvantizācijas veidi</h1><figure>
+<img data-src="quantization-illustration.png" alt="Quantization illustration" /><figcaption>Quantization illustration</figcaption>
+</figure>
+<p>Voronoja diagrammas - ap dotajiem punktiem izveidojas (bieži vien sešstūra formas) šūnas ar koda punktu centrā.</p></section><section id="proporcionālās-vēlēšanu-sistēmas" class="slide level2">
+<h2><lo-yellow/> Proporcionālās vēlēšanu sistēmas</h2>
+<p>Donta (D’Hondt) sistēmas piemērs <span class="math inline">\(5\)</span> krēsliem.</p>
+<figure>
+<img data-src="hondt-allocation.png" alt="Hondt method" /><figcaption>Hondt method</figcaption>
+</figure>
+<p>Sk. <a href="https://en.wikipedia.org/wiki/2018_Hungarian_parliamentary_election">Ungārijas 2018.g. vēlēšanas</a></p>
+</section><section id="senlaga-sistēma" class="slide level2">
+<h2><lo-yellow/> Senlaga sistēma</h2>
+<figure>
+<img data-src="sainte-lague.png" alt="Sainte Lague method" /><figcaption>Sainte Lague method</figcaption>
+</figure>
+</section></section>
+<section id="section-2" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 3</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kvantizācija</a></span><br />
+<span style="color:darkgreen">(3) <a href="#/section-2">Kosinusu transformācija</a></span><br />
+<span>(4) <a href="#/section-3">JPEG apraksts</a></span><br />
+<span>(5) <a href="#/section-4">Citas transformācijas</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="kas-ir-transformācija" class="title-slide slide level1"><h1><lo-theory/> Kas ir transformācija</h1><p><span class="math display">\[\left( \begin{array} \text{x&#39;_1} \\ x&#39;_2 \\ \cdots \\ x&#39;_n \end{array} \right)
+\approx
+\left( \begin{array}
+\text{a_{11}} &amp;  a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} 
+\end{array} \right)
+\left( \begin{array} \text{x_1} \\ x_2 \\ \cdots \\ x_n \end{array} \right)\]</span></p></section>
+<section id="section-3" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 3</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kvantizācija</a></span><br />
+<span>(3) <a href="#/section-2">Kosinusu transformācija</a></span><br />
+<span style="color:darkgreen">(4) <a href="#/section-3">JPEG apraksts</a></span><br />
+<span>(5) <a href="#/section-4">Citas transformācijas</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="jpeg-algoritma-uzdevums" class="title-slide slide level1"><h1><lo-theory/> JPEG algoritma uzdevums</h1><ul>
+<li>JPEG ir algoritms. Arī formāts attēlu glabāšanai.</li>
+<li>Ievade: punktu attēls, katra punkta krāsu apraksta trīs <span class="math inline">\(8\)</span> bitu skaitļi (robežās no <span class="math inline">\(0\)</span> līdz <span class="math inline">\(255\)</span>) – R, G, B, kur R – sarkanā krāsa (red), G – zaļā krāsa (green), B – zilā krāsa (blue).</li>
+<li>Mērķis – iegūt saspiestu failu, no kura var atjaunot attēlu, kas ir līdzīgs sākotnējam. Saspiešana notiek ar zudumiem.</li>
+<li>Soļi ir saistīti ar to, kā cilvēks uztver krāsu.</li>
+</ul></section>
+<section><section id="jpeg-1.solis-rgb-to-yiq" class="title-slide slide level1"><h1><lo-theory/> JPEG 1.solis: RGB-to-YIQ</h1><p>Y,I,Q vērtības iegūst no R,G,B vērtībām, pareizinot tās ar koeficientu matricu. Šis pārveidojums ir atgriezenisks (bezzudumu), t.i., zinot YIQ vērtības, var atjaunot RGB vērtības.</p></section><section id="yiq-krāsu-telpa" class="slide level2">
+<h2><lo-summary/> YIQ krāsu telpa</h2>
+<hgroup>
+<figure>
+<img data-src="picture-YIQ_components1.jpg" alt="YIQ1" /><figcaption>YIQ1</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<figure>
+<img data-src="picture-YIQ_components2.jpg" alt="YIQ2" /><figcaption>YIQ2</figcaption>
+</figure>
+</hgroup>
+</section><section id="kas-ir-yiq" class="slide level2">
+<h2><lo-summary/> Kas ir YIQ?</h2>
+<hgroup width="60%">
+<figure>
+<img data-src="YIQ_IQ_plane.svg.png" alt="YIQ - IQ plakne" /><figcaption>YIQ - IQ plakne</figcaption>
+</figure>
+</hgroup>
+<hgroup width="40%">
+<ul>
+<li>“Y” - Luma informācija (melnbaltās televīzijas attēliem)</li>
+<li>“I” - <em>in-phase</em>, “Q” - <em>quadrature</em> (NTSC - analogās krāsu televīzijas žargons)</li>
+</ul>
+<p>Redze precīzāk uztver “I” (pāreju no oranžā uz zilo) nevis “Q” (pāreju no zaļā uz violeto) - tāpēc Q var vairāk saspiest.</p>
+</hgroup>
+</section><section id="pārveido-yiq-koordinātēs" class="slide level2">
+<h2><lo-summary/> Pārveido YIQ koordinātēs</h2>
+<p><span class="math display">\[\left( \begin{array} \text{Y} \\ I \\ Q \end{array} \right)
+\approx
+\left( \begin{array}
+\text{0.299} &amp;  0.587 &amp;  0.114 \\
+0.5959 &amp; -0.2746 &amp; -0.3213 \\
+0.2115 &amp; -0.5227 &amp;  0.3112
+\end{array} \right)
+\left( \begin{array} \text{R} \\ G \\ B \end{array} \right)\]</span></p>
+<p><strong>Pārveido atpakaļ uz RGB:</strong></p>
+<p><span class="math display">\[\left( \begin{array} \text{R} \\ G \\ B \end{array} \right)
+\approx
+\left( \begin{array}
+\text{1} &amp;  0.956 &amp;  0.619 \\
+1 &amp; -0.272 &amp; -0.647 \\
+1 &amp; -1.106 &amp;  1.703
+\end{array} \right)
+\left( \begin{array} \text{Y} \\ I \\ Q \end{array} \right)\]</span></p>
+</section></section>
+<section id="jpeg-2.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 2.solis</h1><hgroup>
+<figure>
+<img data-src="sparser-grid.png" alt="Skipping grid" /><figcaption>Skipping grid</figcaption>
+</figure>
+</hgroup>
+<hgroup>
+<p>Patur visas “Y” vērtības (melnbalto/gaišuma komponenti), taču katrā virzienā atstāj tikai katru otro “I” un “Q” vērtību (datu punktu skaits samazinās <span class="math inline">\(4\)</span> reizes). Redze pārmaiņas gaišumā uztver daudz labāk nekā pārmaiņas nokrāsā.</p>
+</hgroup></section>
+<section id="jpeg-3.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 3.solis</h1><p>YIQ vērtības sadala <span class="math inline">\(8 \times 8\)</span> blokos. Tā kā tika atstāta tikai katra otrā “I” un “Q” vērtība, tad šo bloku izmērs sākotnējā attēlā ir <span class="math inline">\(16 \times 16\)</span>. Katrs bloks tiek apstrādāts atsevišķi.</p></section>
+<section id="jpeg-4.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 4.solis</h1><p>Katram blokam pielieto diskrēto kosinusu transformāciju - turklāt divas reizes.</p>
+<figure>
+<img data-src="dct-formulae.png" alt="DCT" /><figcaption>DCT</figcaption>
+</figure>
+<p>Vispirms diskrēto kosinusu transformāciju pielieto katrai matricas kolonnai, domās sadalot matricu astoņās mazākās matricās (pa vienai kolonnai katrā).</p>
+<p>Pēc tam to pašu izdara katrai iegūtās matricas rindai.</p></section>
+<section id="jpeg-5.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 5.solis</h1><p>Elementu <span class="math inline">\(x&#39;&#39;_{ij}\)</span> noapaļojam līdz precizitātei <span class="math inline">\(a_{ij}\)</span> (dala ar <span class="math inline">\(a_{ij}\)</span> un apaļo uz leju ar <span class="math inline">\(\lfloor x \rfloor\)</span>). Elementu atšķirības, kas ir mazākas par <span class="math inline">\(a_{ij}\)</span>, ir nebūtiskas. Galvenā viltība ir tā, ka skaitļi atšķiras dažādiem matricas elementiem. Tās komponentes, kuras acs uztver vājāk, tiek noapaļotas ar zemāku precizitāti. Mazākā vērtība <span class="math inline">\(a_{13} = 10\)</span>, lielākā – <span class="math inline">\(a_{65} = 121\)</span>.</p></section>
+<section id="jpeg-6.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 6.solis</h1><ul>
+<li><p>Visu <span class="math inline">\(8 \times 8\)</span> matricu kreisos augšējos elementus saliek kopīgā virknē. Šādi tiks iegūtas trīs virknes – katrai no trim krāsu telpas YIQ komponentēm.</p></li>
+<li><p>Raksta starpības <span class="math inline">\(a_1, a_2-a_1, a_3 - a_2,\ldots\)</span>.</p></li>
+</ul></section>
+<section id="jpeg-7.solis" class="title-slide slide level1"><h1><lo-theory/> JPEG 7.solis</h1><p>Iegūtajai starpību virknei lieto Hofmana vai aritmētisko kodēšanu.</p></section>
+<section id="section-4" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 3</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kvantizācija</a></span><br />
+<span>(3) <a href="#/section-2">Kosinusu transformācija</a></span><br />
+<span>(4) <a href="#/section-3">JPEG apraksts</a></span><br />
+<span style="color:darkgreen">(5) <a href="#/section-4">Citas transformācijas</a></span><br />
+<span>(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+<section id="section-5" class="title-slide slide level1"><h1> </h1><hgroup>
+<h1 style="font-size:28pt">
+Lietišķie algoritmi
+</h1>
+<p><blue>Bezzudumu saspiešana - 3</blue></p>
+</hgroup>
+<hgroup>
+<p><span>(1) <a href="#/section">Ievads</a></span><br />
+<span>(2) <a href="#/section-1">Kvantizācija</a></span><br />
+<span>(3) <a href="#/section-2">Kosinusu transformācija</a></span><br />
+<span>(4) <a href="#/section-3">JPEG apraksts</a></span><br />
+<span>(5) <a href="#/section-4">Citas transformācijas</a></span><br />
+<span style="color:darkgreen">(6) <a href="#/section-5">Kopsavilkums</a></span></p>
+</hgroup></section>
+    </div>
+  </div>
+
+  <script src="../../reveal.js/lib/js/head.min.js"></script>
+  <script src="../../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../reveal.js/plugin/math/math.js', async: true },
+          { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

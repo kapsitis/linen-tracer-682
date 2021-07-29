@@ -1,0 +1,262 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,multicol,tikz,enumitem}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+%\usepackage{enumerate}
+\usepackage[margin=2cm]{geometry}
+\usetikzlibrary{calc,arrows.meta}
+
+\newcommand\N{\mathbf{N}}
+\newcommand\Q{\mathbf{Q}}
+\newcommand\R{\mathbf{R}}
+\newcommand\Z{\mathbf{Z}}
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+% Comment out one or the other
+
+\ifdefined\mysolution
+  \newcommand\answer[1]{\mbox{}\\[-15pt]{\color{blue}{#1}}\hfill{\color{blue}$\qed$}\mbox{}\\[-15pt]} 
+  \newcommand\ans[1]{{\color{blue}{#1}}}
+\else 
+  \newcommand\answer[1]{}
+  \newcommand\ans[1]{}
+\fi
+
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+
+\begin{center}
+{\bf\Huge 4.\ mājasdarbs} \\[5pt]
+Lietišķie algoritmi: Stringu meklēšana \\
+Termiņš: 2021-01-04\\[5pt]
+{\em Atrisinājumus lūdzam pārveidot par vienu PDF.}
+\end{center}
+
+\hrule
+\vspace{2pt}
+\hrule
+\vspace{12pt}
+
+
+
+
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-441-information-theory-spring-2016/assignments/
+%\begin{changemargin}{10pt}{10pt}
+%{\footnotesize
+%{\em Note.} This is a parody of CMU and MIT OCW content.\\
+%The original assignments and related materials can be retrieved from 
+%\url{https://bit.ly/3i1vnHB}, \url{https://bit.ly/31k7uVI},
+%\url{https://bit.ly/37Wgyl4}.
+%}
+%\end{changemargin}
+%%https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/assignments/MIT6_046JS15_pset2.pdf
+
+
+\vspace{10pt}
+{\bf 1.uzdevums (Bojera-Mūra algoritms).}
+
+{\bf (A)} Uzrakstīt Bojera-Mūra algoritmā lietotās ta\-bu\-las, ja meklējamā 
+apakšvirkne $P$ ir $\textcolor{blue}{\mathtt{abcbcab}}$.\\
+{\bf (B)} Nodemonstrēt Bojera-Mūra algoritma darbību šīs apakšvirknes 
+meklēšanai tekstā\\ $T = \textcolor{blue}{\mathtt{abcabbcabcbcababababcbcab}}$.
+
+
+
+%% KMP as automaton
+%% https://www-inst.eecs.berkeley.edu//~cs172/sp09/hw5.pdf
+\vspace{10pt}
+{\bf 2.uzdevums (Vispārināta prefiksu funkcija).}
+
+Knuta-Morisa-Prata algoritms izmanto Ga\-lī\-gu De\-ter\-mi\-nē\-tu Automātu ({\em Deterministic Finite Automaton}, DFA), 
+lai iegaumētu garāko iespējamo prefiksu meklējamam paraugam $S$ ievades tekstā $T$. 
+Pārejas šajā DFA automātā var attēlot ar {\em prefiksu funkciju} jeb tabulu {\tt memo[i]}, 
+kur $i \in \{ 0,\ldots,\ell{}-1 \}$. Šie jēdzieni definēti \url{https://bit.ly/3fXWnWT}, Section 1. 
+
+Aplūkosim šī klasiskā uzdevuma variantu: Joprojām ievadē saņemam tekstu $T$, kuru lasām no kreisās uz labo pusi.
+Bet šoreiz jāmeklē jebkurš no diviem stringiem \textendash{} vai nu 
+$S_1 = \textcolor{blue}{\mathtt{1110111101}}$, vai arī
+$S_2 = \textcolor{blue}{\mathtt{10101}}$. (Ja izdodas atrast pirmo atbilstību, kur 
+{\bf vai nu} $S_1$ {\bf vai arī} $S_2$ ietilpst tekstā $T$, tad automāts sasniedz savu beigu stāvokli 
+un apstājas.)
+
+Cik stāvokļi nepieciešami DFA automātā un kā pielāgot datu struktūru (līdzīgu tabulai {\tt memo[i]}), 
+lai iekodētu DFA stāvokļu pārejas?
+
+
+\vspace{20pt}
+{\bf 3.uzdevums (Teksts ar zvaigznītēm).}
+
+Dots ievades teksts $T[0..n-1]$ garumā $n$, kas sastāv no diviem simboliem
+$\textcolor{blue}{\mathtt{a}}$ un $\textcolor{blue}{\mathtt{b}}$.
+Pieņemsim arī, ka dots meklējamais paraugs $S[0..\ell-1]$ garumā $\ell$ (kur $\ell$ daudz mazāks par $n$), kas
+satur simbolus $\textcolor{blue}{\mathtt{a}}$, $\textcolor{blue}{\mathtt{b}}$, un arī $\textcolor{blue}{\mathtt{\ast}}$, 
+kuru vajadzēs meklēt tekstā $T$. Šeit simbols $\textcolor{blue}{\mathtt{\ast}}$ ir ``visēdājs'' ({\em wild card}), 
+kuram atbilst viens burts \textendash{} gan $\textcolor{blue}{\mathtt{a}}$, gan 
+$\textcolor{blue}{\mathtt{b}}$. (Parauga $S$ simboliem, kuri nav zvaigznītes, jāsakrīt ar tiem, kas ir tekstā.)
+
+Uzdevums: Izvadīt sakārtotu sarakstu $M$, kurā ir sarakstītas visas derīgās nobīdes, kā paraugu $S$ var ievietot 
+tekstā $T$ tā, lai tas sakristu. Pie\-mē\-ram, ja $T =\textcolor{blue}{\mathtt{ababbab}}$ un 
+$S=\textcolor{blue}{\mathtt{ab\ast}}$, tad izvade ir $[0,2]$.
+Aplūkojam Knuta-Morisa-Prata algoritma variantu, kas lasa meklējamo tekstu $T$ no kreisās uz labo pusi un 
+(katrā reizē, kur teksts $T$ neatbilst paraugam $S$) nobīda paraugu $S$ uz priekšu par mazāko iespējamo burtu skaitu 
+(tā, lai jau saņemtie teksta $T$ simboli nebūtu pretrunā ar jauno parauga stāvokli). 
+Mēs vēlamies meklēt paraugu $S = \textcolor{blue}{\mathtt{11\ast0111\ast01}}$ jebkurā tekstā.
+
+{\bf (A)} Uzrakstiet šādi modificēta KMP algoritma pseidokodu, ja tas atšķiras no lekcijā dotā (sk. \url{https://bit.ly/3oQGt58}).\\
+{\bf (B)} Aizpildiet tabulu ar nobīdēm (ko varētu saukt arī par {\em prefiksu funkciju} jeb tabulu {\tt memo[i]}), kas parāda, 
+par cik jālec uz priekšu, ja $T$ neatbilst paraugam $S = \textcolor{blue}{\mathtt{11\ast0111\ast01}}$ meklēšanas pozīcijā $i$.
+
+Šī ir parodija par Uzdevumu 2.1, sk. \url{https://bit.ly/2XKX5AB}, 1.lappusi.
+
+
+
+
+
+
+\vspace{10pt}
+{\bf 4.uzdevums (Ripojošais hešings).}
+
+Aplūkojam sekojošu funkciju, kas no stringiem $S$ (garumā $\ell$) iegūst
+veselus skaitļus.
+
+{\small
+\begin{align}
+k(S) & = \left(S[0]\cdot{}b^{\ell-1} + S[1] \cdot b^{\ell-2} + \ldots  \right. \nonumber \\
+     & \left. \ldots + S[\ell - 1] \cdot b^1 + S[\ell - 1]\right)\;\text{mod}\;q.  \label{eq:prehashing}
+\end{align}
+} 
+
+Šeit $b$ (ko sauc par ``skaitīšanas sistēmas bāzi'') ir skaitlis, kas lielāks par alfabēta izmēru (simbolu skaitu, 
+ar kuru uzrakstīts strings $S$).\\
+To pašu funkciju var lietot arī garāka teksta $T$ apakšstringiem (apstrādājot tieši $\ell$ simbolus): 
+{\small
+\begin{align}
+  & k(T[i..i+\ell-1]) = \nonumber \\
+= & \left(T[i]\cdot{}b^{\ell-1} + T[i+1] \cdot b^{\ell-2} + \right. \ldots  \nonumber \\
+  & \left. \ldots + T[i + \ell{} - 2] \cdot b^{1} + T[i + \ell{} - 1]\right) \text{mod}\;q. \label{eq:prehashing2} 
+\end{align}
+}
+
+Aplūkojam arī šādu funkciju (sk. {\em reizināšanas metodi} no \url{https://bit.ly/2V8UfDF})
+\begin{equation}
+\label{eq:hashing}
+h(k) = \left[ (a \cdot k)\;\text{mod}\;2^w \right]\;\gg\;(w - r),
+\end{equation}
+Šajā izteiksmē
+\begin{itemize}
+\item $\gg$ apzīmē operatoru bitu nobīdei pa labi,
+\item $2^r = m$ ir heštabulas izmērs,
+\item $w$ ir fiksēts ``mašīnvārda garums'' ($4$ baiti, $8$ baiti vai jebkas cits, ko ērti glabāt masīvā Jūsu arhitektūras datoram).
+\item $a$ ir nepāra skaitlis starp $2^{w-1}$ un $2^w$.
+\end{itemize}
+
+Aplūkosim ``ripojošo hešfunkciju'' ({\em rolling hash}) 
+$$h(k(T[i..i+\ell-1]))$$
+Rabina-Karpa stringu meklēšanas algoritmā.
+Vē\-la\-mies atrast paraugus $S$ (garumā $\ell \leq 100$) garā tekstā $T$.
+Gan $S$, gam $T$ pierakstīti ASCII alfabētā, izmantojot visus $128$ simbolus.
+
+{\bf (A)} Kā aprēķināt {\tt r.append(c)} un {\tt r.skip(c)}
+operācijas ripojošā hešinga ADT, ja hešingu definē izteiksmes (\ref{eq:prehashing}), (\ref{eq:prehashing2}) un (\ref{eq:hashing}).\\
+Ripojošā hešinga abstraktais datutips (ADT) un Rabina-Karpa algoritms ir izskaidroti 
+video\\ \url{https://bit.ly/2BxpNMu} (no 38:00).
+
+{\bf (B)} Uzrakstīt laika sarežģītību Rabina-Karpa algoritmam, izmantojot $O(\ldots)$ asimptotiku (``lielā $O$ apzīmējumu'')
+šai konkrētajai hešinga metodei. Apzīmējiet teksta $T$ garumu ar $n = |T|$, un meklējamā parauga $|S|$ garumu ar 
+$\ell = |S|$. 
+
+\vspace{5pt}
+{\small {\em Piezīme.} Sk. 4-1 no \url{https://bit.ly/3dyNtgK}.}
+
+\vspace{5pt}
+{\small {\em Piezīme.} 
+Pilna hešfunkcija ir šajā uzdevumā ir $h(k(S))$. Mainīgais $a$ ir fiksēts. 
+Tas ir arī iebūvētajās hešfunkcijās (valodās Java vai Python) lietots algoritms: 
+Hešings nozīmē argumenta rei\-zi\-nā\-ša\-nu ar konstanti, pēc tam nosakot atlikumu pēc liela moduļa.
+
+\vspace{5pt}
+{\small {\em Piezīme.} 
+Mainīgais $\mathtt{r}$ ir objekts, kurā uzkrāta "tekošā" hešfunkcijas vērtība 
+(un pēc Jūsu izvēles arī cita informācija, kas vajadzīga hešfunkcijas rēķināšanai).
+Objektam izsauc $\mathtt{r.append(c)}$, tad hešfunkciju aprēķina no eksistējošā $\mathtt{r}$ stāvokļa, 
+bet pievieno tam labajā pusē simbolu, kas atrodas mainīgajā "c" (tas ir viens ASCII simbols - no 0 līdz 127). 
+Ja šim objektam izsauc $\mathtt{r.skip(c)}$, tad hešfunkcijas objekts "r" atmet 
+kreisajā pusē simbolu, kas atrodas mainīgajā "c".
+
+Piemēram, ja objekts $\mathtt{r}$ inicializēts uz hešfunkcijas vērtību 
+$h(k(\mathtt{"ABCD"}))$, tad $\mathtt{r.append("E")}$ atradīs jau hešfunkcijas vērtību
+$h(k(\mathtt{"ABCDE"}))$. Bet, pēc tam izsaucot $\mathtt{r.skip("A")}$, objekts
+$\mathtt{r}$ ir jau uzstādīts uz hešfunkcijas vērtību $h(k(\mathtt{"BCDE"}))$. 
+Šo darbību rezultātā sākotnējais ``teksta logs''  $\mathtt{"ABCD"}$ pabīdījies uz
+$\mathtt{"BCDE"}$.
+
+Rabina-Karpa algoritma būtība ir \textendash{} atrast šos 
+$\mathtt{r.skip(...)}$ $\mathtt{r.append(...)}$ ātri, konstantā laikā, lai hešvērtības nav jārēķina
+neatkarīgi viena no otras.
+}
+
+\vspace{10pt}
+{\bf 5.uzdevums (I-iespēja).}
+ 
+Dota $n \times m$ tabula, katrā rūtiņā ir ierakstīts
+tieši viens simbols. Teiksim, ka vārds ir paslēpts tabulā, ja to var nolasīt,
+sākot kādā rūtiņā un katru nākamo simbolu nolasot no rūtiņas, kurai ar
+iepriekšējo ir kopīga mala. Vārds, paslēpts tabulā, drīkst arī pārklāties
+pats ar sevi.
+
+Piemēram, šajā tabulā ir paslēpti vārdi $\mathtt{SAULE}$ un $\mathtt{SOS}$:
+
+\begin{tabular}{|c|c|c|} \hline
+S & A & E\\ \hline
+O & U & L\\ \hline
+\end{tabular}
+
+Aprakstīt algoritmu, kas noskaidro, vai dotais vārds garumā $w$ paslēpts
+tabulā un pamatot, ka tas strādā laikā $O(wnm)$.
+
+
+
+%% Suffix trees in P1?
+%%https://dspace.mit.edu/bitstream/handle/1721.1/36897/6-854JFall-1999/NR/rdonlyres/Electrical-Engineering-and-Computer-Science/6-854JAdvanced-AlgorithmsFall1999/909B7558-FE71-489F-AF3D-16C4A947D424/0/pss3.pdf
+
+
+
+%% String encoding
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/index.htm
+%% Problemset 9 - a nice, but complicated exercise on suffix tries.
+
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/session-16-strings/
+%% Document retrieval. 
+
+
+
+
+
+
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-9-table-doubling-karp-rabin/
+%% Karp-Rabin string search and rolling hash.
+
+%% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/session-16-strings/
+%% Document retrieval. 
+
+
+
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/index.htm
+% MIT Mathematics for Computer Science course
+
+% https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/index.htm
+% MIT 6.006: Introduction to Algorithms course
+
+
+
+\end{document}
+

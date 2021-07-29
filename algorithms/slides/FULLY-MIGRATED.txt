@@ -1,0 +1,1 @@
+Pilnībā migrēts uz linen-tracer/static/algorithms-slides

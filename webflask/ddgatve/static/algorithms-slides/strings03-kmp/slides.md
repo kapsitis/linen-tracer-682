@@ -141,7 +141,7 @@ Automāta stāvokļi `$q_0, q_1, \ldots, q_{m-1}$`.
 
 **Piemērs:** Parauga `$P = \mathtt{abab}$` meklēšanas automāts:
 
-![abab Automaton](abab-automaton.png)
+![abab Automaton](abab-automaton.png)<!-- .element: width="440px" -->
 
 *Piezīme.* Pēc `$P = \mathtt{abab}$` atrašanas pārejam 
 uz `$q_2$` (nevis `$q_0$`), jo paraugi var pārklāties.
@@ -160,7 +160,7 @@ ievadāmajā tekstā.
 
 **Atrisinājums:**
 
-![aabab Automaton](aabab-automaton.png)
+![aabab Automaton](aabab-automaton.png)<!-- .element: width="500px" -->
 
 
 
@@ -258,7 +258,7 @@ meklējamajam paraugam `$P = \mathtt{abab}$`.
 
 **Maksimālā teleskopiskā sabīdīšana:**
 
-![Prefix functions1](prefix-functions1.png)
+![Prefix functions1](prefix-functions1.png)<!-- .element: width="500px" -->
 
 
 <table style="margin-right:auto;margin-left:0px;">
@@ -281,7 +281,7 @@ meklējamajam paraugam `$P = \mathtt{aabaab}$`.
 
 **Maksimālā teleskopiskā sabīdīšana:**
 
-![Prefix functions2](prefix-functions2.png)
+![Prefix functions2](prefix-functions2.png)<!-- .element: width="700px" -->
 
 
 <table style="margin-right:auto;margin-left:0px;">
@@ -588,7 +588,7 @@ Tātad KMP ātrdarbība ir `$O(n)$`.
 **Uzdevums:** Atrast prefiksu funkciju, kas atbilst
 meklējamajam paraugam `$P = \mathtt{ababaca}$`.
 
-![Prefix functions 3](prefix-functions3.png)
+![Prefix functions 3](prefix-functions3.png)<!-- .element: width="700px" -->
 
 <table style="margin-right:auto;margin-left:0px;">
 <tr><th>$j$</th>

@@ -322,6 +322,13 @@ Piemēram, cik mutāciju vajag, lai viena DNS virkne pārvērstos par otru virkn
 
 --
 
+## <lo-theory/> Līdzība ar īsāko ceļu grafā
+
+![Shortest Paths](graph-distances.png)<!-- .element: style="width:500px" --> 
+
+
+--
+
 ## <lo-theory/> Levenšteina attālums ar matricu rekurencēm
 
 <div style="font-size:70%">

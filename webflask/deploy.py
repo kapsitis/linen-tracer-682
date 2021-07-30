@@ -4,14 +4,15 @@ import shutil
 
 def main():
     rootDir = os.path.abspath(".")
+    rootDirLen = len(rootDir.split(os.sep))
     destRootDir = '/usr/local/webflask'
     for root, dirs, files in os.walk(rootDir):
         path = root.split(os.sep)
-        if len(path) < 6:
+        if len(path) < rootDirLen:
             continue
-        if len(path) > 6 and path[6] in ['tests', 'venv', 'instance']:
+        if len(path) > rootDirLen and path[rootDirLen] in ['tests', 'venv', 'instance']:
             continue
-        if len(path) > 7 and path[7] == '__pycache__':
+        if len(path) > rootDirLen+1 and path[rootDirLen+1] == '__pycache__':
             continue
         for file in files:
             extension = os.path.splitext(file)[1].lower()
@@ -20,7 +21,7 @@ def main():
                 srcpath.append(file)
                 #destpath = ['c:', 'Users', 'kapsitis', 'tmp']
                 destpath = destRootDir.split(os.sep)
-                destpath = destpath + srcpath[6:]
+                destpath = destpath + srcpath[rootDirLen:]
 
                 print('Copying ' + '/'.join(srcpath))
                 print('  to file ' + '/'.join(destpath))

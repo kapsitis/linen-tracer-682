@@ -10,7 +10,7 @@ def copytree(src, dst, symlinks=False, ignore=None):
             shutil.copy2(s, d)
 
 def main():
-    copy_tree('.', 'c:/Users/kapsitis/tmp')
+    copy_tree('.', '/tmp/temp')
 
 if __name__ == '__main__':
     main()

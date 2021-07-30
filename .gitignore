@@ -17,7 +17,7 @@ problems-bak/*
 # Distribution / packaging
 .Python
 build/
-dist/
+#dist/
 downloads/
 # lib/
 lib64/

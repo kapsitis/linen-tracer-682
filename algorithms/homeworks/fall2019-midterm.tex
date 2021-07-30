@@ -58,7 +58,7 @@ izķeksēt jebkuru no burtiem {\tt A}, {\tt B} vai {\tt C}; citu burtu urnā nav
 Pēc tam $X$ sakārto trīs kartiņas alfabētiskā secībā un nosūta spēlētājam $Y$ ziņojumu \textendash{} to burtu, kurš 
 pēc sakārtošanas bija pirmais. (Piemēram, ja izķeksētie burti ir {\tt "CBC"}, tad pēc sakārtošanas tie būs {\tt "BCC"} un 
 $X$ nosūta ziņojumu {\tt "B"}.) 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
 \item Kāds ir informācijas saturs ziņojumam {\tt A}?
 \item Kāds ir informācijas saturs ziņojumam {\tt B}? 
 \item Kāds ir informācijas saturs ziņojumam {\tt C}? 
@@ -645,7 +645,7 @@ virknēm.
 Kvantizācijas algoritms saņem ieejā attēla krāsu intensitātes, kuras ir veseli skaitļi 
 $x \in \{ 0, 1,2,\ldots,255 \}$ un atgriež apakšējo veselo daļu: ${\displaystyle \left\lfloor \frac{x}{10} \right\rfloor}$
 jeb nomet tā decimālpieraksta pēdējo ciparu. 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
 \item 
 Ja visas šīs kvantizētās vērtības būtu jāsūta, izmantojot vienādu, fiksētu bitu skaitu \textendash{} cik lielu saspiešanas 
 attiecību ({\em compression ratio} \textendash{} sākotnējā faila izmēra attiecību pret saspiestā faila izmēru) varētu sasniegt?
@@ -658,7 +658,7 @@ aritmētisko kodējumu vai citu optimālu metodi, kas tuvojas entropijas noteikt
 
 \answer{
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
 \item Pēc kvantizēšanas var rasties jebkurš no skaitļiem $0,1,2,\ldots,25$ \textendash{} pavisam $26$ vērtības.
 Katras vērtības nokodēšanai pietiek ar $5$ bitiem, jo var izveidot $2^{5} = 32$ dažādus $5$-bitu kodus.
 Katrai no $26$ vērtībām būs savs piecbitu kods (un vēl $6$ piecbitu kodi paliks neizmantoti).
@@ -752,7 +752,7 @@ kur atļautas piecas kļūdas, jānosūta vismaz $s = 15$ vērtības.
 \vspace{6pt}
 {\bf 7.uzdevums (2+2+2 punkti):} 
 (Ieteikums: Šajā uzdevumā var izmantot algebriskas identitātes par skaitļu kāpināšanu, Eilera teorēmu u.c. skaitļu teorijas rezultātus.)
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
 \item Kriptogrāfijas algoritmam ir jāaprēķina $4^{143}\;(\text{mod}\,199)$ (atlikums, kas rodas dalot $4^{139}$ ar $199$). 
 Algoritms var ielūkoties reizināšanas tabulā pēc moduļa $199$: ievadīt divus skaitļus $a,b$ un saņemt to reizinājumu 
 $a\cdot{}b\;(\text{mod}\,199)$ ($ab$ atlikumu, dalot ar $199$).
@@ -766,7 +766,7 @@ pēc moduļa $7$. Kādu mazāko reizināšanu skaitu vajag, lai atrastu rezultā
 
 \answer{
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
 \item Izsakām $143$ binārajā pierakstā: $143_{10} = 128 + 8 + 4 + 2 + 1 = 10001111_2$.
 Lai uzzinātu, cik ir $4^{143}$, sareizināsim $4^{128}4^{8}4^{4}4^{2}4^1$ (tās ir $4$ reizināšanas). \\
 Lai noskaidrotu skaitļus $4^2, 4^4, 4^8, 4^{16}, 4^{32}, 4^{64}, 4^{128}$, nepieciešamas vēl $7$ reizināšanas

@@ -64,7 +64,7 @@ def main():
             time.sleep(2)
             subprocess.call(['xelatex', '\\def\\nosolution{}\\input{%s}' % ff], cwd=src_dir)
             time.sleep(2)
-            if filecmp.cmp(ff.replace('.tex', '.pdf'), ff.replace('.tex', '-solution.pdf')):
+            if abs(os.path.getsize(ff.replace('.tex', '.pdf')) - os.path.getsize(ff.replace('.tex', '-solution.pdf'))) < 50:
                 os.remove("{}/{}".format(src_dir, ff.replace('.tex', '-solution.pdf')))
         else:
             print('Skipping TEX {%s}' % ff)

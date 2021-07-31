@@ -300,7 +300,7 @@ x_2 \leq 10,\\
 x_1,x_2 \geq 0.
 \end{array} \right.$$`
 
-![Grafiska interpretācija](graphical-interpretation.png)
+![Grafiska interpretācija](graphical-interpretation.png)<!-- .element: style="width:500px" -->
 
 </hgroup>
 <hgroup style="font-size:70%">
@@ -321,7 +321,7 @@ lielas vērtības. Pirms LP risināšanas jāpārbauda, ka apgabals ir galīgs.
 
 <hgroup>
 
-![Grafiska interpretācija](graphical-interpretation.png)
+![Grafiska interpretācija](graphical-interpretation.png)<!-- .element: style="width:500px" -->
 
 </hgroup>
 <hgroup style="font-size:80%">
@@ -346,7 +346,7 @@ lietojot ģeometrisko interpretāciju.
 
 <hgroup>
 
-![Locate maximum](locate-maximum.png)
+![Locate maximum](locate-maximum.png)<!-- .element: style="width:500px" -->
 
 </hgroup>
 <hgroup style="font-size:80%">

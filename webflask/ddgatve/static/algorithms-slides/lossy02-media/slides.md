@@ -220,7 +220,7 @@ gan nākamo freimu, kas var būt gan I-, gan P-freims.
 
 ## <lo-theory/> B-freimus atliek nosūtītajos datos
 
-![B frames postponed](b-frames-postponed.png)
+![B frames postponed](b-frames-postponed.png)<!-- .element: width="600px" -->
 
 Ja filmas scēna strauji mainās, ir izdevīgi biežāk lietot I-freimus, ja tā ir relatīvi
 statiska, tad - sajauktus P-freimus un B-freimus. Kodeki parasti 
@@ -245,7 +245,7 @@ kameras iefokusēšanās - *panning*).
 
 [YCbCr krāsu plakne](https://en.wikipedia.org/wiki/YCbCr) - nav tas pats kas YIQ.
 
-![P-freimu kodēšana](p-frame-encoding.png)
+![P-freimu kodēšana](p-frame-encoding.png)<!-- .element: width="600px" -->
 
 
 --
@@ -375,7 +375,7 @@ ko apmierina dotās vērtības `$\{ f_n \}$`.
 ## <lo-theory/> Kas notiek, ja neievēro teorēmu
 
 
-![Sinusu starpība](sinus-functions.png)
+![Sinusu starpība](sinus-functions.png)<!-- .element: width="600px" -->
 
 
 
@@ -439,7 +439,7 @@ Atdarina cilvēka ausī esošās struktūras, no kurām katra uztver
 skaņas kaut kādā šaurā frekvenču diapazonā. 
 Šo diapazonu ir ap $24$. 
 
-![Critical bands](critical-bands.png)
+![Critical bands](critical-bands.png)<!-- .element: width="400px" -->
 
 Skaņu plūsmā ir dažas situācijas, kad viens tonis
 nomaskē otru (MP3 paredz, ka otru toni nevarēs dzirdēt; 
@@ -453,12 +453,12 @@ tuva frekvence, laika sakritība.
 
 <hgroup>
 
-![Simultaneous Masking](masking-by-freq.png)
+![Simultaneous Masking](masking-by-freq.png)<!-- .element: width="400px" -->
 
 </hgroup>
 <hgroup>
 
-![Temporal Masking](temporal-masking.png)
+![Temporal Masking](temporal-masking.png)<!-- .element: width="400px" -->
 
 </hgroup>
 
@@ -469,7 +469,7 @@ tuva frekvence, laika sakritība.
 
 <hgroup style="width:55%">
 
-![Full MP3 model](full-mp3-model.png)
+![Full MP3 model](full-mp3-model.png)<!-- .element: width="500px" -->
 
 </hgroup>
 
@@ -572,7 +572,7 @@ saturs ir par kaut ko citu).
 
 ## <lo-summary/> Ūdenszīmju/Steganogrāfijas ievietošana
 
-![Embedding watermark](embedding-watermark.png)
+![Embedding watermark](embedding-watermark.png)<!-- .element: width="500px" -->
 
 * Gan ūdenszīmes, gan stenogrāfiju (gan digitālos parakstus, piemēram 
 DKIM) ievieto jau gatavā mediju failā. 

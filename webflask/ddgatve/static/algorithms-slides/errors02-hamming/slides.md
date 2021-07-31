@@ -66,20 +66,9 @@
 
 -----
 
-# <lo-theory/> Kļūdu korekcija
-
-![Error correction](error-correction.png)
-
-Ideja visās metodēs - papildināt pārraidāmos datus ar 
-papildinformāciju, cerot, ka papildinformācija ļaus pamanīt 
-kļūdas. 
-
-
---
-
 ## <lo-summary/> Triviāls kods: 3x atkārtošana
 
-![Repetition code](repetition-code.png)
+![Repetition code](repetition-code.png)<!-- .element: style="width:400px" -->
 
 Katru pārraidāmo bitu atkārto trīs reizes. Saņēmējs 
 atrod, kādu

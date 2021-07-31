@@ -529,7 +529,7 @@ $$E_i \cap R_2 \subseteq E_{i+1}.$$
 
 <hgroup>
 
-![Elipsoid Algorithm](elipsoid-algorithm.png)
+![Elipsoid Algorithm](elipsoid-algorithm.png)<!-- .element: width="400px" -->
 
 </hgroup>
 <hgroup style="font-size:80%">

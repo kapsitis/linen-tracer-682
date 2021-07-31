@@ -117,9 +117,17 @@ vai vispār nebūt nosacījuma attiecībā uz $x_i$.
 
 -----
 
-# <lo-theory/>Manipulācijas
+# <lo-theory/>LP Pārveidojumi
 
-![Transforms](transforms.png)<!-- .element: width="700px" --> 
+LP pārveidojumi ar <emblue>nokares mainīgajiem</emblue> (*slack variables*): 
+
+`$$\begin{array}{ccc}
+\max\{ \mathbf{c}^T \mathbf{x}\} & \rightarrow  & \min\{ -\mathbf{c}^T \mathbf{x}\}\\
+\mathbf{a}_i^T \mathbf{x} = b_i & \rightarrow  &  (\mathbf{a}_i^T \mathbf{x} \leq b_i) 
+\wedge (\mathbf{a}_i^T \mathbf{x} \geq b_i)  \\
+\mathbf{a}_i^T \mathbf{x} \leq b_i & \rightarrow  &  (\mathbf{a}_i^T \mathbf{x} + s_i = b_i) 
+\wedge (s_i \geq 0)  \\
+\end{array} $$`
 
 
 
@@ -726,7 +734,7 @@ tad pirmo tuvinājumu vispirms ir jāatrod.
 
 Viens no veidiem - sākt risināt nedaudz izmainītu uzdevumu. 
 
-![Adding Artificial Variables](adding-artificial-variables.png)
+![Adding Artificial Variables](adding-artificial-variables.png)<!-- .element: style="width:500px" -->
 
 Katram mākslīgajam mainīgajam piekārtojam ļoti negatīvu $c_i$, 
 lai noteikti nebūtu izdevīgi tam piešķirt nekādu pozitīvu vērtību.
@@ -788,7 +796,7 @@ pretrunīgi.
 
 <div style="font-size:90%">
 
-![Max Flow Graph](max-flow-graph.png)
+![Max Flow Graph](max-flow-graph.png)<!-- .element: style="width:450px" -->
 
 Aplūkotajā grafā katrai šķautnei ir pierakstīta skaitliska vērtība - maksimālā 
 atļautā plūsma, kuru pa šo šķautni var sūtīt (vai nu vienā, vai otrā virzienā). 
@@ -807,7 +815,7 @@ Uzdevumu var arī reducēt uz Lineāro programmēšanu.
 
 <hgroup style="font-size:70%">
 
-![Flow Preservation](flow-preservation.png)
+![Flow Preservation](flow-preservation.png)<!-- .element: style="width:300px" -->
 
 Katrai (neorientētai) šķautnei ieviešam divus mainīgos, piemēram, $x_1$ un 
 $x'_1$ (nenegatīvas plūsmas katrā no iespējamajiem virzieniem). 
@@ -833,7 +841,7 @@ Piemēram,
 
 <hgroup>
 
-![Max Flow Graph](max-flow-graph.png)
+![Max Flow Graph](max-flow-graph.png)<!-- .element: style="width:400px" -->
 
 </hgroup><hgroup>
 

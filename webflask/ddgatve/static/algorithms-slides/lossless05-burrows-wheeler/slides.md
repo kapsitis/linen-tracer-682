@@ -53,7 +53,7 @@
 
 <hgroup>
 
-![Cyclic permutations](cyclic-permuations.png)
+![Cyclic permutations](cyclic-permuations.png)<!-- .element: width="300px" -->
 
 </hgroup>
 <hgroup>
@@ -64,13 +64,13 @@ Tās pēc tam sakārtojam inversi-leksikogrāfiski.
 </hgroup>
 
 
-::: notes
+Note:
 
 https://www.cs.helsinki.fi/u/tpkarkka/opetus/12s/spa/lecture11.pdf
 https://docs.python.org/3/library/bz2.html
 https://serverfault.com/questions/2600/how-do-you-set-bzip2-block-size-when-using-tar
 
-:::
+
 
 
 
@@ -80,10 +80,10 @@ https://serverfault.com/questions/2600/how-do-you-set-bzip2-block-size-when-usin
 
 <hgroup>
 
-![Inverse lexicographic order](inverse-lexicographic-sort.png)
+![Inverse lexicographic order](inverse-lexicographic-sort.png)<!-- .element: width="300px" -->
 
 </hgroup>
-<hgroup>
+<hgroup style="font-size:80%">
 
 Pēc sakārtošanas (sākot ar priekšpēdējo burtu, tad priekšpriekšpēdējo, utt.)
 iegūstam matricu, no kuras mums vajag tikai pēdējo kolonnu.
@@ -101,7 +101,7 @@ inversi sakārtotās tabulas rindiņā.
 
 <hgroup>
 
-![Parasta kārtošana](alpha-sort.png)
+![Parasta kārtošana](alpha-sort.png)<!-- .element: width="400px" -->
 
 
 </hgroup>
@@ -120,9 +120,25 @@ var uzrakstīt no otra gala).
 
 ## <lo-theory/> Kāpēc var atjaunot sākotnējo?
 
+![Decode](burrows-decode.png)<!-- .element: width="800px" -->
+
+
+
+--
+
+## <lo-theory/> Algoritma apraksts
+
+1. Ciklā katru kolonnu pabīda vienu soli pa labi un 
+   tad pārkārto. Permutāciju nosaka pēdējā kolonna matricā. 
+2. Šādi, ja mēs varam atrast kolonnu $j$`, varam iegūt
+   kolonnu `$j+1$` no kolonnas `$j$`. Šo atkārtojot, varam 
+   atjaunot visu matricu `$M$`.
+3. Lai rekonstruētu sākotnējo tekstu `$T$`, mums pietiek atrast tikai vienu 
+   rindiņu matricā.
+
+Note: 
 
 [Sk. 177 lapu](https://www.cs.helsinki.fi/u/tpkarkka/opetus/12s/spa/lecture11.pdf)
-
 
 --
 
@@ -130,7 +146,7 @@ var uzrakstīt no otra gala).
 
 Gari bloki - līdz pat 900K. 
 
-![Izejas teksts](text-after-th.png)
+![Izejas teksts](text-after-th.png)<!-- .element: width="800px" -->
 
 
 --
@@ -138,7 +154,7 @@ Gari bloki - līdz pat 900K.
 ## <lo-theory/> Sašķiroti burti pēc TH
 
 
-![Izejas teksts](sorted-contexts.png)
+![Izejas teksts](sorted-contexts.png)<!-- .element: width="800px" -->
 
 
 
@@ -175,7 +191,7 @@ Gari bloki - līdz pat 900K.
 
 <hgroup>
 
-![Markova ķēde](markov-chain.png)
+![Markova ķēde](markov-chain.png)<!-- .element: width="300px" -->
 
 </hgroup>
 <hgroup>
@@ -207,7 +223,7 @@ Aiz tās norādīt, kurā vietā šajā transformācijā ir strings `ABBA$`.
 
 Iegūst cikliskas `ABBA$` permutācijas, sakārto leksikogrāfiski:
 
-$$\left( \begin{array}
+`$$\left( \begin{array}
 \text{A} & B & B & A & \$ \\
 \$ & A & B & B & A \\
 A & \$ & A & B & B \\
@@ -220,7 +236,7 @@ A & \$ & A & B & \color{#F00}{B} \\
 A & B & B & A & \color{#F00}{\$} \\
 B & A & \$ & A & \color{#F00}{B} \\
 B & B & A & \$ & \color{#F00}{A}
-\end{array} \right).$$
+\end{array} \right).$$`
 
 Transformācijas rezultāts ir labējā kolonna: <red>`AB$BA`</red>.   
 Sākotnējā virkne ir 3.rindiņa.
@@ -232,12 +248,16 @@ Sākotnējā virkne ir 3.rindiņa.
 
 Iepriekšējā jautājumā iegūtajai `ABBA$` Berouza-Vīlera transformācijas 
 virknei uzrakstīt **Move-to-Front** kodu, ja
-sākotnējā burtu secība alfabētā ir $\text{'\$'} < \text{'A'} < \text{'B'}$.  
+sākotnējā burtu secība alfabētā ir `$\mathtt{\$} < \mathtt{A} < \mathtt{B}$`.
+
 *Piezīme.* **Move-to-Front** algoritmos alfabēta numerācija sākas no $0$.
 
-Ar BV transformētā virkne: _____  
-Tās **Move-to-Front** kods: _____
+Ar BV transformētā virkne: _____   
 
+Virknes **Move-to-Front** kods: _____
+
+
+--
 
 ## <lo-quiz/> Jautājums Nr.4: Atrisinājums
 
@@ -246,14 +266,14 @@ tekošo simbolu uz alfabēta sākumu.
 
 <table>
 <tr><th>Virkne</th><th>Kods</th><th>Alfabēts</th></tr>
-<tr><td><red>`A`</red>`B$BA`</td><td>`1`</td><td>`($,A,B)`</td></tr>
-<tr><td>`A`<red>`B`</red>`$BA`</td><td>`2`</td><td>`(A,$,B)`</td></tr>
-<tr><td>`AB`<red>`$`</red>`BA`</td><td>`2`</td><td>`(B,A,$)`</td></tr>
-<tr><td>`AB$`<red>`B`</red>`A`</td><td>`2`</td><td>`($,B,A)`</td></tr>
-<tr><td>`AB$B`<red>`A`</red></td><td>`2`</td><td>`(B,$,A)`</td></tr>
+<tr><td><red>A</red>B$BA</td><td>1</td><td>($,A,B)</td></tr>
+<tr><td>A<red>B</red>$BA</td><td>2</td><td>(A,$,B)</td></tr>
+<tr><td>AB<red>$</red>BA</td><td>2</td><td>(B,A,$)</td></tr>
+<tr><td>AB$<red>B</red>A</td><td>1</td><td>($,B,A)</td></tr>
+<tr><td>AB$B<red>A</red></td><td>2</td><td>(B,$,A)</td></tr>
 </table>
 
-Iegūtais kods ir `12222`.
+Iegūtais kods ir `12212`.
 
 
 

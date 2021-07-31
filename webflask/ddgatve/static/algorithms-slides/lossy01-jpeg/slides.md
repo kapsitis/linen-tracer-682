@@ -75,7 +75,7 @@ vērtībām.
 
 # <lo-summary/> Citi krāsu kvantizācijas veidi
 
-![Quantization illustration](quantization-illustration.png)
+![Quantization illustration](quantization-illustration.png)<!-- .element: width="800px" -->
 
 Voronoja diagrammas - ap dotajiem punktiem izveidojas (bieži vien sešstūra formas)
 šūnas ar koda punktu centrā.
@@ -85,19 +85,31 @@ Voronoja diagrammas - ap dotajiem punktiem izveidojas (bieži vien sešstūra fo
 
 ## <lo-yellow/> Proporcionālās vēlēšanu sistēmas
 
-Donta (D'Hondt) sistēmas piemērs $5$ krēsliem.
+<hgroup style="width:60%">
 
-![Hondt method](hondt-allocation.png)
+![Hondt method](hondt-allocation.png)<!-- .element: width="500px" -->
 
-Sk. [Ungārijas 2018.g. vēlēšanas](https://en.wikipedia.org/wiki/2018_Hungarian_parliamentary_election)
+</hgroup><hgroup style="width: 35%">
 
+Donta (D'Hondt) sistēma $5$ deputātu krēsliem.
+
+Sk. arī [Ungārijas 2018.g. vēlēšanas](https://en.wikipedia.org/wiki/2018_Hungarian_parliamentary_election)
+
+</hgroup>
 
 --
 
 ## <lo-yellow/> Senlaga sistēma
 
-![Sainte Lague method](sainte-lague.png)
+<hgroup style="width:60%">
 
+![Sainte Lague method](sainte-lague.png)<!-- .element: width="600px" -->
+
+</hgroup><hgroup style="width: 35%">
+
+Senlaga (Sainte-Laguë) sistēma $5$ deputātu krēsliem
+
+</hgroup>
 
 
 -----
@@ -206,7 +218,7 @@ vērtības, var atjaunot RGB vērtības.
 
 <hgroup width="60%">
 
-![YIQ - IQ plakne](YIQ_IQ_plane.svg.png)
+![YIQ - IQ plakne](YIQ_IQ_plane.svg.png)<!-- .element: width="400px" -->
 
 </hgroup>
 <hgroup width="40%">
@@ -253,7 +265,7 @@ Redze precīzāk uztver "I" (pāreju no oranžā uz zilo) nevis
 
 <hgroup>
 
-![Skipping grid](sparser-grid.png)
+![Skipping grid](sparser-grid.png)<!-- .element: width="600px" -->
 
 </hgroup>
 <hgroup>
@@ -281,16 +293,17 @@ $16 \times 16$. Katrs bloks tiek apstrādāts atsevišķi.
 
 # <lo-theory/> JPEG 4.solis
 
+<div style="width:80%">
 
-Katram  blokam pielieto diskrēto kosinusu transformāciju - turklāt divas reizes.
+Katram $8 \times 8$ blokam DCT lieto abos virzienos:
 
-![DCT](dct-formulae.png)
+`$$\begin{array}{ll}
+x'_0 = \frac{1}{\sqrt{8}} \sum\limits_{k=0}^7 x_k \\
+x'_j = \frac{2}{\sqrt{8}} \sum\limits_{k=0}^7 \cos \frac{j(2k+1)\pi}{8}x_k,\;\;\mbox{ja $1 \leq j \leq 7$}\\
+\end{array}$$`
 
-Vispirms diskrēto kosinusu transformāciju pielieto katrai matricas  kolonnai, 
-domās sadalot matricu astoņās mazākās matricās (pa vienai kolonnai katrā).
-
-Pēc tam to pašu izdara katrai iegūtās matricas rindai.
-
+Vispirms diskrēto kosinusu transformāciju pielieto katrai matricas kolonnai,
+pēc tam to pašu izdara katrai iegūtās matricas rindai.
 
 
 -----

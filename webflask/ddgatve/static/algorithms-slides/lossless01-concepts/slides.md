@@ -1,10 +1,9 @@
+[<img src="biglogo.png" width="144" alt="logo" style="border:0"/>](/algorithms/slides)<!-- .element: style="position:absolute;top:20px;left:0px;z-index:1;" -->
 # &nbsp;
 
 <hgroup>
 
 <blue>Informācijas saspiešanas pamatjēdzieni</blue>
-
-![Run length encoding](run-length-encoding.png)<!-- .element: width="400px" -->
 
 </hgroup><hgroup>
 
@@ -21,6 +20,8 @@
 
 
 Note:
+
+Vienu no vienkāršākajiem saspiešanas algoritmiem sk.
 [Run length encodings](https://commons.wikimedia.org/wiki/File:Run-lengthEncoding1.png)
 
 <!--

@@ -263,14 +263,14 @@ $ ffmpeg -i input -vframes 1 -compression_level 100 100.png
 
 ## <lo-sample/> PNG izmērs fotogrāfijām pēc līmeņa
 
-![Photograph compression](png-compression-level-photograph.png)
+![Photograph compression](png-compression-level-photograph.png)<!-- .element: width="800px" -->
 
 
 --
 
 ## <lo-sample/> PNG izmērs pēc bloku lielumiem 
 
-![By block size](png-ratio-vs-block-size.png)
+![By block size](png-ratio-vs-block-size.png)<!-- .element: width="800px" -->
 
 
 
@@ -303,7 +303,7 @@ $ ffmpeg -i input -vframes 1 -compression_level 100 100.png
 
 <hgroup>
 
-![Markova ķēde](markov-chain.png)
+![Markova ķēde](markov-chain.png)<!-- .element: width="300px" -->
 
 </hgroup>
 <hgroup>
@@ -325,7 +325,7 @@ ar komatiem formātā <red>`a/b,c/d,e/f`</red> _____
 
 <hgroup style="width:35%">
 
-![Markova ķēde](markov-chain.png)
+![Markova ķēde](markov-chain.png)<!-- .element: width="300px" -->
 
 </hgroup>
 <hgroup style="font-size: 70%; width:65%">

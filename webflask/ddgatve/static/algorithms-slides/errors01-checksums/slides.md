@@ -59,13 +59,15 @@
 
 # <lo-theory/> Kļūdu detekcija un korekcija
 
-Kļūdu detekcija:
+*Kļūdu detekcija:*
 
-![Error detection](error-detection.png)
+![Error detection](error-detection.png)<!-- .element: style="width:700px" -->
 
-Kļūdu korekcija:
+*Kļūdu korekcija:* Ideja visās metodēs - papildināt pārraidāmos datus ar 
+papildinformāciju, cerot, ka papildinformācija ļaus pamanīt 
+kļūdas. 
 
-![Error detection](error-correction.png)
+![Error detection](error-correction.png)<!-- .element: style="width:400px" -->
 
 
 --
@@ -88,7 +90,9 @@ kļūda, tad paritāte būs $1$, un kļūdu varēs konstatēt.
 
 ## <lo-summary/> CRC kontrolsumma
 
-![Ethernet frame](ethernet-frame.png)
+![Ethernet frame](ethernet-frame.png)<!-- .element: style="width:600px" -->
+
+<div style="font-size:70%">
 
 "Frame Check Sequence" (FCS) izmanto 
 32-bitu CRC (cyclical redundancy check). 
@@ -104,6 +108,7 @@ bitus.
 kuri ir kļūdaini. Augstāka līmeņa transporta protokoli (TCP) 
 palūdz kļūdainos freimus sūtīt atkārtoti. 
 
+</div>
 
 --
 
@@ -113,9 +118,9 @@ Garākiem failiem (kuri varbūt tikuši bojāti apzināti) var
 izmantot hešfunkcijas. Piemēram MD5 izveido 128 bitu virknīti 
 (pieraksta kā 32 hex ciparus). 
 
-![Hešfunkcijas](hashtools-1.png)
+![Hešfunkcijas](hashtools-1.png)<!-- .element: style="width:400px" -->
 
-MD5 hešfunkcijas kolīzijas...
+MD5 hešfunkcijas kolīzijas ir zināmas.
 
 
 

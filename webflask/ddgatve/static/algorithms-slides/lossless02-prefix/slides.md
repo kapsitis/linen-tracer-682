@@ -1,3 +1,4 @@
+[<img src="biglogo.png" width="144" alt="logo" style="border:0"/>](/algorithms/slides)<!-- .element: style="position:absolute;top:20px;left:0px;z-index:1;" -->
 # &nbsp; 
 
 <hgroup>
@@ -153,7 +154,7 @@ kods, kam vidējais garums ir vēl zemāks.
 
 --
 
-## <lo-yellow> Morzes kods
+## <lo-yellow/> Morzes kods
 
 * Morzes kods izmanto mainīga garuma kodēšanas principus (biežākiem 
 simboliem atbilst īsāki kodavārdi). 
@@ -165,8 +166,15 @@ Atkodēšanas viennozīmību nodrošina atšķirīgās pauzes.
 
 Sk. [Morse structure and timing](http://www.nu-ware.com/NuCode%20Help/index.html?morse_code_structure_and_timing_.htm)
 
+--
+
+## <lo-yellow/> Ne-prefiksu kods
+
+![Morse sample](morse-decoder-chart.png)<!-- .element: width="800px" -->
 
 
+Note: 
+See Dave Nathanson, KG6ZJO, Copyleft 2010.
 
 
 -----
@@ -564,7 +572,7 @@ tad varētu saīsināt $u$ kodējumu par vienu šķautni.)
 
 ## <lo-theory/> Optimalitātes pierādījums - 4
 
-<hgroup>
+<hgroup style="font-size:80%">
 
 Doti $x,y$ – 2 visretāk sastopamie burti, bet $u,v$ - visdziļāk prefiksu kokā esošie kaimiņi.
 
@@ -575,7 +583,7 @@ iegūt citu optimālu koku, kuram $x$ un $y$ ir blakus.
 </hgroup>
 <hgroup>
 
-![Maina x,y](switching-x-y.png)<!-- .element: width="250px" --> 
+![Maina x,y](switching-x-y.png)<!-- .element: width="150px" --> 
 
 
 </hgroup>
@@ -600,13 +608,13 @@ Ierakstīt skaitli formātā <red>`d.dd`</red>: _____
 </hgroup>
 
 
-<!--
+--
 
 ## <lo-quiz/> Jautājums Nr.3: Atrisinājums
 
 <hgroup>
 
-![Mississippi tree](mississippi.png)
+![Mississippi tree](mississippi.png)<!-- .element: width="300px" -->
 
 <table>
 <tr><th>$a \in S$</th><th>$w(a)$</th><th>$\ell_a$</th><th>$p(a)$</th></tr>
@@ -627,7 +635,7 @@ Piereizinām ar attiecīgo burtu varbūtībām
 `$$+ 3\frac{1}{11} = \frac{21}{11} \approx 1.91.$$`
 
 </hgroup>
--->
+
 
 
 --
@@ -650,7 +658,9 @@ Ierakstīt skaitli formātā <red>`d.dd`</red>: _____
 
 </hgroup>
 
-<!--
+
+--
+
 ## <lo-quiz/> Jautājums Nr.4: Atrisinājums
 
 Pat neko nerēķinot, redzams, ka ikviena simbola kodējuma
@@ -659,9 +669,6 @@ svērts vidējais starp visiem šiem divniekiem:
 
 `$$p(M)\cdot 2 + p(I)\cdot 2 + p(S)\cdot 2 + p(P)\cdot 2 =$$`
 `$$(1/11)\cdot 2 + (4/11)\cdot 2 + (4/11)\cdot 2 + (2/11)\cdot 2 = 2.$$`
--->
-
-
 
 
 

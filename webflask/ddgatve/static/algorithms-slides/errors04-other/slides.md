@@ -96,19 +96,19 @@ tiek savienota ar katram $x_j$ atbilstošo virsotni.
 Piemēram, Heminga kodam $[7,4,1]$, 
 kur kontrolbiti definēti kā
 
-$$\left\{
+`$$\left\{
 \begin{array}{l}
 y_1 = x_1 \oplus x_2 \oplus x_3\\
 y_2 = x_1 \oplus x_2 \oplus x_4\\
 y_3 = x_1 \oplus x_3 \oplus x_4\\
-\end{array} \right.$$
+\end{array} \right.$$`
 
 atbilst šāds grafs:
 
 </hgroup>
 <hgroup>
 
-![Hamming as Tornado](hamming-as-tornado.png)
+![Hamming as Tornado](hamming-as-tornado.png)<!-- .element: style="width:300px" -->
 
 </hgroup>
 
@@ -136,7 +136,7 @@ kuram ir zināmi visi tajā ietilpstošie $x_j$, atskaitot vienu.
 
 <hgroup>
 
-![Tornado problem](tornado-problem.png)
+![Tornado problem](tornado-problem.png)<!-- .element: style="width:180px" -->
 
 </hgroup>
 <hgroup>
@@ -156,7 +156,7 @@ Noteikt pazaudētos ziņojuma bitus.
 
 <hgroup style="font-size:70%">
 
-![Tornado problem](tornado-problem.png)
+![Tornado problem](tornado-problem.png)<!-- .element: style="width:180px" -->
 
 $(x_1,x_2,\color{#F00}{x_3},\color{#F00}{x_4},x_5,\color{#F00}{x_6}) = (1,0,?,?,1,?)$,  
 $(y_1,y_2,y_3,y_4) = (0,1,1,0)$.

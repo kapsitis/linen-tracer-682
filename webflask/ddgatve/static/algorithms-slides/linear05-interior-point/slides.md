@@ -283,7 +283,7 @@ $$`
 </hgroup>
 <hgroup>
 
-![Afine scaling sample](afine-scaling-sample-problem.png)
+![Afine scaling sample](afine-scaling-sample-problem.png)<!-- .element: width="400px" -->
 
 </hgroup>
 
@@ -542,7 +542,12 @@ x_4 = 2 + y_4 = 4.67130
 
 <hgroup>
 
-![Afine Scaling end-result](afine-scaling-sample-result.png)
+![Afine Scaling end-result](afine-scaling-sample-result.png)<!-- .element: width="400px" -->
+
+
+
+</hgroup>
+<hgroup>
 
 Maksimizēt `${\displaystyle -\frac{x_1}{3} + x_2}$`
 pie nosacījumiem:
@@ -553,9 +558,6 @@ x_1 + x_2 \leq 4,\\
 x_1 \geq 0, x_2 \geq 0. 
 \end{array} \right.
 $$`
-
-</hgroup>
-<hgroup>
 
 No punkta `$(x_1,x_2) = (1,1)$` pēc 1.iterācijas
 ieguvām `$(0.74957;3.17044)$`

@@ -109,10 +109,9 @@ tās arī ir Lempela-Ziva metodes (LZ77 vai LZ78).
 Var aplūkot LZ78 kā entropijas kodu (neatkarīgi burti).
 
 **Cits modelis:** Markova ķēde, ko ģenerē automāts ar $3$ stāvokļiem:  
-![Markova ķēde](markov-chain.png)
+![Markova ķēde](markov-chain.png)<!-- .element: width="300px" -->
 
-$18$ burtu virknīte, sākot ar $A$:  
-<blue>`ABCABCBCAAABCABBAB`</blue>
+$18$ burtu virknīte, sākot ar $A$: <blue>`ABCABCBCAAABCABBAB`</blue>
 
 
 Note:
@@ -253,7 +252,7 @@ Vajadzētu sanākt
 
 # <lo-theory/> LZ78 atkodēšanas pseidokods
 
-![LZ78 atkodēšana](LZ78-decode.png)
+![LZ78 atkodēšana](LZ78-decode.png)<!-- .element: width="600px" -->
 
 
 --
@@ -415,10 +414,10 @@ samudžinātas (pamatos Technicolor and Fraunhofer).
 
 <hgroup>
 
-![Markova ķēde](markov-chain.png)
+![Markova ķēde](markov-chain.png)<!-- .element: width="300px" -->
 
 </hgroup>
-<hgroup>
+<hgroup style="font-size:80%">
 
 Dota Markova ķēde, kurā automāta sākumstāvoklis (un 
 izvades pirmais burts) vienmēr ir $A$. 
@@ -435,20 +434,20 @@ ar komatiem formātā <red>`a/b,c/d,e/f`</red> _____
 
 ## <lo-quiz/> Jautājums Nr.1: Atrisinājums
 
-<hgroup style="width:35%">
+<hgroup style="font-size:70%; width:50%">
 
-![Markova ķēde](markov-chain.png)
+![Markova ķēde](markov-chain.png)<!-- .element: width="250px" -->
 
-</hgroup>
-<hgroup style="font-size: 70%; width:65%">
-
-1. Trešo burtu $A$ šajā Markova ķēdē var iegūt divos veidos:  
+Trešo burtu $A$ šajā Markova ķēdē var iegūt divos veidos:   
 **(i)** Pāreja $A \rightarrow A$ un vēlreiz $A \rightarrow A$.
 Varbūtība $\frac{1}{4}\cdot\frac{1}{4}=\frac{1}{16}$.  
 **(ii)** Pāreja $A \rightarrow B$ un tad $B \rightarrow A$.
 Varbūtība $\frac{3}{4}\cdot\frac{1}{4}=\frac{3}{16}$.  
 Abu varbūtību summa ir $\frac{1}{16} + \frac{3}{16} = \frac{1}{4}$.
-2. Trešo burtu $B$ arī var iegūt divos veidos:  
+
+</hgroup><hgroup style="font-size: 70%; width:45%">
+
+Trešo burtu $B$ arī var iegūt divos veidos:    
 **(i)** Pāreja $A \rightarrow A$ un tad $A \rightarrow B$.
 Varbūtība $\frac{1}{4}\cdot\frac{3}{4} = \frac{3}{16}$.  
 **(ii)** Pāreja $A \rightarrow B$ un tad $B \rightarrow B$.

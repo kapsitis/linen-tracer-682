@@ -145,7 +145,7 @@ x_1,x_2,x_3,x_4,x_5 \geq 0.
 
 ## <lo-sample/> Nosacījumiem atbilstošais apgabals
 
-![Feasible region](feasible-region.png)
+![Feasible region](feasible-region.png)<!-- .element: style="width:500px" -->
 
 Stūris - punkts, kur krustojas $2$ taisnes, kas atbilst nosacījumam - 
 ir punkts, kurā divi no $x_1,\ldots,x_n= 0$. 
@@ -156,7 +156,7 @@ No iepriekšējā piemēra.
 
 ## <lo-sample/> Attēls ar stūriem
 
-![LP Polygon](lp-polygon.png)
+![LP Polygon](lp-polygon.png)<!-- .element: style="width:500px" -->
 
 <div style="font-size: 80%"> 
 
@@ -1141,7 +1141,7 @@ vērtība palielinātos. Sasniegts maksimums.
 * Īsāko ceļu algoritmi orientētos virzītos grafos no viena avota 
 * [Dijkstras algoritms](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) - kā izveidot lineāru programmu.
 
-![Dijkstra's Algorithm](dijkstra-example.png) <!-- .element: style="display: block; margin-left: auto;margin-right: auto; width: 50%;" --> 
+![Dijkstra's Algorithm](dijkstra-example.png)<!-- .element: style="width:400px" --> 
 
 
 
@@ -1156,7 +1156,7 @@ Ir Belmana-Forda (Belmana-Forda-Mūra) algoritms.
 * Minimālais savienotais koks (Minimum Spanning Tree (MST))
 * Kraskala un Prima algoritmi
 
-![MST](minimum-spanning-tree.png) <!-- .element: style="display: block; margin-left: auto;margin-right: auto; width: 50%;" --> 
+![MST](minimum-spanning-tree.png)<!-- .element: style="width:450px" --> 
 
 --
 
@@ -1164,7 +1164,7 @@ Ir Belmana-Forda (Belmana-Forda-Mūra) algoritms.
 
 * Forda-Falkersona algoritms; Reziduālā plūsma
 
-![Residual network](residual-network.png) <!-- .element: style="display: block; margin-left: auto;margin-right: auto;  width: 70%;" --> 
+![Residual network](residual-network.png)<!-- .element: style="width:600px" --> 
 
 
 

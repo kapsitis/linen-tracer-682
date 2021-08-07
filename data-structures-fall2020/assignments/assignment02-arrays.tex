@@ -1,0 +1,341 @@
+%\documentclass[jou]{apa6}
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.0in
+
+\usepackage{xcolor}
+
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+%16.3-6
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+
+%\title{Homework 1: Grading Criteria}
+%\author{Kalvis}
+%\affiliation{RBS}
+
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\twocolumn
+
+
+\begin{center}
+{\Large Assignment 2, Due 2020-09-18},
+{\em Estimated time: 30 minutes}
+\end{center}
+
+\vspace{10pt}
+{\bf Question 1 (Recursive functions):} The sequence of Fibonacci numbers $F(n)$ (for all $n \geq 0$): 
+$$F(n) \vcentcolon= \left\{ \begin{array}{l}
+0,\;\;\mbox{if}\;\;n = 0,\\
+1,\;\;\mbox{if}\;\;n = 1,\\
+F(n-2)+F(n-1),\;\;\mbox{if}\;\;n \geq 2\\
+\end{array} \right.$$
+
+We compute the remainders of $F(n)$, when 
+divided by $p = 2000000011$ (just some large prime):
+\begin{equation}
+\label{function-g}
+G(n) \vcentcolon= G(n) \bmod 2000000011,\;\;\mbox{for}\;\;n \geq 0.
+\end{equation}
+
+
+
+{\footnotesize
+\begin{center}
+\begin{minipage}{.8\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+
+const int p = 2000000011;
+
+int G(int n) { 
+  switch(n) {
+    case 0: return 0; 
+    case 1: return 1;
+    default: return 
+      (G(n-2) + G(n-1)) % p;
+  }
+}
+
+int main() {
+  using namespace std;
+  int n; cin >> n;
+  cout << "G(" << n << ")=" 
+      << G(n) << endl;
+}
+\end{Verbatim}
+\end{minipage}
+\end{center}
+
+
+Please give YES/NO answers:
+
+\begin{enumerate}[(A)]
+\item The integer {\tt p} (Line 3) should be defined in some class or function; cannot have a variable without a scope.
+\item The {\tt switch} statement should have {\tt break} after every case (Lines 7,8).
+\item The `{\tt using namespace}` has to be before a method, not inside it (Line 15).
+\item The C++ function {\tt G(int n)} uses incorrect algorithm to compute $G(n)$.
+\item The program might be slow for some arguments.
+\end{enumerate}
+
+
+
+
+\vspace{20pt}
+{\bf Question 2 (Overloading functions):} 
+
+{\footnotesize
+\begin{center}
+\begin{minipage}{.8\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+ 
+using namespace std;
+class Square {
+  public:
+  int square(int a) {
+    cout << "square(int)" << endl;  
+    return (a*a); 
+  }
+  double square(double b) { 
+    cout << "square(double)" << endl;  
+    return b*b; 
+  }
+};
+
+int main() {
+  using namespace std;
+  Square ss;
+  cout << ss.square('7') << endl;
+}
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+Please give YES/NO answers:
+
+\begin{enumerate}[(A)]
+\item Two functions with the same name {\tt square(...)} should have 
+the same return value (either {\tt double} or {\tt int}, but not two at the same time).
+\item Output on Line 19 happens before outputs on Lines 7 and 11.  
+\item Char parameter cannot be passed to functions, if their input type 
+is either {\tt int} or {\tt double} (Line 19); you need to write yet another
+function to square {\tt char} values. E.g.\\
+{\tt double square(char c) \{ ... \}}
+\item Squaring char {\tt '7'} computes $7^2 = 49$, since it is converted to number $7$. 
+\end{enumerate}
+
+
+
+
+
+
+%\vspace{20pt}
+\newpage
+{\bf Question 3 (Parameters by Value and by Reference):} 
+
+{\footnotesize
+\begin{center}
+\begin{minipage}{.8\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+
+using namespace std;
+void fun(int a, int& b) {
+  a += 10; 
+  b += 10;
+  cout << "in fun: (a,b) = (" << 
+    a << "," << b << ")" << endl;  
+}
+
+int main() {
+  int a = 5;
+  int b = 3; 
+  fun(++b,a);
+  cout << "in main: (a,b) = (" <<
+    a << "," << b << ")" << endl;
+}
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+Write the output produced by this program. 
+
+
+%%in fun: (a,b) = (14,15)
+%%in main: (a,b) = (15,4)
+
+
+
+
+\vspace{20pt}
+{\bf Question 4 (Arrays and Pointers):} 
+
+{\footnotesize
+\begin{center}
+\begin{minipage}{.8\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+#include <algorithm>
+
+int rows = 4, cols = 4;
+
+using namespace std;
+void f(int*& a) { a[1] = 101; }
+void g(int* a) { a[2] = 102; }
+void h(int*& a) { 
+  a = new int[cols];
+  // initialize array with 103:
+  fill_n(a, cols, 103); 
+}
+void i(int* a) { 
+  a = new int[cols]; 
+  // initialize array with 104:
+  fill_n(a, cols, 104); 
+}
+
+int main() {
+  int** arr = new int*[rows];
+  for (int i=0; i<rows; i++) 
+    arr[i] = new int[cols];
+  f(arr[0]);  
+  g(arr[1]);
+  h(arr[2]);  
+  i(arr[3]);
+	
+  for (int i=0; i<rows; i++) {
+    for (int j=0;j<cols; j++)
+      cout << arr[i][j] << " ";
+    cout << endl;
+  }
+}
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+
+What values of {\tt arr} are printed 
+near the end of {\tt main()} function (Lines 29-33)?\\
+Use asterisk {\tt *} to denote those values in the array which may be uninitialized.
+
+\vspace{10pt}
+\begin{tabular}{|c|c|c|c|} \hline
+ \hspace{1em} & \hspace{1em} & \hspace{1em} & \mbox{}\hspace{1em}\mbox{} \\[1.2ex] \hline
+ \hspace{1em} & & & \\[1.2ex] \hline
+ \hspace{1em} & & & \\[1.2ex] \hline
+ \hspace{1em} & & & \\[1.2ex] \hline
+\end{tabular}
+
+
+
+
+
+\newpage
+
+{\bf \Large Solutions}
+
+\vspace{10pt}
+
+\vspace{20pt} 
+{\bf Question 1.} Answer: (E).
+
+The proposed program does compute Fibonacci sequence (and does not 
+contain any errors listed in other answers.
+But it is extremely inefficient for large arguments, because it 
+calls itself recursively twice. 
+
+
+\vspace{20pt} 
+{\bf Question 2.} Answer: $3025$ (i.e. $55^2$). 
+
+Char literal {\tt '7'} is converted into {\tt int}. 
+And ASCII code for the symbol {\tt 7} is $37_{16}$, which 
+is the same as $3 \cdot 16 + 7 = 55$ in decimal. 
+
+Booleans and chars are converted into integers, so {\tt square(int)} 
+method is called. If the argument is of type {\tt float}, {\tt double}
+or {\tt long double}, then {\tt square(double)} method will be called.
+
+
+\vspace{20pt} 
+{\bf Question 3.} Answer: 
+
+\begin{verbatim}
+in fun: (a,b) = (14,15)
+in main: (a,b) = (15,4)
+\end{verbatim}
+
+In {\tt fun()} we pass the first parameter by value, but the second one \textendash{} by reference. 
+The function call {\tt fun(++b,a)} increments $b$ (it becomes $4$) and then copies it into the function's formal parameter $a$. 
+It also passes the reference of {\tt a}  which becomes the formal parameter $b$.
+(The deliberately confusing names $a$, $b$ just show the fact that the parameter
+order matters, not their names.)
+
+Inside {\tt fun()} both are incremented by $10$, so it outputs $(14,15)$. 
+After returning from the function $a$ (passed by reference) retains its new value $a = 15$. 
+But $b$ (passed by value) gets its old value, because the copied one was lost. 
+So $b = 4$. So in {\tt main()} we output $(15,4)$. 
+
+
+\vspace{20pt} 
+{\bf Question 4.} Answer: 
+
+
+\vspace{10pt}
+\begin{tabular}{|c|c|c|c|} \hline
+ \hspace{1em} $\ast$ & 101 & $\ast$ & $\ast$ \\[1.2ex] \hline
+ \hspace{1em} $\ast$ & $\ast$ & 102 & $\ast$ \\[1.2ex] \hline
+ \hspace{1em} 103 & 103 & 103 & 103 \\[1.2ex] \hline
+ \hspace{1em} $\ast$ & $\ast$ & $\ast$ & $\ast$ \\[1.2ex] \hline
+\end{tabular}
+
+
+
+\end{document}
+
+
+

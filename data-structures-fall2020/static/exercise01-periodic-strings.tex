@@ -1,0 +1,259 @@
+%\documentclass[jou]{apa6}
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.0in
+
+\usepackage{xcolor}
+
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+%16.3-6
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+
+%\title{Homework 1: Grading Criteria}
+%\author{Kalvis}
+%\affiliation{RBS}
+
+
+
+\begin{document}
+\thispagestyle{empty}
+
+%\twocolumn
+
+
+\begin{center}
+{\Large C++ Exercise 1: Periodic Strings}
+\end{center}
+
+{\bf Deadline:} Friday, September 4, 2020 by 23:59 EEST Timezone.\\ 
+{\bf How to submit:} Please send your GitHub repository (e.g. 
+{\tt workspace-cpp}); create a single subdirectory in this 
+repository named {\tt ex01-periodic}. Place all your project files there
+(see section ``Implementation details'' below).\\
+{\bf Grading:} This exercise is worth 20\textperthousand (or $2\%$) of the total grade.
+
+\vspace{10pt}
+{\small
+In a Land Far, Far Away there was a copyright agency named AKKAAKKA. Their 
+talented lawyers found a legal loophole that gave them the right to 
+license the use of certain words and numbers. 
+Every time somebody wrote a book, a poem or a statistical report, 
+it was sent to the copyright agency. 
+The agency charged the author of this text for every use of a word or a number that is periodic. 
+A word or number is called {\em periodic}, if it can be obtained by concatenating 
+two or more identical fragments. 
+
+The agency AKKAAKKA charged the author of a text an integer number of euros, 
+where the sum depends on the length of the shortest period. 
+For example {\tt FF} was charged 1 EUR (as it has 1-letter period), 
+{\tt HOHOHOHO} was charged 2 EUR (as we do not consider the longer period of 4 letters {\tt HOHO}), 
+but the use of non-periodic words were not charged at all. 
+}
+
+\vspace{10pt}
+Your task is to develop a software that receives an input file containing
+one word (or integer) per line, and for each one shows the shortest period.
+Or number $0$, if no period was found.
+
+On the very first line of the input file we specify the input mode. 
+\begin{itemize}
+\item
+If the mode is {\tt str}, then we search for the shortest period that covers the entire string two or more times.
+\item 
+If the mode is {\tt dec}, then we search for the shortest period that covers the entire decimal number 
+two or more times (after the possible initial zeros are dropped).
+\item 
+If the mode is {\tt hex}, then we search for the shortest period that covers the entire hexadecimal number. 
+\end{itemize}
+
+{\bf Input}
+
+The first line has the mode ({\tt str}, {\tt dec} or {\tt hex}). It is immediately 
+followed by newline character ({\tt \textbackslash{}n}).
+After that there are one or more strings (or, respectively, decimal numbers or hexadecimal numbers) 
+that will be analyzed by your program. 
+All input numbers may contain leading zeroes (all the zeroes are ignored when testing the periodicity). 
+All hexadecimal numbers can contain lowercase
+digits {\tt a,b,c,d,e,f} as well as uppercase digits {\tt A,B,C,D,E,F} (all of them are converted
+to lowercase when testing the periodicity).
+
+{\bf Output}
+
+The output should contain the same lines as input (with the exception of the first line \textendash{} no mode
+should be written). Every input string (or number, or hexadecimal number) is written to the output, followed
+by a space and by the length of the shortest period (or $0$, if there was no period at all). 
+
+Leading zeroes ({\tt dec} or {\tt hex} mode only) should not be displayed; all the hexadecimal digits should be lowercase.
+
+{\bf Limitations}
+
+\begin{itemize}
+\item Strings are one per line (up to $1000$ long); printable ASCII chars only.
+\item Integers (``dec'' or ``hex'' mode) are between $0$ and $2^{64} - 1 = 18446744073709551615$. 
+\item Input files contain no more than $1000$ lines each.
+\end{itemize}
+
+
+
+\begin{tabular}{@{}ll@{}}
+\begin{minipage}[t]{0.49\columnwidth}
+Sample input {\bf test01in.txt}:
+\begin{verbatim}
+str
+ABCABC
+ABCD
+ABABA
+\end{verbatim}
+\end{minipage} 
+&
+\begin{minipage}[t]{0.49\columnwidth}
+Expected output {\bf test01expected.txt}:
+\begin{verbatim}
+ABCABC 3
+ABCD 0
+ABABA 0
+\end{verbatim}
+\end{minipage} 
+\end{tabular}
+
+\vspace{10pt}
+
+
+
+\begin{tabular}{@{}ll@{}}
+\begin{minipage}[t]{0.49\columnwidth}
+Sample input {\bf test02in.txt}:
+\begin{verbatim}
+dec
+017017
+20192019
+\end{verbatim}
+\end{minipage} 
+&
+\begin{minipage}[t]{0.49\columnwidth}
+Expected output {\bf test02expected.txt}:
+\begin{verbatim}
+17017 0
+20192019 4
+\end{verbatim}
+\end{minipage} 
+\end{tabular}
+
+\vspace{10pt}
+
+
+
+\begin{tabular}{@{}ll@{}}
+\begin{minipage}[t]{0.49\columnwidth}
+Sample input {\bf test03in.txt}:
+\begin{verbatim}
+hex
+0012e12E
+12F12
+\end{verbatim}
+\end{minipage} 
+&
+\begin{minipage}[t]{0.49\columnwidth}
+Expected output {\bf test03expected.txt}:
+\begin{verbatim}
+12e12e 3
+12f12 0
+\end{verbatim}
+\end{minipage} 
+\end{tabular}
+
+
+\vspace{10pt}
+{\bf Implementation Details}
+
+Your code should contain $3$ source files: {\tt Periodic.cpp} 
+(containing an empty constructor and 3 functions), 
+its header file: {\tt Periodic.h}, 
+and the class with main function that processes the I/O
+{\tt PeriodicMain.cpp}. Here are the functions in {\tt Periodic.cpp}:
+
+\begin{verbatim}
+Periodic();           // an empty constructor
+int findPeriod(std::string str);
+int findPeriod(int n);
+int findPeriodHex(int n); // treat argument as a Hex number
+\end{verbatim}
+
+During the grading we will run the following script (in Jenkins or similar): 
+
+\begin{verbatim}
+# check out the code
+git clone <your repository>
+# switch to the directory with all the source files
+cd ex01-periodic
+# Here we remove all your files EXEPT 3 source files specified above.
+# Also replace your Makefile with our own.
+make all
+./ex01periodic < test01in.txt > test01out.txt
+diff -B test01out.txt test01expected.txt
+# ... more tests - including private tests
+\end{verbatim}
+
+
+
+\vspace{10pt}
+
+{\small
+\begin{itemize}
+\item Our grading process may also invoke the {\tt findPeriod(...)} 
+functions from your {\tt Periodic.cpp} directly, bypassing
+the {\tt PeriodicMain.cpp} caller. 
+\item We will run all your projects on the same grading machine; 
+the fastest programs will be specifically mentioned and honored. 
+(Otherwise there are no runtime requirements for this exercise, 
+as long as any input file with $1000$ lines can be processed in under
+$10$ seconds.)
+\item The source of inspiration for this exercise: \url{https://bit.ly/31TqSZR}, the
+idea about {\em data polymorphism} (the same program eats both 
+strings and integers in two different formats), processing them 
+in two identically named functions.
+\end{itemize}
+}
+
+
+
+\end{document}
+
+
+

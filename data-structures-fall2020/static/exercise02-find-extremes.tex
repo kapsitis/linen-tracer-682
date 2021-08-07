@@ -1,0 +1,279 @@
+%\documentclass[jou]{apa6}
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.0in
+
+\usepackage{xcolor}
+
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+%16.3-6
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+
+%\title{Homework 1: Grading Criteria}
+%\author{Kalvis}
+%\affiliation{RBS}
+
+
+
+\begin{document}
+\thispagestyle{empty}
+
+%\twocolumn
+
+
+\begin{center}
+{\Large C++ Exercise 2: Find Minimum and Maximum for Pairs}
+\end{center}
+
+{\bf Deadline:} Friday, September 11, 2020 by 23:59 EEST Timezone.\\ 
+{\bf How to submit:} Check your code into your GitHub repository 
+({\tt workspace-cpp} or similar) and create a branch {\tt ex02-find-extremes} there.\\
+{\bf Grading:} This exercise is worth 20\textperthousand (or $2\%$) of the total grade.
+
+\vspace{10pt}
+{\small
+Consider a school having one or more students. For every student
+we know his/her age (a positive integer) and also
+height in centimeters (a positive double precision number). 
+Every morning the students arrange themselves in a line
+by seniority \textendash{} the first one is the youngest one
+called the {\em minimum}. S/he is followed by the next youngest, etc. 
+The last student, who is the oldest one is called the {\em maximum}. 
+In case, if the ages of two students are equal, we compare 
+their height (the shortest one comes first). 
+
+You do not need to arrange (sort) the students; only find the minimum and the 
+maximum, and output their respective age and height.
+}
+
+\vspace{10pt}
+Develop a software that receives an input file containing
+the total count of the students $N$ on the first line. It is 
+followed by exactly $N$ pairs
+of numbers: $a_i$ and $h_i$ ($i \in 1,\ldots,N$).\\
+The software should read all the pairs in an array and output the 
+data about the students at both ends of their arranged line
+(the minimum student and the maximum student).
+
+
+
+\vspace{10pt}
+{\bf Input}
+
+The first line has a single number $N$. 
+After that there are exactly $N$ lines; every line contains one positive integer and another positive double; 
+they are space-separated. 
+
+\vspace{10pt}
+{\bf Output}
+
+The output should contain data for two ``extreme'' students only on two separate lines.\\
+The first student is the minimal student; the second student is the maximum
+(sorted by age; or by age+height, if many ages are equal). 
+\textcolor{red}{Heights should be rounded to $5$ decimal places in the output.}
+
+
+
+\vspace{10pt}
+{\bf Limitations}
+
+\begin{itemize}
+\item The number of students $N$ is between $1$ and $10000$. 
+\item Ages are strictly positive integers; they do not exceed $2 \cdot 10^9$.
+Heights are strictly positive double numbers. 
+\end{itemize}
+
+
+
+\begin{tabular}{@{}ll@{}}
+\begin{minipage}[t]{0.49\columnwidth}
+Sample input {\bf test01in.txt}:
+\begin{verbatim}
+3
+16 185.3
+12 150.0999999
+16 180.1
+\end{verbatim}
+\end{minipage} 
+&
+\begin{minipage}[t]{0.49\columnwidth}
+Expected output {\bf test01expected.txt}:
+\begin{verbatim}
+12 150.10000
+16 185.30000
+\end{verbatim}
+\end{minipage} 
+\end{tabular}
+
+\vspace{10pt}
+\begin{tabular}{@{}ll@{}}
+\begin{minipage}[t]{0.49\columnwidth}
+Sample input {\bf test02in.txt}:
+\begin{verbatim}
+1
+2000000000 1.5
+\end{verbatim}
+\end{minipage} 
+&
+\begin{minipage}[t]{0.49\columnwidth}
+Expected output {\bf test02expected.txt}:
+\begin{verbatim}
+2000000000 1.50000
+2000000000 1.50000
+\end{verbatim}
+\end{minipage} 
+\end{tabular}
+
+\vspace{10pt}
+\begin{tabular}{@{}ll@{}}
+\begin{minipage}[t]{0.49\columnwidth}
+Sample input {\bf test03in.txt}:
+\begin{verbatim}
+6
+3 1
+3 1.2
+3 1.4
+5 2.5
+5 2.7
+5 2.999999
+\end{verbatim}
+\end{minipage} 
+&
+\begin{minipage}[t]{0.49\columnwidth}
+Expected output {\bf test03expected.txt}:
+\begin{verbatim}
+3 1.00000
+5 3.00000
+\end{verbatim}
+\end{minipage} 
+\end{tabular}
+
+
+
+
+\vspace{10pt}
+{\bf Implementation Details}
+
+\begin{itemize}
+\item Your code should contain $3$ source files: {\tt Student.cpp},
+its header file: {\tt Student.h}, 
+and the class with main function that processes the I/O
+{\tt ExtremesMain.cpp}. 
+\item All classes and functions should be in the 
+namespace {\tt ds\textunderscore{}course}.
+\item The class {\tt Student} should support the
+following members (two data attributes and one method to compare it with other students).
+\begin{verbatim}
+Student();           // an empty constructor
+int age;
+double height;
+int compareTo(Student ss); 
+\end{verbatim}
+\item The file {\tt ExtremesMain.cpp} should contain two functions to find the 
+minimum and the maximum student in an array of students: 
+\begin{verbatim}
+// return the smallest student object in the array ss[count]
+Student getMin(Student* ss, int count);
+// return the largest student object in the array ss[count]
+Student getMax(Student* ss, int count);
+\end{verbatim}
+\item
+Function {\tt compareTo(...)} returns $0$, if ``this student'' 
+equals the ``argument student'' (both age and height). 
+It returns $-1$, if ``this student''  is less than the
+``argument student''. It returns $1$, if ``this student'' is more
+than the ``argument student''. For example, the following code should work:
+\begin{verbatim}
+Student s0; s0.age = 3; s0.height = 170.2;
+Student s1; s1.age = 5; s1.height = 178.2;
+Student s2; s2.age = 3; s2.height = 168.2;
+cout << s0.compareTo(s0) << endl;  // prints 0
+cout << s0.compareTo(s1) << endl;  // prints -1
+cout << s0.compareTo(s2) << endl;  // prints 1
+
+Student ss[] = {s0,s1,s2};
+cout << getMin(ss,3).height << endl; 
+// should print 168.2 (the least height of the 2 youngest ones)
+\end{verbatim}
+\item Our grading process may also invoke the 
+class {\tt Student}
+and the functions 
+{\tt getMin(...)} and 
+{\tt getMax(...)} (from {\tt ExtremesMain.cpp}) directly.
+\end{itemize}
+
+\textcolor{red}{\bf Note 1.} The last requirement means that you cannot ``forget'' the input lines
+(in other contexts it might be very efficient \textendash{} just scan the input data once 
+and update the maximum and minimum, if necessary). 
+But in your solution you should load the input data into an array and then pass that array 
+to the functions {\tt getMin()} and {\tt getMax()}. 
+
+\textcolor{red}{\bf Note 2.} What is the format of double precision numbers representing {\tt height}?\\
+Inputs can contain any number readable by "cin" (we will not use floating point 
+notation such as \textcolor{red}{\tt 1.7E2} instead of {\tt 170} or {\tt 170.0}). 
+
+The output should always be rounded to 
+$5$ decimal digits after the decimal point. 
+You can achieve this behavior using {\tt iomanip} library in C++. For example, 
+
+\begin{Verbatim}
+#include <iostream> 
+#include <iomanip>
+
+int main() {
+    double aa[] = {3.14159265358979323, 3, 185.999999};
+    for (int i = 0; i < 3; i++) {
+        cout << "a[ " << i << "] = " << std::fixed << std::setprecision(5) << a[i] << endl;
+    }
+}
+\end{Verbatim}
+
+The output is this: 
+
+\begin{Verbatim}
+a[0] = 3.14159
+a[1] = 3.00000
+a[2] = 186.00000
+\end{Verbatim}
+
+\end{document}
+
+
+

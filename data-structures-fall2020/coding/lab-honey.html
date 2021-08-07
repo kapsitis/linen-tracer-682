@@ -1,0 +1,42 @@
+<h1 id="uninterrupted-honey-experience">Uninterrupted Honey Experience</h1>
+<p><strong>Memory limit</strong>: 4 MB<br />
+<strong>Time limit</strong>: 0.2 second<br />
+<strong>Input file</strong>: <code>honey-in01.txt</code><br />
+<strong>Output</strong>: <code>honey-out01.txt</code></p>
+<hr />
+<h2 id="description">Description</h2>
+<p>Winnie-the-Pooh has <span class="math inline"><em>n</em></span> jars placed on a long branch. They are all arranged in a single line. Every jar contains some amount of honey expressed as a positive integer number of ounces (one ounce (oz) is <span class="math inline">28.349523125</span> grams or <span class="math inline">1/16</span> of a pound).</p>
+<p>He intends to eat exactly <span class="math inline"><em>m</em></span> ounces of honey. He can do this by emptying a single jar or any number of consecutive jars. You should count the total number of ways to do this and for each way find the starting and and the ending jar (their numbers start from <span class="math inline">1</span>). Different ways may overlap. <!--
+[This](https://practice.geeksforgeeks.org/problems/subarray-with-given-sum/0).
+--></p>
+<p><strong>Input:</strong><br />
+An input file consists of two lines:<br />
+The first line of an input file is two positive integers <span class="math inline"><em>n</em></span> and <span class="math inline"><em>m</em></span>, where <span class="math inline"><em>m</em></span> is the number of jars and <span class="math inline"><em>m</em></span> is the required amount of honey. The second line is an (unsorted) sequence <span class="math inline"><em>A</em>[1] … <em>A</em>[<em>n</em>]</span> of exactly <span class="math inline"><em>n</em></span> space-separated integers denoting the amounts of honey in the jars.</p>
+<p><strong>Output:</strong><br />
+On the first line output a non-negative integer <span class="math inline"><em>W</em></span>: the number of possibilities. If it is impossible, output just the number <span class="math inline">0</span>. If <span class="math inline"><em>W</em> &gt; 0</span>, then <span class="math inline"><em>W</em></span> more lines should follow. Every line shows the starting and ending positions (indexing from <span class="math inline">1</span>, both endpoints are included).</p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><span class="math inline">1 ≤ <em>n</em> ≤ 10<sup>7</sup></span>,</li>
+<li><span class="math inline">1 ≤ <em>A</em>[<em>i</em>] ≤ 10<sup>10</sup></span>, for all <span class="math inline"><em>i</em> ∈ [1, <em>n</em>]</span>.</li>
+</ul>
+<h3 id="example-1">Example 1</h3>
+<p>The content of input file <code>honey-in01.txt</code>:</p>
+<pre><code>5 13
+1 2 4 7 6</code></pre>
+<p>The content of output file <code>honey-out01.txt</code>:</p>
+<pre><code>2
+2 4
+4 5</code></pre>
+<p>Note that</p>
+<ul>
+<li><span class="math inline">13 = <em>A</em>[2] + <em>A</em>[3] + <em>A</em>[4] = 2 + 4 + 7</span>,</li>
+<li><span class="math inline">13 = <em>A</em>[4] + <em>A</em>[5] = 7 + 6</span>.</li>
+</ul>
+<h3 id="example-2">Example 2</h3>
+<p>The content of input file <code>honey-in02.txt</code>:</p>
+<pre><code>10 15
+1 2 3 4 5 6 7 8 9 10</code></pre>
+<p>The content of output file <code>honey-out02.txt</code>:</p>
+<pre><code>2
+1 5
+4 6</code></pre>

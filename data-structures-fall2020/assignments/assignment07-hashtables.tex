@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage[margin=20mm]{geometry}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+
+%\twocolumn
+
+\thispagestyle{empty}
+
+\begin{center}
+{\Large Assignment 7, 2020-11-05,}\\
+{\em 12 minutes} 
+\end{center}
+
+\noindent
+
+
+\vspace{10pt}
+{\bf Question 1 (``Folding HashCodes'' for Strings).}\\
+You have $3$ different string keys (representing for example car registration numbers): 
+$\textcolor{blue}{\mathtt{K}abc}$, $\textcolor{blue}{\mathtt{K}bca}$, 
+$\textcolor{blue}{\mathtt{K}bc}$, and you want to compute 
+a hash function using the ``mod two folding'' (also known as XOR), and 
+will insert your results in a hash table $H$ with $7$ slots: $H[0],\ldots,H[6]$.\\
+(Here $a,b,c$ denote the last $3$ digits from your Student ID. 
+For example, if $abc = 789$, then the strings to encode are 
+$\textcolor{blue}{\mathtt{K789}}$, 
+$\textcolor{blue}{\mathtt{K897}}$, 
+$\textcolor{blue}{\mathtt{K89}}$. They all start with the same ASCII letter {\tt K}. 
+
+{\bf (A)} Compute the (uncompressed) hashcode values for all the $3$ string values.  
+Your hashcode function $h_1(s)$ is defined as follows:
+$$h_1(s) = \bigoplus\limits_{i=0}^{L-1} \operatorname{ord}(c[i]) = c[0] \oplus \ldots \oplus c[L-1].$$
+Here $L$ is the length of the string $s$.
+By $c[i]$ we denote the $i$th character of the input string $s$ ($i = 0,1,\ldots,L-1$).
+All the hash values computed by this function are 1 byte long, they are 
+integers in $[0;255]$.  
+
+{\em Note.} By $\operatorname{ord}(c)$ we denote
+the ASCII code of some character {\tt c}; these ASCII codes are also integers in $[0;255]$. 
+(See the ASCII codes: \url{http://www.asciitable.com/}.) 
+
+\vspace{10pt}
+{\bf (B)} Represent the bits of all four characters in 
+$\textcolor{blue}{\mathtt{K}abc}$ (one capital letter "K" and the three digits from your ID). 
+Check the computation of $h_1(\textcolor{blue}{\mathtt{K}abc})$ by writing these bits 
+aligned in columns and add them up modulo $2$. 
+(To see how a character is represented as a sequence of bits, use ASCII code in hexadecimal. 
+For example, character "A" has hex code {\tt 0x41}, i.e. it is represented by 
+these eight bits: {\tt 01000001} (since hex "4" converts into {\tt 0100}, but "1" converts into 
+{\tt 0001}). 
+
+
+\vspace{10pt}
+{\bf (C)} Compute the compressed hash values for the same 3 strings
+modulo $7$. Namely, 
+the compressed hash value is 
+$$h_2(h_1(s)) = h_1(s)\;\text{mod}\;7.$$
+
+\vspace{10pt}
+{\bf (D)} Draw the four string objects in a hashtable $H$ with $7$ cells
+($H[0],\ldots,H[6]$). Are there any collisions?
+
+\vspace{30pt}
+{\em Note.} 
+Here is the pseudocode of the abovementioned string hashing function $h_1(s)$ (in Python): 
+\begin{verbatim}
+def h1(s):
+    h = 0
+    for c in s:
+        h = h ^ ord(c)
+    return h
+\end{verbatim}
+
+
+
+% https://stackoverflow.com/questions/17016175/c-unordered-map-using-a-custom-class-type-as-the-key
+
+
+
+
+\end{document}
+
+
+

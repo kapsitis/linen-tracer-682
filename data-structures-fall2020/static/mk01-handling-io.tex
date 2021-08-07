@@ -1,0 +1,132 @@
+\documentclass[jou]{apa6}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Discrete Structures
+%% The start of RBS stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Working internal and external links in PDF
+\usepackage{hyperref}
+% Extra math symbols in LaTeX
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+% Enumerations with (a), (b), etc.
+\usepackage{enumerate}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{xcolor}
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{-6pt}}
+
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\makeatother
+
+% These sizes redefine APA for A4 paper size
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -24pt
+\headheight 12pt
+\headsep 12pt
+\textheight 9.19in
+
+
+
+\title{Sample Quiz 8}
+\author{Discrete Structures, Spring 2020}
+\affiliation{RBS}
+
+\leftheader{Discrete Sample Quiz 8}
+
+\abstract{%
+}
+
+%\keywords{}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+%\thispagestyle{empty}
+
+\twocolumn
+\section{MK01: Handling IO}
+
+
+
+\vspace{10pt}
+{\bf Problem 1}\\
+Assume that you have the following code to read input file: 
+
+\begin{verbatim}
+int main(){
+    istringstream sstr(input);
+    int ele;
+
+    cin.ignore();
+    cout << "Enter name ";
+    std::getline (std::cin,n);
+
+
+
+    while (sstr >> ele) {
+        vec.push_back(ele);
+    }
+
+    if (vec.size() == 1 && vec.at(0) == 0) {
+        break;
+    }
+    cin.ignore();
+    vec.clear(); 
+}
+\end{verbatim}
+
+Assume that you want to pass the following vectors to your methods: ($\ldots$). 
+
+Write the input file that ensures these calls. 
+
+
+\vspace{10pt}
+{\bf Problem 2}\\
+
+% http://www.cplusplus.com/forum/beginner/111268/
+
+
+{\bf Scenario:} 
+You have to read input until all the input lines are read 
+(or until there is a line with just EOF - in which case you ignore everything else). 
+
+Write a C++ code that implements this behvior. 
+
+\begin{verbatim}
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+
+#include <string>
+using std::string;
+using std::getline;
+
+int main(){
+    // Place your code here
+}
+\end{verbatim}
+
+
+
+
+\end{document}
+

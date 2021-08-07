@@ -1,0 +1,65 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage[margin=20mm]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+
+\twocolumn
+
+\thispagestyle{empty}
+
+\begin{center}
+{\Large Sample Assignment 5}\\
+{\Large Discussed on 2020-10-05,}\\
+{\em Not graded} 
+\end{center}
+
+\noindent
+
+
+\vspace{10pt}
+{\bf Question 1 (Running time).}\\
+Find the best-case and worst-case running times for the algorithms below, by analyzing home many times each line is evaluated, in terms of the input size. 
+The input size is $n$, which is the length of the input list $A$.
+
+\vspace{10pt}
+One sorting algorithm for array $A$:
+\[
+\begin{array}{rl}
+ & \text{\sc BubbleSort-One}(A)\\
+1 & \text{\textbf{for\ }}m = A.length \text{\textbf{\ downto\ }}2 \\
+2 & \hspace{.5cm} \text{\textbf{for\ }} i = 1 \text{\textbf{\ to\ }} m-1 \\
+3 & \hspace{1cm} \text{\textbf{if\ }} A[i] > A[i+1] \\
+4 & \hspace{1.5cm} swap(A[i],A[i+1]) 
+\end{array}
+\]
+
+
+
+\vspace{10pt}
+Another sorting algorithm for array $A$:
+\[
+\begin{array}{r l}
+ & \text{\sc BubbleSort-Two}(A)\\
+1 & \text{\textbf{for\ }}m = A.length \text{\textbf{\ downto\ }}2 \\
+2 & \hspace{.5cm} sorted = true \\
+3 & \hspace{.5cm} \text{\textbf{for\ }} i = 1 \text{\textbf{\ to\ }} m-1 \\
+4 & \hspace{1cm} \text{\textbf{if\ }} A[i] > A[i+1] \\
+5 & \hspace{1.5cm} swap(A[i],A[i+1]) \\
+6 & \hspace{1.5cm} sorted = false \\
+7 & \hspace{.5cm} \text{\textbf{if\ }}sorted = true \\
+8 & \hspace{1cm} \text{\textbf{return}} 
+\end{array}
+\]
+
+
+
+\end{document}
+
+
+

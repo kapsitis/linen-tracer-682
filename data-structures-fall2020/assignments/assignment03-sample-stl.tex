@@ -1,0 +1,479 @@
+%\documentclass[jou]{apa6}
+\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+\usepackage{color}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.0in
+
+\usepackage{xcolor}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1cm}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+%16.3-6
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+
+%\title{Homework 1: Grading Criteria}
+%\author{Kalvis}
+%\affiliation{RBS}
+
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\twocolumn
+
+
+\begin{center}
+{\Large Sample Assignment 3}\\
+{\em Discussed on 2020-09-24}\\
+{\em Not graded}
+\end{center}
+
+\vspace{10pt}
+{\bf Question 1 (Storing numbers in a queue)} Data structure {\tt std::vector} 
+is very popular; it allows {\tt push\textunderscore{}back(...)} method:
+you can add new elements at the end, but not at the beginning. 
+
+Double ended queue ({\em deque}) is another data structure (as fast and efficient as vector); 
+it allows pushing elements at either end:\\
+{\tt push\textunderscore{}front(...)} and {\tt push\textunderscore{}back(...)}.
+
+\vspace{10pt}
+Source file {\bf File1.cpp}:
+{\footnotesize
+\begin{center}
+\begin{minipage}{.85\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+#include <string>
+#include <deque>
+
+using namespace std;
+int main() {
+  deque<int> queue1;
+  int n; 
+
+  while (cin >> n) { 
+    queue1.push_front(n); 
+  }
+  
+  string sep; // initialized as empty
+  for (int m : queue1) { 
+      cout << sep << m; sep = ","; 
+  } 
+  cout << endl;
+
+  int head = queue1.at(0);
+  queue1.pop_front();
+  cout << head << " -> ";
+  for (int m : queue1) { 
+      cout << m << ",";
+  }
+}  
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+\vspace{10pt}
+Input file {\bf input.txt}:
+{\footnotesize
+\begin{center}
+\begin{minipage}{.85\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+1 3 5
+2 4 6
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+What is the output from {\bf File1.cpp} on this input?
+
+\vspace{10pt}
+{\bf (A)}
+{\footnotesize
+\begin{Verbatim}[frame=single]
+1,3,5,2,4,6
+6 -> 4,2,5,3,1,
+\end{Verbatim}
+}
+
+\vspace{10pt}
+{\bf (B)}
+{\footnotesize
+\begin{Verbatim}[frame=single]
+1,3,5,2,4,6
+1 -> 3,5,2,4,6,
+\end{Verbatim}
+}
+
+\vspace{10pt}
+{\bf (C)}
+{\footnotesize
+\begin{Verbatim}[frame=single]
+6,4,2,5,3,1
+1 -> 3,5,2,4,6,
+\end{Verbatim}
+}
+
+\vspace{10pt}
+{\bf (D)}
+{\footnotesize
+\begin{Verbatim}[frame=single]
+6,4,2,5,3,1
+6 -> 4,2,5,3,1,
+\end{Verbatim}
+}
+
+
+
+
+\newpage
+\vspace{20pt}
+{\bf Question 2 (Reading Line by Line)}
+
+\vspace{10pt}
+Source file {\bf File2.cpp}:
+{\footnotesize
+\begin{center}
+\begin{minipage}{.85\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+#include <sstream>
+#include <map>
+#include <string>
+#include <vector>
+
+using namespace std;
+int main() {
+  map<int, vector<int>> mymap;
+
+  vector<int> vect;
+  string line;
+  while (getline(cin, line)) {
+    istringstream sstr(line);
+    int n;        
+    while (sstr >> n) {
+      vect.push_back(n);
+    }
+	
+    mymap.insert(
+      make_pair(vect.at(0), vect));
+    vect.clear();
+  }
+
+  map<int,vector<int>>::iterator it= 
+      mymap.begin();
+  while (it != mymap.end()) {
+    cout << it ->first << ": ";
+    for (int m : it -> second) { 
+      cout << m << ",";
+    }
+    it++; cout << endl;
+  }
+} 
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+\vspace{10pt}
+Input file {\bf input.txt}:
+{\footnotesize
+\begin{center}
+\begin{minipage}{.85\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+1 3 5
+7 8 9
+2 4 6
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+Mark true/false statements about this code:
+
+\begin{enumerate}[(A)]
+\item The output is $3$ lines
+\item The output is $1$ line
+\item Iterator {\tt it} visits pairs from {\tt mymap} in the same order they were inserted.
+\item Iterator {\tt it} visits pairs from {\tt mymap} in a random order. 
+\item Iterator {\tt it} visits pairs from {\tt mymap} in increasing order 
+of the key ({\tt it -> first}). 
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Stuff where tree building does not happen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% SET data struct.
+
+
+\newpage
+\vspace{20pt}
+{\bf Question 3:} This code inserts some elements in 
+a {\tt std::set}, then tries to find 
+(element {\tt 5} is there, but {\tt 4} is not). 
+Finally, we iterate over the set in two different ways: 
+as in C++11 (for-loop syntax for an iterator) or 
+an older construct with an explicit iterator.
+
+
+\vspace{10pt}
+Source file {\bf File3.cpp}:
+{\footnotesize
+\begin{center}
+\begin{minipage}{.85\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+#include <set>
+
+using namespace std;
+int main() {
+  set<int> myset;
+  myset.insert(11);
+  myset.insert(13);
+  myset.insert(5);
+  myset.insert(7);
+  myset.insert(5);
+  bool b4,b5;
+  b4 = myset.find(4) == myset.end();
+  b5 = myset.find(5) == myset.end();
+  cout << "(b4,b5)=(" << b4 << 
+    "," << b5 << ")" << endl;
+  for (int u: myset) {
+      cout << u << "; ";
+  } 
+  cout << endl;
+  set<int>::iterator it;
+  it = myset.begin();
+  while (it != myset.end()) {
+    cout << (*it) << "; ";
+    it++;
+  }
+}
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+
+Mark which statements about this code are true/false.
+
+\begin{enumerate}[(A)]
+\item 1st line in output is {\tt (b3,b4) = (0,1)}.
+\item Lines 17--19 and 23--26 iterate over {\tt myset} in the same way. 
+\item Iterator on Lines 17--19 visits elements in increasing order.
+\item Iterator on Lines 17--19 visits elements in random order.
+\end{enumerate}
+
+
+\newpage
+
+\mbox{}
+\newpage
+\vspace{20pt}
+{\bf Question 4 (Sets/Vectors with Custom Classes)}\\
+The code below does the task of EX02: it reads student data from STDIN;
+outputs the smallest and the largest student compared by age; 
+or by height (if ages are equal). 
+
+
+\vspace{10pt}
+Source file {\bf File4.cpp}:
+{\footnotesize
+\begin{center}
+\begin{minipage}{.85\columnwidth}
+\begin{Verbatim}[frame=single,numbers=left]
+#include <iostream>
+#include <iomanip> 
+#include <set>
+
+using namespace std;
+struct Student {
+  int age;
+  double height;
+  Student(int aa = 1, double hh = 1): 
+          age(aa), height(hh) {}
+
+  friend istream &operator>>(
+    istream  &input, Student &S ) { 
+      input >> S.age >> S.height;
+      return input;            
+  }
+
+  friend ostream &operator<<( 
+    ostream &output, 
+	const Student &S ) { 
+      output << "Student(" << 
+        S.age << "," << std::fixed << 
+        std::setprecision(5) << 
+		S.height << ")";
+      return output;            
+  }
+
+  friend bool operator<(
+    const Student &left, 
+    const Student &right) {
+      return (left.age<right.age) || 
+      (left.age == right.height && 
+        left.height<right.height);
+    }
+};
+
+int main() {
+    int n; cin >> n;
+    set<Student> myset;
+    for (int i = 0; i < n; i++) {
+        Student student; 
+        cin >> student;
+        myset.insert(student);
+    }
+    cout << *(myset.begin()) << endl;
+    cout << *(--myset.end());
+    return 0;
+}
+\end{Verbatim}
+\end{minipage}
+\end{center}
+}
+
+\newpage
+Write short answers to these questions:
+
+\begin{enumerate}[(A)]
+\item What happens, if Line 43 
+is rewritten as follows:
+{\tt cout << *(myset.end());}
+\item How would you overload the comparison operation, 
+if you only look at {\tt age}, but order by age alphabetically (as in a dictionary). 
+Namely, age "17" comes before age "2" (since digit "1" alphabetically 
+precedes digit "2"). 
+{\em (Just show how the Lines 31--33 would look, if you order alphabetically.)}
+\item Assume that the class {\tt Student} had a destructor.
+On which line of your code (if at all) is it called, when you read the input containing data for a few students and insert them all in a set.
+\item Assume that you want to use {\tt std::vector} instead of 
+a set; and output the first and the last element you inserted into a vector. 
+What would you write on Line 43, Line 45 and 46? (How to add something to an end of a vector? 
+How to get the first element? The last element?)
+\end{enumerate}
+
+
+
+
+\newpage
+{\Large \bf Solutions}
+
+\vspace{10pt}
+{\bf Question 1.} Answer: D
+
+\vspace{10pt}
+{\bf Question 2.} Answer: {\tt true}, {\tt false}, {\tt false}, {\tt false}, {\tt true}.
+
+\vspace{10pt}
+{\bf Question 3.} Answer: {\tt false}, {\tt true}, {\tt true}, {\tt false}.
+
+\vspace{10pt}
+{\bf Question 4.} TBD 
+
+
+
+
+
+\end{document}
+
+
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+struct Folder {
+    string name;
+    vector<Folder> children;
+    Folder(string nn) {name = nn;}
+    void makeSub(Folder ff) {
+        children.push_back(ff);
+    }
+};
+
+int main() {    
+    Folder f1("f1");
+    Folder f2("f2");
+    Folder f3("f3"); 
+
+    f2.makeSub(f3);
+    f1.makeSub(f2);
+    cout << f2.children.size() << endl;
+}
+
+
+
+============================
+
+/*
+    Node n1(1);
+    Node n2(2);
+    Node n3(3);
+    Node n4(4);
+    Node n5(5);
+    Node n6(6);
+    Node n7(7);
+    
+    nodeMap.insert(pair<int, Node>(1, n1));
+    n1.addChild(&n2);
+    n1.addChild(&n3);
+    n1.addChild(&n4);
+    n1.addChild(&n5);
+	nodeMap.insert(pair<int, Node>(1, n2));
+    n2.addChild(&n6);
+    n2.addChild(&n7);
+    n1.printPreorder();
+	
+	pazaudē n2 bērnus
+	
+*/

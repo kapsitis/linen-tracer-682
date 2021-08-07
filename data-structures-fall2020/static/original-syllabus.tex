@@ -1,0 +1,99 @@
+\documentclass[jou]{apa6}
+%\documentclass[11pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+\textwidth 6.27in
+\headheight 1.0in
+\topmargin -0.1in
+\headheight 0.0in
+\headsep 0.0in
+\textheight 9.0in
+
+\usepackage{xcolor}
+
+\setlength\parindent{0pt}
+
+\newenvironment{myenv}{\begin{adjustwidth}{0.4in}{0.4in}}{\end{adjustwidth}}
+\renewcommand{\abstractname}{Anotācija}
+\renewcommand\refname{Atsauces}
+
+
+
+\newcounter{alphnum}
+\newenvironment{alphlist}{\begin{list}{(\Alph{alphnum})}{\usecounter{alphnum}\setlength{\leftmargin}{2.5em}} \rm}{\end{list}}
+
+
+%16.3-6
+
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+%\usepackage{hyperref}
+
+
+\title{Homework 1: Grading Criteria}
+\author{Kalvis}
+\affiliation{RBS}
+
+
+
+\begin{document}
+\thispagestyle{empty}
+
+%\twocolumn
+
+\begin{center}
+{\Large Data Structures and Algorithms}
+\end{center}
+
+
+{\bf Code: } CSE 250\\
+{\bf Course title: } Data Structures\\
+{\bf Course status in the programme:} Compulsory/Courses of Limited Choice\\
+{\bf Volume of the course:} 1 part, 5.0 Credit Points, 7.0 ECTS credits\\
+{\bf Language of instruction:} EN
+
+
+
+\begin{abstract}
+{\bf Abstract.} Provides a rigorous analysis of the design, implementation, and properties of advanced data structures. Topics include time-space analysis and tradeoffs in arrays, vectors, lists, stacks, queues, and heaps; tree and graph algorithms and traversals, hashing, sorting, and data structures on secondary storage. Surveys library implementations of basic data structures in a high-level language. Advanced data structure implementations are studied in detail. Illustrates the importance of choosing appropriate data structures when solving a problem by programming projects in a high-level language.
+\end{abstract}
+
+
+{\bf Goals and objectives of the course in terms of competences and skills.} 
+
+This course adheres to recommendations made in the ACM's CC2001 Computer Science Volume curriculum document for a third semester data structures course. It covers topics from the following knowledge units: DS5 Graphs and Trees, PF3 Fundamental data structures, AL3 Fundamental computing algorithms. It reviews and reiterates concepts from the following knowledge units (due to the change of languages) PF1 Fundamental programming constructs, AL1 Basic algorithm analysis, PL4 Declarations and types, PL5 Abstraction mechanisms, PL6 Object-oriented programming.
+
+{\bf Structure and tasks of independent studies.} 
+
+Midterm exams, Final exam, Written and programming assignments
+
+{\bf Recommended literature.}
+
+Michael T. Goodrich, Roberto Tamassia, David M. Mount, Data Structures and Algorithms in C++, ISBN 978-0-470-38327-8, February 2011. Paperback, 736 pages.
+
+{\bf Course prerequisites.}
+
+introduction to Computer Science and College Calculus
+
+{\bf Courses acquired before.} TBA.
+
+
+\end{document}
+
+
+

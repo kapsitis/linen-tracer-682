@@ -1,0 +1,155 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage[margin=20mm]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+\thispagestyle{empty}
+
+\twocolumn
+
+\begin{center}
+{\Large Assignment 5. 2020-10-14},\\
+{\em 12 minutes} 
+\end{center}
+
+
+\vspace{10pt}
+{\bf Question 1 (Algorithm to find GCD).} 
+
+This algorithm is often used to find the {\em greatest common divisor}
+of nonnegative integers $a$ and $b$.
+
+\[
+\begin{array}{rl}
+ & \text{\textsc{GCD-One}}(a,b):\\
+1 & \text{\textbf{if\ }} a == 0:\\
+2 & \hspace{.5cm} \text{\textbf{return\ }} b:\\
+3 & \text{\textbf{if\ }} b == 0:\\
+4 & \hspace{.5cm} \text{\textbf{return\ }} a:\\
+5 & \text{\textbf{while\ }} b > 0:\\
+  & \hspace{.5cm} \text{\em (Remainder when $a$ is divided by $b$)}\\
+6 & \hspace{.5cm} t = a\;\operatorname{mod}\;b\\
+7 & \hspace{.5cm} a = b\\
+8 & \hspace{.5cm} b = t\\
+9 & \text{\textbf{return\ }} a\\
+\end{array}
+\]
+
+The worst case time for this algorithm is achieved 
+when we input Fibonacci numbers (it has to run the longest relative to the input size). 
+For example, if $a = 144$, $b = 89$, then:
+$$(144,89) \rightarrow (89,55) \rightarrow (55,34) \rightarrow$$
+$$\rightarrow (34,21) \rightarrow (21,13) \rightarrow (13,8) \rightarrow (8,5)$$ 
+$$\rightarrow (5,3) \rightarrow (3,2) \rightarrow (2,1) \rightarrow (1,0).$$
+At the last step $a = 1$ and $b = 0$, so it returns $a=1$ which equals $\operatorname{gcd}(144,89)$. 
+
+It is known that $n$-th Fibonacci number 
+$${\displaystyle F_n \approx \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2} \right)^n}.$$
+It grows as a geometric progression.
+
+Write the time complexity of finding GCD of two numbers $(a,b)$ in terms of $n$, 
+where $n$ is the total number of digits in numbers $a$ and $b$.\\
+{\bf Express your answer, using the ``Big-O-Notation''.}
+
+
+
+\vspace{20pt}
+{\bf Question 2 (Another algorithm for GCDD).} 
+
+Modify the above algorithm - instead of dividing with remainder, we subtract $b$ from $a$ 
+repeatedly (and we swap $a$ and $b$, whenever $b > a$). 
+
+\[
+\begin{array}{rl}
+ & \text{\textsc{GCD-Two}}(a,b):\\
+1 & \text{\textbf{if\ }} a == 0:\\
+2 & \hspace{.5cm} \text{\textbf{return\ }} b:\\
+3 & \text{\textbf{if\ }} b == 0:\\
+4 & \hspace{.5cm} \text{\textbf{return\ }} a:\\
+5 & \text{\textbf{while\ }} b > 0:\\
+6 & \hspace{.5cm} a = a - b\\
+7 & \hspace{.5cm} \text{\textbf{if\ }} b > a:\\
+  & \hspace{1.0cm} \text{\em ($a$ becomes $b$ and vice versa)}\\
+8 & \hspace{1.0cm} swap(a,b)\\
+9 & \text{\textbf{return\ }} a\\
+\end{array}
+\]
+
+For example, if $a = 75$, $b = 30$ (GCD is $15$), we run it like this:
+{\small
+$$(75,30) \rightarrow (45,30) \rightarrow (15,30)_{swap} \rightarrow$$
+$$ \rightarrow (30,15) \rightarrow (15,15) \rightarrow
+(0,15)_{swap} \rightarrow (15,0).$$
+}
+
+Write the time complexity of finding GCD of two numbers $(a,b)$ in terms of $n$
+(where $n$ is your input length).\\
+{\bf Express your answer, using the ``Big-O-Notation''.}
+
+
+
+
+\newpage
+
+{\bf \large Solutions}
+
+
+\vspace{10pt} 
+{\bf Question 1.} Answer: $O(n)$.
+
+The algorithm $\text{\textsc{GCD-One}}(a,b)$ has time complexity $O(n)$.\\
+Intuitively, if we have $100$-digit numbers, then we would need $100k$ steps for the algorithm to 
+complete - so it is linear. 
+(Here we assume that all arithmetic operations take constant time; the algorithm may take longer, if numbers
+$a,b$ are so large that they exceed $2^{64}$ or other CPU register size limit.)
+
+It was told in this problem that the worst-case complexity is achieved, if both 
+arguments to $\text{\textsc{GCD-Two}}(a,b)$ are Fibonacci numbers. The lengths of $a$ and $b$ 
+cannot exceed $n$ digits (in decimal notation), therefore $a,b < 10^n$. 
+If any of them is the $k$-th Fibonacci number (e.g. $a = F_k$, then we would spend $c \cdot k$ steps
+before the algorithm reaches $F_0 = 0$. We get 
+$$F_k \approx \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2} \right)^k < 10^n,$$
+$$\left(\frac{1+\sqrt{5}}{2} \right)^k < \sqrt{5} \cdot 10^n,$$
+$$k < \frac{\ln (\sqrt{5} \cdot 10^n)}{\ln \frac{1+\sqrt{5}}{2}} = c \cdot n.$$
+Therefore, the number of while-loop iterations $k$ is $O(n)$.
+
+
+\vspace{20pt} 
+{\bf Question 2.} Answer: $O(10^n)$.
+
+The worst case (maximum number of subractions) for 
+the algorithm $\text{\textsc{GCD-Two}}(a,b)$  happens, if $a = 10^n-1$ 
+(the largest $n$-digit integer having $n$ digits $=9$) and $b = 1$. In this case we will subtract $b$ from $a$ 
+$O(10^n)$ times.
+
+
+{\em Note 1:} Time complexity should NOT expressed in 
+terms of actual arguments $a$ and $b$, but it only depends on $n$, 
+where $n$ denotes the length of its input (total number of digits of $a$ and $b$).
+
+{\em Note 2:} Answer $O(\log n)$ for $\text{\textsc{GCD-One}}(a,b)$ or
+$O(n)$ for $\text{\textsc{GCD-Two}}(a,b)$ would be true, if the input for $a,b$ 
+is written in {\em unary counting system}. 
+
+\vspace{20pt}
+{\bf Grading:} 
+\begin{itemize} 
+\item Correct answers ($O(n)$ and $O(10^n)$ respectively) \textendash 10 points.
+\item Answers $O(\log n)$ and $O(n)$ with some justification (why remainders are 
+much faster than subtraction) \textendash 7 points. 
+\item $O(\log n)$ and $O(n)$ (but without any justification) \textendash 5 points. 
+\item Similar to $O(\log n)$ and $O(n)$ (but $a,b$ used instead of $n$) \textendash 4 points. 
+\item Just $O(\log n)$ for the 1st item \textendash 2 points. 
+\end{itemize}
+
+
+
+\end{document}
+
+
+

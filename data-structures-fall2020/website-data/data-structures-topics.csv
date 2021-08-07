@@ -1,0 +1,368 @@
+Week,Class,Id
+1,topic,Use C++ and Object Orientation
+1.1,task,Create HelloWorld style programs
+1.1,description,"Explain the entry point of a program, how it handles input and output, some fundamental data types and their conversions. Introduce the basic steps for its compilation and linking. In the module we stick with the Visual Studio Code possibilities."
+1.1,reading,Ch01P01 (Goodrich2011) Basic C++ Programming Elements
+1.1,reading,https://bit.ly/2Y53DtA (SOF:Khachaturyan2019) What is Plain Old Data (POD)
+1.1,video,https://youtu.be/ajRj_LmDmjk (de:Franneck2016A) Erstes Progrde:de:amm (Hel
+1.1,video,https://youtu.be/aLdRUnZeSAw (de:Franneck2016B) Datentypen & Variablen
+1.1,video,https://youtu.be/E0I3O7W5jcI (de:Franneck2016AD) Arrays (Erstellen & Initialisieren)
+1.1.1,task,Create a simple HelloWorld program
+1.1.1,description,"Basic examples; whey they posess the main characteristics of an algorithm and how to run them in graphical IDEs (Visual Studio Code, etc). "
+1.1.1.1,code,Test and run CLI programs using plaintext files for input and expected output (use Visual Studio Code).
+1.1.1.2,code,Tag submittable files in version control and submit
+1.1.1.3,code,Understand your assignment submission procedure and its messages
+1.1.1.4,task,Write a program that also transforms input data
+1.1.1.5,task,Use correct indentation and other basic coding conventions
+1.1.1.6,task,Identify compiler and linker actions
+1.1.1.7,task,Show the difference between the development environment and runtime environment.
+1.1.2,task,Introduce fundamental types
+1.1.2,description,Describe all kinds of “built in” C++ types; their bitwise structure and how to initialize them.
+1.1.2.1,task,"Introduce integer  types (short, int, long)"
+1.1.2.2,task,Introduce bool type
+1.1.2.3,task,Define and use enum types
+1.1.2.4,task,Introduce floating point types (float and double)
+1.1.2.5,task,Introduce char type
+1.1.2.6,task,Use type casts between the fundamental types
+1.1.3,task,"Declare and use arrays, pointers, references and struct types"
+1.1.3,description,How to build “derived types” from fundamental types and other derived types.
+1.1.3.1,task,"Declare, define and initialize arrays of fundamental types"
+1.1.3.2,task,Declare and use pointers to variables
+1.1.3.3,task,Refer to arrays using pointers
+1.1.3.4,task,Declare and use references
+1.1.3.5,task,Use C-style struct types
+1.1.3.6,task,Use std:string to manipulate strings; convert to strings
+1.1.4,task,"Use namespaces, typedefs, local and global variables"
+1.1.4,description,Introduce the identifiers (fully qualified with namespaces or local); understand the scope of a variable.
+1.1.4.1,task,Define variables inside a scope
+1.1.4.2,task,Refer to namespaced variables (with or without “using” statement)
+1.1.4.3,task,Use “typedef” to give shorthand names for new types
+1.1.4.4,task,Understand C++ variable scoping rules
+1.2,task,"Use expressions, control structures and functions in C++"
+1.2,description,"This module introduces longer code fragments, builds larger expressions and assignments, explains the structures of loops, branching and switching statements."
+1.2,reading,Ch01P02 (Goodrich2011) Expressions
+1.2,reading,Ch01P03 (Goodrich2011) Control Flow
+1.2,video,https://youtu.be/d9rMdfqIOek (de:Franneck2016C) Rechnen mit Variablen
+1.2,video,https://youtu.be/wzgzOnIcHoI (de:Franneck2016D) If Abfragen
+1.2,video,https://youtu.be/8DGGR8oFzEU (de:Franneck2016E) Switch Anweisung
+1.2.1,task,"Declare, define and initialize variables, know their scope"
+1.2.1,description,Distinguish between declarations and definitions; understand scoping and namespace rules.
+1.2.1.1,task,Define variable pointers and references
+1.2.1.2,task,Use namespaces explicitly or implicitly
+1.2.1.3,task,Use literal values in variable initializations
+1.2.1.4,task,Use “external” keyword and global variables (accessible in multiple modules)
+1.2.2,task,Write conditional statements
+1.2.2,description,Use correct syntax and best practices for conditional statements (3 kinds)
+1.2.2.1,task,Write if and if-else statements
+1.2.2.2,task,Write chains of if statements; place next if statement in the else branch only.
+1.2.2.3,task,"Write switch statements, use breaks; understand performance implications of “switch” vs. “if”"
+1.2.3,task,Write loop statements. 
+1.2.3,description,Use correct syntax and best practices for loop statements
+1.2.3.1,task,"Write pre-increment and postincrement loops, loop variable scope"
+1.2.3.2,task,Write while statements
+1.2.4,task,Declare enum datatypes
+1.2.5,task,Declare struct datatypes
+1.3,task,Use C++ classes
+1.3,description,"Explain the structure of class definition, public, private members, nested classes, constructors and destructors."
+1.3,reading,Ch01P05 (Goodrich2011) C++ Classes
+1.3,reading,Ch01P06 (Goodrich2011) C++ Program and File Organization
+1.3,video,https://youtu.be/9I3so8hZq0g (de:Franneck2016CA) Eigene Klassen & Header
+1.3.1,task,Define and use struct types
+1.3.1,description,Describe struct types as aggregations of (public) data members.
+1.3.1.1,task,Define struct as a heterogeneous collection of different types
+1.3.1.2,task,Understand struct layout in memory and reinterpret type casts
+1.3.1.3,task,Explain C++ Plain Old Data (POD) concept
+1.3.2,task,Define and use class types
+1.3.2,description,Explain why classes are used differently from types; what changes as we use “single concern” and “encapsulation” principles (i.e. hiding implementation details).
+1.3.2.1,task,Define public and private members
+1.3.2.2,task,Use encapsulation principle in OO
+1.3.2.3,task,Recognize Dijkstra’s “one concern per class” principle
+1.3.3,task,Understand class member instantiation
+1.3.3,description,"Understand what happens as new class members are instantiated, in which order parent/child objects are instantiated; initializer lists, etc."
+1.3.3.1,task,Write simple class constructors
+1.3.3.2,task,Write class destructors
+1.3.3.3,task,Use “public” class inheritance
+1.3.4,task,Use class design principles
+1.3.4,description,"Specify the function/method prototypes using public/private/protected, also “const” specifiers. "
+1.3.4.1,task,Use Liskov principle (subclass can replace parent class)
+1.3.4.2,task,Use “const” modifier for methods and their formal parameters
+1.3.4.3,task,"Understand the visibility of class members by other members, clients and friends."
+1.3.5,task,Use C++ build utilities and Makefiles
+1.3.5,description,Create and build C++ sources and headers to reflect the design of your C++ classes. 
+1.3.5.1,task,Use Linux command-line utilities g++ and similar.
+1.3.5.2,task,Build your code from multiple files inside the C++ IDEs. 
+1.3.5.3,task,Understand the use of macro commands; use macros to do definition guards.
+1.3.5.4,task,Understand the process of compilation and linking.
+1.3.5.5,task,Separate declarations/definitions between header (H) and source (CPP) files. 
+1.3.5.6,task,Write Makefile for typical 
+1.3.5.7,task,"Best practices and mistakes when setting up build practices (typical linker errors; not recompiling or not including all dependencies, name conflicts)"
+1.4,task,"Use arrays, pointers and references in functions"
+1.4,description,Define functions with appropriate prototypes (to pass arrays and large objects). Separate concerns go into different files and mutual function calls.
+1.4,reading,Ch01P04 (Goodrich2011) Functions
+1.4,video,NA
+1.4.1,task,Use various flavors of function calls
+1.4.1,description,Describe the typical patterns of parameter passing to C++ functions
+1.4.1.1,task,Define and call functions passing parameters by value
+1.4.1.2,task,Define and call functions passing parameters by reference
+1.4.2,task,Pass arrays and large objects as parameters to functions
+1.4.2,description,
+1.4.2.1,task,"Pass static arrays as parameters, specify array length as an extra paramater"
+1.4.2.2,task,Pass dynamic arrays as parameters
+1.4.2.3,task,Pass large objects as references with “const” modifier
+1.4.3,task,Use recursive functions in C++
+1.4.3,description,"Some flavors of recursion, their implications on memory use, time efficiency and declaration order in the source files"
+1.4.3.1,task,Use plain recursion and tail recursion
+1.4.3.2,task,Use mutual recursion
+1.4.3.3,task,Use function pointers
+2,topic,Express algorithms through ADTs and data structure libraries
+2.1,task,Analyze algorithms by counting data related operations
+2.1,description,Here we analyze the algorithms at pseudocode level (making assumptions regarding the cost of data structure library calls). More detailed analysis that takes into account alternatives of implementing the data structures themselves is postponed to other modules.
+2.1,reading,Ch04P02 (Goodrich2011) Analysis of Algorithms
+2.1,video,NA
+2.1.1,task,Identify the key characteristics of an algorithm
+2.1.2,task,"Determine function growth classes using O-notation, Ω-notation, Θ-notation."
+2.1.3,task,Define the time complexity of an algorithm; make assumptions about the data structure manipulations
+2.1.4,task,Define the space complexity of an algorithm
+2.1.5,task,Describe the difference between feasible and infeasible algorithms
+2.1.6,task,"Worst-case, expected and amortized complexity"
+2.2,task,Use Object Orientation concepts in C++
+2.2,description,"The module explains the thinking behind keywords “public”, “private”, inheritance – and how this is typically used in writing algorithms and data-structure libraries."
+2.2,reading,"Ch02P01 (Goodrich2011) OO Goals, Principles and Patterns"
+2.2,reading,Ch02P02 (Goodrich2011) Inheritance and Polymorphism
+2.2,reading,Ch02P03 (Goodrich2011) Templates
+2.2,video,NA
+2.2.1,task,Explain abstraction as an OO principle
+2.2.2,task,Explain encapsulation as an OO principle; keywords public/private and friends
+2.2.3,task,Explain inheritance as an OO principle; inheriting class contract
+2.2.4,task,Explain polymorophism as an OO principle; keywords virtual/abstract
+2.2.5,task,Define class hierarhies following the OO principles
+2.2.6,task,Explain function overriding with inheritance
+2.2.7,task,Explain abstract classes and virtual functions.
+2.2.8,task,Define template functions and template classes. 
+2.2.9,task,Define and use overloaded operators
+2.3,task,Define and implement functions for simple Abstract Data Types (ADT)
+2.3,description,This module discusses just the simplest ADTs. 
+2.3,reading,Ch01P05 (Goodrich2011) C++ Classes
+2.3,reading,Ch06P01 (Goodrich2011) Vectors
+2.3,reading,Ch06P02 (Goodrich2011) Lists
+2.3,reading,Ch06P03 (Goodrich2011) Sequences
+2.3,video,https://bit.ly/2NBvNXh
+2.3.1,task,Define stack as an ADT
+2.3.2,task,Define a deque as an ADT
+2.3.3,task,Define a list as an ADT
+2.3.4,task,Define a sequence as an ADT
+2.3.5,task,Define a binary tree as an ADT
+2.3.6,task,Define a map as an ADT
+2.3.7,task,Understand how one ADT can have different implementations
+2.3.8,task,Implement data structures in arrays
+2.3.9,task,Implement data structures with pointers
+2.3.10,task,Understand advantages of encapsulation and hiding implementation details
+2.3.11,task,Indentify the main container classes typically implemented by data structure libraries
+2.3.11.1,task,"Identify the key manipulations (initialize, sort, search, transform) on containers"
+2.3.11.2,task,Identify the iterators and ways to visit each element in a container for custom processing
+2.3.12,task,Understand representation invariants (rep invariants)
+2.3.12.1,task,Understand the representational exposure
+2.3.12.2,task,"Use defensive copying, proper get/set methods, verbal contract with client classes to avoid exposure"
+2.3.13,task,"Use STL to initialize vectors, stacks and maps"
+2.3.14,task,Use C++ constructs to iterate over data structures
+2.4,task,Define OO design patterns in C++
+2.4,description,"The module only lists those design patterns that are typically used with data structures. One can certainly write good code without using “Gang of Four” jargon, but it can explain the thinking behind some popular APIs and data structure libraries."
+2.4,reading,"Ch02P01 (Goodrich2011) OO Goals, Principles and Patterns"
+2.4,reading,Ch05P03 (Goodrich2011) Deques: Adapter Design Pattern
+2.4,reading,Ch07P03 (Goodrich2011) Binary Trees: Template Method Pattern
+2.4,reading,Ch11P04 (Goodrich2011) Sets: Template Method Pattern
+2.4,video,NA
+2.4.1,task,Describe the tradeoffs between top-down and bottom-up design
+2.4.2,task,Define the singleton OO design pattern
+2.4.3,task,Define the factory OO design pattern
+2.4.4,task,Define the composite OO design pattern
+2.4.5,task,Define the template method OO design pattern
+2.4.6,task,Use virtual functions in C++ also in factory or template method patterns
+2.5,task,Test and debug algorithms in C++
+2.5,description,"The module explains general techniques to do unit testing and system testing, code inspection, printouts, logging and debugging in order to find bugs in algorithmic software."
+2.5,reading,Ch01P07 (Goodrich2011) Writing a C++ Program
+2.5,reading,Ch04P03 (Goodrich2011) Loop Invariants
+2.5,video,NA
+2.5.1,task,Identify the reasons why software can contain errors
+2.5.2,task,Write reasonably complete set of testcases. 
+2.5.3,task,Enforce invariants and Hoare logic to your data structure manipulations
+2.5.4,task,Use printouts and/or efficient logging
+2.5.5,task,Analyze runtime behavior using breakpoints.
+3,topic,Analyze the implementations of some data structures.
+3.1,task,Construct and manipulate list-like data structures
+3.1,description,"Define list and also vector (a.k.a. arraylist) allowing random access. In this and subsequent modules we start with the ADT we want, then show some ways to implement it."
+3.1,reading,Ch03P01 (Goodrich2011) Using Arrays
+3.1,reading,Ch03P02 (Goodrich2011) Using Singly Linked Lists
+3.1,reading,Ch03P03 (Goodrich2011) Using Doubly Linked Lists
+3.1,reading,Ch05P01 (Goodrich2011) Stacks
+3.1,reading,Ch05P02 (Goodrich2011) Queues
+3.1,reading,Ch05P03 (Goodrich2011) Doubly-Ended Queues
+3.1,reading,Ch06P01 (Goodrich2011) Vectors
+3.1,reading,Ch06P02 (Goodrich2011) Lists
+3.1,reading,Ch06P03 (Goodrich2011) Sequences
+3.1,reading,https://bit.ly/31O7sWK
+3.1,video,NA
+3.1.1,task,Define list and vector ADTs
+3.1.2,task,Define an iterator ADT
+3.1.3,task,Implement list as a singly linked list
+3.1.4,task,Implement list as a doubly linked list
+3.1.5,task,Implement vector as an extendable array
+3.1.6,task,Implement vector as an extendable cicular array
+3.2,task,Construct and traverse tree-like data structures
+3.2,description,"Trees in this course are always assumed to be rooted (one node is root) and ordered (we always know, which is the 1st, 2nd etc. child of the same parent). This module only deals with trees in the most general sense (to store certain hierarchies). Trees with additional structural requirements (with keys ordered for fast search and/or balanced) are called search trees; they will be discussed later. "
+3.2,reading,Ch07P01 (Goodrich2011) General Trees
+3.2,reading,Ch07P02 (Goodrich2011) Tree Traversal Algorithms
+3.2,video,NA
+3.2.1,task,"Define graph-theoretic concepts: root, internal nodes, leaves, children, parent, siblings."
+3.2.2,task,Define path-related concepts in trees
+3.2.3,task,"Define full, complete and perfect n-ary trees."
+3.2.4,task,Define tree ADT
+3.2.5,task,Parse algebraic expressions and convert them to trees
+3.2.6,task,Evaluate algebraic expression trees using stack data structure
+3.2.7,task,Implement trees with two-way pointers
+3.2.8,task,"Implement (preferably, complete) trees with arrays"
+3.2.9,task,Representing a rooted n-ary tree as a binary tree.
+3.3,task,Construct and manipulate priority queues and heaps
+3.3,description,Unlike more universal structures (binary search trees or hashtables) the data structures may only need to return (or remove) the minimal or maximal element; in this case they are called priority queues. A typical way to implement them is a tree-like structure called a heap.
+3.3,reading,Ch08P01 (Goodrich2011) The Priority Queue ADT
+3.3,reading,Ch08P02 (Goodrich2011) Implementing a Priority Queue with a List
+3.3,reading,Ch08P03 (Goodrich2011) Heaps
+3.3,video,NA
+3.3.1,task,Priority queue ADT
+3.3.2,task,Analyze priority queue implementation as a regular binomial heap
+3.3.3,task,Analyze skew binomial heap implementation
+3.3.4,task,Analyze leftist binomial heap implementation
+3.3.5,task,Analyze Huffman algorithm to compress a sequence of independent messages
+3.4,task,Construct and manipulate maps and dictionaries
+3.4,description,Finding values by non-integer keys (typically strings) defines the difference between maps and lists. Dictionaries are a variant of maps allowing repeated keys. In this module the ADTs are defined and also their implementations 
+3.4,reading,Ch09P01 (Goodrich2011) Maps
+3.4,reading,Ch09P02 (Goodrich2011) Hash Tables
+3.4,reading,Ch09P03 (Goodrich2011) Ordered Maps
+3.4,reading,Ch09P04 (Goodrich2011) Skip Lists
+3.4,reading,https://bit.ly/31PBl91
+3.4,reading,https://bit.ly/2Wzw6qD
+3.4,video,NA
+3.4.1,task,Define map ADT
+3.4.2,task,Define a hashtable and a corresponding hash function
+3.4.2.1,task,Describe a hash collision and hash tables with chaining
+3.4.2.2,task,Growing and shrinking hash tables
+3.4.2.3,task,Analyze worst-case and amortized operation complexity in hashtables
+3.4.3,task,"Define a rolling hash ADT (append, skip)"
+3.4.4,task,Analyze Rabin-Karp algorithm
+3.4.5,task,Implement map as a doubly-linked list
+3.4.6,task,Implement skiplists
+3.4.7,task,Adjust data structures for dictionaries with repetitive keys
+3.5,task,Construct and manipulate BST structures
+3.5,description,Binary Search Trees is one possible way to store maps with totally ordered keys. This is an overview chapter that shows the general principles how the search trees can be built and manipulated. Inserting nodes in certain patterns can lead to skinny and inefficient trees; so they need some balancing.
+3.5,reading,Ch10P01 (Goodrich2011) Binary Search Trees
+3.5,reading,Ch10P02 (Goodrich2011) AVL Trees
+3.5,reading,Ch10P03 (Goodrich2011) Splay Trees
+3.5,reading,Ch10P04 (Goodrich2011) 2-4 Trees
+3.5,video,NA
+3.5.1,task,Define BST operations as ADT.
+3.5.2,task,"Run node search, insert and delete in an abstract BST"
+3.5.3,task,"Implement node search, insert and delete in pointer implementation."
+3.5.4,task,"Implement node search, insert and delete in array implementation"
+3.5.5,task,Implement tree balancing as AVL tree
+3.5.6,task,Implement tree balancing as red-black tree
+3.5.7,task,Implement balancing as splay tree
+3.5.8,task,"Introduce (a,b)-search-trees and (2,4)-trees in particular"
+3.6,task,Analyze and compare sorting algorithms
+3.6,description,This chapter describes general-purpose sorting algorithms (sorting also appears in STL module and as an illustration to various algorithm paradigms in later modules).
+3.6,reading,Ch11P01 (Goodrich2011) Merge-Sort
+3.6,reading,Ch11P02 (Goodrich2011) Quick-Sort
+3.6,reading,Ch11P03 (Goodrich2011) Sorting through an Algorithmic Lens
+3.6,video,NA
+3.6.1,task,Analyze insertion sort and bubble sort
+3.6.2,task,Analyze merge sort algorithm
+3.6.3,task,Analyze quicksort algorithm
+3.6.4,task,Analyze heapsort algorithm
+3.7,task,Construct and manipulate set-like structures 
+3.7,description,"This module explains ways to represent sets and also bags (allowing repetition of elements); their order relations and set-level operations. Element-level operations on sets were explained earlier – in fact, maps and dictionaries can be used for that."
+3.7,reading,Ch11P04 (Goodrich2011) Sets and Union/Find Structures
+3.7,video,NA
+3.7.1,task,Revisit generalized container ADTs that are used to represent (unordered) sets.
+3.7.2,task,Introduce additional operations in ordered sets.
+3.7.3,task,Revisit iterator ADTs in set-like data structures.
+3.7.3.1,task,"Analyze set-level operations (union, difference, etc.) in the list implementation."
+3.7.3.2,task,Analyze set-level operations in the hashtable implementation
+3.7.3.3,task,Analyze set-level operations in tree implementations.
+3.7.4,task,Analyze some algorithms for the selection problem (identifying the n-th element)
+3.8,task,Describe graph and directed graph structures and traversals
+3.8,description,The module explains the most complex data structures covered in this course (undirected and directed graphs); their ADT and some general tasks associated with graphs (such as BFS and DFS traversal). Any weighted graph issues are postponed. 
+3.8,reading,Ch13P01 (Goodrich2011) Graphs
+3.8,reading,Ch13P02 (Goodrich2011) Data Structures for Graphs
+3.8,reading,Ch13P03 (Goodrich2011) Graph Traversals
+3.8,reading,Ch13P04 (Goodrich2011) Directed Graphs
+3.8,video,NA
+3.8.1,task,"Revisit graph concepts: undirected vs. directed, simple graphs vs. multigraphs, degrees, indegrees, outdegrees; their input via matrices and adjacency lists. "
+3.8.2,task,"Introduce graph ADTs, their iterators, accessor and update methods. "
+3.8.3,task,"Describe alternatives of graph input, output and storage."
+3.8.4,task,Describe the BFS traversal algorithm template
+3.8.5,task,Describe the DFS traversal algorithm flavors.
+3.8.5.1,task,Use the DFS traversal to analyze mazes
+3.8.5.2,task,Use the DFS traversal to find paths and cycles in a graph.
+3.9,task,Analyze Shortest Paths and MST algorithms
+3.9,description,Various general algorithmic ideas can be illustrated on weighted graph optimization problems. This module analyzes source-to-sink (or all-pairs) shortest paths and also the minimum spanning tree (MST) algorithms. 
+3.9,reading,Ch13P05 (Goodrich2011) Shortest Paths
+3.9,reading,Ch13P06 (Goodrich2011) Minimum Spanning Trees
+3.9,video,NA
+3.9.1,task,Introduce the weighted graph framework and input data
+3.9.2,task,Analyze Dijkstra’s algorithm
+3.9.3,task,Analyze Bellman-Ford algorithm (and negative edge weights)
+3.9.4,task,Analyze Kruskal’s algorithm
+3.9.5,task,Analyze Prim’s algorithm
+3.9.6,task,Analyze Boruvka’s algorithm
+4,topic,Introduce general paradigms for algorithms.
+4.1,task,Describe types of algorithmic problems and overview their algorithms
+4.1,description,The last module provides a high-level overview of some large classes of algorithmic problems; what algorithms were covered in each one of them and what paradigms were used.
+4.1,reading,Ch12P03 (Goodrich2011) Pattern Matching Algorithms
+4.1,video,NA
+4.1.1,task,Describe searching and sorting problems
+4.1.2,task,Describe string processing problems
+4.1.3,task,Describe some examples of graph problems
+4.1.4,task,Describe some examples of combinatorial problems
+4.1.5,task,Describe some examples of geometric problems
+4.1.6,task,Describe some examples of numerical problems
+4.2,task,"Describe exhaustive, brute-force paradigms"
+4.2,description,Introduce algorithms that split the problem into subcases and then verify subcases in some order
+4.2,reading,Ch12P03 (Goodrich2011) Pattern Matching Algorithms
+4.2,video,NA
+4.2.1,task,Define exhaustive search paradigm
+4.2.2,task,Describe tactics to generate combinations
+4.2.3,task,Describe examples of “naive” search algorithms
+4.2.4,task,Describe examples of “naive” string matching algorithms
+4.3,task,Describe decrease and conquer paradigm
+4.3,description,Algorithm can reduce a problem to a simpler one. We discuss paradigms to solve a problem by stepwise reducing it to a simpler one.
+4.3,reading,Ch13P04 (Goodrich2011) Directed Graphs
+4.3,video,NA
+4.3.1,task,Describe decrease and conquer paradigm
+4.3.2,task,Revisit insertion sort algorithm
+4.3.3,task,Analyze topological sorting algorithm
+4.3.4,task,Generate permutations or subsets of a given set
+4.3.5,task,Discuss heap implementations in terms of decrease and conquer.
+4.4,task,Describe divide and conquer paradigm
+4.4,description,Many algorithmic problems can be solved or “conquered” by subdividing them in parts
+4.4,reading,Ch11P01 (Goodrich2011) Merge-Sort
+4.4,video,NA
+4.4.1,task,Describe divide and conquer paradigm
+4.4.2,task,Revisit mergesort and quicksort
+4.4.4,task,Revisit BSTs
+4.4.4,task,"Analyze recurrence equations, apply Master method"
+4.4.4.1,task,Run Karatsuba’s fast multiplication
+4.4.4.2,task,Run Strassen’s fast matrix multiplication
+4.5,task,Describe dynamic programming paradigm
+4.5,description,Data structure manipulations are often a means to an end. Here we list some application areas that often lead to data structures; and this will help to introduce different algorithm creation paradigms – very general ideas that are behind the algorithm development.
+4.5,reading,Ch12P02 (Goodrich2011) Dynamic Programming
+4.5,video,NA
+4.5.1,task,Describe dynamic programming paradigm
+4.5.2,task,Revisit shortest paths problems
+4.5.3,task,Analyze optimal matrix multiplication problem
+4.5.4,task,Analyze longest common subsequence algorithm
+4.6,task,Describe greedy paradigm
+4.6,description,"Some algorithms searching for the optimal (cheapest, fastest, etc.) way to complete the task follow the following rule: At every step select the “locally best” alternative and it will eventually lead to the globally best solution. This approach is usually efficient, but for many problem classes this could give a solution that is not the best possible."
+4.6,reading,Ch12P04 (Goodrich2011) Text Compression and the Greedy Method
+4.6,video,NA
+4.6.1,task,Revisit Prim’s algorithm
+4.6.2,task,Revisit Kruskal’s algorithm
+4.6.3,task,Revisit Huffman’s algorithm

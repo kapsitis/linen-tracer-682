@@ -1,0 +1,854 @@
+//no4
+/*B2(30%). Doti divi int masīvi a un b. Samainīt vietām abu masīvu lielākos elementus. 
+Piemērs. Masīvi sākumā: {3,-2,10,1,5}, {6,2,7,4,5,-3}. Masīvi beigās: {3,-2,7,1,5}, {6,2,10,4,5,-3}.//
+#include<iostream>
+using namespace std;
+const int len1 = 5;
+const int len2 = 6;
+
+void lielApmainit(int *arr1, int *arr2) {
+
+	int maks1 = 0;
+	int maks1_ind=0;
+	int maks2_ind=0;
+	int maks2 = 0;
+	for (int i = 0; i < len1; i++) {
+		if (arr1[i] > maks1) {
+			maks1 = arr1[i];
+			maks1_ind = i;
+
+		}
+	}
+	for (int i = 0; i < len2; i++) {
+		if (arr2[i] > maks2) {
+			maks2 = arr2[i];
+			maks2_ind = i;
+
+		}
+	}
+	int tmp = arr1[maks1_ind];
+	arr1[maks1_ind] = arr2[maks2_ind];
+	arr2[maks2_ind] = tmp;
+}
+
+int main() {
+	int arr1[] = { 3,-2,10,1,5 };
+	int arr2[] = { 6,2,7,4,5,-3 };
+	lielApmainit(arr1, arr2);
+	for (int j = 0; j < len1; j++) {
+		cout << arr1[j] << ' ';
+	}
+	cout << endl;
+
+	for (int j = 0; j < len2; j++) {
+		cout << arr2[j] << ' ';
+	}
+}
+/**************************************** Testu plāns *******************************************
+pirmā skaitļu virkne		otrā skiatļu virkne 		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+3,-2,10,1,5						6,2,7,4,5,-3				3,-2,7,1,5				3,-2,7,1,5					+
+															6,2,10,4,5,-3			6,2,10,4,5,-3				+
+*************************************************************************************************/
+
+//no2
+/*A2(30%). Dots vesels pozitīvs skaitlis n. Veicot tikai aritmētiskas operācijas,
+atrast pozicionāli vidējo ciparu, ja tāds ir, un palielināt to par 1 (ja ir 9, nomainīt par 0). 
+Piemērs #1. n=1234, rezultāts 1234 (nav vidējā cipara). 
+Piemērs #2. n=143, rezultāts 153. Piemērs #3. n=293, rezultāts 203.//
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	int nn = n;
+	int len = 0;
+	while (nn / 10 > 0) {
+		len++;
+		nn /= 10;
+	}
+	len++;
+	nn = n;
+	if (len % 2 == 1) {
+		int vid = len / 2;
+		int d = 1;
+		while (vid) {
+			d *= 10;
+			nn /= 10;
+			vid--;
+		}
+		int tail = n % d;
+		//cout << tail<<" ";
+		//cout << nn << endl;
+		int middle = nn % 10;
+		if (middle == 9) middle = 0;
+		else middle++;
+		nn /= 10;
+		int num = nn*d*10+middle*d + tail;
+		cout << num;
+	}
+	else cout << n;
+
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+293							203								203					+
+1234						1234							1234				+
+
+
+*************************************************************************************************/
+
+//no4
+/*B2(30%). Doti divi int masīvi a un b. Atrast lielāko tādu divu skaitļu reizinājumu, 
+kur viens ir no pirmā masīva, bet otrs no otra; un samainīt šos skaitļus vietām. 
+Piemērs. Masīvi sākumā: {3,-2,10,-7,5}, {1,2, -8,4,5,-3}. 
+Rezultāts: 56 (-7*-8), mainītie masīvi: {3,-2,10,-8,5}, {1,2,-7,4,5,-3}//
+
+#include<iostream>
+using namespace std;
+const int len1 = 5;
+const int len2 = 6;
+
+void lielApmainit(int* arr1, int* arr2) {
+	
+	int maks = 0;
+	int pirmIndex = 0;
+	int otrIndex = 0;
+	for (int i = 0; i < len1; i++) {
+		for (int j = 0; j < len2; j++) {
+			if (arr1[i] * arr2[j] > maks) {
+				maks = arr1[i] * arr2[j];
+				pirmIndex = i;
+				otrIndex = j;
+
+			}
+		}
+	}
+	int tmp = arr1[pirmIndex];
+	arr1[pirmIndex] = arr2[otrIndex];
+	arr2[otrIndex] = tmp;
+}
+
+int main() {
+
+	int arr1[] = { 3,-2,10,-7,5 };
+	int arr2[] = { 1,2, -8,4,5,-3 };
+	lielApmainit(arr1, arr2);
+	for (int j = 0; j < len1; j++) {
+		cout << arr1[j] << ' ';
+	}
+	cout << endl;
+
+	for (int j = 0; j < len2; j++) {
+		cout << arr2[j] << ' ';
+	}
+}
+/**************************************** Testu plāns *******************************************
+pirmā skaitļu virkne		otrā skiatļu virkne 		  paredzamais rezultāts		faktiskais rezultāts		vai sakrīt?
+3,-2,10,-7,5					1,2, 8,4,5,-3				3,-2,10,-8,5				3,-2,10,-8,5				+
+															1,2,-7,4,5,-3				1,2,-7,4,5,-3				+
+*************************************************************************************************/
+
+//no3
+/*B1(25%). Dota zema līmeņa simbolu virkne s.
+Noskaidrot, no kuras puses (sākuma vai beigām) ir tuvāk pirmais sastaptais tukšums 
+(iespējamās atbildes -1,0,1). 
+Piemērs #1. s="a bb", atbilde -1 (tuvāk sākumam).
+Piemērs #2. s="ab c d", atbilde 1 (tuvāk beigām).
+Piemērs #3. s="ab c de", atbilde 0 (vienādi).//
+#include<iostream>
+using namespace std;
+const int arr_len = 11;
+int tuvakaisTuk(char* mas) {
+	
+	int sak = 0;
+	while (mas[sak] != ' ' && (sak < strlen(mas))) sak++;
+	int beig = strlen(mas) - 1;
+	while (mas[beig] != ' ' && beig > 0) beig--;
+//cout << sak << " " << beig << endl;
+	if (sak - 0 > strlen(mas) - (1 + beig)) return 1;
+	else if (sak - 0 < strlen(mas) - (1 + beig)) return -1;
+	else return 0;
+}
+
+int main() {
+	char arr[arr_len];
+	cin.getline(arr, arr_len);
+	//cout << strlen(arr) << " " << arr;
+	cout << tuvakaisTuk(arr);
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītā virkne		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+a bb      						-1						 -1					+
+ab c d		   					 1						  1					+
+ab c de							 0						  0					+
+*************************************************************************************************/
+
+//no2
+/*A2(30%). Dots vesels pozitīvs skaitlis n. Veicot tikai aritmētiskas operācijas, 
+samazināt otro ciparu no kreisās (ja tāds ir) par 1 (ja ir 0, nomainīt par 9). 
+Piemērs #1. n=7, rezultāts 7 (nav otrā cipara). 
+Piemērs #2. n=1638, rezultāts 1538. 
+Piemērs #3. n=20314, rezultāts 29314.//
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	if (n < 10) cout << n << endl;
+
+	else {
+		int nn = n;
+		int d = 1;
+		while (nn > 99) {
+			d *= 10;
+			nn /= 10;
+		}
+		int second = nn % 10;
+		int first = nn / 10;
+		if (second == 0) second = 9;
+		else second--;
+		//cout << first << ' ' << second;
+		int tail = n % d;
+		int num = first * 10 * d + second * d + tail;
+		cout << num;
+
+
+	}
+
+}
+
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+7							7								7					+
+1638						1538							1538				+
+20314						29314							29314				+
+
+*************************************************************************************************/
+
+//no1
+/*A1(20%). Dots vesels pozitīvs skaitlis n. Noskaidrot, vai tā nepāra reizinātāju ir vairāk 
+nekā pāra reizinātāju. 
+Piemērs #1. n=9, rezultāts 1 (nepāra reizinātāji 3 (1,3,9), pāra reizinātāji 0). 
+Piemērs #2. n=18, rezultāts 0 (nepāra reizinātāji 3 (1,3,9), pāra reizinātāji 3 (2,6,18)).
+Piemērs #3. n=8, rezultāts 0 (nepāra reizinātājs 1 (1), pāra reizinātāji 3 (2,4,8)).//
+#include<iostream>
+using namespace std;
+
+	int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	int parask = 0;
+	int neparask = 0;
+	if (n == 0) cout << "nullei ir bezgaligi daudz reizinataju skaits! ";
+	else {
+		for (int i = 1; i <= n; i += 2) {
+			if (n % i == 0) neparask++;
+		}
+		for (int i = 2; i <= n; i += 2) {
+			if (n % i == 0) parask++;
+		}
+		if (neparask > parask) cout << '1';
+		else cout << '0';
+	}
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+9							1								1					+
+18							0								0					+
+8							0								0					+
+
+*************************************************************************************************/
+
+//no4
+/*Dots int masīvs a. Atgriezt masīvā sastopamo veselu skaitļu kubu (arī negatīvo) summu.
+Piemērs. Masīvs ={7,125,-8,25,27}, atgriež: 144 (125-8+27).//
+#include <iostream>
+using namespace std;
+bool isCube(int n) {
+	if (n < 0) n *= -1;
+	for (int i = 1; i * i * i <= n; i++) {
+		if (i * i * i == n) return 1;
+
+	}
+	return 0;
+}
+int kubuSumma(int* mas,int len) {
+	int sum = 0;
+	for (int i = 0; i < len; i++) {
+		if (isCube(mas[i])==1) sum+=mas[i];
+	}
+	return sum;
+
+}
+
+int main() {
+	int arr_len;
+	cout << "Ievadiet masiva garumu: ";
+	cin >> arr_len;
+	int* arr = new int[arr_len];//arr_len simboli null terminator
+	int n;
+	for (int i = 0; i < arr_len; i++) {
+		cin >> n;
+		arr[i] = n;
+	}
+	cout << kubuSumma(arr, arr_len);
+	delete[] arr;
+}
+/**************************************** Testu plāns *******************************************
+garums n	ievadītie skaitļi		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+5				7,125,-8,25,27				 144						144					+
+
+*************************************************************************************************/
+
+//no3
+/*Dota zema līmeņa simbolu virkne s. Noskaidrot, vai simbolu virknē visi cipari
+sastopami vismaz vienu reizi.
+Piemērs #1. s="01231456789011abc.", rezultāts 1. 
+Piemērs #2. s="abc1", rezultāts 0.//
+#include<iostream>
+using namespace std;
+const int arr_len = 20;
+bool allEven(char* mas) {
+	for (int i = 0; i < 10; i ++) {
+		int ir = 0;
+		for (int j = 0; j < strlen(mas); j++) {
+			if (mas[j]-'0' ==i) ir=1;
+		}
+		if (!ir) return 0;
+	}
+	return 1;
+
+}
+
+int main() {
+	char arr[arr_len + 1];//arr_len simboli null terminator
+	cin.getline(arr, arr_len + 1);
+	//cout << strlen(arr) << " " << arr;
+	cout << allEven(arr);
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītā virkne		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+01231456789011abc.				1						 1					+
+abc1							0						 0					+
+*************************************************************************************************/
+
+//no2
+/*A2(30%). Dots vesels pozitīvs skaitlis n. Veicot tikai aritmētiskas operācijas, 
+samainīt vietām pirmos divus ciparus (no kreisās). 
+Piemērs #1. n=7, rezultāts 7 (nav otrā cipara).
+Piemērs #2. n=1638, rezultāts 6138.//
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	if (n < 10) cout << n << endl;
+
+	else {
+		int nn = n;
+		int d = 1;
+		while (nn > 99) {
+			d *= 10;
+			nn /= 10;
+		}
+		int second = nn % 10;
+		int first = nn / 10;
+		//cout << first << ' ' << second;
+		int tail = n % d;
+		int num = second * 10 * d + first * d + tail;
+		cout << num;
+
+
+	}
+
+}
+
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+7							7								7					+
+1638						6138							6138				+
+
+*************************************************************************************************/
+
+//no1
+/*A1(20%). Dots vesels pozitīvs skaitlis n. 
+Noskaidrot, vai skaitlis ir gan divnieka pakāpe, gan vesela skaitļa kvadrāts. Piemērs #1. n=9, rezultāts 0 (ir kvadrāts, nav divnieka pakāpe). Piemērs #2. n=8, rezultāts 0 (ir divnieka pakāpe, nav kvadrāts). 
+Piemērs #3. n=64, rezultāts 1 (64=2^6, 64=8^2).//
+#include<iostream>
+using namespace std;
+	int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	int nn = n;
+	while (nn % 2 == 0) {
+		nn /= 2;
+	}
+	if (nn != 1) cout << '0';
+	else {
+		int irKv = 0;
+		for (int i = 0; i <= n / 2; ++i) {
+			if (i*i == n) {
+				irKv = 1;
+				break;
+			}
+		}
+		if (irKv) cout << '1';
+		else cout << '0';
+
+
+	}
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+8							0								0					+
+64							1								1					+
+*************************************************************************************************/
+
+//no6
+/*B2(30%). Dots int masīvs a garumā n. Atgriezt masīvā sastopamo mazāko pirmskaitli, 
+ja tāds ir sastopams, citādi 0. 
+Piemērs #1. Masīvs ={3,-2,10,1,5}, atgriež: 3. 
+Piemērs #2. Masīvs ={6,-7,8}, atgriež: 0 (nav pirmskaitļu).//
+#include<iostream>
+using namespace std;
+
+bool isPrime(int n) {
+
+	bool isPrime = true;
+
+	if (n<2) isPrime = false;
+	else {
+		for (int i = 2; i <= n / 2; ++i) {
+			if (n % i == 0) {
+				isPrime = false;
+				break;
+			}
+		}
+	}
+	return isPrime;
+
+}
+int mazPirm(int* mas, int len) {
+	int maz_pirm=0;
+
+	for (int i = 0; i <len; i++) {
+		if (isPrime(mas[i])) {
+			if (maz_pirm == 0 || maz_pirm > mas[i]) maz_pirm = mas[i];
+
+		}
+		else continue;
+		}
+	return maz_pirm;
+	
+}
+
+int main() {
+	int arr_len;
+	cout << "Ievadiet masiva garumu: ";
+	cin >> arr_len;
+	int* arr = new int[arr_len];//arr_len simboli null terminator
+	int n;
+	for (int i = 0; i < arr_len; i++) {
+		cin >> n;
+		arr[i] = n;
+	}
+	cout << mazPirm(arr, arr_len);
+	delete[] arr;
+}
+/**************************************** Testu plāns *******************************************
+garums n	ievadītie skaitļi		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+5				3,-2,10,1,5						3						3					+
+3				6,-7,8							0						0					+
+*************************************************************************************************/
+
+//no5
+/*B2(30%). Dots int masīvs a garumā n. 
+Atgriezt masīvā sastopamo pirmskaitļu vidējo aritmētisko vērtību, ja tādi ir sastopami, citādi 0. 
+Piemērs #1. Masīvs ={3,2,1}, atgriež: 2.5 (1 nav pirmskaitlis). 
+Piemērs #2. Masīvs ={6,7,8}, atgriež: 7 (pirmskaitlis tikai 7). 
+Piemērs #3. Masīvs ={24,25,26,27,28}, atgriež: 0 (nav pirmskaitļu).//
+#include<iostream>
+using namespace std;
+
+
+double primeAverage(int* mas, int len) {
+	int sum = 0;
+	int skaits = 0;
+	for (int i = 0; i <len; i++) {
+		int irPirm = 1;
+		if (mas[i] == 0 || mas[i] == 1) continue;
+		for (int j = 2; j <= mas[i] / 2; ++j) {
+			if (mas[i] % j == 0) {
+				irPirm = 0;
+			}
+		}
+		if (irPirm) {
+			sum += mas[i];
+			skaits++;
+		}
+	}
+	if (skaits == 0) return 0;
+	else return double(sum) / skaits;
+
+}
+
+int main() {
+	int arr_len;
+	cout << "Ievadiet masiva garumu: ";
+	cin >> arr_len;
+	int* arr = new int[arr_len];//arr_len simboli null terminator
+	int n;
+	for (int i = 0; i < arr_len; i++) {
+		cin >> n;
+		arr[i] = n;
+	}
+	cout << primeAverage(arr, arr_len);
+	delete[] arr;
+}
+/**************************************** Testu plāns *******************************************
+garums n	ievadītie skaitļi		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+3				3,2,1							2.5						2.5					+
+3				6,7,8							7						7					+
+5			{24,25,26,27,28						0						0					+
+
+*************************************************************************************************/
+
+//no4
+/*B1(20%). Dota zema līmeņa simbolu virkne s. Noskaidrot, cik vārdu ir simbolu virknē. 
+Par vārdu uzskata jebkādu simbolu secību, kas (no citiem vārdiem) atdalīta ar vienu
+vai vairākiem tukšumiem. 
+Piemērs #1. s="a bb      c", atbilde 3. 
+Piemērs #2. s="  .,.   7=x ", atbilde 2.//
+#include<iostream>
+using namespace std;
+const int arr_len = 11;
+int vardusk(char* mas) {
+	int skaits = 0;
+	int sak = 0;
+	while (mas[sak]==' '&& (sak<strlen(mas))) sak++;
+	if (sak == strlen(mas)) {
+		return skaits;
+
+	}
+	else {
+		skaits = 1;
+		int beig = strlen(mas) - 1;
+		while (mas[beig] == ' ' && beig > 0) beig--;
+
+		//cout << sak << " " << beig << endl;
+		while (sak < beig) {
+			if (mas[sak] == ' ') {
+				skaits++;
+				while (mas[sak] == ' ')sak++;
+
+			}
+			else sak++;
+
+		}
+		return skaits;
+	}
+}
+
+int main() {
+	char arr[arr_len];
+	cin.getline(arr, arr_len);
+	//cout << strlen(arr) << " " << arr;
+	cout << vardusk(arr);
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītā virkne		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+a bb      c						3						 3					+
+  .,.   7=x 					2						 2					+
+*************************************************************************************************/
+
+//no3 
+/*A3(30%). Dots vesels pozitīvs skaitlis n. Samainīt vietām pirmo un pēdējo ciparu. 
+Piemērs #1. n=4, rezultāts 4. 
+Piemērs #2. n=120, rezultāts 21. 
+Piemērs #3. n=3574, rezultāts 4573.//
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	if (n < 10) cout << n << endl;
+	
+	int first_digit;
+	int last_digit=n%10;
+	int nn = n;
+	int d = 1;
+	while (nn > 10) {
+		nn /= 10; d *= 10;
+	}
+	first_digit = nn;
+	int tail = n % d - last_digit;
+	//cout << first_digit << " " << last_digit<<' '<<d<<' '<<tail<<endl;
+	int num = last_digit * d + tail + first_digit;
+	cout << num;
+
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+4							4								4					+
+120							21								21					+
+3574						4573							4573				+
+*************************************************************************************************/
+
+//no2
+/*
+//A2(30%). Dots vesels pozitīvs skaitlis n. 
+Noskaidrot, noskaidrot, no cik dažādiem pirmreizinātājiem uzkonstruēts skaitlis. 
+Piemērs #1. n=6, rezultāts 2 (pirmreizinātāji 2 un 3). 
+Piemērs #2. n=12, rezultāts 2 (pirmreizinātāji 2 un 3). 
+Piemērs #3. n=512, rezultāts 1 (tikai pirmreizinātājs 2).//
+
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	int nn = n;
+	int pirm = 0;
+	for (int i = 2; i < n|| nn!=1; i++) {
+		if (nn % i == 0) {
+			pirm++;
+			while (nn % i == 0) { nn /= i; }
+		}
+		else continue;
+		
+	}
+	cout << pirm;
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+6							2								2					+
+12							2								2					+
+512							1								1					+
+66							3								3					+
+*************************************************************************************************/
+
+//no1
+/*
+//A1(20%). Dots vesels pozitīvs skaitlis n. 
+Noskaidrot, vai skaitlis izsakāms kā reizinājums no šādu divu veidu pirmreizinātājiem: 2 un 3, 
+turklāt obligāti ietverot abus. 
+Piemērs #1. n=9, rezultāts 0 (nav pirmreizinātāja 2, 9=3*3). 
+Piemērs #2. n=120, rezultāts 0 (dalās ar 5, 120=2*2*2*3*5). 
+Piemērs #3. n=12, rezultāts 1 (12=2*2*3). 
+Piemērs #4. n=405, rezultāts 0 (nav 2 un 3, 405=3*3*3*5*5).//
+
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	if (n % 2!=0) {
+		cout << "0";
+	}
+	else if (n % 3!=0) {
+		cout << "0";
+
+	}
+	else {
+		while (n % 2 == 0) n /= 2;
+		while (n % 3 == 0) n /=3;
+		if (n==1) cout << "1";
+		else cout << "0";
+	}
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+12							1								1					+
+405							0								0					+
+120							0								0					+
+9							0								0					+
+*************************************************************************************************/
+
+//no4
+/*
+//Dots int masīvs a. Sadalīt masīvu divās daļas tā, lai labajā daļā būtu maksimāli liela summa 
+(atgriezt tā elementa numuru, ar kuru sākas labā daļa). 
+Piemērs #1. Masīvs ={-2,3,-4,5,6,7,-1}, atgriež: 3 (sākot ar skaitli 5, kas ir pozīcijā 3, ir lielākā summa 5+6+7-1).
+Piemērs #2. Masīvs ={1,2,3,4,5}, atgriež: 0 (ja visi elementi ir pozitīvi, labajā daļā būs viss masīvs). 
+Piemērs #2. Masīvs ={-1,-2,-3,-4,-5}, atgriež: 5 (ja visi elementi ir negatīvi, labā daļa būs tukša).//
+#include<iostream>
+
+using namespace std;
+
+
+int splitArr(int *mas, int len) {
+	int sum_bef = 0;
+	int atd_bef = len;
+for (int i = len-1; i>=0; i --) {
+	int sum_current = 0;
+	for (int j = len - 1; j >= i; j--) sum_current += mas[j];
+	if (sum_current > sum_bef) {
+		sum_bef = sum_current;
+		atd_bef = i;
+	}
+}
+return atd_bef;
+
+}
+
+int main() {
+	int arr_len;
+	cout << "Ievadiet masiva garumu: ";
+	cin >> arr_len;
+	int *arr = new int[arr_len];//arr_len simboli null terminator
+	int n;
+	for (int i = 0; i < arr_len; i++){
+		cin >> n;
+		arr[i] = n;
+	}
+	cout<<splitArr(arr, arr_len);
+	delete [] arr;
+}
+/**************************************** Testu plāns *******************************************
+garums n	ievadītie skaitļi		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+5				1,2,3,4,5						0						0					+
+5			-1,-2,-3,-4,-5						5						5					+
+7			-2,3,-4,5,6,7,-1					3						3					+
+
+*************************************************************************************************/
+
+//no3
+/*#include<iostream>
+
+using namespace std;
+//Dota zema līmeņa simbolu virkne s. Noskaidrot, vai simbolu virknē visi pāra cipari 
+(t.i., 0,2,4,6,8) sastopami tieši vienu reizi. 
+Piemērs #1. s="84602x", rezultāts 1. 
+Piemērs #2. s="abc123", rezultāts 0 (nav visi pāra cipari).
+Piemērs #3. s="84602456x", rezultāts 0 (daži atkārtojas vairākas reizes).//
+const int arr_len = 10;
+bool allEven(char *mas) {
+for (int i = 0; i < 9; i += 2) {
+	int atk = 0;
+	for (int j = 0; j < arr_len; j++) {
+		if (mas[j]-'0' == i) atk++;
+	}
+	if (atk != 1) return 0;
+}
+return 1;
+
+}
+
+int main() {
+	char arr[arr_len+1];//arr_len simboli null terminator
+	cin.getline(arr, arr_len + 1);
+	//cout << strlen(arr) << " " << arr;
+	cout << allEven(arr);
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītā virkne		  paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+84602x							1						 1					+
+abc123							0						 0					+
+84602456x						0						 0					+
+*************************************************************************************************/
+
+//no2
+/*Dots vesels pozitīvs skaitlis n. Veicot tikai aritmētiskas operācijas, samainīt vietām pirmo un trešo ciparu (no kreisās). 
+Piemērs #1. n=27, rezultāts 27 (nav trešā cipara). Piemērs #2. n=1638, rezultāts 3618.//
+#include<iostream>
+using namespace std;
+
+	int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	if (n < 100) cout << n << endl;
+
+	else {
+		int nn=n;
+		int d = 1;
+		while (nn > 999) {
+			d *= 10;
+		
+			nn /= 10;
+		}
+		//cout << nn << endl;
+		int third = nn % 10;
+		int second = (nn/10)%10;
+		int first = nn / 100;
+		
+		int tail = n % d;
+		int jauns = third * 100 * d + second * 10 * d + first * d + tail;
+		cout << jauns;
+
+	}
+	
+}
+
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+27							27								27					+
+1638						3618							3618				+
+
+*************************************************************************************************/
+
+//no1
+/*#include<iostream>
+using namespace std;
+//A1(20%). Dots vesels pozitīvs skaitlis n. Noskaidrot, vai skaitlis ir salikts skaitlis 
+(t.i., nav pirmskaitlis), kas nedalās ne ar 2, ne ar 3. 
+Piemērs #1. n=9, rezultāts 0 (dalās ar 3). 
+Piemērs #2. n=7, rezultāts 0 (ir pirmskaitlis).
+Piemērs #3. n=25, rezultāts 1 (nedalās ne ar 2, ne ar 3, bet nav pirmskaitlis//
+int main() {
+	int n;
+	cout << "Ievadiet skaitli: ";
+	cin >> n;
+	if (n % 2 == 0) {
+		cout << "0";
+	}
+	else if (n % 3 == 0) {
+			cout << "0";
+		
+	}
+	else {
+		int irSal = 0;
+		if (n > 5) { //stingri lielāks par 5, jo 5 ir pirmskaitlis
+			for (int i = 5; i <= n / 2; ++i) {
+				if (n % i == 0) {
+					irSal = 1;
+					break;
+				}
+			}
+			if (irSal) cout << '1';
+			else cout << '0';
+		}
+		else {
+			cout << "0";
+
+		}
+	}
+
+}
+/**************************************** Testu plāns *******************************************
+ievadītais skaitlis    paredzamais rezultāts		faktiskais rezultāts	vai sakrīt?
+9							0								0					+
+7							0								0					+
+25							1								1					+
+*************************************************************************************************/

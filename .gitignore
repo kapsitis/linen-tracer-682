@@ -65,3 +65,6 @@ webflask/dist/
 webflask/build/
 webflask/*.egg-info/
 .idea/
+
+# Sphinx
+**/_build/*

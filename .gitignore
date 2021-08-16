@@ -68,3 +68,15 @@ webflask/*.egg-info/
 
 # Sphinx
 **/_build/*
+
+
+# Ignore CMake stuff
+data-structures-fall2021/walk-throughs/*/*.dir/
+data-structures-fall2021/walk-throughs/*/cmake_install.cmake
+data-structures-fall2021/walk-throughs/*/CMakeCache.txt
+data-structures-fall2021/walk-throughs/*/*.sln
+data-structures-fall2021/walk-throughs/*/*.filters
+data-structures-fall2021/walk-throughs/*/*.vcxproj
+data-structures-fall2021/walk-throughs/*/x64/
+data-structures-fall2021/walk-throughs/*/CMakeFiles/
+data-structures-fall2021/walk-throughs/*/Release/

@@ -32,13 +32,19 @@ int main() {
 	int m; 
 	cin >> m; 
 
+	int* NAddr = &N;
+	cout << "NAddr = " << NAddr << endl;
 	
 	
 	int** A = new int*[N];
 	int** B = new int*[N];
+
+	cout << "AAddr = " << A << endl;
+	cout << "BAddr = "<< B << endl;
 	
 	for (int i = 0; i < N; i++) {
 		A[i] = new int[N];
+		cout << "A[" << i << "]Addr = " << A[i] << endl;
 		for (int j = 0; j < N; j++) {
 			cin >> A[i][j];
 			//cout << "(i,j) = " << i << "," << j << endl;
@@ -46,6 +52,7 @@ int main() {
 	}
 	for (int i = 0; i < N; i++) {
 		B[i] = new int[N];
+		cout << "B[" << i << "]Addr = " << B[i] << endl;
 		for (int j = 0; j < N; j++) {
 			cin >> B[i][j];
 		}

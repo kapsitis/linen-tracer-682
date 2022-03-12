@@ -1,0 +1,149 @@
+
+-----
+
+# <lo-theory/>Dirihlē teorēma par pirmskaitļiem
+
+**Dirihlē teorēma:** Ja $a$ un $d$ ir savstarpēji pirmskaitļi, 
+tad bezgalīgā aritmētiskā progresijā
+$$a, a+d, a+2d, a+3d, \ldots$$
+ir bezgalīgi daudz pirmskaitļu. 
+
+Dažām $a$ un $d$ vērtībām šo teorēmu var pierādīt ar elementārām 
+metodēm (nupat redzējām pie $a=3$ un $d=4$). Bet vispārīgajā 
+gadījumā ir piemērotākas matemātiskās analīzes metodes, 
+kas izietu ārpus mūsu kursa.
+
+-----
+
+
+# <lo-theory/>Perfektie skaitļi
+
+**Definīcija:** Skaitli sauc par <emblue>perfektu</emblue>, 
+ja tas vienāds ar visu savu dalītāju summu (izņemot sevi pašu). 
+
+**Piemēri:** $6 = 1+2+3$; $28 = 1 + 2 + 4 + 7 + 14$. 
+
+**Teorēma (Eiklīds):** Ja $2^p - 1$ ir pirmskaitlis, tad
+$2^{p-1}(2^p - 1)$ ir perfekts. 
+
+**Teorēma (Eilers):** Visi pāru perfektie skaitļi izsakāmi 
+formā $2^{p-1}(2^p - 1)$. 
+
+
+--
+
+## <lo-summary/>Perfektie skaitļi - 2
+
+<table>
+<tr><th>Pirmskaitlis $p$</th><th>$2^{p-1}(2^p - 1)$ vērtība</th></tr>
+<tr><td>$p = 2$</td><td>$6_{10} = 110_{2}$</td></tr>
+<tr><td>$p = 3$</td><td>$28_{10} = 11100_{2}$</td></tr>
+<tr><td>$p = 5$</td><td>$496_{10} = 111110000_{2}$</td></tr>
+<tr><td>$p = 7$</td><td>$8128_{10} = 1111111000000_{2}$</td></tr>
+<tr><td>$p = 13$</td><td>$33550336_{10} = 1111111111111000000000000_{2}$</td></tr>
+</table>
+
+Ar $p=11$ nesanāk, jo $2^{11} - 1 = 2047 = 23 \cdot 89$. 
+
+
+
+-----
+
+# <lo-theory/>Pirmskaitļu skaitīšanas funkcija
+
+<hgroup>
+
+![Prime counting function](pi-counting-function.png)<!-- .element: width="400px" -->
+
+
+</hgroup>
+<hgroup style="font-size:70%">
+
+**Definīcija:** Ar $\pi(x)$ apzīmējam 
+<emblue>pirmskaitļu skaitīšanas funkciju</emblue>
+(*prime-counting function*): Katram 
+reālam skaitlim $x \in \mathbb{R}$, 
+$\pi(x)$ izsaka pirmskaitļu $p_i$ skaitu, 
+kuriem $p_i \leq x$. 
+
+$\pi(x)$ definīcijas apgabals ir $\mathbb{R}$, 
+vērtību apgabals ir $\mathbb{Z}_{0+}$ - visi 
+veselie nenegatīvie skaitļi. 
+
+`$\pi(1.99) = 0$, $\pi(2) = 1$`.  
+`$\pi(3) = \pi(3.14) = \pi(4.99) = 2$`.  
+`$\pi(100) = 25$`. 
+
+</hgroup>
+
+
+--
+
+## <lo-theory/>Skaitlis e
+
+**Definīcija:** Par <emblue>naturālo 
+logaritmu bāzi</emblue> jeb skaitli $e$ sauksim 
+konstanti $e = 2.7182818284\ldots$, uz kuru 
+tiecas bezgalīgā summa:
+$$e = \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} +
+\frac{1}{3!} + \frac{1}{4!} + \ldots = $$
+$$= 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + 
+\ldots.$$
+
+
+--
+
+## <lo-theory/>Naturālais logaritms
+
+<hgroup>
+
+![Graph of natural logarithm](natural-logarithm.png)<!-- .element: width="400px" -->
+
+</hgroup>
+<hgroup>
+
+**Definīcija:** Par <emblue>naturālo logaritmu</emblue>
+saucam logaritma funkciju ar bāzi $e = 2.7182818284\ldots$:
+$$\ln x = \log_{e} x.$$
+
+$y = \ln x$ ir 
+augoša funkcija, definēta visiem $x > 0$.   
+Naturālais logaritms ir īpašs ar to, ka 
+tā grafiks $x$ asi krusto $45^{\circ}$ leņķī.
+
+</hgroup>
+
+
+--
+
+## <lo-summary/>Mazākie 101-ciparu pirmskaitļi
+
+<div style="font-size:70%">
+
+![Marcis Bendiks](marcis-bendiks.png)<!-- .element: width="500px" -->
+
+Ja saldējumu ar rozīnēm (vidēji $5$ rozīnes
+uz vienu saldējuma masas vienību) vienmērīgi izmaisa, 
+tad rozīņu skaits saldējuma vienībā pakļaujas
+<emblue>Puasona sadalījumam</emblue>
+(*Poisson distribution*) ar parametru $\lambda=5$). 
+
+Ja aplūkojam skaitļu porcijas pa $100$, tad 
+pie $N=e^{20} \approx 485\,165\,195$ 
+šim skaitlim $N$ tuvajos $100$ skaitļu komplektos
+būs vidēji $5$ pirmskaitļi (bet mēdz būt arī vairāk 
+vai mazāk).
+
+</div>
+
+
+<!--
+
+## <lo-summary/>Vizualizācija ar simtniekiem
+
+TODO: Uzzīmēt tabuliņā $5 \times 10$ režģi
+ar visiem nepāru skaitļiem. Iekrāsot tajā pirmskaitļus. 
+
+-->
+
+--

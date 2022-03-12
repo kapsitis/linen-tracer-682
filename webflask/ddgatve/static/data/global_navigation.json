@@ -217,5 +217,23 @@
       	        "color": "#9e69af"
 	    }	    
         ]    	        
-    }
-]    
+    },
+	{
+		"subdir": "discrete-spring2022",
+		"title": "Discrete Spring2022",
+		"pages": [
+			{
+				"shortName": "Topics",
+				"longName": "Topics",
+				"link": "index",
+				"color": "#de6745"
+			},
+			{
+				"shortName": "Assignments",
+				"longName": "Assignments",
+				"link": "assignments",
+				"color": "#f1a72c"
+			}
+		]
+	}
+]

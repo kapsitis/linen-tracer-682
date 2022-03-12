@@ -14,24 +14,15 @@
 bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</p>
 
 
+
+
 <ul>
-
-
-<li><a href="../numtheory-tales/ntjun01-divisibility/index.html">Jun01: Pirmskaitļi un dalāmība</a> (2020-10-10)</li>
-
-
-
-<li><a href="http://18.193.16.199/nt/slides/ntjun02-modular-arithmetic.pptx">Jun02: Modulārā aritmētika (PPTX)</a> (2020-11-14)</li>
-
-
-
+<li><a href="../static/numtheory-slides/ntjun01-divisibility/index.html">Jun01: Pirmskaitļi un dalāmība</a> (2021-09-18)</li>
+<li><a href="../static/numtheory-slides/ntjun02-modular-arithmetic/index.html">Jun02: Modulārā aritmētika</a> (2021-11-06)</li>
+<!--
 <li><a href="../numtheory-tales/ntjun03-crt/index.html">Jun03: Ķīniešu atlikumu teorēma</a> (2021-01-30)</li>
-
-
-
 <li><a href="http://18.193.16.199/nt/slides/ntjun04-rational-irational.pptx">Jun04: Racionāli, iracionāli skaitļi (PPTX)</a> (2021-03-27)</li>
-
-
+-->
 </ul>
 
 
@@ -77,18 +68,27 @@ bultiņas <b>Left</b>, <b>Right</b>, <b>Up</b>, <b>Down</b>.</p>
 Elementārās matemātikas tēmas, lai pārvarētu Latvijas novadu/valsts 
 olimpiāžu filtrus. Junioru nodarbībās šos materiālus tieši neizmanto, bet tie
 ir kursa priekšnoteikums (<i>prerequisite</i>).
-Sk. arī <a href="/problembase/tasks.html">Vidusskolēnu prasmju saraksts</a>.</p>
+Sk. arī <a href="http://linen-tracer-682.appspot.com/problembase/tasks.html">Vidusskolēnu prasmju saraksts</a>.</p>
+
 
 
 <ul>
 {% for tale in local_tales %}
-{% if tale.dir=='numtheory-recurrence-relation' %}
-<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}} (Emīls)</a></li>
-{% else %}
-<li><a href="../numtheory-tales/{{tale.dir}}/content.html">{{tale.title}}</a></li>
-{% endif %}
+<li><a target="_blank" href="../static/numtheory-slides/{{tale.dir}}/index.html">{{tale.title}}</a></li>
 {% endfor %}
 </ul>
+
+
+<ul>
+<li><a href="../static/numtheory-slides/ntnine01-arithmetic-progressions/index.html">Aritmētiskas progresijas</a></li>
+<li><a href="../static/numtheory-slides/ntnine02-numtheory-geom-progressions/index.html">Ģeometriskas progresijas</a></li>
+<li><a href="../static/numtheory-slides/ntnine03-recurrence-relations/index.html">Rekurences attiecības</a></li>
+<li><a href="../static/numtheory-slides/tale-numtheory-grade10/index.html">10.klases mix</a></li>
+
+</ul>
+
+
+
 
 </section>
 

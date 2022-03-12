@@ -1,3 +1,5 @@
+[<img src="biglogo.png" width="144" alt="logo" style="border:0"/>](/numtheory/slides)<!-- .element: style="position:absolute;top:20px;left:0px;z-index:1;" -->
+
 # Introduction<!-- .element: style="visibility:hidden;" -->
 
 <hgroup>
@@ -58,14 +60,13 @@ pamazām (augošā secībā) atklājas visu tā dalītāju kopums.
 # <lo-why/>why
 
 <div class="bigWhy">
-Kāpēc skaitļu dalāmībā ir praktiski izmantojamas struktūras?
+Kāpēc veselo skaitļu aritmētikā svarīgas dalāmības īpašības?
 </div>
 
 <div class="smallWhy">
 
 * Kāpēc dalāmību izmanto arī uzdevumos, kur dalīšanas nav?
-* Kādas struktūras veido viena skaitļa dalītāji?   
-Daudzu pēc kārtas sekojošu skaitļu dalītāji?
+* Kādi ir cikliski procesi diskrētajā matemātikā, un kā dalāmība atspoguļo šos ciklus?
 
 </div>
 
@@ -84,14 +85,10 @@ un pirmskaitļu izvietojumu krietni grūtāk raksturot.
 
 ## <lo-theory/> Sasniedzamie rezultāti
 
-* Definēt dalāmību kā <emblue>attiecību</emblue> (*relation*).
-* Strukturēti ttēlot visus dalītājus.
-* Saskaitīt visus naturāla skaitļa dalītājus un aprēķināt to summu.
-* Veidot Eratostēna režģi. 
-* Pamatot aritmētikas pamatteorēmu. 
-* Izmantot Eiklīda lemmu un Bezū lemmu.
-* Izmantot LKD un MKD īpašības. 
-
+* Sistemātiski uzskaitīt visus skaitļa dalītājus, atrast to skaitu vai summu.
+* Izmantot Eratostēna režģi, pierādīt pirmskaitļu skaita bezgalīgumu.
+* Pamatot aritmētikas pamatteorēmu (kā arī Eiklīda un Bezū lemmas).
+* Definēt LKD un MKD, izmantot to īpašības.
 
 
 -----
@@ -388,7 +385,7 @@ savu stāvokli?
 
 --
 
-## <lo-soln/>Uzdevums 01.1
+## <lo-soln/>Dalītāju skaits skaitļiem
 
 <table>
 <tr>
@@ -851,15 +848,20 @@ dalītāji (ieskaitot $1$ un pašu $n$).
 Kādu visaugstākās pakāpes sakni noteikti var izvilkt no 
 $n$, iegūstot naturālu rezultātu? 
 
-*Ierakstīt naturālu skaitli (saknes pakāpi) vai 
-skaitli $1$, ja neviena augstākas pakāpes sakne 
-$\sqrt[k]{n}$ ($k>1$) nav garantēti vesela:* _____
+## <lo-soln/>Uzdevums 01.3: Atrisinājums (1)
 
-<!--
+125 dalītāji iegūstami kā kombinatoriskā 
+"reizināšanas likuma" rezultāts. 
+
+* Cik dažādos veidos 125 var izteikt kā (1,2,3 utt.) 
+reizinātāju reizinājumu, kur visi reizinātāji ir lielāki 
+par 1. 
+* Attēlot šos veidus ar kokveida diagrammām. 
 
 
 
-## <lo-quiz/>Jautājums Nr.1: Atrisinājums
+
+## <lo-soln/>Uzdevums 01.3: Atrisinājums (2)
 
 <div style="font-size:100%">
 
@@ -880,7 +882,10 @@ kur $p,q,r$ ir pirmskaitļi. Visos gadījumos var izvilkt 4.pakāpes sakni.
 
 </div>
 
--->
+Note: 
+
+No dalītāju skaita izteiksmes 125 var izvilkt kubsakni, bet tam 
+
 
 
 
@@ -1045,6 +1050,54 @@ ir pirmskaitlis, Eratostena režģis nav praktisks
 algoritms (jo tas meklē visus pirmskaitļus, kas
 par to mazāki).
 
+--
+
+# <lo-summary/> Cits režģa variants
+
+<hgroup width="70%">
+
+![Eratosthenes variant](eratosthenes-with-17.png)<!-- .element: width="600px" -->
+
+</hgroup>
+<hgroup width="28%">
+
+**Dirihlē teorēma:** Katrā aritmētiskā progresijā $a_n = a_0 + nd$, 
+kur $a_0$ un $d$ nav kopīgu dalītāju $>1$, ir bezgalīgi 
+daudz pirmskaitļu.
+
+</hgroup>
+
+
+--
+
+# <lo-quiz/>Jautājums
+
+Iepriekšējā attēlā ar taisnstūrīšiem apvilkti visi nepāru saliktie skaitļi, 
+kas dalās ar 17 (tie ir 51,85,119,153,187, ...). 
+Pieņemsim, ka pēdējais skaitlis Eratostēna režģī ir 8999 (attēlā redzama tikai režģa
+augšdaļa).
+
+Cik daudzi ar taisnstūrīti apvilkti skaitļi atradīsies tajā Eratostēna režģa kolonnā,
+kurā to ir vismazāk? Ierakstiet atbildē naturālu skaitli.
+
+(Par cik var atšķirties gaišzili apvilkto skaitļu skaits dažādās vertikālēs?)
+
+-----
+
+# <lo-summary/>Pirmskaitļu biežums
+
+**Teorēma:** Pirmskaitļu apgriezto lielumu rinda
+diverģē: 
+
+`$$\frac{1}{2} + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \frac{1}{11} + \frac{1}{13} + \frac{1}{17} + 
+\frac{1}{19} + \ldots = \infty$$`
+
+(*Pierādījums no pretējā; reizina arvien pieaugošu skaitu ar bezgalīgām ģeometriskām progresijām.*)
+
+Vienlaikus Eratostēna režģī izsvītro katru otro, tad katru trešo, tad katru piekto, utml. 
+Un process nekad nebeidzas - pēc katra soļa paliek pāri neizsvītroti skaitļi. 
+
+
 
 
 -----
@@ -1183,22 +1236,6 @@ izsakāmi formā $4k+3$ (dod atlikumu $3$, dalot ar $4$).
 TODO: Pamatot līdzīgi kā pierādījumā par bezgalīgo pirmskaitļu skaitu. 
 
 
-
------
-
-# <lo-theory/>Dirihlē teorēma par pirmskaitļiem
-
-**Dirihlē teorēma:** Ja $a$ un $d$ ir savstarpēji pirmskaitļi, 
-tad bezgalīgā aritmētiskā progresijā
-$$a, a+d, a+2d, a+3d, \ldots$$
-ir bezgalīgi daudz pirmskaitļu. 
-
-Dažām $a$ un $d$ vērtībām šo teorēmu var pierādīt ar elementārām 
-metodēm (nupat redzējām pie $a=3$ un $d=4$). Bet vispārīgajā 
-gadījumā ir piemērotākas matemātiskās analīzes metodes, 
-kas izietu ārpus mūsu kursa.
-
-
 -----
 
 # <lo-yellow/>Ulama spirāle
@@ -1266,105 +1303,6 @@ atliktas uz Ulama spirāles.
 
 
 -----
-
-# <lo-theory/>Pirmskaitļu skaitīšanas funkcija
-
-<hgroup>
-
-![Prime counting function](pi-counting-function.png)<!-- .element: width="400px" -->
-
-
-</hgroup>
-<hgroup style="font-size:70%">
-
-**Definīcija:** Ar $\pi(x)$ apzīmējam 
-<emblue>pirmskaitļu skaitīšanas funkciju</emblue>
-(*prime-counting function*): Katram 
-reālam skaitlim $x \in \mathbb{R}$, 
-$\pi(x)$ izsaka pirmskaitļu $p_i$ skaitu, 
-kuriem $p_i \leq x$. 
-
-$\pi(x)$ definīcijas apgabals ir $\mathbb{R}$, 
-vērtību apgabals ir $\mathbb{Z}_{0+}$ - visi 
-veselie nenegatīvie skaitļi. 
-
-`$\pi(1.99) = 0$, $\pi(2) = 1$`.  
-`$\pi(3) = \pi(3.14) = \pi(4.99) = 2$`.  
-`$\pi(100) = 25$`. 
-
-</hgroup>
-
-
---
-
-## <lo-theory/>Skaitlis e
-
-**Definīcija:** Par <emblue>naturālo 
-logaritmu bāzi</emblue> jeb skaitli $e$ sauksim 
-konstanti $e = 2.7182818284\ldots$, uz kuru 
-tiecas bezgalīgā summa:
-$$e = \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} +
-\frac{1}{3!} + \frac{1}{4!} + \ldots = $$
-$$= 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + 
-\ldots.$$
-
-
---
-
-## <lo-theory/>Naturālais logaritms
-
-<hgroup>
-
-![Graph of natural logarithm](natural-logarithm.png)<!-- .element: width="400px" -->
-
-</hgroup>
-<hgroup>
-
-**Definīcija:** Par <emblue>naturālo logaritmu</emblue>
-saucam logaritma funkciju ar bāzi $e = 2.7182818284\ldots$:
-$$\ln x = \log_{e} x.$$
-
-$y = \ln x$ ir 
-augoša funkcija, definēta visiem $x > 0$.   
-Naturālais logaritms ir īpašs ar to, ka 
-tā grafiks $x$ asi krusto $45^{\circ}$ leņķī.
-
-</hgroup>
-
-
---
-
-## <lo-summary/>Mazākie 101-ciparu pirmskaitļi
-
-<div style="font-size:70%">
-
-![Marcis Bendiks](marcis-bendiks.png)<!-- .element: width="500px" -->
-
-Ja saldējumu ar rozīnēm (vidēji $5$ rozīnes
-uz vienu saldējuma masas vienību) vienmērīgi izmaisa, 
-tad rozīņu skaits saldējuma vienībā pakļaujas
-<emblue>Puasona sadalījumam</emblue>
-(*Poisson distribution*) ar parametru $\lambda=5$). 
-
-Ja aplūkojam skaitļu porcijas pa $100$, tad 
-pie $N=e^{20} \approx 485\,165\,195$ 
-šim skaitlim $N$ tuvajos $100$ skaitļu komplektos
-būs vidēji $5$ pirmskaitļi (bet mēdz būt arī vairāk 
-vai mazāk).
-
-</div>
-
-
-<!--
-
-## <lo-summary/>Vizualizācija ar simtniekiem
-
-TODO: Uzzīmēt tabuliņā $5 \times 10$ režģi
-ar visiem nepāru skaitļiem. Iekrāsot tajā pirmskaitļus. 
-
--->
-
---
 
 ## <lo-yellow/>Mazākie 101-ciparu pirmskaitļi
 
@@ -1599,7 +1537,8 @@ $\blacksquare$
 
 **Definīcija:** Skaitli $M_n$ sauc par 
 <emblue>Mersena skaitli</emblue> (*Mersenne number*), 
-ja to var izteikt formā $2^n - 1$.  
+ja to var izteikt formā $2^n - 1$.
+
 Ja turklāt $M_n$ ir pirmskaitlis, tad to sauc par 
 <emblue>Mersena pirmskaitli</emblue> (*Mersenne prime*). 
 
@@ -1700,39 +1639,6 @@ izdrukāts tas aizņemtu vairākus grāmatplauktus.
 
 
 
-
-
-
------
-
-# <lo-theory/>Perfektie skaitļi
-
-**Definīcija:** Skaitli sauc par <emblue>perfektu</emblue>, 
-ja tas vienāds ar visu savu dalītāju summu (izņemot sevi pašu). 
-
-**Piemēri:** $6 = 1+2+3$; $28 = 1 + 2 + 4 + 7 + 14$. 
-
-**Teorēma (Eiklīds):** Ja $2^p - 1$ ir pirmskaitlis, tad
-$2^{p-1}(2^p - 1)$ ir perfekts. 
-
-**Teorēma (Eilers):** Visi pāru perfektie skaitļi izsakāmi 
-formā $2^{p-1}(2^p - 1)$. 
-
-
---
-
-## <lo-summary/>Perfektie skaitļi - 2
-
-<table>
-<tr><th>Pirmskaitlis $p$</th><th>$2^{p-1}(2^p - 1)$ vērtība</th></tr>
-<tr><td>$p = 2$</td><td>$6_{10} = 110_{2}$</td></tr>
-<tr><td>$p = 3$</td><td>$28_{10} = 11100_{2}$</td></tr>
-<tr><td>$p = 5$</td><td>$496_{10} = 111110000_{2}$</td></tr>
-<tr><td>$p = 7$</td><td>$8128_{10} = 1111111000000_{2}$</td></tr>
-<tr><td>$p = 13$</td><td>$33550336_{10} = 1111111111111000000000000_{2}$</td></tr>
-</table>
-
-Ar $p=11$ nesanāk, jo $2^{11} - 1 = 2047 = 23 \cdot 89$. 
 
 
 -----
@@ -1962,10 +1868,20 @@ $\blacksquare$
 
 --
 
-## <lo-theory/>Bezū identitātes pierādījums - 1
+## <lo-theory/>Bezū identitāte
 
-**Bezū identitāte:**  Dots, ka $a$ un $b$ ir veseli un $\text{LKD}(a,b)=d$. Tad eksistē
+**Teorēma:**  Ja $a$ un $b$ ir veseli un $\text{LKD}(a,b)=d$, tad eksistē
 veseli skaitļi $x$ un $y$, ka $ax + by = d$.
+
+Aritmētikas pamatteorēmai vajag atsevišķu gadījumu, kad $d = 1$:
+
+**Sekas:**  Ja $a$ un $b$ ir savstarpēji pirmskaitļi, tad 
+vienādojumam $ax + by = 1$ eksistē atrisinājums veselos skaitļos.
+
+
+--
+
+## <lo-theory/>Bezū identitātes pierādījums - 1
 
 **Pierādījums:** Aplūkojam kopu no visiem skaitļiem 
 $ax + by > 0$, kur $x,y \in \mathbb{Z}$. Apzīmējam vismazāko pozitīvo šīs kopas locekli ar 
@@ -1997,18 +1913,27 @@ Tātad $d^{\ast}$ ir $a$ un $b$ lielākais kopīgais dalītājs.
 
 ## <lo-summary/>Bezū identitātes interpretācija
 
-**Apgalvojums:** Ja pircējam un pārdevējam pieejams
-neierobežots daudzums monētu ar vērtībām 
-$n_1,n_2,\ldots,n_k$ eirocenti (kuri visi $n_i$ ir 
-naturāli skaitļi), tad ar tām 
-var nomaksāt $d$, kas ir visu skaitļu 
-$n_1,n_2,\ldots,n_k$ lielākais kopīgais dalītājs.
+**Apgalvojums** Ar monētām, kuru vērtības ir savstarpēji pirmskaitļi, 
+var nomaksāt jebkuru veselu naudas summu.  
+(Jo var nomaksāt $19x + 28y = 1$ vienību.)
+
+**Apgalvojums:** Izmantojot monētas ar vērtībām 
+$n_1,n_2,\ldots,n_k$ eirocenti
+pircējs un pārdevējs var nomaksāt $d$ eirocentus, kas ir 
+skaitļu $n_1,n_2,\ldots,n_k$ lielākais kopīgais dalītājs.
+
+
+
+
+Note: 
 
 **Pierādījums:** Šis apgalvojums diviem skaitļiem 
 $n_1$ un $n_2$ tieši izriet no Bezū identitātes.  
 Ja $k>2$, var pamatot vispārīgāku Bezū identitātes
 variantu (trim un vairāk skaitļiem), ko pierāda 
 līdzīgi kā gadījumu $k=2$. 
+
+Otrajā apgalvojumā nevar nomaksāt summas, kas nedalās ar $d$.
 
 
 --
@@ -2020,9 +1945,9 @@ centu monētām var nomaksāt
 $1$ centu (turklāt dažādos veidos - atkarībā no tā, 
 kādas monētas lieto pircējs un kādas pārdevējs 
 izdod kā atlikumu): 
-$$\color{#F00}{13}\cdot{}5 - \color{#F00}{8}\cdot{}8 = 
-\color{#F00}{8}\cdot{}5 - \color{#F00}{13}\cdot{}3 = 1.$$
-Atkārtojot šo operāciju, var nomaksāt arī jebkuru 
+`$$\color{#F00}{13}\cdot{}5 - \color{#F00}{8}\cdot{}8 = 
+\color{#F00}{8}\cdot{}5 - \color{#F00}{13}\cdot{}3 = 1.$$`
+Piereizinot skaitļus šajā vienādībā, var nomaksāt arī jebkuru 
 citu summu.
 
 **Piemērs:** Ar <red>$9$</red> un <red>$15$</red> 

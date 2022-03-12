@@ -64,7 +64,11 @@ def create_app(test_config=None):
 
     from . import discrete_spring2021
     app.register_blueprint(discrete_spring2021.bp)
-    
+
+    from . import discrete_spring2022
+    app.register_blueprint(discrete_spring2022.bp)
+
+
     from . import default
     app.register_blueprint(default.bp)
     app.add_url_rule('/', endpoint='index')

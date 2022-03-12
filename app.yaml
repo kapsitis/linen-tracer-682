@@ -105,6 +105,13 @@ handlers:
   static_dir: discrete-tales
 
 
+- url: /discrete2022/.*
+  script: discrete2022.app
+
+- url: /discrete2022-bin
+  static_dir: discrete2022-bin
+
+
 
 - url: /data-structures/.*
   script: data_structures.app

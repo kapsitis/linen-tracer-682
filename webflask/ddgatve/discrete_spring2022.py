@@ -15,13 +15,13 @@ bp = Blueprint('discrete_spring2022', __name__, url_prefix='/discrete-spring2022
 def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url, encoding='utf-8'))
-    #json_url = os.path.join(current_app.root_path, 'static/data', 'discrete2021_topics.json')
-    #jsonTopics = json.load(open(json_url, encoding='utf-8'))
+    json_url = os.path.join(current_app.root_path, 'static/data', 'discrete2021_topics.json')
+    jsonTopics = json.load(open(json_url, encoding='utf-8'))
     template_context = {
         'my_id': 'index',
         'course': 'discrete-spring2022',
-        'nav_items': nav_items
-        #'jsonTopics': jsonTopics
+        'nav_items': nav_items,
+        'jsonTopics': jsonTopics
     }
     return render_template('discrete_spring2022/index.html', **template_context)
 

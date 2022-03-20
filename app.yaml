@@ -37,6 +37,36 @@ handlers:
   script: default.app
 
 
+- url: /discrete2022/.*
+  script: discrete2022.app
+
+- url: /discrete2022-bin
+  static_dir: discrete2022-bin
+
+
+- url: /numtheory/.*
+  script: numtheory.app
+
+- url: /numtheory-bin
+  static_dir: numtheory-bin
+
+- url: /numtheory-exams
+  static_dir: numtheory-exams
+
+- url: /numtheory-tales
+  static_dir: numtheory-tales
+
+
+- url: /tests/.*
+  script: tests.app
+
+
+
+
+
+
+
+
 - url: /algorithms/.*
   script: algorithms.app
 
@@ -46,18 +76,6 @@ handlers:
 - url: /algorithms-tales
   static_dir: algorithms-tales
   
-- url: /numtheory/.*
-  script: numtheory.app
-  
-- url: /numtheory-bin
-  static_dir: numtheory-bin
-
-- url: /numtheory-exams
-  static_dir: numtheory-exams
-
-
-- url: /numtheory-tales
-  static_dir: numtheory-tales
 
 - url: /visualizations/.*
   script: visualizations.app
@@ -105,11 +123,6 @@ handlers:
   static_dir: discrete-tales
 
 
-- url: /discrete2022/.*
-  script: discrete2022.app
-
-- url: /discrete2022-bin
-  static_dir: discrete2022-bin
 
 
 

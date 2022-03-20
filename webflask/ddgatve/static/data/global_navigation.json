@@ -19,38 +19,56 @@
 	},
     {
     	"subdir": "numtheory",
-    	"title": "Skaitļu teorija",
+    	"title": "Number theory",
         "pages": [
             {
             	"shortName": "Sākums", 
             	"longName": "Sākums",
-	        "link": "index",
-	        "color": "#de6745"
-	    },
+	        	"link": "index",
+	        	"color": "#de6745"
+	    	},
             {
             	"shortName": "Uzdevumi", 
             	"longName": "Uzdevumi",
-	        "link": "assignments",
-	        "color": "#f1a72c"
-	    },
+	        	"link": "assignments",
+	        	"color": "#f1a72c"
+	    	},
             {
             	"shortName": "Lekciju bildes", 
             	"longName": "Lekciju bildes",
-	        "link": "slides",
-	        "color": "#40ce7c"
-	    },
-            {
-            	"shortName": "Sacensības", 
-            	"longName": "Sacensības",
-	        "link": "exams",
-	        "color": "#4ca7dc"
-	    },
-            {
+	        	"link": "slides",
+				"color": "#40ce7c"
+	    	},
+			{
             	"shortName": "Norādes", 
             	"longName": "Norādes",
-	        "link": "references",
+	        	"link": "references",
       	        "color": "#9e69af"
-	    }	    
+	    	}
         ]    	    	
-    }
+    },
+	{
+		"subdir": "onlinetests",
+		"title": "Online Tests",
+		"pages": [
+			{
+            	"shortName": "Sākums",
+            	"longName": "Sākums",
+	        	"link": "index",
+	        	"color": "#de6745"
+	    	},
+			{
+				"shortName": "Current",
+				"longName": "Current",
+	        	"link": "current",
+	        	"color": "#f1a72c"
+			},
+			{
+				"shortName": "Archive",
+				"longName": "Archive",
+				"link": "archive",
+				"color": "#40ce7c"
+			}
+		]
+	}
 ]

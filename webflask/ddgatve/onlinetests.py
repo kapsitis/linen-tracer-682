@@ -15,7 +15,7 @@ bp = Blueprint('onlinetests', __name__, url_prefix='/onlinetests')
 
 
 
-@bp.route('/onlinetests', methods=['GET', 'POST'])
+@bp.route('/index', methods=['GET', 'POST'])
 def index():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url, encoding='utf-8'))
@@ -27,19 +27,19 @@ def index():
     return render_template('onlinetests/index.html', **template_context)
 
 
-@bp.route('/onlinetests', methods=['GET', 'POST'])
+@bp.route('/current', methods=['GET', 'POST'])
 def current():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url, encoding='utf-8'))
     template_context = {
-        'my_id': 'assignments',
+        'my_id': 'current',
         'course': 'onlinetests',
         'nav_items': nav_items
     }
     return render_template('onlinetests/current.html', **template_context)
 
 
-@bp.route('/onlinetests', methods=['GET', 'POST'])
+@bp.route('/archive', methods=['GET', 'POST'])
 def archive():
     navig_url = os.path.join(current_app.root_path, 'static/data', 'global_navigation.json')
     nav_items = json.load(open(navig_url, encoding='utf-8'))

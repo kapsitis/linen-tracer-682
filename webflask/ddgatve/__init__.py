@@ -68,6 +68,9 @@ def create_app(test_config=None):
     from . import discrete_spring2022
     app.register_blueprint(discrete_spring2022.bp)
 
+    from . import onlinetests
+    app.register_blueprint(onlinetests.bp)
+
 
     from . import default
     app.register_blueprint(default.bp)

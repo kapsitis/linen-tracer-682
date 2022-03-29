@@ -19,7 +19,7 @@
 	},
     {
     	"subdir": "numtheory",
-    	"title": "Number theory",
+    	"title": "Skaitļu teorija",
         "pages": [
             {
             	"shortName": "Sākums", 
@@ -34,8 +34,8 @@
 	        	"color": "#f1a72c"
 	    	},
             {
-            	"shortName": "Lekciju bildes", 
-            	"longName": "Lekciju bildes",
+            	"shortName": "Teorija", 
+            	"longName": "Teorija",
 	        	"link": "slides",
 				"color": "#40ce7c"
 	    	},
@@ -49,7 +49,7 @@
     },
 	{
 		"subdir": "onlinetests",
-		"title": "Online Tests",
+		"title": "Tiešsaistes Testi",
 		"pages": [
 			{
             	"shortName": "Sākums",
@@ -58,14 +58,14 @@
 	        	"color": "#de6745"
 	    	},
 			{
-				"shortName": "Current",
-				"longName": "Current",
+				"shortName": "Jaunie testi",
+				"longName": "Jaunie testi",
 	        	"link": "current",
 	        	"color": "#f1a72c"
 			},
 			{
-				"shortName": "Archive",
-				"longName": "Archive",
+				"shortName": "Arhīvs",
+				"longName": "Arhīvs",
 				"link": "archive",
 				"color": "#40ce7c"
 			}

@@ -1,12 +1,173 @@
+
+
 {% extends "layout.html" %}
 
-{% block title %}Jaunie testi{% endblock %}
+{% block title %}Arhīvs{% endblock %}
+
+{% block head %}
+{{ super() }}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+i {
+  font-size:85%;
+}
+table.colornavigation a {
+  text-decoration: underline !important;
+}
+
+.tltip {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-size:80%;
+  color: #2B547E;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tltip .tltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #ffffcc;
+  font-style: normal;
+  color: black;
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tltip:hover .tltiptext {
+  visibility: visible;
+}
+
+.exam-archive td, .exam-archive th {
+  padding: 2px;
+  vertical-align: top;
+}
+</style>
+
+
+{% endblock %}
 
 {% block content %}
 
-<p>DEF</p>
+
+<!--
+<p><b>Daži nepabeigti testi:</b></p>
+
+<ul>
+{% for comp in lst_comp %}
+<li><a href="../numtheory-tales/{{comp.dir}}/content.html">{{comp.id}}: {{comp.title}}</a></li></li>
+{% endfor %}
+</ul>
+
+-->
+
+
+<br/>
+<div class="panel-group" id="accordion">
+
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">Par sacensībām: Nolikums</a>
+</h4>
+</div>
+
+<div id="collapse11" class="panel-collapse collapse">
+<div class="panel-body">
+
+<p>Piedalīties var gan vēl nereģistrēti dalībnieki (ierakstot Socrative lodziņā savu epastu),
+  gan arī reģistrēti dalībnieki ar savu 6-ciparu unikālo identifikatoru, kuru
+  izsniedz Jūsu matemātikas skolotājs, pulciņa vadītājs vai tiešsaistes testa organizatori.
+  Rēķināt var visu sacensību dienu jebkurā Jums ērtā laikā; testa pildīšanas laiku
+  īpaši nekontrolējam, bet tam parasti nevajadzētu pārsniegt 3 astronomiskās stundas (vidēji 15 minūtes
+  katram no 12 testa jautājumiem). Testa datumā tieši 24:00 (pēc Latvijas laika UTC+2) testu
+  pārtrauc un risinājumus iesūtīt vairs nevar.</p>
+
+  <p>Retajos gadījumos, ja Jūsu Socrative sesija tehnisku iemeslu dēļ tiek pārtraukta pirms testa beigām,
+    varat sākt jaunu, ierakstot tajā to pašu epasta adresi vai unikālo ID.
+    Lai iepriekš izrēķināto jautājumu atbildes neaizmirstos, tās ieteicams pierakstīt uz papīra.
+    Tiešsaistes testā nav atļauts eksperimentēt ar dažādu atbilžu variantu atkārtotu iesūtīšanu,
+    lai uzminētu pareizo, tāpēc testa atkārtota iesūtīšana ir pieļaujama tikai tehniskas
+    kļūmes gadījumā.
+  </p>
+
+  <p>Pēc sacensību beigām izsūtīsim uz Jūsu epasta adresi rezultātus un atbildes
+  ar skaidrojumiem. Labu veiksmi!
+</p>
+</div>
+</div>
+</div>
+
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+Nākamās sacensības: <span style="font-size:120%; color:#0000ff;">2022-04-15</span> (00:00-24:00)
+<!--
+Reģistrēties
+<span style="font-size:120%; color:#0000ff;">2021-04-29</span> Sacensību Vidē (15:00-21:00)
+-->
+</a>
+</h4>
+</div>
+
+<div id="collapse12" class="panel-collapse collapse">
+<div class="panel-body">
+
+<p>
+  <b>0.Solis: </b> Sagaidām augstākminēto sacensību dienu. Pirms šīs dienas var iepazīt
+  <a href="http://www.dudajevagatve.lv/numtheory/slides">pieejamos skaitļu teorijas materiālus vidusskolēniem</a>
+  vai citu gatavošanās informāciju, ja tāda izziņota.
+</p>
+
+<p>
+<b>1.Solis:</b> Atver <a href="https://www.socrative.com/">https://www.socrative.com/</a>,
+spiež <b>Login</b> pogu. Atveras sekojošs attēls:<br/>
+<img src="/static/onlinetests/images/socrative-login.png" width="200px"/>
+</p>
+
+<p>
+<b>2.Solis:</b> Ieraksta "sacensību telpas" nosaukumu <tt>APSITIS</tt>, spiež <b>Join</b> pogu.</br>
+<img src="/static/onlinetests/images/socrative-room-name.png" width="200px"/>
+</p>
+
+<p>
+<b>3.Solis:</b> Ieraksta savu epastu, spiež <b>Done</b> pogu:<br/>
+<img src="/static/onlinetests/images/socrative-enter-email.png" width="200px"/>
+</p>
+
+<p>Ja redzams šāds attēls, tad tests vēl nav pieejams. Pārliecinieties,
+vai ir izziņotais datums. Ja rodas problēmas vai jautājumi
+rakstiet Kalvim: <tt>kalvis.apsitis</tt> at <tt>gmail.com</tt>.<br/>
+<img src="/static/onlinetests/images/socrative-waiting.png" width="200px"/>
+</p>
+
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+
 
 {% endblock %}
+
+
 
 
 

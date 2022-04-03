@@ -1,202 +1,55 @@
 {% extends "layout.html" %}
 
-{% block title %}Arhīvs{% endblock %}
-
-{% block head %}
-{{ super() }}
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-<style>
-i { 
-  font-size:85%; 
-}
-table.colornavigation a { 
-  text-decoration: underline !important; 
-}
-
-.tltip {
-  position: relative;
-  display: inline-block;
-  font-style: italic;
-  font-size:80%;
-  color: #2B547E;
-  border-bottom: 1px dotted black;
-}
-
-/* Tooltip text */
-.tltip .tltiptext {
-  visibility: hidden;
-  width: 300px;
-  background-color: #ffffcc;
-  font-style: normal;
-  color: black;
-  padding: 5px;
-  border-radius: 4px; 
-  position: absolute;
-  z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tltip:hover .tltiptext {
-  visibility: visible;
-}
-
-.exam-archive td, .exam-archive th {
-  padding: 2px;
-  vertical-align: top;
-}
-</style>
-
-
-{% endblock %}
+{% block title %}Aktuāli testi{% endblock %}
 
 {% block content %}
 
 
-<!--
-<p><b>Daži nepabeigti testi:</b></p>
-
-<ul>
-{% for comp in lst_comp %}
-<li><a href="../numtheory-tales/{{comp.dir}}/content.html">{{comp.id}}: {{comp.title}}</a></li></li>
-{% endfor %}
-</ul>
-
--->
-
-
-<br/>
-<div class="panel-group" id="accordion">
-
-
-<div class="panel panel-default">
-<div class="panel-heading">
-<h4 class="panel-title">
-<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">Par sacensībām: Nolikums</a>
-</h4>
-</div>
-
-<div id="collapse11" class="panel-collapse collapse">
-<div class="panel-body">
-
-<p>Olimpiāžu matemātika šeit kombinēta ar datoram labojamiem "īso atbilžu" jautājumiem. 
-Šo sacensību formātu iedvesmojis 
-<a href="https://artofproblemsolving.com/wiki/index.php/American_Invitational_Mathematics_Examination">AIME</a>
-konkurss un arī <a href="http://www.math.olympiaadid.ut.ee/html/index.php?id=piirk">Igaunijas olimpiāžu testu sadaļas</a>. 
-Šīs sacensības necenšas kopēt nevienu no šiem formātiem.
-Ja šobrīd esat 9.-12.klasē vispārizglītojošā skolā, mācāties profesionālajā vidusskolā, vai vienkārši interesējaties par olimpiāžu matemātiku, 
-esat laipni aicināti (ieteicams) vispirms iepazīties ar teorijas materiālu un piedalīties sacensībās. 
-Vienā sacensību komplektā ir 12 uzdevumi, katrā no tiem jāieraksta atbilde. Komplektā uzdevumus var skatīt jebkurā secībā, 
-bet jautājumus var iesūtīt tikai visus reizē. Savu koprezultātu var uzzināt uzreiz, bet detalizētos vērtējumus un 
-jautājumu analīzi - tikai pēc tam, kad sacensības visiem beigušās. 
-Piedalīties var, sākot ar jebkuru testu.  Lai pieteiktos, Jums jānorāda derīga epasta adrese. 
-<!--,  sava skola un klase/kurss (vai arī vecums un pastāvīgā dzīvesvieta, ja skolā nemācāties).--><br/>
-Labu veiksmi risināšanā!</p>
-</div>
-</div>
-</div>
-
-
-<div class="panel panel-default">
-<div class="panel-heading">
-<h4 class="panel-title">
-<a data-toggle="collapse" data-parent="#accordion" href="#collapse12">
-Nākamās sacensības: <span style="font-size:120%; color:#0000ff;">2021-04-29</span> (15:00-21:00)
-<!--
-Reģistrēties
-<span style="font-size:120%; color:#0000ff;">2021-04-29</span> Sacensību Vidē (15:00-21:00)
--->
-</a>
-</h4>
-</div>
-
-<div id="collapse12" class="panel-collapse collapse">
-<div class="panel-body">
 
 
 
-<p>
-<b>1.Solis:</b> Atver <a href="https://www.socrative.com/">https://www.socrative.com/</a>, 
-spiež <b>Login</b> pogu. Atveras sekojošs attēls:<br/>
-<img src="../numtheory-bin/web-images/socrative-login.png" width="200px"/>
-</p>
+<h2>2021.gada sacensības</h2>
 
-<p>
-<b>2.Solis:</b> Ieraksta "sacensību telpas" nosaukumu <tt>APSITIS</tt>, spiež <b>Join</b> pogu.</br>
-<img src="../numtheory-bin/web-images/socrative-room-name.png" width="200px"/>
-</p>
-
-<p>
-<b>3.Solis:</b> Ieraksta savu epastu, spiež <b>Done</b> pogu:<br/> 
-<img src="../numtheory-bin/web-images/socrative-enter-email.png" width="200px"/>
-</p>
-
-<p>Ja redzams šāds attēls, tad tests vēl nav pieejams. Pārliecinieties, 
-vai ir 4.marts (15:00 līdz 21:00). Ja rodas problēmas vai jautājumi 
-rakstiet Kalvim: <tt>kalvis.apsitis</tt> at <tt>gmail.com</tt>.<br/> 
-<img src="../numtheory-bin/web-images/socrative-waiting.png" width="200px"/>
-</p>
+<p style="font-size:80%">Sacensības var būt īpaši noderīgas NMS Izlases Nodarbību
+  tēmu nostiprināšanai. Arhīvā galvenokārt skaitļu teorijas tēmas, bet plānojam arī citas.
+  Pagaidām nav paredzēta funkcionalitāte, lai
+  arhivētos testus varētu kārtot pēc sacensību dienas. To ceram drīz nodrošināt.</p>
 
 
-</div>
-</div>
-</div>
-
-
-</div>
-
-
-<p style="font-size:140%">Lūdzam
-<a style="color:hotpink;text-decoration:underline;" href="https://docs.google.com/forms/d/e/1FAIpQLSes9RZ9SY20uRNGQNoYa8crF7a9sLgMH5ErmQsQNBgDk4RtbQ/viewform?usp=sf_link">aizpildīt aptauju</a>
-Jūsu atsauksmēm un ierosinājumiem par šiem testiem.</p>
-
-
-
-<h2>Notikušās sacensības, gatavošanās materiāli</h2>
-
-<p style="font-size:80%">Sacensības var būt īpaši noderīgas NMS Izlases Nodarbību 
-tēmu nostiprināšanai. Sākotnējos testos būs galvenokārt skaitļu teorijas tēmas, bet plānojam arī citas.</p> 
 
 <table class="exam-archive" border="1" cellspacing="0">
 <tr>
 <th>Datums</th>
 <th>Jautājumi un atbildes</th>
-<th>Nodarbību materiāli atkārtošanai</th>
+<th>Gatavošanās materiāli</th>
 </tr>
 <tr>
-<th>2021-02-18</th> 
+<th>2021-02-18</th>
 </td>
 <td><b>2021#1:</b> Dalāmība un pirmskaitļi<br/>
-<a href="../numtheory-exams/online-competition-2021-02-18.pdf">Jautājumi</a><br/>
-<a href="../numtheory-exams/online-competition-2021-02-18-solution.pdf">Testa atbildes/analīze</a>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-02-18.pdf">Jautājumi</a><br/>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-02-18-solution.pdf">Testa atbildes/analīze</a>
 </td>
 <td>
-<a href="../numtheory-tales/ntjun01-divisibility/index.html">NMS Izlases materiāls</a><br/>
-<a href="../numtheory-bin/selection_problems_2020_2021/homework01-divisibility-solutions.pdf">Uzdevumu komplekts: Dalāmība</a>
+    <a href="http://www.dudajevagatve.lv/training/numtheory/ntjun01-divisibility.pdf">nt.jun01: Dalāmība un pirmskaitļi</a>
+</td>
 </tr>
 <tr>
 <th>2021-03-04</th>
 <td><b>2021#2:</b> Modulārā aritmētika<br/>
-<a href="../numtheory-exams/online-competition-2021-03-04.pdf">Jautājumi</a><br/>
-<a href="../numtheory-exams/online-competition-2021-03-04-solution.pdf">Testa atbildes/analīze</a>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-03-04.pdf">Jautājumi</a><br/>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-03-04-solution.pdf">Testa atbildes/analīze</a>
 </td>
 <td>
-<a href="https://youtu.be/lJ3CD9M3nEQ">YouTube:  Modular Arithmetic Visually Explained</a><br/>
-<a href="../numtheory-bin/atv-2021/multiplicative-group-summary.pdf">Špikeris: Kāpināšana (mod p)</a><br/>
-<a href="../numtheory-bin/selection_problems_2020_2021/homework02-modular-arithmetic.pdf">Uzdevumu komplekts: Modulārā aritmētika</a>
+<a href="http://www.dudajevagatve.lv/training/numtheory/ntjun02-modular-arithmetic.pdf">nt.jun02: Modulārā aritmētika</a><br/>
+<a href="https://youtu.be/lJ3CD9M3nEQ">YouTube:  Modular Arithmetic Visually Explained</a>
 </td>
 </tr>
 <tr>
 <th>2021-03-25</th>
 <td><b>2021#3:</b> Decimālpieraksts<br/>
-<a href="../numtheory-exams/online-competition-2021-03-25.pdf">Jautājumi</a><br/>
-<a href="../numtheory-exams/online-competition-2021-03-25-solution.pdf">Testa atbildes/analīze</a>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-03-25.pdf">Jautājumi</a><br/>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-03-25-solution.pdf">Testa atbildes/analīze</a>
 </td>
 <td>&nbsp;</td>
 </tr>
@@ -204,58 +57,41 @@ tēmu nostiprināšanai. Sākotnējos testos būs galvenokārt skaitļu teorijas
 <tr>
 <th>2021-04-08</th>
 <td><b>2021#4:</b> Racionāli, iracionāli skaitļi<br/>
-<a href="../numtheory-exams/online-competition-2021-04-08.pdf">Jautājumi</a><br/>
-<a href="../numtheory-exams/online-competition-2021-04-08-solution.pdf">Testa atbildes/analīze</a>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-04-08.pdf">Jautājumi</a><br/>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-04-08-solution.pdf">Testa atbildes/analīze</a>
 </td>
 <td>
-<a href="https://youtu.be/L1Qq8TsDUW8">Apakšējās/augšējās veselās daļas īpašības</a><br/>
-<a href="https://youtu.be/0NMj246ideQ">Sinusu/kosinusu saistība ar kvadrātsaknēm</a><br/>
-<a href="https://youtu.be/BQdcCTwldzA">Sakņu un logaritmu iracionalitātes pierādījumi</a><br/>
-<a href="https://youtu.be/CaasbfdJdJg">Ķēžu daļas dažiem iracionāliem skaitļiem</a><br/>
-<a href="https://youtu.be/p7mpY-uOV-Q">Rekurenti virkņu izteikšana ar "iracionālām" izteiksmēm</a>
+    <a href="http://www.dudajevagatve.lv/training/numtheory/ntjun06-rational.pdf">nt.jun06:
+        Racionāli un iracionāli skaitļi</a><br/>
+    <a href="https://youtu.be/L1Qq8TsDUW8">YouTube: Apakšējās/augšējās veselās daļas īpašības</a><br/>
+    <a href="https://youtu.be/0NMj246ideQ">YouTube: Sinusu/kosinusu saistība ar kvadrātsaknēm</a><br/>
+    <a href="https://youtu.be/BQdcCTwldzA">YouTube: Sakņu un logaritmu iracionalitātes pierādījumi</a><br/>
+    <a href="https://youtu.be/CaasbfdJdJg">YouTube: Ķēžu daļas dažiem iracionāliem skaitļiem</a><br/>
+    <a href="https://youtu.be/p7mpY-uOV-Q">YouTube: Rekurenti virkņu izteikšana ar "iracionālām" izteiksmēm</a>
 </td>
 </tr>
 
 <tr>
 <th>2021-04-29</th>
 <td><b>2021#5:</b> Dažādi par skaitļu teoriju (noslēgums)<br/>
-<a href="../numtheory-exams/online-competition-2021-04-29.pdf">Jautājumi</a><br/>
-<a href="../numtheory-exams/online-competition-2021-04-29-solution.pdf">Testa atbildes/analīze</a>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-04-29.pdf">Jautājumi</a><br/>
+<a href="http://www.dudajevagatve.lv/training/numtheory/online-competition-2021-04-29-solution.pdf">Testa atbildes/analīze</a>
 </td>
 <td>
 &nbsp;
 </td>
 </tr>
 
-
-
 </table>
 
-
 <!--
-<ul>
-
-<li><a href="../numtheory-exams/modular-arithmetic/index.html">Q.(NT10-NT12).MOD: Modulārā aritmētika</a></li></li>
-
-</ul>
+<p style="font-size:140%">Lūdzam
+<a style="color:hotpink;text-decoration:underline;" href="https://docs.google.com/forms/d/e/1FAIpQLSes9RZ9SY20uRNGQNoYa8crF7a9sLgMH5ErmQsQNBgDk4RtbQ/viewform?usp=sf_link">aizpildīt aptauju</a>
+Jūsu atsauksmēm un ierosinājumiem par šiem testiem.</p>
 -->
 
 
 
-<h2>Sacensību arhīvs (vēl nav)</h2>
-
-<p style="font-size:80%">Šeit būs iespējams piekļūt arhīvētajiem sacensību uzdevumiem, lai pārbaudītu 
-zināšanas un gūtu ierosmes. Arhivētajās sacensībās jautājumi ir līdzīgi, bet parametri var 
-atšķirties no sacensību oriģināla; arī jautājumu secība un nejaušā atlase
-var būt cita. Arī arhivētajām sacensībām var uzzināt savu rezultātu un salīdzināt to ar
-sacensību dienas rezultātiem.</p>
-
-
-
-
-
-
 {% endblock %}
-
 
 

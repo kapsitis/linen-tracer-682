@@ -127,13 +127,32 @@ table.schedule td, table.schedule th {
 
 button.nav {
     margin-bottom: 4px;
-    color: white;
+    color: white !important;
     width:200px;
     background-color:#0066cc;
     font-weight:bold;
 	padding-left: 10px;
 	text-align: left;
 }
+
+dt.nav {
+    margin-bottom: 4px;
+    color: white !important;
+    width:200px;
+    height: 25px;
+    border-radius: 9px;
+    background-color:#0066cc;
+    font-weight:bold;
+	padding-left: 10px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+dt.nav a:link, dt.nav a:visited, dt.nav a:hover, dt.nav a:active {
+    color: white;
+    font-weight: normal;
+}
+
 
 table.schedule tbody {
     background-color: #ffffff;

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h2>Homeworks (400&permil; of the grade)</h2>
+<h2>Homeworks and Exams (400+400&permil; of the grade)</h2>
 
 <p>Each homework has 6 questions (the last one might be technically
 more difficult; it is not mandatory and considered a "bonus question").
@@ -88,22 +88,6 @@ Each question can earn up to 10&permil; (1 percent) of the total grade.</p>
 <td>60&permil;</td>
 <td>NA</td>
 </tr>
-
-
-</table>
-
-
-
-
-
-<h2>Exams (200+200&permil; of the grade)</h2>
-
-
-<table border="1" cellspacing="0">
-<tr>
-<th>Title</th><th>Date</th><th>Max</th><th>Average</th>
-</tr>
-
 <tr>
 <td>
 <a href="/training/discrete-2022-spring/midterm-quiz.pdf">Midterm (Quiz)</a>
@@ -137,7 +121,8 @@ Each question can earn up to 10&permil; (1 percent) of the total grade.</p>
 <tr>
 <td>
 <a href="/training/discrete-2022-spring/discrete-2022spring-final.pdf">Final (Written)</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/training/discrete-2022-spring/discrete-2022spring-final-solutions.pdf">Final: Solutions</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/training/discrete-2022-spring/discrete-2022spring-final-solutions.pdf">Final: Solutions</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/training/discrete-2022-spring/discrete-2022spring-final-grading-notes.pdf">Final: Grading Notes</a><br/>
 </td>
 <td>2022-04-19</td>
 <td>160&permil;</td>
@@ -147,34 +132,20 @@ Each question can earn up to 10&permil; (1 percent) of the total grade.</p>
 </table>
 
 
-<div style="font-size:80%">
-<p>Midterm exam preparation: Review topics and sample questions</p>
 
+<h2>Review topics and sample questions</h2>
+
+
+
+
+
+<div style="font-size:80%">
 <ul>
-<li><a href="/training/discrete-2022-spring/discretestructures-sample-quizzes-part1.pdf">
-Sample Quizzes, Part 1</a></li>
 <li><a href="/training/discrete-2022-spring/review-topics-midterm.pdf">Review Topics for Midterm</a><br/>
 <a href="/training/discrete-2022-spring/review-topics-midterm-solutions.pdf">Review Topics for Midterm (Solutions)</a>
 </li>
 <li><a href="/training/discrete-2022-spring/summary-sheet-01-logic-sets-relations.pdf">Summary Sheet #1:
 Logic, Sets, Relations</a></li>
-<!--
-<li><a href="/training/discrete-2022-spring/discretestructures-part1-logic.pdf">
-Topics 1: Logic</a></li>
-<li><a href="/training/discrete-2022-spring/discretestructures-part1-logic-samples.pdf">
-Sample Problems 1: Logic</a></li>
-<li><a href="/training/discrete-2022-spring/discretestructures-part2-nt.pdf">
-Topics 2: Number Theory</a></li>
-<li><a href="/training/discrete-2022-spring/discretestructures-part2-nt-samples.pdf">
-Sample Problems 2: Number Theory</a></li>
--->
-</ul>
-
-<p>Final exam preparation: Review topics and sample questions</p>
-
-<ul>
-<li><a href="/training/discrete-2022-spring/discretestructures-sample-quizzes-part2.pdf">
-Sample Quizzes, Part 2</a></li>
 <li><a href="/training/discrete-2022-spring/review-topics-final.pdf">Review Topics for Final</a><br/>
 <a href="/training/discrete-2022-spring/review-topics-final-solutions.pdf">Review Topics for Final (Solutions)</a>
 </li>
@@ -182,27 +153,36 @@ Sample Quizzes, Part 2</a></li>
     <a href="/training/discrete-2022-spring/shortlist-final-solutions.pdf">Shortlist of Final Training Questions (Solutions)</a><br/>
 </li>
 </ul>
-
-
 </div>
 
 
-<h2>Proofs</h2>
+<h2><a name="COMPREHENSIVE_EXAM">Comprehensive Exam</a></h2>
 
-<p>Problems for classroom presentations.</p>
+<p>To assess the knowledge of somebody in "Discrete Mathematics"
+    we can provide a list of topics for self-learning.
+    Eventually this could serve as the curriculum for
+    a comprehensive written exam covering all major topics, but such exams have not been implemented yet.
+    "Discrete Structures" is the prerequisite to many subsequent classes.
+    The target audience are students who needs to refresh this material, do some remedial work on it,
+    has changed his/her major (previously studied non-IT topics),
+    has changed universities (due to an exchange program such as ERASMUS).
+    Ideally we would offer such people a "Comprehensive Exam"
+    to check their knowledge and to find out all major gaps.</p>
 
-<ul>
-<li><a href="/training/discrete-2022-spring/proofs-week01.pdf">
-Proofs 1: Proof Methods</a></li>
-<li><a href="/training/discrete-2022-spring/proofs-week02.pdf">
-Proofs 2: Formalized Proofs</a></li>
-<li><a href="/training/discrete-2022-spring/proofs-week03.pdf">
-Proofs 3: Number Sets</a></li>
-<li><a href="/training/discrete-2022-spring/proofs-week04.pdf">
-Proofs 4: Sets and Functions</a></li>
-<li><a href="/training/discrete-2022-spring/proofs-week05.pdf">
-Proofs 5: Modular Arithmetic, Divisibility</a></li>
-</ul>
+<p>Comprehensive exam offers a compact list of topics (See "Shortlist of Final Training Questions" above)
+that cover the most important things only. As we develop this "Shortlist", it
+    may become more interdisciplinary to include related IT topics. Such as
+    Calculus (for Big-O calculations), Visualizations (graphs and trees, but also other
+    discrete math topics), Algorithms (in Number Theory),
+    Introductory Cryptography (in Number Theory),
+    Statistics (as it is related to the Probabilities covered in this class),
+    Functional languages and automating proofs (in Propositional and Predicate Logic),
+    Data Structures (in sets and relations subtopic).</p>
+
+
+
+
+
 
 
 {% endblock %}

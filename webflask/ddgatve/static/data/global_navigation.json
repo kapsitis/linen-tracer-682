@@ -14,6 +14,12 @@
 				"longName": "Assignments",
 				"link": "assignments",
 				"color": "#f1a72c"
+			},
+			{
+				"shortName": "Quizzes",
+				"longName": "Quizzes",
+				"link": "quizzes",
+				"color": "#40ce7c"
 			}
 		]
 	},

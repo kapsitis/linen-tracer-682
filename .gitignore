@@ -19,6 +19,8 @@ problems-bak/*
 build/
 #dist/
 downloads/
+!webstatic/songs/downloads
+
 # lib/
 lib64/
 # PyInstaller

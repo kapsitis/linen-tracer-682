@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import os
+from flask_restful import Api
 
 from flask import Flask
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.wrappers import Response
 
+# https://dlukes.github.io/flask-wsgi-url-prefix.html
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -76,6 +80,12 @@ def create_app(test_config=None):
     app.register_blueprint(default.bp)
     app.add_url_rule('/', endpoint='index')
 
+    app.wsgi_app = DispatcherMiddleware(
+        Response('Not Found', status=404),
+        {'/courses': app.wsgi_app}
+    )   
+
+
     return app
 
 
@@ -84,3 +94,4 @@ app = create_app()
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
 
+    

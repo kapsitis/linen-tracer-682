@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-from flask_restful import Api
 
 from flask import Flask
 from werkzeug.middleware.dispatcher import DispatcherMiddleware

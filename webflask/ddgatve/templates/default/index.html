@@ -6,10 +6,19 @@
 
 <h1>Tiešsaistes mācību materiāli</h1>
 
-<p style="font-size:80%">(lv) Šeit apkopoti mācību materiāli vairākiem matemātikas un programmēšanas kursiem.</p>
-<p style="font-size:80%">(en) This site is a collection of various learning materials on mathematics and
-    programming.</p>
+<dl>
+    <dt class="nav"><a href="{{ url_for('algorithms.index') }}">DatZ4020: Lietišķie algoritmi</a></dt>
+        <dd>Algoritmi datu saspiešanai, kļūdu labošanai, lineārajai programmēšanai, teksta meklēšanai.
+            Sk. <a href="https://www.df.lu.lv/fileadmin/user_upload/LU.LV/Apaksvietnes/Fakultates/www.df.lu.lv/Studijas/Pamatstudijas/Lekciju_saraksts/DF_2024_R_024.pdf">
+                4.kursa nodarbību sarakstu
+            </a>
+        </dd>
+    <dt class="nav"><a href="{{ url_for('aPulcins.index') }}">ĀVĢ pulciņš</a></dt>
+        <dd>Olimpiāžu matemātika ĀVĢ 7.-8.klasei.</dd>
+</dl>
 
+
+{#
 <dl>
 <dt class="nav"><a href="{{ url_for('discrete_spring2022.index') }}">Discrete Spring2022</a></dt>
     <dd>A course for the 1st year students in RBS.</dd>
@@ -33,7 +42,7 @@
     To the best of our knowledge the materials published do not have
     any copyright limitations - they are written by the authors of
     "dudajevagatve.lv" or properly quoted as problem questions taken from other sources.</p>
-
+#}
 
 
 <!--

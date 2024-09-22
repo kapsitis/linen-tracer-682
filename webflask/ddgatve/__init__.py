@@ -59,6 +59,9 @@ def create_app(test_config=None):
     from . import algorithms
     app.register_blueprint(algorithms.bp)
 
+    from . import aPulcins
+    app.register_blueprint(aPulcins.bp)
+
     from . import numtheory
     app.register_blueprint(numtheory.bp)
     

@@ -122,7 +122,8 @@ table.schedule tbody {
 }
 
 table.schedule td, table.schedule th {
-    padding: 0px 5px 0px 5px;
+    padding: 2px 5px 2px 5px;
+    font-size: 80%;
 }
 
 button.nav {
@@ -138,7 +139,7 @@ button.nav {
 dt.nav {
     margin-bottom: 4px;
     color: white !important;
-    width:200px;
+    width:240px;
     height: 25px;
     border-radius: 9px;
     background-color:#0066cc;
@@ -151,6 +152,7 @@ dt.nav {
 dt.nav a:link, dt.nav a:visited, dt.nav a:hover, dt.nav a:active {
     color: white;
     font-weight: normal;
+    margin-top:5px; 
 }
 
 

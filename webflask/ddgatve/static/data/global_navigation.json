@@ -38,6 +38,12 @@
 				"longName": "Uzdevumu lapas",
 	        	"link": "worksheets",
 	        	"color": "#f1a72c"
+			},
+			{
+				"shortName": "Testu rezultāti",
+				"longName": "Testu rezultāti",
+	        	"link": "results",
+	        	"color": "#40ce7c"
 			}
 		]
 	}

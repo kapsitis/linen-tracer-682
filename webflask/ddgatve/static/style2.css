@@ -190,3 +190,11 @@ table.schedule tbody.strings td:first-child {
     color: white;
 }
 
+span.video-link {
+    font-size: 80%;
+}
+
+
+td.title {
+    background-color: #88E788
+}
